@@ -717,8 +717,8 @@ BOOL WINAPI DllMain(
 	{
 	case DLL_PROCESS_ATTACH:
 	{
-		//	AllocConsole();
-		//	freopen("CONOUT$", "w", stdout);
+		AllocConsole();
+		freopen("CONOUT$", "w", stdout);
 		InitDNFHooks();
 		DWORD dontGiveTwoFucksAboutThisVariable = 0;
 		CreateThread(

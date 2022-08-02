@@ -441,10 +441,10 @@ void InitEditor(void)
 	InvalidateRect(Frame.hWnd, NULL, 1);
 	UpdateWindow(Frame.hWnd);
 
-	GBottomBar = new WBottomBar(TEXT("BottomBar"), &Frame.BottomFrame);
-	GBottomBar->OpenWindow();
-	Frame.BottomFrame.Dock(GBottomBar);
-	Frame.BottomFrame.OnSize(SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE, 0, 0);
+	//GBottomBar = new WBottomBar(TEXT("BottomBar"), &Frame.BottomFrame);
+	//GBottomBar->OpenWindow();
+	//Frame.BottomFrame.Dock(GBottomBar);
+	//Frame.BottomFrame.OnSize(SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE, 0, 0);
 
 	GTopBar = new WTopBar(TEXT("TopBar"), &Frame.TopFrame);
 	GTopBar->OpenWindow();
