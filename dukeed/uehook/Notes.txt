@@ -1,0 +1,10 @@
+Added DNF01 editor resources to DukeForverEditor.
+Patched DNF01 DBGHLP loader to load DNFEDIT.DLL instead.
+Removed call to dnPlayerProfile_SelectProfile was causing full stack curroption with Editor enabled.
+Engine.dll:
+	Remvoed additional call to some meqon async stuff that was crashing. I have no idea if this is needed.
+Removed ini: prefix from EditorGame spawn
+Editor.dll:
+Modified the DLL to load Viewport directly and bypass ini lookup.
+
+Command line: TestRenDev

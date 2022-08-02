@@ -1,0 +1,17 @@
+AAntiPortalActor::Draw: (*(_BYTE *)(*(_DWORD *)(*(_DWORD *)a2 + 48) + 5936) & 0x20) == 0
+AGeoWater::IsDrawFiltered: (*(_BYTE *)(*((_DWORD *)a2 + 12) + 5936) & 0x10) != 0
+ABreakableGlass::PrepDraw: ( (*(_BYTE *)(*(_DWORD *)(*(_DWORD *)a2 + 48) + 5936) & 0x10) != 0 )
+AStickyNote::ShouldDrawNote: ( (*(_DWORD *)(*(_DWORD *)(*(_DWORD *)a2 + 48) + 5936) & 0x2000) != 0 )
+ALightEx::Draw: 
+        v5 = *(_DWORD *)(*((_DWORD *)*a2 + 12) + 5936);
+        if ( (v5 & 0x4000) != 0 ) // Test 1
+	  v5 & 0x200
+APatchActor::DrawFoliage: (*(_DWORD *)(*(_DWORD *)(*(_DWORD *)a2 + 48) + 5936) & 0x1000000) != 0
+APatchActor::Draw: (v9 = *(_DWORD *)(*(_DWORD *)a2 + 48), (*(_DWORD *)(v9 + 5936) & 0x800) != 0)
+
+unknown_function: *(_DWORD *)(*(_DWORD *)(*(_DWORD *)(this + 8280) + 48) + 5936) & 0x100) != 0)
+UViewport::IsRealtime: (*(_DWORD *)(v1 + 5936) & 0x500) != 0
+UViewport::EnableSound: (*(_DWORD *)(v1 + 5936) & 0x1000) != 0
+AActor::DrawSprite: (*(_DWORD *)(*(_DWORD *)(*(_DWORD *)a2 + 48) + 5936) & 0x2000) == 0 )
+AActor::IsDrawFiltered: (*(_DWORD *)(v3 + 5936) & 0x100) != 0
+				(*(_BYTE *)(*((_DWORD *)a2 + 12) + 5936) & 8) == 0
