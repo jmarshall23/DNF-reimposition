@@ -136,6 +136,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="DukeEd.cpp" />
+    <ClCompile Include="MeshDriver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="MinHook.x86.lib" />

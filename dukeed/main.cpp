@@ -40,6 +40,33 @@ extern UViewport* globalInitViewport;
 
 dnArray<UObject*>* UObject::GObjObjects;
 
+void(__fastcall* URender_DrawActorActual)(void* _this, struct FSceneNode* a2, struct AActor* a3);
+void __fastcall URender_DrawActor(void* _this, struct FSceneNode* a2, struct AActor* a3) {
+	URender_DrawActorActual(_this, a2, a3);
+}
+
+
+int(__fastcall* UStaticMesh__DrawSectionsActual)(void* _this, void* edx, struct FSceneNode* node, class AActor*, int DrawMode, void* UMaterialEx, unsigned long unknown, struct FColor& color);
+int __fastcall UStaticMesh__DrawSections(void* _this, void* edx, struct FSceneNode* node, class AActor* actor, int DrawMode, void* UMaterialEx, unsigned long unknown, struct FColor& color)
+{
+	try
+	{
+
+//		int ret = UStaticMesh__DrawSectionsActual(_this, edx, node, actor, DrawMode, UMaterialEx, unknown, color);
+
+	//	return ret;
+
+		return 0;
+	}
+	catch (...)
+	{
+		return 0;
+	}
+
+	return 0;
+}
+
+
 HWND  (WINAPI *CreateWindowExWActual)(
 	DWORD dwExStyle,
 	LPCWSTR lpClassName,
@@ -510,6 +537,8 @@ void SetBeingDebuggedFlag(bool value)
 #endif
 }
 
+void InitMeshDriver(void);
+
 #include <cstdlib>
 void InitDNFHooks()
 {
@@ -598,6 +627,21 @@ void InitDNFHooks()
 	//}
 
 	//void* stupidFunction = engine + 0x374740;
+
+
+	//void* DrawActorPtr = GetProcAddress(engine, MAKEINTRESOURCEA(5827));
+	//{
+	//	MH_CreateHook(DrawActorPtr, URender_DrawActor, (LPVOID*)&URender_DrawActorActual);
+	//	MH_EnableHook(DrawActorPtr);
+	//}
+
+
+
+	void* DrawSectionsPtr = GetProcAddress(engine, MAKEINTRESOURCEA(5907));
+	{
+		MH_CreateHook(DrawSectionsPtr, UStaticMesh__DrawSections, (LPVOID*)&UStaticMesh__DrawSectionsActual);
+		MH_EnableHook(DrawSectionsPtr);
+	}
 
 	void* isActorHiddenPtr = GetProcAddress(engine, MAKEINTRESOURCEA(8823));
 	{	
@@ -692,6 +736,8 @@ void InitDNFHooks()
 
 	hinstHack = (HINSTANCE * )GetProcAddress(engine, MAKEINTRESOURCEA(15446));
 	hinstWindowHack = (HINSTANCE*)GetProcAddress(engine, MAKEINTRESOURCEA(14870));
+
+	InitMeshDriver();
 
 	//*hinstHack = GetModuleHandle(NULL);
 }
