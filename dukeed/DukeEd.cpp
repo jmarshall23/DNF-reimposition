@@ -384,6 +384,12 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 				GBrowserMaster->RefreshBrowserTabs(-1);
 			}
 			break;
+
+			case ID_ViewLevelProp:
+			{
+				GEditor->exec.Exec(TEXT("LEVELPROPERTIES"), (dnOutputDevice &)globalLog);
+			}
+			break;
 		}
 	}
 };
