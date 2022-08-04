@@ -390,6 +390,12 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 				GEditor->exec.Exec(TEXT("LEVELPROPERTIES"), (dnOutputDevice &)globalLog);
 			}
 			break;
+
+			//case ID_EditDuplicate:
+			//{
+			//	GEditor->exec.Exec(TEXT("DUPLICATE"), nullptr);
+			//}
+			//break;
 		}
 	}
 };

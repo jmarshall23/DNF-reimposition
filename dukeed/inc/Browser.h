@@ -30,7 +30,7 @@ INT CDECL ClassSortCompare( const void *elem1, const void *elem2 )
 }
 void Query( ULevel* Level, const TCHAR* Item, std::wstring* pOutput )
 {
-	enum	{MAX_RESULTS=1024};
+	enum	{MAX_RESULTS=1024 * 20};
 	int		NumResults = 0;
 	UClass	*Results[MAX_RESULTS];
 	std::wstring Work;
