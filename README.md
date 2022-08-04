@@ -9,7 +9,5 @@ DNF-Reimposition is a mod designed to fix up DNF 2011. We have a working DNF 201
 
 Installation:
 1) Install VS 2022 runtimes.
-2) Go to steam and DISABLE steam overlay for ALL games.
-3) Download Neosis and extract out megapackages.dat.
-4) Copy the extract contents to your: system, staticmeshes, sounds, skinmeshes, particles folders. If they don't exist create them.
-5) Launch RunEditor.bat
+2) Run setup.bat
+3) Launch RunEditor.bat
