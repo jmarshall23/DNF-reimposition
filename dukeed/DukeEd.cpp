@@ -391,9 +391,94 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 			}
 			break;
 
-			//case ID_EditDuplicate:
+			case ID_FILE_IMPORT:
+			{
+				OPENFILENAMEW ofn;
+				wchar_t File[8192] = TEXT("\0");
+
+				ZeroMemory(&ofn, sizeof(OPENFILENAMEA));
+				ofn.lStructSize = sizeof(OPENFILENAMEA);
+				ofn.hwndOwner = hWnd;
+				ofn.lpstrFile = File;
+				ofn.nMaxFile = sizeof(char) * 8192;
+				ofn.lpstrFilter = TEXT("Unreal Engine Text (*.t3d)\0*.t3d\0All Files\0*.*\0\0");
+				//ofn.lpstrInitialDir = appToAnsi(*(GLastDir[eLASTDIR_DNF]));
+				ofn.lpstrDefExt = TEXT("t3d");
+				ofn.lpstrTitle = TEXT("Import Map");
+				ofn.Flags = OFN_HIDEREADONLY | OFN_NOCHANGEDIR;
+
+				// Display the Open dialog box.
+				//GEditor->LockMeshView = 1;
+				if (GetOpenFileNameW(&ofn))
+				{
+					TCHAR l_chCmd[512];
+					wsprintf(l_chCmd, TEXT("MAP IMPORT FILE=\"%s\""), File);
+					GEditor->exec.Exec(l_chCmd, (dnOutputDevice&)globalLog);
+				}
+			}
+			break;
+
+			case ID_FILE_EXPORT:
+			{
+				OPENFILENAMEW ofn;
+				wchar_t File[8192] = TEXT("\0");
+
+				ZeroMemory(&ofn, sizeof(OPENFILENAMEA));
+				ofn.lStructSize = sizeof(OPENFILENAMEA);
+				ofn.hwndOwner = hWnd;
+				ofn.lpstrFile = File;
+				ofn.nMaxFile = sizeof(char) * 8192;
+				ofn.lpstrFilter = TEXT("Unreal Engine Text (*.t3d)\0*.t3d\0All Files\0*.*\0\0");
+				//ofn.lpstrInitialDir = appToAnsi(*(GLastDir[eLASTDIR_DNF]));
+				ofn.lpstrDefExt = TEXT("t3d");
+				ofn.lpstrTitle = TEXT("Export Map");
+				ofn.Flags = OFN_HIDEREADONLY | OFN_NOCHANGEDIR | OFN_OVERWRITEPROMPT;
+
+				if (GetSaveFileNameW(&ofn))
+				{
+					//GEditor->exec.Exec(TEXT("BRUSHCLIP DELETE"));
+					//GEditor->exec.Exec(TEXT("POLYGON DELETE"));
+
+					TCHAR l_chCmd[512];
+					wsprintf(l_chCmd, TEXT("MAP EXPORT FILE=\"%s\""), File);
+					GEditor->exec.Exec(l_chCmd, (dnOutputDevice&)globalLog);
+				}
+			}
+			break;
+
+			case ID_EditDuplicate:
+			{
+				GEditor->exec.Exec(TEXT("EDIT DUPLICATE"), (dnOutputDevice&)globalLog);
+			}
+			break;
+
+			//case ID_EditUndo:
 			//{
-			//	GEditor->exec.Exec(TEXT("DUPLICATE"), nullptr);
+			//	GEditor->exec.Exec(TEXT("TRANSACTION UNDO"), (dnOutputDevice&)globalLog);
+			//}
+			//break;
+			//
+			//case ID_EditRedo:
+			//{
+			//	GEditor->exec.Exec(TEXT("TRANSACTION REDO"), (dnOutputDevice&)globalLog);
+			//}
+			//break;
+			//
+			//case ID_EditCut:
+			//{
+			//	GEditor->exec.Exec(TEXT("EDIT CUT"), (dnOutputDevice&)globalLog);
+			//}
+			//break;
+			//
+			//case ID_EditCopy:
+			//{
+			//	GEditor->exec.Exec(TEXT("EDIT COPY"), (dnOutputDevice&)globalLog);
+			//}
+			//break;
+			//
+			//case ID_EditPaste:
+			//{
+			//	GEditor->exec.Exec(TEXT("EDIT PASTE"), (dnOutputDevice&)globalLog);
 			//}
 			//break;
 		}

@@ -391,8 +391,8 @@ void DNFHackEntry(void)
 //	return DNFHackEntryEngine(unknown);
 }
 
-void (*dnfOutput)(void* log, wchar_t* str, ...);
-void ReroutedOutput(void *log, wchar_t* str, ...)
+void (__fastcall *dnfOutput)(void* log, wchar_t* str, ...);
+void __fastcall ReroutedOutput(void *log, wchar_t* str, ...)
 {
 	wchar_t buffer[512];
 
@@ -405,6 +405,8 @@ void ReroutedOutput(void *log, wchar_t* str, ...)
 	va_end(args);
 
 	globalLog = log;
+
+	dnfOutput(log, buffer);
 
 	if (dumpTobrowserOut)
 	{
@@ -557,37 +559,39 @@ void InitDNFHooks()
 	MH_CreateHook(function2, DNFHackTimer, (LPVOID*)&DNFHackEntryEngine);
 	MH_EnableHook(function2);
 
+
 	HINSTANCE hinst = LoadLibraryA("dncommon.dll");
+
 	void* dnOutputArgList = GetProcAddress(hinst, MAKEINTRESOURCEA(971));
 	{
 		MH_CreateHook(dnOutputArgList, ReroutedOutput, (LPVOID*)&dnfOutput);
 		MH_EnableHook(dnOutputArgList);
 	}
-	
+#if 0
 	void *dnOutputArgList2 = GetProcAddress(hinst, MAKEINTRESOURCEA(973));
 	{
 		MH_CreateHook(dnOutputArgList2, ReroutedOutput2, (LPVOID*)&dnfOutput2);
 		MH_EnableHook(dnOutputArgList2);
 	}
-	
+
 	void* dnOutputArgList6 = GetProcAddress(hinst, MAKEINTRESOURCEA(972));
 	{
 		MH_CreateHook(dnOutputArgList6, ReroutedOutput2, (LPVOID*)&dnfOutput2);
 		MH_EnableHook(dnOutputArgList6);
 	}
-	
+		
 	void* dnOutputArgList3 = GetProcAddress(hinst, MAKEINTRESOURCEA(970));
 	{
 		MH_CreateHook(dnOutputArgList3, ReroutedOutput3, (LPVOID*)&dnfOutput3);
 		MH_EnableHook(dnOutputArgList3);
 	}
-	
+
 	void* dnOutputArgList4 = GetProcAddress(hinst, MAKEINTRESOURCEA(962));
 	{
 		MH_CreateHook(dnOutputArgList4, ReroutedOutput4, (LPVOID*)&dnfOutput4);
 		MH_EnableHook(dnOutputArgList4);
 	}
-	
+#endif		
 	void* dnOutputArgList5 = GetProcAddress(hinst, MAKEINTRESOURCEA(963));
 	{
 		MH_CreateHook(dnOutputArgList5, ReroutedOutput4, (LPVOID*)&dnfOutput4);
