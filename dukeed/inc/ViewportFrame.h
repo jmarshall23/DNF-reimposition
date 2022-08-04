@@ -519,15 +519,43 @@ class WViewportFrame : public WWindow
 	}
 	void OnKeyUp( WPARAM wParam, LPARAM lParam )
 	{
-#if 0
 		// A hack to get the familiar hotkeys working again.  This should really go through
 		// Proper Windows accelerators, but I can't get them to work.
 		switch( wParam )
 		{
 			case VK_F4:
-				GEditor->Exec( TEXT("HOOK ACTORPROPERTIES") );
+				GEditor->exec.Exec(TEXT("TOGGLEEVENTLINES"), (dnOutputDevice&)globalLog); // showFlags ^= 0x80000u
 				break;
 
+//			case VK_F5:
+//			{
+//				//GEditor->exec.Exec(TEXT("TOGGLEWORKINGBRUSH"), (dnOutputDevice&)globalLog);
+//				//static bool toggle = false;
+//				//{
+//				//	dnArray<AActor*>* _actors = GEditor->GetActorList();
+//				//
+//				//	for (int i = 0; i < _actors->Num(); i++)
+//				//	{
+//				//		DWORD* ptr = (DWORD *)_actors->Get(i);
+//				//
+//				//		*(DWORD*)(ptr + 96) |= 0x10000000u;
+//				//
+//				//	//	AActor__SetHidden(_actors->Get(i), nullptr, toggle);
+//				//	}
+//				//}
+//
+//				//void* _cls = AColisionVolume__StaticClass();
+//				//GEditor->edactSelectOfClass(GEditor->level, (UClass *)_cls);
+//
+//				GEditor->exec.Exec(TEXT("ACTOR HIDE"), (dnOutputDevice&)globalLog);
+//				break;
+//			}
+//			
+//			case VK_F6:
+//				GEditor->exec.Exec(TEXT("TOGGLESHOWVOLUMES"), (dnOutputDevice&)globalLog);
+//				break;
+
+#if 0
 			case VK_F5:
 				GSurfPropSheet->Show( TRUE );
 				break;
@@ -552,7 +580,7 @@ class WViewportFrame : public WWindow
 			case VK_F8:
 				GBuildSheet->Show(1);
 				break;
-
+#endif
 			case VK_DELETE:
 				/*
 				FStringOutputDevice GetPropResult = FStringOutputDevice();
@@ -563,10 +591,9 @@ class WViewportFrame : public WWindow
 				else if ( IDYES == MessageBox( (HWND)GEditor->Client->Viewports(0)->GetWindow(), TEXT("Are you sure you want to delete?"), TEXT("Confirm Delete"), MB_YESNO | MB_ICONWARNING | MB_DEFBUTTON1 ) )
 					GEditor->Exec( TEXT("DELETE") );
 				*/
-				GEditor->Exec( TEXT("DELETE") );
+				GEditor->exec.Exec( TEXT("ACTOR DELETE"), (dnOutputDevice&)globalLog);
 				break;
 		}
-#endif
 	}
 	void OnCommand( INT Command )
 	{

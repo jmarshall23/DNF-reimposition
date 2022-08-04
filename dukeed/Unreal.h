@@ -467,6 +467,11 @@ public:
 		virtual UBOOL Exec(const TCHAR* cmd, dnOutputDevice& Ar);
 	};
 
+	dnArray<AActor*>* GetActorList()
+	{
+		return (dnArray<AActor*>*)(*((DWORD*)this + 33) + 44);
+	}
+
 	FExec exec;
 };
 
@@ -759,3 +764,5 @@ public:
 	//	*this += (TCHAR*)Data;
 	}
 };
+
+extern void* (*AColisionVolume__StaticClass)(void);
