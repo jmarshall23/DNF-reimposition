@@ -428,7 +428,7 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 				ofn.hwndOwner = hWnd;
 				ofn.lpstrFile = File;
 				ofn.nMaxFile = sizeof(char) * 8192;
-				ofn.lpstrFilter = TEXT("Unreal Engine Text (*.t3d)\0*.t3d\0All Files\0*.*\0\0");
+				ofn.lpstrFilter = TEXT("Unreal Engine Text (*.t3d)\0*.t3d\0Maya Ascii (*.ma)\0*.ma\0All Files\0*.*\0\0");
 				//ofn.lpstrInitialDir = appToAnsi(*(GLastDir[eLASTDIR_DNF]));
 				ofn.lpstrDefExt = TEXT("t3d");
 				ofn.lpstrTitle = TEXT("Export Map");
@@ -449,6 +449,18 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 			case ID_EditDuplicate:
 			{
 				GEditor->exec.Exec(TEXT("EDIT DUPLICATE"), (dnOutputDevice&)globalLog);
+			}
+			break;
+
+			case ID_EditSelectAllActors:
+			{
+				GEditor->exec.Exec(TEXT("ACTOR SELECT ALL"), (dnOutputDevice&)globalLog);
+			}
+			break;
+
+			case ID_EditSelectAllSurfs:
+			{
+				GEditor->exec.Exec(TEXT("POLY SELECT ALL"), (dnOutputDevice&)globalLog);
 			}
 			break;
 
