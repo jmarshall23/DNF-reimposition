@@ -254,7 +254,7 @@ class WButtonGroup : public WWindow
 		// Create the physical button/label
 		WCheckBox* pButton = new WCheckBox( this, _iID );
 		pWBButton->pControl = pButton;
-		pButton->OpenWindow( 1, LastX, LastY, dBUTTON_WIDTH, dBUTTON_HEIGHT, NULL, bAutoCheck, 1, BS_PUSHLIKE | BS_OWNERDRAW );
+		pButton->OpenWindow( 1, _iID, LastX, LastY, dBUTTON_WIDTH, dBUTTON_HEIGHT, NULL, bAutoCheck, 1, BS_PUSHLIKE | BS_OWNERDRAW );
 		pButton->SetBitmapReal( pWBButton->hbm );
 
 		pWBButton->hWnd = pButton->hWnd;

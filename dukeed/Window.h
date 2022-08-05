@@ -1117,8 +1117,8 @@ __declspec(dllimport) class WCheckBox : public WButton
 	{}
 
 	// WWindow interface.
-	void OpenWindow(UBOOL Visible, INT X, INT Y, INT XL, INT YL, const TCHAR* Text, UBOOL InbAutocheck = 1, UBOOL bBitmap = 0, DWORD dwExtraStyle = 0)
-	{
+	void OpenWindow(UBOOL Visible, DWORD overrideControlId, INT X, INT Y, INT XL, INT YL, const TCHAR* Text, UBOOL InbAutocheck = 1, UBOOL bBitmap = 0, DWORD dwExtraStyle = 0)
+	{		
 		bAutocheck = InbAutocheck;
 		PerformCreateWindowEx
 		(
@@ -1128,7 +1128,7 @@ __declspec(dllimport) class WCheckBox : public WButton
 			X, Y,
 			XL, YL,
 			OwnerWindow->hWnd,
-			(HMENU)ControlId,
+			(HMENU)overrideControlId,
 			GetModuleHandle(NULL)
 		);
 		SetText(Text);

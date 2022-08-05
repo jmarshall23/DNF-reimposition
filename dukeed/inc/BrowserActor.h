@@ -103,11 +103,11 @@ class WBrowserActor : public WBrowser
 
 		pInfoActorCheck = new WCheckBox( this, IDCK_INFOACTOR );
 		pInfoActorCheck->ClickDelegate = FDelegate(this, (TDelegate)&WBrowserActor::OnInfoActorClick);
-		pInfoActorCheck->OpenWindow(1, 0, 0, 1, 1, TEXT("InfoActor Only"));
+		pInfoActorCheck->OpenWindow(1, 0, 0, 0, 1, 1, TEXT("InfoActor Only"));
 
 		pRenderActorCheck = new WCheckBox(this, IDCK_RENDERACTOR);
 		pRenderActorCheck->ClickDelegate = FDelegate(this, (TDelegate)&WBrowserActor::OnRenderActorClick);
-		pRenderActorCheck->OpenWindow(1, 0, 0, 1, 1, TEXT("RenderActor Only"));
+		pRenderActorCheck->OpenWindow(1, 0, 0, 0, 1, 1, TEXT("RenderActor Only"));
 
 		pPinLabel = new WLabel( this, IDSC_PINLABEL );
 		pPinLabel->OpenWindow( 1, 0 );

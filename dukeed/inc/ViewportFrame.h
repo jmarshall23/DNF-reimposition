@@ -527,9 +527,9 @@ class WViewportFrame : public WWindow
 				GEditor->exec.Exec(TEXT("TOGGLEEVENTLINES"), (dnOutputDevice&)globalLog); // showFlags ^= 0x80000u
 				break;
 
-//			case VK_F5:
-//			{
-//				//GEditor->exec.Exec(TEXT("TOGGLEWORKINGBRUSH"), (dnOutputDevice&)globalLog);
+			case VK_F5:
+				GEditor->exec.Exec(TEXT("TOGGLEWORKINGBRUSH"), (dnOutputDevice&)globalLog);
+			break;
 //				//static bool toggle = false;
 //				//{
 //				//	dnArray<AActor*>* _actors = GEditor->GetActorList();
@@ -551,9 +551,9 @@ class WViewportFrame : public WWindow
 //				break;
 //			}
 //			
-//			case VK_F6:
-//				GEditor->exec.Exec(TEXT("TOGGLESHOWVOLUMES"), (dnOutputDevice&)globalLog);
-//				break;
+			case VK_F6:
+				GEditor->exec.Exec(TEXT("TOGGLESHOWVOLUMES"), (dnOutputDevice&)globalLog);
+				break;
 
 #if 0
 			case VK_F5:
