@@ -766,3 +766,9 @@ public:
 };
 
 extern void* (*AColisionVolume__StaticClass)(void);
+
+__declspec(dllimport) class UBrushBuilder : public UObject
+{
+public:
+	BITFIELD __fastcall eventBuild(void);
+};
