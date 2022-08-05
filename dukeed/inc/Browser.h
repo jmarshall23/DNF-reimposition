@@ -129,7 +129,7 @@ class WBrowser : public WWindow
 	HMENU hmenu;
 
 	// Structors.
-	WBrowser( dnName InPersistentName, WWindow* InOwnerWindow, HWND InEditorFrame )
+	WBrowser(const wchar_t* InPersistentName, WWindow* InOwnerWindow, HWND InEditorFrame )
 	:	WWindow( InPersistentName, InOwnerWindow )
 	{
 		//check(InOwnerWindow);

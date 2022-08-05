@@ -281,7 +281,7 @@ public:
 	LPARAM LastlParam;
 
 	WWindow(WWindow* InFrame);
-	WWindow(dnName name, WWindow * InFrame) : PersistentName(name)
+	WWindow(const wchar_t *name, WWindow* InFrame) : PersistentName(name)
 		, ControlId(0)
 		, TopControlId(FIRST_AUTO_CONTROL)
 		, Destroyed(0)
@@ -600,7 +600,7 @@ public:
 
 class WWindowFake : public WWindow {
 public:
-	WWindowFake(dnName name, WWindow* InFrame) : WWindow(name, InFrame) {
+	WWindowFake(const wchar_t *name, WWindow* InFrame) : WWindow(name, InFrame) {
 
 	}
 
@@ -1648,7 +1648,7 @@ __declspec(dllimport) class WTabControl : public WControl
 // A dialog window, always based on a Visual C++ dialog template.
 __declspec(dllimport) class WDialog : public WWindow
 {	
-	WDialog(dnName InPersistentName, INT InDialogId, WWindow* InOwnerWindow = NULL)
+	WDialog(const wchar_t* InPersistentName, INT InDialogId, WWindow* InOwnerWindow = NULL)
 		: WWindow(InPersistentName, InOwnerWindow)
 	{
 		ControlId = InDialogId;

@@ -106,7 +106,7 @@ class WBottomBar : public WWindow
 	INT NumMRUCommands;
 
 	// Structors.
-	WBottomBar( dnName InPersistentName, WWindow* InOwnerWindow )
+	WBottomBar(const wchar_t* InPersistentName, WWindow* InOwnerWindow )
 	:	WWindow( InPersistentName, InOwnerWindow )
 	{
 		//hbmLogWnd = NULL;

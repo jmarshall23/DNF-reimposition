@@ -6,7 +6,7 @@ class WLevelFrame : public WWindow
 {
 	DECLARE_WINDOWCLASS(WLevelFrame, WWindow, DukeEd)
 
-	WLevelFrame(dnName& InPersistentName, WWindow* InOwnerWindow)
+	WLevelFrame(const wchar_t* InPersistentName, WWindow* InOwnerWindow)
 		: WWindow(InPersistentName, InOwnerWindow)
 	{
 
@@ -86,7 +86,7 @@ class WLevelFrame : public WWindow
 	}
 
 	// Looks for an empty viewport slot, allocates a viewport and returns a pointer to it.
-	WViewportFrame* NewViewportFrame(dnName* pName, UBOOL bNoSize)
+	WViewportFrame* NewViewportFrame(const wchar_t* pName, UBOOL bNoSize)
 	{
 		// Create the viewport.
 		VIEWPORTCONFIG config;
@@ -98,7 +98,7 @@ class WLevelFrame : public WWindow
 		config.Top = 0;
 		config.Right = bNoSize ? 0 : 320;
 		config.Bottom = bNoSize ? 0 : 200;
-		config.m_pViewportFrame = new WViewportFrame(*pName, this);
+		config.m_pViewportFrame = new WViewportFrame(pName, this);
 		config.m_pViewportFrame->m_iIdx = GViewports.size();
 
 		GViewports.push_back(config);
@@ -144,18 +144,16 @@ class WLevelFrame : public WWindow
 	// Opens a new viewport window.  It creates a viewportframe of the specified size, then creates
 	// a viewport that fits inside of it.
 	void OpenFrameViewport(INT RendMap, INT X, INT Y, INT W, INT H, DWORD ShowFlags)
-	{
-		static dnName name = TEXT("");
-
+	{		
 		// Open a viewport frame.
-		WViewportFrame* pViewportFrame = NewViewportFrame(&name, 1);
+		WViewportFrame* pViewportFrame = NewViewportFrame(TEXT(""), 1);
 
 		if (pViewportFrame)
 		{
 			pViewportFrame->OpenWindow();
 
 			// Create the viewport inside of the frame.
-			UViewport* Viewport = GClient->NewViewport(name);
+			UViewport* Viewport = GClient->NewViewport(TEXT(""));
 
 			ULevel* level = (ULevel*)((int*)GEditor)[33];
 

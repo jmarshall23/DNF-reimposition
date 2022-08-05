@@ -96,7 +96,7 @@ class WButtonGroup : public WWindow
 	HBITMAP hbmCamSpeed[3];
 
 	// Structors.
-	WButtonGroup( dnName InPersistentName, WWindow* InOwnerWindow )
+	WButtonGroup(const wchar_t* InPersistentName, WWindow* InOwnerWindow )
 	:	WWindow( InPersistentName, InOwnerWindow )
 	{
 		iState = eBGSTATE_DOWN;
@@ -640,7 +640,7 @@ class WButtonBar : public WWindow
 	INT iScroll;
 
 	// Structors.
-	WButtonBar( dnName InPersistentName, WWindow* InOwnerWindow )
+	WButtonBar(const wchar_t* InPersistentName, WWindow* InOwnerWindow )
 	:	WWindow( InPersistentName, InOwnerWindow )
 	{
 		//pScrollBar = NULL;

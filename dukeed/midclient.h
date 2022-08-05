@@ -34,7 +34,7 @@ class WMdiFrame : public WWindow
 	WDockingFrame NotAFrame, BottomFrame, TopFrame, LeftFrame;
 
 	// Functions.
-	WMdiFrame(dnName& InPersistentName)
+	WMdiFrame(const wchar_t* InPersistentName)
 		: WWindow(InPersistentName, this)
 		, MdiClient(this)
 		, NotAFrame(TEXT("NotAFrame"), this, 32)

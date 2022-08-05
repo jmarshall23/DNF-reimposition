@@ -221,7 +221,7 @@ class WBackgroundHolder : public WWindow
 	DECLARE_WINDOWCLASS(WBackgroundHolder, WWindow, Window)
 
 	// Structors.
-	WBackgroundHolder(dnName InPersistentName, WWindow* InOwnerWindow)
+	WBackgroundHolder(const wchar_t* InPersistentName, WWindow* InOwnerWindow)
 		: WWindow(InPersistentName, InOwnerWindow)
 	{}
 
@@ -261,11 +261,9 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 	HMENU ActorPopupMenu;
 	HMENU BackdropPopupMenu;
 
-	const dnName backgroundName = TEXT("BackgroundWindow");
-
 	// Constructors.
-	WEditorFrame(dnName &name) : WMdiFrame(name)
-								, BackgroundHolder(backgroundName, &MdiClient)
+	WEditorFrame(const wchar_t* name) : WMdiFrame(name)
+								, BackgroundHolder(TEXT("BackgroundWindow"), &MdiClient)
 	{
 		
 	}
@@ -299,9 +297,7 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 		// Fix if you can...
 		if (!GLevelFrame)
 		{
-			static dnName name = TEXT("LevelFrame");
-
-			GLevelFrame = new WLevelFrame(name, &BackgroundHolder);
+			GLevelFrame = new WLevelFrame(TEXT("LevelFrame"), &BackgroundHolder);
 			GLevelFrame->OpenWindow(1, 1);
 		}
 	}
@@ -546,9 +542,7 @@ void InitEditor(void)
 	IMPLEMENT_WINDOWSUBCLASS(WTabControl, WC_TABCONTROL);
 	IMPLEMENT_WINDOWCLASS(WButtonBar, CS_DBLCLKS | CS_VREDRAW | CS_HREDRAW);
 
-	static dnName editorFrameName = TEXT("EditorFrame");
-
-	static WEditorFrame Frame(editorFrameName);
+	static WEditorFrame Frame(TEXT("EditorFrame"));
 	GEditorFrame = &Frame;
 
 	Frame.OpenWindow();

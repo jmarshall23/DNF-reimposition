@@ -26,7 +26,7 @@ class WVFToolBar : public WWindow
 	HMENU VFContextMenu;
 
 	// Structors.
-	WVFToolBar( dnName InPersistentName, WWindow* InOwnerWindow )
+	WVFToolBar(const wchar_t* InPersistentName, WWindow* InOwnerWindow )
 	:	WWindow( InPersistentName, InOwnerWindow )
 	{
 		hbm = (HBITMAP)LoadImageA( GetModuleHandle(NULL), MAKEINTRESOURCEA(IDBM_VF_TOOLBAR), IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR);
@@ -350,7 +350,7 @@ class WViewportFrame : public WWindow
 	WVFToolBar* VFToolbar;
 	
 	// Structors.
-	WViewportFrame( dnName InPersistentName, WWindow* InOwnerWindow )
+	WViewportFrame(const wchar_t* InPersistentName, WWindow* InOwnerWindow )
 	:	WWindow( InPersistentName, InOwnerWindow )
 	{
 		m_pViewport = NULL;

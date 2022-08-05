@@ -63,7 +63,7 @@ class WTopBar : public WWindow
 	std::vector<WButton *> Buttons;
 
 	// Structors.
-	WTopBar( dnName InPersistentName, WWindow* InOwnerWindow )
+	WTopBar(const wchar_t* InPersistentName, WWindow* InOwnerWindow )
 	:	WWindow( InPersistentName, InOwnerWindow )
 	{
 	}

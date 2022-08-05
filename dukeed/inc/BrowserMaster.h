@@ -25,7 +25,7 @@ class WBrowserMaster : public WBrowser
 	INT CurrentBrowser;
 
 	// Structors.
-	WBrowserMaster( dnName InPersistentName, WWindow* InOwnerWindow )
+	WBrowserMaster(const wchar_t* InPersistentName, WWindow* InOwnerWindow )
 	:	WBrowser( InPersistentName, InOwnerWindow, NULL )
 	{
 		for( INT x = 0 ; x < eBROWSER_MAX ; x++ )

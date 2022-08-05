@@ -10,7 +10,7 @@ class WDockingFrame : public WWindow
 	WWindow* Child;
 
 	// Functions.
-	WDockingFrame(dnName InPersistentName, WMdiFrame* InFrame, INT InDockDepth)
+	WDockingFrame(const wchar_t* InPersistentName, WMdiFrame* InFrame, INT InDockDepth)
 		: WWindow(InPersistentName, (WWindow*)InFrame)
 		, DockDepth(InDockDepth)
 		, Child(NULL)

@@ -151,6 +151,7 @@ __declspec(dllimport) enum EName {
 
 __declspec(dllimport) class dnName {
 public:
+	dnName();
 	dnName(enum EName N);
 	dnName(const wchar_t* name, EFindName f = (EFindName)0);
 

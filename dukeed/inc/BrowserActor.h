@@ -61,7 +61,7 @@ class WBrowserActor : public WBrowser
 	std::wstring CustomPinName;
 
 	// Structors.
-	WBrowserActor( dnName InPersistentName, WWindow* InOwnerWindow, HWND InEditorFrame )
+	WBrowserActor(const wchar_t* InPersistentName, WWindow* InOwnerWindow, HWND InEditorFrame )
 	:	WBrowser( InPersistentName, InOwnerWindow, InEditorFrame )
 	{
 		pTreeView = NULL;
