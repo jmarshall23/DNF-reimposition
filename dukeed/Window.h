@@ -18,6 +18,17 @@ __forceinline void MakeWindowClassName(TCHAR* Result, const TCHAR* Base)
 //	OutputDebugStringW(TEXT("MakeWindowClassName %s\n"), Result);
 }
 
+// Text formatting.
+inline const TCHAR* LineFormat(const TCHAR* In)
+{
+	static TCHAR Result[4069];
+	TCHAR* Ptr = Result;
+	while (*In)
+		*Ptr++ = *In++ != '\\' ? In[-1] : *In++ == 'n' ? '\n' : In[-1];
+	*Ptr++ = 0;
+	return Result;
+}
+
 /*-----------------------------------------------------------------------------
 	FCommandTarget.
 -----------------------------------------------------------------------------*/
@@ -1608,5 +1619,105 @@ __declspec(dllimport) class WTabControl : public WControl
 			SelectionChangeDelegate();
 
 		return 0;
+	}
+};
+
+
+/*-----------------------------------------------------------------------------
+	WDialog.
+-----------------------------------------------------------------------------*/
+
+// A dialog window, always based on a Visual C++ dialog template.
+__declspec(dllimport) class WDialog : public WWindow
+{	
+	WDialog(dnName InPersistentName, INT InDialogId, WWindow* InOwnerWindow = NULL)
+		: WWindow(InPersistentName, InOwnerWindow)
+	{
+		ControlId = InDialogId;
+	}
+
+	// WDialog interface.
+	INT CallDefaultProc(UINT Message, UINT wParam, LONG lParam)
+	{
+		return 0;
+	}
+	virtual INT DoModal(HINSTANCE hInst = *hinstWindowHack)
+	{
+		_windows.push_back(this);		
+		INT Result = TCHAR_CALL_OS(DialogBoxParamW(hInst/*!!*/, MAKEINTRESOURCEW(ControlId), OwnerWindow ? OwnerWindow->hWnd : NULL, (INT(APIENTRY*)(HWND, UINT, WPARAM, LPARAM))StaticWndProc, (LPARAM)this), DialogBoxParamA(hInst/*!!*/, MAKEINTRESOURCEA(ControlId), OwnerWindow ? OwnerWindow->hWnd : NULL, (INT(APIENTRY*)(HWND, UINT, WPARAM, LPARAM))StaticWndProc, (LPARAM)this));
+		return Result;
+	}
+	void OpenChildWindow(INT InControlId, UBOOL Visible)
+	{
+		_windows.push_back(this);
+		HWND hWndParent = InControlId ? GetDlgItem(OwnerWindow->hWnd, InControlId) : OwnerWindow ? OwnerWindow->hWnd : NULL;
+		HWND hWndCreated = TCHAR_CALL_OS(CreateDialogParamW(*hinstWindowHack/*!!*/, MAKEINTRESOURCEW(ControlId), hWndParent, (INT(APIENTRY*)(HWND, UINT, WPARAM, LPARAM))StaticWndProc, (LPARAM)this), CreateDialogParamA(*hinstWindowHack/*!!*/, MAKEINTRESOURCEA(ControlId), hWndParent, (INT(APIENTRY*)(HWND, UINT, WPARAM, LPARAM))StaticWndProc, (LPARAM)this));
+		Show(Visible);
+	}
+	static BOOL CALLBACK LocalizeTextEnumProc(HWND hInWmd, LPARAM lParam)
+	{
+		dnString String;
+		TCHAR** Temp = (TCHAR**)lParam;
+
+		{
+			TCHAR Ch[1024] = TEXT("");
+			SendMessage(hInWmd, WM_GETTEXT, ARRAY_COUNT(Ch), (LPARAM)Ch);
+			String = Ch;
+		}
+		if (dnString(String).Left(4) == TEXT("IDC_"))
+			SendMessageW(hInWmd, WM_SETTEXT, 0, (LPARAM)LineFormat(*String));
+		else if (String == TEXT("IDOK"))
+			SendMessageW(hInWmd, WM_SETTEXT, 0, (LPARAM)TEXT("OK"));
+		else if (String == TEXT("IDCANCEL"))
+			SendMessageW(hInWmd, WM_SETTEXT, 0, (LPARAM)TEXT("CANCEL"));
+		SendMessageW(hInWmd, WM_SETFONT, (WPARAM)GetStockObject(DEFAULT_GUI_FONT), MAKELPARAM(1, 0));
+		return 1;
+	}
+	virtual void LocalizeText(const TCHAR* Section, const TCHAR* Package)
+	{
+		const TCHAR* Temp[3];
+		Temp[0] = Section;
+		Temp[1] = Package;
+		Temp[2] = (TCHAR*)this;
+		EnumChildWindows(hWnd, LocalizeTextEnumProc, (LPARAM)Temp);
+		LocalizeTextEnumProc(hWnd, (LPARAM)Temp);
+	}
+	virtual void OnInitDialog()
+	{
+		WWindow::OnInitDialog();
+
+		SendMessageX(hWnd, WM_SETFONT, (WPARAM)GetStockObject(DEFAULT_GUI_FONT), MAKELPARAM(1, 0));
+		for (INT i = 0; i < Controls.Num(); i++)
+		{
+			// Bind all child controls.
+			WControl* Control = Controls(i);
+			//check(!Control->hWnd);
+			Control->hWnd = GetDlgItem(hWnd, Control->ControlId);
+			//check(Control->hWnd);
+			_windows.push_back(Control);
+			Control->WindowDefWndProc = (WNDPROC)GetWindowLongX(Control->hWnd, GWL_WNDPROC);
+			SetWindowLongX(Control->hWnd, GWL_WNDPROC, (LONG)WWindow::StaticWndProc);
+			//warning: Don't set GWL_HINSTANCE, it screws up subclassed edit controls in Win95.
+		}
+		for (int i = 0; i < Controls.Num(); i++)
+		{
+			// Send create to all controls.
+			Controls(i)->OnCreate();
+		}
+		TCHAR Temp[256];
+		wsprintf(Temp, TEXT("IDDIALOG_%s"), *PersistentName);
+		LocalizeText(Temp, TEXT("DukeForever"));
+	}
+	void EndDialog(INT Result)
+	{
+		::EndDialog(hWnd, Result);
+	}
+	void EndDialogTrue()
+	{
+		EndDialog(1);
+	}
+	void EndDialogFalse()
+	{
+		EndDialog(0);
 	}
 };
