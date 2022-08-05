@@ -291,8 +291,6 @@ public:
 		, Snoop(NULL) {
 		OwnerWindow = InFrame;
 		_windows.push_back(this);
-
-		memset(&Controls, 0, sizeof(Controls));
 	}
 	virtual ~WWindow() { }
 
@@ -493,9 +491,14 @@ public:
 		else if (Message == WM_COMMAND)
 		{
 			for (INT i = 0; i < Controls.Num(); i++)
+			{
+				if(Controls(i) == NULL)
+					continue;
+
 				if ((HWND)lParam == ((WWindow*)Controls(i))->hWnd
 					&& ((WWindow*)Controls(i))->InterceptControlCommand(Message, wParam, lParam))
 					return 1;
+			}
 			OnCommand(wParam);
 		}
 		else if (Message == WM_SYSCOMMAND)
@@ -730,7 +733,23 @@ __declspec(dllimport) class WButton : public WControl
 	}
 	UBOOL IsChecked(void);
 	void SetCheck(INT iCheck);
-	UBOOL InterceptControlCommand(UINT Message, UINT wParam, LONG lParam);
+	UBOOL InterceptControlCommand(UINT Message, UINT wParam, LONG lParam)
+	{
+		if (HIWORD(wParam) == BN_CLICKED)
+		{
+			Clicked();
+			ClickDelegate();
+			// This notification returns 0 instead of 1 because the editor sometimes wants
+			// to know about clicks without using a delegate (i.e. dynamically created buttons)
+			return 0;
+		}
+		else if (HIWORD(wParam) == BN_DBLCLK) { DoubleClickDelegate(); return 1; }
+		else if (HIWORD(wParam) == BN_PUSHED) { PushDelegate();        return 1; }
+		else if (HIWORD(wParam) == BN_UNPUSHED) { UnPushDelegate();      return 1; }
+		else if (HIWORD(wParam) == BN_SETFOCUS) { SetFocusDelegate();    return 1; }
+		else if (HIWORD(wParam) == BN_KILLFOCUS) { UnPushDelegate();      return 1; }
+		else return 0;
+	}
 };
 
 /*-----------------------------------------------------------------------------
