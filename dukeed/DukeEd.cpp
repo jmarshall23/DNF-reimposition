@@ -23,10 +23,13 @@
 #include "inc/BrowserMaster.h"
 WBrowserMaster* GBrowserMaster = NULL;
 #include "inc/BrowserActor.h"
+#include "inc/ButtonBar.h"
 
 class WEditorFrame *GEditorFrame;
 WBrowserActor* GBrowserActor = NULL;
 dnOuputDeviceString GetPropResult;
+
+WButtonBar* GButtonBar;
 
 // Prefebbed viewport configs.  These should be in the same order as the buttons in DlgViewportConfig.
 VIEWPORTCONFIG GTemplateViewportConfigs[4][4] =
@@ -538,8 +541,10 @@ void InitEditor(void)
 	IMPLEMENT_WINDOWCLASS(WBrowserActor, CS_DBLCLKS | CS_VREDRAW | CS_HREDRAW);
 	IMPLEMENT_WINDOWSUBCLASS(WListBox, TEXT("LISTBOX"));
 	IMPLEMENT_WINDOWSUBCLASS(WCheckListBox, TEXT("LISTBOX"));
-
+	IMPLEMENT_WINDOWCLASS(WButtonBar, CS_DBLCLKS | CS_VREDRAW | CS_HREDRAW);
+	IMPLEMENT_WINDOWCLASS(WButtonGroup, CS_DBLCLKS | CS_VREDRAW | CS_HREDRAW);
 	IMPLEMENT_WINDOWSUBCLASS(WTabControl, WC_TABCONTROL);
+	IMPLEMENT_WINDOWCLASS(WButtonBar, CS_DBLCLKS | CS_VREDRAW | CS_HREDRAW);
 
 	static dnName editorFrameName = TEXT("EditorFrame");
 
@@ -560,6 +565,11 @@ void InitEditor(void)
 	Frame.TopFrame.Dock(GTopBar);
 	Frame.TopFrame.OnSize(SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE, 0, 0);	
 
+	// Toolbar.
+	GButtonBar = new WButtonBar(TEXT("EditorToolbar"), &Frame.LeftFrame);
+	GButtonBar->OpenWindow();
+	Frame.LeftFrame.Dock(GButtonBar);
+	Frame.LeftFrame.OnSize(SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE, 0, 0);
 
 	// Load initial data from templates
 	for (int x = 0; x < GViewports.size(); x++)

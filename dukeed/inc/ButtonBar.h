@@ -9,10 +9,6 @@
 
 =============================================================================*/
 
-extern WEditorFrame* GEditorFrame;
-extern WDlgAddSpecial* GDlgAddSpecial;
-void ParseStringToArray( const TCHAR* pchDelim, FString String, TArray<FString>* _pArray);
-
 #define dBUTTON_WIDTH	32
 #define dBUTTON_HEIGHT	32
 #define dCAPTION_HEIGHT	20
@@ -69,7 +65,7 @@ typedef struct {
 	INT ID;			// Starting at IDMN_MOVER_TYPES
 } WBB_MoverType;
 
-extern INT GScrollBarWidth;
+//extern INT GScrollBarWidth;
 
 // --------------------------------------------------------------
 //
@@ -93,26 +89,25 @@ class WButtonGroup : public WWindow
 	TArray<WBB_Button> Buttons;
 	HBITMAP hbmDown, hbmUp;
 	INT iState, LastX, LastY;
-	WToolTip* ToolTipCtrl;
+	//WToolTip* ToolTipCtrl;
 	FString GroupName;
 	TArray<WBB_MoverType> MoverTypes;
-	WDlgBrushBuilder* pDBB;
+	//WDlgBrushBuilder* pDBB;
 	HBITMAP hbmCamSpeed[3];
 
 	// Structors.
-	WButtonGroup( FName InPersistentName, WWindow* InOwnerWindow )
+	WButtonGroup( dnName InPersistentName, WWindow* InOwnerWindow )
 	:	WWindow( InPersistentName, InOwnerWindow )
 	{
 		iState = eBGSTATE_DOWN;
-		hbmDown = (HBITMAP)LoadImageA( hInstance, MAKEINTRESOURCEA(IDBM_DOWN_ARROW), IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR );	check(hbmDown);
-		hbmUp = (HBITMAP)LoadImageA( hInstance, MAKEINTRESOURCEA(IDBM_UP_ARROW), IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR );	check(hbmUp);
-		hbmCamSpeed[0] = (HBITMAP)LoadImageA( hInstance, MAKEINTRESOURCEA(IDBM_CAMSPEED1), IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR );	check(hbmCamSpeed[0]);
-		hbmCamSpeed[1] = (HBITMAP)LoadImageA( hInstance, MAKEINTRESOURCEA(IDBM_CAMSPEED2), IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR );	check(hbmCamSpeed[1]);
-		hbmCamSpeed[2] = (HBITMAP)LoadImageA( hInstance, MAKEINTRESOURCEA(IDBM_CAMSPEED3), IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR );	check(hbmCamSpeed[2]);
+		hbmDown = (HBITMAP)LoadImageA(*hinstWindowHack, MAKEINTRESOURCEA(IDBM_DOWN_ARROW), IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR );
+		hbmUp = (HBITMAP)LoadImageA(*hinstWindowHack, MAKEINTRESOURCEA(IDBM_UP_ARROW), IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR );
+		hbmCamSpeed[0] = (HBITMAP)LoadImageA(*hinstWindowHack, MAKEINTRESOURCEA(IDBM_CAMSPEED1), IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR );
+		hbmCamSpeed[1] = (HBITMAP)LoadImageA(*hinstWindowHack, MAKEINTRESOURCEA(IDBM_CAMSPEED2), IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR );
+		hbmCamSpeed[2] = (HBITMAP)LoadImageA(*hinstWindowHack, MAKEINTRESOURCEA(IDBM_CAMSPEED3), IMAGE_BITMAP, 0, 0, LR_DEFAULTCOLOR );
 		LastX = 2;
 		LastY = dCAPTION_HEIGHT;
 		pExpandButton = NULL;
-		pDBB = NULL;
 	}
 
 	// WWindow interface.
@@ -131,11 +126,11 @@ class WButtonGroup : public WWindow
 			200,
 			OwnerWindow ? OwnerWindow->hWnd : NULL,
 			NULL,
-			hInstance
+			*hinstWindowHack
 		);
-		SendMessageX( *this, WM_SETFONT, (WPARAM)GetStockObject(DEFAULT_GUI_FONT), MAKELPARAM(0,0) );
+		SendMessageW( hWnd, WM_SETFONT, (WPARAM)GetStockObject(DEFAULT_GUI_FONT), MAKELPARAM(0,0) );
 
-		if(!GConfig->GetInt( TEXT("Groups"), *GroupName, iState, TEXT("DukeEd.ini") ))	iState = eBGSTATE_DOWN;
+		//if(!GConfig->GetInt( TEXT("Groups"), *GroupName, iState, TEXT("DukeEd.ini") ))	iState = eBGSTATE_DOWN;
 		UpdateButton();
 	}
 	void OnDestroy()
@@ -151,13 +146,13 @@ class WButtonGroup : public WWindow
 			DestroyWindow( pExpandButton->hWnd );
 			delete pExpandButton;
 		}
-		delete pDBB;
+
 		DeleteObject(hbmDown);
 		DeleteObject(hbmUp);
 		DeleteObject(hbmCamSpeed[0]);
 		DeleteObject(hbmCamSpeed[1]);
 		DeleteObject(hbmCamSpeed[2]);
-		delete ToolTipCtrl;
+		//delete ToolTipCtrl;
 		WWindow::OnDestroy();
 	}
 	INT OnSetCursor()
@@ -168,8 +163,8 @@ class WButtonGroup : public WWindow
 	}
 	void OnCreate()
 	{
-		ToolTipCtrl = new WToolTip(this);
-		ToolTipCtrl->OpenWindow();
+	//	ToolTipCtrl = new WToolTip(this);
+	//	ToolTipCtrl->OpenWindow();
 
 		pExpandButton = new WButton( this, IDPB_EXPAND, FDelegate(this, (TDelegate)&WButtonGroup::OnExpandButton) );
 		pExpandButton->OpenWindow( 1, 0, 0, 19, 19, TEXT(""), 1, BS_OWNERDRAW );
@@ -185,7 +180,7 @@ class WButtonGroup : public WWindow
 	}
 	void UpdateButton()
 	{
-		pExpandButton->SetBitmap( (iState == eBGSTATE_DOWN) ? hbmUp : hbmDown );
+		pExpandButton->SetBitmapReal( (iState == eBGSTATE_DOWN) ? hbmUp : hbmDown );
 	}
 	void OnSize( DWORD Flags, INT NewX, INT NewY )
 	{
@@ -200,7 +195,7 @@ class WButtonGroup : public WWindow
 	void OnPaint()
 	{
 		PAINTSTRUCT PS;
-		HDC hDC = BeginPaint( *this, &PS );
+		HDC hDC = BeginPaint( hWnd, &PS );
 		HBRUSH brushBack = CreateSolidBrush( RGB(128,128,128) );
 
 		RECT rect;
@@ -215,7 +210,7 @@ class WButtonGroup : public WWindow
 		rect.top += 6;		rect.bottom = rect.top + 3;
 		MyDrawEdge( hDC, &rect, 1 );
 
-		EndPaint( *this, &PS );
+		EndPaint( hWnd, &PS );
 
 		DeleteObject( brushBack );
 	}
@@ -233,15 +228,15 @@ class WButtonGroup : public WWindow
 
 		// Add the button into the array and set it up
 		new(Buttons)WBB_Button;
-		WBB_Button* pWBButton = &(Buttons(Buttons.Num() - 1));
-		check(pWBButton);
+		WBB_Button* pWBButton = (WBB_Button*)& (Buttons(Buttons.Num() - 1));
+		//check(pWBButton);
 
 		if( BMPFilename.Len() )
 		{
-			FString Filename = *(FString::Printf(TEXT("editorres\\%s.bmp"), *BMPFilename));
-			pWBButton->hbm = (HBITMAP)LoadImageA( hInstance, appToAnsi( *Filename ), IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE );
+			std::wstring Filename = VAPrintf(TEXT("editorres\\%s.bmp"), *BMPFilename);
+			pWBButton->hbm = (HBITMAP)LoadImageW( *hinstWindowHack, Filename.c_str(), IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE );
 			if(!pWBButton->hbm)
-				pWBButton->hbm = (HBITMAP)LoadImageA( hInstance, "BBGeneric", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE );
+				pWBButton->hbm = (HBITMAP)LoadImageA(*hinstWindowHack, "BBGeneric", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE );
 		}
 		else
 			pWBButton->hbm = NULL;
@@ -260,7 +255,7 @@ class WButtonGroup : public WWindow
 		WCheckBox* pButton = new WCheckBox( this, _iID );
 		pWBButton->pControl = pButton;
 		pButton->OpenWindow( 1, LastX, LastY, dBUTTON_WIDTH, dBUTTON_HEIGHT, NULL, bAutoCheck, 1, BS_PUSHLIKE | BS_OWNERDRAW );
-		pButton->SetBitmap( pWBButton->hbm );
+		pButton->SetBitmapReal( pWBButton->hbm );
 
 		pWBButton->hWnd = pButton->hWnd;
 
@@ -272,7 +267,7 @@ class WButtonGroup : public WWindow
 			LastY += dBUTTON_HEIGHT;
 		}
 
-		ToolTipCtrl->AddTool( pButton->hWnd, Text, _iID );
+	//	ToolTipCtrl->AddTool( pButton->hWnd, Text, _iID );
 	}
 	INT GetFullHeight()
 	{
@@ -288,10 +283,10 @@ class WButtonGroup : public WWindow
 			// Figure out which mover was chosen
 			for( INT x = 0 ; x < MoverTypes.Num() ; x++ )
 			{
-				WBB_MoverType* pwbbmt = &(MoverTypes(x));
+				WBB_MoverType* pwbbmt = (WBB_MoverType*)&(MoverTypes(x));
 				if( pwbbmt->ID == Command )
 				{
-					GEditor->Exec( *(FString::Printf(TEXT("BRUSH ADDMOVER CLASS=%s"), pwbbmt->Name ) ) );
+					GEditor->exec.Exec( VAPrintf(TEXT("BRUSH ADDMOVER CLASS=%s"), pwbbmt->Name ).c_str()  );
 					break;
 				}
 			}
@@ -309,20 +304,20 @@ class WButtonGroup : public WWindow
 							CreateMoverTypeList();
 
 							HMENU menu = CreatePopupMenu();
-							MENUITEMINFOA mif;
+							MENUITEMINFOW mif;
 
-							mif.cbSize = sizeof(MENUITEMINFO);
+							mif.cbSize = sizeof(MENUITEMINFOW);
 							mif.fMask = MIIM_TYPE | MIIM_ID;
 							mif.fType = MFT_STRING;
 
 							for( INT x = 0 ; x < MoverTypes.Num() ; x++ )
 							{
-								WBB_MoverType* pwbbmt = &(MoverTypes(x));
+								WBB_MoverType* pwbbmt = (WBB_MoverType*) &(MoverTypes(x));
 
-								mif.dwTypeData = TCHAR_TO_ANSI( *(pwbbmt->Name) );
+								mif.dwTypeData = (LPWSTR)* (pwbbmt->Name);
 								mif.wID = pwbbmt->ID;
 
-								InsertMenuItemA( menu, 99999, FALSE, &mif );
+								InsertMenuItemW( menu, 99999, FALSE, &mif );
 							}
 
 							POINT point;
@@ -341,13 +336,13 @@ class WButtonGroup : public WWindow
 
 							for( INT x = 0 ; x < Buttons.Num() ; x++ )
 							{
-								pwbb = &(Buttons(x));
+								pwbb = (WBB_Button*) & (Buttons(x));
 								if( pwbb->ID == LastlParam
 										&& pwbb->Builder)
 								{
-									delete pDBB;
-									pDBB = new WDlgBrushBuilder( NULL, this, pwbb->Builder );
-									pDBB->DoModeless();
+									//delete pDBB;
+									//pDBB = new WDlgBrushBuilder( NULL, this, pwbb->Builder );
+									//pDBB->DoModeless();
 									break;
 								}
 							}
@@ -373,6 +368,7 @@ class WButtonGroup : public WWindow
 	}
 	void CreateMoverTypeList(void)
 	{
+#if 0 // jmarshall fix me
 		MoverTypes.Empty();
 
 		INT ID = IDMN_MOVER_TYPES;
@@ -397,6 +393,7 @@ class WButtonGroup : public WWindow
 				pwbbmt->Name = It->GetName();
 				ID++;
 			}
+#endif
 	}
 	// Searches the list for the button that was clicked, and executes the appropriate command.
 	void ButtonClicked( INT ID )
@@ -408,7 +405,7 @@ class WButtonGroup : public WWindow
 				WBB_Button* pwbb = &(Buttons(x));
 				if( pwbb->ID == ID )
 				{
-					GEditor->Exec( *(pwbb->ExecCommand) );
+					GEditor->exec.Exec( *(pwbb->ExecCommand) );
 					return;
 				}
 			}
@@ -418,123 +415,123 @@ class WButtonGroup : public WWindow
 		{
 			case IDPB_CAMERA_SPEED:
 				{
-					WCheckBox* pButton = GetButton(IDPB_CAMERA_SPEED);	check(pButton);
-					if( GEditor->MovementSpeed == 1 )		GEditor->Exec( TEXT("MODE SPEED=4") );
-					else if( GEditor->MovementSpeed == 4 )	GEditor->Exec( TEXT("MODE SPEED=16") );
-					else									GEditor->Exec( TEXT("MODE SPEED=1") );
+				//	WCheckBox* pButton = GetButton(IDPB_CAMERA_SPEED);	check(pButton);
+				//	if( GEditor->MovementSpeed == 1 )		GEditor->exec.Exec( TEXT("MODE SPEED=4") );
+				//	else if( GEditor->MovementSpeed == 4 )	GEditor->exec.Exec( TEXT("MODE SPEED=16") );
+				//	else									GEditor->exec.Exec( TEXT("MODE SPEED=1") );
 				}
 				break;
 
 			case IDPB_MODE_CAMERA:
-				GEditor->Exec(TEXT("MODE CAMERAMOVE"));
+				GEditor->exec.Exec(TEXT("MODE CAMERAMOVE"));
 				break;
 
 			case IDPB_MODE_SCALE:
-				GEditor->Exec(TEXT("MODE BRUSHSNAP"));
+				GEditor->exec.Exec(TEXT("MODE BRUSHSNAP"));
 				break;
 
 			case IDPB_MODE_ROTATE:
-				GEditor->Exec(TEXT("MODE BRUSHROTATE"));
+				GEditor->exec.Exec(TEXT("MODE BRUSHROTATE"));
 				break;
 
 			case IDPB_MODE_VERTEX_EDIT:
-				GEditor->Exec(TEXT("MODE VERTEXEDIT"));
+				GEditor->exec.Exec(TEXT("MODE VERTEXEDIT"));
 				break;
 
 			case IDPB_MODE_POLYGON:
-				GEditor->Exec(TEXT("MODE POLYGON"));
+				GEditor->exec.Exec(TEXT("MODE POLYGON"));
 				break;
 
 			case IDPB_MODE_TERRAINEDIT:
-				GEditor->Exec(TEXT("MODE TERRAINEDIT"));
+				GEditor->exec.Exec(TEXT("MODE TERRAINEDIT"));
 				break;
 
 			case IDPB_MODE_BRUSH_CLIP:
-				GEditor->Exec(TEXT("MODE BRUSHCLIP"));
+				GEditor->exec.Exec(TEXT("MODE BRUSHCLIP"));
 				break;
 
 			case IDPB_MODE_FACE_DRAG:
-				GEditor->Exec(TEXT("MODE FACEDRAG"));
+				GEditor->exec.Exec(TEXT("MODE FACEDRAG"));
 				break;
 
 			case IDPB_SHOW_SELECTED:
-				GEditor->Exec( TEXT("ACTOR HIDE UNSELECTED") );
+				GEditor->exec.Exec( TEXT("ACTOR HIDE UNSELECTED") );
 				break;
 
 			case IDPB_HIDE_SELECTED:
-				GEditor->Exec( TEXT("ACTOR HIDE SELECTED") );
+				GEditor->exec.Exec( TEXT("ACTOR HIDE SELECTED") );
 				break;
 
 			case IDPB_SHOW_ALL:
-				GEditor->Exec( TEXT("ACTOR UNHIDE ALL") );
+				GEditor->exec.Exec( TEXT("ACTOR UNHIDE ALL") );
 				break;
 
 			case IDPB_INVERT_SELECTION:
-				GEditor->Exec( TEXT("ACTOR SELECT INVERT") );
+				GEditor->exec.Exec( TEXT("ACTOR SELECT INVERT") );
 				break;
 
 			case IDPB_BRUSHCLIP:
-				GEditor->Exec( TEXT("BRUSHCLIP") );
-				GEditor->RedrawLevel( GEditor->Level );
+				GEditor->exec.Exec( TEXT("BRUSHCLIP") );
+				GEditor->RedrawLevel( GEditor->level );
 				break;
 
 			case IDPB_BRUSHCLIP_SPLIT:
-				GEditor->Exec( TEXT("BRUSHCLIP SPLIT") );
-				GEditor->RedrawLevel( GEditor->Level );
+				GEditor->exec.Exec( TEXT("BRUSHCLIP SPLIT") );
+				GEditor->RedrawLevel( GEditor->level );
 				break;
 
 			case IDPB_BRUSHCLIP_FLIP:
-				GEditor->Exec( TEXT("BRUSHCLIP FLIP") );
-				GEditor->RedrawLevel( GEditor->Level );
+				GEditor->exec.Exec( TEXT("BRUSHCLIP FLIP") );
+				GEditor->RedrawLevel( GEditor->level );
 				break;
 
 			case IDPB_BRUSHCLIP_DELETE:
-				GEditor->Exec( TEXT("BRUSHCLIP DELETE") );
-				GEditor->RedrawLevel( GEditor->Level );
+				GEditor->exec.Exec( TEXT("BRUSHCLIP DELETE") );
+				GEditor->RedrawLevel( GEditor->level );
 				break;
 
 			case IDPB_TEXTURE_PAN:
-				GEditor->Exec(TEXT("MODE TEXTUREPAN"));
+				GEditor->exec.Exec(TEXT("MODE TEXTUREPAN"));
 				break;
 
 			case IDPB_TEXTURE_ROTATE:
-				GEditor->Exec(TEXT("MODE TEXTUREROTATE"));
+				GEditor->exec.Exec(TEXT("MODE TEXTUREROTATE"));
 				break;
 
 			case IDPB_MODE_ADD:
-				GEditor->Exec( TEXT("BRUSH ADD") );
+				GEditor->exec.Exec( TEXT("BRUSH ADD") );
 				break;
 
 			case IDPB_MODE_ADDHARDWARE:
-				GEditor->Exec( TEXT("STATICMESH FROM BRUSH") );
+				GEditor->exec.Exec( TEXT("STATICMESH FROM BRUSH") );
 				break;
 
 			case IDPB_MODE_SUBTRACT:
-				GEditor->Exec( TEXT("BRUSH SUBTRACT") );
+				GEditor->exec.Exec( TEXT("BRUSH SUBTRACT") );
 				break;
 
 			case IDPB_MODE_INTERSECT:
-				GEditor->Exec( TEXT("BRUSH FROM INTERSECTION") );
+				GEditor->exec.Exec( TEXT("BRUSH FROM INTERSECTION") );
 				break;
 
 			case IDPB_MODE_DEINTERSECT:
-				GEditor->Exec( TEXT("BRUSH FROM DEINTERSECTION") );
+				GEditor->exec.Exec( TEXT("BRUSH FROM DEINTERSECTION") );
 				break;
 
 			case IDPB_ADD_SPECIAL:
 				{
-					if( !GDlgAddSpecial )
-					{
-						GDlgAddSpecial = new WDlgAddSpecial( NULL, this );
-						GDlgAddSpecial->DoModeless();
-					}
-					else
-						GDlgAddSpecial->Show(1);
+				//if( !GDlgAddSpecial )
+				//{
+				//	GDlgAddSpecial = new WDlgAddSpecial( NULL, this );
+				//	GDlgAddSpecial->DoModeless();
+				//}
+				//else
+				//	GDlgAddSpecial->Show(1);
 				}
 				break;
 
 			case IDPB_ADD_MOVER:
-				GEditor->Exec( TEXT("BRUSH ADDMOVER") );
+				GEditor->exec.Exec( TEXT("BRUSH ADDMOVER") );
 				break;
 
 			default:
@@ -547,11 +544,11 @@ class WButtonGroup : public WWindow
 					pwbb = &(Buttons(x));
 					if( pwbb->ID == ID )
 					{
-						check( pwbb->Builder );
+						//check( pwbb->Builder );
 						UBOOL GIsSavedScriptableSaved = 1;
-						Exchange(GIsScriptable,GIsSavedScriptableSaved);
+						//Exchange(GIsScriptable,GIsSavedScriptableSaved);
 						pwbb->Builder->eventBuild();
-						Exchange(GIsScriptable,GIsSavedScriptableSaved);
+						//Exchange(GIsScriptable,GIsSavedScriptableSaved);
 					}
 				}
 				break;
@@ -562,44 +559,45 @@ class WButtonGroup : public WWindow
 	// Updates the states of the buttons to match editor settings.
 	void UpdateButtons()
 	{
-		if( GetDlgItem( hWnd, IDPB_MODE_CAMERA ) )	// Make sure we're in the mode group before bothering
-		{
-//			WCheckBox* pcheckbox;
-
-			GetButton( IDPB_MODE_CAMERA )->SetCheck( GEditor->Mode==EM_ViewportMove );
-			GetButton( IDPB_MODE_SCALE )->SetCheck( GEditor->Mode==EM_BrushSnap );
-			GetButton( IDPB_MODE_ROTATE )->SetCheck( GEditor->Mode==EM_BrushRotate );
-			GetButton( IDPB_TEXTURE_PAN )->SetCheck( GEditor->Mode==EM_TexturePan );
-			GetButton( IDPB_TEXTURE_ROTATE )->SetCheck( GEditor->Mode==EM_TextureRotate );
-			GetButton( IDPB_MODE_VERTEX_EDIT )->SetCheck( GEditor->Mode==EM_VertexEdit );
-			GetButton( IDPB_MODE_BRUSH_CLIP )->SetCheck( GEditor->Mode==EM_BrushClip );
-			GetButton( IDPB_MODE_POLYGON)->SetCheck( GEditor->Mode==EM_Polygon );
-			GetButton( IDPB_MODE_FACE_DRAG )->SetCheck( GEditor->Mode==EM_FaceDrag );
-			GetButton( IDPB_MODE_TERRAINEDIT)->SetCheck( GEditor->Mode==EM_TerrainEdit );
-
-			// Force all the buttons to paint themselves
-			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_CAMERA ), NULL, 1 );
-			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_SCALE ), NULL, 1 );
-			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_ROTATE ), NULL, 1 );
-			InvalidateRect( GetDlgItem( hWnd, IDPB_TEXTURE_PAN ), NULL, 1 );
-			InvalidateRect( GetDlgItem( hWnd, IDPB_TEXTURE_ROTATE ), NULL, 1 );
-			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_VERTEX_EDIT ), NULL, 1 );
-			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_BRUSH_CLIP ), NULL, 1 );
-			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_FACE_DRAG ), NULL, 1 );
-			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_POLYGON ), NULL, 1 );
-			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_TERRAINEDIT ), NULL, 1 );
-		}
+		//		if( GetDlgItem( hWnd, IDPB_MODE_CAMERA ) )	// Make sure we're in the mode group before bothering
+		//		{
+		////			WCheckBox* pcheckbox;
+		//
+		//			GetButton( IDPB_MODE_CAMERA )->SetCheck( GEditor->Mode==EM_ViewportMove );
+		//			GetButton( IDPB_MODE_SCALE )->SetCheck( GEditor->Mode==EM_BrushSnap );
+		//			GetButton( IDPB_MODE_ROTATE )->SetCheck( GEditor->Mode==EM_BrushRotate );
+		//			GetButton( IDPB_TEXTURE_PAN )->SetCheck( GEditor->Mode==EM_TexturePan );
+		//			GetButton( IDPB_TEXTURE_ROTATE )->SetCheck( GEditor->Mode==EM_TextureRotate );
+		//			GetButton( IDPB_MODE_VERTEX_EDIT )->SetCheck( GEditor->Mode==EM_VertexEdit );
+		//			GetButton( IDPB_MODE_BRUSH_CLIP )->SetCheck( GEditor->Mode==EM_BrushClip );
+		//			GetButton( IDPB_MODE_POLYGON)->SetCheck( GEditor->Mode==EM_Polygon );
+		//			GetButton( IDPB_MODE_FACE_DRAG )->SetCheck( GEditor->Mode==EM_FaceDrag );
+		//			GetButton( IDPB_MODE_TERRAINEDIT)->SetCheck( GEditor->Mode==EM_TerrainEdit );
+		//
+		//			// Force all the buttons to paint themselves
+		//			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_CAMERA ), NULL, 1 );
+		//			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_SCALE ), NULL, 1 );
+		//			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_ROTATE ), NULL, 1 );
+		//			InvalidateRect( GetDlgItem( hWnd, IDPB_TEXTURE_PAN ), NULL, 1 );
+		//			InvalidateRect( GetDlgItem( hWnd, IDPB_TEXTURE_ROTATE ), NULL, 1 );
+		//			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_VERTEX_EDIT ), NULL, 1 );
+		//			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_BRUSH_CLIP ), NULL, 1 );
+		//			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_FACE_DRAG ), NULL, 1 );
+		//			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_POLYGON ), NULL, 1 );
+		//			InvalidateRect( GetDlgItem( hWnd, IDPB_MODE_TERRAINEDIT ), NULL, 1 );
+		//		}
 
 		if( GetDlgItem( hWnd, IDPB_CAMERA_SPEED ) )
 		{
 			WCheckBox* pButton = GetButton(IDPB_CAMERA_SPEED);
 
-			if( GEditor->MovementSpeed == 1 )
-				pButton->SetBitmap( hbmCamSpeed[0] );
-			else if( GEditor->MovementSpeed == 4 )
-				pButton->SetBitmap( hbmCamSpeed[1] );
-			else
-				pButton->SetBitmap( hbmCamSpeed[2] );
+			//if( GEditor->MovementSpeed == 1 )
+			//	pButton->SetBitmapReal( hbmCamSpeed[0] );
+			//else if( GEditor->MovementSpeed == 4 )
+			//	pButton->SetBitmap( hbmCamSpeed[1] );
+			//else
+			//	pButton->SetBitmap( hbmCamSpeed[2] );
+			pButton->SetBitmapReal(hbmCamSpeed[0]);
 			InvalidateRect( pButton->hWnd, NULL, 1 );
 		}
 	}
@@ -612,7 +610,7 @@ class WButtonGroup : public WWindow
 				return (WCheckBox*)pwbb->pControl;
 		}
 
-		check(0);	// this should never happen
+	//	check(0);	// this should never happen
 		return NULL;
 	}
 	void RefreshBuilders()
@@ -638,14 +636,14 @@ class WButtonBar : public WWindow
 
 	TArray<WButtonGroup> Groups;
 	INT LastX, LastY;
-	WVScrollBar* pScrollBar;
+//	WVScrollBar* pScrollBar;
 	INT iScroll;
 
 	// Structors.
-	WButtonBar( FName InPersistentName, WWindow* InOwnerWindow )
+	WButtonBar( dnName InPersistentName, WWindow* InOwnerWindow )
 	:	WWindow( InPersistentName, InOwnerWindow )
 	{
-		pScrollBar = NULL;
+		//pScrollBar = NULL;
 		iScroll = 0;
 	}
 
@@ -665,22 +663,23 @@ class WButtonBar : public WWindow
 			200,
 			OwnerWindow ? OwnerWindow->hWnd : NULL,
 			NULL,
-			hInstance
+			*hinstWindowHack
 		);
-		SendMessageX( *this, WM_SETFONT, (WPARAM)GetStockObject(DEFAULT_GUI_FONT), MAKELPARAM(0,0) );
+		SendMessageW(hWnd, WM_SETFONT, (WPARAM)GetStockObject(DEFAULT_GUI_FONT), MAKELPARAM(0, 0) );
 	}
 	void RefreshScrollBar( void )
 	{
-		if( !pScrollBar ) return;
+#if 0
+	//	if( !pScrollBar ) return;
 
 		RECT rect;
 		::GetClientRect( hWnd, &rect );
 
-		if( (rect.bottom < GetHeightOfAllGroups()
-				&& !IsWindowEnabled( pScrollBar->hWnd ) )
-				|| (rect.bottom >= GetHeightOfAllGroups()
-				&& IsWindowEnabled( pScrollBar->hWnd ) ) )
-			iScroll = 0;
+//		if( (rect.bottom < GetHeightOfAllGroups()
+//				&& !IsWindowEnabled( pScrollBar->hWnd ) )
+//				|| (rect.bottom >= GetHeightOfAllGroups()
+//				&& IsWindowEnabled( pScrollBar->hWnd ) ) )
+//			iScroll = 0;
 
 		// Set the scroll bar to have a valid range.
 		//
@@ -694,6 +693,7 @@ class WButtonBar : public WWindow
 
 		EnableWindow( pScrollBar->hWnd, (rect.bottom < GetHeightOfAllGroups()) );
 		PositionChildControls();
+#endif
 	}
 	INT GetHeightOfAllGroups()
 	{
@@ -706,7 +706,7 @@ class WButtonBar : public WWindow
 	}
 	void OnDestroy()
 	{
-		delete pScrollBar;
+	//	delete pScrollBar;
 		WWindow::OnDestroy();
 	}
 	INT OnSetCursor()
@@ -721,7 +721,7 @@ class WButtonBar : public WWindow
 		new(Groups)WButtonGroup( TEXT(""), this );
 		WButtonGroup* pbuttongroup = &(Groups(Groups.Num() - 1));
 		pbuttongroup->GroupName = GroupName;
-		check(pbuttongroup);
+		//check(pbuttongroup);
 		return pbuttongroup;
 	}
 	// Doing things like loading new maps and such will cause us to have to recreate
@@ -735,8 +735,8 @@ class WButtonBar : public WWindow
 	{
 		WWindow::OnCreate();
 
-		pScrollBar = new WVScrollBar( this, IDSB_SCROLLBAR2 );
-		pScrollBar->OpenWindow( 1, 0, 0, 320, 200 );
+		//pScrollBar = new WVScrollBar( this, IDSB_SCROLLBAR2 );
+		//pScrollBar->OpenWindow( 1, 0, 0, 320, 200 );
 
 		// Load the buttons onto the bar.
 		WButtonGroup* pGroup;
@@ -762,7 +762,7 @@ class WButtonBar : public WWindow
 		pGroup->AddButton( IDPB_BRUSHCLIP_DELETE, 0, TEXT("BrushClipDelete"), TEXT("Delete Clipping Markers"), NULL, 0 );
 
 		INT ID = IDPB_BRUSH_BUILDERS;
-
+#if 0 // jmarshall fix me
 		pGroup = AddGroup( TEXT("Builders") );
 		pGroup->OpenWindow();
 		for( TObjectIterator<UClass> ItC; ItC; ++ItC )
@@ -775,7 +775,7 @@ class WButtonBar : public WWindow
 					ID++;
 				}
 			}
-
+#endif
 		pGroup = AddGroup( TEXT("CSG") );
 		pGroup->OpenWindow();
 		pGroup->AddButton( IDPB_MODE_ADD, 0, TEXT("ModeAdd"), TEXT("Add"), NULL, 0 );
@@ -796,7 +796,7 @@ class WButtonBar : public WWindow
 
 		pGroup = AddGroup( TEXT("UserDefined") );
 		pGroup->OpenWindow();
-
+#if 0
 		INT NumButtons;
 		if(!GConfig->GetInt( TEXT("UserDefinedGroup"), TEXT("NumButtons"), NumButtons, TEXT("DukeEd.ini") ))	NumButtons = 0;
 
@@ -814,7 +814,7 @@ class WButtonBar : public WWindow
 				pGroup->AddButton( IDPB_USER_DEFINED + x, 0, *Fields(1), *Fields(0), NULL, 0, *Fields(2) );
 			}
 		}
-
+#endif
 		PositionChildControls();
 		UpdateButtons();
 	}
@@ -828,14 +828,15 @@ class WButtonBar : public WWindow
 		// Figure out where each buttongroup window should go.
 		for( INT x = 0 ; x < Groups.Num() ; x++ )
 		{
-			::MoveWindow( Groups(x).hWnd, 0, LastY, rect.right - GScrollBarWidth, Groups(x).GetFullHeight(), 1 );
+			::MoveWindow( Groups(x).hWnd, 0, LastY, rect.right, Groups(x).GetFullHeight(), 1 );
 			LastY += Groups(x).GetFullHeight();
 		}
 
-		::MoveWindow( pScrollBar->hWnd, rect.right - GScrollBarWidth, 0, GScrollBarWidth, rect.bottom, 1 );
+	//	::MoveWindow( pScrollBar->hWnd, rect.right - GScrollBarWidth, 0, GScrollBarWidth, rect.bottom, 1 );
 	}
 	virtual void OnVScroll( WPARAM wParam, LPARAM lParam )
 	{
+#if 0
 		if( (HWND)lParam == pScrollBar->hWnd ) {
 
 			switch(LOWORD(wParam)) {
@@ -871,18 +872,19 @@ class WButtonBar : public WWindow
 					break;
 			}
 		}
+#endif
 	}
 	void OnPaint()
 	{
 		PAINTSTRUCT PS;
-		HDC hDC = BeginPaint( *this, &PS );
+		HDC hDC = BeginPaint( hWnd, &PS );
 		HBRUSH brushBack = CreateSolidBrush( RGB(128,128,128) );
 
 		FRect Rect = GetClientRect();
 		FillRect( hDC, Rect, brushBack );
 		MyDrawEdge( hDC, Rect, 1 );
 
-		EndPaint( *this, &PS );
+		EndPaint( hWnd, &PS );
 
 		DeleteObject( brushBack );
 	}

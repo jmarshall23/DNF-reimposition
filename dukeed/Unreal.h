@@ -13,7 +13,12 @@
 #undef min
 #undef max
 
+#define FString dnString
+#define TArray dnArray
+
 extern bool ignoreGLog;
+
+extern void* globalLog;
 
 // Global constants.
 enum { INDEX_NONE = -1 };
@@ -60,6 +65,12 @@ __declspec(dllimport) enum EFindName;
 template<class T>
 class dnArray {
 public:
+	dnArray() {
+		Data = nullptr;
+		ArrayNum = 0;
+		ArrayMax = 0;
+	}
+
 	int Num() { return ArrayNum; }
 
 	void* GetData()
@@ -76,9 +87,57 @@ public:
 		return ((T*)Data)[i];
 	}
 
+	INT AddItem(const T& Item)
+	{	
+		INT Index = Add(1, true);
+		(*this)(Index) = Item;
+		return Index;
+	}
+
+	T& operator()(INT i) 
+	{
+		return ((T*)Data)[i];
+	}
+
 	const T& Get(INT i) const
 	{
 		return ((T*)Data)[i];
+	}
+	
+	INT Add(INT Count, INT ElementSize)
+	{		
+		INT Index = ArrayNum;
+		if ((ArrayNum += Count) > ArrayMax)
+		{
+			ArrayMax = ArrayNum + 3 * ArrayNum / 8 + 32;
+			Realloc(ElementSize);
+		}
+
+		return Index;
+	}
+
+	void Empty(INT ElementSize, INT Slack = 0)
+	{
+		ArrayNum = 0;
+		ArrayMax = Slack;
+		Realloc(ElementSize);
+	}
+
+	void Realloc(INT ElementSize)
+	{
+		Data = (T *)::realloc(Data, ArrayMax * ElementSize);
+	}
+
+	// Functions dependent on Add, Remove.
+	dnArray& operator=(const dnArray& Other)
+	{
+		if (this != &Other)
+		{
+			Empty(Other.ArrayNum);
+			for (INT i = 0; i < Other.ArrayNum; i++)
+				new(*this)T(Other(i));
+		}
+		return *this;
 	}
 
 	T* Data;
@@ -157,8 +216,10 @@ public:
 
 	static UClass* StaticClass();
 
+	static class UPackage* GetTransientPackage();
+
 	static UObject* StaticLoadObject(class UClass* ObjectClass, UObject* InOuter, const TCHAR* InName, const TCHAR* Filename, DWORD LoadFlags, UPackageMap* Sandbox);
-	static UObject* StaticConstructObject(class UClass* cls, UObject* outer, dnName* name, DWORD SetFlags, UObject* unknown, class dnOutputDevice* outpoutDevice, UObject* unknown2);
+	static UObject* StaticConstructObject(class UClass* cls, UObject* outer, const dnName &name, DWORD SetFlags, UObject* unknown, class dnOutputDevice* outpoutDevice, UObject* unknown2);
 	static void ResetLoaders(UObject* Pkg, UBOOL DynamicOnly, UBOOL ForceLazyLoad);
 };
 
@@ -464,7 +525,7 @@ public:
 	class __declspec(dllimport) FExec
 	{
 	public:
-		virtual UBOOL Exec(const TCHAR* cmd, dnOutputDevice& Ar);
+		virtual UBOOL Exec(const TCHAR* cmd, dnOutputDevice& Ar = (dnOutputDevice&)globalLog);
 	};
 
 	dnArray<AActor*>* GetActorList()
@@ -772,3 +833,23 @@ __declspec(dllimport) class UBrushBuilder : public UObject
 public:
 	BITFIELD __fastcall eventBuild(void);
 };
+
+// Construct an object of a particular class.
+template< class T > T* ConstructObject(UClass* Class, UObject* Outer = (UObject*)-1, dnName Name = NAME_None, DWORD SetFlags = 0)
+{
+	if (Outer == (UObject*)-1)
+		Outer = (UObject*)UObject::GetTransientPackage();
+	return (T*)UObject::StaticConstructObject(Class, Outer, Name, SetFlags, nullptr, (dnOutputDevice *)globalLog, nullptr);
+}
+
+template <class T> void* operator new(size_t Size, TArray<T>& Array, INT Index)
+{
+	Array.Insert(Index, 1, sizeof(T));
+	return &Array(Index);
+}
+
+template <class T> void* operator new(size_t Size, TArray<T>& Array)
+{
+	INT Index = Array.Add(1, sizeof(T));
+	return &Array(Index);
+}

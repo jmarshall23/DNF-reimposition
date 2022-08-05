@@ -291,6 +291,8 @@ public:
 		, Snoop(NULL) {
 		OwnerWindow = InFrame;
 		_windows.push_back(this);
+
+		memset(&Controls, 0, sizeof(Controls));
 	}
 	virtual ~WWindow() { }
 
