@@ -313,8 +313,8 @@ public:
 	virtual void SetMinWidth(int& width);
 	virtual void SetMinHeight(int& height);
 	virtual void Serialize(dnArchive& arhive);
+	virtual const TCHAR* GetPackageName() { return TEXT("DukeEd"); }
 	virtual void DoDestroy(void);
-	virtual void OnCreate();
 	virtual void GetWindowClassName(TCHAR* Result) = 0;
 	virtual LONG WndProc(UINT Message, UINT wParam, LONG lParam)
 #if 1
@@ -379,7 +379,7 @@ public:
 			OnKeyDown(wParam);
 		}
 		else if (Message == WM_PAINT)
-		{			
+		{
 			OnPaint();
 		}
 		else if (Message == WM_CREATE)
@@ -448,11 +448,11 @@ public:
 		}
 		else if (Message == WM_LBUTTONUP)
 		{
-		//	OnLeftButtonUp();
+			//	OnLeftButtonUp();
 		}
 		else if (Message == WM_RBUTTONUP)
 		{
-		//	OnRightButtonUp();
+			//	OnRightButtonUp();
 		}
 		else if (Message == WM_CUT)
 		{
@@ -473,11 +473,11 @@ public:
 		}
 		else if (Message == WM_NOTIFY)
 		{
-		for (INT i = 0; i < Controls.Num(); i++)
-			if (wParam == ((WWindow*)Controls(i))->ControlId
-				&& ((WWindow*)Controls(i))->InterceptControlCommand(Message, wParam, lParam))
-				return 1;
-		OnCommand(wParam);
+			for (INT i = 0; i < Controls.Num(); i++)
+				if (wParam == ((WWindow*)Controls(i))->ControlId
+					&& ((WWindow*)Controls(i))->InterceptControlCommand(Message, wParam, lParam))
+					return 1;
+			OnCommand(wParam);
 
 		}
 		else if (Message == WM_VSCROLL)
@@ -492,7 +492,7 @@ public:
 		{
 			for (INT i = 0; i < Controls.Num(); i++)
 			{
-				if(Controls(i) == NULL)
+				if (Controls(i) == NULL)
 					continue;
 
 				if ((HWND)lParam == ((WWindow*)Controls(i))->hWnd
@@ -512,29 +512,29 @@ public:
 	virtual INT CallDefaultProc(UINT Message, UINT wParam, LONG lParam);
 	virtual UBOOL InterceptControlCommand(UINT Message, UINT wParam, LONG lParam);
 	virtual dnString GetText();
+	virtual void SetText(const dnString& text);
 	virtual void SetText(const TCHAR* Text);
 	virtual INT GetLength();
 	virtual void OnCopyData(HWND hWndSender, COPYDATASTRUCT* CD);
 	virtual void OnSetFocus(HWND hWndLosingFocus);
 	virtual void OnKillFocus(HWND hWndGaininFocus);
 	virtual void OnSize(DWORD Flags, INT NewX, INT NewY);
-	//virtual void OnWindowPosChanging(INT* NewX, INT* NewY, INT* NewWidth, INT* NewHeight) { /* not correct */ }
-	virtual UBOOL ShouldClose(); // THIS IS WRONG BUT MORE ACCUATE THEN THE ABOVE CAUSE ITS NUKES THE VTABLE ENTRY
 	virtual void OnCommand(INT Command);
-	virtual INT OnSysCommand(INT Command);	
+	virtual INT OnSysCommand(INT Command);
 	virtual void OnActivate(UBOOL Active);
 	virtual void OnChar(TCHAR Ch);
+	virtual void RecoverLostWindow(void);
 	virtual void OnKeyDown(TCHAR Ch);
 	virtual void OnCut();
 	virtual void OnCopy();
 	virtual void OnPaste();
 	virtual void OnShowWindow(UBOOL bShow);
 	virtual void OnUndo();
-
 	virtual void OnVScroll(WPARAM wParam, LPARAM lParam);
 	virtual void OnHScroll(WPARAM wParam, LPARAM lParam);
 	virtual void OnKeyUp(WPARAM wParam, LPARAM lParam);
 	virtual void OnPaint();
+	virtual void OnCreate();
 	virtual void OnDrawItem(DRAWITEMSTRUCT* Info);
 	virtual void OnMeasureItem(MEASUREITEMSTRUCT* Info);
 	virtual void OnInitDialog();
@@ -542,22 +542,19 @@ public:
 	virtual void OnMouseEnter();
 	virtual void OnMouseLeave();
 	virtual void OnMouseHover();
-	virtual void OnTimer();	
+	virtual void OnTimer();
 	virtual void OnReleaseCapture();
 	virtual void OnMdiActivate(UBOOL Active);
 	virtual void OnMouseMove(DWORD Flags, FPoint Location);
-	virtual void OnLeftButtonDown();
-
+	virtual void OnLeftButtonDown(void);
+	virtual void OnRightButtonDown(void);
+	virtual void OnLeftButtonUp(void);
+	virtual void OnRightButtonUp(void);
+	virtual void OnFinishSplitterDrag(void* Drag, UBOOL Success) { }
 	virtual INT OnSetCursor();
-	virtual void OnMove(INT NewX, INT NewY) { /* not correct */ }
-	virtual UBOOL OnEraseBkgnd() { return FALSE; /* not correct */ }
-	virtual void OnGarbage() { /* not correct */ }
-	virtual void OnLeftButtonDoubleClick() { /* not correct */ }
-	virtual void OnMiddleButtonDoubleClick() { /* not correct */ }
-	virtual void OnRightButtonDoubleClick() { /* not correct */ }
-	virtual void OnFinishSplitterDrag(void* Drag, UBOOL Success) { /* not correct */ }
-	virtual void OnClose();
-	virtual void OnDestroy();
+	virtual UBOOL ShouldClose(void);
+	virtual UBOOL OnClose(void) { return false; }
+	virtual void OnDestroy(void);
 	virtual void ClipOrCenterWindowToMonitor(HWND__*, unsigned int);
 	virtual void MyDrawEdge(HDC hdc, LPRECT qrc, UBOOL bRaised);
 
