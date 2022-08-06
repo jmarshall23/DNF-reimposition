@@ -854,3 +854,41 @@ template <class T> void* operator new(size_t Size, TArray<T>& Array)
 	INT Index = Array.Add(1, sizeof(T));
 	return &Array(Index);
 }
+
+__declspec(dllimport) extern unsigned long GCurrentViewport;
+
+enum EViewportShowFlags
+{
+	SHOW_Frame = 0x00000001, 	// Show world bounding cube.
+	SHOW_ActorRadii = 0x00000002, 	// Show actor collision radii.
+	SHOW_Backdrop = 0x00000004, 	// Show background scene.
+	SHOW_Actors = 0x00000008,	// Show actors.
+	SHOW_Coords = 0x00000010,	// Show brush/actor coords.
+	SHOW_ActorIcons = 0x00000020,	// Show actors as icons.
+	SHOW_Brush = 0x00000040,	// Show the active brush.
+	SHOW_StandardView = 0x00000080,	// Viewport is a standard view.
+	SHOW_EdViewport = 0x00000100,	// This is a special editor viewport and shouldn't have it's level reset by level loads
+	SHOW_ChildWindow = 0x00000200,	// Show as true child window.
+	SHOW_MovingBrushes = 0x00000400,	// Show moving brushes.
+	SHOW_PlayerCtrl = 0x00000800,	// Player controls are on.
+	SHOW_Paths = 0x00001000,   // Show paths.
+	SHOW_KarmaMassProps = 0x00002000,   // Show Karma mass properties (centre-of-mass, inertia tensor)
+	SHOW_RealTime = 0x00004000,	// Update window in realtime.
+	SHOW_StaticMeshes = 0x00008000,	// Show static meshes.
+	SHOW_EventLines = 0x00010000,   // Show event lines (from triggers, etc)
+	SHOW_SelectionHighlight = 0x00020000,   // Show green highlights on selections?
+	SHOW_Terrain = 0x00040000,	// Show terrain.
+	SHOW_DistanceFog = 0x00080000,	// Show distance fog.
+	SHOW_MatRotations = 0x00100000,	// Show rotation indicators (matinee preview windows)
+	SHOW_MatPaths = 0x00200000,	// Show the path itself (matinee preview windows)
+	SHOW_Coronas = 0x00400000,	// Show coronas.
+	SHOW_Volumes = 0x00800000,	// Show volume brushes.
+	SHOW_Particles = 0x01000000,	// Show pahticuls.
+	SHOW_BSP = 0x02000000,	// Show BSP surfaces.
+	SHOW_ActorInfo = 0x04000000,	// Shows extended information about actors (class name, event, tag, etc)
+	SHOW_KarmaPrimitives = 0x08000000,   // Show Karma collision primitives.
+	SHOW_FluidSurfaces = 0x10000000,	// Show simulated fluid surfaces.
+	SHOW_Projectors = 0x20000000,	// Show projectors.
+	SHOW_NoFallbackMaterials = 0x40000000,	// Don't evaluate fallback materials.
+	SHOW_Collision = 0x80000000	// Show simple collision for static meshes etc.
+};

@@ -19,12 +19,12 @@ class WMdiClient : public WControl
 		HWND hWndCreated = TCHAR_CALL_OS(CreateWindowEx(0, TEXT("MDICLIENT"), NULL, WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS, 0, 0, 0, 0, OwnerWindow->hWnd, (HMENU)0xCAC, *hinstWindowHack, ccs), CreateWindowExA(0, "MDICLIENT", NULL, WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS, 0, 0, 0, 0, OwnerWindow->hWnd, (HMENU)0xCAC, hInstance, ccs));
 		//check(hWndCreated);
 		//check(!hWnd);
-		//_Windows.AddItem(this);
+		_windows.push_back(this);
 		hWnd = hWndCreated;
 		Show(1);
 	}
 };
-
+INT GScrollBarWidth = GetSystemMetrics(SM_CXVSCROLL);
 class WMdiFrame : public WWindow
 {
 	DECLARE_WINDOWCLASS(WMdiFrame, WWindow, DukeEd)
@@ -69,7 +69,7 @@ class WMdiFrame : public WWindow
 	void OnSize(DWORD Flags, INT NewX, INT NewY)
 	{
 		RepositionClient();
-		//		throw TEXT("NoRoute");
+		throw TEXT("NoRoute");
 	}
 	void OpenWindow()
 	{

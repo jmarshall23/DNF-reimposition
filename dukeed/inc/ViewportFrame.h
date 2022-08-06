@@ -52,7 +52,7 @@ class WVFToolBar : public WWindow
 			200,
 			OwnerWindow ? OwnerWindow->hWnd : NULL,
 			NULL,
-			GetModuleHandle(NULL)
+			*hinstWindowHack
 		);
 		SendMessageW( hWnd, WM_SETFONT, (WPARAM)GetStockObject(DEFAULT_GUI_FONT), MAKELPARAM(0,0) );
 	}
@@ -122,7 +122,7 @@ class WVFToolBar : public WWindow
 		ppb->OpenWindow();
 		ppb->OnSize( SIZE_MAXSHOW, InClientRight, InClientBottom );
 	}
-	void OnSize( DWORD Flags, INT NewX, INT NewY )
+	virtual void OnSize( DWORD Flags, INT NewX, INT NewY ) override
 	{
 		WWindow::OnSize(Flags, NewX, NewY);
 
@@ -136,43 +136,46 @@ class WVFToolBar : public WWindow
 	{
 		m_pViewport = pViewport;
 	}
-	void OnRightButtonUp()
+	virtual void OnRightButtonUp() override
 	{
 		HMENU l_menu = GetSubMenu( VFContextMenu, 0 );
 
 		POINT pt;
 		::GetCursorPos( &pt );
-#if 0
+
+		int* Viewport_Actor_RendMap = (int*)(*((DWORD*)m_pViewport + 12) + 5940);
+		unsigned int* Viewport_Actor_Showflags = (unsigned*)(*((unsigned*)m_pViewport + 12) + 5936);
+
 		// "Check" appropriate menu items based on current settings.
-		CheckMenuItem( l_menu, ID_MapOverhead, (m_pViewport->Actor->RendMap == REN_OrthXY) ? MF_CHECKED : MF_UNCHECKED );
-		CheckMenuItem( l_menu, ID_MapXZ, (m_pViewport->Actor->RendMap == REN_OrthXZ) ? MF_CHECKED : MF_UNCHECKED );
-		CheckMenuItem( l_menu, ID_MapYZ, (m_pViewport->Actor->RendMap == REN_OrthYZ) ? MF_CHECKED : MF_UNCHECKED );
-		CheckMenuItem( l_menu, ID_MapWire, (m_pViewport->Actor->RendMap == REN_Wire) ? MF_CHECKED : MF_UNCHECKED );
-		CheckMenuItem( l_menu, ID_MapPolys, (m_pViewport->Actor->RendMap == REN_Polys) ? MF_CHECKED : MF_UNCHECKED );
-		CheckMenuItem( l_menu, ID_MapPolyCuts, (m_pViewport->Actor->RendMap == REN_PolyCuts) ? MF_CHECKED : MF_UNCHECKED );
-		CheckMenuItem( l_menu, ID_MapPlainTex, (m_pViewport->Actor->RendMap == REN_PlainTex) ? MF_CHECKED : MF_UNCHECKED );
-		CheckMenuItem( l_menu, ID_MapDynLight, (m_pViewport->Actor->RendMap == REN_DynLight) ? MF_CHECKED : MF_UNCHECKED );
-		CheckMenuItem( l_menu, ID_MapZones, (m_pViewport->Actor->RendMap == REN_Zones) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_MapOverhead, (*Viewport_Actor_RendMap == REN_OrthXY) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_MapXZ, (*Viewport_Actor_RendMap == REN_OrthXZ) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_MapYZ, (*Viewport_Actor_RendMap == REN_OrthYZ) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_MapWire, (*Viewport_Actor_RendMap == REN_Wire) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_MapPolys, (*Viewport_Actor_RendMap == REN_Polys) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_MapPolyCuts, (*Viewport_Actor_RendMap == REN_PolyCuts) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_MapPlainTex, (*Viewport_Actor_RendMap == REN_PlainTex) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_MapDynLight, (*Viewport_Actor_RendMap == REN_DynLight) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_MapZones, (*Viewport_Actor_RendMap == REN_Zones) ? MF_CHECKED : MF_UNCHECKED );
 
-		CheckMenuItem( l_menu, ID_ShowBrush, (m_pViewport->Actor->ShowFlags&SHOW_Brush) ? MF_CHECKED : MF_UNCHECKED );
-		CheckMenuItem( l_menu, ID_ShowHardwareBrushes, (m_pViewport->Actor->ShowFlags&SHOW_HardwareBrushes) ? MF_CHECKED : MF_UNCHECKED );
-		CheckMenuItem( l_menu, ID_ShowBackdrop, (m_pViewport->Actor->ShowFlags&SHOW_Backdrop) ? MF_CHECKED : MF_UNCHECKED );
-		CheckMenuItem( l_menu, ID_ShowCoords, (m_pViewport->Actor->ShowFlags&SHOW_Coords) ? MF_CHECKED : MF_UNCHECKED );
-		CheckMenuItem( l_menu, ID_ShowMovingBrushes, (m_pViewport->Actor->ShowFlags&SHOW_MovingBrushes) ? MF_CHECKED : MF_UNCHECKED );
-		CheckMenuItem( l_menu, ID_ShowPaths, (m_pViewport->Actor->ShowFlags&SHOW_Paths) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_ShowBrush, (*Viewport_Actor_Showflags&SHOW_Brush) ? MF_CHECKED : MF_UNCHECKED );
+		//CheckMenuItem( l_menu, ID_ShowHardwareBrushes, (m_pViewport->Actor->ShowFlags&SHOW_HardwareBrushes) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_ShowBackdrop, (*Viewport_Actor_Showflags &SHOW_Backdrop) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_ShowCoords, (*Viewport_Actor_Showflags &SHOW_Coords) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_ShowMovingBrushes, (*Viewport_Actor_Showflags &SHOW_MovingBrushes) ? MF_CHECKED : MF_UNCHECKED );
+		CheckMenuItem( l_menu, ID_ShowPaths, (*Viewport_Actor_Showflags &SHOW_Paths) ? MF_CHECKED : MF_UNCHECKED );
 
-		CheckMenuItem( l_menu, ID_Color16Bit, ((m_pViewport->ColorBytes==2) ? MF_CHECKED : MF_UNCHECKED ) );
-		CheckMenuItem( l_menu, ID_Color32Bit, ((m_pViewport->ColorBytes==4) ? MF_CHECKED : MF_UNCHECKED ) );
+		//CheckMenuItem( l_menu, ID_Color16Bit, ((m_pViewport->ColorBytes==2) ? MF_CHECKED : MF_UNCHECKED ) );
+		//CheckMenuItem( l_menu, ID_Color32Bit, ((m_pViewport->ColorBytes==4) ? MF_CHECKED : MF_UNCHECKED ) );
 
-		CheckMenuItem( l_menu, IDMN_RD_SOFTWARE, (!appStrcmp(TEXT("Class SoftDrv.SoftwareRenderDevice"), m_pViewport->RenDev->GetClass()->GetFullName()) ? MF_CHECKED : MF_UNCHECKED ) );
-		CheckMenuItem( l_menu, IDMN_RD_DIRECT3D, (!appStrcmp(TEXT("Class D3DDrv.D3DRenderDevice"), m_pViewport->RenDev->GetClass()->GetFullName()) ? MF_CHECKED : MF_UNCHECKED ) );
+		//CheckMenuItem( l_menu, IDMN_RD_SOFTWARE, (!appStrcmp(TEXT("Class SoftDrv.SoftwareRenderDevice"), m_pViewport->RenDev->GetClass()->GetFullName()) ? MF_CHECKED : MF_UNCHECKED ) );
+		//CheckMenuItem( l_menu, IDMN_RD_DIRECT3D, (!appStrcmp(TEXT("Class D3DDrv.D3DRenderDevice"), m_pViewport->RenDev->GetClass()->GetFullName()) ? MF_CHECKED : MF_UNCHECKED ) );
 		
 		// NJS: Software removal, phase I
 		EnableMenuItem(l_menu, IDMN_RD_SOFTWARE, MF_GRAYED);
 		EnableMenuItem(l_menu, IDMN_RD_DIRECT3D, MF_GRAYED);
 
 
-		DWORD ShowFilter = m_pViewport->Actor->ShowFlags & (SHOW_Actors | SHOW_ActorIcons | SHOW_ActorRadii);
+		DWORD ShowFilter = *Viewport_Actor_Showflags & (SHOW_Actors | SHOW_ActorIcons | SHOW_ActorRadii);
 		if		(ShowFilter==(SHOW_Actors | SHOW_ActorIcons)) CheckMenuItem( l_menu, ID_ActorsIcons, MF_CHECKED );
 		else if (ShowFilter==(SHOW_Actors | SHOW_ActorRadii)) CheckMenuItem( l_menu, ID_ActorsRadii, MF_CHECKED );
 		else if (ShowFilter==(SHOW_Actors                  )) CheckMenuItem( l_menu, ID_ActorsShow, MF_CHECKED );
@@ -182,65 +185,63 @@ class WVFToolBar : public WWindow
 			TPM_LEFTALIGN | TPM_TOPALIGN | TPM_RIGHTBUTTON,
 			pt.x, pt.y, 0,
 			OwnerWindow->hWnd, NULL);
-#endif
 	}
 	// Sets the bOn variable in the various buttons
 	void UpdateButtons()
 	{
 		if( !m_pViewport ) return;
 
+		int* Viewport_Actor_RendMap = (int*)(*((DWORD*)m_pViewport + 12) + 5940);
+
 		for( INT x = 0 ; x < Buttons.size() ; x++ )
 		{
-#if 0
-			switch( Buttons(x).ID )
+			switch( Buttons[x]->ID )
 			{
 				case IDMN_VF_REALTIME_PREVIEW:
-					Buttons(x).bOn = m_pViewport->Actor->ShowFlags & SHOW_PlayerCtrl;
+					//Buttons[x]->bOn = m_pViewport->Actor->ShowFlags & SHOW_PlayerCtrl;
 					break;
 
 				case ID_MapDynLight:
-					Buttons(x).bOn = (m_pViewport->Actor->RendMap == REN_DynLight);
+					Buttons[x]->bOn = (*Viewport_Actor_RendMap == REN_DynLight);
 					break;
 
 				case ID_MapPlainTex:
-					Buttons(x).bOn = (m_pViewport->Actor->RendMap == REN_PlainTex);
+					Buttons[x]->bOn = (*Viewport_Actor_RendMap == REN_PlainTex);
 					break;
 
 				case ID_MapWire:
-					Buttons(x).bOn = (m_pViewport->Actor->RendMap == REN_Wire);
+					Buttons[x]->bOn = (*Viewport_Actor_RendMap == REN_Wire);
 					break;
 
 				case ID_MapOverhead:
-					Buttons(x).bOn = (m_pViewport->Actor->RendMap == REN_OrthXY);
+					Buttons[x]->bOn = (*Viewport_Actor_RendMap == REN_OrthXY);
 					break;
 
 				case ID_MapXZ:
-					Buttons(x).bOn = (m_pViewport->Actor->RendMap == REN_OrthXZ);
+					Buttons[x]->bOn = (*Viewport_Actor_RendMap == REN_OrthXZ);
 					break;
 
 				case ID_MapYZ:
-					Buttons(x).bOn = (m_pViewport->Actor->RendMap == REN_OrthYZ);
+					Buttons[x]->bOn = (*Viewport_Actor_RendMap == REN_OrthYZ);
 					break;
 
 				case ID_MapPolys:
-					Buttons(x).bOn = (m_pViewport->Actor->RendMap == REN_Polys);
+					Buttons[x]->bOn = (*Viewport_Actor_RendMap == REN_Polys);
 					break;
 
 				case ID_MapPolyCuts:
-					Buttons(x).bOn = (m_pViewport->Actor->RendMap == REN_PolyCuts);
+					Buttons[x]->bOn = (*Viewport_Actor_RendMap == REN_PolyCuts);
 					break;
 
 				case ID_MapZones:
-					Buttons(x).bOn = (m_pViewport->Actor->RendMap == REN_Zones);
+					Buttons[x]->bOn = (*Viewport_Actor_RendMap == REN_Zones);
 					break;
 			}
-#endif
 			InvalidateRect( Buttons[x]->hWnd, NULL, 1 );
 		}
 	}
 	void OnCommand( INT Command )
 	{
-#if 0
 		switch( Command ) {
 		
 			case WM_PB_PUSH:
@@ -252,66 +253,66 @@ class WVFToolBar : public WWindow
 				WWindow::OnCommand(Command);
 				break;
 		}
-#endif
+
 		WWindow::OnCommand(Command);
 	}
 	void ButtonClicked( INT ID )
 	{
-#if 0
+		int* Viewport_Actor_RendMap = (int*)(*((DWORD*)m_pViewport + 12) + 5940);
 		switch( ID )
 		{
 			case IDMN_VF_REALTIME_PREVIEW:
-				m_pViewport->Actor->ShowFlags ^= SHOW_PlayerCtrl;
+				//m_pViewport->Actor->ShowFlags ^= SHOW_PlayerCtrl;
 				break;
 
 			case ID_MapDynLight:
-				m_pViewport->Actor->RendMap=REN_DynLight;
-				m_pViewport->Repaint( 1 );
+				*Viewport_Actor_RendMap = REN_DynLight;
+				//m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapPlainTex:
-				m_pViewport->Actor->RendMap=REN_PlainTex;
-				m_pViewport->Repaint( 1 );
+				*Viewport_Actor_RendMap=REN_PlainTex;
+			//	m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapWire:
-				m_pViewport->Actor->RendMap=REN_Wire;
-				m_pViewport->Repaint( 1 );
+				*Viewport_Actor_RendMap=REN_Wire;
+				//m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapOverhead:
-				m_pViewport->Actor->RendMap=REN_OrthXY;
-				m_pViewport->Repaint( 1 );
+				*Viewport_Actor_RendMap=REN_OrthXY;
+			//	m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapXZ:
-				m_pViewport->Actor->RendMap=REN_OrthXZ;
-				m_pViewport->Repaint( 1 );
+				*Viewport_Actor_RendMap=REN_OrthXZ;
+			//	m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapYZ:
-				m_pViewport->Actor->RendMap=REN_OrthYZ;
-				m_pViewport->Repaint( 1 );
+				*Viewport_Actor_RendMap=REN_OrthYZ;
+				//m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapPolys:
-				m_pViewport->Actor->RendMap=REN_Polys;
-				m_pViewport->Repaint( 1 );
+				*Viewport_Actor_RendMap=REN_Polys;
+			//	m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapPolyCuts:
-				m_pViewport->Actor->RendMap=REN_PolyCuts;
-				m_pViewport->Repaint( 1 );
+				*Viewport_Actor_RendMap=REN_PolyCuts;
+				//m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapZones:
 				{
-					m_pViewport->Actor->RendMap=REN_Zones;
-					m_pViewport->Repaint( 1 );
+					*Viewport_Actor_RendMap=REN_Zones;
+					//m_pViewport->Repaint( 1 );
 				}
 				break;
 		}
-#endif
+
 		UpdateButtons();
 		InvalidateRect( hWnd, NULL, FALSE );
 	}
@@ -382,14 +383,14 @@ class WViewportFrame : public WWindow
 		VFToolbar->OpenWindow();
 
 		INT BmpPos = 0;
-		for( INT x = 0 ; GVFButtons[x].ID != -2 ; x++ )
+		for (INT x = 0; GVFButtons[x].ID != -2; x++)
 		{
-			if( GVFButtons[x].ID != -1 )
+			if (GVFButtons[x].ID != -1)
 			{
-				VFToolbar->AddButton( GVFButtons[x].ToolTip, GVFButtons[x].ID,
+				VFToolbar->AddButton(GVFButtons[x].ToolTip, GVFButtons[x].ID,
 					0, 0, 22, 20,
-					(22*BmpPos), 0, 22, 20,
-					(22*BmpPos), 20, 22, 20 );
+					(22 * BmpPos), 0, 22, 20,
+					(22 * BmpPos), 20, 22, 20);
 				BmpPos++;
 			}
 		}
@@ -436,12 +437,12 @@ class WViewportFrame : public WWindow
 		rectOutline.Min.X += 2;
 		rectOutline.Min.Y += 2;
 		rectOutline.Max.X -= 2;
-		rectOutline.Max.Y -= 2;
+		rectOutline.Max.Y -= 2;		
 
 		// The current viewport has a white border.
-		//if( GCurrentViewport == (DWORD)m_pViewport )
-		//	FillRect( hDC, GetClientRect(), (HBRUSH)GetStockObject(WHITE_BRUSH) );
-		//else
+		if (GCurrentViewport == (DWORD)m_pViewport)
+			FillRect(hDC, GetClientRect(), (HBRUSH)GetStockObject(WHITE_BRUSH));
+		else
 			FillRect( hDC, GetClientRect(), (HBRUSH)GetStockObject(BLACK_BRUSH) );
 
 		FillRect( hDC, rectOutline, brushOutline );
@@ -597,68 +598,70 @@ class WViewportFrame : public WWindow
 	}
 	void OnCommand( INT Command )
 	{
+		int* Viewport_Actor_RendMap = (int*)(*((DWORD*)m_pViewport + 12) + 5940);
+		unsigned int* Viewport_Actor_Showflags = (unsigned*)(*((unsigned*)m_pViewport + 12) + 5936);
 
 		switch( Command ) {
 
 			case WM_VIEWPORT_UPDATEWINDOWFRAME:
 				UpdateWindow();
 				break;
-#if 0
+
 			case ID_MapDynLight:
-				m_pViewport->Actor->RendMap=REN_DynLight;
+				*Viewport_Actor_RendMap=REN_DynLight;
 				UpdateWindow();
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapPlainTex:
-				m_pViewport->Actor->RendMap=REN_PlainTex;
+				*Viewport_Actor_RendMap=REN_PlainTex;
 				UpdateWindow();
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapWire:
-				m_pViewport->Actor->RendMap=REN_Wire;
+				*Viewport_Actor_RendMap=REN_Wire;
 				UpdateWindow();
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapOverhead:
-				m_pViewport->Actor->RendMap=REN_OrthXY;
+				*Viewport_Actor_RendMap=REN_OrthXY;
 				UpdateWindow();
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapXZ:
-				m_pViewport->Actor->RendMap=REN_OrthXZ;
+				*Viewport_Actor_RendMap=REN_OrthXZ;
 				UpdateWindow();
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapYZ:
-				m_pViewport->Actor->RendMap=REN_OrthYZ;
+				*Viewport_Actor_RendMap=REN_OrthYZ;
 				UpdateWindow();
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapPolys:
-				m_pViewport->Actor->RendMap=REN_Polys;
+				*Viewport_Actor_RendMap=REN_Polys;
 				UpdateWindow();
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapPolyCuts:
-				m_pViewport->Actor->RendMap=REN_PolyCuts;
+				*Viewport_Actor_RendMap=REN_PolyCuts;
 				UpdateWindow();
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_MapZones:
-				m_pViewport->Actor->RendMap=REN_Zones;
+				*Viewport_Actor_RendMap=REN_Zones;
 				UpdateWindow();
 				m_pViewport->Repaint( 1 );
-				appMsgf(TEXT("XXX 1"));
+				//appMsgf(TEXT("XXX 1"));
 				break;
-
+#if 0
 			case IDMN_RD_SOFTWARE:
 				m_pViewport->TryRenderDevice( TEXT("SoftDrv.SoftwareRenderDevice"), m_pViewport->SizeX, m_pViewport->SizeY, INDEX_NONE, 0 );
 				m_pViewport->Repaint( 1 );
@@ -688,55 +691,55 @@ class WViewportFrame : public WWindow
 				m_pViewport->Actor->ShowFlags ^= SHOW_Backdrop;
 				m_pViewport->Repaint( 1 );
 				break;
-
+#endif
 			case ID_ActorsShow:
-				m_pViewport->Actor->ShowFlags &= ~(SHOW_Actors | SHOW_ActorIcons | SHOW_ActorRadii);
-				m_pViewport->Actor->ShowFlags |= SHOW_Actors; 
+				*Viewport_Actor_Showflags &= ~(SHOW_Actors | SHOW_ActorIcons | SHOW_ActorRadii);
+				*Viewport_Actor_Showflags |= SHOW_Actors;
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_ActorsIcons:
-				m_pViewport->Actor->ShowFlags &= ~(SHOW_Actors | SHOW_ActorIcons | SHOW_ActorRadii); 
-				m_pViewport->Actor->ShowFlags |= SHOW_Actors | SHOW_ActorIcons;
+				*Viewport_Actor_Showflags &= ~(SHOW_Actors | SHOW_ActorIcons | SHOW_ActorRadii);
+				*Viewport_Actor_Showflags |= SHOW_Actors | SHOW_ActorIcons;
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_ActorsRadii:
-				m_pViewport->Actor->ShowFlags &= ~(SHOW_Actors | SHOW_ActorIcons | SHOW_ActorRadii); 
-				m_pViewport->Actor->ShowFlags |= SHOW_Actors | SHOW_ActorRadii;
+				*Viewport_Actor_Showflags &= ~(SHOW_Actors | SHOW_ActorIcons | SHOW_ActorRadii);
+				*Viewport_Actor_Showflags |= SHOW_Actors | SHOW_ActorRadii;
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_ActorsHide:
-				m_pViewport->Actor->ShowFlags &= ~(SHOW_Actors | SHOW_ActorIcons | SHOW_ActorRadii); 
+				*Viewport_Actor_Showflags &= ~(SHOW_Actors | SHOW_ActorIcons | SHOW_ActorRadii);
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_ShowPaths:
-				m_pViewport->Actor->ShowFlags ^= SHOW_Paths;
+				*Viewport_Actor_Showflags ^= SHOW_Paths;
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_ShowCoords:
-				m_pViewport->Actor->ShowFlags ^= SHOW_Coords;
+				*Viewport_Actor_Showflags ^= SHOW_Coords;
 				m_pViewport->Repaint( 1 );
 				break;
 
 			case ID_ShowBrush:
-				m_pViewport->Actor->ShowFlags ^= SHOW_Brush;
+				*Viewport_Actor_Showflags ^= SHOW_Brush;
 				m_pViewport->Repaint( 1 );
 				break;
 
-			case ID_ShowHardwareBrushes:
-				m_pViewport->Actor->ShowFlags ^= SHOW_HardwareBrushes;
-				m_pViewport->Repaint( 1 );
-				break;
+				//case ID_ShowHardwareBrushes:
+				//	m_pViewport->Actor->ShowFlags ^= SHOW_HardwareBrushes;
+				//	m_pViewport->Repaint( 1 );
+				//	break;
 
 			case ID_ShowMovingBrushes:
-				m_pViewport->Actor->ShowFlags ^= SHOW_MovingBrushes;
+				*Viewport_Actor_Showflags ^= SHOW_MovingBrushes;
 				m_pViewport->Repaint( 1 );
 				break;
-#endif
+
 			default:
 				WWindow::OnCommand(Command);
 				break;

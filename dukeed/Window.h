@@ -319,194 +319,202 @@ public:
 	virtual LONG WndProc(UINT Message, UINT wParam, LONG lParam)
 #if 1
 	{
-		LastwParam = wParam;
-		LastlParam = lParam;
+		try
+		{
+			LastwParam = wParam;
+			LastlParam = lParam;
 
-		// Message processing.
-		if (Message == WM_DESTROY)
-		{
-			OnDestroy();
-		}
-		else if (Message == WM_DRAWITEM) {
-			DRAWITEMSTRUCT* Info = (DRAWITEMSTRUCT*)lParam;
-			for (INT i = 0; i < Controls.Num(); i++) {
-				WWindow* control = (WWindow*)Controls.Data[i];
-
-				if (control->hWnd == Info->hwndItem)
-				{
-					control->OnDrawItem(Info); break;
-				}
-			}
-
-			return 1;
-		}
-		else if (Message == WM_MEASUREITEM) {
-			return 1;
-		}
-		//else if (Message == WM_DRAWITEM)
-		//{
-		//	DRAWITEMSTRUCT* Info = (DRAWITEMSTRUCT*)lParam;
-		//	for (INT i = 0; i < Controls.Num(); i++)
-		//		if (((WWindow*)Controls(i))->hWnd == Info->hwndItem)
-		//		{
-		//			((WWindow*)Controls(i))->OnDrawItem(Info); break;
-		//		}
-		//	return 1;
-		//}
-		//else if (Message == WM_MEASUREITEM)
-		//{
-		//	MEASUREITEMSTRUCT* Info = (MEASUREITEMSTRUCT*)lParam;
-		//	for (INT i = 0; i < Controls.Num(); i++)
-		//		if (((WWindow*)Controls(i))->ControlId == Info->CtlID)
-		//		{
-		//			((WWindow*)Controls(i))->OnMeasureItem(Info); break;
-		//		}
-		//	return 1;
-		//}
-		else if (Message == WM_CLOSE)
-		{
-			if (ShouldClose())
-				OnClose();
-			else
-				return 0;
-		}
-		else if (Message == WM_CHAR)
-		{
-			OnChar(wParam);
-		}
-		else if (Message == WM_KEYDOWN)
-		{
-			OnKeyDown(wParam);
-		}
-		else if (Message == WM_PAINT)
-		{
-			OnPaint();
-		}
-		else if (Message == WM_CREATE)
-		{
-			OnCreate();
-		}
-		else if (Message == WM_TIMER)
-		{
-			OnTimer();
-		}
-		else if (Message == WM_INITDIALOG)
-		{
-			OnInitDialog();
-		}
-		else if (Message == WM_ENTERIDLE)
-		{
-			OnEnterIdle();
-		}
-		else if (Message == WM_SETFOCUS)
-		{
-			OnSetFocus((HWND)wParam);
-		}
-		else if (Message == WM_ACTIVATE)
-		{
-			OnActivate(LOWORD(wParam) != 0);
-		}
-		else if (Message == WM_KILLFOCUS)
-		{
-			OnKillFocus((HWND)wParam);
-		}
-		else if (Message == WM_SIZE)
-		{
-			OnSize(wParam, LOWORD(lParam), HIWORD(lParam));
-		}
-		else if (Message == WM_PASTE)
-		{
-			OnPaste();
-		}
-		else if (Message == WM_SHOWWINDOW)
-		{
-			OnShowWindow(wParam);
-		}
-		else if (Message == WM_COPYDATA)
-		{
-			OnCopyData((HWND)wParam, (COPYDATASTRUCT*)lParam);
-		}
-		else if (Message == WM_CAPTURECHANGED)
-		{
-			OnReleaseCapture();
-		}
-		else if (Message == WM_MDIACTIVATE)
-		{
-			OnMdiActivate((HWND)lParam == hWnd);
-		}
-		else if (Message == WM_MOUSEMOVE)
-		{
-			OnMouseMove(wParam, FPoint(LOWORD(lParam), HIWORD(lParam)));
-		}
-		else if (Message == WM_LBUTTONDOWN)
-		{
-			OnLeftButtonDown();
-		}
-		else if (Message == WM_RBUTTONDOWN)
-		{
-			//OnRightButtonDown();
-		}
-		else if (Message == WM_LBUTTONUP)
-		{
-			//	OnLeftButtonUp();
-		}
-		else if (Message == WM_RBUTTONUP)
-		{
-			//	OnRightButtonUp();
-		}
-		else if (Message == WM_CUT)
-		{
-			OnCut();
-		}
-		else if (Message == WM_COPY)
-		{
-			OnCopy();
-		}
-		else if (Message == WM_UNDO)
-		{
-			OnUndo();
-		}
-		else if (Message == WM_SETCURSOR)
-		{
-			if (OnSetCursor())
-				return 1;
-		}
-		else if (Message == WM_NOTIFY)
-		{
-			for (INT i = 0; i < Controls.Num(); i++)
-				if (wParam == ((WWindow*)Controls(i))->ControlId
-					&& ((WWindow*)Controls(i))->InterceptControlCommand(Message, wParam, lParam))
-					return 1;
-			OnCommand(wParam);
-
-		}
-		else if (Message == WM_VSCROLL)
-		{
-			OnVScroll(wParam, lParam);
-		}
-		else if (Message == WM_KEYUP)
-		{
-			OnKeyUp(wParam, lParam);
-		}
-		else if (Message == WM_COMMAND)
-		{
-			for (INT i = 0; i < Controls.Num(); i++)
+			// Message processing.
+			if (Message == WM_DESTROY)
 			{
-				if (Controls(i) == NULL)
-					continue;
+				OnDestroy();
+			}
+			else if (Message == WM_DRAWITEM) {
+				DRAWITEMSTRUCT* Info = (DRAWITEMSTRUCT*)lParam;
+				for (INT i = 0; i < Controls.Num(); i++) {
+					WWindow* control = (WWindow*)Controls.Data[i];
 
-				if ((HWND)lParam == ((WWindow*)Controls(i))->hWnd
-					&& ((WWindow*)Controls(i))->InterceptControlCommand(Message, wParam, lParam))
+					if (control->hWnd == Info->hwndItem)
+					{
+						control->OnDrawItem(Info); break;
+					}
+				}
+
+				return 1;
+			}
+			else if (Message == WM_MEASUREITEM) {
+				return 1;
+			}
+			//else if (Message == WM_DRAWITEM)
+			//{
+			//	DRAWITEMSTRUCT* Info = (DRAWITEMSTRUCT*)lParam;
+			//	for (INT i = 0; i < Controls.Num(); i++)
+			//		if (((WWindow*)Controls(i))->hWnd == Info->hwndItem)
+			//		{
+			//			((WWindow*)Controls(i))->OnDrawItem(Info); break;
+			//		}
+			//	return 1;
+			//}
+			//else if (Message == WM_MEASUREITEM)
+			//{
+			//	MEASUREITEMSTRUCT* Info = (MEASUREITEMSTRUCT*)lParam;
+			//	for (INT i = 0; i < Controls.Num(); i++)
+			//		if (((WWindow*)Controls(i))->ControlId == Info->CtlID)
+			//		{
+			//			((WWindow*)Controls(i))->OnMeasureItem(Info); break;
+			//		}
+			//	return 1;
+			//}
+			else if (Message == WM_CLOSE)
+			{
+				if (ShouldClose())
+					OnClose();
+				else
+					return 0;
+			}
+			else if (Message == WM_CHAR)
+			{
+				OnChar(wParam);
+			}
+			else if (Message == WM_KEYDOWN)
+			{
+				OnKeyDown(wParam);
+			}
+			else if (Message == WM_PAINT)
+			{
+				OnPaint();
+			}
+			else if (Message == WM_CREATE)
+			{
+				OnCreate();
+			}
+			else if (Message == WM_TIMER)
+			{
+				OnTimer();
+			}
+			else if (Message == WM_INITDIALOG)
+			{
+				OnInitDialog();
+			}
+			else if (Message == WM_ENTERIDLE)
+			{
+				OnEnterIdle();
+			}
+			else if (Message == WM_SETFOCUS)
+			{
+				OnSetFocus((HWND)wParam);
+			}
+			else if (Message == WM_ACTIVATE)
+			{
+				OnActivate(LOWORD(wParam) != 0);
+			}
+			else if (Message == WM_KILLFOCUS)
+			{
+				OnKillFocus((HWND)wParam);
+			}
+			else if (Message == WM_SIZE)
+			{
+				OnSize(wParam, LOWORD(lParam), HIWORD(lParam));
+			}
+			else if (Message == WM_PASTE)
+			{
+				OnPaste();
+			}
+			else if (Message == WM_SHOWWINDOW)
+			{
+				OnShowWindow(wParam);
+			}
+			else if (Message == WM_COPYDATA)
+			{
+				OnCopyData((HWND)wParam, (COPYDATASTRUCT*)lParam);
+			}
+			else if (Message == WM_CAPTURECHANGED)
+			{
+				OnReleaseCapture();
+			}
+			else if (Message == WM_MDIACTIVATE)
+			{
+				OnMdiActivate((HWND)lParam == hWnd);
+			}
+			else if (Message == WM_MOUSEMOVE)
+			{
+				OnMouseMove(wParam, FPoint(LOWORD(lParam), HIWORD(lParam)));
+			}
+			else if (Message == WM_LBUTTONDOWN)
+			{
+				OnLeftButtonDown();
+			}
+			else if (Message == WM_RBUTTONDOWN)
+			{
+				//OnRightButtonDown();
+			}
+			else if (Message == WM_LBUTTONUP)
+			{
+				//	OnLeftButtonUp();
+			}
+			else if (Message == WM_RBUTTONUP)
+			{
+				//	OnRightButtonUp();
+			}
+			else if (Message == WM_CUT)
+			{
+				OnCut();
+			}
+			else if (Message == WM_COPY)
+			{
+				OnCopy();
+			}
+			else if (Message == WM_UNDO)
+			{
+				OnUndo();
+			}
+			else if (Message == WM_SETCURSOR)
+			{
+				if (OnSetCursor())
 					return 1;
 			}
-			OnCommand(wParam);
+			else if (Message == WM_NOTIFY)
+			{
+				for (INT i = 0; i < Controls.Num(); i++)
+					if (wParam == ((WWindow*)Controls(i))->ControlId
+						&& ((WWindow*)Controls(i))->InterceptControlCommand(Message, wParam, lParam))
+						return 1;
+				OnCommand(wParam);
+
+			}
+			else if (Message == WM_VSCROLL)
+			{
+				OnVScroll(wParam, lParam);
+			}
+			else if (Message == WM_KEYUP)
+			{
+				OnKeyUp(wParam, lParam);
+			}
+			else if (Message == WM_COMMAND)
+			{
+				for (INT i = 0; i < Controls.Num(); i++)
+				{
+					if (Controls(i) == NULL)
+						continue;
+
+					if ((HWND)lParam == ((WWindow*)Controls(i))->hWnd
+						&& ((WWindow*)Controls(i))->InterceptControlCommand(Message, wParam, lParam))
+						return 1;
+				}
+				OnCommand(wParam);
+			}
+			else if (Message == WM_SYSCOMMAND)
+			{
+				if (OnSysCommand(wParam))
+					return 1;
+			}
+			return CallDefaultProc(Message, wParam, lParam);
 		}
-		else if (Message == WM_SYSCOMMAND)
+		catch (const TCHAR*)
 		{
-			if (OnSysCommand(wParam))
-				return 1;
+			// This exception prevents the message from being routed to the default proc.
+			return 0;
 		}
-		return CallDefaultProc(Message, wParam, lParam);
 	}
 #endif
 	virtual INT CallDefaultProc(UINT Message, UINT wParam, LONG lParam);
