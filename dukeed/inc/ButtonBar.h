@@ -27,6 +27,9 @@
 #define IDPB_MODE_DEINTERSECT	19011
 #define IDPB_MODE_POLYGON		19012
 #define IDPB_MODE_TERRAINEDIT	19013
+#define IDPB_MODE_MATINEE		19014
+#define IDPB_ADD_VOLUME			19015
+#define IDPB_MODE_GEOMETRY		19016
 #define IDPB_ADD_SPECIAL		19020
 #define IDPB_ADD_MOVER			19021
 #define IDSC_LABEL				19022
@@ -41,12 +44,18 @@
 #define IDPB_EXPAND				19031
 #define IDSB_SCROLLBAR2			19032
 #define IDPB_CAMERA_SPEED		19033
-#define IDPB_MODE_ADDHARDWARE	19034
-#define IDPB_USER_DEFINED		19050
+#define IDPB_MODE_ADDSTATICMESH	19034
+#define IDPB_ADD_ANTIPORTAL		19035
+
+#define IDPB_NEWMODE_CAMERA		19050
+
+#define IDPB_USER_DEFINED		19075
 #define IDPB_USER_DEFINED_MAX	19099
 #define IDPB_BRUSH_BUILDERS		19100
 #define IDMN_MOVER_TYPES		19200
 #define IDMN_MOVER_TYPES_MAX	19250
+#define IDMN_VOLUME_TYPES		19300
+#define IDMN_VOLUME_TYPES_MAX	19350
 
 typedef struct {
 	INT ID;				// The command that is sent when the button is clicked
@@ -413,126 +422,137 @@ class WButtonGroup : public WWindow
 
 		switch( ID )
 		{
-			case IDPB_CAMERA_SPEED:
-				{
-				//	WCheckBox* pButton = GetButton(IDPB_CAMERA_SPEED);	check(pButton);
-				//	if( GEditor->MovementSpeed == 1 )		GEditor->exec.Exec( TEXT("MODE SPEED=4") );
-				//	else if( GEditor->MovementSpeed == 4 )	GEditor->exec.Exec( TEXT("MODE SPEED=16") );
-				//	else									GEditor->exec.Exec( TEXT("MODE SPEED=1") );
-				}
-				break;
+		case IDPB_MODE_CAMERA:
+			GEditor->exec.Exec(TEXT("MODE CAMERAMOVE"));
+			break;
 
-			case IDPB_MODE_CAMERA:
-				GEditor->exec.Exec(TEXT("MODE CAMERAMOVE"));
-				break;
+		case IDPB_MODE_SCALE:
+			GEditor->exec.Exec(TEXT("MODE ACTORSNAP"));
+			break;
 
-			case IDPB_MODE_SCALE:
-				GEditor->exec.Exec(TEXT("MODE BRUSHSNAP"));
-				break;
+		case IDPB_MODE_ROTATE:
+			GEditor->exec.Exec(TEXT("MODE ACTORROTATE"));
+			break;
 
-			case IDPB_MODE_ROTATE:
-				GEditor->exec.Exec(TEXT("MODE BRUSHROTATE"));
-				break;
+		case IDPB_MODE_VERTEX_EDIT:
+			GEditor->exec.Exec(TEXT("MODE VERTEXEDIT"));
+			break;
 
-			case IDPB_MODE_VERTEX_EDIT:
-				GEditor->exec.Exec(TEXT("MODE VERTEXEDIT"));
-				break;
+		case IDPB_MODE_POLYGON:
+			GEditor->exec.Exec(TEXT("MODE POLYGON"));
+			break;
 
-			case IDPB_MODE_POLYGON:
-				GEditor->exec.Exec(TEXT("MODE POLYGON"));
-				break;
+		case IDPB_MODE_GEOMETRY:
+			GEditor->exec.Exec(TEXT("MODE GEOMETRY"));
+			break;
 
-			case IDPB_MODE_TERRAINEDIT:
-				GEditor->exec.Exec(TEXT("MODE TERRAINEDIT"));
-				break;
+		case IDPB_MODE_TERRAINEDIT:
+			GEditor->exec.Exec(TEXT("MODE TERRAINEDIT"));
+			break;
 
-			case IDPB_MODE_BRUSH_CLIP:
-				GEditor->exec.Exec(TEXT("MODE BRUSHCLIP"));
-				break;
+		case IDPB_MODE_MATINEE:
+			GEditor->exec.Exec(TEXT("MODE MATINEE"));
+			break;
 
-			case IDPB_MODE_FACE_DRAG:
-				GEditor->exec.Exec(TEXT("MODE FACEDRAG"));
-				break;
+		case IDPB_MODE_BRUSH_CLIP:
+			GEditor->exec.Exec(TEXT("MODE BRUSHCLIP"));
+			break;
 
-			case IDPB_SHOW_SELECTED:
-				GEditor->exec.Exec( TEXT("ACTOR HIDE UNSELECTED") );
-				break;
+		case IDPB_MODE_FACE_DRAG:
+			GEditor->exec.Exec(TEXT("MODE FACEDRAG"));
+			break;
 
-			case IDPB_HIDE_SELECTED:
-				GEditor->exec.Exec( TEXT("ACTOR HIDE SELECTED") );
-				break;
+		case IDPB_NEWMODE_CAMERA:
+			GEditor->exec.Exec(TEXT("MODE NEWCAMERAMOVE"));
+			break;
 
-			case IDPB_SHOW_ALL:
-				GEditor->exec.Exec( TEXT("ACTOR UNHIDE ALL") );
-				break;
+		case IDPB_SHOW_SELECTED:
+			GEditor->exec.Exec(TEXT("ACTOR HIDE UNSELECTED"));
+			break;
 
-			case IDPB_INVERT_SELECTION:
-				GEditor->exec.Exec( TEXT("ACTOR SELECT INVERT") );
-				break;
+		case IDPB_HIDE_SELECTED:
+			GEditor->exec.Exec(TEXT("ACTOR HIDE SELECTED"));
+			break;
 
-			case IDPB_BRUSHCLIP:
-				GEditor->exec.Exec( TEXT("BRUSHCLIP") );
-				GEditor->RedrawLevel( GEditor->level );
-				break;
+		case IDPB_SHOW_ALL:
+			GEditor->exec.Exec(TEXT("ACTOR UNHIDE ALL"));
+			break;
 
-			case IDPB_BRUSHCLIP_SPLIT:
-				GEditor->exec.Exec( TEXT("BRUSHCLIP SPLIT") );
-				GEditor->RedrawLevel( GEditor->level );
-				break;
+		case IDPB_INVERT_SELECTION:
+			GEditor->exec.Exec(TEXT("ACTOR SELECT INVERT"));
+			break;
 
-			case IDPB_BRUSHCLIP_FLIP:
-				GEditor->exec.Exec( TEXT("BRUSHCLIP FLIP") );
-				GEditor->RedrawLevel( GEditor->level );
-				break;
+		case IDPB_BRUSHCLIP:
+			GEditor->exec.Exec(TEXT("BRUSHCLIP"));
+			//GUnrealEd->RedrawLevel(GUnrealEd->Level);
+			break;
 
-			case IDPB_BRUSHCLIP_DELETE:
-				GEditor->exec.Exec( TEXT("BRUSHCLIP DELETE") );
-				GEditor->RedrawLevel( GEditor->level );
-				break;
+		case IDPB_BRUSHCLIP_SPLIT:
+			GEditor->exec.Exec(TEXT("BRUSHCLIP SPLIT"));
+			//GUnrealEd->RedrawLevel(GUnrealEd->Level);
+			break;
 
-			case IDPB_TEXTURE_PAN:
-				GEditor->exec.Exec(TEXT("MODE TEXTUREPAN"));
-				break;
+		case IDPB_BRUSHCLIP_FLIP:
+			GEditor->exec.Exec(TEXT("BRUSHCLIP FLIP"));
+			//GUnrealEd->RedrawLevel(GUnrealEd->Level);
+			break;
 
-			case IDPB_TEXTURE_ROTATE:
-				GEditor->exec.Exec(TEXT("MODE TEXTUREROTATE"));
-				break;
+		case IDPB_BRUSHCLIP_DELETE:
+			GEditor->exec.Exec(TEXT("BRUSHCLIP DELETE"));
+			//GUnrealEd->RedrawLevel(GUnrealEd->Level);
+			break;
 
-			case IDPB_MODE_ADD:
-				GEditor->exec.Exec( TEXT("BRUSH ADD") );
-				break;
+		case IDPB_TEXTURE_PAN:
+			GEditor->exec.Exec(TEXT("MODE TEXTUREPAN"));
+			break;
 
-			case IDPB_MODE_ADDHARDWARE:
-				GEditor->exec.Exec( TEXT("STATICMESH FROM BRUSH") );
-				break;
+		case IDPB_TEXTURE_ROTATE:
+			GEditor->exec.Exec(TEXT("MODE TEXTUREROTATE"));
+			break;
 
-			case IDPB_MODE_SUBTRACT:
-				GEditor->exec.Exec( TEXT("BRUSH SUBTRACT") );
-				break;
+		case IDPB_MODE_ADD:
+			GEditor->exec.Exec(TEXT("BRUSH ADD"));
+			break;
 
-			case IDPB_MODE_INTERSECT:
-				GEditor->exec.Exec( TEXT("BRUSH FROM INTERSECTION") );
-				break;
+		case IDPB_MODE_ADDSTATICMESH:
+			//GBrowserStaticMesh->CreateFromSelection();
+			break;
 
-			case IDPB_MODE_DEINTERSECT:
-				GEditor->exec.Exec( TEXT("BRUSH FROM DEINTERSECTION") );
-				break;
+		case IDPB_MODE_SUBTRACT:
+			GEditor->exec.Exec(TEXT("BRUSH SUBTRACT"));
+			break;
 
-			case IDPB_ADD_SPECIAL:
-				{
-				//if( !GDlgAddSpecial )
-				//{
-				//	GDlgAddSpecial = new WDlgAddSpecial( NULL, this );
-				//	GDlgAddSpecial->DoModeless();
-				//}
-				//else
-				//	GDlgAddSpecial->Show(1);
-				}
-				break;
+		case IDPB_MODE_INTERSECT:
+			GEditor->exec.Exec(TEXT("BRUSH FROM INTERSECTION"));
+			break;
 
-			case IDPB_ADD_MOVER:
-				GEditor->exec.Exec( TEXT("BRUSH ADDMOVER") );
-				break;
+		case IDPB_MODE_DEINTERSECT:
+			GEditor->exec.Exec(TEXT("BRUSH FROM DEINTERSECTION"));
+			break;
+
+		case IDPB_ADD_ANTIPORTAL:
+			GEditor->exec.Exec(TEXT("BRUSH ADDANTIPORTAL"));
+			break;
+
+		case IDPB_ADD_SPECIAL:
+		{
+			//if (!GDlgAddSpecial)
+			//{
+			//	GDlgAddSpecial = new WDlgAddSpecial(NULL, this);
+			//	GDlgAddSpecial->DoModeless(1);
+			//}
+			//else
+			//	GDlgAddSpecial->Show(1);
+		}
+		break;
+
+		case IDPB_ADD_MOVER:
+			GEditor->exec.Exec(TEXT("BRUSH ADDMOVER"));
+			break;
+
+		case IDPB_ADD_VOLUME:
+		//	AddVolume();
+			break;
 
 			default:
 				// A brush builder must have been clicked.  Loop through the
@@ -778,21 +798,23 @@ class WButtonBar : public WWindow
 #endif
 		pGroup = AddGroup( TEXT("CSG") );
 		pGroup->OpenWindow();
-		pGroup->AddButton( IDPB_MODE_ADD, 0, TEXT("ModeAdd"), TEXT("Add"), NULL, 0 );
-		pGroup->AddButton( IDPB_MODE_SUBTRACT, 0, TEXT("ModeSubtract"), TEXT("Subtract"), NULL, 0 );
-		pGroup->AddButton( IDPB_MODE_INTERSECT, 0, TEXT("ModeIntersect"), TEXT("Intersect"), NULL, 0 );
-		pGroup->AddButton( IDPB_MODE_DEINTERSECT, 0, TEXT("ModeDeintersect"), TEXT("Deintersect"), NULL, 0 );
-		pGroup->AddButton( IDPB_ADD_SPECIAL, 0, TEXT("AddSpecial"), TEXT("Add Special Brush"), NULL, 0 );
-		pGroup->AddButton( IDPB_MODE_ADDHARDWARE, 0, TEXT("ModeAddHardware"), TEXT("Add Hardware Brush"), NULL, 0 );
-		pGroup->AddButton( IDPB_ADD_MOVER, 0, TEXT("AddMover"), TEXT("Add Mover Brush (right click for all mover types)"), NULL, 0 );
+		pGroup->AddButton(IDPB_MODE_ADD, 0, TEXT("ModeAdd"), TEXT("Add"), NULL, 0);
+		pGroup->AddButton(IDPB_MODE_SUBTRACT, 0, TEXT("ModeSubtract"), TEXT("Subtract"), NULL, 0);
+		pGroup->AddButton(IDPB_MODE_INTERSECT, 0, TEXT("ModeIntersect"), TEXT("Intersect"), NULL, 0);
+		pGroup->AddButton(IDPB_MODE_DEINTERSECT, 0, TEXT("ModeDeintersect"), TEXT("Deintersect"), NULL, 0);
+		pGroup->AddButton(IDPB_ADD_SPECIAL, 0, TEXT("AddSpecial"), TEXT("Add Special Brush"), NULL, 0);
+		pGroup->AddButton(IDPB_MODE_ADDSTATICMESH, 0, TEXT("ModeAddStaticMesh"), TEXT("Add Static Mesh"), NULL, 0);
+		pGroup->AddButton(IDPB_ADD_MOVER, 0, TEXT("AddMover"), TEXT("Add Mover Brush (right click for all mover types)"), NULL, 0);
+		pGroup->AddButton(IDPB_ADD_ANTIPORTAL, 0, TEXT("AddAntiPortal"), TEXT("Add Antiportal"), NULL, 0);
+		pGroup->AddButton(IDPB_ADD_VOLUME, 0, TEXT("ModeAddVolume"), TEXT("Volume"), NULL, 0);
 
 		pGroup = AddGroup( TEXT("Misc") );
 		pGroup->OpenWindow();
-		pGroup->AddButton( IDPB_SHOW_SELECTED, 0, TEXT("ShowSelected"), TEXT("Show Selected Actors Only"), NULL, 0 );
-		pGroup->AddButton( IDPB_HIDE_SELECTED, 0, TEXT("HideSelected"), TEXT("Hide Selected Actors"), NULL, 0 );
-		pGroup->AddButton( IDPB_SHOW_ALL, 0, TEXT("ShowAll"), TEXT("Show All Actors"), NULL, 0 );
-		pGroup->AddButton( IDPB_INVERT_SELECTION, 0, TEXT("InvertSelections"), TEXT("Invert Selection"), NULL, 0 );
-		pGroup->AddButton( IDPB_CAMERA_SPEED, 0, TEXT("ModeCamera"), TEXT("Change Camera Speed"), NULL, 0 );
+		pGroup->AddButton(IDPB_SHOW_SELECTED, 0, TEXT("ShowSelected"), TEXT("Show Selected Actors Only"), NULL, 0);
+		pGroup->AddButton(IDPB_HIDE_SELECTED, 0, TEXT("HideSelected"), TEXT("Hide Selected Actors"), NULL, 0);
+		pGroup->AddButton(IDPB_SHOW_ALL, 0, TEXT("ShowAll"), TEXT("Show All Actors"), NULL, 0);
+		pGroup->AddButton(IDPB_INVERT_SELECTION, 0, TEXT("InvertSelections"), TEXT("Invert Selection"), NULL, 0);
+		pGroup->AddButton(IDPB_CAMERA_SPEED, 0, TEXT("ModeCamera"), TEXT("Change Camera Speed"), NULL, 0);
 
 		pGroup = AddGroup( TEXT("UserDefined") );
 		pGroup->OpenWindow();
