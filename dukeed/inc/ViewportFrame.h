@@ -19,7 +19,7 @@ class WVFToolBar : public WWindow
 	std::vector<WPictureButton *> Buttons;
 	HBITMAP hbm;
 	BITMAP bm;
-	//FString Caption;
+	dnString Caption;
 	UViewport* m_pViewport;
 	HBRUSH brushBack;
 	HPEN penLine;
@@ -77,7 +77,7 @@ class WVFToolBar : public WWindow
 	}
 	void SetCaption( dnString InCaption )
 	{
-		//Caption = InCaption;
+		Caption = InCaption;
 		InvalidateRect( hWnd, NULL, FALSE );
 	}
 	void OnPaint()
@@ -94,8 +94,8 @@ class WVFToolBar : public WWindow
 		rc.top += 1;
 		//if( GViewportStyle == VSTYLE_Fixed )
 		{
-			//::SetBkMode( hDC, TRANSPARENT );
-			//::DrawTextA( hDC, TCHAR_TO_ANSI( *Caption ), ::strlen( TCHAR_TO_ANSI( *Caption ) ), &rc, DT_LEFT | DT_SINGLELINE );
+			::SetBkMode( hDC, TRANSPARENT );
+			::DrawTextW( hDC, *Caption, ::wcslen(  *Caption  ), &rc, DT_LEFT | DT_SINGLELINE );
 		}
 		rc.left -= 2;
 		rc.top -= 1;
@@ -597,13 +597,13 @@ class WViewportFrame : public WWindow
 	}
 	void OnCommand( INT Command )
 	{
-#if 0
+
 		switch( Command ) {
 
 			case WM_VIEWPORT_UPDATEWINDOWFRAME:
 				UpdateWindow();
 				break;
-
+#if 0
 			case ID_MapDynLight:
 				m_pViewport->Actor->RendMap=REN_DynLight;
 				UpdateWindow();
@@ -736,14 +736,11 @@ class WViewportFrame : public WWindow
 				m_pViewport->Actor->ShowFlags ^= SHOW_MovingBrushes;
 				m_pViewport->Repaint( 1 );
 				break;
-
+#endif
 			default:
 				WWindow::OnCommand(Command);
 				break;
 		}
-#else
-		WWindow::OnCommand(Command);
-#endif
 	}
 	void UpdateWindow( void )
 	{
@@ -752,8 +749,10 @@ class WViewportFrame : public WWindow
 			Caption = TEXT("Viewport Frame");
 			return;
 		}
-#if 0
-		switch( m_pViewport->Actor->RendMap )
+
+		int* Viewport_Actor_RendMap = (int*)(*((DWORD*)m_pViewport + 12) + 5940);
+
+		switch( *Viewport_Actor_RendMap )
 		{
 			case REN_Wire:
 				Caption = TEXT("Wireframe");
@@ -807,7 +806,7 @@ class WViewportFrame : public WWindow
 				Caption = TEXT("Unknown");
 				break;
 		}
-#endif
+
 		//SetText(*Caption);
 		VFToolbar->SetCaption( Caption );
 		VFToolbar->UpdateButtons();
