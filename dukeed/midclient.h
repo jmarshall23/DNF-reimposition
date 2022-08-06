@@ -77,7 +77,7 @@ class WMdiFrame : public WWindow
 
 		UEditorEngineVTableGeneric* gen = (UEditorEngineVTableGeneric*)this;
 
-		wsprintf(Title, TEXT("Duke's Enormous Tool"));
+		wsprintf(Title, TEXT("Duke's Enormous Tool(build: %s)"), TEXT(__DATE__));
 		PerformCreateWindowEx
 		(
 			WS_EX_APPWINDOW,
