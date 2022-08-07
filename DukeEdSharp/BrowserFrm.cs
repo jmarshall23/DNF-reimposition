@@ -6,11 +6,15 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.Threading;
+using System.IO;
 
 namespace DukeEdSharp
 {
     public partial class BrowserFrm : Form
     {
+        private string soundPackageName;
+
         public BrowserFrm()
         {
             InitializeComponent();
@@ -55,6 +59,59 @@ namespace DukeEdSharp
         private void listFilterTxt_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void RefreshSoundList()
+        {
+            string temp = EditorInterface.Get("OBJ", "QUERY TYPE=Sound PACKAGE=\"" + soundPackageName + "\"");
+            string[] sounds = temp.Split(' ');
+
+            soundPackageListBox.Items.Clear();
+
+            foreach(string s in sounds)
+            {
+                soundPackageListBox.Items.Add(s);
+            }
+        }
+        private void openToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            Thread t = new Thread((ThreadStart)(() => {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = "..\\sounds\\";
+                openFileDialog.Filter = "Sound Packages (*.dfx)|*.dfx|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+                }
+            }));
+
+            // Run your code from a thread that joins the STA Thread
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+
+            soundPackageName = Path.GetFileName(filePath);
+            soundPackageName = Path.GetFileNameWithoutExtension(soundPackageName);
+
+            if (filePath != string.Empty)
+            {
+                string s = "OBJ LOAD FILE=\"" + filePath + "\"";
+                EditorInterface.DukeSharp_Exec(s);
+            }
+
+            RefreshSoundList();
         }
     }
 }

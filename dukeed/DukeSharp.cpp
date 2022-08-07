@@ -58,3 +58,18 @@ DukeSharp_Exec
 void __stdcall DukeSharp_Exec(const wchar_t* command) {
 	GEditor->exec.Exec(command);
 }
+
+/*
+=================
+DukeSharp_Get
+=================
+*/
+const wchar_t* __stdcall DukeSharp_Get(const wchar_t *topic, const wchar_t* command) {
+	FStringOutputDevice GetPropResult;
+	GEditor->Get(topic, command, GetPropResult);
+
+	static std::wstring temp;
+	temp = *GetPropResult;
+
+	return temp.c_str();
+}

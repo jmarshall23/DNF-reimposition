@@ -172,7 +172,7 @@ public:
 	const TCHAR* operator*() const;
 	UBOOL operator==(const TCHAR* Other) const;
 	UBOOL operator==(const dnString& Other) const;
-
+	dnString& operator+=(const TCHAR* Str);
 
 	void* Data;
 	int ArrayNum;
@@ -543,9 +543,10 @@ extern void* (__fastcall* UObject__GetOuter)(void* _this, void* edx);
 
 __declspec(dllimport) class dnOutputDevice {
 public:
-	virtual void Function1(void) { };
-	virtual void Function2(void) { };
-	virtual void Function3(void) { };
+	virtual void Serialize(const TCHAR* Data, EName Event) { }
+	virtual void Flush(void) { }
+	virtual void FlushRealtime(void) { }
+	virtual void PrintfArgList(wchar_t*, unsigned int, wchar_t const*, char*) { }
 };
 
 class dnOuputDeviceString {
@@ -821,9 +822,9 @@ public:
 	FStringOutputDevice(const TCHAR* InStr = TEXT(""))
 		: dnString(InStr)
 	{}
-	void Serialize(const TCHAR* Data, EName Event)
+	virtual void Serialize(const TCHAR* Data, EName Event) override
 	{
-	//	*this += (TCHAR*)Data;
+		*this += (TCHAR*)Data;
 	}
 };
 

@@ -16,6 +16,16 @@ namespace DukeEdSharp
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         public static extern void DukeSharp_Exec([MarshalAs(UnmanagedType.LPWStr)] string exec);
 
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        private static extern IntPtr DukeSharp_Get([MarshalAs(UnmanagedType.LPWStr)] string topic, [MarshalAs(UnmanagedType.LPWStr)] string command);
+
+        public static string Get(string topic, string command)
+        {
+            IntPtr ptr = DukeSharp_Get(topic, command);
+            string tmp = Marshal.PtrToStringAuto(ptr);
+            return tmp;
+        }
+
         [DllExport]
         public static void InitBrowser()
         {

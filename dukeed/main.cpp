@@ -591,13 +591,13 @@ void InitDNFHooks()
 		MH_CreateHook(dnOutputArgList4, ReroutedOutput4, (LPVOID*)&dnfOutput4);
 		MH_EnableHook(dnOutputArgList4);
 	}
-#endif		
+		
 	void* dnOutputArgList5 = GetProcAddress(hinst, MAKEINTRESOURCEA(963));
 	{
 		MH_CreateHook(dnOutputArgList5, ReroutedOutput4, (LPVOID*)&dnfOutput4);
 		MH_EnableHook(dnOutputArgList5);
 	}
-
+#endif
 	{
 		MH_CreateHook(&CreateWindowExW, CreateWindowExWHooked, (LPVOID*)&CreateWindowExWActual);
 		MH_EnableHook(&CreateWindowExW);
