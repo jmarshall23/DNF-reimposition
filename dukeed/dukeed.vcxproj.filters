@@ -24,6 +24,9 @@
     <ClCompile Include="MeshDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DukeSharp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="MinHook.x86.lib">
@@ -187,5 +190,13 @@
     <ClInclude Include="windowres.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="DukeSharp.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dukeed.def">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

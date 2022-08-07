@@ -1,0 +1,4 @@
+LIBRARY
+EXPORTS
+	DukeSharp_FindActorClasses @1
+	DukeSharp_Exec @2

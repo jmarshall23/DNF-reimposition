@@ -25,6 +25,8 @@ WBrowserMaster* GBrowserMaster = NULL;
 #include "inc/BrowserActor.h"
 #include "inc/ButtonBar.h"
 
+#include "DukeSharp.h"
+
 class WEditorFrame *GEditorFrame;
 WBrowserActor* GBrowserActor = NULL;
 dnOuputDeviceString GetPropResult;
@@ -523,6 +525,8 @@ void InitEditor(void)
 {
 	ignoreGLog = false;
 
+	dukeSharp.LoadDll();
+
 	// Ensure that the common control DLL is loaded. 
 	InitCommonControls();
 
@@ -598,18 +602,18 @@ void InitEditor(void)
 	//GBrowserMaster->Browsers[eBROWSER_TEXTURE] = (WBrowser**)(&GBrowserTexture);
 	//::InvalidateRect(GBrowserMaster->hWnd, NULL, 1);
 
-
-
-	GBrowserMaster = new WBrowserMaster(TEXT("Master Browser"), &Frame);
-	GBrowserMaster->OpenWindow(eBROWSER_ACTOR);
-	GBrowserMaster->Browsers[eBROWSER_ACTOR] = (WBrowser**)(&GBrowserActor);	
-	::InvalidateRect(GBrowserMaster->hWnd, NULL, 1);
-
-	SendMessageW(GEditorFrame->hWnd, WM_COMMAND, WM_BROWSER_UNDOCK, eBROWSER_ACTOR);
-	GBrowserActor->Show(eBROWSER_ACTOR);
+	//GBrowserMaster = new WBrowserMaster(TEXT("Master Browser"), &Frame);
+	//GBrowserMaster->OpenWindow(eBROWSER_ACTOR);
+	//GBrowserMaster->Browsers[eBROWSER_ACTOR] = (WBrowser**)(&GBrowserActor);	
+	//::InvalidateRect(GBrowserMaster->hWnd, NULL, 1);
+	//
+	//SendMessageW(GEditorFrame->hWnd, WM_COMMAND, WM_BROWSER_UNDOCK, eBROWSER_ACTOR);
+	//GBrowserActor->Show(eBROWSER_ACTOR);
 
 	GMainMenu = LoadMenuA(*hinstWindowHack, MAKEINTRESOURCEA(IDMENU_MainMenu));
 	SetMenu(Frame.hWnd, GMainMenu);
+
+	dukeSharp.Init();
 
 //	GDnExec->Exec(TEXT("r_AllowAlwaysVisible 1"), (dnOutputDevice&)globalLog);
 
