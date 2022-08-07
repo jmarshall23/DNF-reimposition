@@ -281,7 +281,7 @@ public:
 	LPARAM LastlParam;
 
 	WWindow(WWindow* InFrame);
-	WWindow(const wchar_t *name, WWindow* InFrame) : PersistentName(name)
+	WWindow(const wchar_t* name, WWindow* InFrame) : PersistentName(name)
 		, ControlId(0)
 		, TopControlId(FIRST_AUTO_CONTROL)
 		, Destroyed(0)

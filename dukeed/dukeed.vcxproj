@@ -139,7 +139,9 @@
   <ItemGroup>
     <ClCompile Include="DukeSharp.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="DukeEd.cpp" />
+    <ClCompile Include="DukeEd.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Disabled</Optimization>
+    </ClCompile>
     <ClCompile Include="MeshDriver.cpp" />
   </ItemGroup>
   <ItemGroup>

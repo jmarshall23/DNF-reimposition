@@ -507,7 +507,7 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 			//}
 			//break;
 		}
-	}
+ 	}
 };
 
 WNDPROC WMdiClient::SuperProc = nullptr;

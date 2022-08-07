@@ -211,6 +211,12 @@ __declspec(dllimport) class UObject {
 public:
 	UObject();
 
+	int ObjectInternal[6];
+	UObject* outer;
+	const int ObjectFlags;
+	dnName name;
+	UClass* _class;
+
 	UBOOL __fastcall IsA(UClass* SomeBaseClass) const;
 
 	static dnArray<UObject*>			*GObjObjects;
@@ -833,6 +839,11 @@ extern void* (*AColisionVolume__StaticClass)(void);
 __declspec(dllimport) class UBrushBuilder : public UObject
 {
 public:
+	dnString		 BitmapFilename;
+	dnString		 ToolTip;
+
+	static UClass* StaticClass();
+
 	BITFIELD __fastcall eventBuild(void);
 };
 

@@ -782,11 +782,10 @@ class WButtonBar : public WWindow
 		pGroup->AddButton( IDPB_BRUSHCLIP_DELETE, 0, TEXT("BrushClipDelete"), TEXT("Delete Clipping Markers"), NULL, 0 );
 
 		INT ID = IDPB_BRUSH_BUILDERS;
-#if 0 // jmarshall fix me
 		pGroup = AddGroup( TEXT("Builders") );
 		pGroup->OpenWindow();
 		for( TObjectIterator<UClass> ItC; ItC; ++ItC )
-			if( ItC->IsChildOf(UBrushBuilder::StaticClass()) && !(ItC->ClassFlags&CLASS_Abstract) )
+			if( ItC->IsChildOf(UBrushBuilder::StaticClass()) /* && !(ItC->ClassFlags & CLASS_Abstract)*/)
 			{
 				UBrushBuilder* ubb = ConstructObject<UBrushBuilder>( *ItC );
 				if( ubb )
@@ -795,7 +794,7 @@ class WButtonBar : public WWindow
 					ID++;
 				}
 			}
-#endif
+
 		pGroup = AddGroup( TEXT("CSG") );
 		pGroup->OpenWindow();
 		pGroup->AddButton(IDPB_MODE_ADD, 0, TEXT("ModeAdd"), TEXT("Add"), NULL, 0);
