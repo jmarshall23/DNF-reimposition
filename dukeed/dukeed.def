@@ -3,3 +3,4 @@ EXPORTS
 	DukeSharp_FindActorClasses @1
 	DukeSharp_Exec @2
 	DukeSharp_Get  @3
+	DukeSharp_CreateTextureViewport @4

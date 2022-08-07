@@ -476,12 +476,12 @@ void ReroutedOutput5(void* log, wchar_t* str)
 	wprintf(TEXT("\n"));
 }
 
-void (*dnfOutput2)(void* log, int type, wchar_t* str, ...);
-void ReroutedOutput2(void* log, int type, wchar_t* str, ...)
+void (__fastcall *dnfOutput2)(int type, wchar_t* str, ...);
+void __fastcall ReroutedOutput2(int type, wchar_t* str, ...)
 {
 	if (skipLogging)
 		return;
-
+#if 0
 	wchar_t buffer[512];
 
 	va_list args;
@@ -493,9 +493,10 @@ void ReroutedOutput2(void* log, int type, wchar_t* str, ...)
 
 	OutputDebugStringW(buffer);
 	OutputDebugStringA("\n");
-
-	wprintf(buffer);
+#endif
+	//wprintf(buffer);
 	wprintf(TEXT("\n"));
+
 }
 
 void (*dnfOutput6)(void* log, int type, char* str, ...);
@@ -567,13 +568,13 @@ void InitDNFHooks()
 		MH_CreateHook(dnOutputArgList, ReroutedOutput, (LPVOID*)&dnfOutput);
 		MH_EnableHook(dnOutputArgList);
 	}
-#if 0
-	void *dnOutputArgList2 = GetProcAddress(hinst, MAKEINTRESOURCEA(973));
+
+	void *dnOutputArgList2 = GetProcAddress(hinst, MAKEINTRESOURCEA(966));
 	{
 		MH_CreateHook(dnOutputArgList2, ReroutedOutput2, (LPVOID*)&dnfOutput2);
 		MH_EnableHook(dnOutputArgList2);
 	}
-
+#if 0
 	void* dnOutputArgList6 = GetProcAddress(hinst, MAKEINTRESOURCEA(972));
 	{
 		MH_CreateHook(dnOutputArgList6, ReroutedOutput2, (LPVOID*)&dnfOutput2);
@@ -591,13 +592,13 @@ void InitDNFHooks()
 		MH_CreateHook(dnOutputArgList4, ReroutedOutput4, (LPVOID*)&dnfOutput4);
 		MH_EnableHook(dnOutputArgList4);
 	}
-		
+	
 	void* dnOutputArgList5 = GetProcAddress(hinst, MAKEINTRESOURCEA(963));
 	{
 		MH_CreateHook(dnOutputArgList5, ReroutedOutput4, (LPVOID*)&dnfOutput4);
 		MH_EnableHook(dnOutputArgList5);
 	}
-#endif
+#endif	
 	{
 		MH_CreateHook(&CreateWindowExW, CreateWindowExWHooked, (LPVOID*)&CreateWindowExWActual);
 		MH_EnableHook(&CreateWindowExW);

@@ -40,22 +40,21 @@
             this.sortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelEntitiesPage = new System.Windows.Forms.TabPage();
             this.texturePage = new System.Windows.Forms.TabPage();
-            this.soundPage = new System.Windows.Forms.TabPage();
-            this.staticMeshPage = new System.Windows.Forms.TabPage();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.textureBrowserStripMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.soundPage = new System.Windows.Forms.TabPage();
+            this.soundPackageListBox = new System.Windows.Forms.ListBox();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,13 +68,16 @@
             this.playToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.soundPackageListBox = new System.Windows.Forms.ListBox();
+            this.staticMeshPage = new System.Windows.Forms.TabPage();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.textureListBox = new System.Windows.Forms.ListBox();
+            this.textureGroupComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.actorClassPage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.texturePage.SuspendLayout();
+            this.textureBrowserStripMenu.SuspendLayout();
             this.soundPage.SuspendLayout();
-            this.menuStrip2.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,7 +135,7 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(673, 24);
             this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Text = "actorBrowersMenuStrip";
             // 
             // fileToolStripMenuItem
             // 
@@ -167,7 +169,9 @@
             // 
             // texturePage
             // 
-            this.texturePage.Controls.Add(this.menuStrip2);
+            this.texturePage.Controls.Add(this.textureGroupComboBox);
+            this.texturePage.Controls.Add(this.textureListBox);
+            this.texturePage.Controls.Add(this.textureBrowserStripMenu);
             this.texturePage.Location = new System.Drawing.Point(4, 22);
             this.texturePage.Name = "texturePage";
             this.texturePage.Padding = new System.Windows.Forms.Padding(3);
@@ -176,37 +180,17 @@
             this.texturePage.Text = "Textures";
             this.texturePage.UseVisualStyleBackColor = true;
             // 
-            // soundPage
+            // textureBrowserStripMenu
             // 
-            this.soundPage.Controls.Add(this.soundPackageListBox);
-            this.soundPage.Controls.Add(this.menuStrip3);
-            this.soundPage.Location = new System.Drawing.Point(4, 22);
-            this.soundPage.Name = "soundPage";
-            this.soundPage.Size = new System.Drawing.Size(679, 539);
-            this.soundPage.TabIndex = 3;
-            this.soundPage.Text = "Sounds";
-            this.soundPage.UseVisualStyleBackColor = true;
-            // 
-            // staticMeshPage
-            // 
-            this.staticMeshPage.Location = new System.Drawing.Point(4, 22);
-            this.staticMeshPage.Name = "staticMeshPage";
-            this.staticMeshPage.Size = new System.Drawing.Size(679, 539);
-            this.staticMeshPage.TabIndex = 4;
-            this.staticMeshPage.Text = "Static Meshes";
-            this.staticMeshPage.UseVisualStyleBackColor = true;
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.textureBrowserStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem1,
             this.editToolStripMenuItem,
             this.viewToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(3, 3);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(673, 24);
-            this.menuStrip2.TabIndex = 0;
-            this.menuStrip2.Text = "menuStrip2";
+            this.textureBrowserStripMenu.Location = new System.Drawing.Point(3, 3);
+            this.textureBrowserStripMenu.Name = "textureBrowserStripMenu";
+            this.textureBrowserStripMenu.Size = new System.Drawing.Size(673, 24);
+            this.textureBrowserStripMenu.TabIndex = 0;
+            this.textureBrowserStripMenu.Text = "menuStrip2";
             // 
             // fileToolStripMenuItem1
             // 
@@ -221,22 +205,6 @@
             this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem1.Text = "&File";
             // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.propertiesToolStripMenuItem,
-            this.deleteToolStripMenuItem,
-            this.renameToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "&Edit";
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "&View";
-            // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
@@ -248,12 +216,41 @@
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // importToolStripMenuItem
+            // 
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Text = "Import";
+            // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Text = "Export";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.propertiesToolStripMenuItem,
+            this.deleteToolStripMenuItem,
+            this.renameToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "&Edit";
             // 
             // propertiesToolStripMenuItem
             // 
@@ -273,27 +270,31 @@
             this.renameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.renameToolStripMenuItem.Text = "Rename";
             // 
-            // contextMenuStrip1
+            // viewToolStripMenuItem
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "&View";
             // 
-            // toolStripSeparator1
+            // soundPage
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.soundPage.Controls.Add(this.soundPackageListBox);
+            this.soundPage.Controls.Add(this.menuStrip3);
+            this.soundPage.Location = new System.Drawing.Point(4, 22);
+            this.soundPage.Name = "soundPage";
+            this.soundPage.Size = new System.Drawing.Size(679, 539);
+            this.soundPage.TabIndex = 3;
+            this.soundPage.Text = "Sounds";
+            this.soundPage.UseVisualStyleBackColor = true;
             // 
-            // importToolStripMenuItem
+            // soundPackageListBox
             // 
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.importToolStripMenuItem.Text = "Import";
-            // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exportToolStripMenuItem.Text = "Export";
+            this.soundPackageListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.soundPackageListBox.FormattingEnabled = true;
+            this.soundPackageListBox.Location = new System.Drawing.Point(0, 24);
+            this.soundPackageListBox.Name = "soundPackageListBox";
+            this.soundPackageListBox.Size = new System.Drawing.Size(679, 515);
+            this.soundPackageListBox.TabIndex = 1;
             // 
             // menuStrip3
             // 
@@ -322,31 +323,31 @@
             // openToolStripMenuItem1
             // 
             this.openToolStripMenuItem1.Name = "openToolStripMenuItem1";
-            this.openToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
             this.openToolStripMenuItem1.Text = "Open";
             this.openToolStripMenuItem1.Click += new System.EventHandler(this.openToolStripMenuItem1_Click);
             // 
             // saveToolStripMenuItem1
             // 
             this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
             this.saveToolStripMenuItem1.Text = "Save";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(107, 6);
             // 
             // importToolStripMenuItem1
             // 
             this.importToolStripMenuItem1.Name = "importToolStripMenuItem1";
-            this.importToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
             this.importToolStripMenuItem1.Text = "Import";
             // 
             // exportToolStripMenuItem1
             // 
             this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
             this.exportToolStripMenuItem1.Text = "Export";
             // 
             // editToolStripMenuItem1
@@ -363,24 +364,24 @@
             // deleteToolStripMenuItem1
             // 
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
             this.deleteToolStripMenuItem1.Text = "Delete";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(104, 6);
             // 
             // playToolStripMenuItem
             // 
             this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.playToolStripMenuItem.Text = "Play";
             // 
             // stopToolStripMenuItem
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.stopToolStripMenuItem.Text = "Stop";
             // 
             // viewToolStripMenuItem1
@@ -389,14 +390,38 @@
             this.viewToolStripMenuItem1.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem1.Text = "&View";
             // 
-            // soundPackageListBox
+            // staticMeshPage
             // 
-            this.soundPackageListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.soundPackageListBox.FormattingEnabled = true;
-            this.soundPackageListBox.Location = new System.Drawing.Point(0, 24);
-            this.soundPackageListBox.Name = "soundPackageListBox";
-            this.soundPackageListBox.Size = new System.Drawing.Size(679, 515);
-            this.soundPackageListBox.TabIndex = 1;
+            this.staticMeshPage.Location = new System.Drawing.Point(4, 22);
+            this.staticMeshPage.Name = "staticMeshPage";
+            this.staticMeshPage.Size = new System.Drawing.Size(679, 539);
+            this.staticMeshPage.TabIndex = 4;
+            this.staticMeshPage.Text = "Static Meshes";
+            this.staticMeshPage.UseVisualStyleBackColor = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // textureListBox
+            // 
+            this.textureListBox.FormattingEnabled = true;
+            this.textureListBox.Location = new System.Drawing.Point(3, 54);
+            this.textureListBox.Name = "textureListBox";
+            this.textureListBox.Size = new System.Drawing.Size(680, 485);
+            this.textureListBox.TabIndex = 1;
+            // 
+            // textureGroupComboBox
+            // 
+            this.textureGroupComboBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textureGroupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.textureGroupComboBox.FormattingEnabled = true;
+            this.textureGroupComboBox.Location = new System.Drawing.Point(3, 27);
+            this.textureGroupComboBox.Name = "textureGroupComboBox";
+            this.textureGroupComboBox.Size = new System.Drawing.Size(673, 21);
+            this.textureGroupComboBox.TabIndex = 2;
+            this.textureGroupComboBox.SelectedIndexChanged += new System.EventHandler(this.textureGroupComboBox_SelectedIndexChanged);
             // 
             // BrowserFrm
             // 
@@ -404,8 +429,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 565);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip2;
+            this.MainMenuStrip = this.textureBrowserStripMenu;
             this.MaximizeBox = false;
             this.Name = "BrowserFrm";
             this.Text = "DukeEdit Browsers";
@@ -416,10 +442,10 @@
             this.menuStrip1.PerformLayout();
             this.texturePage.ResumeLayout(false);
             this.texturePage.PerformLayout();
+            this.textureBrowserStripMenu.ResumeLayout(false);
+            this.textureBrowserStripMenu.PerformLayout();
             this.soundPage.ResumeLayout(false);
             this.soundPage.PerformLayout();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
             this.ResumeLayout(false);
@@ -440,7 +466,7 @@
         private System.Windows.Forms.TabPage staticMeshPage;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox actorClassList;
-        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.MenuStrip textureBrowserStripMenu;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -468,5 +494,7 @@
         private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem1;
         private System.Windows.Forms.ListBox soundPackageListBox;
+        private System.Windows.Forms.ListBox textureListBox;
+        private System.Windows.Forms.ComboBox textureGroupComboBox;
     }
 }

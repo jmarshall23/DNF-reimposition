@@ -4,6 +4,8 @@
 #include <windows.h>
 #include "DukeSharp.h"
 #include "Unreal.h"
+#include "windrv.h"
+#include "uncamera.h"
 
 #include <locale>
 #include <codecvt>
@@ -72,4 +74,40 @@ const wchar_t* __stdcall DukeSharp_Get(const wchar_t *topic, const wchar_t* comm
 	temp = *GetPropResult;
 
 	return temp.c_str();
+}
+
+void* __stdcall DukeSharp_CreateTextureViewport(HWND hWnd)
+{
+	// Create the texture browser viewport
+	//
+	UWindowsViewport* pViewport = GClient->NewViewport(TEXT("TextureBrowser"));
+	ULevel* level = (ULevel*)((int*)GEditor)[33];
+	level->SpawnViewActor((UViewport *)pViewport);
+	unsigned int* Viewport_Actor_Showflags = (unsigned*)(*((unsigned*)pViewport + 12) + 5936);
+	int* Viewport_Actor_RendMap = (int*)(*((DWORD*)pViewport + 12) + 5940);
+	int* Misc1 = (int*)(*((DWORD*)pViewport + 12) + 5944);
+	int* Misc2 = (int*)(*((DWORD*)pViewport + 12) + 5948);
+
+	*Viewport_Actor_Showflags = SHOW_StandardView | 0x08; //pViewport->Actor->ShowFlags = SHOW_StandardView | SHOW_NoButtons | SHOW_ChildWindow;
+	*Viewport_Actor_RendMap = REN_TexBrowser; // pViewport->Actor->RendMap = REN_TexBrowser;
+	
+	UInput* input = (UInput*)*((DWORD*)pViewport + 23);
+	input->Init(pViewport);
+
+	*Misc1 = 128;
+	*Misc2 = 0;
+
+	RECT r;
+	GetWindowRect(hWnd, &r);
+
+	int width = r.right - r.left;
+	int height = r.bottom - r.top;
+	
+	//pViewport->Actor->Misc1 = iZoom;
+	//pViewport->Actor->Misc2 = iScroll;
+	//pViewport->Group = NAME_None;
+	//pViewport->MiscRes = NULL;
+	pViewport->OpenWindow(hWnd, 0, width, height, 0, 0);
+
+	return pViewport;
 }

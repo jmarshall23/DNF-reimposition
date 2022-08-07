@@ -19,6 +19,15 @@ namespace DukeEdSharp
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         private static extern IntPtr DukeSharp_Get([MarshalAs(UnmanagedType.LPWStr)] string topic, [MarshalAs(UnmanagedType.LPWStr)] string command);
 
+
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        private static extern IntPtr DukeSharp_CreateTextureViewport(IntPtr hWnd);
+
+        public static IntPtr CreateTextureViewport(IntPtr hWnd)
+        {
+            return DukeSharp_CreateTextureViewport(hWnd);
+        }
+
         public static string Get(string topic, string command)
         {
             IntPtr ptr = DukeSharp_Get(topic, command);
