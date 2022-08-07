@@ -22,6 +22,9 @@ void DukeSharpInterface::LoadDll(void) {
 	HMODULE module = LoadLibraryA("DukeEdSharp.Exports.dll");
 
 	InitBrowser = (void(__cdecl*)(void))GetProcAddress(module, "InitBrowser");	
+	InitBrowser();
+
+	PostInit = (void(__cdecl*)(void))GetProcAddress(module, "PostInit");
 }
 
 /*
@@ -30,7 +33,7 @@ DukeSharpInterface::Init
 =================
 */
 void DukeSharpInterface::Init(void) {
-	InitBrowser();
+	PostInit();
 }
 
 /*

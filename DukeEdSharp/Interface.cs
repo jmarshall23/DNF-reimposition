@@ -22,5 +22,11 @@ namespace DukeEdSharp
             browserFrm.Show();
             browserFrm.PopulateActorClassList();
         }
+
+        [DllExport]
+        public static void PostInit()
+        {
+            browserFrm.Focus();
+        }
     }
 }

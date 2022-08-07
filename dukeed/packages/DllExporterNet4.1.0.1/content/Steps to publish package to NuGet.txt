@@ -1,0 +1,7 @@
+﻿#Downloaded nuget.exe from nuget.org/downloads and copied into c:\windows\system32
+nuget spec DllExporterNet4.csproj
+nuget pack (uses local .nuspec file)
+nuget push DllExporterNet4.1.0.1.nupkg oy2kx4hywteb4gbhbwdqndxdvjfjshwutispo6csdfx54u  -Source https://api.nuget.org/v3/index.json
+
+Then, you have to go up into Nuget and manage the package to get it to publish.
+

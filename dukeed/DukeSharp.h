@@ -7,6 +7,7 @@ public:
 
 private:
 	void					(*InitBrowser)(void);
+	void					(*PostInit)(void);
 
 	HMODULE	handle;
 };
