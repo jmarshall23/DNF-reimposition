@@ -354,7 +354,8 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 
 			case ID_BrowserActor:
 			{
-				GBrowserMaster->ShowBrowser(eBROWSER_ACTOR);
+				//GBrowserMaster->ShowBrowser(eBROWSER_ACTOR);
+				dukeSharp.Init();
 			}
 			break;
 

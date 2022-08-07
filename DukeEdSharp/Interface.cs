@@ -26,6 +26,7 @@ namespace DukeEdSharp
         [DllExport]
         public static void PostInit()
         {
+            browserFrm.Show();
             browserFrm.Focus();
         }
     }

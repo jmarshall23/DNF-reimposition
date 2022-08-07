@@ -14,6 +14,17 @@ namespace DukeEdSharp
         public BrowserFrm()
         {
             InitializeComponent();
+
+            this.FormClosing += BrowserFrm_FormClosing;
+        }
+
+        private void BrowserFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                Hide();
+            }
         }
 
         public void PopulateActorClassList()
