@@ -12,5 +12,6 @@ MegaPackageInstaller 1.2 is included in the depot.
 
 Installation:
 1) Install VS 2022 runtimes.
-2) Run setup.bat
-3) Launch RunEditor.bat
+2) Install .NET 4.8.
+3) Run setup.bat
+4) Launch RunEditor.bat
