@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using DllExporterNet4;
 
@@ -11,6 +12,27 @@ namespace DukeEdSharp
         static BrowserFrm browserFrm = new BrowserFrm();
         static BrushScale brushScaleForm = new BrushScale();
         static BrushProperties brushProperties = new BrushProperties();
+
+        public static int GWL_STYLE = -16;
+        public static int WS_CHILD = 0x40000000;
+
+        private static void SetFormParent(Form frm)
+        {
+            SetWindowLong(frm.Handle, GWL_STYLE, GetWindowLong(frm.Handle, GWL_STYLE) | WS_CHILD);
+            SetParent(frm.Handle, DukeSharp_GetParentWindow());
+        }
+
+        [DllImport("user32.dll")]
+        public static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+
+        [DllImport("user32.dll")]
+        public static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+        [DllImport("dnfedit.dll")]
+        public static extern IntPtr DukeSharp_GetParentWindow();
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern IntPtr SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
 
         [DllImport("dnfedit.dll")]
         public static extern void DukeSharp_BuildBrush(float x, float y, float z);
@@ -43,13 +65,16 @@ namespace DukeEdSharp
         [DllExport]
         public static void InitBrowser()
         {
-            browserFrm.Show();
             browserFrm.PopulateActorClassList();
         }
 
         [DllExport]
         public static void PostInit()
         {
+            SetFormParent(browserFrm);
+            SetFormParent(brushScaleForm);
+            SetFormParent(brushProperties);
+
             browserFrm.Show();
             browserFrm.Focus();
         }

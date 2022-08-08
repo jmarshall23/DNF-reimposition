@@ -101,6 +101,11 @@ void __stdcall DukeSharp_BuildBrush(float x, float y, float z)
 	currentBuilder->eventBuild();
 }
 
+HWND __stdcall DukeSharp_GetParentWindow()
+{
+	return _mainParentHwnd;
+}
+
 void* __stdcall DukeSharp_CreateTextureViewport(HWND hWnd)
 {
 	// Create the texture browser viewport

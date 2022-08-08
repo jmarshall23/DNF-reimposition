@@ -27,6 +27,8 @@ WBrowserMaster* GBrowserMaster = NULL;
 
 #include "DukeSharp.h"
 
+HWND _mainParentHwnd;
+
 class WEditorFrame *GEditorFrame;
 WBrowserActor* GBrowserActor = NULL;
 dnOuputDeviceString GetPropResult;
@@ -144,7 +146,7 @@ void FileOpen(HWND hWnd)
 
 	// Make sure that the browsers reflect any new data the map brought with it.
 	//RefreshEditor();
-	//GButtonBar->RefreshBuilders();
+	GButtonBar->RefreshBuilders();
 	//RefreshOptionProxies();
 
 	//GFileManager->SetDefaultDirectory(appBaseDir());
@@ -318,6 +320,7 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 					//if( Cast<ULevel>(Result) )
 					//{
 				GEditor->exec.Exec(TEXT("MAP NEW"), (dnOutputDevice &)globalLog);
+				GButtonBar->RefreshBuilders();
 				//GLevelFrame->SetMapFilename(TEXT(""));
 				//OpenLevelView();
 				//GButtonBar->RefreshBuilders();
@@ -571,7 +574,7 @@ void InitEditor(void)
 
 	Frame.OpenWindow();
 	InvalidateRect(Frame.hWnd, NULL, 1);
-	UpdateWindow(Frame.hWnd);
+	UpdateWindow(Frame.hWnd);	
 
 	//GBottomBar = new WBottomBar(TEXT("BottomBar"), &Frame.BottomFrame);
 	//GBottomBar->OpenWindow();
@@ -622,6 +625,7 @@ void InitEditor(void)
 	GMainMenu = LoadMenuA(*hinstWindowHack, MAKEINTRESOURCEA(IDMENU_MainMenu));
 	SetMenu(Frame.hWnd, GMainMenu);
 
+	_mainParentHwnd = GLevelFrame->hWnd;
 	dukeSharp.Init();
 
 //	GDnExec->Exec(TEXT("r_AllowAlwaysVisible 1"), (dnOutputDevice&)globalLog);

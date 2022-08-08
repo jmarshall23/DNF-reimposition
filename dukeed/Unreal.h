@@ -920,3 +920,5 @@ enum EViewportShowFlags
 	SHOW_NoFallbackMaterials = 0x40000000,	// Don't evaluate fallback materials.
 	SHOW_Collision = 0x80000000	// Show simple collision for static meshes etc.
 };
+
+extern HWND _mainParentHwnd;
