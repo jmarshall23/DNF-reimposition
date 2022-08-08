@@ -30,9 +30,11 @@ namespace DukeEdSharp
         private void TextureListBox_DoubleClick(object sender, EventArgs e)
         {
             string groupSelected = (string)textureGroupComboBox.SelectedItem;
-
-            string s = String.Format("HOOK TEXTUREPROPERTIES TEXTURE={0}.{1}.{2}", texturePackageName, groupSelected, textureListBox.SelectedItems[0]);
+            string s = String.Format("POLY DEFAULT TEXTURE={0}.{1}.{2}", texturePackageName, groupSelected, textureListBox.SelectedItems[0]);
             EditorInterface.DukeSharp_Exec(s);
+
+            string s1 = "POLY SETTEXTURE";
+            EditorInterface.DukeSharp_Exec(s1);
         }
 
         private void BrowserFrm_FormClosing(object sender, FormClosingEventArgs e)
@@ -231,6 +233,14 @@ namespace DukeEdSharp
                 string s = "OBJ SavePackage FILE=\"" + filePath + "\" Package=\"" + texturePackageName + "\"";
                 EditorInterface.DukeSharp_Exec(s);
             }
+        }
+
+        private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string groupSelected = (string)textureGroupComboBox.SelectedItem;
+
+            string s = String.Format("HOOK TEXTUREPROPERTIES TEXTURE={0}.{1}.{2}", texturePackageName, groupSelected, textureListBox.SelectedItems[0]);
+            EditorInterface.DukeSharp_Exec(s);
         }
     }
 }

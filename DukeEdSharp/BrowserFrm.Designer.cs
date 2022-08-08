@@ -40,6 +40,8 @@
             this.sortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.levelEntitiesPage = new System.Windows.Forms.TabPage();
             this.texturePage = new System.Windows.Forms.TabPage();
+            this.textureGroupComboBox = new System.Windows.Forms.ComboBox();
+            this.textureListBox = new System.Windows.Forms.ListBox();
             this.textureBrowserStripMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,8 +72,6 @@
             this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.staticMeshPage = new System.Windows.Forms.TabPage();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.textureListBox = new System.Windows.Forms.ListBox();
-            this.textureGroupComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.actorClassPage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -180,6 +180,25 @@
             this.texturePage.Text = "Textures";
             this.texturePage.UseVisualStyleBackColor = true;
             // 
+            // textureGroupComboBox
+            // 
+            this.textureGroupComboBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textureGroupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.textureGroupComboBox.FormattingEnabled = true;
+            this.textureGroupComboBox.Location = new System.Drawing.Point(3, 27);
+            this.textureGroupComboBox.Name = "textureGroupComboBox";
+            this.textureGroupComboBox.Size = new System.Drawing.Size(673, 21);
+            this.textureGroupComboBox.TabIndex = 2;
+            this.textureGroupComboBox.SelectedIndexChanged += new System.EventHandler(this.textureGroupComboBox_SelectedIndexChanged);
+            // 
+            // textureListBox
+            // 
+            this.textureListBox.FormattingEnabled = true;
+            this.textureListBox.Location = new System.Drawing.Point(3, 54);
+            this.textureListBox.Name = "textureListBox";
+            this.textureListBox.Size = new System.Drawing.Size(680, 485);
+            this.textureListBox.TabIndex = 1;
+            // 
             // textureBrowserStripMenu
             // 
             this.textureBrowserStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -208,38 +227,38 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(107, 6);
             // 
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.importToolStripMenuItem.Text = "Import";
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.exportToolStripMenuItem.Text = "Export";
             // 
             // editToolStripMenuItem
@@ -257,6 +276,7 @@
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
             this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.propertiesToolStripMenuItem.Text = "Properties";
+            this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
@@ -403,25 +423,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // textureListBox
-            // 
-            this.textureListBox.FormattingEnabled = true;
-            this.textureListBox.Location = new System.Drawing.Point(3, 54);
-            this.textureListBox.Name = "textureListBox";
-            this.textureListBox.Size = new System.Drawing.Size(680, 485);
-            this.textureListBox.TabIndex = 1;
-            // 
-            // textureGroupComboBox
-            // 
-            this.textureGroupComboBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textureGroupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.textureGroupComboBox.FormattingEnabled = true;
-            this.textureGroupComboBox.Location = new System.Drawing.Point(3, 27);
-            this.textureGroupComboBox.Name = "textureGroupComboBox";
-            this.textureGroupComboBox.Size = new System.Drawing.Size(673, 21);
-            this.textureGroupComboBox.TabIndex = 2;
-            this.textureGroupComboBox.SelectedIndexChanged += new System.EventHandler(this.textureGroupComboBox_SelectedIndexChanged);
             // 
             // BrowserFrm
             // 
