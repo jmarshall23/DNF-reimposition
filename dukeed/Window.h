@@ -257,8 +257,6 @@ struct UEditorWindowVTable
 
 extern HINSTANCE* hinstWindowHack;
 
-extern std::vector<class WWindow*> _windows;
-
 LRESULT APIENTRY StaticWndProcNew(HWND hWnd, UINT Message, WPARAM wParam, WPARAM lParam);
 
 class WControl;
@@ -280,6 +278,8 @@ public:
 	WPARAM LastwParam;
 	LPARAM LastlParam;
 
+	static dnArray<WWindow*> _Windows;
+
 	WWindow(WWindow* InFrame);
 	WWindow(const wchar_t* name, WWindow* InFrame) : PersistentName(name)
 		, ControlId(0)
@@ -290,7 +290,6 @@ public:
 		, NotifyHook(0)
 		, Snoop(NULL) {
 		OwnerWindow = InFrame;
-		_windows.push_back(this);
 	}
 	virtual ~WWindow() { }
 
@@ -1671,13 +1670,13 @@ __declspec(dllimport) class WDialog : public WWindow
 	}
 	virtual INT DoModal(HINSTANCE hInst = *hinstWindowHack)
 	{
-		_windows.push_back(this);		
+		_Windows.AddItem(this);
 		INT Result = TCHAR_CALL_OS(DialogBoxParamW(hInst/*!!*/, MAKEINTRESOURCEW(ControlId), OwnerWindow ? OwnerWindow->hWnd : NULL, (INT(APIENTRY*)(HWND, UINT, WPARAM, LPARAM))StaticWndProc, (LPARAM)this), DialogBoxParamA(hInst/*!!*/, MAKEINTRESOURCEA(ControlId), OwnerWindow ? OwnerWindow->hWnd : NULL, (INT(APIENTRY*)(HWND, UINT, WPARAM, LPARAM))StaticWndProc, (LPARAM)this));
 		return Result;
 	}
 	void OpenChildWindow(INT InControlId, UBOOL Visible)
 	{
-		_windows.push_back(this);
+		_Windows.AddItem(this);
 		HWND hWndParent = InControlId ? GetDlgItem(OwnerWindow->hWnd, InControlId) : OwnerWindow ? OwnerWindow->hWnd : NULL;
 		HWND hWndCreated = TCHAR_CALL_OS(CreateDialogParamW(*hinstWindowHack/*!!*/, MAKEINTRESOURCEW(ControlId), hWndParent, (INT(APIENTRY*)(HWND, UINT, WPARAM, LPARAM))StaticWndProc, (LPARAM)this), CreateDialogParamA(*hinstWindowHack/*!!*/, MAKEINTRESOURCEA(ControlId), hWndParent, (INT(APIENTRY*)(HWND, UINT, WPARAM, LPARAM))StaticWndProc, (LPARAM)this));
 		Show(Visible);
@@ -1722,7 +1721,7 @@ __declspec(dllimport) class WDialog : public WWindow
 			//check(!Control->hWnd);
 			Control->hWnd = GetDlgItem(hWnd, Control->ControlId);
 			//check(Control->hWnd);
-			_windows.push_back(Control);
+			_Windows.AddItem(Control);
 			Control->WindowDefWndProc = (WNDPROC)GetWindowLongX(Control->hWnd, GWL_WNDPROC);
 			SetWindowLongX(Control->hWnd, GWL_WNDPROC, (LONG)WWindow::StaticWndProc);
 			//warning: Don't set GWL_HINSTANCE, it screws up subclassed edit controls in Win95.

@@ -16,6 +16,9 @@
 #define FString dnString
 #define TArray dnArray
 
+// Name index.
+typedef INT NAME_INDEX;
+
 extern bool ignoreGLog;
 
 extern void* globalLog;
@@ -156,6 +159,9 @@ public:
 	dnName(const wchar_t* name, EFindName f = (EFindName)0);
 
 	const TCHAR* operator*() const;
+private:
+	// Name index.
+	NAME_INDEX Index;
 };
 
 __declspec(dllimport) class dnString

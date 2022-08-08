@@ -33,6 +33,8 @@ dnOuputDeviceString GetPropResult;
 
 WButtonBar* GButtonBar;
 
+dnArray<WWindow*> WWindow::_Windows;
+
 // Prefebbed viewport configs.  These should be in the same order as the buttons in DlgViewportConfig.
 VIEWPORTCONFIG GTemplateViewportConfigs[4][4] =
 {

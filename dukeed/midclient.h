@@ -19,7 +19,7 @@ class WMdiClient : public WControl
 		HWND hWndCreated = TCHAR_CALL_OS(CreateWindowEx(0, TEXT("MDICLIENT"), NULL, WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS, 0, 0, 0, 0, OwnerWindow->hWnd, (HMENU)0xCAC, *hinstWindowHack, ccs), CreateWindowExA(0, "MDICLIENT", NULL, WS_CHILD | WS_CLIPCHILDREN | WS_CLIPSIBLINGS, 0, 0, 0, 0, OwnerWindow->hWnd, (HMENU)0xCAC, hInstance, ccs));
 		//check(hWndCreated);
 		//check(!hWnd);
-		_windows.push_back(this);
+		_Windows.AddItem(this);
 		hWnd = hWndCreated;
 		Show(1);
 	}

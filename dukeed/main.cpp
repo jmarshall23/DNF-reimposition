@@ -11,8 +11,6 @@
 #include "Window.h"
 #include "windrv.h"
 
-std::vector<class WWindow*> _windows;
-
 void* wwindow_windowproc = nullptr;
 
 BOOL			dumpTobrowserOut = false;
