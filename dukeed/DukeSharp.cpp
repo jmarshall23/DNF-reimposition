@@ -15,6 +15,18 @@ DukeSharpInterface	dukeSharp;
 void Query(ULevel* Level, const TCHAR* Item, std::wstring* pOutput);
 void ParseStringToArray(const TCHAR* pchDelim, dnString String, std::vector<dnString>& _pArray);
 
+UBrushBuilder* currentBuilder = nullptr;
+
+/*
+=================
+DukeSharpOpenBuilder
+=================
+*/
+void DukeSharpOpenBuilder(UBrushBuilder* builder) {
+	currentBuilder = builder;
+	dukeSharp.ShowBrushProperties(builder->width, builder->height, builder->Breadth);
+}
+
 /*
 =================
 DukeSharpInterface::LoadDll
@@ -27,6 +39,10 @@ void DukeSharpInterface::LoadDll(void) {
 	InitBrowser();
 
 	PostInit = (void(__cdecl*)(void))GetProcAddress(module, "PostInit");
+
+	ShowBrushScale = (void(__cdecl*)(void))GetProcAddress(module, "ShowBrushScale");
+
+	ShowBrushProperties = (void(__stdcall*)(float, float, float))GetProcAddress(module, "ShowBrushProperties");
 }
 
 /*
@@ -74,6 +90,15 @@ const wchar_t* __stdcall DukeSharp_Get(const wchar_t *topic, const wchar_t* comm
 	temp = *GetPropResult;
 
 	return temp.c_str();
+}
+
+void __stdcall DukeSharp_BuildBrush(float x, float y, float z)
+{
+	currentBuilder->width = x;
+	currentBuilder->height = y;
+	currentBuilder->Breadth = z;
+
+	currentBuilder->eventBuild();
 }
 
 void* __stdcall DukeSharp_CreateTextureViewport(HWND hWnd)

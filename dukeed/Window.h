@@ -446,15 +446,15 @@ public:
 			}
 			else if (Message == WM_RBUTTONDOWN)
 			{
-				//OnRightButtonDown();
+				OnRightButtonDown();
 			}
 			else if (Message == WM_LBUTTONUP)
 			{
-				//	OnLeftButtonUp();
+				OnLeftButtonUp();
 			}
 			else if (Message == WM_RBUTTONUP)
 			{
-				//	OnRightButtonUp();
+				OnRightButtonUp();
 			}
 			else if (Message == WM_CUT)
 			{
@@ -1118,6 +1118,7 @@ __declspec(dllimport) class WCheckBox : public WButton
 	DECLARE_WINDOWSUBCLASS(WCheckBox, WButton, Window)
 
 	UBOOL bAutocheck;
+	int _overrideControlId;
 
 	// Constructor.
 	WCheckBox(WWindow* InOwner, INT InId = 0, FDelegate InClicked = FDelegate())
@@ -1139,6 +1140,7 @@ __declspec(dllimport) class WCheckBox : public WButton
 			(HMENU)overrideControlId,
 			GetModuleHandle(NULL)
 		);
+		_overrideControlId = overrideControlId;
 		SetText(Text);
 		SendMessageW(hWnd, WM_SETFONT, (WPARAM)GetStockObject(DEFAULT_GUI_FONT), MAKELPARAM(0, 0));
 		if (Visible)
@@ -1154,7 +1156,7 @@ __declspec(dllimport) class WCheckBox : public WButton
 	{
 		// This is just a quick hack so the parent window can know when the user right clicks on
 		// one of the buttons in the UnrealEd button bar.
-		SendMessageW(::GetParent(hWnd), WM_COMMAND, WM_BB_RCLICK, ControlId);
+		SendMessageW(::GetParent(hWnd), WM_COMMAND, WM_BB_RCLICK, _overrideControlId);
 	}
 	virtual void Clicked(void)
 	{
@@ -1747,3 +1749,4 @@ __declspec(dllimport) class WDialog : public WWindow
 		EndDialog(0);
 	}
 };
+

@@ -404,6 +404,12 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 			}
 			break;
 
+			case ID_BrushScale:
+			{
+				dukeSharp.ShowBrushScaleDialog();
+			}
+			break;
+
 			case ID_FILE_IMPORT:
 			{
 				OPENFILENAMEW ofn;

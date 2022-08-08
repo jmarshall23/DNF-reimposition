@@ -58,12 +58,30 @@
     <Compile Include="BrowserFrm.Designer.cs">
       <DependentUpon>BrowserFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BrushProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrushProperties.Designer.cs">
+      <DependentUpon>BrushProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrushScale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BrushScale.Designer.cs">
+      <DependentUpon>BrushScale.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BrowserFrm.resx">
       <DependentUpon>BrowserFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrushProperties.resx">
+      <DependentUpon>BrushProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrushScale.resx">
+      <DependentUpon>BrushScale.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

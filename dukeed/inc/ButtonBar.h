@@ -349,6 +349,10 @@ class WButtonGroup : public WWindow
 								if( pwbb->ID == LastlParam
 										&& pwbb->Builder)
 								{
+									void DukeSharpOpenBuilder(UBrushBuilder *builder);
+
+									DukeSharpOpenBuilder(pwbb->Builder);
+
 									//delete pDBB;
 									//pDBB = new WDlgBrushBuilder( NULL, this, pwbb->Builder );
 									//pDBB->DoModeless();

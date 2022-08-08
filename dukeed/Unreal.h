@@ -836,11 +836,21 @@ public:
 
 extern void* (*AColisionVolume__StaticClass)(void);
 
+__declspec(dllimport) struct FBuilderPoly;
+
 __declspec(dllimport) class UBrushBuilder : public UObject
 {
 public:
 	dnString		 BitmapFilename;
 	dnString		 ToolTip;
+	dnArray<FVector> Vertices;
+	dnArray<FBuilderPoly> Polys;
+	dnName Group;
+	BITFIELD MergeCoplanars;
+
+	float			Breadth;
+	float			width;
+	float			height;
 
 	static UClass* StaticClass();
 

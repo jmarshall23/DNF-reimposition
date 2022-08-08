@@ -4,3 +4,4 @@ EXPORTS
 	DukeSharp_Exec @2
 	DukeSharp_Get  @3
 	DukeSharp_CreateTextureViewport @4
+	DukeSharp_BuildBrush @5

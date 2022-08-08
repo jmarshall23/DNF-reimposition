@@ -9,6 +9,11 @@ namespace DukeEdSharp
     public class EditorInterface
     {
         static BrowserFrm browserFrm = new BrowserFrm();
+        static BrushScale brushScaleForm = new BrushScale();
+        static BrushProperties brushProperties = new BrushProperties();
+
+        [DllImport("dnfedit.dll")]
+        public static extern void DukeSharp_BuildBrush(float x, float y, float z);
 
        [DllImport("dnfedit.dll")]
         public static extern IntPtr DukeSharp_FindActorClasses();
@@ -47,6 +52,19 @@ namespace DukeEdSharp
         {
             browserFrm.Show();
             browserFrm.Focus();
+        }
+
+        [DllExport]
+        public static void ShowBrushScale()
+        {
+            brushScaleForm.Show();
+            brushScaleForm.Focus();
+        }
+
+        [DllExport]
+        public static void ShowBrushProperties(float x, float y, float z)
+        {
+            brushProperties.ShowBrushProperties(x, y, z);
         }
     }
 }
