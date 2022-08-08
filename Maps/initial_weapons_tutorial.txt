@@ -1,0 +1,17 @@
+How to give the player starting weapons.
+
+Create a AlwaysTrigger
+	Set Events -> Event -> To: AlwaysTriggerStuff
+
+Create a Dispatcher 
+	Set Events -> Tag to: AlwaysTriggerStuff
+
+Create TriggerPlayer
+	Set Events -> Tag to: InitialInventory
+	Click on TPInventory, on GiveItemClass click add, in the pulldown select whatever weapon you want, some work some don't,
+	for this I choose the shotgun.
+
+Click on the Dispatcher:
+	Click on OutDelays and click on add, leave as zero.
+	Click on OutEvents and click add, then click find, and click on the TriggerPlayer entity.
+
