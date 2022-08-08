@@ -576,7 +576,12 @@ public:
 	// Variables.
 	WNDPROC WindowDefWndProc;
 
-	WControl(WWindow* InOwnerWindow, int InId, WNDPROC InSuperProc);
+	WControl(WWindow* InOwnerWindow, int InId, WNDPROC InSuperProc) : WWindow(TEXT(""), InOwnerWindow)
+	{
+		WindowDefWndProc = InSuperProc;
+		ControlId = InId ? InId : InOwnerWindow->TopControlId++;
+		OwnerWindow->Controls.AddItem(this);
+	}
 
 	static WNDPROC RegisterWindowClass(const TCHAR* Name, const TCHAR* WinBaseClass)
 	{
@@ -626,8 +631,43 @@ __declspec(dllimport) class WToolTip : public WControl
 		WindowDefWndProc = InSuperProc ? InSuperProc : SuperProc;
 	}
 
-	void OpenWindow();
-	void AddTool(HWND InHwnd, dnString InToolTip, INT InId, RECT* InRect = NULL);
+	void OpenWindow()
+	{
+		PerformCreateWindowEx
+		(
+			0,
+			NULL,
+			TTS_ALWAYSTIP,
+			0, 0,
+			0, 0,
+			NULL,
+			(HMENU)NULL,
+			*hinstWindowHack
+		);
+
+		SendMessageW(hWnd, WM_SETFONT, (WPARAM)GetStockObject(DEFAULT_GUI_FONT), MAKELPARAM(0, 0));
+	}
+	void AddTool(HWND InHwnd, dnString InToolTip, INT InId, RECT* InRect = NULL)
+	{
+		RECT rect;
+		::GetClientRect(InHwnd, &rect);
+
+		TOOLINFO ti;
+		TCHAR chToolTip[128] = TEXT("");
+		wcscpy(chToolTip, *InToolTip);
+		ti.cbSize = sizeof(TOOLINFO);
+		ti.uFlags = TTF_SUBCLASS;
+		ti.hwnd = InHwnd;
+		ti.hinst = *hinstWindowHack;
+		ti.uId = ControlId + InId;
+		ti.lpszText = chToolTip;
+		if (InRect)
+			ti.rect = *InRect;
+		else
+			ti.rect = rect;
+
+		SendMessageX(hWnd, TTM_ADDTOOL, 0, (LPARAM)(LPTOOLINFO)&ti);
+	}
 };
 
 
