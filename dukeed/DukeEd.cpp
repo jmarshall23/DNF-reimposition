@@ -25,6 +25,8 @@ WBrowserMaster* GBrowserMaster = NULL;
 #include "inc/BrowserActor.h"
 #include "inc/ButtonBar.h"
 
+#include "inc/SurfacePropSheet.h"
+
 #include "DukeSharp.h"
 
 HWND _mainParentHwnd;
@@ -32,6 +34,7 @@ HWND _mainParentHwnd;
 class WEditorFrame *GEditorFrame;
 WBrowserActor* GBrowserActor = NULL;
 dnOuputDeviceString GetPropResult;
+WSurfacePropSheet* GSurfPropSheet = NULL;
 
 WButtonBar* GButtonBar;
 
@@ -364,6 +367,20 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 			}
 			break;
 
+			case ID_ViewSurfaceProp:
+			{
+				GSurfPropSheet->Show(TRUE);
+				GSurfPropSheet->PropSheet->RefreshPages();
+			}
+			break;
+
+			case 1973:
+			case WM_EDC_SELPOLYCHANGE:
+			case WM_EDC_SELCHANGE:
+			{
+				GSurfPropSheet->PropSheet->RefreshPages();
+			}
+			break;
 
 			case ID_EditDelete:
 			{
@@ -530,6 +547,9 @@ WNDPROC WCheckListBox::SuperProc = nullptr;
 //WNDPROC WTreeView::SuperProc = nullptr;
 WNDPROC WCheckBox::SuperProc = nullptr;
 WNDPROC WTabControl::SuperProc = nullptr;
+WNDPROC WEdit::SuperProc = nullptr;
+WNDPROC WPropertySheet::SuperProc = nullptr;
+WNDPROC WGroupBox::SuperProc = nullptr;
 
 #define IDMENU_MainMenu                 101
 
@@ -568,6 +588,14 @@ void InitEditor(void)
 	IMPLEMENT_WINDOWCLASS(WButtonGroup, CS_DBLCLKS | CS_VREDRAW | CS_HREDRAW);
 	IMPLEMENT_WINDOWSUBCLASS(WTabControl, WC_TABCONTROL);
 	IMPLEMENT_WINDOWCLASS(WButtonBar, CS_DBLCLKS | CS_VREDRAW | CS_HREDRAW);
+	IMPLEMENT_WINDOWCLASS(WPropertyPage, CS_DBLCLKS);
+	IMPLEMENT_WINDOWSUBCLASS(WEdit, TEXT("EDIT"));
+	IMPLEMENT_WINDOWSUBCLASS(WPropertySheet, TEXT("STATIC"));
+	IMPLEMENT_WINDOWSUBCLASS(WGroupBox, TEXT("BUTTON"));
+	IMPLEMENT_WINDOWCLASS(WSurfacePropSheet, CS_DBLCLKS);
+	IMPLEMENT_WINDOWCLASS(WPagePanRotScale, CS_DBLCLKS);
+	IMPLEMENT_WINDOWCLASS(WPageFlags, CS_DBLCLKS);
+	//IMPLEMENT_WINDOWCLASS(WPageAlignment, CS_DBLCLKS);
 
 	static WEditorFrame Frame(TEXT("EditorFrame"));
 	GEditorFrame = &Frame;
@@ -627,6 +655,10 @@ void InitEditor(void)
 
 	_mainParentHwnd = GLevelFrame->hWnd;
 	dukeSharp.Init();
+
+	GSurfPropSheet = new WSurfacePropSheet(TEXT("Surface Properties"), GEditorFrame);
+	GSurfPropSheet->OpenWindow();
+	GSurfPropSheet->Show(FALSE);
 
 //	GDnExec->Exec(TEXT("r_AllowAlwaysVisible 1"), (dnOutputDevice&)globalLog);
 

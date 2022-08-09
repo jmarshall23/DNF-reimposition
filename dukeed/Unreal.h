@@ -65,6 +65,25 @@ __declspec(dllimport) void __stdcall NE_EdInit(HWND hwnd1, HWND hwnd2);
 
 __declspec(dllimport) enum EFindName;
 
+/*-----------------------------------------------------------------------------
+	Type information.
+-----------------------------------------------------------------------------*/
+
+//
+// Type information for initialization.
+//
+template <class T> struct TTypeInfoBase
+{
+public:
+	typedef const T& ConstInitType;
+	static UBOOL NeedsDestructor() { return 1; }
+	static UBOOL DefinitelyNeedsDestructor() { return 0; }
+	static const T& ToInit(const T& In) { return In; }
+};
+template <class T> struct TTypeInfo : public TTypeInfoBase<T>
+{
+};
+
 template<class T>
 class dnArray {
 public:
@@ -143,6 +162,35 @@ public:
 		return *this;
 	}
 
+	void Remove(INT Index, INT Count = 1)
+	{
+		if (TTypeInfo<T>::NeedsDestructor())
+			for (INT i = Index; i < Index + Count; i++)
+				(&(*this)(i))->~T();
+		Remove(Index, Count, sizeof(T));
+	}
+
+	void Remove(INT Index, INT Count, INT ElementSize)
+	{
+		if (Count)
+		{
+			memmove
+			(
+				(BYTE*)Data + (Index)*ElementSize,
+				(BYTE*)Data + (Index + Count) * ElementSize,
+				(ArrayNum - Index - Count) * ElementSize
+			);
+			ArrayNum -= Count;
+			if
+				((3 * ArrayNum < 2 * ArrayMax || (ArrayMax - ArrayNum) * ElementSize >= 16384)
+					&& (ArrayMax - ArrayNum > 64 || ArrayNum == 0))
+			{
+				ArrayMax = ArrayNum;
+				Realloc(ElementSize);
+			}
+		}
+	}
+
 	T* Data;
 	INT	  ArrayNum;
 	INT	  ArrayMax;
@@ -179,6 +227,11 @@ public:
 	UBOOL operator==(const TCHAR* Other) const;
 	UBOOL operator==(const dnString& Other) const;
 	dnString& operator+=(const TCHAR* Str);
+	UBOOL operator>=(const TCHAR* Other) const;
+	UBOOL operator<=(const TCHAR* Other) const;
+	dnString operator+(const TCHAR* Str);
+	UBOOL operator!=(const TCHAR* Other) const;
+	void Empty(UBOOL clear=true);
 
 	void* Data;
 	int ArrayNum;
@@ -922,3 +975,139 @@ enum EViewportShowFlags
 };
 
 extern HWND _mainParentHwnd;
+
+
+template <> struct TTypeInfo<BYTE> : public TTypeInfoBase<BYTE>
+{
+public:
+	static UBOOL NeedsDestructor() { return 0; }
+};
+template <> struct TTypeInfo<SBYTE> : public TTypeInfoBase<SBYTE>
+{
+public:
+	static UBOOL NeedsDestructor() { return 0; }
+};
+template <> struct TTypeInfo<ANSICHAR> : public TTypeInfoBase<ANSICHAR>
+{
+public:
+	static UBOOL NeedsDestructor() { return 0; }
+};
+template <> struct TTypeInfo<INT> : public TTypeInfoBase<INT>
+{
+public:
+	static UBOOL NeedsDestructor() { return 0; }
+};
+template <> struct TTypeInfo<DWORD> : public TTypeInfoBase<DWORD>
+{
+public:
+	static UBOOL NeedsDestructor() { return 0; }
+};
+template <> struct TTypeInfo<_WORD> : public TTypeInfoBase<_WORD>
+{
+public:
+	static UBOOL NeedsDestructor() { return 0; }
+};
+template <> struct TTypeInfo<SWORD> : public TTypeInfoBase<SWORD>
+{
+public:
+	static UBOOL NeedsDestructor() { return 0; }
+};
+template <> struct TTypeInfo<QWORD> : public TTypeInfoBase<QWORD>
+{
+public:
+	static UBOOL NeedsDestructor() { return 0; }
+};
+template <> struct TTypeInfo<SQWORD> : public TTypeInfoBase<SQWORD>
+{
+public:
+	static UBOOL NeedsDestructor() { return 0; }
+};
+template <> struct TTypeInfo<dnName> : public TTypeInfoBase<dnName>
+{
+public:
+	static UBOOL NeedsDestructor() { return 0; }
+};
+template <> struct TTypeInfo<UObject*> : public TTypeInfoBase<UObject*>
+{
+public:
+	static UBOOL NeedsDestructor() { return 0; }
+};
+
+enum EPolyFlags
+{
+	// Regular in-game flags.
+	PF_Invisible = 0x00000001,	// Poly is invisible.
+	PF_Masked = 0x00000002,	// Poly should be drawn masked.
+	PF_Translucent = 0x00000004,	// Poly is transparent.
+	PF_NotSolid = 0x00000008,	// Poly is not solid, doesn't block.
+	PF_Environment = 0x00000010,	// Poly should be drawn environment mapped.
+	PF_ForceViewZone = 0x00000010,	// Force current iViewZone in OccludeBSP (reuse Environment flag)
+	PF_Semisolid = 0x00000020,	// Poly is semi-solid = collision solid, Csg nonsolid.
+	PF_Modulated = 0x00000040,	// Modulation transparency.
+	PF_FakeBackdrop = 0x00000080,	// Poly looks exactly like backdrop.
+	PF_TwoSided = 0x00000100,	// Poly is visible from both sides.
+	PF_AutoUPan = 0x00000200,	// Automatically pans in U direction.
+	PF_AutoVPan = 0x00000400,	// Automatically pans in V direction.
+	PF_NoSmooth = 0x00000800,	// Don't smooth textures.
+	PF_SmallWavy = 0x00002000,	// Small wavy pattern (for water/enviro reflection).
+	PF_MeshUVClamp = 0x00002000,	// CDH: Overlaps smallwavy (which was only used for complexsurface)
+	PF_Flat = 0x00004000,	// Flat surface.
+	PF_LowShadowDetail = 0x00008000,	// Low detaul shadows.
+	PF_NoMerge = 0x00010000,	// Don't merge poly's nodes before lighting when rendering.
+
+	PF_ExtendedSurface = 0x00020000,	// Mine!
+	PF_ExtendedPoly = 0x00040000,	// An extended poly. 
+
+	PF_BrightCorners = 0x00080000,	// Brighten convex corners.
+	PF_SpecialLit = 0x00100000,	// Only speciallit lights apply to this poly.
+
+	//PF_Gouraud			= 0x00200000,	// Gouraud shaded. (Obsolete)
+	PF_NoBoundRejection = 0x00200000,	// Disable bound rejection in OccludeBSP (reuse Gourard flag)
+	PF_Unlit = 0x00400000,	// Unlit.
+	PF_HighShadowDetail = 0x00800000,	// High detail shadows.
+	PF_Portal = 0x04000000,	// Portal between iZones.
+	PF_Mirrored = 0x08000000,	// Reflective surface.
+
+	// Editor flags. (NJS: Maybe we can get these back by reworking the editor to use a list instead of polyflags.)
+	PF_Memorized = 0x01000000,	// Editor: Poly is remembered.
+	PF_Selected = 0x02000000,	// Editor: Poly is selected.
+	PF_Highlighted = 0x10000000,	// Editor: Poly is highlighted.   
+	PF_FlatShaded = 0x40000000,	// FPoly has been split by SplitPolyWithPlane.   
+
+	// Internal.
+	PF_EdProcessed = 0x40000000,	// FPoly was already processed in editorBuildFPolys.
+	PF_EdCut = 0x80000000,	// FPoly has been split by SplitPolyWithPlane.  
+	PF_RenderFog = 0x40000000,	// Render with fogmapping.
+	PF_Occlude = 0x80000000,	// Occludes even if PF_NoOcclude.
+	PF_RenderHint = 0x01000000,   // Rendering optimization hint.
+
+	// Combinations of flags.
+	PF_NoOcclude = PF_Masked | PF_Translucent | PF_Invisible | PF_Modulated,
+	PF_NoEdit = PF_Memorized | PF_Selected | PF_EdProcessed | PF_NoMerge | PF_EdCut,
+	PF_NoImport = PF_NoEdit | PF_NoMerge | PF_Memorized | PF_Selected | PF_EdProcessed | PF_EdCut,
+	PF_AddLast = PF_Semisolid | PF_NotSolid,
+	PF_NoAddToBSP = PF_EdCut | PF_EdProcessed | PF_Selected | PF_Memorized,
+	PF_NoShadows = PF_Unlit | PF_Invisible | PF_Environment | PF_FakeBackdrop,
+	PF_Transient = PF_Highlighted,
+
+	PF_All = 0xFFFFFFFF
+};
+
+
+// Bsp poly alignment types for polyTexAlign.
+//
+enum ETexAlign
+{
+	TEXALIGN_Default = 0,	// No special alignment (just derive from UV vectors).
+	TEXALIGN_WallDir = 1,	// Grade (approximate floor), U,V X-Y axis aligned.
+	TEXALIGN_Cylinder = 2,	// Wraps the texture around a cylinder, mapped to the brush
+	TEXALIGN_Planar = 3,	// Maps the poly to the axis it is closest to laying parallel to
+	TEXALIGN_Face = 4,	// Maps each poly individually
+	TEXALIGN_Spherical = 5,	// Spherically maps all selected polys
+	TEXALIGN_Cylindrical = 6,	// Cylindrically maps all selected polys
+
+	// These ones are special versions of the above.
+	TEXALIGN_PlanarAuto = 100,
+	TEXALIGN_PlanarWall = 101,
+	TEXALIGN_PlanarFloor = 102,
+};

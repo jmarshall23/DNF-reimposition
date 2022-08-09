@@ -9,6 +9,7 @@
 
 =============================================================================*/
 
+#
 // --------------------------------------------------------------
 //
 // WSurfacePropPage
@@ -29,10 +30,10 @@ class WSurfacePropPage : public WPropertyPage
 	{
 		// Figure out a good caption for the sheet.
 		FStringOutputDevice GetPropResult = FStringOutputDevice();
-		GetPropResult.Empty();
+		//GetPropResult.Empty();
 		if( GEditor )
 			GEditor->Get( TEXT("POLYS"), TEXT("NUMSELECTED"), GetPropResult );
-		INT NumSelected = appAtoi(*GetPropResult);
+		INT NumSelected = _wtoi(*GetPropResult);
 
 		// Disable all controls if no surfaces are selected.
 		HWND hwndChild = GetWindow( hWnd, GW_CHILD );
@@ -111,43 +112,43 @@ class WPageFlags : public WSurfacePropPage
 
 		// Create child controls and let the base class determine their proper positions.
 		RelativeCheck = new WCheckBox( this, IDCK_INVISIBLE );
-		RelativeCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		RelativeCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		MaskedCheck = new WCheckBox( this, IDCK_MASKED );
-		MaskedCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		MaskedCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		TranslucentCheck = new WCheckBox( this, IDCK_TRANSLUCENT );
-		TranslucentCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		TranslucentCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		ForceViewzoneCheck = new WCheckBox( this, IDCK_FORCEVIEWZONE );
-		ForceViewzoneCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		ForceViewzoneCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		ModulatedCheck = new WCheckBox( this, IDCK_MODULATED );
-		ModulatedCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		ModulatedCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		FakeBackdropCheck = new WCheckBox( this, IDCK_FAKEBACKDROP );
-		FakeBackdropCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		FakeBackdropCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		TwoSidedCheck = new WCheckBox( this, IDCK_2SIDED );
-		TwoSidedCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		TwoSidedCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		UPanCheck = new WCheckBox( this, IDCK_UPAN );
-		UPanCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		UPanCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		VPanCheck = new WCheckBox( this, IDCK_VPAN );
-		VPanCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		VPanCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		HighShadowDetailCheck = new WCheckBox( this, IDCK_HISHADOWDETAIL );
-		HighShadowDetailCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		HighShadowDetailCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		LowShadowDetailCheck = new WCheckBox( this, IDCK_LOWSHADOWDETAIL );
-		LowShadowDetailCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		LowShadowDetailCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		NoSmoothCheck = new WCheckBox( this, IDCK_NOSMOOTH );
-		NoSmoothCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		NoSmoothCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		SmallWavyCheck = new WCheckBox( this, IDCK_SMALLWAVY );
-		SmallWavyCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		SmallWavyCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		BrightCornersCheck = new WCheckBox( this, IDCK_BRIGHTCORNERS );
-		BrightCornersCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		BrightCornersCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		SpecialLitCheck = new WCheckBox( this, IDCK_SPECIALLIT );
-		SpecialLitCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		SpecialLitCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		NoBoundsRejectCheck = new WCheckBox( this, IDCK_NOBOUNDREJECTION );
-		NoBoundsRejectCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		NoBoundsRejectCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		UnlitCheck = new WCheckBox( this, IDCK_UNLIT );
-		UnlitCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		UnlitCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		PortalCheck = new WCheckBox( this, IDCK_PORTAL );
-		PortalCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		PortalCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		MirrorCheck = new WCheckBox( this, IDCK_MIRROR );
-		MirrorCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		MirrorCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 
 		TagEdit = new WEdit( this, IDC_EDIT_TAG );
 		TagEdit->OpenWindow( 1, 0, 0 );
@@ -253,7 +254,7 @@ class WPageFlags : public WSurfacePropPage
 		GetPropResult.Empty();
 		if( GEditor )
 			GEditor->Get( TEXT("POLYS"), TEXT("NUMSELECTED"), GetPropResult );
-		SurfsSelected = appAtoi(*GetPropResult);
+		SurfsSelected = _wtoi(*GetPropResult);
 
 		// Update the data.
 		GetDataFromSurfs();
@@ -264,11 +265,11 @@ class WPageFlags : public WSurfacePropPage
 			GEditor->Get( TEXT("POLYS"), TEXT("TEXTURENAME"), GetPropResult );
 		FString Caption;
 		if( SurfsSelected == 1 )
-			Caption = FString::Printf(TEXT("%d Surface%s%s"), SurfsSelected, GetPropResult.Len() ? TEXT(" : ") : TEXT(""), *GetPropResult );
+			Caption = VAPrintf(TEXT("%d Surface%s%s"), SurfsSelected, GetPropResult.Len() ? TEXT(" : ") : TEXT(""), *GetPropResult ).c_str();
 		else
-			Caption = FString::Printf(TEXT("%d Surfaces%s%s"), SurfsSelected, GetPropResult.Len() ? TEXT(" : ") : TEXT(""), *GetPropResult );
+			Caption = VAPrintf(TEXT("%d Surfaces%s%s"), SurfsSelected, GetPropResult.Len() ? TEXT(" : ") : TEXT(""), *GetPropResult ).c_str();
 		if( GetParent(GetParent(GetParent(hWnd))) )
-			SendMessageA( GetParent(GetParent(GetParent(hWnd))), WM_SETTEXT, 0, (LPARAM)appToAnsi( *Caption ) );
+			SendMessageW( GetParent(GetParent(GetParent(hWnd))), WM_SETTEXT, 0, (LPARAM)*Caption);
 	}
 	void OnTagChanged()
 	{
@@ -287,6 +288,7 @@ class WPageFlags : public WSurfacePropPage
 	}
 	void GetDataFromSurfs()
 	{
+#if 0
 		INT TotalSurfs = 0;
 
 		// Init counts.
@@ -335,6 +337,7 @@ class WPageFlags : public WSurfacePropPage
 		// If only one surface is selected, display the tag.
 		if (SurfsSelected == 1)
 			SetDlgItemTextA( hWnd, IDC_EDIT_TAG, appToAnsi(*SingleSurf->SurfaceTag) );
+#endif
 	}
 	void SendDataToSurfs()
 	{    
@@ -356,9 +359,9 @@ class WPageFlags : public WSurfacePropPage
 
 		// Check to make sure that if multiple surfaces are selected, we don't lose any of the surfacetags.
 		if ((SurfsSelected == 1) || (SurfaceTag[0] != '\0'))
-			GEditor->Exec( *(FString::Printf(TEXT("POLY SET SETFLAGS=%d CLEARFLAGS=%d SURFACETAG=%s"), OnFlags, OffFlags, SurfaceTag)) );
+			GEditor->exec.Exec( (VAPrintf(TEXT("POLY SET SETFLAGS=%d CLEARFLAGS=%d SURFACETAG=%s"), OnFlags, OffFlags, SurfaceTag)).c_str() );
 		else
-			GEditor->Exec( *(FString::Printf(TEXT("POLY SET SETFLAGS=%d CLEARFLAGS=%d"), OnFlags, OffFlags)) );
+			GEditor->exec.Exec((VAPrintf(TEXT("POLY SET SETFLAGS=%d CLEARFLAGS=%d"), OnFlags, OffFlags)).c_str() );
 	}
 };
 
@@ -401,7 +404,7 @@ class WPagePanRotScale : public WSurfacePropPage
 
 		// Create child controls and let the base class determine their proper positions.
 		RelativeCheck = new WCheckBox( this, IDCK_RELATIVE );
-		RelativeCheck->OpenWindow( 1, 0, 0, 0, 0, TEXT("") );
+		RelativeCheck->OpenWindow( 1, 0, 0, 0, 0, 0, TEXT("") );
 		PanBox = new WGroupBox( this, IDGP_PAN );
 		PanBox->OpenWindow( 1, 0 );
 		AlignmentBox = new WGroupBox( this, IDGP_ROTATION );
@@ -553,38 +556,38 @@ class WPagePanRotScale : public WSurfacePropPage
 		// Check to see if we can display U/V information.
 		FLOAT USelected = 0, VSelected = 0;
 		INT NumSelected = 0;
-		FBspSurf* SingleSurf = NULL;
-		for( INT i = 0 ; i < GEditor->Level->Model->Surfs.Num() ; i++ )
-		{
-			FBspSurf *Poly = &GEditor->Level->Model->Surfs(i);
-			if( Poly->PolyFlags & PF_Selected )
-			{
-				NumSelected++;
-
-				FVector OriginalU = GEditor->Level->Model->Vectors(Poly->vTextureU);
-				FVector OriginalV = GEditor->Level->Model->Vectors(Poly->vTextureV);
-
-				USelected = 1.f / OriginalU.Size();
-				VSelected = 1.f / OriginalV.Size();
-			}
-		}
+		//FBspSurf* SingleSurf = NULL;
+		//for( INT i = 0 ; i < GEditor->Level->Model->Surfs.Num() ; i++ )
+		//{
+		//	FBspSurf *Poly = &GEditor->Level->Model->Surfs(i);
+		//	if( Poly->PolyFlags & PF_Selected )
+		//	{
+		//		NumSelected++;
+		//
+		//		FVector OriginalU = GEditor->Level->Model->Vectors(Poly->vTextureU);
+		//		FVector OriginalV = GEditor->Level->Model->Vectors(Poly->vTextureV);
+		//
+		//		USelected = 1.f / OriginalU.Size();
+		//		VSelected = 1.f / OriginalV.Size();
+		//	}
+		//}
 		if ( NumSelected == 1 )
 		{
-			FString ScaleText = FString::Printf( TEXT("%f"), USelected );
+			FString ScaleText = VAPrintf( TEXT("%f"), USelected ).c_str();
 			ScaleUEdit->SetText( *ScaleText );
-			ScaleText = FString::Printf( TEXT("%f"), VSelected );
+			ScaleText = VAPrintf( TEXT("%f"), VSelected ).c_str();
 			ScaleVEdit->SetText( *ScaleText );
 		} else {
-			FString ScaleText = FString::Printf( TEXT(""), USelected );
+			FString ScaleText = VAPrintf( TEXT(""), USelected ).c_str();
 			ScaleUEdit->SetText( *ScaleText );
-			ScaleText = FString::Printf( TEXT(""), VSelected );
+			ScaleText = VAPrintf( TEXT(""), VSelected ).c_str();
 			ScaleVEdit->SetText( *ScaleText );
 		}
 	}
 	void PanU( INT InPan )
 	{
 		FLOAT Mod = GetAsyncKeyState(VK_SHIFT) & 0x8000 ? -1 : 1;
-		GEditor->Exec( *FString::Printf( TEXT("POLY TEXPAN U=%f"), InPan * Mod ) );
+		GEditor->exec.Exec( VAPrintf( TEXT("POLY TEXPAN U=%f"), InPan * Mod ).c_str() );
 	}
 	void OnPanU1Clicked() { PanU(1); }
 	void OnPanU4Clicked() { PanU(4); }
@@ -594,7 +597,7 @@ class WPagePanRotScale : public WSurfacePropPage
 	void PanV( INT InPan )
 	{
 		FLOAT Mod = GetAsyncKeyState(VK_SHIFT) & 0x8000 ? -1 : 1;
-		GEditor->Exec( *FString::Printf( TEXT("POLY TEXPAN V=%f"), InPan * Mod ) );
+		GEditor->exec.Exec( VAPrintf( TEXT("POLY TEXPAN V=%f"), InPan * Mod ).c_str());
 	}
 	void OnPanV1Clicked() { PanV(1); }
 	void OnPanV4Clicked() { PanV(4); }
@@ -608,36 +611,36 @@ class WPagePanRotScale : public WSurfacePropPage
 		InScaleU = 1.0f / InScaleU;
 		InScaleV = 1.0f / InScaleV;
 
-		GEditor->Exec( *FString::Printf( TEXT("POLY TEXSCALE %s UU=%f VV=%f"), InRelative?TEXT("RELATIVE"):TEXT(""), InScaleU, InScaleV ) );
+		GEditor->exec.Exec( VAPrintf( TEXT("POLY TEXSCALE %s UU=%f VV=%f"), InRelative?TEXT("RELATIVE"):TEXT(""), InScaleU, InScaleV ).c_str());
 	}
 	void OnApplyClicked()
 	{
-		FLOAT ScaleU = appAtof( *ScaleUEdit->GetText() );
-		FLOAT ScaleV = appAtof( *ScaleVEdit->GetText() );
+		FLOAT ScaleU = _wtof( *ScaleUEdit->GetText() );
+		FLOAT ScaleV = _wtof( *ScaleVEdit->GetText() );
 		Scale( ScaleU, ScaleV, RelativeCheck->IsChecked() );
 	}
 	void OnApply2Clicked()
 	{
-		FLOAT ScaleValue = appAtof( *SimpleScaleCombo->GetText() );
+		FLOAT ScaleValue = _wtof( *SimpleScaleCombo->GetText() );
 		Scale( ScaleValue, ScaleValue, RelativeCheck->IsChecked() );
 	}
 
 	void OnFlipUClicked()
 	{
-		GEditor->Exec( TEXT("POLY TEXMULT UU=-1 VV=1") );
+		GEditor->exec.Exec( TEXT("POLY TEXMULT UU=-1 VV=1") );
 	}
 	void OnFlipVClicked()
 	{
-		GEditor->Exec( TEXT("POLY TEXMULT UU=1 VV=-1") );
+		GEditor->exec.Exec( TEXT("POLY TEXMULT UU=1 VV=-1") );
 	}
 	void OnRot45Clicked()
 	{
 		FLOAT Mod = GetAsyncKeyState(VK_SHIFT) & 0x8000 ? -1 : 1;
-		FLOAT UU = 1.0f / appSqrt(2);
-		FLOAT VV = 1.0f / appSqrt(2);
-		FLOAT UV = (1.0f / appSqrt(2)) * Mod;
-		FLOAT VU = -(1.0f / appSqrt(2)) * Mod;
-		GEditor->Exec( *FString::Printf( TEXT("POLY TEXMULT UU=%f VV=%f UV=%f VU=%f"), UU, VV, UV, VU ) );
+		FLOAT UU = 1.0f / sqrt(2);
+		FLOAT VV = 1.0f / sqrt(2);
+		FLOAT UV = (1.0f / sqrt(2)) * Mod;
+		FLOAT VU = -(1.0f / sqrt(2)) * Mod;
+		GEditor->exec.Exec( VAPrintf( TEXT("POLY TEXMULT UU=%f VV=%f UV=%f VU=%f"), UU, VV, UV, VU ).c_str() );
 	}
 	void OnRot90Clicked()
 	{
@@ -646,10 +649,11 @@ class WPagePanRotScale : public WSurfacePropPage
 		FLOAT VV = 0;
 		FLOAT UV = 1 * Mod;
 		FLOAT VU = -1 * Mod;
-		GEditor->Exec( *FString::Printf( TEXT("POLY TEXMULT UU=%f VV=%f UV=%f VU=%f"), UU, VV, UV, VU ) );
+		GEditor->exec.Exec(VAPrintf(TEXT("POLY TEXMULT UU=%f VV=%f UV=%f VU=%f"), UU, VV, UV, VU ).c_str());
 	}
 };
 
+#if 0
 // --------------------------------------------------------------
 //
 // WPageAlignment
@@ -726,38 +730,38 @@ class WPageAlignment : public WSurfacePropPage
 	}
 	void RefreshPropertyWindow()
 	{
-		if( PropertyWindow )
-			::DestroyWindow( PropertyWindow->hWnd );
-		delete PropertyWindow;
-		PropertyWindow = NULL;
-
-		Proxy = NULL;
-		INT Sel = AlignList->GetCurrent();
-		if( GAlignTypes[Sel].ProxyID == -1 )
-			return;
-
-		PropertyWindow = new WObjectProperties( NAME_None, CPF_Edit, TEXT(""), this, 1 );
-		PropertyWindow->ShowTreeLines = 1;
-		PropertyWindow->Root.Sorted = 0;
-		PropertyWindow->OpenChildWindow( IDSC_PROPS );
-
-		// Figure out which proxy should be in the properties.
-		if( GAlignTypes[Sel].ProxyID != -1 )
-		{
-			Proxy = GProxies( GAlignTypes[Sel].ProxyID );
-			PropertyWindow->Root._Objects.AddItem( Proxy );
-		}
-		else
-			PropertyWindow->Root._Objects.AddItem( NULL );
-
-		for( TFieldIterator<UProperty> It(Proxy->GetClass()); It; ++It )
-			if( ( It->Category==FName(Proxy->GetClass()->GetName())
-					|| It->Category==FName(TEXT("OptionsTexAlign")) )
-					&& PropertyWindow->Root.AcceptFlags( It->PropertyFlags ) )
-				PropertyWindow->Root.Children.AddItem( new(TEXT("FPropertyItem"))FPropertyItem( PropertyWindow, &(PropertyWindow->Root), *It, It->GetFName(), It->Offset, -1 ) );
-		PropertyWindow->Root.Expand();
-		PropertyWindow->ResizeList();
-		PropertyWindow->bAllowForceRefresh = 0;
+		//if( PropertyWindow )
+		//	::DestroyWindow( PropertyWindow->hWnd );
+		//delete PropertyWindow;
+		//PropertyWindow = NULL;
+		//
+		//Proxy = NULL;
+		//INT Sel = AlignList->GetCurrent();
+		//if( GAlignTypes[Sel].ProxyID == -1 )
+		//	return;
+		//
+		//PropertyWindow = new WObjectProperties( NAME_None, CPF_Edit, TEXT(""), this, 1 );
+		//PropertyWindow->ShowTreeLines = 1;
+		//PropertyWindow->Root.Sorted = 0;
+		//PropertyWindow->OpenChildWindow( IDSC_PROPS );
+		//
+		//// Figure out which proxy should be in the properties.
+		//if( GAlignTypes[Sel].ProxyID != -1 )
+		//{
+		//	Proxy = GProxies( GAlignTypes[Sel].ProxyID );
+		//	PropertyWindow->Root._Objects.AddItem( Proxy );
+		//}
+		//else
+		//	PropertyWindow->Root._Objects.AddItem( NULL );
+		//
+		//for( TFieldIterator<UProperty> It(Proxy->GetClass()); It; ++It )
+		//	if( ( It->Category==FName(Proxy->GetClass()->GetName())
+		//			|| It->Category==FName(TEXT("OptionsTexAlign")) )
+		//			&& PropertyWindow->Root.AcceptFlags( It->PropertyFlags ) )
+		//		PropertyWindow->Root.Children.AddItem( new(TEXT("FPropertyItem"))FPropertyItem( PropertyWindow, &(PropertyWindow->Root), *It, It->GetFName(), It->Offset, -1 ) );
+		//PropertyWindow->Root.Expand();
+		//PropertyWindow->ResizeList();
+		//PropertyWindow->bAllowForceRefresh = 0;
 	}
 	void OnDestroy()
 	{
@@ -781,35 +785,35 @@ class WPageAlignment : public WSurfacePropPage
 		switch( InType )
 		{
 			case TEXALIGN_Default:
-				GEditor->Exec( TEXT("POLY TEXALIGN DEFAULT") );
+				GEditor->exec.Exec( TEXT("POLY TEXALIGN DEFAULT") );
 				break;
 
 			case TEXALIGN_WallDir:
-				GEditor->Exec( TEXT("POLY TEXALIGN WALLDIR") );
+				GEditor->exec.Exec(TEXT("POLY TEXALIGN WALLDIR") );
 				break;
 
 			case TEXALIGN_Cylinder:
-				GEditor->Exec( TEXT("POLY TEXALIGN CYLINDER") );
+				GEditor->exec.Exec(TEXT("POLY TEXALIGN CYLINDER") );
 				break;
 
 			case TEXALIGN_Planar:
-				GEditor->Exec( *FString::Printf( TEXT("POLY TEXALIGN PLANAR OPTIONS=%d"), (UOptionsTexAlignPlanar*)(GProxies( PROXY_OPTIONSTEXALIGNPLANAR ) ) ) );
+				//GEditor->exec.Exec( VAPrintf( TEXT("POLY TEXALIGN PLANAR OPTIONS=%d"), (UOptionsTexAlignPlanar*)(GProxies( PROXY_OPTIONSTEXALIGNPLANAR ) ) ).c_str() );
 				break;
 
 			case TEXALIGN_PlanarAuto:
-				GEditor->Exec( TEXT("POLY TEXALIGN PLANARAUTO") );
+				GEditor->exec.Exec( TEXT("POLY TEXALIGN PLANARAUTO") );
 				break;
 
 			case TEXALIGN_PlanarWall:
-				GEditor->Exec( TEXT("POLY TEXALIGN PLANARWALL") );
+				GEditor->exec.Exec( TEXT("POLY TEXALIGN PLANARWALL") );
 				break;
 
 			case TEXALIGN_PlanarFloor:
-				GEditor->Exec( TEXT("POLY TEXALIGN PLANARFLOOR") );
+				GEditor->exec.Exec( TEXT("POLY TEXALIGN PLANARFLOOR") );
 				break;
 
 			case TEXALIGN_Face:
-				GEditor->Exec( TEXT("POLY TEXALIGN FACE") );
+				GEditor->exec.Exec( TEXT("POLY TEXALIGN FACE") );
 				break;
 		}
 	}
@@ -829,77 +833,7 @@ class WPageAlignment : public WSurfacePropPage
 		Align( GAlignTypes[ AlignList->GetCurrent() ].ID );
 	}
 };
-
-// --------------------------------------------------------------
-//
-// WPageStats
-//
-// --------------------------------------------------------------
-
-class WPageStats : public WSurfacePropPage
-{
-	DECLARE_WINDOWCLASS(WPageStats,WSurfacePropPage,Window)
-
-	WGroupBox *LightingBox;
-	WLabel *StaticLightsLabel, *MeshelsLabel, *MeshSizeLabel;
-
-	// Structors.
-	WPageStats ( WWindow* InOwnerWindow )
-	:	WSurfacePropPage( InOwnerWindow )
-	{
-		LightingBox = NULL;
-		StaticLightsLabel = MeshelsLabel = MeshSizeLabel = NULL;
-	}
-
-	virtual void OpenWindow( INT InDlgId, HMODULE InHMOD )
-	{
-		WSurfacePropPage::OpenWindow( InDlgId, InHMOD );
-
-		// Create child controls and let the base class determine their proper positions.
-		LightingBox = new WGroupBox( this, IDGP_LIGHTING );
-		LightingBox->OpenWindow( 1, 0 );
-		StaticLightsLabel = new WLabel( this, IDSC_STATIC_LIGHTS );
-		StaticLightsLabel->OpenWindow( 1, 0 );
-		MeshelsLabel = new WLabel( this, IDSC_MESHELS );
-		MeshelsLabel->OpenWindow( 1, 0 );
-		MeshSizeLabel = new WLabel( this, IDSC_MESH_SIZE );
-		MeshSizeLabel->OpenWindow( 1, 0 );
-
-		PlaceControl( LightingBox );
-		PlaceControl( StaticLightsLabel );
-		PlaceControl( MeshelsLabel );
-		PlaceControl( MeshSizeLabel );
-
-		Finalize();
-	}
-	void OnDestroy()
-	{
-		::DestroyWindow( LightingBox->hWnd );
-		::DestroyWindow( StaticLightsLabel->hWnd );
-		::DestroyWindow( MeshelsLabel->hWnd );
-		::DestroyWindow( MeshSizeLabel->hWnd );
-
-		delete LightingBox;
-		delete StaticLightsLabel;
-		delete MeshelsLabel;
-		delete MeshSizeLabel;
-
-		WSurfacePropPage::OnDestroy();
-	}
-	virtual void Refresh()
-	{
-		WSurfacePropPage::Refresh();
-
-		FStringOutputDevice GetPropResult = FStringOutputDevice();
-
-		GetPropResult.Empty();	GEditor->Get( TEXT("POLYS"), TEXT("STATICLIGHTS"), GetPropResult );
-		StaticLightsLabel->SetText( *GetPropResult );
-		GetPropResult.Empty();	GEditor->Get( TEXT("POLYS"), TEXT("MESHELS"), GetPropResult );
-		MeshelsLabel->SetText( *GetPropResult );
-		GetPropResult.Empty();	GEditor->Get( TEXT("POLYS"), TEXT("MESHSIZE"), GetPropResult );
-		MeshSizeLabel->SetText( *GetPropResult );
-	}
-};
+#endif
 
 // --------------------------------------------------------------
 //
@@ -914,11 +848,11 @@ class WSurfacePropSheet : public WWindow
 	WPropertySheet* PropSheet;
 	WPageFlags* FlagsPage;
 	WPagePanRotScale* PanRotScalePage;
-	WPageAlignment* AlignmentPage;
-	WPageStats* StatsPage;
+	//WPageAlignment* AlignmentPage;
+	//WPageStats* StatsPage;
 
 	// Structors.
-	WSurfacePropSheet( FName InPersistentName, WWindow* InOwnerWindow )
+	WSurfacePropSheet( const wchar_t *InPersistentName, WWindow* InOwnerWindow )
 	:	WWindow( InPersistentName, InOwnerWindow )
 	{
 	}
@@ -936,7 +870,7 @@ class WSurfacePropSheet : public WWindow
 			0, 0,
 			OwnerWindow ? OwnerWindow->hWnd : NULL,
 			NULL,
-			hInstance
+			*hinstWindowHack
 		); 
 	}
 	void OnCreate()
@@ -956,13 +890,13 @@ class WSurfacePropSheet : public WWindow
 		PanRotScalePage->OpenWindow( IDPP_SP_PANROTSCALE, GetModuleHandleA("dukeed.exe") );
 		PropSheet->AddPage( PanRotScalePage );
 
-		AlignmentPage = new WPageAlignment( PropSheet->Tabs );
-		AlignmentPage->OpenWindow( IDPP_SP_ALIGNMENT, GetModuleHandleA("dukeed.exe") );
-		PropSheet->AddPage( AlignmentPage );
+		//AlignmentPage = new WPageAlignment( PropSheet->Tabs );
+		//AlignmentPage->OpenWindow( IDPP_SP_ALIGNMENT, GetModuleHandleA("dukeed.exe") );
+		//PropSheet->AddPage( AlignmentPage );
 
-		StatsPage = new WPageStats( PropSheet->Tabs );
-		StatsPage->OpenWindow( IDPP_SP_STATS, GetModuleHandleA("dukeed.exe") );
-		PropSheet->AddPage( StatsPage );
+		//StatsPage = new WPageStats( PropSheet->Tabs );
+		//StatsPage->OpenWindow( IDPP_SP_STATS, GetModuleHandleA("dukeed.exe") );
+		//PropSheet->AddPage( StatsPage );
 
 		PropSheet->SetCurrent( 0 );
 
@@ -979,8 +913,8 @@ class WSurfacePropSheet : public WWindow
 
 		delete FlagsPage;
 		delete PanRotScalePage;
-		delete AlignmentPage;
-		delete StatsPage;
+		//delete AlignmentPage;
+		//delete StatsPage;
 		delete PropSheet;
 	}
 	void OnSize( DWORD Flags, INT NewX, INT NewY )

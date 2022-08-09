@@ -1789,3 +1789,658 @@ __declspec(dllimport) class WDialog : public WWindow
 	}
 };
 
+
+/*-----------------------------------------------------------------------------
+	WPropertyPage.
+
+	A WPropertySheet has 1 or more of these on it.  Each tab
+	represents one page.  A page uses a dialog box resource as it's
+	template to determine where to place child controls.
+-----------------------------------------------------------------------------*/
+
+// This is a helper struct that is just used to store the window positions
+// of the various controls this page contains.
+struct WPropertyPageCtrl
+{
+	WPropertyPageCtrl(INT InId, RECT InRect, FString InCaption, LONG InStyle, LONG InExStyle)
+	{
+		id = InId;
+		rect = InRect;
+		Caption = InCaption;
+		Style = InStyle;
+		ExStyle = InExStyle;
+	}
+
+	INT id;
+	RECT rect;
+	FString Caption;
+	LONG Style;
+	LONG ExStyle;
+};
+
+__declspec(dllimport) class WPropertyPage : public WWindow
+{
+	DECLARE_WINDOWCLASS(WPropertyPage, WWindow, Window)
+
+	TArray<WPropertyPageCtrl> Ctrls;
+	TArray<WLabel*> Labels;
+	FString Caption;
+	INT id;
+
+	// Structors.
+	WPropertyPage(WWindow* InOwnerWindow)
+		: WWindow(TEXT("WPropertyPage"), InOwnerWindow)
+	{
+	}
+
+	// WWindow interface.
+	virtual void OpenWindow(INT InDlgId, HMODULE InHMOD)
+	{
+		MdiChild = 0;
+
+		id = InDlgId;
+
+		PerformCreateWindowEx
+		(
+			0,
+			NULL,
+			WS_CHILD | WS_VISIBLE | WS_CLIPCHILDREN | WS_CLIPSIBLINGS,
+			0, 0,
+			0, 0,
+			OwnerWindow ? OwnerWindow->hWnd : NULL,
+			NULL,
+			*hinstWindowHack
+		);
+		SendMessageX(hWnd, WM_SETFONT, (WPARAM)GetStockObject(DEFAULT_GUI_FONT), MAKELPARAM(0, 0));
+
+		// Create an invisible dialog box from the specified resource id, and read the control
+		// positions from it.  Put these positions into an array for future reference.
+		char ResName[80] = "";
+		HRSRC hrsrc = FindResourceW(InHMOD, VAPrintf(TEXT("#%d"), InDlgId).c_str(), (LPWSTR)RT_DIALOG);
+		//check(hrsrc);
+
+		HGLOBAL hgbl = LoadResource(InHMOD, hrsrc);
+		//check(hgbl);
+
+		DLGTEMPLATE* dlgtemplate = (DLGTEMPLATE*)LockResource(hgbl);
+		//check(dlgtemplate);
+
+		HWND hwndDlg = ::CreateDialogIndirectA(*hinstWindowHack, dlgtemplate, hWnd, NULL);
+		//check(hwndDlg);	// Specified ID is NOT a valid dialog resource.
+
+		char TempCaption[80] = "";
+		GetWindowTextA(hwndDlg, TempCaption, 80);
+		Caption = appFromAnsi(TempCaption);
+		for (HWND ChildWnd = ::GetWindow(hwndDlg, GW_CHILD); ChildWnd; ChildWnd = ::GetNextWindow(ChildWnd, GW_HWNDNEXT))
+		{
+			RECT rect;
+			::GetWindowRect(ChildWnd, &rect);
+			::ScreenToClient(hwndDlg, (POINT*)&rect.left);
+			::ScreenToClient(hwndDlg, (POINT*)&rect.right);
+
+			INT id = GetDlgCtrlID(ChildWnd);
+
+			::GetWindowTextA(ChildWnd, TempCaption, 80);
+			LONG Style, ExStyle;
+			Style = GetWindowLong(ChildWnd, GWL_STYLE);
+			ExStyle = GetWindowLong(ChildWnd, GWL_EXSTYLE);
+			new(Ctrls)WPropertyPageCtrl(id, rect, appFromAnsi(TempCaption), Style, ExStyle);
+		}
+
+		// Get the size of the dialog resource and use this as the default size of the property page.
+		RECT rectDlg;
+		::GetClientRect(hwndDlg, &rectDlg);
+		::MoveWindow(hWnd, 0, 0, rectDlg.right, rectDlg.bottom, 1);
+
+		UnlockResource(dlgtemplate);
+	}
+	// Places a control based on the position that it previously read from the dialog template
+	void PlaceControl(WControl* InControl)
+	{
+		for (int x = 0; x < Ctrls.Num(); x++)
+			if (Ctrls(x).id == InControl->ControlId)
+			{
+				::MoveWindow(InControl->hWnd, Ctrls(x).rect.left, Ctrls(x).rect.top, Ctrls(x).rect.right - Ctrls(x).rect.left, Ctrls(x).rect.bottom - Ctrls(x).rect.top, 1);
+				InControl->SetText(*Ctrls(x).Caption);
+				SetWindowLong(InControl->hWnd, GWL_STYLE, Ctrls(x).Style);
+				SetWindowLong(InControl->hWnd, GWL_EXSTYLE, Ctrls(x).ExStyle);
+				Ctrls.Remove(x);
+				break;
+			}
+	}
+	// Loops through the control list and for any controls that are left over, create static 
+	// controls for them and place them.
+	void Finalize()
+	{
+		for (int x = 0; x < Ctrls.Num(); x++)
+		{
+			WLabel* lbl = new WLabel(this, Ctrls(x).id);
+			Labels.AddItem(lbl);
+			lbl->OpenWindow(1, 0);
+			RECT rect = Ctrls(x).rect;
+			::MoveWindow(lbl->hWnd, rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top, 1);
+			lbl->SetText(*Ctrls(x).Caption);
+			SetWindowLong(lbl->hWnd, GWL_STYLE, Ctrls(x).Style);
+			SetWindowLong(lbl->hWnd, GWL_EXSTYLE, Ctrls(x).ExStyle);
+		}
+	}
+	void Cleanup()
+	{
+		for (int x = 0; x < Labels.Num(); x++)
+		{
+			DestroyWindow(Labels(x)->hWnd);
+			delete Labels(x);
+		}
+	}	FString GetCaption()
+	{
+		return Caption;
+	}
+	INT GetID()
+	{
+		return id;
+	}
+	virtual void Refresh()
+	{
+	}
+};
+
+
+/*-----------------------------------------------------------------------------
+	WEdit.
+-----------------------------------------------------------------------------*/
+
+// A single-line or multiline edit control.
+__declspec(dllimport) class WEdit : public WControl
+{
+	//W_DECLARE_CLASS(WEdit, WControl, CLASS_Transient);
+	DECLARE_WINDOWSUBCLASS(WEdit, WControl, Window)
+
+	// Variables.
+	FDelegate ChangeDelegate;
+
+	// Constructor.
+	WEdit(WWindow* InOwner, INT InId = 0, WNDPROC InSuperProc = NULL)
+		: WControl(InOwner, InId, InSuperProc ? InSuperProc : SuperProc)
+	{}
+
+	// WWindow interface.
+	void OpenWindow(UBOOL Visible, UBOOL Multiline, UBOOL ReadOnly, UBOOL HorizScroll = FALSE, UBOOL NoHideSel = FALSE)
+	{
+		PerformCreateWindowEx
+		(
+			WS_EX_CLIENTEDGE,
+			NULL,
+			WS_CHILD | (HorizScroll ? WS_HSCROLL : 0) | (Visible ? WS_VISIBLE : 0) | ES_LEFT | (Multiline ? (ES_MULTILINE | WS_VSCROLL) : 0) | ES_AUTOVSCROLL | ES_AUTOHSCROLL | (ReadOnly ? ES_READONLY : 0) | (NoHideSel ? ES_NOHIDESEL : 0),
+			0, 0,
+			0, 0,
+			OwnerWindow->hWnd,
+			(HMENU)ControlId,
+			*hinstWindowHack
+		);
+
+		SendMessageW(hWnd, WM_SETFONT, (WPARAM)GetStockObject(DEFAULT_GUI_FONT), MAKELPARAM(0, 0));
+	}
+	UBOOL InterceptControlCommand(UINT Message, UINT wParam, LONG lParam)
+	{
+		if (HIWORD(wParam) == EN_CHANGE)
+		{
+			ChangeDelegate();
+			return 1;
+		}
+		else return 0;
+	}
+
+	// WEdit interface.
+	UBOOL GetReadOnly()
+	{
+	//	check(hWnd);
+		return (GetWindowLongW(hWnd, GWL_STYLE) & ES_READONLY) != 0;
+	}
+	void SetReadOnly(UBOOL ReadOnly)
+	{
+		//check(hWnd);
+		SendMessageW(hWnd, EM_SETREADONLY, ReadOnly, 0);
+	}
+	INT GetLineCount()
+	{
+		//check(hWnd);
+		return SendMessageW(hWnd, EM_GETLINECOUNT, 0, 0);
+	}
+	INT GetLineIndex(INT Line)
+	{
+		//check(hWnd);
+		return SendMessageW(hWnd, EM_LINEINDEX, Line, 0);
+	}
+	void GetSelection(INT& Start, INT& End)
+	{
+		//check(hWnd);
+		SendMessageW(hWnd, EM_GETSEL, (WPARAM)&Start, (LPARAM)&End);
+	}
+	void SetSelection(INT Start, INT End)
+	{
+		//check(hWnd);
+		SendMessageW(hWnd, EM_SETSEL, Start, End);
+	}
+	void SetSelectedText(const TCHAR* Text)
+	{
+		//check(hWnd);
+		SendMessageW(hWnd, EM_REPLACESEL, 1, (LPARAM)Text);
+	}
+	UBOOL GetModify()
+	{
+		return SendMessageW(hWnd, EM_GETMODIFY, 0, 0) != 0;
+	}
+	void SetModify(UBOOL Modified)
+	{
+		SendMessageW(hWnd, EM_SETMODIFY, Modified, 0);
+	}
+	void ScrollCaret()
+	{
+		SendMessageW(hWnd, EM_SCROLLCARET, 0, 0);
+	}
+	virtual FString GetText()
+	{
+		FString Str;
+		Str = WWindow::GetText();
+
+		// If the string begins with an "=" sign, we will evaluate it as a mathematical expresssion
+		if (Str.Left(1) == TEXT("="))
+		{
+			Str = Str.Mid(1);	// Strip off the "=" sign
+
+			float Result;
+			if (!Eval(Str, &Result))
+				Result = 0;
+
+			Str = VAPrintf(TEXT("%f"), Result).c_str();
+		}
+
+		return Str;
+	}
+	// Evaluate a numerical expression.
+	// Returns 1 if ok, 0 if error.
+	// Sets Result, or 0.0 if error.
+	//
+	// Operators and precedence: 1:+- 2:/% 3:* 4:^ 5:&|
+	// Unary: -
+	// Types: Numbers (0-9.), Hex ($0-$f)
+	// Grouping: ( )
+	//
+	virtual UBOOL Eval(FString Str, float* pResult)
+	{
+		float Result;
+
+		// Check for a matching number of brackets right up front.
+		int Brackets = 0;
+		for (int x = 0; x < Str.Len(); x++)
+		{
+			if (Str.Mid(x, 1) == TEXT("("))
+				Brackets++;
+			else
+				if (Str.Mid(x, 1) == TEXT(")"))
+					Brackets--;
+		}
+		if (Brackets != 0)
+		{
+	//		appMsgf(TEXT("Mismatched brackets."));
+			Result = 0;
+		}
+		else
+			if (!SubEval(&Str, &Result, 0))
+			{
+				//appMsgf(TEXT("Error in expression."));
+				Result = 0;
+			}
+
+		*pResult = Result;
+
+		return 1;
+	}
+	virtual UBOOL SubEval(FString* pStr, float* pResult, int Prec)
+	{
+		FString c;
+		float V, W, N;
+
+		V = W = N = 0.0f;
+
+		c = GrabChar(pStr);
+
+		if ((c >= TEXT("0") && c <= TEXT("9")) || c == TEXT(".")) // Number
+		{
+			V = 0;
+			while (c >= TEXT("0") && c <= TEXT("9"))
+			{
+				V = V * 10 + Val(c);
+				c = GrabChar(pStr);
+			}
+			if (c == TEXT("."))
+			{
+				N = 0.1f;
+				c = GrabChar(pStr);
+				while (c >= TEXT("0") && c <= TEXT("9"))
+				{
+					V = V + N * Val(c);
+					N = N / 10.0f;
+					c = GrabChar(pStr);
+				}
+			}
+		}
+		else if (c == TEXT("(")) // Opening parenthesis
+		{
+			if (!SubEval(pStr, &V, 0))
+				return 0;
+			c = GrabChar(pStr);
+		}
+		else if (c == TEXT("-")) // Negation
+		{
+			if (!SubEval(pStr, &V, 1000))
+				return 0;
+			V = -V;
+			c = GrabChar(pStr);
+		}
+		else if (c == TEXT("+")) // Positive
+		{
+			if (!SubEval(pStr, &V, 1000))
+				return 0;
+			c = GrabChar(pStr);
+		}
+		else if (c == TEXT("@")) // Square root
+		{
+			if (!SubEval(pStr, &V, 1000))
+				return 0;
+			if (V < 0)
+			{
+				//appMsgf(TEXT("Can't take square root of negative number"));
+				return 0;
+			}
+			else
+				V = sqrt(V);
+			c = GrabChar(pStr);
+		}
+		else // Error
+		{
+			//appMsgf(TEXT("No value recognized"));
+			return 0;
+		}
+	PrecLoop:
+		if (c == TEXT(""))
+		{
+			*pResult = V;
+			return 1;
+		}
+#if 0
+		else if (c == TEXT(")"))
+		{
+			*pStr = TEXT(")") + *pStr;
+			*pResult = V;
+			return 1;
+		}
+		else if (c == TEXT("+"))
+		{
+			if (Prec > 1)
+			{
+				*pResult = V;
+				*pStr = c + *pStr;
+				return 1;
+			}
+			else
+				if (SubEval(pStr, &W, 2))
+				{
+					V = V + W;
+					c = GrabChar(pStr);
+					goto PrecLoop;
+				}
+		}
+		else if (c == TEXT("-"))
+		{
+			if (Prec > 1)
+			{
+				*pResult = V;
+				*pStr = c + *pStr;
+				return 1;
+			}
+			else
+				if (SubEval(pStr, &W, 2))
+				{
+					V = V - W;
+					c = GrabChar(pStr);
+					goto PrecLoop;
+				}
+		}
+		else if (c == TEXT("/"))
+		{
+			if (Prec > 2)
+			{
+				*pResult = V;
+				*pStr = c + *pStr;
+				return 1;
+			}
+			else
+				if (SubEval(pStr, &W, 3))
+				{
+					if (W == 0)
+					{
+					//	appMsgf(TEXT("Division by zero isn't allowed"));
+						return 0;
+					}
+					else
+					{
+						V = V / W;
+						c = GrabChar(pStr);
+						goto PrecLoop;
+					}
+				}
+		}
+		else if (c == TEXT("%"))
+		{
+			if (Prec > 2)
+			{
+				*pResult = V;
+				*pStr = c + *pStr;
+				return 1;
+			}
+			else
+				if (SubEval(pStr, &W, 3))
+				{
+					if (W == 0)
+					{
+					//	appMsgf(TEXT("Modulo zero isn't allowed"));
+						return 0;
+					}
+					else
+					{
+						V = (int)V % (int)W;
+						c = GrabChar(pStr);
+						goto PrecLoop;
+					}
+				}
+		}
+		else if (c == TEXT("*"))
+		{
+			if (Prec > 3)
+			{
+				*pResult = V;
+				*pStr = c + *pStr;
+				return 1;
+			}
+			else
+				if (SubEval(pStr, &W, 4))
+				{
+					V = V * W;
+					c = GrabChar(pStr);
+					goto PrecLoop;
+				}
+		}
+		else
+		{
+			//appMsgf(TEXT("Unrecognized Operator"));
+		}
+#endif
+		*pResult = V;
+		return 1;
+	}
+	FString GrabChar(FString* pStr)
+	{
+		FString GrabChar;
+		if (pStr->Len())
+			do {
+				GrabChar = pStr->Left(1);
+				*pStr = pStr->Mid(1);
+			} while (GrabChar == TEXT(" "));
+		else
+			GrabChar = TEXT("");
+
+		return GrabChar;
+	}
+	// Converts a string to it's numeric equivalent, ignoring whitespace.
+	// "123  45" - becomes 12,345
+	FLOAT Val(FString Value)
+	{
+		FLOAT RetValue = 0;
+
+		for (int x = 0; x < Value.Len(); x++)
+		{
+			FString Char = Value.Mid(x, 1);
+
+			if (Char >= TEXT("0") && Char <= TEXT("9"))
+			{
+				RetValue *= 10;
+				RetValue += _wtoi(*Char);
+			}
+			else
+				if (Char != TEXT(" "))
+					break;
+		}
+
+		return RetValue;
+	}
+};
+
+
+/*-----------------------------------------------------------------------------
+	WPropertySheet.
+-----------------------------------------------------------------------------*/
+
+#define WPS_TABS	19900
+__declspec(dllimport) class WPropertySheet : public WControl
+{
+	//W_DECLARE_CLASS(WPropertySheet, WControl, CLASS_Transient)
+	DECLARE_WINDOWSUBCLASS(WPropertySheet, WControl, Window)
+
+	WTabControl* Tabs;
+	TArray<WPropertyPage*> Pages;
+
+	WPropertySheet(WWindow* InOwner, INT InId = 0, WNDPROC InSuperProc = NULL)
+		: WControl(InOwner, InId, InSuperProc ? InSuperProc : SuperProc)
+	{}
+
+	// WWindow interface.
+	void OpenWindow(UBOOL Visible, DWORD dwExtraStyle = 0)
+	{
+		PerformCreateWindowEx
+		(
+			0,
+			NULL,
+			WS_CHILD | (Visible ? WS_VISIBLE : 0) | dwExtraStyle,
+			0, 0,
+			0, 0,
+			OwnerWindow->hWnd,
+			(HMENU)ControlId,
+			*hinstWindowHack
+		);
+
+		SendMessageW(hWnd, WM_SETFONT, (WPARAM)GetStockObject(DEFAULT_GUI_FONT), MAKELPARAM(0, 0));
+	}
+	void OnCreate()
+	{
+		WControl::OnCreate();
+
+		Tabs = new WTabControl(this, WPS_TABS);
+		Tabs->OpenWindow(1);
+		Tabs->SelectionChangeDelegate = FDelegate(this, (TDelegate)&WPropertySheet::OnTabsSelChange);
+	}
+	void OnSize(DWORD Flags, INT NewX, INT NewY)
+	{
+		WControl::OnSize(Flags, NewX, NewY);
+
+		RECT rect;
+		::GetClientRect(hWnd, &rect);
+		::MoveWindow(Tabs->hWnd, 4, 4, rect.right - 8, rect.bottom - 8, 1);
+
+		RefreshPages();
+
+		InvalidateRect(hWnd, NULL, 1);
+	}
+	void RefreshPages()
+	{
+		if (!Pages.Num()) return;
+
+		INT idx = Tabs->GetCurrent();
+		if (idx == -1)	idx = 0;
+		//check(idx < Pages.Num());
+
+		// Hide all pages.
+		for (INT x = 0; x < Pages.Num(); x++)
+		{
+			if (x == idx)
+				Pages(x)->Show(1);
+			else
+				Pages(x)->Show(0);
+			Pages(x)->Refresh();
+		}
+
+		::SetWindowPos(Pages(idx)->hWnd, HWND_TOP, 8, 24, 0, 0, SWP_NOSIZE);
+	}
+	void Empty()
+	{
+		Tabs->Empty();
+	}
+	void AddPage(WPropertyPage* InPage)
+	{
+		Pages.AddItem(InPage);
+		Tabs->AddTab(*InPage->GetCaption(), InPage->GetID());
+	}
+	int SetCurrent(int Index)
+	{
+		INT ret = Tabs->SetCurrent(Index);
+		RefreshPages();
+		return ret;
+	}
+	void OnTabsSelChange()
+	{
+		RefreshPages();
+	}
+};
+
+
+/*-----------------------------------------------------------------------------
+	WGroupBox.
+-----------------------------------------------------------------------------*/
+
+__declspec(dllimport) class WGroupBox : public WControl
+{
+	DECLARE_WINDOWSUBCLASS(WGroupBox, WControl, Window)
+
+	// Constructor.
+	WGroupBox(WWindow* InOwner, INT InId = 0, WNDPROC InSuperProc = NULL)
+		: WControl(InOwner, InId, InSuperProc ? InSuperProc : SuperProc)
+	{}
+
+	// WWindow interface.
+	void OpenWindow(UBOOL Visible, DWORD dwExtraStyle = 0)
+	{
+		PerformCreateWindowEx
+		(
+			0,
+			NULL,
+			BS_GROUPBOX | WS_CHILD | (Visible ? WS_VISIBLE : 0) | dwExtraStyle,
+			0, 0,
+			0, 0,
+			OwnerWindow->hWnd,
+			(HMENU)ControlId,
+			*hinstWindowHack
+		);
+
+		SendMessageW(hWnd, WM_SETFONT, (WPARAM)GetStockObject(DEFAULT_GUI_FONT), MAKELPARAM(0, 0));
+	}
+};
