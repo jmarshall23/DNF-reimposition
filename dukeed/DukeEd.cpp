@@ -343,7 +343,7 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 				GEditor->exec.Exec(TEXT("MAP REBUILD VISIBLEONLY=0"), (dnOutputDevice&)globalLog);
 				//GEditor->exec.Exec(TEXT("BSP REBUILD"), (dnOutputDevice&)globalLog);
 				//GEditor->exec.Exec(TEXT("LIGHT APPLY SELECTED=0 VISIBLEONLY=0"), (dnOutputDevice&)globalLog);
-				//GEditor->exec.Exec(TEXT("PATHS BUILD"), (dnOutputDevice&)globalLog);
+				//GEditor->exec.Exec(TEXT("PATHS PRECACHE=1"), (dnOutputDevice&)globalLog);
 
 				
 			}

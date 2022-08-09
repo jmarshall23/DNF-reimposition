@@ -242,5 +242,74 @@ namespace DukeEdSharp
             string s = String.Format("HOOK TEXTUREPROPERTIES TEXTURE={0}.{1}.{2}", texturePackageName, groupSelected, textureListBox.SelectedItems[0]);
             EditorInterface.DukeSharp_Exec(s);
         }
+
+        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            Thread t = new Thread((ThreadStart)(() =>
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.InitialDirectory = "..\\textures\\";
+                saveFileDialog.Filter = "TGA Texture (*.TGA)|*.tga";
+                //    saveFileDialog.FilterIndex = 2;
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = saveFileDialog.FileName;
+                }
+            }));
+
+            // Run your code from a thread that joins the STA Thread
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+
+            if (filePath != string.Empty)
+            {
+                string groupSelected = (string)textureGroupComboBox.SelectedItem;
+                string s = String.Format("OBJ EXPORT TYPE=TEXTURE NAME=\"{0}.{1}.{2}\" FILE=\"{3}\"", texturePackageName, groupSelected, textureListBox.SelectedItems[0], filePath);
+                EditorInterface.DukeSharp_Exec(s);
+            }
+        }
+
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            Thread t = new Thread((ThreadStart)(() =>
+            {
+                OpenFileDialog saveFileDialog = new OpenFileDialog();
+                saveFileDialog.InitialDirectory = "..\\textures\\";
+                saveFileDialog.Filter = "TGA Texture (*.TGA)|*.tga";
+                //    saveFileDialog.FilterIndex = 2;
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = saveFileDialog.FileName;
+                }
+            }));
+
+            // Run your code from a thread that joins the STA Thread
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+
+            if (filePath != string.Empty)
+            {
+                string importFileName = Path.GetFileName(filePath);
+                importFileName = Path.GetFileNameWithoutExtension(importFileName);
+
+                string groupSelected = (string)textureGroupComboBox.SelectedItem;
+                string s = String.Format("TEXTURE IMPORT FILE=\"{0}\" NAME=\"{1}\" PACKAGE=\"{2}\" GROUP=\"{3}\"", filePath, importFileName, texturePackageName, groupSelected);
+                EditorInterface.DukeSharp_Exec(s);
+            }
+        }
     }
 }
