@@ -1111,3 +1111,5 @@ enum ETexAlign
 	TEXALIGN_PlanarWall = 101,
 	TEXALIGN_PlanarFloor = 102,
 };
+
+extern bool skipLogging;

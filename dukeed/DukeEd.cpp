@@ -107,10 +107,11 @@ void FileOpen(HWND hWnd)
 	ofn.nMaxFile = sizeof(File);
 	wchar_t Filter[255];
 	::wsprintf(Filter,
-		TEXT("Map Files (*.%s)%c*.%s%cAll Files%c*.*%c%c"),
+		TEXT("DNF Map Files (*.%s)%c*.%s%cBuild Map Files (*.map)%c*.map%c%c"),
 		TEXT("dnf"),
 		'\0',
 		TEXT("dnf"),
+		'\0',
 		'\0',
 		'\0',
 		'\0',
@@ -126,6 +127,23 @@ void FileOpen(HWND hWnd)
 	// Display the Open dialog box. 
 	if (GetOpenFileNameW(&ofn))
 	{
+		if (wcsstr(File, TEXT(".MAP")) || wcsstr(File, TEXT(".map")))
+		{
+			std::wstring fullPath = File;
+			std::wstring base_filename = fullPath.substr(fullPath.find_last_of(TEXT("/\\")) + 1);
+
+			size_t lastindex = base_filename.find_last_of(TEXT("."));
+			std::wstring rawname = base_filename.substr(0, lastindex);
+
+			wchar_t mapExecString[512];
+			wsprintf(mapExecString, TEXT("OPENBUILD %s"), rawname.c_str());
+
+			skipLogging = true;
+			GEditor->exec.Exec(mapExecString, (dnOutputDevice&)globalLog);
+			skipLogging = false;
+			return;
+		}
+
 		wchar_t mapExecString[512];
 
 		wsprintf(mapExecString, TEXT("MAP LOAD FILE=\"%s\""), File);

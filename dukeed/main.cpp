@@ -38,6 +38,14 @@ extern UViewport* globalInitViewport;
 
 dnArray<UObject*>* UObject::GObjObjects;
 
+dnString(*dnString__Printf__Actual)(const TCHAR* Fmt, ...);
+dnString dnString__Printf(const TCHAR* Fmt, ...)
+{
+	TCHAR TempStr[4096];
+	GET_VARARGS(TempStr, ARRAY_COUNT(TempStr), Fmt);
+	return dnString(TempStr);
+}
+
 void(__fastcall* URender_DrawActorActual)(void* _this, struct FSceneNode* a2, struct AActor* a3);
 void __fastcall URender_DrawActor(void* _this, struct FSceneNode* a2, struct AActor* a3) {
 	URender_DrawActorActual(_this, a2, a3);
@@ -291,7 +299,6 @@ void* InitEngineHooked(DWORD splashID) {
 	GEditor = (UEditorEngine *)InitEngineActual(splashID);
 
 	InitEditor();
-	skipLogging = true;
 	GEditor->exec.Exec(TEXT("MODE MAPEXT=.DNF"), (dnOutputDevice &)globalLog);
 
 	GEditor->exec.Exec(TEXT("MAP NEW"), (dnOutputDevice&)globalLog);
@@ -303,7 +310,6 @@ void* InitEngineHooked(DWORD splashID) {
 	//GEditor->exec.Exec(TEXT("MAP LOAD FILE=\"..\\MAPS\\MAP01.dnf\""), (dnOutputDevice&)globalLog);
 	//GEditor->exec.Exec(TEXT("MAP SAVE FILE=\"..\\MAPS\\MAP00_TEST.dnf\""), (dnOutputDevice&)globalLog);
 	//GEditor->exec.Exec(TEXT("MAP EXPORT FILE=\"..\\MAPS\\DM-Casino.T3D\""), (dnOutputDevice&)globalLog);
-	skipLogging = false;
 	return GEditor;
 }
 
@@ -392,11 +398,8 @@ void DNFHackEntry(void)
 void (__fastcall *dnfOutput)(void* log, wchar_t* str, ...);
 void __fastcall ReroutedOutput(void *log, wchar_t* str, ...)
 {
-	wchar_t buffer[512];
-
-	if (skipLogging)
-		return;
-
+	wchar_t buffer[2048];
+	
 	va_list args;
 	va_start(args, str);
 	vswprintf(buffer, str, args);
@@ -404,7 +407,10 @@ void __fastcall ReroutedOutput(void *log, wchar_t* str, ...)
 
 	globalLog = log;
 
-	dnfOutput(log, buffer);
+	if (!skipLogging)
+	{
+		dnfOutput(log, buffer);
+	}
 
 	if (dumpTobrowserOut)
 	{
@@ -424,9 +430,6 @@ void ReroutedOutput3(void* log, char* str, ...)
 {
 	char buffer[512];
 
-	if (skipLogging)
-		return;
-
 	va_list args;
 	va_start(args, str);
 	vsprintf(buffer, str, args);
@@ -443,9 +446,6 @@ void ReroutedOutput3(void* log, char* str, ...)
 void (__fastcall *dnfOutput4)(void* log, char* str);
 void __fastcall ReroutedOutput4(void* log, void *edx, char* str)
 {
-	if (skipLogging)
-		return;
-
 	if (dumpTobrowserOut)
 	{
 		int len = strlen(str);
@@ -464,9 +464,6 @@ void __fastcall ReroutedOutput4(void* log, void *edx, char* str)
 void (*dnfOutput5)(void* log, wchar_t* str);
 void ReroutedOutput5(void* log, wchar_t* str)
 {
-	if (skipLogging)
-		return;
-
 	OutputDebugStringW(str);
 	OutputDebugStringA("\n");
 
@@ -477,8 +474,6 @@ void ReroutedOutput5(void* log, wchar_t* str)
 void (__fastcall *dnfOutput2)(int type, wchar_t* str, ...);
 void __fastcall ReroutedOutput2(int type, wchar_t* str, ...)
 {
-	if (skipLogging)
-		return;
 #if 0
 	wchar_t buffer[512];
 
@@ -500,9 +495,6 @@ void __fastcall ReroutedOutput2(int type, wchar_t* str, ...)
 void (*dnfOutput6)(void* log, int type, char* str, ...);
 void ReroutedOutput6(void* log, int type, char* str, ...)
 {
-	if (skipLogging)
-		return;
-
 	char buffer[512];
 
 	va_list args;
@@ -561,17 +553,25 @@ void InitDNFHooks()
 
 	HINSTANCE hinst = LoadLibraryA("dncommon.dll");
 
+
 	void* dnOutputArgList = GetProcAddress(hinst, MAKEINTRESOURCEA(971));
 	{
 		MH_CreateHook(dnOutputArgList, ReroutedOutput, (LPVOID*)&dnfOutput);
 		MH_EnableHook(dnOutputArgList);
 	}
-
+#if 0
 	void *dnOutputArgList2 = GetProcAddress(hinst, MAKEINTRESOURCEA(966));
 	{
 		MH_CreateHook(dnOutputArgList2, ReroutedOutput2, (LPVOID*)&dnfOutput2);
 		MH_EnableHook(dnOutputArgList2);
 	}
+
+	void* dnstring_printf = GetProcAddress(hinst, MAKEINTRESOURCEA(1047));
+	{
+		MH_CreateHook(dnstring_printf, dnString__Printf, (LPVOID*)&dnString__Printf__Actual);
+		MH_EnableHook(dnstring_printf);
+	}
+#endif
 #if 0
 	void* dnOutputArgList6 = GetProcAddress(hinst, MAKEINTRESOURCEA(972));
 	{
