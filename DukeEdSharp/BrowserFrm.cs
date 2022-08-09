@@ -131,7 +131,7 @@ namespace DukeEdSharp
 
         private void RefreshTextureGroupList()
         {
-            string temp = EditorInterface.Get("OBJ", "GROUPS CLASS=Texture PACKAGE=\"" + texturePackageName + "\"");
+            string temp = EditorInterface.Get("OBJ", "GROUPS CLASS=Object PACKAGE=\"" + texturePackageName + "\"");
             string[] groups = temp.Split(',');
 
             textureGroupComboBox.Items.Clear();
@@ -148,7 +148,7 @@ namespace DukeEdSharp
         {
             string groupSelected = (string)textureGroupComboBox.SelectedItem;
 
-            string temp = EditorInterface.Get("OBJ", "QUERY TYPE=Texture PACKAGE=\"" + texturePackageName + "\" GROUP=\"" + groupSelected + "\"");
+            string temp = EditorInterface.Get("OBJ", "QUERY TYPE=Object PACKAGE=\"" + texturePackageName + "\" GROUP=\"" + groupSelected + "\"");
             string[] textures = temp.Split(' ');
 
             Array.Sort(textures, (x, y) => String.Compare(x, y));
