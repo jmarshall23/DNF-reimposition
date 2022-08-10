@@ -1,0 +1,33 @@
+struct SJumpAttack
+{
+	var Actor TargetActor;
+	var int Mode;
+	var int Type;
+	var bool AttackOnTakeoff;
+	var bool Attacked;
+	var bool AttackSuccess;
+	var bool AppliedJumpVel;
+	var int RefId;
+	var Vector FrameVelocity;
+	var bool bCanJumpAttackShrunkTarget;
+	var float ShrunkTargetHeightScale;
+	var float ShrunkTargetDistanceScale;
+	var transient float Gate;
+	var() float MinInterval;
+	var float GroundFinderGate;
+	var float GroundFinderInterval;
+	var Vector PresetFrameVelocity;
+	var Vector DefaultPresetFrameVelocity;
+	var Engine.BaseAI.EAIJumpAttackType JumpAttackType;
+	var float ParabolaJumpHeight;
+	var float ParabolaMinJumpHeight;
+	var float ParabolaMaxJumpHeight;
+	var float GroundFinderLockout;
+	var bool bInstantJump;
+	var bool bUsePresetVelocity;
+	var bool bCheckClearShot;
+	var bool bCheckHasPath;
+	var bool bCheckClearPath;
+	var bool bDontApplyDirectDamage;
+	var bool bDisabled;
+};

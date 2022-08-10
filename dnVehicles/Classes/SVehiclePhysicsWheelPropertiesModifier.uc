@@ -1,0 +1,31 @@
+struct SVehiclePhysicsWheelPropertiesModifier
+{
+	var() Engine.Object.EFloatModifier SteerRatioModifier;
+	var() float SteerRatio;
+	var() Engine.Object.EFloatModifier BrakeRatioModifier;
+	var() float BrakeRatio;
+	var() Engine.Object.EFloatModifier HandbrakeRatioModifier;
+	var() float HandbrakeRatio;
+	var() Engine.Object.EFloatModifier FrictionStaticModifier;
+	var() float FrictionStatic;
+	var() Engine.Object.EFloatModifier FrictionDynamicModifier;
+	var() float FrictionDynamic;
+	var() Engine.Object.EFloatModifier FrictionRollingModifier;
+	var() float FrictionRolling;
+	var() Engine.Object.EFloatModifier StiffnessLateralModifier;
+	var() float StiffnessLateral;
+	var() Engine.Object.EFloatModifier StiffnessLongitudinalModifier;
+	var() float StiffnessLongitudinal;
+	var() Engine.Object.EFloatModifier RestitutionModifier;
+	var() float Restitution;
+	var() Engine.Object.EFloatModifier SuspensionSpringLengthModifier;
+	var() float SuspensionSpringLength;
+	var() Engine.Object.EFloatModifier SuspensionSpringDampingModifier;
+	var() float SuspensionSpringDamping;
+	var() Engine.Object.EFloatModifier SuspensionSpringStiffnessModifier;
+	var() float SuspensionSpringStiffness;
+	var() Engine.Object.EFloatModifier RadiusModifier;
+	var() float Radius;
+	var() Engine.Object.EFloatModifier MassModifier;
+	var() float Mass;
+};

@@ -1,0 +1,34 @@
+struct SWeaponManager
+{
+	var Engine.BaseAI.EAIWeapManMode Mode;
+	var class<Weapon> CurrentWeaponClass;
+	var bool HoldFire;
+	var float MinRange;
+	var float MaxRange;
+	var float IdealMinRange;
+	var float IdealMaxRange;
+	var int ReloadThresh;
+	var int MinShots;
+	var int RndShots;
+	var float MinVolleyInterval;
+	var float RndVolleyInterval;
+	var Vector StandingFireOffset;
+	var Vector CrouchingFireOffset;
+	var Vector ProneFireOffset;
+	var Vector PipeBombFireOffset;
+	var int ShotsFired;
+	var int ShotCount;
+	var transient float Gate;
+	var bool ForceFire;
+	var bool NoFire;
+	var bool ChargeWeapon;
+	var float WeaponChargeTime;
+	var transient float ScanGate;
+	var transient float RefreshScanGate;
+	var Rotator ScanRot;
+	var Vector ScanTarget;
+	var float ScanTrackRate;
+	var float ActionPointDistance;
+	var AIActor.EAIWeaponClearShotType ClearShotRequirement;
+	var bool MeleeFrozenTargets;
+};

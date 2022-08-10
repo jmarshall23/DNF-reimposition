@@ -1,0 +1,37 @@
+struct SJump
+{
+	var int Mode;
+	var Vector JumpVel;
+	var float HeavyLandingThresh;
+	var bool AppliedJumpVel;
+	var float StartZ;
+	var int RefId;
+	var int AnimSet;
+	var Vector FrameVelocity;
+	var bool bDisableIK;
+	var bool bRestoreIKPreLand;
+	var float ExitTime;
+	var Engine.BaseAI.EAIJumpType JumpType;
+	var bool FaceTarget;
+	var Actor FocusActor;
+	var bool AutoPitch;
+	var float PitchRate;
+	var float PitchRateLand;
+	var float MaxPitch;
+	var float MaxVelocity;
+	var bool bDebug;
+	var bool bTakeOffNoLand;
+	var float TakeOffIdleTime;
+	var float FlyingGravityScale;
+	var Vector TargetPos;
+	var bool bCheckTargetPos;
+	var bool bUseAccelaration;
+	var float AccelerationScale;
+	var Vector Fudge;
+	var bool bSnapToTargetDuringLand;
+	var bool bRequireCompleteSnap;
+	var bool bSnapActive;
+	var bool bLandAnimComplete;
+	var float StopLinearDamping;
+	var bool bAllowProcFireDuringFall;
+};
