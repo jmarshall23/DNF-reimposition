@@ -1,0 +1,11 @@
+E:\SteamLibrary\steamapps\common\DukeNukem\Tools\CLI\bin\Debug\Eliot.UELib.CLI.exe.config
+E:\SteamLibrary\steamapps\common\DukeNukem\Tools\CLI\bin\Debug\Eliot.UELib.CLI.exe
+E:\SteamLibrary\steamapps\common\DukeNukem\Tools\CLI\bin\Debug\Eliot.UELib.CLI.pdb
+E:\SteamLibrary\steamapps\common\DukeNukem\Tools\CLI\bin\Debug\Eliot.UELib.dll
+E:\SteamLibrary\steamapps\common\DukeNukem\Tools\CLI\bin\Debug\Eliot.UELib.pdb
+E:\SteamLibrary\steamapps\common\DukeNukem\Tools\CLI\obj\Debug\Eliot.UELib.CLI.csproj.AssemblyReference.cache
+E:\SteamLibrary\steamapps\common\DukeNukem\Tools\CLI\obj\Debug\Eliot.UELib.CLI.csproj.SuggestedBindingRedirects.cache
+E:\SteamLibrary\steamapps\common\DukeNukem\Tools\CLI\obj\Debug\Eliot.UELib.CLI.csproj.CoreCompileInputs.cache
+E:\SteamLibrary\steamapps\common\DukeNukem\Tools\CLI\obj\Debug\Eliot.UELib.CLI.csproj.CopyComplete
+E:\SteamLibrary\steamapps\common\DukeNukem\Tools\CLI\obj\Debug\Eliot.UELib.CLI.exe
+E:\SteamLibrary\steamapps\common\DukeNukem\Tools\CLI\obj\Debug\Eliot.UELib.CLI.pdb
