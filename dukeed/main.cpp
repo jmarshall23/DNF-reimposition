@@ -337,7 +337,7 @@ void UCC(void)
 					UCommandlet* Default = (UCommandlet*)Class->GetDefaultObject();
 					Default->LoadLocalized();
 
-					new(Items)FString(FString(TEXT("   ucc ")) + RightPad(Default->HelpCmd, 21) + TEXT(" ") + Default->HelpOneLiner);
+					new(Items)FString(FString(TEXT("   ucc ")) + RightPad(Default->HelpCmd, 21) + TEXT(" ") + Default->HelpOneLiner + TEXT(" ") + Class->GetName());
 				}
 			}
 			new(Items)FString(TEXT("   ucc help <command>        Get help on a command\n"));

@@ -299,6 +299,8 @@ public:
 	void InitExecution();
 	void ParseParms(const TCHAR* Parms);
 
+	const wchar_t* GetName() const;
+
 	static UClass* StaticLoadClass(UClass* BaseClass, UObject* InOuter, const TCHAR* Name, const TCHAR* Filename, DWORD LoadFlags, UPackageMap* Sandbox);
 	static void GetRegistryObjects(dnArray<FRegistryObjectInfo>& Results, UClass* Class, UClass* MetaClass, UBOOL ForceRefresh);
 	static UObject* StaticLoadObject(class UClass* ObjectClass, UObject* InOuter, const TCHAR* InName, const TCHAR* Filename, DWORD LoadFlags, UPackageMap* Sandbox);
