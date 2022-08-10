@@ -16,6 +16,8 @@
 #define FString dnString
 #define TArray dnArray
 
+__declspec(dllimport) class FRegistryObjectInfo;
+
 // Name index.
 typedef INT NAME_INDEX;
 
@@ -229,8 +231,16 @@ public:
 	dnString& operator+=(const TCHAR* Str);
 	UBOOL operator>=(const TCHAR* Other) const;
 	UBOOL operator<=(const TCHAR* Other) const;
-	dnString operator+(const TCHAR* Str);
 	UBOOL operator!=(const TCHAR* Other) const;
+	//dnString operator+(const dnString& Str);
+	dnString operator+(const dnString& Str)
+	{
+		return operator+(*Str);
+	}
+	dnString operator+(const TCHAR* Str)
+	{
+		return dnString(*this) += Str;
+	}
 	void Empty(UBOOL clear=true);
 
 	void* Data;
@@ -269,8 +279,9 @@ class UClass;
 __declspec(dllimport) class UObject {
 public:
 	UObject();
+	virtual ~UObject();
 
-	int ObjectInternal[6];
+	int ObjectInternal[5];
 	UObject* outer;
 	const int ObjectFlags;
 	dnName name;
@@ -283,7 +294,13 @@ public:
 	static UClass* StaticClass();
 
 	static class UPackage* GetTransientPackage();
+	
+	void LoadLocalized(UBOOL Propagate = 0, UClass* Class = NULL);
+	void InitExecution();
+	void ParseParms(const TCHAR* Parms);
 
+	static UClass* StaticLoadClass(UClass* BaseClass, UObject* InOuter, const TCHAR* Name, const TCHAR* Filename, DWORD LoadFlags, UPackageMap* Sandbox);
+	static void GetRegistryObjects(dnArray<FRegistryObjectInfo>& Results, UClass* Class, UClass* MetaClass, UBOOL ForceRefresh);
 	static UObject* StaticLoadObject(class UClass* ObjectClass, UObject* InOuter, const TCHAR* InName, const TCHAR* Filename, DWORD LoadFlags, UPackageMap* Sandbox);
 	static UObject* StaticConstructObject(class UClass* cls, UObject* outer, const dnName &name, DWORD SetFlags, UObject* unknown, class dnOutputDevice* outpoutDevice, UObject* unknown2);
 	static void ResetLoaders(UObject* Pkg, UBOOL DynamicOnly, UBOOL ForceLazyLoad);
@@ -668,6 +685,7 @@ public:
 	}
 	static UClass* StaticClass();
 
+	UObject* GetDefaultObject();
 	UClass* GetSuperClass() const;
 };
 
@@ -1113,3 +1131,101 @@ enum ETexAlign
 };
 
 extern bool skipLogging;
+
+//
+// Information about a driver class.
+//
+__declspec(dllimport) class FRegistryObjectInfo
+{
+public:
+	dnString Object;
+	dnString Class;
+	dnString MetaClass;
+	dnString Description;
+	dnString Autodetect;
+	FRegistryObjectInfo()
+		: Object(), Class(), MetaClass(), Description(), Autodetect()
+	{}
+};
+
+/*-----------------------------------------------------------------------------
+	UCommandlet.
+-----------------------------------------------------------------------------*/
+
+//
+// A command-line applet.
+//
+struct UCommandlet_eventMain_Parms
+{
+	dnString InParms;
+	INT ReturnValue;
+};
+__declspec(dllimport) class UCommandlet : public UObject
+{
+public:
+	virtual ~UCommandlet();
+	//DECLARE_CLASS(UCommandlet, UObject, CLASS_Transient | CLASS_Abstract | CLASS_Localized)
+	dnString HelpCmd, HelpOneLiner, HelpUsage, HelpWebLink;
+	dnString HelpParm[16], HelpDesc[16];
+	UCommandlet();
+	BITFIELD LogToStdout : 1;
+	BITFIELD IsServer : 1;
+	BITFIELD IsClient : 1;
+	BITFIELD IsEditor : 1;
+	BITFIELD LazyLoad : 1;
+	BITFIELD ShowErrorCount : 1;
+	BITFIELD ShowBanner : 1;
+
+	virtual void UnknownUnrealFunction1();
+	virtual void UnknownUnrealFunction2();
+	virtual void UnknownUnrealFunction3();
+	virtual void UnknownUnrealFunction4();
+	virtual void UnknownUnrealFunction5();
+	virtual void UnknownUnrealFunction6();
+	virtual void UnknownUnrealFunction7();
+	virtual void UnknownUnrealFunction8();
+	virtual void UnknownUnrealFunction9();
+	virtual void UnknownUnrealFunction10();
+	virtual void UnknownUnrealFunction11();
+	virtual void UnknownUnrealFunction12();
+	virtual void UnknownUnrealFunction13();
+	virtual void InitExecution();
+	virtual void UnknownUnrealFunction15();
+	virtual void UnknownUnrealFunction16();
+	virtual void UnknownUnrealFunction17();
+	virtual void UnknownUnrealFunction18();
+	virtual void UnknownUnrealFunction19();
+	virtual void UnknownUnrealFunction20();
+	virtual void UnknownUnrealFunction21();
+	virtual void UnknownUnrealFunction22();
+	virtual INT Main(const TCHAR* Parms);
+	//DECLARE_FUNCTION(execMain)
+	INT eventMain(const FString& InParms);
+
+	static UClass* StaticClass();
+};
+
+//
+// Flags for loading objects.
+//
+enum ELoadFlags
+{
+	LOAD_None = 0x0000,	// No flags.
+	LOAD_NoFail = 0x0001,	// Critical error if load fails.
+	LOAD_NoWarn = 0x0002,	// Don't display warning if load fails.
+	LOAD_Throw = 0x0008,	// Throw exceptions upon failure.
+	LOAD_Verify = 0x0010,	// Only verify existance; don't actually load.
+	LOAD_AllowDll = 0x0020,	// Allow plain DLLs.
+	LOAD_DisallowFiles = 0x0040,	// Don't load from file.
+	LOAD_NoVerify = 0x0080,   // Don't verify imports yet.
+	LOAD_Forgiving = 0x1000,   // Forgive missing imports (set them to NULL).
+	LOAD_Quiet = 0x2000,   // No log warnings.
+	LOAD_NoRemap = 0x4000,   // No remapping of packages.
+#if DNF
+	LOAD_TempMerge = 0x8000,	// CDH: Package is a merge load from old version branch, TEMPORARY
+#endif
+	LOAD_Propagate = 0,
+};
+
+__declspec(dllimport)  const TCHAR* appCmdLine();
+__declspec(dllimport)  UBOOL ParseToken(const TCHAR*& Str, dnString& Arg, UBOOL UseEscape);

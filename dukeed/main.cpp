@@ -289,6 +289,181 @@ BOOL FindPackage(wchar_t* fileName) {
 	return r;
 }
 
+FString RightPad(FString In, INT Count)
+{
+	while (In.Len() < Count)
+		In += TEXT(" ");
+	return In;
+}
+
+void UCC(void)
+{
+	dnArray<FRegistryObjectInfo> List;
+	UObject::GetRegistryObjects(List, UClass::StaticClass(), UCommandlet::StaticClass(), 0);
+
+	int argc;
+	wchar_t** argv = CommandLineToArgvW(GetCommandLineW(), &argc);
+
+	dnString Token = argc > 1 ? argv[1] : TEXT("");
+
+	LPWSTR cmdLine = GetCommandLineW();
+
+	UBOOL Help = 0;
+	DWORD LoadFlags = 0;
+	if (Token == TEXT(""))
+	{
+		//ShowBanner();
+		wprintf(TEXT("Use \"ucc help\" for help"));
+	}
+	else if (Token == TEXT("HELP"))
+	{
+		//ShowBanner();
+		UObject::StaticLoadClass(UCommandlet::StaticClass(), NULL, TEXT("Engine.Commandlet"), NULL, LOAD_NoFail, NULL);
+		//const TCHAR* Tmp = appCmdLine();
+		*GIsEditor = 0; // To enable loading localized text.
+		//if (!ParseToken(Tmp, Token, 0))
+		{
+			INT i;
+			wprintf(TEXT("Usage:"));
+			wprintf(TEXT("   ucc <command> <parameters>"));
+			wprintf(TEXT(""));
+			wprintf(TEXT("Commands for \"ucc\":"));
+			TArray<FString> Items;
+			for (i = 0; i < List.Num(); i++)
+			{
+				UClass* Class = UObject::StaticLoadClass(UCommandlet::StaticClass(), NULL, *List(i).Object, NULL, LoadFlags, NULL);
+				if (Class)
+				{
+					UCommandlet* Default = (UCommandlet*)Class->GetDefaultObject();
+					Default->LoadLocalized();
+
+					new(Items)FString(FString(TEXT("   ucc ")) + RightPad(Default->HelpCmd, 21) + TEXT(" ") + Default->HelpOneLiner);
+				}
+			}
+			new(Items)FString(TEXT("   ucc help <command>        Get help on a command\n"));
+			//Sort(&Items(0), Items.Num());
+			for (i = 0; i < Items.Num(); i++)
+				wprintf(TEXT("%s\n"), *Items(i));
+		}
+		//else
+		//{
+		//	Help = 1;
+		//	goto Process;
+		//}
+	}
+	else
+	{
+		//ShowBanner();
+		UObject::StaticLoadClass(UCommandlet::StaticClass(), NULL, TEXT("Engine.Commandlet"), NULL, LOAD_NoFail, NULL);
+		//const TCHAR* Tmp = appCmdLine();
+		*GIsEditor = 0; // To enable loading localized text.
+		//if (!ParseToken(Tmp, Token, 0))
+
+		UClass* Class = nullptr;
+		TArray<FString> Items;
+		for (int i = 0; i < List.Num(); i++)
+		{
+			UClass* cls = UObject::StaticLoadClass(UCommandlet::StaticClass(), NULL, *List(i).Object, NULL, LoadFlags, NULL);
+			if (cls)
+			{
+				UCommandlet* Default = (UCommandlet*)cls->GetDefaultObject();
+				Default->LoadLocalized();
+
+				FString cmdName = RightPad(Default->HelpCmd, 21);
+				//wprintf(TEXT("%s\n"), *cmdName);
+
+				const wchar_t* t1 = *cmdName;
+				const wchar_t* t2 = *Token;
+
+				std::wstring str(*cmdName);
+				std::wstring str2(*Token);
+
+				if (str.find(str2) != std::wstring::npos)
+				{
+					Class = cls;
+					break;
+				}
+			}
+		}
+
+		if (Class)
+		{
+			UCommandlet* Default = (UCommandlet*)Class->GetDefaultObject();
+			if (Help)
+			{
+				// Get help on it.
+				if (Default->HelpUsage != TEXT(""))
+				{
+					wprintf(TEXT("Usage:"));
+					wprintf(TEXT("   ucc %s"), *Default->HelpUsage);
+				}
+				if (Default->HelpParm[0] != TEXT(""))
+				{
+					wprintf(TEXT(""));
+					wprintf(TEXT("Parameters:"));
+					for (INT i = 0; i < ARRAY_COUNT(Default->HelpParm) && Default->HelpParm[i] != TEXT(""); i++)
+						wprintf(TEXT("   %s %s"), *RightPad(Default->HelpParm[i], 16), *Default->HelpDesc[i]);
+				}
+				if (Default->HelpWebLink != TEXT(""))
+				{
+					wprintf(TEXT(""));
+					wprintf(TEXT("For more info, see"));
+					wprintf(TEXT("   %s"), *Default->HelpWebLink);
+				}
+			}
+			else
+			{
+				// Run it.
+				if (Default->LogToStdout)
+				{
+				//	Warn.AuxOut = GLog;
+					//GLog = &Warn;
+				}
+				if (Default->ShowBanner)
+				{
+				//	ShowBanner(Warn);
+				}
+				wprintf(TEXT("Executing %s\n"), Class->GetName());
+				//GIsClient = Default->IsClient;
+				//GIsServer = Default->IsServer;
+				//GIsEditor = Default->IsEditor;
+				//GLazyLoad = Default->LazyLoad;
+				UCommandlet* Commandlet = ConstructObject<UCommandlet>(Class);
+
+				UEditorEngineVTableGeneric* _gen = (UEditorEngineVTableGeneric*)Commandlet;
+
+
+				Commandlet->InitExecution();
+				Commandlet->ParseParms(cmdLine);
+				Commandlet->Main(cmdLine);
+				//if (Commandlet->ShowErrorCount)
+				//{
+				//	if (Warn.ErrorCount == 0)
+				//		GWarn->Logf(TEXT("Success - %d error(s), %d warning(s)"), Warn.ErrorCount, Warn.WarningCount);
+				//	else
+				//	{
+				//		GWarn->Logf(TEXT("Failure - %d error(s), %d warning(s)"), Warn.ErrorCount, Warn.WarningCount);
+				//		ErrorLevel = 1;
+				//	}
+				//}
+				//if (Default->LogToStdout)
+				//{
+				//	Warn.AuxOut = NULL;
+				//	GLog = &Log;
+				//}
+			}
+		}
+		else
+		{
+		//	ShowBanner(Warn);
+			wprintf(TEXT("Commandlet %s not found"), *Token);
+		}
+	}
+
+	wprintf(TEXT("COMMAND COMPLETED"));
+	exit(0);
+}
+
 void* InitEngineHooked(DWORD splashID) {
 	UObject* obj;
 
@@ -297,6 +472,18 @@ void* InitEngineHooked(DWORD splashID) {
 	//MessageBoxA(nullptr, "Fuck 1", "Fuck 1", 0);	
 
 	GEditor = (UEditorEngine *)InitEngineActual(splashID);
+
+	int argc;
+	wchar_t** argv = CommandLineToArgvW(GetCommandLineW(), &argc);
+
+	dnString Token = argc > 1 ? argv[1] : TEXT("");
+
+	if (Token != TEXT("TestRenDev"))
+	{
+		UCC();
+
+		return GEditor;
+	}
 
 	InitEditor();
 	GEditor->exec.Exec(TEXT("MODE MAPEXT=.DNF"), (dnOutputDevice &)globalLog);
@@ -542,9 +729,9 @@ void InitDNFHooks()
 	//
 	//SetBeingDebuggedFlag(false);
 
-	void* function = (LPVOID)0x10901BF0;
-	MH_CreateHook(function, DNFHackEntry, (LPVOID*)&DNFHackEntryEngine);
-	MH_EnableHook(function);
+	//void* function = (LPVOID)0x10901BF0;
+	//MH_CreateHook(function, DNFHackEntry, (LPVOID*)&DNFHackEntryEngine);
+	//MH_EnableHook(function);
 
 	void* function2 = (LPVOID)0x10901C10;
 	MH_CreateHook(function2, DNFHackTimer, (LPVOID*)&DNFHackEntryEngine);
