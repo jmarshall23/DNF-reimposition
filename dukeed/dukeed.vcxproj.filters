@@ -27,6 +27,9 @@
     <ClCompile Include="DukeSharp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ucc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="MinHook.x86.lib">

@@ -25,11 +25,12 @@ bool ignoreGLog = true;
 
 void* globalLog = nullptr;
 
-bool **GIsEditorImport = (bool **)0x10912634;
-bool* GIsEditor = (bool*)*GIsEditorImport;
-
-bool** GIsUCCImport = (bool**)0x109124E4;
-bool* GIsUCC = (bool*)*GIsEditorImport;
+UBOOL* GIsClient = nullptr;
+UBOOL* GIsServer = nullptr;
+UBOOL* GIsEditor = nullptr;
+UBOOL* GIsUCC = nullptr;
+UBOOL* GLazyLoad = nullptr;
+void* GWarn = nullptr;
 
 HINSTANCE* hinstHack = NULL;
 HINSTANCE* hinstWindowHack = NULL;
@@ -37,6 +38,12 @@ HINSTANCE* hinstWindowHack = NULL;
 extern UViewport* globalInitViewport;
 
 dnArray<UObject*>* UObject::GObjObjects;
+
+DWORD(__fastcall* ustruct_GetScriptTextCRCActual)(void* _this);
+DWORD ustruct_GetScriptTextCRC(void* _this) {
+	DWORD crc = ustruct_GetScriptTextCRCActual(_this);
+	return crc;
+}
 
 dnString(*dnString__Printf__Actual)(const TCHAR* Fmt, ...);
 dnString dnString__Printf(const TCHAR* Fmt, ...)
@@ -281,7 +288,11 @@ void* (*Uobject__StaticConstructObject)(UClass* cls, UObject* outer, dnName* nam
 
 BOOL(*FindPackageActual)(wchar_t* fileName);
 
+bool skipFindPackageHacks = false;
+
 BOOL FindPackage(wchar_t* fileName) {
+	if (skipFindPackageHacks)
+		return false;
 
 	*GIsEditor = false;
 	BOOL r = FindPackageActual(fileName);
@@ -289,199 +300,26 @@ BOOL FindPackage(wchar_t* fileName) {
 	return r;
 }
 
-FString RightPad(FString In, INT Count)
-{
-	while (In.Len() < Count)
-		In += TEXT(" ");
-	return In;
-}
-
-void UCC(void)
-{
-	dnArray<FRegistryObjectInfo> List;
-	UObject::GetRegistryObjects(List, UClass::StaticClass(), UCommandlet::StaticClass(), 0);
-
-	int argc;
-	wchar_t** argv = CommandLineToArgvW(GetCommandLineW(), &argc);
-
-	dnString Token = argc > 1 ? argv[1] : TEXT("");
-
-	LPWSTR cmdLine = GetCommandLineW();
-
-	UBOOL Help = 0;
-	DWORD LoadFlags = 0;
-	if (Token == TEXT(""))
-	{
-		//ShowBanner();
-		wprintf(TEXT("Use \"ucc help\" for help"));
-	}
-	else if (Token == TEXT("HELP"))
-	{
-		//ShowBanner();
-		UObject::StaticLoadClass(UCommandlet::StaticClass(), NULL, TEXT("Engine.Commandlet"), NULL, LOAD_NoFail, NULL);
-		//const TCHAR* Tmp = appCmdLine();
-		*GIsEditor = 0; // To enable loading localized text.
-		//if (!ParseToken(Tmp, Token, 0))
-		{
-			INT i;
-			wprintf(TEXT("Usage:"));
-			wprintf(TEXT("   ucc <command> <parameters>"));
-			wprintf(TEXT(""));
-			wprintf(TEXT("Commands for \"ucc\":"));
-			TArray<FString> Items;
-			for (i = 0; i < List.Num(); i++)
-			{
-				UClass* Class = UObject::StaticLoadClass(UCommandlet::StaticClass(), NULL, *List(i).Object, NULL, LoadFlags, NULL);
-				if (Class)
-				{
-					UCommandlet* Default = (UCommandlet*)Class->GetDefaultObject();
-					Default->LoadLocalized();
-
-					new(Items)FString(FString(TEXT("   ucc ")) + RightPad(Default->HelpCmd, 21) + TEXT(" ") + Default->HelpOneLiner + TEXT(" ") + Class->GetName());
-				}
-			}
-			new(Items)FString(TEXT("   ucc help <command>        Get help on a command\n"));
-			//Sort(&Items(0), Items.Num());
-			for (i = 0; i < Items.Num(); i++)
-				wprintf(TEXT("%s\n"), *Items(i));
-		}
-		//else
-		//{
-		//	Help = 1;
-		//	goto Process;
-		//}
-	}
-	else
-	{
-		//ShowBanner();
-		UObject::StaticLoadClass(UCommandlet::StaticClass(), NULL, TEXT("Engine.Commandlet"), NULL, LOAD_NoFail, NULL);
-		//const TCHAR* Tmp = appCmdLine();
-		*GIsEditor = 0; // To enable loading localized text.
-		//if (!ParseToken(Tmp, Token, 0))
-
-		UClass* Class = nullptr;
-		TArray<FString> Items;
-		for (int i = 0; i < List.Num(); i++)
-		{
-			UClass* cls = UObject::StaticLoadClass(UCommandlet::StaticClass(), NULL, *List(i).Object, NULL, LoadFlags, NULL);
-			if (cls)
-			{
-				UCommandlet* Default = (UCommandlet*)cls->GetDefaultObject();
-				Default->LoadLocalized();
-
-				FString cmdName = RightPad(Default->HelpCmd, 21);
-				//wprintf(TEXT("%s\n"), *cmdName);
-
-				const wchar_t* t1 = *cmdName;
-				const wchar_t* t2 = *Token;
-
-				std::wstring str(*cmdName);
-				std::wstring str2(*Token);
-
-				if (str.find(str2) != std::wstring::npos)
-				{
-					Class = cls;
-					break;
-				}
-			}
-		}
-
-		if (Class)
-		{
-			UCommandlet* Default = (UCommandlet*)Class->GetDefaultObject();
-			if (Help)
-			{
-				// Get help on it.
-				if (Default->HelpUsage != TEXT(""))
-				{
-					wprintf(TEXT("Usage:"));
-					wprintf(TEXT("   ucc %s"), *Default->HelpUsage);
-				}
-				if (Default->HelpParm[0] != TEXT(""))
-				{
-					wprintf(TEXT(""));
-					wprintf(TEXT("Parameters:"));
-					for (INT i = 0; i < ARRAY_COUNT(Default->HelpParm) && Default->HelpParm[i] != TEXT(""); i++)
-						wprintf(TEXT("   %s %s"), *RightPad(Default->HelpParm[i], 16), *Default->HelpDesc[i]);
-				}
-				if (Default->HelpWebLink != TEXT(""))
-				{
-					wprintf(TEXT(""));
-					wprintf(TEXT("For more info, see"));
-					wprintf(TEXT("   %s"), *Default->HelpWebLink);
-				}
-			}
-			else
-			{
-				// Run it.
-				if (Default->LogToStdout)
-				{
-				//	Warn.AuxOut = GLog;
-					//GLog = &Warn;
-				}
-				if (Default->ShowBanner)
-				{
-				//	ShowBanner(Warn);
-				}
-				wprintf(TEXT("Executing %s\n"), Class->GetName());
-				//GIsClient = Default->IsClient;
-				//GIsServer = Default->IsServer;
-				//GIsEditor = Default->IsEditor;
-				//GLazyLoad = Default->LazyLoad;
-				UCommandlet* Commandlet = ConstructObject<UCommandlet>(Class);
-
-				UEditorEngineVTableGeneric* _gen = (UEditorEngineVTableGeneric*)Commandlet;
-
-
-				Commandlet->InitExecution();
-				Commandlet->ParseParms(cmdLine);
-				Commandlet->Main(cmdLine);
-				//if (Commandlet->ShowErrorCount)
-				//{
-				//	if (Warn.ErrorCount == 0)
-				//		GWarn->Logf(TEXT("Success - %d error(s), %d warning(s)"), Warn.ErrorCount, Warn.WarningCount);
-				//	else
-				//	{
-				//		GWarn->Logf(TEXT("Failure - %d error(s), %d warning(s)"), Warn.ErrorCount, Warn.WarningCount);
-				//		ErrorLevel = 1;
-				//	}
-				//}
-				//if (Default->LogToStdout)
-				//{
-				//	Warn.AuxOut = NULL;
-				//	GLog = &Log;
-				//}
-			}
-		}
-		else
-		{
-		//	ShowBanner(Warn);
-			wprintf(TEXT("Commandlet %s not found"), *Token);
-		}
-	}
-
-	wprintf(TEXT("COMMAND COMPLETED"));
-	exit(0);
-}
-
 void* InitEngineHooked(DWORD splashID) {
 	UObject* obj;
 
 	*GIsEditor = true;
 
-	//MessageBoxA(nullptr, "Fuck 1", "Fuck 1", 0);	
-
-	GEditor = (UEditorEngine *)InitEngineActual(splashID);
-
 	int argc;
 	wchar_t** argv = CommandLineToArgvW(GetCommandLineW(), &argc);
 
 	dnString Token = argc > 1 ? argv[1] : TEXT("");
-
 	if (Token != TEXT("TestRenDev"))
 	{
-		UCC();
+		*GIsUCC = true;
+	}
+	//MessageBoxA(nullptr, "Fuck 1", "Fuck 1", 0);	
 
+	GEditor = (UEditorEngine*)InitEngineActual(splashID);
+
+	if (*GIsUCC)
+	{		
+		UCC();
 		return GEditor;
 	}
 
@@ -605,6 +443,86 @@ void __fastcall ReroutedOutput(void *log, wchar_t* str, ...)
 		return;
 	}
 
+	if (wcsstr(buffer, TEXT("Parsing")))
+	{
+		str = str;
+	}
+
+	OutputDebugStringW(buffer);
+	OutputDebugStringA("\n");
+
+	wprintf(buffer);
+	wprintf(TEXT("\n"));
+}
+
+const wchar_t* (__fastcall *uobject_getnameactual)(UObject* obj);
+const wchar_t* __fastcall uobject_getname(UObject* obj) {
+	const wchar_t *name = uobject_getnameactual(obj);
+
+	bool returnparent = false;
+	if (returnparent)
+	{
+		UClass* _cls = (UClass*)obj;
+
+		int flags = _cls->GetClassFlags();
+		flags = flags;
+
+		int scripttext = _cls->GetScriptText();
+		scripttext = scripttext;
+	}
+
+	return name;
+}
+
+UObject* (__fastcall* uobject_getouteractual)(UObject* obj);
+UObject* __fastcall uobject_getouter(UObject* obj) {
+	UObject *outer = uobject_getouteractual(obj);
+
+	
+	
+	bool returnparent = false;
+	if (returnparent)
+	{
+		UClass* _cls = (UClass*)obj;
+
+		int flags = _cls->GetClassFlags();
+		flags = flags;
+
+		int scripttext = _cls->GetScriptText();
+		scripttext = scripttext;
+	}
+
+	return outer;
+}
+
+void(__fastcall* dnfOutput_969)(void* log, int type, wchar_t* str, ...);
+void __fastcall ReroutedOutput_969(void* log, int type, wchar_t* str, ...)
+{
+	wchar_t buffer[2048];
+
+	va_list args;
+	va_start(args, str);
+	vswprintf(buffer, str, args);
+	va_end(args);
+
+	globalLog = log;
+
+	if (!skipLogging)
+	{
+		dnfOutput_969(log, type, buffer);
+	}
+
+	if (wcsstr(buffer, TEXT("Parsing")))
+	{
+		str = str;
+	}
+
+	if (dumpTobrowserOut)
+	{
+		GetPropResult.str += buffer;
+		return;
+	}
+
 	OutputDebugStringW(buffer);
 	OutputDebugStringA("\n");
 
@@ -661,7 +579,7 @@ void ReroutedOutput5(void* log, wchar_t* str)
 void (__fastcall *dnfOutput2)(int type, wchar_t* str, ...);
 void __fastcall ReroutedOutput2(int type, wchar_t* str, ...)
 {
-#if 0
+
 	wchar_t buffer[512];
 
 	va_list args;
@@ -673,10 +591,8 @@ void __fastcall ReroutedOutput2(int type, wchar_t* str, ...)
 
 	OutputDebugStringW(buffer);
 	OutputDebugStringA("\n");
-#endif
-	//wprintf(buffer);
-	wprintf(TEXT("\n"));
 
+	wprintf(TEXT("%s\n"), buffer);
 }
 
 void (*dnfOutput6)(void* log, int type, char* str, ...);
@@ -746,6 +662,12 @@ void InitDNFHooks()
 		MH_CreateHook(dnOutputArgList, ReroutedOutput, (LPVOID*)&dnfOutput);
 		MH_EnableHook(dnOutputArgList);
 	}
+
+	void* dnOutputArgList969 = GetProcAddress(hinst, MAKEINTRESOURCEA(973));
+	{
+		MH_CreateHook(dnOutputArgList969, ReroutedOutput_969, (LPVOID*)&dnfOutput_969);
+		MH_EnableHook(dnOutputArgList969);
+	}
 #if 0
 	void *dnOutputArgList2 = GetProcAddress(hinst, MAKEINTRESOURCEA(966));
 	{
@@ -758,8 +680,8 @@ void InitDNFHooks()
 		MH_CreateHook(dnstring_printf, dnString__Printf, (LPVOID*)&dnString__Printf__Actual);
 		MH_EnableHook(dnstring_printf);
 	}
-#endif
-#if 0
+
+
 	void* dnOutputArgList6 = GetProcAddress(hinst, MAKEINTRESOURCEA(972));
 	{
 		MH_CreateHook(dnOutputArgList6, ReroutedOutput2, (LPVOID*)&dnfOutput2);
@@ -777,7 +699,8 @@ void InitDNFHooks()
 		MH_CreateHook(dnOutputArgList4, ReroutedOutput4, (LPVOID*)&dnfOutput4);
 		MH_EnableHook(dnOutputArgList4);
 	}
-	
+#endif	
+#if 0
 	void* dnOutputArgList5 = GetProcAddress(hinst, MAKEINTRESOURCEA(963));
 	{
 		MH_CreateHook(dnOutputArgList5, ReroutedOutput4, (LPVOID*)&dnfOutput4);
@@ -825,7 +748,18 @@ void InitDNFHooks()
 	//	MH_EnableHook(DrawActorPtr);
 	//}
 
-
+	GIsClient = (BOOL*)GetProcAddress(hinst, MAKEINTRESOURCEA(1466));
+	GIsServer = (BOOL*)GetProcAddress(hinst, MAKEINTRESOURCEA(1480));
+	GIsEditor = (BOOL*)GetProcAddress(hinst, MAKEINTRESOURCEA(1468));
+	GIsUCC = (BOOL*)GetProcAddress(hinst, MAKEINTRESOURCEA(1483));
+	GLazyLoad = (BOOL*)GetProcAddress(hinst, MAKEINTRESOURCEA(1487));
+	GWarn = (VOID *)GetProcAddress(hinst, MAKEINTRESOURCEA(714));
+	
+	void* GetCRCPtr = GetProcAddress(engine, MAKEINTRESOURCEA(8022));
+	{
+		MH_CreateHook(GetCRCPtr, ustruct_GetScriptTextCRC, (LPVOID*)&ustruct_GetScriptTextCRCActual);
+		MH_EnableHook(GetCRCPtr);
+	}
 
 	void* DrawSectionsPtr = GetProcAddress(engine, MAKEINTRESOURCEA(5907));
 	{
@@ -838,7 +772,18 @@ void InitDNFHooks()
 		MH_CreateHook(isActorHiddenPtr, dnRenderer__IsActorHidden, (LPVOID*)&dnRenderer__IsActorHiddenActual);
 		MH_EnableHook(isActorHiddenPtr);
 	}
-		
+	
+	void* ubojectGetNamePtr = GetProcAddress(engine, MAKEINTRESOURCEA(7440));
+	{
+		MH_CreateHook(ubojectGetNamePtr, uobject_getname, (LPVOID*)&uobject_getnameactual);
+		MH_EnableHook(ubojectGetNamePtr);
+	}
+
+	void* ubojectGetOuterPtr = GetProcAddress(engine, MAKEINTRESOURCEA(7498));
+	{
+		MH_CreateHook(ubojectGetOuterPtr, uobject_getouter, (LPVOID*)&uobject_getouteractual);
+		MH_EnableHook(ubojectGetOuterPtr);
+	}
 
 	void* uclientInitPtr = GetProcAddress(engine, MAKEINTRESOURCEA(8391));
 	{

@@ -685,6 +685,17 @@ public:
 		dnName* name = (dnName*)(this + 32);
 		return **name;
 	}
+
+	int GetClassFlags()
+	{
+		return *(DWORD*)(this + 1184);
+	}
+
+	int GetScriptText()
+	{
+		return *((DWORD*)this + 16);
+	}
+
 	static UClass* StaticClass();
 
 	UObject* GetDefaultObject();
@@ -1231,3 +1242,16 @@ enum ELoadFlags
 
 __declspec(dllimport)  const TCHAR* appCmdLine();
 __declspec(dllimport)  UBOOL ParseToken(const TCHAR*& Str, dnString& Arg, UBOOL UseEscape);
+
+void UCC(void);
+
+extern void* (*UObject__LoadPackage)(class UObject* InOuter, const TCHAR* Filename, DWORD LoadFlags);
+
+extern bool skipFindPackageHacks;
+
+extern UBOOL* GIsClient;
+extern UBOOL* GIsServer;
+extern UBOOL* GIsEditor;
+extern UBOOL* GIsUCC;
+extern UBOOL* GLazyLoad;
+extern void* GWarn;

@@ -84,4 +84,3 @@ public:
 };
 
 extern UWindowsClient* GClient;
-extern bool* GIsEditor;

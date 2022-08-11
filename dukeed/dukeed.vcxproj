@@ -143,6 +143,7 @@
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Disabled</Optimization>
     </ClCompile>
     <ClCompile Include="MeshDriver.cpp" />
+    <ClCompile Include="ucc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="MinHook.x86.lib" />
