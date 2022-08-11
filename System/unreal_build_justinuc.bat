@@ -1,2 +1,2 @@
-del dnObjLoad.u
+del dnModIce.u
 DukeForeverEditor.exe make

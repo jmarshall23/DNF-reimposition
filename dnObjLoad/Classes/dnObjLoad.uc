@@ -1,1 +1,0 @@
-class dnObjLoad extends Object;
