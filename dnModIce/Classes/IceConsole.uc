@@ -6,7 +6,8 @@ class IceConsole extends DukeConsole
 exec function Icetype()
 {
 	TypedStr="";
-	GotoState( 'Typing' );
+	// GotoState( 'Typing' );
+	super.ShowConsole();
 }
 
 defaultproperties
