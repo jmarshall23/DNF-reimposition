@@ -5,6 +5,8 @@
 #include "windowres.h"
 #include "Unreal.h"
 
+#include <filesystem>
+
 //
 // Flags describing a class.
 //
@@ -38,26 +40,31 @@ UBOOL(__fastcall* MakeScriptsActual)(void *_this, void *edx, UClass* BaseClass, 
 UBOOL __fastcall MakeScripts(void* _this, void* edx, UClass* BaseClass, void* Warn, UBOOL MakeAll, UBOOL Booting, UBOOL MakeSubclasses) {
 	//BaseClass = UObject::StaticLoadClass(UObject::StaticClass(), (UObject*)UObject::GetTransientPackage(), TEXT("dnObjLoad.Justin"), TEXT("dnObjLoad"), 0, nullptr);
 	
-	//if (!BaseClass)
-	//	BaseClass = UObject::StaticClass();
-	//
-	//// Make list of all classes underneath this base
+	std::vector<std::wstring> files;
+
+	std::string path = "../dnModIce/Classes/";
+	for (const auto& entry : std::filesystem::directory_iterator(path))
+		files.push_back(entry.path());
+
+	
 	for (TObjectIterator<UClass> ObjIt; ObjIt; ++ObjIt)
 	{
 		UClass* _cls = *ObjIt;
 
-		wprintf(TEXT("%s\n"), _cls->GetName());
-		BaseClass = _cls;
-	
-		//if ((*ObjIt == BaseClass) || (MakeSubclasses && ObjIt->IsChildOf(BaseClass)))
-		//{
-		//	int class_flags = *(DWORD*)(_cls + 1184);
-		//	class_flags |= CLASS_Parsed;
-		//	*(DWORD*)(_cls + 1184) = class_flags;
-		//}
+		std::wstring hack_name = TEXT("../dnModIce/Classes/");
+		hack_name += _cls->GetName();
+		hack_name += TEXT(".uc");
+
+		for (int i = 0; i < files.size(); i++)
+		{
+			if (files[i] == hack_name)
+			{
+				MakeScriptsActual(_this, edx, _cls, Warn, MakeAll, Booting, MakeSubclasses);
+			}
+		}
 	}
 
-	return MakeScriptsActual(_this, edx, BaseClass, Warn, MakeAll, Booting, MakeSubclasses);
+	return true;
 }
 
 void __stdcall MarkChangedScripts(TArray<UClass*>& AllClasses, UBOOL MakeAll) {
