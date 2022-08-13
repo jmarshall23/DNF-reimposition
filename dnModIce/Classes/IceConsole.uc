@@ -52,6 +52,11 @@ exec function dnIronLung()
 {
     Root.GetPlayerOwner().dnIronLung();
 }
+
+exec function DebugHUD()
+{
+    DukeHUD(DukePlayer(Root.GetPlayerOwner()).MyHUD).DebugHUD();
+}
 // ZOMBIE END 
 
 defaultproperties
