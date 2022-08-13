@@ -1,6 +1,6 @@
 class IcePlayer extends DukePlayer;
 
-function bool HasEnteredPreorderBonusEgoCode()
+defaultproperties
 {
-	return true;
+	SprintTotalTime=100000
 }
