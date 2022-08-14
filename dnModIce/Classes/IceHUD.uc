@@ -27,13 +27,24 @@ simulated function DrawNewCrosshair(Canvas C)
 {
 	local int width;
 	local int height;
+	local Actor HitActor;
+	local AIActor HitAIActor;
 
 	width = CrosshairTextures[5].GetUSize();
-	height = CrosshairTextures[5].GetVSize();
+	height = CrosshairTextures[5].GetVSize();	
+	
+	HitActor = PlayerOwner.TraceFromCrosshairMesh(1000);
+	HitAIActor = AIActor(HitActor);
+
+	if(HitAIActor != none)
+	{
+		C.DrawColor = RedColor;
+	}
 
 	C.SetPos(ScaleWidth(C, 640 - (width / 2)), ScaleHeight(C, 360 - (height / 2)));
 	C.DrawTile(CrosshairTextures[5], width, height, 0, 0, width, height);
 	
+	C.DrawColor = WhiteColor;
 }
 
 simulated event PostPostRender(Canvas C)
