@@ -12,6 +12,5 @@ defaultproperties
 {
 	Message="<?int?dnGame.TriggerHint_UseSteroids.Message?>"
 	MaxDisplayTime=3
-	SpecialKeys=/* Array type was not detected. */
-	bNoRemoveAnim=/* Unknown default property type! */
+	SpecialKeys(0)=35
 }

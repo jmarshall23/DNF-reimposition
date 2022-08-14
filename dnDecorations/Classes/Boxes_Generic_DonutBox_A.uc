@@ -10,6 +10,11 @@ class Boxes_Generic_DonutBox_A extends Boxes_Generic
 
 defaultproperties
 {
-	SpawnOnDestroyedSimple=/* Array type was not detected. */
-	Y='Details_Generic'
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Paper1'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Paper1'
+	SpawnOnDestroyedSimple(2)='dnParticles.dnDebris_Smoke'
+	DynamicInteractionClassification=7
+	CollisionRadius=8.5
+	CollisionHeight=4
+	StaticMesh='sm_class_decorations.Default.DonutBox_cd'
 }

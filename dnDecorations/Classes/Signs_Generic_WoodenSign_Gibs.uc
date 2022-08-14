@@ -10,6 +10,11 @@ class Signs_Generic_WoodenSign_Gibs extends aFinalDecoration_Gibs
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y=/* Unknown default property type! */
+	Gibs(0)=(RenderObject='SM_Lvl_Desert.signs.desert_sign_gib_1',bForcedOnly=false)
+	bIgnorePawnAirCushion=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	PhysicsMassType=0
+	Density=5
+	Physics=0
+	StaticMesh='SM_Lvl_Desert.signs.desert_sign_gib_1'
 }

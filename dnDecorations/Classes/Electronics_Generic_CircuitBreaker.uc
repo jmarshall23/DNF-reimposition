@@ -10,12 +10,21 @@ class Electronics_Generic_CircuitBreaker extends Electronics_Generic
 
 defaultproperties
 {
-	AutoConstraints=/* Array type was not detected. */
-	bConstraintOnDeath=true
-	BoneName=bonep
-	ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	OtherConstraintActor=none
-	OtherConstraintBone=None
-	ConstraintClass=none
-	ConstraintActor=none
+	AutoConstraints(0)=(bConstraintDisabledOnDeath=false,bConstraintOnDeath=true,BoneName=bonep,ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	StartupActivities(0)='dnGame.DecoActivityDeclarations.DA_Sound_Ambient_ElectricHum'
+	bSurviveDeath=true
+	FlickerLight=(FlickerLightActor=none,FlickerLightExActor=none,bUseFlickerLight=true,bUseFlickerLightEx=true,bInitialEffect=true,bInitialEffectOnly=false,FlickerLightMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Electronics_Generic.DA_Sound_Destroyed_Electronic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Sound_Ambient_Clear'
+	DestroyedActivities(3)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_KarmaRagdoll_Set'
+	bForceUsePhrase=true
+	DynamicInteractionClassification=0
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
+	PhysicsMassType=1
+	CollisionRadius=12
+	CollisionHeight=19
+	Mass=21
+	DrawType=2
+	Mesh='c_generic.CircuitBreaker'
 }

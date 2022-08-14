@@ -9,5 +9,5 @@ class SilverHandle_PullBar extends DoorHandle_PullBar;
 
 defaultproperties
 {
-	Skins=/* Array type was not detected. */
+	Skins(0)='dt_Doors.Handles.DoorHandle2-silver_cd'
 }

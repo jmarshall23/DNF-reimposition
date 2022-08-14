@@ -12,4 +12,14 @@ class LipSyncInfo_Kid extends LipSyncInfo
 defaultproperties
 {
 	NeutralPose=l_m
+	PhoneRegions(0)=(Cues=none,Pose=l_a,MinBlend=0.1,MaxBlend=1)
+	PhoneRegions(1)=(Cues=none,Pose=l_a,MinBlend=0.1,MaxBlend=1)
+	PhoneRegions(2)=(Cues=((MinFreq=0.027459,MaxFreq=0.032773,MinIntn=25,MaxIntn=2500)),Pose=l_ah,MinBlend=0.1,MaxBlend=0.8)
+	PhoneRegions(3)=(Cues=((MinFreq=0.042531,MaxFreq=0.046846,MinIntn=50,MaxIntn=2500)),Pose=l_e,MinBlend=0.1,MaxBlend=0.6)
+	PhoneRegions(4)=(Cues=((MinFreq=0.017214,MaxFreq=0.021127,MinIntn=50,MaxIntn=3500),(MinFreq=0.037559,MaxFreq=0.040689,MinIntn=50,MaxIntn=1500)),Pose=l_e,MinBlend=0.1,MaxBlend=0.3)
+	PhoneRegions(5)=(Cues=none,Pose=l_f,MinBlend=0.1,MaxBlend=1)
+	PhoneRegions(6)=(Cues=none,Pose=l_o,MinBlend=0.1,MaxBlend=1)
+	PhoneRegions(7)=(Cues=((MinFreq=0.182648,MaxFreq=0.361531,MinIntn=50,MaxIntn=1500),(MinFreq=0.361531,MaxFreq=0.546062,MinIntn=50,MaxIntn=800)),Pose=l_s,MinBlend=0.1,MaxBlend=0.7)
+	PhoneRegions(8)=(Cues=((MinFreq=0.019054,MaxFreq=0.023196,MinIntn=50,MaxIntn=2500)),Pose=l_u,MinBlend=0.1,MaxBlend=0.6)
+	PhoneRegions(9)=(Cues=none,Pose=l_w,MinBlend=0.1,MaxBlend=1)
 }

@@ -493,4 +493,44 @@ defaultproperties
 	MicrowavingUsePhrase="<?int?dnDecorations.Electronics_Generic_Microwave.MicrowavingUsePhrase?>"
 	TakeUsePhrase="<?int?dnDecorations.Electronics_Generic_Microwave.TakeUsePhrase?>"
 	EatUsePhrase="<?int?dnDecorations.Electronics_Generic_Microwave.EatUsePhrase?>"
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(OpenDoor),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=('dnGame.DecoActivityDeclarations.DAR_Anim_NoneAllowed'),ActivityElements=('dnGame.DecoActivityDeclarations.DA_Anim_Play_Open',DecoActivities_Sound'Electronics_Generic_Microwave.DA_Sound_Electronics_Generic_Microwave_Open'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(CloseDoor),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=('dnGame.DecoActivityDeclarations.DAR_Anim_NoneAllowed'),ActivityElements=('dnGame.DecoActivityDeclarations.DA_Anim_Play_Close',DecoActivities_Sound'Electronics_Generic_Microwave.DA_Sound_Electronics_Generic_Microwave_Close'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(StartNuking),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Display'Electronics_Generic_Microwave.DA_Display_Electronics_Generic_Microwave_TurnOn',DecoActivities_Sound'Electronics_Generic_Microwave.DA_Sound_Electronics_Generic_Microwave_TurnOn'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(3)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(StartSpinning),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Electronics_Generic_Microwave.DA_Anim_Electronics_Generic_Microwave_TurnOn'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(4)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(StopNuking),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Display'Electronics_Generic_Microwave.DA_Display_Electronics_Generic_Microwave_TurnOff',DecoActivities_Animation'Electronics_Generic_Microwave.DA_Anim_Electronics_Generic_Microwave_TurnOff',DecoActivities_Sound'Electronics_Generic_Microwave.DA_Sound_Electronics_Generic_Microwave_TurnOff','dnGame.DecoActivityDeclarations.DA_Sound_Ambient_Clear',DecoActivities_Events'Electronics_Generic_Microwave.DA_Events_Electronics_Generic_Microwave_TurnOff'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(5)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(PlaceItem),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Electronics_Generic_Microwave.DA_Sound_Electronics_Generic_Microwave_PlaceObject'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	AutoConstraints(0)=(bConstraintDisabledOnDeath=false,bConstraintOnDeath=true,BoneName=Root,ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bSurviveDeath=true
+	FlickerLight=(FlickerLightActor=none,FlickerLightExActor=none,bUseFlickerLight=true,bUseFlickerLightEx=true,bInitialEffect=true,bInitialEffectOnly=false,FlickerLightMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Electronics_Generic.DA_Sound_Destroyed_Electronic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Sound_Ambient_Clear'
+	begin object name=DA_Anim_Electronics_Generic_Microwave_Brkn class=DecoActivities_Animation
+		StopAnimChannels(0)=0
+	object end
+	// Reference: DecoActivities_Animation'Electronics_Generic_Microwave.DA_Anim_Electronics_Generic_Microwave_Brkn'
+	DestroyedActivities(3)=DA_Anim_Electronics_Generic_Microwave_Brkn
+	begin object name=DA_Display_Electronics_Generic_Microwave_Brkn class=DecoActivities_Display
+		RenderObject='c_generic.microwavebrkn'
+		Skins(0)=(Index=0,NewMaterialEx=none)
+		Skins(1)=(Index=1,NewMaterialEx=none)
+	object end
+	// Reference: DecoActivities_Display'Electronics_Generic_Microwave.DA_Display_Electronics_Generic_Microwave_Brkn'
+	DestroyedActivities(4)=DA_Display_Electronics_Generic_Microwave_Brkn
+	DestroyedActivities(5)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_KarmaRagdoll_Set'
+	bForceUsePhrase=true
+	bUsable=true
+	GrabUseCombinePhrase="<?int?dnDecorations.Electronics_Generic_Microwave.GrabUseCombinePhrase?>"
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='DecoGlass_Microwave',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=Glass,ForceEvent=None,MountMeshItem=Door,MountOrigin=(X=1.291717E-41,Y=2.813378E-17,Z=-11.95),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DynamicInteractionClassification=7
+	PhysicsEntityGroup=MicrowaveEntityGroup
+	CollisionRadius=18
+	CollisionHeight=8.2
+	Mass=50
+	DrawType=2
+	Mesh='c_generic.Microwave'
+	SoundVolume=255
+	SoundRadius=256
+	SoundInnerRadius=128
+	TransientSoundVolume=0.5
 }

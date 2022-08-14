@@ -297,13 +297,10 @@ defaultproperties
 	bNoDamage=true
 	ImpactSoundTimer=0.75
 	KAngularDamping=8
-	PhysicsSoundOverrides(0)=(Color=(Engine=/* Unknown default property type! */,OtherMaterialTypes=(none,class'DrawScaleRatio',class'Instigator',class'Yaw',none,class'Scene',class'Jetpack',class'Instigator',class'Level',class'BodyPart_01',class'BodyPart_02',class'BodyPart_03',class'BodyPart_04',class'HUD',class'TriggerWhenClassCarried',class'Level',class'Wins',class'Pawn',class'GeneratePatternList',class'Vector',class'Game',class'aOther',class'Inventory',none,none,none,class'bTraceTexture',class'Vector',class'Inventory',none,none,
-/* Exception thrown while deserializing OtherMaterialTypes
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealPackage.GetIndexObject(Int32 objectIndex) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealPackage.cs:line 1821
-   at UELib.UObjectStream.ReadObject() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 742
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 559 */,class'ReturnValue'),OutputPitchRange=(Min=0.75,Max=1.125),OutputVolumeRange=(Min=0.25,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.body.BodyPart_01','a_impact.body.BodyPart_02','a_impact.body.BodyPart_03','a_impact.body.BodyPart_04'),SoundInfo=(InputRange=(Min=8,Max=400),OutputPitchRange=(Min=0.75,Max=1.125),OutputVolumeRange=(Min=0.25,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.body.BodySlide_01'),SoundInfo=(InputRange=(Min=6,Max=400),OutputPitchRange=(Min=1,Max=1.25),OutputVolumeRange=(Min=0.25,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(2)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.body.BodyBits_Roll_01'),SoundInfo=(InputRange=(Min=0.5,Max=26),OutputPitchRange=(Min=0.85,Max=1),OutputVolumeRange=(Min=0.25,Max=1)),bDisableSoundInWater=true)
+	bGibActor=true
+	CollisionRadius=3
+	CollisionHeight=3
 }

@@ -57,5 +57,9 @@ defaultproperties
 	bCastStencilShadows=false
 	bReplicateWhenOwnerSeen=true
 	Mesh='c_dnWeapon.MightyFoot_Melee'
-	Skins=/* Array type was not detected. */
+	Skins(0)='dt_Effects3.MightyFoot.MightyFoot_fb'
+	SoundVolume=200
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_MightyFoot'
 }

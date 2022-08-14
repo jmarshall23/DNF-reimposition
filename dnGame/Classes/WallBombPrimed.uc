@@ -8,7 +8,7 @@
 class WallBombPrimed extends dnDecoration
 	collapsecategories;
 
-var name OpenAnim;
+var anim name OpenAnim;
 
 simulated function PlayOpenAnim()
 {
@@ -16,7 +16,7 @@ simulated function PlayOpenAnim()
 	return;
 }
 
-k2call simulated function PlayOpenSound()
+animevent simulated function PlayOpenSound()
 {
 	FindAndPlaySound('Open', 1);
 	return;

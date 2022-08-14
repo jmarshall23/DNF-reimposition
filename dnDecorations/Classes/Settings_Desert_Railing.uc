@@ -10,5 +10,20 @@ class Settings_Desert_Railing extends aFinalDecoration
 
 defaultproperties
 {
-	SpawnOnDestroyed=/* Array type was not detected. */
+	SpawnOnDestroyed(0)=(SpawnClass='Settings_Desert_Furniture_Gib',RenderObject='SM_Lvl_Area51.AgFac.Wood_Rail01',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.797242E-17,Z=-48),Z=20)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=16384),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	begin object name=Desert_Railing_Gib class=MotionPrefab
+		VelocityRelativeType=3
+		Velocity=(X=1.291717E-41,Y=2.802898E-17,Z=0)
+		VelocityVariance=(X=1.291717E-41,Y=2.802941E-17,Z=200)
+		RotationRate=(Pitch=1073488389,Yaw=571080704,Roll=0)
+		RotationRateVariance=(Pitch=8709,Yaw=571080704,Roll=16380)
+	object end
+	// Reference: MotionPrefab'Settings_Desert_Railing.Desert_Railing_Gib'
+	DefaultMotionPrefab=Desert_Railing_Gib
+	StaticMesh='SM_Lvl_Desert.GhostTown.GhostTown_Railing'
 }

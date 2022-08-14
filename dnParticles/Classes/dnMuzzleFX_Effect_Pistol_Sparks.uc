@@ -19,5 +19,10 @@ defaultproperties
 	MaxVelocityVariance=(X=1.291857E-41,Y=2.80298E-17,Z=128)
 	ZoneGravityScaler=0.5
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Sparks.spark1RC'
+	StartDrawScale=8
+	EndDrawScale=4
+	DrawScaleVariance=2
+	bForceNonFinalBlendBlooms=true
+	Style=6
 }

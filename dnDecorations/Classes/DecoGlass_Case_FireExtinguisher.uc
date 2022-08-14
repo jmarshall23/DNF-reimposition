@@ -39,12 +39,8 @@ defaultproperties
 	bMimicOwner=false
 	bPassUseToOwner=false
 	DrawScale3D=(X=1.291717E-41,Y=2.802768E-17,Z=28)
-	Skins=/* Array type was not detected. */
-	Roll[1]=
-/* Exception thrown while deserializing Roll
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
+	Skins(0)='smt_skins3.FireExtinguisher_Box.FireGlass_FinalBlend'
+	Skins(1)='smt_skins3.FireExtinguisher_Box.FireGlass_FinalBlend'
+	Skins(2)='smt_skins3.FireExtinguisher_Box.FireGlass_FinalBlend'
+	Skins(3)='smt_skins3.FireExtinguisher_Box.FireGlass_FinalBlend'
 }

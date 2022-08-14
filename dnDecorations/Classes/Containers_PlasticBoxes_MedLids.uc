@@ -42,5 +42,5 @@ defaultproperties
 	CollisionHeight=0.5
 	Mass=10
 	StaticMesh='sm_class_decorations.Containers.PlasticContainer1_lid'
-	Skins=/* Array type was not detected. */
+	Skins(0)='smt_skins3.Containers.container1lid_bs'
 }

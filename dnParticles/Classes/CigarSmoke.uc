@@ -26,5 +26,25 @@ defaultproperties
 	AlphaMidVariance=0.1
 	AlphaEnd=0
 	AlphaRampMid=0.25
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Smoke.whispysmoke1RC'
+	Textures(1)='dt_effects.Smoke.whispysmoke2RC'
+	Textures(2)='dt_effects.Smoke.whispysmoke3RC'
+	Textures(3)='dt_effects.Smoke.whispysmoke4RC'
+	StartDrawScale=0.05
+	EndDrawScale=0.25
+	DrawScaleMid=0.5
+	DrawScaleRampMid=0.7
+	TextureScaleX=0.1
+	TextureScaleY=0.1
+	TextureScaleEndX=0.1
+	TextureScaleEndY=0.1
+	RotationVelocity=0.5
+	RotationVelocityMaxVariance=1
+	bReplicateWhenOwnerSeen=true
+	bStepUpAble=false
+	CollisionRadius=16
+	CollisionHeight=16
+	Style=3
+	DrawScale=0.25
+	RemoteRole=2
 }

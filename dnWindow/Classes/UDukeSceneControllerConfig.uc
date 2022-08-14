@@ -339,21 +339,54 @@ defaultproperties
 	Slots[15]=(InputKey="Joy8",Offset=(X=-1.291717E-41,Y=2.803002E-17))
 	Slots[16]=(InputKey="Joy5",Offset=(X=-1.291717E-41,Y=2.803002E-17))
 	Slots[17]=(InputKey="Joy6",Offset=(X=1.291717E-41,Y=2.8136E-17))
-	ConfigNames(0)="Default Half Life 2 Halo 3 Modern Warfare 2"
-	ConfigNames(1)=
-/* Exception thrown while deserializing ConfigNames
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 174
-   at UELib.UObjectStream.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 722
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 447 */
-	ConfigNames(2)=
-/* Exception thrown while deserializing ConfigNames
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 156
-   at UELib.UObjectStream.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 722
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 447 */
-	NavigateForward=Function'UDukeSceneMultiPlayerMenuLobby.ResetHelpButtons'
+	ConfigNames(0)="Default"
+	ConfigNames(1)="Half Life 2"
+	ConfigNames(2)="Halo 3"
+	ConfigNames(3)="Modern Warfare 2"
+	Actions(0)="Move"
+	Actions(1)="Crouch"
+	Actions(2)="Jump"
+	Actions(3)="Sprint"
+	Actions(4)="Look"
+	Actions(5)="Zoom"
+	Actions(6)="Fire"
+	Actions(7)="Melee"
+	Actions(8)="Use / Reload"
+	Actions(9)="Swap Weapons"
+	Actions(10)="Throw Pipebomb"
+	Actions(11)="Throw Tripmine"
+	Actions(12)="Duke Vision"
+	Actions(13)="Steroids"
+	Actions(14)="Beer"
+	Actions(15)="Holoduke"
+	Actions(16)="Pause Menu"
+	Actions(17)="Scoreboard"
+	Commands(0)="UNUSED"
+	Commands(1)="Duck"
+	Commands(2)="Jump"
+	Commands(3)="Sprint"
+	Commands(4)="UNUSED"
+	Commands(5)="Zoom"
+	Commands(6)="Fire"
+	Commands(7)="Melee"
+	Commands(8)="Use"
+	Commands(9)="SwapWeapons"
+	Commands(10)="UsePipeBomb"
+	Commands(11)="UseTripMine"
+	Commands(12)="DoHeatVision | DoTaunt"
+	Commands(13)="UseSteroids"
+	Commands(14)="UseBeer"
+	Commands(15)="DoHoloDuke"
+	Commands(16)="ShowMenu"
+	Commands(17)="ScoreboardToggle"
+	Configs(0)=(ActionMapping=(5,11,0,3,12,13,14,15,6,10,9,7,2,8,4,1,16,17))
+	Configs(1)=(ActionMapping=(7,3,0,1,12,13,14,15,6,9,10,8,2,11,4,5,16,17))
+	Configs(2)=(ActionMapping=(10,11,0,1,12,13,14,15,6,8,9,7,2,3,4,5,16,17))
+	Configs(3)=(ActionMapping=(5,11,0,3,12,13,14,15,6,10,9,1,2,8,4,7,16,17))
+	PS3Configs(0)=(ActionMapping=(11,5,0,3,12,13,14,15,10,6,9,7,2,8,4,1,16,17))
+	PS3Configs(1)=(ActionMapping=(3,7,0,1,12,13,14,15,9,6,10,8,2,11,4,5,16,17))
+	PS3Configs(2)=(ActionMapping=(11,10,0,1,12,13,14,15,8,6,9,7,2,3,4,5,16,17))
+	PS3Configs(3)=(ActionMapping=(11,5,0,3,12,13,14,15,10,6,9,1,2,8,4,7,16,17))
+	SliderTop=142
+	TitleText="<?int?dnWindow.UDukeSceneControllerConfig.TitleText?>"
 }

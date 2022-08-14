@@ -157,7 +157,7 @@ var float LastEMPTime;
 var float DamageAbsorbAmount;
 var float DamageAbsorbPct;
 var float AvoidRange;
-var(Startup) noexport name StartAnimSequence "Animation to start this Actor with";
+var(Startup) noexport anim name StartAnimSequence "Animation to start this Actor with";
 var(Startup) noexport float StartAnimFrame "Frame to start actor in";
 
 replication

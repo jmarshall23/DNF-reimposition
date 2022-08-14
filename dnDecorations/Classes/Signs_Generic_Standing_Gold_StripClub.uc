@@ -10,5 +10,6 @@ class Signs_Generic_Standing_Gold_StripClub extends Signs_Generic_Standing_Gold_
 
 defaultproperties
 {
-	Skins=/* Array type was not detected. */
+	Skins(0)=none
+	Skins(1)='smt_skins4.StratStandSign.StripClubRulesSign_bs'
 }

@@ -6,3 +6,14 @@
  * All rights belong to their respective owners.
  *******************************************************************************/
 class UDukeSceneOfficePhotos extends UDukeScenePictureViewer;
+
+defaultproperties
+{
+	Pictures(0)=(Path="dt_extras.Triptych.Triptych_Pics01",Title="Triptych Office",UnlockTag="")
+	Pictures(1)=(Path="dt_extras.Triptych.Triptych_Pics02",Title="Triptych Office",UnlockTag="")
+	Pictures(2)=(Path="dt_extras.Triptych.Triptych_Pics03",Title="Triptych Office",UnlockTag="")
+	Pictures(3)=(Path="dt_extras.Triptych.Triptych_Pics04",Title="Triptych Office",UnlockTag="")
+	Pictures(4)=(Path="dt_extras.Triptych.Triptych_Pics05",Title="Triptych Office",UnlockTag="")
+	Pictures(5)=(Path="dt_extras.Triptych.Triptych_Pics06",Title="Triptych Office",UnlockTag="")
+	TitleText="<?int?dnWindow.UDukeSceneOfficePhotos.TitleText?>"
+}

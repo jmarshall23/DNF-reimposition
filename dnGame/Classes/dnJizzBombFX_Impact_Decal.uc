@@ -10,5 +10,10 @@ class dnJizzBombFX_Impact_Decal extends dnDecal
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_Effects2.Decals.Pregnator_spit_Decal_FB2'
+	BehaviorArgument=5
+	Behavior=3
+	MaxTraceDistance=32
+	bProjectPawn=false
+	MinSpawnDistance=8
 }

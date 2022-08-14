@@ -10,7 +10,5 @@ class dnBonePartMapper_BodyGuard_LeftArm extends dnBonePartMapper_Host_LeftArm
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y=0.093
-	Z=-8.28
+	Gibs(0)=(BoneName=LeftForeArm,ReqBones=none,RenderObject='sm_class_effects.BodyGuard_Gibs.BodyGuard_ForearmL_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=2.610177E+07,Y=2.965184E-17,Z=0.093),Z=-8.28)
 }

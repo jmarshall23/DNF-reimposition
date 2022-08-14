@@ -10,7 +10,5 @@ class dnBonePartMapper_GeneralGraves_LeftLeg extends dnBonePartMapper_Male_LeftL
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y=0.392
-	Z=-9.802
+	Gibs(0)=(BoneName=LeftLeg,ReqBones=none,RenderObject='sm_class_effects.Graves_Gibs.General_Graves_FootL_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-4.29469E-37,Y=2.954464E-17,Z=0.392),Z=-9.802)
 }

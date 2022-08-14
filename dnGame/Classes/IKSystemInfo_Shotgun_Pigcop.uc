@@ -10,5 +10,11 @@ class IKSystemInfo_Shotgun_Pigcop extends IKSystemInfo_Inventory
 
 defaultproperties
 {
-	IKHierarchy=/* Array type was not detected. */
+	IKHierarchy(0)=(BoneName="arm_left_upper_a",ConstrainY=170,ConstrainZ=170,ConstrainZPitch=0,ConstrainX=170)
+	IKHierarchy(1)=(BoneName="arm_left_lower_a",ConstrainY=70,ConstrainZ=160,ConstrainZPitch=0,ConstrainX=10)
+	IKHierarchy(2)=(BoneName="hand_left_a",ConstrainY=30,ConstrainZ=160,ConstrainZPitch=0,ConstrainX=28)
+	MountBoneName="mount_hand_l_pigcop"
+	IKEvents(0)=(EventType=1,EventName="Weapon_IK_Detach",EventData="")
+	IKEvents(1)=(EventType=0,EventName="Weapon_IK_Attach",EventData="mount_hand_l_pigcop")
+	IKEvents(2)=(EventType=0,EventName="Weapon_IK_Attach_Reload",EventData="mount_hand_l_reload")
 }

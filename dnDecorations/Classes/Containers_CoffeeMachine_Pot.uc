@@ -120,3 +120,28 @@ function Destroyed()
 	}
 	return;
 }
+
+defaultproperties
+{
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(EmptyPot),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Containers_CoffeeMachine_Pot.DA_Anim_Containers_CoffeeMachine_Pot_Empty'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(FillPot),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Containers_CoffeeMachine_Pot.DA_Anim_Containers_CoffeeMachine_Pot_Filling'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(FullPot),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Events'Containers_CoffeeMachine_Pot.DA_Events_Containers_CoffeeMachine_Pot_Full'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(3)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(ExecuteFullPot),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Containers_CoffeeMachine_Pot.DA_Anim_Containers_CoffeeMachine_Pot_Full'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Glass_Small'
+	HealthPrefab=1
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Glass1'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Glass1'
+	SpawnOnDestroyedSimple(2)='dnParticles.dnDebris_Smoke_Small1'
+	SpawnOnDestroyedSimple(3)='dnParticles.dnDebris_WaterSplash'
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Glass'
+	PhysicsMassType=1
+	KImpactThreshold=0.1
+	Density=1.5
+	Physics=18
+	CollisionRadius=6.2
+	CollisionHeight=6.33
+	Mass=100
+	StaticMesh='sm_class_decorations.coffeepot.coffeepot'
+}

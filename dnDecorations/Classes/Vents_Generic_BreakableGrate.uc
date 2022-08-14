@@ -9,7 +9,7 @@ class Vents_Generic_BreakableGrate extends Vents_Generic
 	abstract
 	collapsecategories;
 
-var bool bBroken;
+var netupdate(NU_Broken) bool bBroken;
 var bool bPostNetInit;
 
 replication
@@ -79,6 +79,28 @@ simulated function Destroyed()
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	GetTotalWeight="u"
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Vents_Generic_BreakableGrate_Brkn_A class=DecoActivities_Sound
+		SoundNames(0)=VentGrate_BreakOut
+	object end
+	// Reference: DecoActivities_Sound'Vents_Generic_BreakableGrate.DA_Sound_Vents_Generic_BreakableGrate_Brkn_A'
+	DestroyedActivities(1)=DA_Sound_Vents_Generic_BreakableGrate_Brkn_A
+	begin object name=DA_Collide_Vents_Generic_BreakableGrate_Brkn class=DecoActivities_Collision
+		bBlockPlayersModifier=2
+	object end
+	// Reference: DecoActivities_Collision'Vents_Generic_BreakableGrate.DA_Collide_Vents_Generic_BreakableGrate_Brkn'
+	DestroyedActivities(2)=DA_Collide_Vents_Generic_BreakableGrate_Brkn
+	begin object name=DA_Interaction_Vents_Generic_BreakableGrate_Brkn class=DecoActivities_Interaction
+		bNewDynamicInteractionClassification=true
+		NewDynamicInteractionClassification=1
+	object end
+	// Reference: DecoActivities_Interaction'Vents_Generic_BreakableGrate.DA_Interaction_Vents_Generic_BreakableGrate_Brkn'
+	DestroyedActivities(3)=DA_Interaction_Vents_Generic_BreakableGrate_Brkn
+	HealthPrefab=1
+	DynamicInteractionClassification=0
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
+	PhysicsMassType=1
+	bDirectional=true
+	CollisionHeight=24
+	Mass=15
 }

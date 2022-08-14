@@ -330,7 +330,7 @@ final function bLink()
 	return;
 }
 
-k2call simulated function LightSwitch()
+animevent simulated function LightSwitch()
 {
 	ForcePowerOff();
 	__NFUN_605__(BlinkLightOffTime, false, 'BlinkLightOn');
@@ -433,5 +433,26 @@ defaultproperties
 	BlinkLightOffTime=0.5
 	BlinkStartTickTime=-1
 	DefaultBoneMount=mount_light
-	AnimTriggers=/* Array type was not detected. */
+	AnimTriggers(0)=(AnimEvent=None,AnimFunction=None,AnimActivities=(BeginIdle),TestAnims=(a_blink01),TestChannels=none)
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(LightOn),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Events'Lights_Generic.DA_Events_Lights_Generic_Toggled'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(LightOff),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Events'Lights_Generic.DA_Events_Lights_Generic_Toggled'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(Hurt),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Lights_Alien_ShortPod_Brown.DA_Sound_Lights_Alien_ShortPod_Brown_Damaged',DecoActivities_AnimationController'Lights_Alien_ShortPod_Brown.DA_Anim_Lights_Alien_ShortPod_Relaxed_Hurt',DecoActivities_Sound'Lights_Alien_ShortPod_Brown.DA_Sound_Lights_Alien_ShortPod_Brown_Ambient_Stop'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(3)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(HurtIdle),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_AnimationController'Lights_Alien_ShortPod_Brown.DA_Anim_Lights_Alien_ShortPod_Hurt_Idle'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(4)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(RefPose),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_AnimationController'Lights_Alien_ShortPod_Brown.DA_Anim_Lights_Alien_ShortPod_RefPose'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(5)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(Relax),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Lights_Alien_ShortPod_Brown.DA_Sound_Lights_Alien_ShortPod_Brown_Restore',DecoActivities_AnimationController'Lights_Alien_ShortPod_Brown.DA_Anim_Lights_Alien_ShortPod_Hurt_Relaxed'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(6)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(BeginIdle),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_AnimationController'Lights_Alien_ShortPod_Brown.DA_Anim_Lights_Alien_ShortPod_Relaxed_Idle',DecoActivities_Sound'Lights_Alien_ShortPod_Brown.DA_Sound_Lights_Alien_ShortPod_Brown_Ambient_Idle'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(7)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(bLink),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_AnimationController'Lights_Alien_ShortPod_Brown.DA_Anim_Lights_Alien_ShortPod_Blink',DecoActivities_Sound'Lights_Alien_ShortPod_Brown.DA_Sound_Lights_Alien_ShortPod_Brown_Blink'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	HealthPrefab=0
+	bEnemy=true
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Biology_Generic_AlienSensor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	AnimationControllerClass='acLights_Alien_ShortPod_Brown'
+	bNoNativeTick=false
+	bDumbMesh=false
+	bAcceptsDecalProjectors=false
+	CollisionRadius=15
+	CollisionHeight=15
+	TickStyle=2
+	DrawType=2
+	Mesh='c_characters.alien_light'
+	VoicePack='SoundConfig.Interactive.VoicePack_Biology'
 }

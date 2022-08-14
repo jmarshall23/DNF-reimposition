@@ -9,20 +9,19 @@ class Destructible_MetalFence_Section_B extends dnDestructibleBuildingDefinition
 
 defaultproperties
 {
-	Parts(0)=bLinkedToBlock='DukeHUD',
-/* Exception thrown while deserializing Parts
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	Parts(1)=(Location=(X=-1.306637E+13,Y=2.954696E-17,Z=1.822266),Z=3)
-	Parts(2)=(Rotation=(Pitch=-2678235,Yaw=572915712,Roll=16368),Roll=31743)
-	Parts(3)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
-	Parts(4)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid',bDefaultInteractionClass=false)
-	Parts(5)=(StaticMesh='SM_Lvl_Desert.Destructible.gen_sheetmetal_3',Location=(X=4.301283E-13,Y=2.965522E-17,Z=0.823242),Z=34)
+	Parts(0)=(StaticMesh='SM_Lvl_Desert.Destructible.gen_sheetmetal_2',Location=(X=-1.306637E+13,Y=2.954696E-17,Z=1.822266),Z=3)
+	Parts(1)=(Rotation=(Pitch=-2678235,Yaw=572915712,Roll=16368),Roll=31743)
+	Parts(2)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Parts(3)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid',bDefaultInteractionClass=false)
+	Parts(4)=(StaticMesh='SM_Lvl_Desert.Destructible.gen_sheetmetal_3',Location=(X=4.301283E-13,Y=2.965522E-17,Z=0.823242),Z=34)
+	Parts(5)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=16372),Roll=15300)
+	Parts(6)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Parts(7)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid',bDefaultInteractionClass=false)
+	Parts(8)=(StaticMesh='SM_Lvl_Desert.Destructible.gen_sheetmetal_4',Location=(X=-5.688342E-12,Y=2.965423E-17,Z=-0.177734),Z=1)
+	Parts(9)=(Rotation=(Pitch=-2285019,Yaw=572915712,Roll=16347),Roll=32769)
+	Parts(10)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Parts(11)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid',bDefaultInteractionClass=false)
+	ParticleEffects(0)=(SpawnerClass='p_Decorations.Debris_WoodBuilding.Debris_WoodBuilding_Spawner',LocationOffset=(X=1.292418E-41,Y=2.965526E-17,Z=0),Z=-32)
+	ParticleEffects(1)=(RotationOffset=(Pitch=8741,Yaw=572915712,Roll=16384),Roll=0)
+	ShellPart=(StaticMesh='SM_Lvl_Desert.Destructible_Shells.MetalFence_Section_B',Location=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
 }

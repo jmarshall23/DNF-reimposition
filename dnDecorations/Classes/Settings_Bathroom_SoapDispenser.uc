@@ -30,12 +30,26 @@ event Used(Actor Other, Pawn EventInstigator)
 
 defaultproperties
 {
-	DecoActivities_Default=/* Array type was not detected. */
-	X=/* Unknown default property type! */
-	
-/* Exception thrown while deserializing Engine
-System.ArgumentOutOfRangeException: Length cannot be less than zero.
-Parameter name: length
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(3),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=('dnGame.DecoActivityDeclarations.DAR_Anim_NoneAllowed'),ActivityElements=(DecoActivities_Animation'Settings_Bathroom_SoapDispenser.DA_Anim_Settings_Bathroom_SoapDispenser_Used',DecoActivities_Sound'Settings_Bathroom_SoapDispenser.DA_Sound_SoapDispenser_Used'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	begin object name=DA_Display_Settings_Bathroom_SoapDispenser_Brkn class=DecoActivities_Display
+		RenderObject='c_generic.SoapDispenser_brkn'
+	object end
+	// Reference: DecoActivities_Display'Settings_Bathroom_SoapDispenser.DA_Display_Settings_Bathroom_SoapDispenser_Brkn'
+	DestroyedActivities(2)=DA_Display_Settings_Bathroom_SoapDispenser_Brkn
+	DestroyedActivities(3)='dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Disable'
+	bForceUsePhrase=true
+	bUsable=true
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Decorations.SoapDispenser.SoapDispenser_Drip',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=SoapParticles,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=2.717021E+23,Y=2.802718E-17,Z=0),Z=-2.8),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Smoke'
+	SpawnOnDestroyedSimple(1)=none
+	SpawnOnDestroyedSimple(2)='dnParticles.dnDebris_Sparks1_Small'
+	SpawnOnDestroyedSimple(3)='dnDebris_SoapDispenser'
+	bCollideWorld=false
+	CollisionRadius=4.5
+	CollisionHeight=5.5
+	DrawType=2
+	Mesh='c_generic.SoapDispenser'
 }

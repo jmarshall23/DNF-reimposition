@@ -11,5 +11,9 @@ class dnHitFX_Effect_WaterStream extends dnHitFX_Effect_Debris_Fluid
 
 defaultproperties
 {
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Smoke.bluesmoke1aRC'
+	Textures(1)='dt_effects.Smoke.bluesmoke2aRC'
+	StartDrawScale=0.01
+	EndDrawScale=0.2
+	DrawScaleVariance=0.05
 }

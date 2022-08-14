@@ -121,7 +121,15 @@ defaultproperties
 	FanOffSound='a_ambient.Fans.BigFan04_Stop'
 	bSurviveDeath=true
 	FlickerLight=(FlickerLightActor=none,FlickerLightExActor=none,bUseFlickerLight=true,bUseFlickerLightEx=true,bInitialEffect=true,bInitialEffectOnly=false,FlickerLightMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	DestroyedActivities=/* Array type was not detected. */
-	DeskFan1_brkn_off_diff=192152321
-	Z=1.860634E-37
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Fan_Mounted_Brkn class=DecoActivities_Sound
+		SoundNames(0)=FanMount_Destruct
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Generic_FanMount.DA_Sound_Fan_Mounted_Brkn'
+	DestroyedActivities(1)=DA_Sound_Fan_Mounted_Brkn
+	HealthPrefab=3
+	EMPDisableTime=20
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass=none,SpawnChance=0,MountPrefab=(bDontActuallyMount=true,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	CollisionRadius=0
+	CollisionHeight=25
 }

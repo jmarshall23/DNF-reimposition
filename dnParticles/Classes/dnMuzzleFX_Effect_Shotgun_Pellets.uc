@@ -16,5 +16,9 @@ defaultproperties
 	InitialVelocity=(X=1.291857E-41,Y=2.803067E-17,Z=0)
 	MaxVelocityVariance=(X=1.291857E-41,Y=2.80298E-17,Z=176)
 	AlphaMid=1
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Sparks.cometspark1RC'
+	StartDrawScale=0.05
+	EndDrawScale=0
+	bForceNonFinalBlendBlooms=true
+	Style=6
 }

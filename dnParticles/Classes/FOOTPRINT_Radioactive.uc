@@ -10,5 +10,5 @@ class FOOTPRINT_Radioactive extends FootPrint
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.Footprints.DukesFPnuke1RC'
 }

@@ -41,7 +41,7 @@ simulated event bool CanActivateNow()
 	return;
 }
 
-k2call function Swallow(optional EventInfo AnimEventInfo)
+animevent function Swallow(optional EventInfo AnimEventInfo)
 {
 	// End:0x2D
 	if(Instigator.bIsPlayerPawn)
@@ -202,5 +202,10 @@ defaultproperties
 	Charge=1
 	MaxCharge=3
 	HUDPickupEventIcon=19
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Steroids'
+	bAnimateOffscreen=true
+	AnimationControllerClass='dnAnimationControllerEx_Steroids'
+	MountMeshItem=mount_camera
+	Mesh='c_dukeitems.Steroids'
+	VoicePack='SoundConfig.Inventory.VoicePack_Steroids'
 }

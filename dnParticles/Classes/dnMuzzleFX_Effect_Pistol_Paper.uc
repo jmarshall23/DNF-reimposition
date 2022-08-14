@@ -22,5 +22,9 @@ defaultproperties
 	AlphaMid=1
 	AlphaEnd=0
 	AlphaRampMid=0.75
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Debris.papershard1aRC'
+	Textures(1)='dt_effects.Debris.papershard4aRC'
+	StartDrawScale=0.007
+	EndDrawScale=0.007
+	DrawScaleVariance=0.01
 }

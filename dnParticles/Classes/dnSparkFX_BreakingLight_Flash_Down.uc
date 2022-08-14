@@ -11,6 +11,5 @@ class dnSparkFX_BreakingLight_Flash_Down extends dnSparkFX_BreakingLight_Flash
 
 defaultproperties
 {
-	AdditionalSpawn=/* Array type was not detected. */
-	bFireAndForget=/* Unknown default property type! */
+	AdditionalSpawn(0)=(SpawnClass='dnSparkFX_BreakingLight_FlutterSparks_Down',TakeParentTag=false,Mount=false,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
 }

@@ -11,5 +11,5 @@ class DA_Sound_Destroyed_Glass_Large extends DecoActivities_Sound
 
 defaultproperties
 {
-	SoundNormal=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */,BlendTotalTime[48]=/* Unknown default property type! */,SlotPriority=0,VolumePrefab=8,Slots=/* Array type was not detected. */)
+	SoundNormal=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('a_impact.Glass.GlassBreak57a'),SlotPriority=0,VolumePrefab=8,Slots=none,Volume=1,VolumeVariance=0,InnerRadius=96,InnerRadiusVariance=0,Radius=512,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
 }

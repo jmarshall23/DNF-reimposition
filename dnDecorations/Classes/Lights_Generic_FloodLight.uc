@@ -10,6 +10,16 @@ class Lights_Generic_FloodLight extends Lights_Generic
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	DA_Collision_Details_Balls_PoolBall_Off=0
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Glass_Large'
+	DestroyedActivities(2)=DecoActivities_Events'Lights_Generic.DA_Events_Lights_Generic_Destroyed'
+	begin object name=DA_Display_Lights_Generic_FloodLight_Brkn class=DecoActivities_Display
+		Skins(0)=(Index=1,NewMaterialEx='smt_skins12.FloodLight.Floodlight_light_brkn_HV_dif')
+	object end
+	// Reference: DecoActivities_Display'Lights_Generic_FloodLight.DA_Display_Lights_Generic_FloodLight_Brkn'
+	DestroyedActivities(3)=DA_Display_Lights_Generic_FloodLight_Brkn
+	DestroyedActivities(4)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	CollisionRadius=25
+	CollisionHeight=28
+	StaticMesh='sm_class_lights.street.FloodLight_Tri'
 }

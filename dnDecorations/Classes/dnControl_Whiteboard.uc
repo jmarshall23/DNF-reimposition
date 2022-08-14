@@ -618,16 +618,63 @@ defaultproperties
 	XOffsetScalar=282.5
 	AmbientDuration=0.08
 	PreDetachDuration=0.5
-	DrawingToolMaterials(0)='Industrial_Generic'
-	DrawingToolMaterials(1)='smt_skins8.Whiteboard.WhiteboardPen1tw_d'
-	DrawingToolMaterials(2)='smt_skins8.Whiteboard.WhiteBoardPenRed_BS'
-	DrawingToolMaterials(3)='smt_skins8.Whiteboard.WhiteBoardPenBlue_BS'
-	DrawingToolMaterials(4)='smt_skins8.Whiteboard.WhiteboardPenGreen_BS'
-	DrawingToolMaterials(5)='smt_skins8.Whiteboard.WhiteboardYellow_BS'
-	DrawingToolMaterials(6)=ObjectProperty'Lights_Generic.Trigger.Other'
-	DrawingToolMaterials(7)='Settings_LadyKiller_DestructibleVase_Gib'
-	DrawingToolMaterials(8)=none
-	DrawingToolMaterials(9)=none
-	DrawingToolMaterials(10)='Engine.BoolProperty'
-	Rotation[47]=/* Unknown default property type! */
+	DrawingToolMaterials(0)='smt_skins8.Whiteboard.WhiteboardPen1tw_d'
+	DrawingToolMaterials(1)='smt_skins8.Whiteboard.WhiteBoardPenRed_BS'
+	DrawingToolMaterials(2)='smt_skins8.Whiteboard.WhiteBoardPenBlue_BS'
+	DrawingToolMaterials(3)='smt_skins8.Whiteboard.WhiteboardPenGreen_BS'
+	DrawingToolMaterials(4)='smt_skins8.Whiteboard.WhiteboardYellow_BS'
+	CurrentHorizontalVal=18
+	MyCopySource='smt_skins8.Whiteboard.Whiteboard1tw_d'
+	XDrawOffset=3
+	YDrawOffset=16
+	XDrawRatio=0.438
+	YDrawRatio=0.945
+	WriteAnimName=None
+	DrawCanvas='smt_skins8.Whiteboard.Whiteboard_TexCanvas'
+	DrawColors(0)=255
+	DrawColors(1)=252
+	DrawColors(2)=251
+	DrawColors(3)=250
+	DrawColors(4)=254
+	DrawColors(5)=195
+	DrawSurfaceIndex=0
+	States(0)=(StateName=Useable,OutEvents=none,Transitions=((ControlEvent=3,CustomName=None,NewState=AttachUserLERP)),UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	States(1)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=none,Filters=none)
+	States(2)=(MySoundName=None,SubAnims=none)
+	States(3)=(StateName=AttachUserLERP,OutEvents=none,Transitions=((ControlEvent=5,CustomName=None,NewState=AttachUserAnim)),UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	States(4)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=none,Filters=none)
+	States(5)=(MySoundName=None,SubAnims=none)
+	States(6)=(StateName=AttachUserAnim,OutEvents=none,Transitions=((ControlEvent=7,CustomName=None,NewState=BringUpTool)),UserAnimName=Whiteboard_Activate,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	States(7)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=none,Filters=none)
+	States(8)=(MySoundName=None,SubAnims=none)
+	States(9)=(StateName=PreDetach,OutEvents=none,Transitions=((ControlEvent=0,CustomName=PreDetachComplete,NewState=DetachUser)),UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	States(10)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=none,Filters=none)
+	bUseHomePose=false
+	InterpolationInTime=0.3
+	InterpolationOutTime=0.3
+	HUDHelpEntries(0)=(Key=26,KeyAlt=0,HelpText="Draw")
+	HUDHelpEntries(1)=(Key=27,KeyAlt=0,HelpText="Next Tool")
+	HUDHelpEntries(2)=(Key=13,KeyAlt=0,HelpText="Use Eraser")
+	UsableExits(0)=(bEnabled=true,EnterInfo=(LocationOffset=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),RotationOffset=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	UserMountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=true,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=true,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.802815E-17,Z=0),Z=-70)
+	ViewingAngleThreshold=-2
+	MouseInputScaleX=6E-05
+	MouseInputScaleY=6E-05
+	AnalogInputScaleX=3E-05
+	AnalogInputScaleY=3E-05
+	bCorrectInverse=true
+	bForceUsePhrase=true
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='dnControlHelper_Whiteboard_Marker',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=BLACK_PEN,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=2.717021E+23,Y=2.802675E-17,Z=21.1),Z=-21.1),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=1073750533,Yaw=571080704,Roll=-51200),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=0,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(5)=(bSkipVerifySelf=false,SpawnClass='dnControlHelper_Whiteboard_Marker',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=RED_PEN,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.802684E-17,Z=11.5),Z=-21.1),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bGenerateMountOffsets=false
+	bAcceptsDecalProjectors=false
+	PlacementZOffset=70
+	CollisionRadius=45
+	CollisionHeight=27.3
+	DrawType=8
+	StaticMesh='sm_class_decorations.Whiteboard.Whiteboard_1'
 }

@@ -12,5 +12,12 @@ defaultproperties
 {
 	ItemName="<?int?dnGame.SteroidsPickup.ItemName?>"
 	InventoryType='Steroids'
-	PhysicsSoundOverrides=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.SBottle_Impact_01','a_impact.SpecialCase.SBottle_Impact_02','a_impact.SpecialCase.SBottle_Impact_03','a_impact.SpecialCase.SBottle_Impact_04'),SoundInfo=(InputRange=(Min=16,Max=1280),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.SBottle_Roll_01'),SoundInfo=(InputRange=(Min=8,Max=40),OutputPitchRange=(Min=0.95,Max=1.125),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(2)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.SBottle_Slide_01'),SoundInfo=(InputRange=(Min=400,Max=500),OutputPitchRange=(Min=0.9,Max=1),OutputVolumeRange=(Min=0.5,Max=0.75)),bDisableSoundInWater=true)
+	bAcceptsDecalProjectors=false
+	CollisionRadius=15
+	CollisionHeight=10
+	DrawType=8
+	StaticMesh='sm_class_dukeitems.Steroids_pickup.Steroids_pickup_1'
 }

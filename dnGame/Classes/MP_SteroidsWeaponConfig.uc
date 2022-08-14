@@ -11,5 +11,9 @@ defaultproperties
 {
 	AmmoClass='SteroidsAmmo'
 	AmmoExpenditure=0
-	MuzzleInfo=/* Array type was not detected. */
+	MuzzleInfo(0)=(MuzzleFireStartAnim=FireStart,MuzzleFireAnim=SteroidsActivate,MuzzleFireStopAnim=FireStop,MuzzleFlashClass=none,MuzzleBoneName=mount_muzzle,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	bFlashHUDOnActivate=false
+	bStandardWeaponSwitch=false
+	DoneActivatingStateTransition=ActivateComplete
+	WeaponAnimName=noweapon
 }

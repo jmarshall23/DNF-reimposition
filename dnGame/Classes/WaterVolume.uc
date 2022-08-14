@@ -24,5 +24,18 @@ defaultproperties
 	KAngularDampingScale=2.1
 	HUDEffectMaterial='dt_hud.heathaze.watereffect_finalblend'
 	HUDEffectFadeTime=0.1
-	HUDIgnoredVisionTypes=/* Array type was not detected. */
+	HUDIgnoredVisionTypes(0)=1
+	VolumeMaterial='dnMaterial.Water_Underwater'
+	FullSubmergedMaterial='dnMaterial.Water_WaistDeep'
+	HalfSubmergedMaterial='dnMaterial.Water_WaistDeep'
+	BarelySubmergedMaterial='dnMaterial.Water_kneedeep'
+	DistanceFog=(Color=(B=121,G=2,R=1,A=30),G=29,B=17,A=0)
+	DistanceFogFadeTime=0
+	DOFBlurAmount=1
+	DOFFocalRangeMin=768
+	DOFFocalRangeMax=768
+	VolumeSubmergedAmbienceName=SubmergedAmbience
+	VolumeColor=(B=121,G=2,R=1,A=64)
+	LocationName="<?int?dnGame.WaterVolume.LocationName?>"
+	VoicePack='SoundConfig.liquids.VoicePack_WaterVolume'
 }

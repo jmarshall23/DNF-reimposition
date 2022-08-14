@@ -45,5 +45,8 @@ defaultproperties
 	Damage=40
 	DamageRadius=100
 	ShakeScalar=4
-	ShakeInfo=/* Array type was not detected. */
+	ShakeInfo(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.5,ShakeFrequency=0.05,ShakeMagnitude=400,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=dnRocket_RPG_Shake)
+	KAngularDamping=3
+	PhysicsEntityGroup=CycloidEntityGroup
+	LifeSpan=5
 }

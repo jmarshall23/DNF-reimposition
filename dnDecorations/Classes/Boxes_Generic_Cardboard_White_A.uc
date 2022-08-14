@@ -10,7 +10,28 @@ class Boxes_Generic_Cardboard_White_A extends Boxes_Generic
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	DA_Collide_Vents_Generic_BreakableGrate_Brkn=true
-	ObjectProperty=true
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Boxes_Cardboard_White_A_Brkn class=DecoActivities_Sound
+		SoundNames(0)=Cardboard_Explode
+	object end
+	// Reference: DecoActivities_Sound'Boxes_Generic_Cardboard_White_A.DA_Sound_Boxes_Cardboard_White_A_Brkn'
+	DestroyedActivities(1)=DA_Sound_Boxes_Cardboard_White_A_Brkn
+	DestroyedActivities(2)=DecoActivities_Interaction'Boxes_Generic.DA_Interaction_Boxes_Generic_Brkn'
+	DestroyedActivities(3)='dnGame.DecoActivityDeclarations.DA_Interact_bGrabbable_Disable'
+	begin object name=DA_Display_Boxes_Cardboard_White_A_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_decorations.Boxes.BoxCardboardWhiteABrkn_cd'
+	object end
+	// Reference: DecoActivities_Display'Boxes_Generic_Cardboard_White_A.DA_Display_Boxes_Cardboard_White_A_Brkn'
+	DestroyedActivities(4)=DA_Display_Boxes_Cardboard_White_A_Brkn
+	begin object name=DA_Physics_Boxes_Cardboard_White_A_Brkn class=DecoActivities_Physics
+		Mass=12
+	object end
+	// Reference: DecoActivities_Physics'Boxes_Generic_Cardboard_White_A.DA_Physics_Boxes_Cardboard_White_A_Brkn'
+	DestroyedActivities(5)=DA_Physics_Boxes_Cardboard_White_A_Brkn
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Smoke'
+	DynamicInteractionClassification=7
+	CollisionRadius=10
+	CollisionHeight=8
+	Mass=20
+	StaticMesh='sm_class_decorations.Boxes.BoxCardboardWhiteA_cd'
 }

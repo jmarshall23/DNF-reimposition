@@ -29,5 +29,13 @@ defaultproperties
 	NumPickups=1
 	ItemName="<?int?dnGame.CigarPickup.ItemName?>"
 	InventoryType='Cigar'
-	PhysicsSoundOverrides=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.SnackBox_01','a_impact.SpecialCase.SnackBox_02','a_impact.SpecialCase.SnackBox_03','a_impact.SpecialCase.SnackBox_04'),SoundInfo=(InputRange=(Min=64,Max=1280),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.4,Max=0.8)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=none,SoundInfo=(InputRange=(Min=0,Max=0),OutputPitchRange=(Min=0,Max=0),OutputVolumeRange=(Min=0,Max=0)),bDisableSoundInWater=false)
+	PhysicsSoundOverrides(2)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=none,SoundInfo=(InputRange=(Min=0,Max=0),OutputPitchRange=(Min=0,Max=0),OutputVolumeRange=(Min=0,Max=0)),bDisableSoundInWater=false)
+	CollisionRadius=18
+	CollisionHeight=2
+	DrawType=8
+	DrawScale=2
+	OverlayMaterial=none
+	StaticMesh='sm_class_dukeitems.Cigar.Cigar_sm'
 }

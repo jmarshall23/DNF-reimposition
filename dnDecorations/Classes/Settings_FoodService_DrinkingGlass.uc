@@ -22,10 +22,13 @@ var() noexport Settings_FoodService_DrinkingGlass.EGlassColor GlassColor "Color 
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Glass_Small'
 	HealthPrefab=1
-	SpawnOnDestroyedSimple=/* Array type was not detected. */
-	X=true
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Glass1'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Glass1'
+	bTickOnlyWhenPhysicsAwake=true
 	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Glass'
 	MinDamageVelocity=80
 	MaxImpactDamage=10

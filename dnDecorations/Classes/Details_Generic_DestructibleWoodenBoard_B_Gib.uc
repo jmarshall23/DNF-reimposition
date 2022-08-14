@@ -10,6 +10,13 @@ class Details_Generic_DestructibleWoodenBoard_B_Gib extends aFinalDecoration_Gib
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y="\\"
+	Gibs(0)=(RenderObject='sm_class_decorations.Door_boards.Door_Board_B_Gib01',bForcedOnly=false)
+	HealthPrefab=1
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bIgnorePawnAirCushion=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	PhysicsMassType=0
+	bTickOnlyZoneRecent=false
+	Mass=5
+	StaticMesh='sm_class_decorations.Door_boards.Door_Board_B_Gib01'
 }

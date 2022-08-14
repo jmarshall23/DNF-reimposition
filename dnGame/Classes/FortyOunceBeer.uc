@@ -81,7 +81,7 @@ simulated function name GetWeaponAnimReq(byte WeaponStateReq, optional out byte 
 	return;
 }
 
-k2call simulated function DrinkConsumed(optional EventInfo AnimEventInfo)
+animevent simulated function DrinkConsumed(optional EventInfo AnimEventInfo)
 {
 	// End:0x57
 	if(Instigator.bIsPlayerPawn)
@@ -100,7 +100,7 @@ k2call simulated function DrinkConsumed(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function InteractCigar(optional EventInfo AnimEventInfo)
+animevent simulated function InteractCigar(optional EventInfo AnimEventInfo)
 {
 	// End:0x0E
 	if(__NFUN_339__(ConflictingCigar, none))
@@ -125,7 +125,7 @@ k2call simulated function InteractCigar(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function CigarConflictResolved()
+animevent simulated function CigarConflictResolved()
 {
 	// End:0x2A
 	if(__NFUN_148__(__NFUN_340__(ConflictingCigar, none), __NFUN_173__(CigarConflictStage, 0)))
@@ -137,7 +137,7 @@ k2call simulated function CigarConflictResolved()
 	return;
 }
 
-k2call simulated function DrinkRelease(optional EventInfo AnimEventInfo)
+animevent simulated function DrinkRelease(optional EventInfo AnimEventInfo)
 {
 	local Decoration CrushedCan;
 	local Rotator ThrowDir;
@@ -326,5 +326,8 @@ defaultproperties
 	Charge=1
 	MaxCharge=1
 	HUDPickupEventIcon=18
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='acFortyOunceBeer'
+	Mesh='c_dukeitems.Beer_40oz'
+	VoicePack='SoundConfig.Inventory.VoicePack_FortyOunceBeer'
 }

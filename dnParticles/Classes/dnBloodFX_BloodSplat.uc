@@ -10,5 +10,15 @@ class dnBloodFX_BloodSplat extends dnDecal
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.blood.BloodSplatter1RC'
+	Decals(1)='dt_effects.blood.BloodSplatter2RC'
+	Decals(2)='dt_effects.blood.BloodSplatter3RC'
+	Decals(3)='dt_effects.blood.BloodSplatter4RC'
+	RandomDrawscale=0.2
+	BehaviorArgument=4
+	Behavior=3
+	bAutoAlignToSurface=true
+	MaxTraceDistance=4
+	MinSpawnDistance=12
+	DrawScale=0.05
 }

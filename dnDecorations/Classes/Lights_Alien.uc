@@ -11,5 +11,6 @@ class Lights_Alien extends Lights_Generic
 
 defaultproperties
 {
-	SpawnOnDestroyedSimple=/* Array type was not detected. */
+	SpawnOnDestroyedSimple(0)=none
+	SpawnOnDestroyedSimple(1)=none
 }

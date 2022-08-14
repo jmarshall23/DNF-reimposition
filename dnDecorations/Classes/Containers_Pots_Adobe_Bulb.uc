@@ -11,6 +11,18 @@ class Containers_Pots_Adobe_Bulb extends Containers_Pots
 defaultproperties
 {
 	DirtHeight=6.5
-	DestroyedActivities=/* Array type was not detected. */
-	TurnRight3='dnControlHelper_Pinball_Light'
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Containers_Pots.DA_Sound_SmallPot_Brkn'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	DestroyedActivities(3)=DecoActivities_Interaction'Containers_Pots.DA_Interact_Containers_Pots_Brkn'
+	begin object name=DA_Display_Containers_Pots_Adobe_Bulb_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_decorations.Containers.pot2Brkn_cd'
+	object end
+	// Reference: DecoActivities_Display'Containers_Pots_Adobe_Bulb.DA_Display_Containers_Pots_Adobe_Bulb_Brkn'
+	DestroyedActivities(4)=DA_Display_Containers_Pots_Adobe_Bulb_Brkn
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Plants_Generic_Potted_C',SpawnChance=0,MountPrefab=(bDontActuallyMount=true,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=Plant,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(0)=(SpawnClass='Details_Generic_DirtPile_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	CollisionRadius=8
+	CollisionHeight=8.3
+	StaticMesh='sm_class_decorations.Containers.pot2_cd'
 }

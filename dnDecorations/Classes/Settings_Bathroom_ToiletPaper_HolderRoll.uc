@@ -73,12 +73,21 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 
 defaultproperties
 {
-	AutoConstraints=/* Array type was not detected. */
-	bConstraintOnDeath=false
-	BoneName=None
-	ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	OtherConstraintActor=none
-	OtherConstraintBone=None
-	ConstraintClass='Engine.KHinge'
-	ConstraintActor=none
+	AutoConstraints(0)=(bConstraintDisabledOnDeath=false,bConstraintOnDeath=false,BoneName=None,ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	HealthPrefab=1
+	DamageThreshold=5
+	bForceUsePhrase=true
+	bUsable=true
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Smoke'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Paper1'
+	bTickOnlyWhenPhysicsAwake=true
+	DynamicInteractionClassification=9
+	KAngularDamping=0.5
+	EnableDisableThreshold=0.1
+	PhysicsEntityGroup=ToilerPaperHolderEntityGroup
+	Physics=18
+	CollisionRadius=4
+	CollisionHeight=4.3
+	Mass=10
+	StaticMesh='sm_class_decorations.ToiletPaper_Wrapped.ToiletPaper_Wrapped'
 }

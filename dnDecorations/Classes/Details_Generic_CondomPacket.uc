@@ -54,7 +54,16 @@ function Grabbed(Pawn Grabber)
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	bDontScaleByDrawScale=(X=0.01155051,Y=7.55555E+31,Z=953.5663)
-	LKcas_ColStatue_Leg_L=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=none
+	ThrowPhysics=18
+	UsePhrase="<?int?dnDecorations.Details_Generic_CondomPacket.UsePhrase?>"
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Plastic'
+	Physics=18
+	bGoryActor=true
+	bOverlayEffectUsedAsHint=true
+	CollisionRadius=2
+	CollisionHeight=0.1
+	DesiredLocation(0)=(bTemporal=false,bComplete=false,bRelativeMotion=false,Target=(X=1.291717E-41,Y=2.802673E-17,Z=0),Z=0)
+	StaticMesh='sm_class_decorations.CondomTamponMachine.CondomPacket'
 }

@@ -10,6 +10,13 @@ class Industrial_Generic_AirConditioner_Vents3_Gibs extends aFinalDecoration_Gib
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_geo_decorations.AirConditioners.CylindricalVents3LO_gib01',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_geo_decorations.AirConditioners.CylindricalVents3LO_gib02',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_geo_decorations.AirConditioners.CylindricalVents3LO_gib03',bForcedOnly=false)
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
+	Density=5
+	PhysicsEntityGroup=Vents3
+	Physics=0
+	bBlockActors=false
+	bStepUpAble=false
 }

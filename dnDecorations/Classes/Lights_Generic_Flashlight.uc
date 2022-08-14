@@ -17,5 +17,16 @@ event Used(Actor Other, Pawn EventInstigator)
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Glass_Large'
+	DestroyedActivities(2)=DecoActivities_Events'Lights_Generic.DA_Events_Lights_Generic_Destroyed'
+	DestroyedActivities(3)='dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Disable'
+	bUsable=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Plastic'
+	Physics=18
+	CollisionRadius=8.5
+	CollisionHeight=5
+	PrePivot=(X=1.291717E-41,Y=2.797242E-17,Z=0)
+	DrawScale=0.5
+	StaticMesh='sm_class_decorations.flashlight.flashlight'
 }

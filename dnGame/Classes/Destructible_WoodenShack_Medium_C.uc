@@ -9,28 +9,35 @@ class Destructible_WoodenShack_Medium_C extends dnDestructibleBuildingDefinition
 
 defaultproperties
 {
-	Parts(0)=bLoopAnim='DukeHUD',
-/* Exception thrown while deserializing Parts
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	Parts(1)=(Location=(X=-9.78673E-36,Y=2.954654E-17,Z=40.59045),Z=-9.001816)
-	Parts(2)=(Rotation=(Pitch=67117605,Yaw=572915712,Roll=2048),Roll=0)
-	Parts(3)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
-	Parts(4)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
-	Parts(5)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_walla2',Location=(X=-84.07037,Y=2.954663E-17,Z=-57.40955),Z=-31.00182)
-	Parts(6)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=31744),Roll=0)
-	Parts(7)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
-	Parts(8)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
-	Parts(9)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_walla1',Location=(X=-84.07037,Y=2.954666E-17,Z=-47.40955),Z=-55.00182)
-	Parts(10)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
-	Parts(11)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
-	Parts(12)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=80943,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
-	Parts(13)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_walla2',Location=(X=-84.07037,Y=2.954666E-17,Z=-80.40955),Z=-55.00182)
+	Parts(0)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_Doorframe',Location=(X=-9.78673E-36,Y=2.954654E-17,Z=40.59045),Z=-9.001816)
+	Parts(1)=(Rotation=(Pitch=67117605,Yaw=572915712,Roll=2048),Roll=0)
+	Parts(2)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Parts(3)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(4)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_walla2',Location=(X=-84.07037,Y=2.954663E-17,Z=-57.40955),Z=-31.00182)
+	Parts(5)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=31744),Roll=0)
+	Parts(6)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Parts(7)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(8)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_walla1',Location=(X=-84.07037,Y=2.954666E-17,Z=-47.40955),Z=-55.00182)
+	Parts(9)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Parts(10)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Parts(11)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=80943,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(12)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_walla2',Location=(X=-84.07037,Y=2.954666E-17,Z=-80.40955),Z=-55.00182)
+	Parts(13)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Parts(14)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Parts(15)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=80943,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(16)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_window',Location=(X=-84.07037,Y=2.954664E-17,Z=-67.40955),Z=12.99818)
+	Parts(17)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=64512),Roll=64512)
+	Parts(18)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Parts(19)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(20)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_wallb',Location=(X=-84.07037,Y=2.954667E-17,Z=-14.40955),Z=-3.001816)
+	Parts(21)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=0),Roll=64512)
+	Parts(22)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Parts(23)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(24)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_wallb',Location=(X=-9.78673E-36,Y=2.954643E-17,Z=99.59045),Z=-51.00182)
+	Parts(25)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=2048),Roll=0)
+	Parts(26)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=-1),Z=-1)
+	Parts(27)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	ParticleEffects(0)=(SpawnerClass='p_Decorations.Debris_WoodBuilding.Debris_WoodBuilding_Spawner',LocationOffset=(X=1.292418E-41,Y=2.954493E-17,Z=-24),Z=-56)
+	ParticleEffects(1)=(RotationOffset=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	ShellPart=(StaticMesh='SM_Lvl_Desert.Destructible_Shells.WoodenShack_Medium_C',Location=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
 }

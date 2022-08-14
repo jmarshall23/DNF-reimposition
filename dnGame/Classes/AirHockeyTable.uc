@@ -295,4 +295,21 @@ defaultproperties
 	PuckTableSoundName=AirHockey_PuckHitTable
 	ScoreSoundName=AirHockey_ScoreGoal
 	bDrawUsePhrase=false
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='dnControl_AirHockeyPlayer',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=Ctler1,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=-8.402626E+33,Y=2.954632E-17,Z=0.187),Z=7.024),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=32768),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	bTraceUsable=false
+	bBlockKarma=true
+	bBlockAI=true
+	bStaticAI=true
+	SoundNoOcclude=true
+	bDirectional=true
+	bAIMoveable=false
+	CollisionRadius=20
+	CollisionHeight=33
+	DrawType=8
+	StaticMesh='sm_class_decorations.Arcades.Air_Hockey_Table'
+	SoundVolume=150
+	TransientSoundVolume=1
+	VoicePack='SoundConfig.Interactive.VoicePack_AirHockey'
 }

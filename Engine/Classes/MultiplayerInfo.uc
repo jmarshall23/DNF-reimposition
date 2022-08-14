@@ -12,8 +12,8 @@ class MultiplayerInfo extends Info
 	hidecategories(movement,Collision,Lighting,LightColor,Actor,Advanced,Display,Editor,Events,Filter,Interpolation,Material,Mounting,Network,Sound,Tick,TickRules,VertexFunction);
 
 var() noexport bool bSpawnShrunk "If true, players will spawn shrunk and remain that way.";
-var() noexport float StartingEgo "Starting ego for each player.  This is the amount of damage it takes to deplete the ego bar.";
-var() noexport float StartingHealth "Starting health for each player.  This is the amount of damage a person can take before dying after the ego bar has been depleted.";
+var() noexport netupdate(ApplyEgo) float StartingEgo "Starting ego for each player.  This is the amount of damage it takes to deplete the ego bar.";
+var() noexport netupdate(ApplyHealth) float StartingHealth "Starting health for each player.  This is the amount of damage a person can take before dying after the ego bar has been depleted.";
 var() noexport float MovementSpeed "Base movement speed for each player.";
 var() noexport float SprintSpeed "Base sprint speed for each player.";
 var() noexport float JumpSpeed "Base jump speed for each player.";
@@ -85,5 +85,17 @@ defaultproperties
 	MovementSpeed=260
 	SprintSpeed=320
 	JumpSpeed=330
-	ConsoleCommands(0)=" set Pistol"
+	ConsoleCommands(0)="set Pistol BaseDamagePerShot 40"
+	ConsoleCommands(1)="set Shotgun BaseDamagePerShot 15"
+	ConsoleCommands(2)="set Shotgun HighBaseDamagePerShot 20"
+	ConsoleCommands(3)="set MachineGun BaseDamagePerShot 18"
+	ConsoleCommands(4)="set dnRocket_ATLaser Damage 20"
+	ConsoleCommands(5)="set dnRocket_ATCaptainLaser Damage 20"
+	ConsoleCommands(6)="set dnRocket_RPG_HeatSeek Damage 30"
+	ConsoleCommands(7)="set dnRocket_RPG_Homing Damage 90"
+	ConsoleCommands(8)="set dnPipeBombProjectile Damage 90"
+	ConsoleCommands(9)="set LaserMine Damage 90"
+	ConsoleCommands(10)="set dnRocket_Devastator Damage 25"
+	bSinglePlayer=false
+	RemoteRole=0
 }

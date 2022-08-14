@@ -75,3 +75,39 @@ function KarmaSetConstraintProperties(KConstraint ConstraintActor)
 	}
 	return;
 }
+
+defaultproperties
+{
+	AutoConstraints(0)=(bConstraintDisabledOnDeath=false,bConstraintOnDeath=false,BoneName=None,ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=2.5),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	AutoConstraints(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Details_Padlock_Lock_Brkn class=DecoActivities_Sound
+		SoundNames(0)=Destruct_Padlock
+	object end
+	// Reference: DecoActivities_Sound'Details_Padlock_Lock.DA_Sound_Details_Padlock_Lock_Brkn'
+	DestroyedActivities(1)=DA_Sound_Details_Padlock_Lock_Brkn
+	begin object name=DA_Display_Details_Padlock_Lock_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_decorations.padlock.PadLockBrkn_cd'
+	object end
+	// Reference: DecoActivities_Display'Details_Padlock_Lock.DA_Display_Details_Padlock_Lock_Brkn'
+	DestroyedActivities(2)=DA_Display_Details_Padlock_Lock_Brkn
+	HealthPrefab=5
+	Health=1
+	HealthCap=1
+	bIgnorePawnAirCushion=true
+	bEnableImpactSounds=false
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid'
+	EnableDisableThreshold=0.05
+	Physics=18
+	bTraceUsable=false
+	bNeverMeshAccurate=true
+	bBlockPlayers=false
+	bDoOverlayEffect=true
+	bOverlayEffectUsedAsHint=true
+	CollisionRadius=5
+	CollisionHeight=5
+	Mass=10
+	StaticMesh='sm_class_decorations.padlock.PadLock_cd'
+}

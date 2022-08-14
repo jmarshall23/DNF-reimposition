@@ -9,5 +9,5 @@ class DoorAccessory_KickGuard_Dirty extends DoorAccessory_KickGuard;
 
 defaultproperties
 {
-	Skins=/* Array type was not detected. */
+	Skins(0)='dt_Doors.metal.bottomdoorplatedirty_bs'
 }

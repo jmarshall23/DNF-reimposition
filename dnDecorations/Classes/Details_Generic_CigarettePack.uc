@@ -62,6 +62,12 @@ defaultproperties
 	bCanCrushOthers=false
 	bTickOnlyWhenPhysicsAwake=true
 	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Plastic'
-	PhysicsSoundOverrides=/* Array type was not detected. */
-	OtherMaterialTypes=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.SnackBox_01','a_impact.SpecialCase.SnackBox_02','a_impact.SpecialCase.SnackBox_03','a_impact.SpecialCase.SnackBox_04'),SoundInfo=(InputRange=(Min=64,Max=1280),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.4,Max=0.8)),bDisableSoundInWater=true)
+	Physics=18
+	CollisionRadius=2
+	CollisionHeight=3.25
+	DesiredLocation(0)=(bTemporal=false,bComplete=false,bRelativeMotion=false,Target=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=-10.15)
+	DesiredLocation(1)=(TargetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	Mass=2
+	StaticMesh='sm_class_decorations.Default.CigBox'
 }

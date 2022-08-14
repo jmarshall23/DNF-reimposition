@@ -271,7 +271,7 @@ var(AI) float BerzerkerGrappleGlobalIntervalMin;
 var float BerzerkerGrappleGate;
 var bool bPausedFromTaskSwitch;
 var noexport bool bPaused "Is the level currently paused?";
-var noexport bool bScreenshotMode "Is screenshot mode set? Provides a roaming free-cam while the game is paused.";
+var noexport netupdate(NU_ScreenshotMode) bool bScreenshotMode "Is screenshot mode set? Provides a roaming free-cam while the game is paused.";
 var Vector ScreenshotModeLocation;
 var Rotator ScreenshotModeRotation;
 var bool bPausedThisFrame;
@@ -294,7 +294,7 @@ var() noexport deprecated name PlayerDiedEvent "Event to trigger when a player d
 var() noexport deprecated name FilmGrainOnTag "Trigger this to enable film grain for local player (SP Only)";
 var() noexport deprecated name FilmGrainOffTag "Trigger this to disable film grain for local player (SP Only)";
 var const array<MaterialExInstance> MaterialInstances;
-var private const transient int EventDatabase;
+var private const transient nontrans int EventDatabase;
 var float DisableSkipBinkTimer;
 var localized string ESCText;
 var localized string toSkipText;
@@ -1154,5 +1154,113 @@ defaultproperties
 	LevelMinX=-11000
 	LevelMinY=-3500
 	LevelMinZ=-5500
-	
+	WarnNAVSize(0)=(bNeedsFlying=false,bPrecomputeAP=false,PathID=AIPATH_Small,Radius=15,Height=15,SourceClass=none)
+	WarnNAVSize(1)=(bNeedsFlying=false,bPrecomputeAP=false,PathID=AIPATH_Thin,Radius=20,Height=40,SourceClass=none)
+	WarnNAVSize(2)=(bNeedsFlying=false,bPrecomputeAP=false,PathID=AIPATH_Medium,Radius=33,Height=50,SourceClass=none)
+	WarnNAVSize(3)=(bNeedsFlying=false,bPrecomputeAP=false,PathID=AIPATH_Large,Radius=50,Height=50,SourceClass=none)
+	GlobalAIGates(0)=(GateName=PregnatorChargeGate,GateTime=0,GateMinInterval=5,LastInstigator=none)
+	GlobalAIGates(1)=(GateName=PregnatorFaceHumpGate,GateTime=0,GateMinInterval=60,LastInstigator=none)
+	BerzerkerGrappleGlobalIntervalMin=30
+	bErrorCheckActorLocations=true
+	Brightness=1
+	DefaultTexture=Texture'DefaultTexture'
+	begin object name=DefaultMaterial class=BumpShader
+		DiffuseMap=Texture'DefaultTexture'
+		HeightMap=Texture'DefaultTexture'
+		BumpScale=0.1
+		SpecularMap=Texture'DefaultTexture'
+		RT_SpecularScale=0.1
+	object end
+	// Reference: BumpShader'LevelInfo.DefaultMaterial'
+	DefaultMaterial=DefaultMaterial
+	DefaultStaticMesh='sm_class_decorations.Default.smBigError'
+	DefaultMesh='c_generic.BigError'
+	NodeDecalLimit=10
+	DecalDistanceScale=1
+	AutoDOFMaxFocalDistance=15000
+	ExitLevelFadeTime=3
+	FilmGrainOnTag=dnHUDEffects_FilmGrain_On
+	FilmGrainOffTag=dnHUDEffects_FilmGrain_Off
+	ESCText="<?int?Engine.LevelInfo.ESCText?>"
+	toSkipText="<?int?Engine.LevelInfo.toSkipText?>"
+	preToSkipText="<?int?Engine.LevelInfo.preToSkipText?>"
+	PhysicsEffectsDatabaseClass="dnGame.DefaultPhysicsEffectsDatabase"
+	ProximityDetector=5
+	KStartupPhysicsTime=3
+	DukeVisionIntensity=1
+	AISoundInfo(0)=(SoundType=0,MinInterval=1,Gate=0)
+	AISoundInfo(1)=(SoundType=1,MinInterval=1,Gate=0)
+	AITeamDialogInfo(0)=(Entries=((SoundName=None,MinInterval=0,Gate=0),(SoundName=Sound_TossBomb,MinInterval=10,Gate=0),(SoundName=Sound_TakeCover,MinInterval=5,Gate=0),(SoundName=Sound_LowHealth,MinInterval=5,Gate=0),(SoundName=Sound_ConfirmKillGen,MinInterval=5,Gate=0),(SoundName=Sound_ConfirmKill_PigCop,MinInterval=10,Gate=0),(SoundName=Sound_ConfirmKill_AT,MinInterval=10,Gate=0),(SoundName=Sound_ManDown,MinInterval=5,Gate=0),(SoundName=Sound_FriendlyFire,MinInterval=5,Gate=0),(SoundName=Sound_Reloading,MinInterval=5,Gate=0),(SoundName=Sound_SpotEnemy,MinInterval=10,Gate=0),(SoundName=Sound_SpotAT_Flying,MinInterval=10,Gate=0),(SoundName=Sound_EnemyCover_Car,MinInterval=15,Gate=0),(SoundName=Sound_EnemyCover_CopCar,MinInterval=15,Gate=0),(SoundName=Sound_EnemyCover_TAXI,MinInterval=15,Gate=0),(SoundName=Sound_EnemyCover_Bus,MinInterval=15,Gate=0),(SoundName=Sound_EnemyCover_Wall,MinInterval=15,Gate=0),(SoundName=Sound_EnemyCover_Pillar,MinInterval=15,Gate=0),(SoundName=Sound_EnemyCover_Crates,MinInterval=15,Gate=0),(SoundName=Sound_ConfirmKill_Bot,MinInterval=10,Gate=0),(SoundName=Sound_ConfirmKill_Clone,MinInterval=10,Gate=0),(SoundName=Sound_SpotBot,MinInterval=10,Gate=0),(SoundName=Sound_EnemyCover_Fence,MinInterval=15,Gate=0),(SoundName=Sound_EnemyCover_Sandbags,MinInterval=15,Gate=0),(SoundName=Sound_EnemyCover_Truck,MinInterval=15,Gate=0),(SoundName=Sound_EnemyCover_Barrier,MinInterval=15,Gate=0)))
+	FinishingMoveInterval=60
+	MinAITicksPerFrame=3
+	MaxPercentageAITicksPerFrame=0.3
+	MaxAITickMSecPerFrame=1
+	MaxAITargetVisiblitychecksPerFrame=1
+	MaxAlertSoundsPerFrame=1
+	AISoundInterval=1.5
+	NumAGotoXEvalPerFrame=3
+	AIEvalGateTime=1
+	AIEvalGateTimeDynamicPathing=0.25
+	VolumePrefabs[1]=(Volume=1,VolumeVariance=0)
+	VolumePrefabs[2]=(Volume=0.6,VolumeVariance=0)
+	VolumePrefabs[3]=(Volume=0.8,VolumeVariance=0)
+	VolumePrefabs[4]=(Volume=0.8,VolumeVariance=0)
+	VolumePrefabs[5]=(Volume=0.8,VolumeVariance=0)
+	VolumePrefabs[6]=(Volume=0.3,VolumeVariance=0)
+	VolumePrefabs[7]=(Volume=0.6,VolumeVariance=0)
+	VolumePrefabs[8]=(Volume=0.4,VolumeVariance=0)
+	ReverbPresets[0]=(DryLevel=1,WetLevel=0,Time=1.493,PreDelay=0.011,Damping=0.5)
+	ReverbPresets[1]=(DryLevel=0.75,WetLevel=0.25,Time=0.45,PreDelay=0.01,Damping=0.4)
+	ReverbPresets[2]=(DryLevel=0.75,WetLevel=0.25,Time=0.9,PreDelay=0.01,Damping=0.125)
+	ReverbPresets[3]=(DryLevel=0.75,WetLevel=0.25,Time=1.8,PreDelay=0.01,Damping=0.09375)
+	ReverbPresets[4]=(DryLevel=0.875,WetLevel=0.125,Time=3.6,PreDelay=0.01,Damping=0.09375)
+	ReverbPresets[5]=(DryLevel=0.9375,WetLevel=0.0625,Time=7.2,PreDelay=0.01,Damping=0.09375)
+	ReverbPresets[6]=(DryLevel=0.75,WetLevel=0.25,Time=0.23,PreDelay=0,Damping=0.125)
+	ReverbPresets[7]=(DryLevel=0.875,WetLevel=0.125,Time=0.4,PreDelay=0.25,Damping=0.125)
+	ReverbPresets[8]=(DryLevel=0.5,WetLevel=0.5,Time=1,PreDelay=0,Damping=1)
+	ReverbPresets[9]=(DryLevel=0.5,WetLevel=0.5,Time=1.499,PreDelay=0.011,Damping=0.1)
+	MixerAutoDuckRules(0)=(id=VoiceAutoDuck,bDucking=false,TestGroups=(Voice),DuckGroups=((Name=Special,DuckVolume=0.75,DuckTime=0.5,UnDuckTime=0.5),(Name=Creature,DuckVolume=0.75,DuckTime=0.5,UnDuckTime=0.5),(Name=Guns,DuckVolume=0.75,DuckTime=0.5,UnDuckTime=0.5),(Name=Interact,DuckVolume=0.75,DuckTime=0.5,UnDuckTime=0.5),(Name=Music,DuckVolume=0.75,DuckTime=0.5,UnDuckTime=0.5),(Name=Amb,DuckVolume=0.75,DuckTime=0.5,UnDuckTime=0.5)))
+	MixerAutoDuckRules(1)=(id=SpecialAutoDuck,bDucking=false,TestGroups=(Special),DuckGroups=((Name=Creature,DuckVolume=0.65,DuckTime=0.25,UnDuckTime=0.25),(Name=Guns,DuckVolume=0.65,DuckTime=0,UnDuckTime=0.25),(Name=Interact,DuckVolume=0.65,DuckTime=0.25,UnDuckTime=0.25),(Name=Amb,DuckVolume=0.65,DuckTime=0.25,UnDuckTime=0.25)))
+	MixerAutoDuckRules(2)=(id=CreatureAutoDuck,bDucking=false,TestGroups=(Creature),DuckGroups=((Name=Guns,DuckVolume=0.95,DuckTime=0.15,UnDuckTime=0),(Name=Interact,DuckVolume=0.7,DuckTime=0.25,UnDuckTime=0),(Name=Amb,DuckVolume=0.6,DuckTime=1.5,UnDuckTime=1.5)))
+	MixerAutoDuckRules(3)=(id=GunsAutoDuck,bDucking=false,TestGroups=(Guns),DuckGroups=((Name=Interact,DuckVolume=0.8,DuckTime=0.25,UnDuckTime=0),(Name=Amb,DuckVolume=0.7,DuckTime=1.5,UnDuckTime=1.5)))
+	MixerAutoDuckRules(4)=(id=InteractAutoDuck,bDucking=false,TestGroups=(Interact),DuckGroups=((Name=Amb,DuckVolume=0.8,DuckTime=1.5,UnDuckTime=1.5)))
+	CorpseCleanupPeriod=5
+	CorpseLimbCleanupPeriod=3
+	GibCleanupPeriod=2
+	AmmoCasingCleanupPeriod=2
+	ArmorCleanupPeriod=5
+	MaxCorpses=3
+	MaxCorpseLimbs=10
+	MaxGibs=20
+	MaxAmmoCasings=5
+	MaxPipeBombsAndTripMines=10
+	MaxDestructibleArmor=3
+	bHasDistanceFog=true
+	bHasDOF=true
+	DefaultVisibilityRadius=1500
+	DistanceFog=(Color=(B=6,G=1,R=64,A=7),Engine=/*ERROR: System.Exception: Unsupported property tag type None
+   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 898
+   at UELib.Core.UDefaultProperty.TryDeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 434*/,B=64,A=255)
+	DOFBlurAmount=(Style=0,Identifier=LevelDOF,ScaleStart=0,ScaleTarget=0.4,TimeRamp=0,FunctionComplete=None,FunctionCompleteActor=none,EventComplete=None,Scale=0.4,Timer=0,LastUpdateGTS=0,Velocity=0,Priority=32,bActive=false)
+	DOFFocalDist=(Style=0,Identifier=LevelDOF,ScaleStart=0,ScaleTarget=128,TimeRamp=0,FunctionComplete=None,FunctionCompleteActor=none,EventComplete=None,Scale=128,Timer=0,LastUpdateGTS=0,Velocity=0,Priority=32,bActive=false)
+	DOFFocalRangeMin=(Style=0,Identifier=LevelDOF,ScaleStart=0,ScaleTarget=2048,TimeRamp=0,FunctionComplete=None,FunctionCompleteActor=none,EventComplete=None,Scale=2048,Timer=0,LastUpdateGTS=0,Velocity=0,Priority=32,bActive=false)
+	DOFFocalRangeMax=(Style=0,Identifier=LevelDOF,ScaleStart=0,ScaleTarget=1536,TimeRamp=0,FunctionComplete=None,FunctionCompleteActor=none,EventComplete=None,Scale=1536,Timer=0,LastUpdateGTS=0,Velocity=0,Priority=32,bActive=false)
+	bTraceUsable=true
+	bTraceShootable=true
+	bBlockActors=true
+	bBlockPlayers=true
+	bBlockKarma=true
+	bBlockParticles=true
+	bBlockCamera=true
+	bWorldGeometry=true
+	bOccludeSounds=true
+	bIsLevelInfo=true
+	bAcceptsProjectors=true
+	bAcceptsDecalProjectors=true
+	bHiddenEd=true
+	ActorColorList(0)=(ActorColor=(B=6,G=1,R=0,A=7),Engine=/*ERROR: System.Exception: Unsupported property tag type None
+   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 898
+   at UELib.Core.UDefaultProperty.TryDeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 434*/,B=0,A=0)
+	ActorColorList(1)=(ActorColor_LightEx=none,ActorColor_LightExScale=(X=1.293258E-41,Y=3.079134E-17,Z=0),Z=0)
+	RemoteRole=2
 }

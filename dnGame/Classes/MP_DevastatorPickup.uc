@@ -13,5 +13,8 @@ defaultproperties
 	ItemName="<?int?dnGame.MP_DevastatorPickup.ItemName?>"
 	InventoryType='MP_Devastator'
 	RespawnTime=20
-	PhysicsSoundOverrides=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.Generic.Weap_Drop_AltSci_01','a_impact.Generic.Weap_Drop_AltSci_02','a_impact.Generic.Weap_Drop_AltSci_03','a_impact.Generic.Weap_Drop_AltSci_04'),SoundInfo=(InputRange=(Min=10,Max=250),OutputPitchRange=(Min=0.9,Max=1),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=none,SoundInfo=(InputRange=(Min=0,Max=0),OutputPitchRange=(Min=0,Max=0),OutputVolumeRange=(Min=0,Max=0)),bDisableSoundInWater=false)
+	PhysicsSoundOverrides(2)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=none,SoundInfo=(InputRange=(Min=0,Max=0),OutputPitchRange=(Min=0,Max=0),OutputVolumeRange=(Min=0,Max=0)),bDisableSoundInWater=false)
+	StaticMesh='sm_class_decorations.Weapon_Pickups.Devestator_Static'
 }

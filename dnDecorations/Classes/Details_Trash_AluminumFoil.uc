@@ -11,6 +11,7 @@ class Details_Trash_AluminumFoil extends Details_Trash
 defaultproperties
 {
 	bGrabbable=false
-	PhysicsSoundOverrides=/* Array type was not detected. */
-	OtherMaterialTypes=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.Tinfoil_Hit_01','a_impact.SpecialCase.Tinfoil_Hit_02'),SoundInfo=(InputRange=(Min=64,Max=1280),OutputPitchRange=(Min=0.75,Max=1.25),OutputVolumeRange=(Min=0.4,Max=0.8)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.TinFoil_Slide_01'),SoundInfo=(InputRange=(Min=400,Max=500),OutputPitchRange=(Min=0.85,Max=1),OutputVolumeRange=(Min=0.5,Max=0.75)),bDisableSoundInWater=true)
+	StaticMesh='sm_class_decorations.trash.trash_aluminumfoil'
 }

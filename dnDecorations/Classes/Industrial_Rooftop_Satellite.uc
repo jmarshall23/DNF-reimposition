@@ -10,6 +10,18 @@ class Industrial_Rooftop_Satellite extends Industrial_Generic
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	DrawScaleOverride=""
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Industrial_Rooftop_Satellite_Brkn class=DecoActivities_Sound
+		SoundNames(0)=IndMetal_Destruct
+		bClearAmbientSound=true
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Rooftop_Satellite.DA_Sound_Industrial_Rooftop_Satellite_Brkn'
+	DestroyedActivities(1)=DA_Sound_Industrial_Rooftop_Satellite_Brkn
+	HealthPrefab=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Industrial_Rooftop_Satellite_Dish',SpawnChance=0,MountPrefab=(bDontActuallyMount=true,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=-1.075528E+08,Y=2.813575E-17,Z=0),Z=56),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	PhysicsEntityGroup=SatellitePhysicsEntityGroup
+	CollisionRadius=22
+	CollisionHeight=55
+	StaticMesh='sm_geo_decorations.Satellite_Dish.Sat_Dish_Base'
 }

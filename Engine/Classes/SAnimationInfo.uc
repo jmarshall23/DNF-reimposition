@@ -2,7 +2,7 @@ struct SAnimationInfo
 {
 	var() name AnimationName;
 	var() SAnimChannelLink AnimationChannel;
-	var() name AnimSequence;
+	var() anim name AnimSequence;
 	var() float AnimStartingFrame;
 	var() float AnimRate;
 	var() float AnimRateVariance;

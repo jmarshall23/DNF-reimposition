@@ -30,5 +30,15 @@ defaultproperties
 	AlphaEnd=0
 	LineStartWidth=1.5
 	LineEndWidth=1.5
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Sparks.spark1RC'
+	Textures(1)='dt_effects.Sparks.spark3RC'
+	Textures(2)='dt_effects.Sparks.spark2RC'
+	Textures(3)='dt_effects.Sparks.spark4RC'
+	StartDrawScale=16
+	EndDrawScale=0
+	TriggerType=0
+	PulseSeconds=4
+	CollisionRadius=0
+	CollisionHeight=0
+	Style=3
 }

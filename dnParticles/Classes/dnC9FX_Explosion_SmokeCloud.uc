@@ -18,5 +18,13 @@ defaultproperties
 	AlphaStart=0.25
 	AlphaMid=0.75
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Smoke.alphablacksmoke1RC'
+	StartDrawScale=0.5
+	DrawScaleVariance=0.25
+	DrawScaleEndVariance=0.5
+	RotationVariance=0
+	RotationVelocityMaxVariance=0.5
+	CollisionRadius=48
+	CollisionHeight=48
+	Style=8
 }

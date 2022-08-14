@@ -334,5 +334,34 @@ defaultproperties
 	BladeRateAccel=131072
 	BladeRateDecel=-65536
 	BladeRateFull=262144
-	DecoActivities_Default=/* Array type was not detected. */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(TurnOn),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Ticking_TICK_Normal','dnGame.DecoActivityDeclarations.DA_Sound_SmallSwitch_Standard','dnGame.DecoActivityDeclarations.DA_HUD_UsePhrase_TurnOff',DecoActivities_Display'Electronics_Generic_DeskFan.DA_Display_Electronics_Generic_DeskFan_On',DecoActivities_Sound'Electronics_Generic_DeskFan.DA_Sound_Electronics_Generic_DeskFan_On'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(TurnOff),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Ticking_TICK_NoRules','dnGame.DecoActivityDeclarations.DA_Sound_SmallSwitch_Standard','dnGame.DecoActivityDeclarations.DA_HUD_UsePhrase_TurnOn',DecoActivities_Display'Electronics_Generic_DeskFan.DA_Display_Electronics_Generic_DeskFan_Off',DecoActivities_Sound'Electronics_Generic_DeskFan.DA_Sound_Electronics_Generic_DeskFan_Off'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	AutoConstraints(0)=(bConstraintDisabledOnDeath=false,bConstraintOnDeath=true,BoneName=Root,ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Electronics_Generic.DA_Sound_Destroyed_Electronic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Sound_Ambient_Clear'
+	DestroyedActivities(3)='dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Disable'
+	DestroyedActivities(4)='dnGame.DecoActivityDeclarations.DA_HUD_bDrawUsePhrase_Disable'
+	begin object name=DA_Display_Electronics_Generic_DeskFan_Brkn class=DecoActivities_Display
+		Skins(0)=(Index=0,NewMaterialEx='mt_Skins.DeskFan.DeskFan1_brkn_off_diff')
+	object end
+	// Reference: DecoActivities_Display'Electronics_Generic_DeskFan.DA_Display_Electronics_Generic_DeskFan_Brkn'
+	DestroyedActivities(5)=DA_Display_Electronics_Generic_DeskFan_Brkn
+	DestroyedActivities(6)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_KarmaRagdoll_Set'
+	bForceUsePhrase=true
+	bUsable=true
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Smoke'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Metal1'
+	SpawnOnDestroyedSimple(2)='dnParticles.dnDebris_Sparks1_Small'
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Plastic'
+	PhysicsMassType=1
+	bHasEvalBonesHelper=true
+	bNoNativeTick=false
+	CollisionRadius=10
+	CollisionHeight=11.25
+	Mass=21
+	TickStyle=2
+	DrawType=2
+	Mesh='c_generic.DeskFan'
 }

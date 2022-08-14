@@ -135,5 +135,22 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 
 defaultproperties
 {
-	StartupActivities=/* Array type was not detected. */
+	begin object name=DA_Sound_ComputerStation_Ambience class=DecoActivities_Sound
+		SoundNames(0)=ComputerStation_Ambience
+	object end
+	// Reference: DecoActivities_Sound'Electronics_Generic_ComputerStation.DA_Sound_ComputerStation_Ambience'
+	StartupActivities(0)=DA_Sound_ComputerStation_Ambience
+	bSurviveDeath=true
+	FlickerLight=(FlickerLightActor=none,FlickerLightExActor=none,bUseFlickerLight=true,bUseFlickerLightEx=true,bInitialEffect=true,bInitialEffectOnly=false,FlickerLightMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Electronics_Generic.DA_Sound_Destroyed_Electronic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Sound_Ambient_Clear'
+	HealthPrefab=4
+	SpawnOnDestroyedSimple(0)=none
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Smoke'
+	SpawnOnDestroyedSimple(2)='dnParticles.dnDebris_Sparks1'
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
+	PhysicsMassType=1
+	SoundRadius=208
+	SoundInnerRadius=104
 }

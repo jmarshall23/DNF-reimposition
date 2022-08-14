@@ -68,12 +68,15 @@ simulated event Tick(float DeltaSeconds)
 
 defaultproperties
 {
-	DecoActivities_Default=/* Array type was not detected. */
-	X=/* Unknown default property type! */
-	
-/* Exception thrown while deserializing Engine
-System.ArgumentOutOfRangeException: Length cannot be less than zero.
-Parameter name: length
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(Boing),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Settings_FoodService_Spatula_JumpPad.DA_Anim_Settings_Food_Spatula_Boing',DecoActivities_Sound'Settings_FoodService_Spatula_JumpPad.DA_Sound_Settings_Food_Spatula_Boing'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	HealthPrefab=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Engine.KBoxSensor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.802784E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bNoNativeTick=false
+	bDumbMesh=false
+	CollisionRadius=7
+	CollisionHeight=24
+	TickStyle=2
+	DrawType=2
+	Mesh='c_generic.spatula_jump_pad'
+	VoicePack='SoundConfig.Interactive.VoicePack_Decorations'
 }

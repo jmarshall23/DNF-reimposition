@@ -11,7 +11,7 @@ class dnHitFX_Effect_WaterStream_Timer extends dnHitFX_Effect_Timers
 
 defaultproperties
 {
-	PRandomFriends=(FriendStyle=0,FriendInfos=/* Array type was not detected. */,RequestingParticleInfo=(bMatchLocation=true,bMatchRotation=false,bMatchScale=false,bRelativeVelocity=true,bRelativeAcceleration=false,bInheritVelocity=false,bInheritAcceleration=false),VolumeResponse=0,bFireAndForget=true,SpawnChance=0,SpawnCount=2,SpawnCountVariance=0,FriendClass='dnHitFX_Effect_WaterStream',FriendDelay=0,FriendDuration=0,bUseParticleTime=false,FriendActor=none)
+	PRandomFriends=(FriendStyle=0,FriendInfos=((RequestingParticleInfo=(bMatchLocation=true,bMatchRotation=false,bMatchScale=false,bRelativeVelocity=true,bRelativeAcceleration=false,bInheritVelocity=false,bInheritAcceleration=false),VolumeResponse=0,bFireAndForget=true,SpawnChance=0,SpawnCount=2,SpawnCountVariance=0,FriendClass='dnHitFX_Effect_WaterStream',FriendDelay=0,FriendDuration=0,bUseParticleTime=false,FriendActor=none)),FriendIndex=0,bDisabled=false,FriendDuration=0,FriendDelay=0)
 	PRandomFriendsRate=0.025
 	PRandomFriendsRateVariance=0.01
 	Lifetime=4

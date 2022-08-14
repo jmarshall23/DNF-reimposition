@@ -10,5 +10,12 @@ class dnDecal_BlastMark extends dnDecal
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.Decals.mofoblast_1tw'
+	Decals(1)='dt_effects.Decals.mofoblast_2tw'
+	bScaleByOwner=true
+	BehaviorArgument=4
+	Behavior=3
+	bProjectPawn=false
+	MinSpawnDistance=2
+	DrawScale=1
 }

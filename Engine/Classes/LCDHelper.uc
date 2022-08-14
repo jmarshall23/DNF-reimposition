@@ -187,3 +187,32 @@ event bool HasDiscoveredEgoAward(int AwardID)
 	return __NFUN_174__(Found, 0);
 	return;
 }
+
+defaultproperties
+{
+	Chapters(0)=(URL="map00",Awards=(21,0,23))
+	Chapters(1)=(URL="map01",Awards=(21,0,26,22))
+	Chapters(2)=(URL="map02",Awards=(21,10,4,9,19,18,24))
+	Chapters(3)=(URL="map03",Awards=none)
+	Chapters(4)=(URL="map04",Awards=(2))
+	Chapters(5)=(URL="map05",Awards=(27))
+	Chapters(6)=(URL="map06",Awards=(7))
+	Chapters(7)=(URL="map07",Awards=(20))
+	Chapters(8)=(URL="map08",Awards=(10,4,18,20,28))
+	Chapters(9)=(URL="map09",Awards=(21,22,9,1,2,0,7,23,24,5,29,8,30,31))
+	Chapters(10)=(URL="map10",Awards=(13))
+	Chapters(11)=(URL="map11",Awards=(0,21,17,14,24))
+	Chapters(12)=(URL="map12",Awards=(25,13,6))
+	Chapters(13)=(URL="map13",Awards=(16))
+	Chapters(14)=(URL="map14",Awards=none)
+	Chapters(15)=(URL="map15",Awards=(12,32))
+	Chapters(16)=(URL="map16",Awards=(12,11))
+	Chapters(17)=(URL="map17",Awards=(15,11))
+	Chapters(18)=(URL="map18",Awards=(0,21,33))
+	Chapters(19)=(URL="map19",Awards=(20,12,16,25))
+	Chapters(20)=(URL="map20",Awards=(14,17))
+	Chapters(21)=(URL="map21",Awards=(15,12,34))
+	Chapters(22)=(URL="map22",Awards=none)
+	Chapters(23)=(URL="map23",Awards=none)
+	MPTickUpdateRateSeconds=1
+}

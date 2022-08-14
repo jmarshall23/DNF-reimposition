@@ -10,7 +10,13 @@ class dnTurdSplat extends dnDecal_Delayed
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
-	bPerformedThisRound=class'SwitchStates'
-	ForcedIndex=/* Unknown default property type! */
+	Decals(0)='dt_effects.Decals.TurdSplat_1tw_fb'
+	Decals(1)='dt_effects.Decals.TurdSplat_2atw_fb'
+	Decals(2)='dt_effects.Decals.TurdSplat_2btw_fb'
+	BehaviorArgument=4
+	Behavior=3
+	bAutoAlignToSurface=true
+	MaxTraceDistance=128
+	MinSpawnDistance=2
+	DrawScale=0.2
 }

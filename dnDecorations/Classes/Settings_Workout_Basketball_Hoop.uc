@@ -62,4 +62,10 @@ defaultproperties
 	EgoBoostAmount=1
 	EgoBoostCharges=-1
 	HealthPrefab=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Settings_Workout_Basketball_Rim',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.802763E-17,Z=0),Z=-12),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	CollisionRadius=8
+	CollisionHeight=22
+	StaticMesh='sm_geo_decorations.BackBoard.BackBoard_1'
 }

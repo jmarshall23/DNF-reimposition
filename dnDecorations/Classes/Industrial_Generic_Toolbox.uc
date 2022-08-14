@@ -11,5 +11,31 @@ class Industrial_Generic_Toolbox extends Industrial_Generic
 defaultproperties
 {
 	HealthPrefab=0
-	SpawnOnDestroyed=/* Array type was not detected. */
+	SpawnOnDestroyed(0)=(SpawnClass='Industrial_Generic_Toolbox_Gibs_NoKarma',RenderObject='sm_class_decorations.ToolBox_Gibs.ToolBox_Gib_01',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=65608.02,Y=2.802709E-17,Z=17.04916),Z=-17.38285)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=None,MotionInfo=none)
+	begin object name=MP_Toolbox_Gibs class=MotionPrefab
+		VelocityRelativeType=3
+		Velocity=(X=1.291717E-41,Y=2.802941E-17,Z=0)
+		VelocityVariance=(X=1.291717E-41,Y=2.802924E-17,Z=0)
+		RotationRate=(Pitch=1619010053,Yaw=571080715,Roll=0)
+		RotationRateVariance=(Pitch=1614815749,Yaw=571080714,Roll=0)
+	object end
+	// Reference: MotionPrefab'Industrial_Generic_Toolbox.MP_Toolbox_Gibs'
+	DefaultMotionPrefab=MP_Toolbox_Gibs
+	bIgnorePawnAirCushion=true
+	bTickOnlyWhenPhysicsAwake=true
+	DynamicInteractionClassification=0
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
+	PhysicsMassType=1
+	Physics=18
+	CollisionRadius=19.8
+	CollisionHeight=41.8
+	Mass=75
+	DrawType=2
+	DrawScale=1.1
+	Mesh='c_generic.ToolBox'
 }

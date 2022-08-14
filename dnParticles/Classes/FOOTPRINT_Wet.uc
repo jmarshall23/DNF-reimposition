@@ -10,5 +10,6 @@ class FOOTPRINT_Wet extends FootPrint
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_Effects2.Footprints.FootPrint_Water_FB'
+	DrawScale=0.08
 }

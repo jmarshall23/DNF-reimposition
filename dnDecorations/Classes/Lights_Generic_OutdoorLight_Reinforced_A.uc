@@ -11,10 +11,8 @@ class Lights_Generic_OutdoorLight_Reinforced_A extends Lights_Generic
 defaultproperties
 {
 	HealthPrefab=0
-	MountOnSpawn=/* Array type was not detected. */
-	SpawnClass='dnParticles.dnParticleCreatureFX_SmallSwarm_Fly'
-	SpawnChance=0.25
-	MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.813589E-17,Z=0),Z=0)
-	RenderObject=none
-	DrawScale=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='dnParticles.dnParticleCreatureFX_SmallSwarm_Fly',SpawnChance=0.25,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.813589E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	CollisionRadius=12
+	CollisionHeight=14.5
+	StaticMesh='sm_class_lights.Hanging.Lampost_Light'
 }

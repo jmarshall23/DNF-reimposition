@@ -48,5 +48,18 @@ event UnUsed(Actor Other, Pawn EventInstigator)
 defaultproperties
 {
 	SprayColor=(B=76,G=3,R=1,A=200)
-	DecoActivities_Default=/* Array type was not detected. */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(3),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Settings_FoodService_SodaDispenser.DA_Sound_Settings_Food_SodaDispenser_SoundOn',DecoActivities_Animation'Settings_FoodService_SodaDispenser.DA_Anim_Settings_Food_SodaDispenser_Push'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(4),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Settings_FoodService_SodaDispenser.DA_Sound_Settings_Food_SodaDispenser_SoundOff',DecoActivities_Animation'Settings_FoodService_SodaDispenser.DA_Anim_Settings_Food_SodaDispenser_Release'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	HealthPrefab=0
+	bForceUsePhrase=true
+	bUsable=true
+	bUnUsable=true
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass=none,SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	bBlockKarma=false
+	bAcceptsDecalProjectors=false
+	CollisionRadius=2.7
+	CollisionHeight=6.2
+	DrawType=2
+	Mesh='c_generic.sodafountain_soda'
 }

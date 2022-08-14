@@ -27,7 +27,21 @@ event Destroyed()
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	radiansThisFrame=41025793
-	Y=16843383
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Electronics_Generic.DA_Sound_Destroyed_Electronic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	begin object name=DA_Impulse_ElectricalBox_Panel class=DecoActivities_KarmaImpulse
+		ImpulseForce=10
+		ImpulseForceVariance=7.5
+		ImpulseOffsetVariance=(X=1.291717E-41,Y=2.802716E-17,Z=0)
+	object end
+	// Reference: DecoActivities_KarmaImpulse'Electronics_Generic_ElectricalBox_Panel.DA_Impulse_ElectricalBox_Panel'
+	DestroyedActivities(3)=DA_Impulse_ElectricalBox_Panel
+	HealthPrefab=1
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
+	PhysicsMassType=1
+	CollisionRadius=13
+	CollisionHeight=10
+	Mass=10
+	StaticMesh='sm_class_decorations.Electronics.electlid_box1'
 }

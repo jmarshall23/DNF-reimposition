@@ -11,6 +11,8 @@ class Details_Trash_Styrofoam_Cup extends Details_Trash
 defaultproperties
 {
 	bGrabbable=false
-	PhysicsSoundOverrides=/* Array type was not detected. */
-	OtherMaterialTypes=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.FoamCup_01','a_impact.SpecialCase.FoamCup_02','a_impact.SpecialCase.FoamCup_03','a_impact.SpecialCase.FoamCup_04'),SoundInfo=(InputRange=(Min=64,Max=1280),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.4,Max=0.8)),bDisableSoundInWater=true)
+	CollisionRadius=4
+	CollisionHeight=4
+	StaticMesh='sm_class_decorations.trash.styrofoam_cup2'
 }

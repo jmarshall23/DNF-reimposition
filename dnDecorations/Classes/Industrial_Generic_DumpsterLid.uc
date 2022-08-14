@@ -26,3 +26,19 @@ function KarmaSetConstraintProperties(KConstraint ConstraintActor)
 	AngularLimit.__NFUN_1107__(true, __NFUN_265__(__NFUN_165__(AngularLimit.Rotation.Pitch, 20480), AngularLimit.Rotation.Yaw, AngularLimit.Rotation.Roll));
 	return;
 }
+
+defaultproperties
+{
+	AutoConstraints(0)=(bConstraintDisabledOnDeath=false,bConstraintOnDeath=false,BoneName=None,ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=5.36836E-38,Y=2.813684E-17,Z=0),Z=-2.030111),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	AutoConstraints(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=16384),Roll=0)
+	HealthPrefab=0
+	bTickOnlyWhenPhysicsAwake=true
+	DynamicInteractionClassification=0
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Plastic'
+	PhysicsMassType=2
+	Physics=18
+	CollisionRadius=41
+	CollisionHeight=3.3
+	Mass=25
+	StaticMesh='sm_class_decorations.Dumpster.Dumpster_Lid'
+}

@@ -192,4 +192,20 @@ state TurnedOff
 defaultproperties
 {
 	WaterBone=Water
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(TurnOn),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Settings_Bathroom_Sinks.DA_Sound_Settings_Bathroom_Sinks_TurnHandle',DecoActivities_Sound'Settings_Bathroom_Sinks.DA_Sound_Settings_Bathroom_Sinks_TurnOn',DecoActivities_Animation'Settings_Bathroom_Sinks.DA_Anim_Settings_Bathroom_Sinks_TurnOn','dnGame.DecoActivityDeclarations.DA_HUD_UsePhrase_TurnOff'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(TurnOff),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Settings_Bathroom_Sinks.DA_Sound_Settings_Bathroom_Sinks_TurnHandle',DecoActivities_Sound'Settings_Bathroom_Sinks.DA_Sound_Settings_Bathroom_Sinks_TurnOff',DecoActivities_Animation'Settings_Bathroom_Sinks.DA_Anim_Settings_Bathroom_Sinks_TurnOff','dnGame.DecoActivityDeclarations.DA_HUD_UsePhrase_TurnOn'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(3),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Events'Settings_Bathroom_Sinks.DA_Events_Settings_Bathroom_Sinks_Used'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=1),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	bStartupOff=true
+	HealthPrefab=0
+	bForceUsePhrase=true
+	bUsable=true
+	bNoNativeTick=false
+	bAcceptMines=false
+	bCollideWorld=false
+	DrawType=2
+	Mesh='c_generic.Shower'
+	SoundRadius=300
+	SoundInnerRadius=150
+	TransientSoundRadius=300
+	TransientSoundInnerRadius=150
 }

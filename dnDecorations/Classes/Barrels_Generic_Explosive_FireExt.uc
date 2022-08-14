@@ -23,4 +23,29 @@ defaultproperties
 	BulletFireClass='p_Decorations.FireExtinguisher.FireExtinguisher_HitFX_Main'
 	ExplosionLightClass=none
 	OnFireSoundName=FireExt_Expel
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(1,18),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Health_Damage_100'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(DelayedExplosionTimerStarted),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Interaction'Barrels_Generic_Explosive_FireExt.DA_Interact_Barrel_FireExt_SetAvoidRange'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(21),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Camera_Explosion_Shake_Generic'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Barrel_FireExt_Explode class=DecoActivities_Sound
+		SoundNames(0)=FireExt_Explode
+	object end
+	// Reference: DecoActivities_Sound'Barrels_Generic_Explosive_FireExt.DA_Sound_Barrel_FireExt_Explode'
+	DestroyedActivities(1)=DA_Sound_Barrel_FireExt_Explode
+	begin object name=DA_RadiusDamage_FireExt class=DA_RadiusDamage_Standard
+		Damage=100
+		Radius=225
+	object end
+	// Reference: DA_RadiusDamage_Standard'Barrels_Generic_Explosive_FireExt.DA_RadiusDamage_FireExt'
+	DestroyedActivities(2)=DA_RadiusDamage_FireExt
+	bGrabbable=false
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DynamicInteractionClassification=7
+	FixedPhysicsDamageToNotPlayer=0
+	FixedPhysicsDamageToPlayer=0
+	CollisionRadius=7
+	CollisionHeight=12.3
+	Mass=20
+	DrawType=2
+	Mesh='c_generic.extinguisher1'
 }

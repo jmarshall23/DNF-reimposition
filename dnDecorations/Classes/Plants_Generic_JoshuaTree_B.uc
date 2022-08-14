@@ -7,3 +7,14 @@
  *******************************************************************************/
 class Plants_Generic_JoshuaTree_B extends Plants_Generic_JoshuaTree
 	collapsecategories;
+
+defaultproperties
+{
+	SpawnOnDestroyed(0)=(SpawnClass='Plants_Generic_JoshuaTree_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=58)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=110)
+	DestroyedParticleFriendEffects(1)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	CollisionRadius=50
+	CollisionHeight=100
+	StaticMesh='sm_geo_decorations.desert.joshua_tree_2'
+}

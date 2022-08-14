@@ -10,10 +10,6 @@ class Containers_PlasticBoxes_MedFull_Blue extends Containers_PlasticBoxes_MedFu
 
 defaultproperties
 {
-	ActorColorList=/* Array type was not detected. */
-	Z=false
-	Y=/* Unknown default property type! */
-	Z=0
-	B=255
-	A=255
+	ActorColorList(0)=(ActorColor=(B=76,G=3,R=1,A=0),G=0,B=255,A=255)
+	ActorColorList(1)=(ActorColor_LightEx=none,ActorColor_LightExScale=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
 }

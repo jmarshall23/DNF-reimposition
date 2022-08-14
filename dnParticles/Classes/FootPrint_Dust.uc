@@ -10,5 +10,5 @@ class FootPrint_Dust extends FootPrint
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.Footprints.DukesFPsandy1RC'
 }

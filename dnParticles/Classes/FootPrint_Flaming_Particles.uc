@@ -22,5 +22,19 @@ defaultproperties
 	MaxVelocityVariance=(X=1.291857E-41,Y=2.802768E-17,Z=12)
 	AlphaMid=1
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Fire.flame1aRC'
+	Textures(1)='dt_effects.Fire.flame2aRC'
+	Textures(2)='dt_effects.Fire.flame3aRC'
+	Textures(3)='dt_effects.Fire.flame4aRC'
+	StartDrawScale=0.2
+	EndDrawScale=0.2
+	RotationVariance=65535
+	RotationVelocityMaxVariance=3
+	TriggerAfterSeconds=2
+	TriggerType=2
+	bIgnoreBList=true
+	CollisionRadius=4
+	CollisionHeight=0
+	TickStyle=3
+	Style=3
 }

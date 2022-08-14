@@ -29,5 +29,31 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 defaultproperties
 {
 	CarColor=7
-	VehicleParts(0)=(ByteProperty==Engine,bCanBlowOff=false,bDestroyOnExplosion=true,VehiclePartID=Window_Front,VehiclePartStyle=0,VehiclePartActor=none)
+	VehicleParts(0)=(bDamagePart=false,bCanBlowOff=false,bDestroyOnExplosion=true,VehiclePartID=Window_Front,VehiclePartStyle=0,VehiclePartActor=none)
+	VehicleParts(1)=(bDamagePart=false,bCanBlowOff=false,bDestroyOnExplosion=true,VehiclePartID=Window_Rear,VehiclePartStyle=0,VehiclePartActor=none)
+	VehicleParts(2)=(bDamagePart=false,bCanBlowOff=true,bDestroyOnExplosion=false,VehiclePartID=Tire_Front_Left,VehiclePartStyle=0,VehiclePartActor=none)
+	VehicleParts(3)=(bDamagePart=false,bCanBlowOff=true,bDestroyOnExplosion=false,VehiclePartID=Tire_Front_Right,VehiclePartStyle=0,VehiclePartActor=none)
+	VehicleParts(4)=(bDamagePart=false,bCanBlowOff=true,bDestroyOnExplosion=false,VehiclePartID=Tire_Rear_Left,VehiclePartStyle=0,VehiclePartActor=none)
+	VehicleParts(5)=(bDamagePart=false,bCanBlowOff=true,bDestroyOnExplosion=false,VehiclePartID=Tire_Rear_Right,VehiclePartStyle=0,VehiclePartActor=none)
+	VehicleParts(6)=(bDamagePart=false,bCanBlowOff=true,bDestroyOnExplosion=false,VehiclePartID=Door_Front_Left,VehiclePartStyle=0,VehiclePartActor=none)
+	VehicleParts(7)=(bDamagePart=false,bCanBlowOff=true,bDestroyOnExplosion=false,VehiclePartID=Door_Front_Right,VehiclePartStyle=0,VehiclePartActor=none)
+	VehicleParts(8)=(bDamagePart=false,bCanBlowOff=true,bDestroyOnExplosion=false,VehiclePartID=Door_Rear_Left,VehiclePartStyle=0,VehiclePartActor=none)
+	VehicleParts(9)=(bDamagePart=false,bCanBlowOff=true,bDestroyOnExplosion=false,VehiclePartID=Door_Rear_Right,VehiclePartStyle=0,VehiclePartActor=none)
+	VehicleParts(10)=(bDamagePart=false,bCanBlowOff=true,bDestroyOnExplosion=false,VehiclePartID=Hood_Front,VehiclePartStyle=0,VehiclePartActor=none)
+	BurntMesh='sm_class_vehicles.Mazba_A.MazbaA_Brnt_mainbody'
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Vehicles_Deco_Car_Standard_Window_Front',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=Window_Front,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=0,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(5)=(bSkipVerifySelf=false,SpawnClass='Vehicles_Deco_Car_Standard_Window_Rear',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=Window_Rear,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(6)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(7)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(8)=(MountType=0,DismountPhysics=0)
+	MountOnSpawn(9)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(10)=(bSkipVerifySelf=false,SpawnClass='Vehicles_Deco_Car_Standard_Tire',SpawnChance=0,MountPrefab=(bDontActuallyMount=true,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=Tire_Front_Left,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.802901E-17,Z=-40),Z=-24),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	CollisionRadius=0
+	CollisionHeight=45
+	Mass=2000
+	StaticMesh='sm_class_vehicles.Mazba_A.MazbaA_body'
 }

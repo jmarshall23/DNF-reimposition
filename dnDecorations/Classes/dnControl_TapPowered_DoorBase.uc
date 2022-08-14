@@ -18,7 +18,7 @@ var() noexport name ReleaseControlTag "Trigger this event to force this dnContro
 var() noexport float PartiallyOpenPercent "Percentage of openness when PartiallyOpenEvent will fire off.";
 var() noexport name PartiallyOpenEvent "Event to fire off when doors reach PartiallyOpenPercent.";
 var(dnControl_TapPowered_Door_Anim) name UserGridAnim;
-var(dnControl_TapPowered_Door_Anim) name MyGridAnim;
+var(dnControl_TapPowered_Door_Anim) anim name MyGridAnim;
 var(dnControl_TapPowered_Door_Sound) noexport name PryLoopSoundName "VoicePack entry to play when we are being pryed open.  Should be bPlayAsAmbient.";
 var Rotator DefaultRotation;
 var float LastLiftPercent;
@@ -329,7 +329,15 @@ defaultproperties
 	bUseHomePose=false
 	InterpolationInTime=0.3
 	InterpolationOutTime=0.3
-	HUDHelpEntries=/* Array type was not detected. */
-	KeyAlt=13
-	HelpText="Open Door (Tap)"
+	HUDHelpEntries(0)=(Key=11,KeyAlt=13,HelpText="Open Door (Tap)")
+	UsableClass='Engine.PlayerPawn'
+	bLookWhenHidden=true
+	bForceUsePhrase=true
+	UsePhrase="<?int?dnDecorations.dnControl_TapPowered_DoorBase.UsePhrase?>"
+	bBlockPlayers=true
+	bHidden=true
+	bDirectional=true
+	CollisionRadius=0
+	CollisionHeight=0
+	Mesh='c_hands.testpyramid'
 }

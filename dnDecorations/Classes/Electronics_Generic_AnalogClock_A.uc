@@ -12,13 +12,25 @@ defaultproperties
 {
 	TickSoundName=AnalogClock_Tick
 	FlickerLight=(FlickerLightActor=none,FlickerLightExActor=none,bUseFlickerLight=true,bUseFlickerLightEx=false,bInitialEffect=true,bInitialEffectOnly=true,FlickerLightMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	DestroyedActivities=/* Array type was not detected. */
-	DA_Display_Lights_Generic_SirenRed_A_Brkn=41944681
-	StructProperty[2]=/* Unknown default property type! */
-	bSkipVerifySelf=false
-	SpawnClass='Clock_Analog_HourHand'
-	SpawnChance=0
-	MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=HourHand,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=-1),Z=0)
-	RenderObject=none
-	DrawScale=0
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Electronics_Generic.DA_Sound_Destroyed_Electronic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Ticking_TICK_Never'
+	begin object name=DA_Display_Electronics_Generic_AnalogClock_A_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_decorations.Electronics.WallClockBrkn_cd'
+	object end
+	// Reference: DecoActivities_Display'Electronics_Generic_AnalogClock_A.DA_Display_Electronics_Generic_AnalogClock_A_Brkn'
+	DestroyedActivities(3)=DA_Display_Electronics_Generic_AnalogClock_A_Brkn
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Clock_Analog_HourHand',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=HourHand,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=-1),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Glass1'
+	bBlockActors=false
+	bBlockPlayers=false
+	bCollideWorld=false
+	CollisionRadius=10
+	CollisionHeight=10
+	StaticMesh='sm_class_decorations.Electronics.WallClock_cd'
+	TransientSoundVolume=0.3
+	TransientSoundRadius=224
+	TransientSoundInnerRadius=112
 }

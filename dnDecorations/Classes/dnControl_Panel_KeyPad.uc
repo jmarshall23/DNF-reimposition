@@ -466,8 +466,13 @@ defaultproperties
 	KeyBoxes[11]=(Top=186,Left=86,Width=32,Height=32)
 	bLocked=true
 	DisplayX=128
-	UsableExits=/* Array type was not detected. */
-	EnterInfo=(LocationOffset=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	ExitInfo=(LocationOffset=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	ExitEndInfo=(LocationOffset=(X=-4.715344E-21,Y=2.813642E-17,Z=0),Z=0)
+	UsableExits(0)=(bEnabled=true,EnterInfo=(LocationOffset=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),RotationOffset=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	UserMountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=true,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=true,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.802832E-17,Z=0),Z=-66)
+	MouseInputScaleX=-0.00012
+	MouseInputScaleY=0.00012
+	AnalogInputScaleX=-0.00012
+	AnalogInputScaleY=0.00012
+	CollisionRadius=5
+	CollisionHeight=8
+	Mesh='c_generic.keypad3'
 }

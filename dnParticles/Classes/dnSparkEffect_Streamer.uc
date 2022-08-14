@@ -15,5 +15,20 @@ defaultproperties
 	RelativeSpawn=true
 	RelativeSpawnVelocity=true
 	TriggerOnSpawn=true
-	AdditionalSpawn=/* Array type was not detected. */
+	AdditionalSpawn(0)=(SpawnClass='dnSparkEffect_Effect3',TakeParentTag=true,Mount=true,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	AdditionalSpawn(1)=(MountAngles=(Pitch=8719,Yaw=571539456,Roll=0),Roll=0)
+	SpawnNumber=2
+	Lifetime=0.1
+	InitialAcceleration=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	MaxVelocityVariance=(X=1.291857E-41,Y=2.8028E-17,Z=20)
+	Textures(0)='dt_effects.Sparks.cometspark1RC'
+	StartDrawScale=0.7
+	EndDrawScale=0.01
+	RotationVariance=32767
+	TriggerType=4
+	PulseSeconds=0.65
+	Physics=2
+	bCollideWorld=true
+	CollisionRadius=16
+	CollisionHeight=16
 }

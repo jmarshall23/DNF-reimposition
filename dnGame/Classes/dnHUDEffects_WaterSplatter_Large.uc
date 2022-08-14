@@ -23,14 +23,23 @@ defaultproperties
 	SpawnPeriod=0.1
 	SpawnPeriodVariance=0.1
 	Lifetime=4.5
-	Textures(0)=ObjectProperty'DukeMultiPlayer.PlayerProgress'
-	Textures(1)='dt_Effects2.Decals.WetSpot1_FB'
-	Textures(2)='dt_Effects2.Decals.WetSpot2_FB'
-	Textures(3)='dt_Effects2.Decals.WetSpot3_FB'
-	Textures(4)='dt_Effects2.Decals.WetSpot4_FB'
-	Textures(5)=ObjectProperty'dnCTBHUD.droppedWarning'
-	Textures(6)=ObjectProperty'DukeMultiPlayer.RegisterPrecacheComponents.PrecacheIndex'
-	Textures(7)='dnSayMessage'
-	Textures(8)=ObjectProperty'dnControl_CameraViewer_Fullscreen.CurrentCamera'
-	SkewPitch=/* Unknown default property type! */
+	Textures(0)='dt_Effects2.Decals.WetSpot1_FB'
+	Textures(1)='dt_Effects2.Decals.WetSpot2_FB'
+	Textures(2)='dt_Effects2.Decals.WetSpot3_FB'
+	Textures(3)='dt_Effects2.Decals.WetSpot4_FB'
+	bUseAlphaRamp=false
+	AlphaStartVariance=1
+	EffectDrawScale=0.75
+	EffectDrawScaleVariance=0.5
+	ScaleXMid=0.5
+	ScaleXEnd=0.5
+	ScaleXRampMid=1
+	ScaleYMid=4
+	ScaleYEndVariance=3
+	ScaleYRampMid=2
+	LocationInitialVariance=(X=1.292418E-41,Y=2.954843E-17,Z=720)
+	VelocityInitial=(X=1.292418E-41,Y=2.94903E-17,Z=0)
+	VelocityInitialVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0)
+	AccelerationInitial=(X=1.292418E-41,Y=2.94903E-17,Z=45)
+	AccelerationInitialVariance=(X=1.292418E-41,Y=2.94903E-17,Z=50)
 }

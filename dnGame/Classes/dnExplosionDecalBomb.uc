@@ -21,11 +21,10 @@ defaultproperties
 	FadeOutStart=900
 	DecalSize=0.3
 	DecalSizeVariance=0.2
-	Decals(0)=ObjectProperty'dnUsableSomething.User'
-	Decals(1)='dt_Effects2.Decals.BlastMark_01_FB'
-	Decals(2)='dt_Effects2.Decals.BlastMark_02_FB'
-	Decals(3)='dt_Effects2.Decals.BlastMark_03_FB'
-	Decals(4)=IntProperty'DynamicAmbientSound.RegisterPrecacheComponents.i'
-	Decals(5)=ObjectProperty'dnControl_CameraViewer_Fullscreen.CurrentCamera'
-	Decals(6)=none
+	Decals(0)='dt_Effects2.Decals.BlastMark_01_FB'
+	Decals(1)='dt_Effects2.Decals.BlastMark_02_FB'
+	Decals(2)='dt_Effects2.Decals.BlastMark_03_FB'
+	BehaviorArgument=4
+	Behavior=3
+	bDecalIgnorePawn=true
 }

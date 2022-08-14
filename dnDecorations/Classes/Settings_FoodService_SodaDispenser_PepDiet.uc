@@ -10,5 +10,5 @@ class Settings_FoodService_SodaDispenser_PepDiet extends Settings_FoodService_So
 
 defaultproperties
 {
-	Skins=/* Array type was not detected. */
+	Skins(0)='smt_skins8.SodaFountain.sodaftn_pepdiet_bs'
 }

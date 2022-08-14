@@ -12,7 +12,6 @@ class PipeBombBeam_Blue extends BeamTrail
 defaultproperties
 {
 	bNetTemporary=true
-	ActorColorList=/* Array type was not detected. */
-	Y=0
-	Z=0
+	ActorColorList(0)=(ActorColor=(B=121,G=2,R=1,A=0),G=0,B=255,A=255)
+	RemoteRole=2
 }

@@ -17,5 +17,36 @@ event Destroyed()
 
 defaultproperties
 {
-	StartupActivities=/* Array type was not detected. */
+	begin object name=DA_Sound_Industrial_Rooftop_AirConditioner_B_Amb class=DecoActivities_Sound
+		SoundNames(0)=Rooftop_AC
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Rooftop_AirConditioner_B.DA_Sound_Industrial_Rooftop_AirConditioner_B_Amb'
+	StartupActivities(0)=DA_Sound_Industrial_Rooftop_AirConditioner_B_Amb
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Industrial_Rooftop_AirConditioner_B_Brkn class=DecoActivities_Sound
+		SoundNames(0)=IndMetal_Destruct
+		bClearAmbientSound=true
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Rooftop_AirConditioner_B.DA_Sound_Industrial_Rooftop_AirConditioner_B_Brkn'
+	DestroyedActivities(1)=DA_Sound_Industrial_Rooftop_AirConditioner_B_Brkn
+	begin object name=DA_Display_Rooftop_AirConditioner_B_Brkn class=DecoActivities_Display
+		RenderObject='sm_geo_decorations.AirConditioners.acunit2_brkn'
+	object end
+	// Reference: DecoActivities_Display'Industrial_Rooftop_AirConditioner_B.DA_Display_Rooftop_AirConditioner_B_Brkn'
+	DestroyedActivities(2)=DA_Display_Rooftop_AirConditioner_B_Brkn
+	SpawnOnDestroyed(0)=(SpawnClass='Industrial_Rooftop_AirConditioner_B_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=-1),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.802872E-17,Z=101.1),Z=63.7)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=None,MotionInfo=MotionPrefab'Industrial_Rooftop_AirConditioner_B.MP_Rooftop_AirConditioner_B_Gibs')
+	SpawnOnDestroyed(6)=(SpawnClass='Industrial_Rooftop_AirConditioner_B_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(7)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.802866E-17,Z=-106.9),Z=63.7)
+	SpawnOnDestroyed(8)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(9)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	CollisionRadius=170
+	CollisionHeight=74
+	StaticMesh='sm_geo_decorations.AirConditioners.ACunit2'
 }

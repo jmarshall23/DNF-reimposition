@@ -264,24 +264,16 @@ defaultproperties
 	BossMeterHelp="<?int?dnWindow.UDukeSceneGameSettings.BossMeterHelp?>"
 	ConfirmDefaultsText="<?int?dnWindow.UDukeSceneGameSettings.ConfirmDefaultsText?>"
 	ConfirmDefaultsTitle="<?int?dnWindow.UDukeSceneGameSettings.ConfirmDefaultsTitle?>"
-	colorTags(0)="White Pink Purple Blue 	Turqoise Orange Olive"
-	colorTags(1)=
-/* Exception thrown while deserializing colorTags
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 174
-   at UELib.UObjectStream.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 722
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 447 */
-	colorTags(2)=
-/* Exception thrown while deserializing colorTags
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 156
-   at UELib.UObjectStream.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 722
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 447 */
-	Color=0
-	Y=14
-	W=64
-	h=65
+	colorTags(0)="White"
+	colorTags(1)="Pink"
+	colorTags(2)="Purple"
+	colorTags(3)="Blue"
+	colorTags(4)="Turqoise"
+	colorTags(5)="Orange"
+	colorTags(6)="Olive"
+	ColorSelect='Menu.MP.color_select'
+	ColorBox=(X=12,Y=14,W=64,h=65)
+	overlay=(X=91,Y=14,W=64,h=65)
+	Border=(X=168,Y=7,W=75,h=77)
+	TitleText="<?int?dnWindow.UDukeSceneGameSettings.TitleText?>"
 }

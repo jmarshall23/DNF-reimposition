@@ -11,6 +11,8 @@ class DecoGlass_FluorescentLight_InCeiling extends dnBreakableGlass_DecoGlass
 defaultproperties
 {
 	DrawScale3D=(X=1.291717E-41,Y=2.802894E-17,Z=45)
-	Skins=/* Array type was not detected. */
-	Rotator[117]=none
+	Skins(0)='dt_Doors.Glass.ShowerGlass_Combiner'
+	Skins(1)='dt_masking.Glass_Materials.brokenglass1bc_envcomb'
+	Skins(2)='dt_masking.Glass_Materials.brokenglass1bc_envcomb'
+	Skins(3)='dt_Doors.Glass.ShowerGlass_Combiner'
 }

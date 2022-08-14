@@ -26,3 +26,24 @@ function KarmaSetConstraintProperties(KConstraint ConstraintActor)
 	super(KarmaActor).KarmaSetConstraintProperties(ConstraintActor);
 	return;
 }
+
+defaultproperties
+{
+	AutoConstraints(0)=(bConstraintDisabledOnDeath=false,bConstraintOnDeath=false,BoneName=None,ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=true,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	AutoConstraints(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Industrial_Rooftop_Satellite.DA_Sound_Industrial_Rooftop_Satellite_Brkn'
+	HealthPrefab=5
+	SpawnOnDestroyed(0)=(SpawnClass='Industrial_Rooftop_Satellite_Dish_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsEntityGroup=SatellitePhysicsEntityGroup
+	Physics=18
+	CollisionRadius=22
+	CollisionHeight=23
+	StaticMesh='sm_geo_decorations.Satellite_Dish.Sat_Dish_Dish'
+}

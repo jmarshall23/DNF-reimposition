@@ -9,5 +9,7 @@ class dnScreenSplatter_Pumpkin extends dnScreenSplatters;
 
 defaultproperties
 {
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Sauce_Splatter.HivePumpkinScreenFX_A_FB'
+	Textures(1)='dt_effects.Sauce_Splatter.HivePumpkinScreenFX_B_FB'
+	Textures(2)='dt_effects.Sauce_Splatter.HivePumpkinScreenFX_C_FB'
 }

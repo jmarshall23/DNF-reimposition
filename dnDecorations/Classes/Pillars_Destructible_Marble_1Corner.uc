@@ -10,7 +10,16 @@ class Pillars_Destructible_Marble_1Corner extends Pillars_Destructible
 
 defaultproperties
 {
-	StartupActivities=/* Array type was not detected. */
-	ObjectProperty=1333220608
-	DA_Display_Containers_BleachBottle_Brkn=/* Unknown default property type! */
+	StartupActivities(0)=DecoActivities_Display'Pillars_Destructible.DA_Display_Pilr_Destr_Marb_UnBroken'
+	DestroyedActivities(0)=none
+	begin object name=DA_Display_Pilr_Destr_Marb_1C class=DecoActivities_Display
+		RenderObject='sm_lvl_ladykiller.Pillars.LKcas_SqareCol_BRKN1'
+	object end
+	// Reference: DecoActivities_Display'Pillars_Destructible_Marble_1Corner.DA_Display_Pilr_Destr_Marb_1C'
+	DestroyedActivities(1)=DA_Display_Pilr_Destr_Marb_1C
+	SpawnOnDestroyed(0)=(SpawnClass='Pillars_Destructible_Marble_Chunk_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.802768E-17,Z=-12),Z=54)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	StaticMesh='sm_lvl_ladykiller.Pillars.LKcas_SqareCol_BRKN1'
 }

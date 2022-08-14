@@ -10,7 +10,21 @@ class Settings_FoodService_Waffle extends Settings_FoodService
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	CylindricalVent1LO_gib01=55509249
-	Y=/* Unknown default property type! */
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Waffle_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=Waffle_Break
+	object end
+	// Reference: DecoActivities_Sound'Settings_FoodService_Waffle.DA_Sound_Waffle_Destroyed'
+	DestroyedActivities(1)=DA_Sound_Waffle_Destroyed
+	HealthPrefab=1
+	SpawnOnDestroyed(0)=(SpawnClass='Settings_FoodService_Waffle_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=true,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.802684E-17,Z=-3),Z=0)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bCanCrushOthers=false
+	bTickOnlyWhenPhysicsAwake=true
+	Physics=18
+	CollisionHeight=0.9
+	PrePivot=(X=1.291717E-41,Y=2.797242E-17,Z=0)
+	DrawScale=0.75
+	StaticMesh='sm_class_decorations.Kitchen.waffle'
 }

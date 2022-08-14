@@ -53,7 +53,7 @@ var(KarmaGeoWater) noexport float PhysicsDensity "The density of this water. Mor
 var(KarmaGeoWater) noexport float PhysicsDrag "This value affects how much fluid friction (in addition to normal air damping) is applied to the parts of objects that are underwater.";
 var(KarmaGeoWater) noexport array<name> OnlyAffectTagged "If not empty, this geowater will only do special physics stuff to Actors whose tag matches one entry in the list.";
 var const int WaterVersion;
-var const editconst transient pointer InternalData;
+var const editconst transient nontrans pointer InternalData;
 
 replication
 {

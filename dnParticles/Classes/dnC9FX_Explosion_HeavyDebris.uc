@@ -23,5 +23,17 @@ defaultproperties
 	AlphaMid=1
 	AlphaEnd=0
 	AlphaRampMid=0.9
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Debris.metalshard1aRC'
+	Textures(1)='dt_effects.Debris.metalshard1bRC'
+	Textures(2)='dt_effects.Debris.metalshard1cRC'
+	Textures(3)='dt_effects.Debris.metalshard1dRC'
+	Textures(4)='dt_effects.Debris.genrobotgib6RC'
+	Textures(5)='dt_effects.Debris.genrobotgib1RC'
+	StartDrawScale=0.1
+	EndDrawScale=0.1
+	DrawScaleVariance=0.1
+	RotationVelocityMaxVariance=1
+	CollisionRadius=128
+	CollisionHeight=129
+	Style=2
 }

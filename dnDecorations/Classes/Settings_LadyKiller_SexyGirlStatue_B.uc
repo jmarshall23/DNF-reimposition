@@ -10,5 +10,22 @@ class Settings_LadyKiller_SexyGirlStatue_B extends Settings_LadyKiller_SexyGirlS
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=none
+	begin object name=DA_Display_LK_SexyGirlStatue_B_Broken class=DecoActivities_Display
+		RenderObject='sm_geo_decorations.Statues.StatueCasGirl_Shoulder_Brkn'
+	object end
+	// Reference: DecoActivities_Display'Settings_LadyKiller_SexyGirlStatue_B.DA_Display_LK_SexyGirlStatue_B_Broken'
+	DestroyedActivities(2)=DA_Display_LK_SexyGirlStatue_B_Broken
+	SpawnOnDestroyed(0)=(SpawnClass='Settings_LadyKiller_SexyGirlStatue_B_Gib_Head',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.802663E-17,Z=2),Z=123)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=None,MotionInfo=MotionPrefab'Settings_LadyKiller.MP_LK_NoMotion')
+	SpawnOnDestroyed(6)=(SpawnClass='Settings_LadyKiller_SexyGirlStatue_B_Gib_TorsoA',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(7)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.797242E-17,Z=3),Z=102)
+	SpawnOnDestroyed(8)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(9)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	StaticMesh='sm_geo_decorations.Statues.StatueCasGirl_Shoulder'
 }

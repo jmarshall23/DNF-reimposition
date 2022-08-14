@@ -27,16 +27,18 @@ defaultproperties
 	ShrunkVertShotError=0.28
 	NumProjectiles=10
 	NumCenteredProjectiles=1
-	ViewKicks=/* Array type was not detected. */
-	bDefaultInteractionClass=(Y=/* Unknown default property type! */)
-	SAnimationFadeBlend=1
-	Function=0
-	FalloffActor=none
-	FalloffDistance=0
-	ShakeDuration=0.08
-	ShakeFrequency=0.16
-	ShakeMagnitude=800
-	ShakeFullMagnitude=0
-	ShakeFullMagnitudeTime=0
-	ShakeName=Shotgun_ViewKick_1
+	ViewKicks(0)=(bNoLerp=false,bToggleSign=false,Style=0,Function=4,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.08,ShakeFrequency=0.16,ShakeMagnitude=2048,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=Shotgun_ViewKick_0)
+	ViewKicks(1)=(bNoLerp=false,bToggleSign=false,Style=1,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.08,ShakeFrequency=0.16,ShakeMagnitude=800,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=Shotgun_ViewKick_1)
+	RumbleKicks(0)=(RumbleName=Shotgun_Rumble,RumbleDuration=0.38,RumbleLeftMagnitude=0.9,RumbleRightMagnitude=0.5,FalloffActor=none,FalloffDistance=0)
+	MuzzleInfo(0)=(MuzzleFireStartAnim=FireStart,MuzzleFireAnim=Fire,MuzzleFireStopAnim=FireStop,MuzzleFlashClass='p_Weapons.Shotgun_MuzzleFlash.Shotgun_MuzzleFlash_SpawnerMP',MuzzleBoneName=mount_muzzle,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MuzzleLightClass='Weapon_LightEx_Shotgun'
+	MeleeDamageType='MeleeDamage'
+	bHasReloadStart=true
+	bHasLoopingReload=true
+	LockoutFireTime=1
+	WeaponHeatAttackRate=0.5
+	WeaponHeatDecayRate=0.125
+	WeaponAnimName=Shotgun
+	HitWaterStrength=-200
+	HitWaterRadius=24
 }

@@ -23,6 +23,12 @@ function CopyOwnerProperties()
 
 defaultproperties
 {
-	IdleActivities=/* Array type was not detected. */
-	X=false
+	IdleActivities(0)=(IdleAnimInfo=(Flags=(bLoop=true,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=idle_a,Channel=0,Rate=0,TweenTime=0),IdleElements=none)
+	HealthPrefab=0
+	bBlockKarma=false
+	bDumbMesh=false
+	TickStyle=2
+	DrawType=2
+	DrawScale=2
+	Mesh='c_generic.Flag'
 }

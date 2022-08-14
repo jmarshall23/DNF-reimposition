@@ -10,5 +10,6 @@ class BulletHole_Metal extends BulletHole_Decal
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.bulletholes.bhole_mtl1aRC_fb'
+	Decals(1)='dt_effects.bulletholes.bhole_mtl1bRC_fb'
 }

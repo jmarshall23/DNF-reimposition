@@ -11,6 +11,18 @@ class Containers_Crates_Destructible_B_Gibs extends aFinalDecoration_Gibs
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_class_decorations.WoodenCrate.WoodenCrate_GibA',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_class_decorations.WoodenCrate.WoodenCrate_GibB',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_class_decorations.WoodenCrate.WoodenCrate_GibC',bForcedOnly=false)
+	Gibs(3)=(RenderObject='sm_class_decorations.WoodenCrate.WoodenCrate_GibD',bForcedOnly=false)
+	HealthPrefab=1
+	DynamicInteractionClassification=7
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	PhysicsMassType=0
+	Density=5
+	PhysicsEntityGroup=DestructibleCrate
+	Physics=0
+	bBlockActors=false
+	bStepUpAble=false
+	bDontUseMeqonPhysics=true
 }

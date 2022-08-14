@@ -11,7 +11,5 @@ class LaserMineBeam_Thrown_Red extends LaserMineBeam_Thrown
 
 defaultproperties
 {
-	ActorColorList=/* Array type was not detected. */
-	Y=0
-	Z=0
+	ActorColorList(0)=(ActorColor=(B=121,G=2,R=1,A=50),G=0,B=0,A=0)
 }

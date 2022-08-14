@@ -25,7 +25,12 @@ defaultproperties
 	AlphaMid=1
 	AlphaEnd=0
 	AlphaRampMid=0.85
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Debris.glasshard1aRC'
+	Textures(1)='dt_effects.Debris.glasshard1bRC'
+	Textures(2)='dt_effects.Debris.glasshard1cRC'
+	Textures(3)='dt_effects.Debris.glasshard1dRC'
+	Textures(4)='dt_effects.Debris.glasshard1eRC'
+	Textures(5)='dt_effects.Debris.glasshard1fRC'
 	StartDrawScale=0.0625
 	EndDrawScale=0.0625
 	RotationVariance=65535

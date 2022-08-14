@@ -21,5 +21,15 @@ defaultproperties
 	ApexInitialVelocityVariance=300
 	AlphaMid=0.8
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.explosions.RPGexplo1aRC_FB'
+	Textures(1)='dt_effects.explosions.RPGexplo1dRC_FB'
+	Textures(2)='dt_effects.explosions.RPGexplo1cRC_FB'
+	Textures(3)='dt_effects.explosions.RPGexplo1bRC_FB'
+	StartDrawScale=0.125
+	DrawScaleVariance=0.2
+	RotationVariance=0
+	RotationVelocityMaxVariance=5
+	CollisionRadius=0.3
+	CollisionHeight=1
+	Style=8
 }

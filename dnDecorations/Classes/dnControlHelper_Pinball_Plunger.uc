@@ -8,7 +8,7 @@
 class dnControlHelper_Pinball_Plunger extends dnControlHelper_Pinball;
 
 var dnControl_Pinball Table;
-var name LaunchBallAnim;
+var anim name LaunchBallAnim;
 
 simulated function PlayLaunchAnim()
 {
@@ -16,7 +16,7 @@ simulated function PlayLaunchAnim()
 	return;
 }
 
-k2call simulated function launch_ball(optional EventInfo AnimEventInfo)
+animevent simulated function launch_ball(optional EventInfo AnimEventInfo)
 {
 	// End:0x1C
 	if(__NFUN_339__(Table, none))

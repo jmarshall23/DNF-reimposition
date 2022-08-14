@@ -9,6 +9,7 @@ class Settings_Bathroom_Broom_Small_Gibs extends Settings_Bathroom_Gibs;
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y='Signs_Generic_WoodenSign_Gibs'
+	Gibs(0)=(RenderObject='sm_class_decorations.broom.BroomGibA_cd',bForcedOnly=false)
+	DynamicInteractionClassification=1
+	StaticMesh='sm_class_decorations.broom.BroomGibA_cd'
 }

@@ -13,6 +13,6 @@ defaultproperties
 	DamageName="<?int?dnGame.FrozenShatterDamage.DamageName?>"
 	DeathMessage="<?int?dnGame.FrozenShatterDamage.DeathMessage?>"
 	SuicideDeathMessage="<?int?dnGame.FrozenShatterDamage.SuicideDeathMessage?>"
-	DamageRumbles=/* Array type was not detected. */
+	DamageRumbles(0)=(RumbleName=TraceDamageRumble,RumbleDuration=0.1,RumbleLeftMagnitude=0.7,RumbleRightMagnitude=0.7,FalloffActor=none,FalloffDistance=0)
 	Icon="dt_hud.ingame_hud.kill_shattered"
 }

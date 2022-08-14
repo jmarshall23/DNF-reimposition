@@ -9,5 +9,11 @@ class DukePlayerCorpse extends dnCorpse;
 
 defaultproperties
 {
-	PhysicsSoundOverrides=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.body.BodySlam_01','a_impact.body.BodySlam_02','a_impact.body.BodySlam_03','a_impact.body.BodySlam_04'),SoundInfo=(InputRange=(Min=1,Max=800),OutputPitchRange=(Min=0.75,Max=1.125),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.body.BodySlide_01'),SoundInfo=(InputRange=(Min=6,Max=400),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.25,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(2)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaBody.TorsoRoll02'),SoundInfo=(InputRange=(Min=5,Max=10),OutputPitchRange=(Min=0.85,Max=1),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	Physics=18
+	CollisionRadius=21
+	CollisionHeight=45
+	Mesh='c_characters.Duke'
 }

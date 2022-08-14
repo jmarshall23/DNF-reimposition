@@ -21,5 +21,9 @@ defaultproperties
 	AlphaEnd=0
 	LineStartWidth=2
 	LineEndWidth=2
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Sparks.spark1RC'
+	StartDrawScale=16
+	EndDrawScale=2
+	bForceNonFinalBlendBlooms=true
+	Style=6
 }

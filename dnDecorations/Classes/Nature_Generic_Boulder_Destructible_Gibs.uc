@@ -11,6 +11,13 @@ class Nature_Generic_Boulder_Destructible_Gibs extends aFinalDecoration_Gibs
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_class_decorations.rocks.RollingRock_2',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_class_decorations.rocks.RollingRock_3',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_class_decorations.rocks.RollingRock_4',bForcedOnly=false)
+	Gibs(3)=(RenderObject='sm_class_decorations.rocks.RollingRock_5',bForcedOnly=false)
+	Gibs(4)=(RenderObject='sm_class_decorations.rocks.RollingRock_6',bForcedOnly=false)
+	StartupActivities(0)=DecoActivities_Display'Nature_Generic_Boulder_Destructible.Boulder_Desert_Skins'
+	HealthPrefab=2
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Stone'
+	PhysicsMassType=0
 }

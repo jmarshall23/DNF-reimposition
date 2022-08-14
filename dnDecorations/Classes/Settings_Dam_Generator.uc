@@ -7,3 +7,13 @@
  *******************************************************************************/
 class Settings_Dam_Generator extends aFinalDecoration
 	collapsecategories;
+
+defaultproperties
+{
+	SpawnOnDestroyed(0)=(SpawnClass='Settings_Dam_MachineGib',RenderObject='sm_class_decorations.Machines.Machine_Gibs_01',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.813716E-17,Z=0),Z=0)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	PhysicsMassType=2
+	Mass=2000
+	StaticMesh='SM_Lvl_Dam.Default.Generator'
+}

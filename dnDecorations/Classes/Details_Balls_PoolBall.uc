@@ -211,4 +211,26 @@ defaultproperties
 	BallMaterials[13]='smt_skins5.PoolBalls.PoolBall_thirteen'
 	BallMaterials[14]='smt_skins5.PoolBalls.PoolBall_fourteen'
 	BallMaterials[15]='smt_skins5.PoolBalls.PoolBall_fifteen'
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(3,1),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_KarmaImpulse'Details_Balls_PoolBall.DA_KImpulse_Details_Balls_PoolBall_Used',DecoActivities_HUDInfo'Details_Balls_PoolBall.DA_HUDInfo_Details_Balls_PoolBall_Used'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=1),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(InitBall),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Physics_PHYS_None_Set',DecoActivities_Collision'Details_Balls_PoolBall.DA_Collision_Details_Balls_PoolBall_Off'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(HideBall),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Display_Hide'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(3)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(ShowBall),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Display_Show',DecoActivities_Collision'Details_Balls_PoolBall.DA_Collision_Details_Balls_PoolBall_On','dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	HealthPrefab=0
+	bForceUsePhrase=true
+	UsePhrase="<?int?dnDecorations.Details_Balls_PoolBall.UsePhrase?>"
+	bTickOnlyWhenPhysicsAwake=true
+	KRestitution=0.99
+	KLinearDamping=0.15
+	KAngularDamping=0.15
+	EnableDisableThreshold=0.3
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=('dnMaterial.dnPhysicsMaterial_Wood_Solid'),OtherMassTypes=none,Sounds=none,SoundInfo=(InputRange=(Min=0,Max=0),OutputPitchRange=(Min=0,Max=0),OutputVolumeRange=(Min=0,Max=0)),bDisableSoundInWater=false)
+	PhysicsSoundOverrides(1)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.Billiards.Pool_BallsImpact01','a_impact.Billiards.Pool_BallsImpact02'),SoundInfo=(InputRange=(Min=30,Max=200),OutputPitchRange=(Min=1,Max=1),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	Physics=18
+	bBlockPlayers=false
+	CollisionRadius=1.54
+	CollisionHeight=1.54
+	Mass=10
+	TickStyle=2
+	DrawScale=1.2
+	StaticMesh='sm_class_decorations.PoolTable.PoolBall'
 }

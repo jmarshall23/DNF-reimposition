@@ -6,8 +6,3 @@
  * All rights belong to their respective owners.
  *******************************************************************************/
 class dnAnimationControllerEx_Duke_InAirActionMP extends dnAnimationControllerEx_DukeMP;
-
-defaultproperties
-{
-	Animations=/* Array type was not detected. */
-}

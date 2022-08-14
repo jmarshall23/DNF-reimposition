@@ -10,7 +10,7 @@ class dnControl_ScriptedAnim extends dnControl
 
 struct STriggerableAnims
 {
-	var() noexport name Sequence "Raw animation sequence name to play when AnimTag is triggered.";
+	var() noexport anim name Sequence "Raw animation sequence name to play when AnimTag is triggered.";
 	var() noexport name Tag "Trigger this event to make this animation play.";
 	var() noexport bool bLoopAnim "If true, this animation will loop.";
 	var() noexport float Frame "Frame to start animation on.";
@@ -26,8 +26,8 @@ var() noexport bool bMoveToUserLocation "If true, this dnControl will move to th
 var() noexport bool bMoveToUserRotation "If true, this dnControl will match the User's rotation on attach";
 var() noexport bool bWaitForDetachAnim "If true, the detach animation will play out entirely before detaching continues.  Otherwise, detaching will occur simultaneously.";
 var() noexport bool bUsePhysMeqon "If true, PHYS_Meqon will be used to process animation motion.  Interpolation in/out will not work in this mode.";
-var() noexport name AttachAnimName "Raw animation sequence to play during attach.  Can be left empty.";
-var() noexport name DetachAnimName "Raw animation sequence to play during detach.  Can be left empty.";
+var() noexport anim name AttachAnimName "Raw animation sequence to play during attach.  Can be left empty.";
+var() noexport anim name DetachAnimName "Raw animation sequence to play during detach.  Can be left empty.";
 var() noexport float AttachAnimStartFrame "Frame to start attach animation on.";
 var() noexport float DetachAnimStartFrame "Frame to start detach animation on.";
 var() noexport array<STriggerableAnims> Anims "List of triggerable animations";
@@ -298,4 +298,24 @@ defaultproperties
 {
 	AttachTime=0.3
 	DetachTime=0.3
+	States(0)=(StateName=Useable,OutEvents=none,Transitions=((ControlEvent=3,CustomName=None,NewState=AttachUserLERP)),UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	States(1)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=none,Filters=none)
+	States(2)=(MySoundName=None,SubAnims=none)
+	States(3)=(StateName=AttachUserLERP,OutEvents=none,Transitions=((ControlEvent=5,CustomName=None,NewState=AttachUserAnim)),UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	States(4)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=none,Filters=none)
+	States(5)=(MySoundName=None,SubAnims=none)
+	ControlRemapperClass='dnControlRemapperEx_ScriptedAnim'
+	bUseHomePose=false
+	bDisableCrosshair=true
+	bDetachOnDamage=false
+	HeadAimMinOffset=(Pitch=8709,Yaw=571080704,Roll=0)
+	HeadAimMaxOffset=(Pitch=8709,Yaw=571080704,Roll=0)
+	bInternalUseDetach=false
+	AttachUserSoundName=None
+	DetachUserSoundName=None
+	bHidden=true
+	bCollideActors=false
+	bCollideWorld=false
+	TickStyle=0
+	DrawType=1
 }

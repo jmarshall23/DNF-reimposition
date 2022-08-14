@@ -41,5 +41,14 @@ defaultproperties
 	AlphaMid=0.5
 	AlphaEnd=0
 	AlphaRampMid=0.1
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Smoke.alphasmoke1RC'
+	StartDrawScale=0.05
+	EndDrawScale=1.5
+	DrawScaleEndVariance=0.8
+	RotationVariance=2
+	TriggerAfterSeconds=0.125
+	bIgnoreBList=true
+	CollisionRadius=2
+	CollisionHeight=2
+	Style=8
 }

@@ -11,5 +11,5 @@ class DA_Sound_Ambient_VendingHum extends DecoActivities_Sound
 
 defaultproperties
 {
-	SoundAmbient=(bNoScale=false,MixerGroupOverride=None,AmbientSounds=/* Array type was not detected. */,BlendTotalTime[34]=(GroupCrossfadeOverride=/* Unknown default property type! */),InnerRadiusVariance=0,Radius=192,RadiusVariance=0,VolumePrefab=6,Volume=0,VolumeVariance=0,Pitch=64,PitchVariance=24,SoundNoOccludeModifier=0,SoundNoDopplerModifier=0)
+	SoundAmbient=(bNoScale=false,MixerGroupOverride=None,AmbientSounds=('a_generic.SodaFountain.SodaFtnAmbLp04a'),InnerRadius=96,InnerRadiusVariance=0,Radius=192,RadiusVariance=0,VolumePrefab=6,Volume=0,VolumeVariance=0,Pitch=64,PitchVariance=24,SoundNoOccludeModifier=0,SoundNoDopplerModifier=0)
 }

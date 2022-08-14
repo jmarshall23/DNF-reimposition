@@ -10,7 +10,7 @@ class dnCaptureTheBabe_Hand extends Pawn
 	collapsecategories
 	dependson(dnAnimationControllerEx_Hand);
 
-var name curanimname;
+var netupdate(NU_SetClientAnim) name curanimname;
 
 replication
 {

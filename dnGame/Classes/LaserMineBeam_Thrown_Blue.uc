@@ -14,7 +14,5 @@ defaultproperties
 	BeamStartWidth=4
 	BeamEndWidth=4
 	BeamTexture='dt_effects.Beams.tripminebeam1a'
-	ActorColorList=/* Array type was not detected. */
-	Y=0
-	Z=0
+	ActorColorList(0)=(ActorColor=(B=121,G=2,R=1,A=0),G=0,B=50,A=0)
 }

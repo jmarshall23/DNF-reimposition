@@ -14,5 +14,13 @@ defaultproperties
 	bTickOnlyWhenPhysicsAwake=true
 	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
 	PhysicsMassType=1
-	PhysicsSoundOverrides=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaMetal.HandTruck_Impact_01','a_impact.KarmaMetal.HandTruck_Impact_02','a_impact.KarmaMetal.HandTruck_Impact_03','a_impact.KarmaMetal.HandTruck_Impact_04'),SoundInfo=(InputRange=(Min=64,Max=1280),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.4,Max=0.8)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaMetal.HandTruck_Roll_01'),SoundInfo=(InputRange=(Min=1,Max=30),OutputPitchRange=(Min=1,Max=1),OutputVolumeRange=(Min=0.7,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(2)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.metal.BoatScrape01'),SoundInfo=(InputRange=(Min=10,Max=130),OutputPitchRange=(Min=1.4,Max=1.6),OutputVolumeRange=(Min=0.4,Max=0.6)),bDisableSoundInWater=true)
+	Physics=18
+	CollisionRadius=20
+	CollisionHeight=33
+	Mass=35
+	DrawType=2
+	Mesh='c_generic.HandTruck'
 }

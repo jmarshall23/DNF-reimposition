@@ -15,6 +15,15 @@ defaultproperties
 	MaxTraceDistance=0
 	ProjectileClass='MP_dnRocket_RPG_HeatSeek'
 	bCheatMuzzleBlockage=true
-	ViewKicks=/* Array type was not detected. */
-	RandomSeed=none
+	ViewKicks(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=-1,ShakeFrequency=0.015,ShakeMagnitude=32,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=FreezeRay_ViewKick_0)
+	RumbleKicks(0)=(RumbleName=EnforcerGun_Rumble,RumbleDuration=0.65,RumbleLeftMagnitude=0.6,RumbleRightMagnitude=0.11,FalloffActor=none,FalloffDistance=0)
+	MuzzleInfo(0)=(MuzzleFireStartAnim=FireStart,MuzzleFireAnim=Fire,MuzzleFireStopAnim=FireStop,MuzzleFlashClass='p_Weapons.HeatSeek_MuzzleFlash.HeatSeek_MuzzleFlash_Spawner',MuzzleBoneName=mount_muzzle_01,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MuzzleInfo(1)=(ShellEjectionBoneName=mount_eject,ShellEjectionDir=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MuzzleInfo(2)=(ShellEjectionVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MuzzleInfo(3)=(ShellEjectionForce=0)
+	MuzzleLightClass='Weapon_LightEx_Devastator'
+	MuzzleLightBoneName=mount_muzzle_01
+	MeleeDamageType='MeleeDamage'
+	AmmoWarnPCT=0.14
+	WeaponAnimName=EnforcerGun
 }

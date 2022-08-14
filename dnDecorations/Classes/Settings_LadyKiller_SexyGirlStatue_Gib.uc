@@ -108,14 +108,26 @@ simulated event DetachedFromMountParent()
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_LK_SexyGirlGib_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=SexyGirlStatue_Gib_Destroyed
+	object end
+	// Reference: DecoActivities_Sound'Settings_LadyKiller_SexyGirlStatue_Gib.DA_Sound_LK_SexyGirlGib_Destroyed'
+	DestroyedActivities(1)=DA_Sound_LK_SexyGirlGib_Destroyed
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
 	HealthPrefab=5
 	Health=1
-	DestroyedParticleFriendEffects=/* Array type was not detected. */
-	bAbsoluteRotation=false
-	Scale=0.5
-	BoneName=None
-	Location=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	Rotation=(Pitch=8709,Yaw=571080704,Roll=0)
-	Effect='dnParticles.dnFXSpawner_LadyKillerWall_GibExplode'
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0.5,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bTickOnlyWhenPhysicsAwake=true
+	DynamicInteractionClassification=7
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Stone'
+	PhysicsMassType=1
+	KFriction=0.8
+	KRestitution=0.1
+	bAITransparent=true
+	bGibActor=true
+	bCollideWorld=false
+	CollisionRadius=0
+	CollisionHeight=0
+	Mass=20
 }

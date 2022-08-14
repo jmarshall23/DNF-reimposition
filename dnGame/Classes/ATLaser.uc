@@ -19,7 +19,7 @@ function WpnFireStop()
 	return;
 }
 
-k2call simulated function Fire_Effects(optional EventInfo AnimEventInfo)
+animevent simulated function Fire_Effects(optional EventInfo AnimEventInfo)
 {
 	super.Fire_Effects(AnimEventInfo);
 	// End:0x95
@@ -61,5 +61,11 @@ defaultproperties
 	PickupClass='ATLaserPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=16
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_ATLaser'
+	Mesh='c_dnWeapon.at_gun'
+	SoundVolume=200
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_ATlaser'
 }

@@ -11,6 +11,17 @@ class Containers_Pots_Adobe_Cylinder extends Containers_Pots
 defaultproperties
 {
 	DirtHeight=9.5
-	DestroyedActivities=/* Array type was not detected. */
-	TurnRight3=StructProperty
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Containers_Pots.DA_Sound_SmallPot_Brkn'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	DestroyedActivities(3)=DecoActivities_Interaction'Containers_Pots.DA_Interact_Containers_Pots_Brkn'
+	begin object name=DA_Display_Containers_Pots_Adobe_Cylinder_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_decorations.Containers.pot3Brkn_cd'
+	object end
+	// Reference: DecoActivities_Display'Containers_Pots_Adobe_Cylinder.DA_Display_Containers_Pots_Adobe_Cylinder_Brkn'
+	DestroyedActivities(4)=DA_Display_Containers_Pots_Adobe_Cylinder_Brkn
+	SpawnOnDestroyed(0)=(SpawnClass='Details_Generic_DirtPile_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	CollisionRadius=8
+	CollisionHeight=11.5
+	StaticMesh='sm_class_decorations.Containers.pot3_cd'
 }

@@ -9,11 +9,11 @@ class dnScreenSplatter_Blood extends dnScreenSplatters;
 
 defaultproperties
 {
-	Textures(0)=ObjectProperty'dnUsableSomething.User'
-	Textures(1)='dt_hud.blood.BloodScreenFX_A_fb'
-	Textures(2)='dt_hud.blood.BloodScreenFX_B_fb'
-	Textures(3)='dt_hud.blood.BloodScreenFX_C_fb'
-	Textures(4)=Function'MP_Weapon.PostBeginPlay'
-	Textures(5)=ObjectProperty'dnControl_CameraViewer_Fullscreen.CurrentCamera'
-	Textures(6)=none
+	Textures(0)='dt_hud.blood.BloodScreenFX_A_fb'
+	Textures(1)='dt_hud.blood.BloodScreenFX_B_fb'
+	Textures(2)='dt_hud.blood.BloodScreenFX_C_fb'
+	ScaleXMid=1
+	ScaleXEnd=1
+	ScaleYMid=1
+	ScaleYEnd=1
 }

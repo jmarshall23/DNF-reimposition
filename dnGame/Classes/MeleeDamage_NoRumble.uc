@@ -10,5 +10,5 @@ class MeleeDamage_NoRumble extends MeleeDamage
 
 defaultproperties
 {
-	DamageRumbles=/* Array type was not detected. */
+	DamageRumbles(0)=(RumbleName=None,RumbleDuration=0,RumbleLeftMagnitude=0,RumbleRightMagnitude=0,FalloffActor=none,FalloffDistance=0)
 }

@@ -151,6 +151,12 @@ defaultproperties
 	PickupClass='MP_AtCaptainLaserPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=21
-	AutoRegisterIKClasses=/* Array type was not detected. */
-	EndingBlendAlpha='SoundConfig.Inventory.VoicePack_AT_Hyperblaster'
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_ATCaptainLaser'
+	Mesh='c_dnWeapon.at_capt_gun'
+	Skins(0)='mt_skins8.Assault_Trooper.Assault_Trooper_Capt_Gun_BS'
+	SoundVolume=200
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_AT_Hyperblaster'
 }

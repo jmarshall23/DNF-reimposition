@@ -7,3 +7,19 @@
  *******************************************************************************/
 class dnBonePartMapper_PigCopA extends dnBonePartMapper_PigCop
 	exportstructs;
+
+defaultproperties
+{
+	Gibs(0)=(BoneName=Root,ReqBones=none,RenderObject='sm_class_effects.Pigcop_Gibs.Pigcop_TorsoA_gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=3.339694E-19,Y=2.95443E-17,Z=7.943),Z=17.217)
+	Gibs(1)=(RotOffset=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Gibs(2)=(Mass=10,GibChance=1,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+	Gibs(3)=(BoneName=Root,ReqBones=none,RenderObject='sm_class_effects.Pigcop_Gibs.Pigcop_TorsoB_gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=2.610177E+07,Y=2.954461E-17,Z=-10.083),Z=20.776)
+	Gibs(4)=(RotOffset=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Gibs(5)=(Mass=10,GibChance=1,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+	Gibs(6)=(BoneName=Root,ReqBones=none,RenderObject='sm_class_effects.Pigcop_Gibs.Pigcop_TorsoC_gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=3.803499E-24,Y=2.954505E-17,Z=-0.782),Z=9.586)
+	Gibs(7)=(RotOffset=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Gibs(8)=(Mass=10,GibChance=1,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+	Gibs(9)=(BoneName=arm_left_upper_a,ReqBones=(arm_left_lower_a),RenderObject='c_gibs.pigcopa_arm_gib_l',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(10)=(RotOffset=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Gibs(11)=(Mass=30,GibChance=1,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+}

@@ -220,7 +220,9 @@ defaultproperties
 	UpdateRate=1
 	UpdateSeconds=1
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	X=1
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Electronics_Generic.DA_Sound_Destroyed_Electronic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Ticking_TICK_Never'
+	HealthPrefab=1
 	EMPDisableTime=5
 }

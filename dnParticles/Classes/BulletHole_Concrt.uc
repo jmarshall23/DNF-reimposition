@@ -10,5 +10,7 @@ class BulletHole_Concrt extends BulletHole_Decal
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.bulletholes.bhole_concrt1aR_fb'
+	Decals(1)='dt_effects.bulletholes.bhole_concrt1bR_fb'
+	DrawScale=0.05
 }

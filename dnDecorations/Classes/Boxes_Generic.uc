@@ -19,5 +19,21 @@ simulated event Destroyed()
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	begin object name=DA_Interaction_Boxes_Generic_Brkn class=DecoActivities_Interaction
+		bNewDynamicInteractionClassification=true
+		NewDynamicInteractionClassification=7
+	object end
+	// Reference: DecoActivities_Interaction'Boxes_Generic.DA_Interaction_Boxes_Generic_Brkn'
+	DestroyedActivities(2)=DA_Interaction_Boxes_Generic_Brkn
+	DestroyedActivities(3)='dnGame.DecoActivityDeclarations.DA_Interact_bGrabbable_Disable'
+	HealthPrefab=1
+	DamageThreshold=10
+	bTelekineticable=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Cardboard'
+	PhysicsMassType=1
+	KRestitution=0.1
+	Physics=18
+	bStepUpAble=false
 }

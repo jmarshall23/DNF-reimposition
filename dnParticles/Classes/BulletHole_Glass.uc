@@ -10,5 +10,7 @@ class BulletHole_Glass extends BulletHole_Decal
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.bulletholes.bhole_glass1aRC_fb'
+	Decals(1)='dt_effects.bulletholes.bhole_glass1bRC_fb'
+	DrawScale=0.05
 }

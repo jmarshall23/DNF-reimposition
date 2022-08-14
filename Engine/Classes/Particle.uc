@@ -19,7 +19,7 @@ struct Particle
 	var Rotator RotationInitial3d;
 	var PointRegion Region;
 	var MaterialEx Texture;
-	var const editconst transient pointer TextureAnimControllers;
+	var const editconst transient nontrans pointer TextureAnimControllers;
 	var float SystemSizeScale;
 	var SoftParticleSystem ControllerSystem;
 	var bool RespectControllerSystem;

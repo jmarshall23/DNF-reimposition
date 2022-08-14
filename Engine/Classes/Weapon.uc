@@ -58,7 +58,7 @@ var float DOFWeapDist;
 var float DOFWeapDistDelta;
 var int CrosshairIndex;
 var bool bDrawInfiniteAmmo;
-var int WeaponStateImpulse;
+var netupdate(NU_WeaponStateImpulse) int WeaponStateImpulse;
 var byte WeaponState;
 var Actor.EWeaponChangeSpeed ChangeSpeed;
 var WeaponClip InsertingClip;
@@ -638,7 +638,7 @@ simulated event bool IncompleteReplication()
 	return;
 }
 
-k2call simulated function PlayInvSound(optional EventInfo AnimEventInfo)
+animevent simulated function PlayInvSound(optional EventInfo AnimEventInfo)
 {
 	local name GroupName;
 
@@ -898,17 +898,17 @@ simulated function bool CanFire()
 	return;
 }
 
-k2call simulated function WeaponCallback_MaybeDoneFiring()
+animevent simulated function WeaponCallback_MaybeDoneFiring()
 {
 	return;
 }
 
-k2call simulated function WeaponCallback_DefinitelyDoneFiring()
+animevent simulated function WeaponCallback_DefinitelyDoneFiring()
 {
 	return;
 }
 
-k2call simulated function Fire_Effects(optional EventInfo AnimEventInfo)
+animevent simulated function Fire_Effects(optional EventInfo AnimEventInfo)
 {
 	// End:0x47
 	if(__NFUN_148__(__NFUN_148__(__NFUN_340__(PlayerPawn(Instigator), none), __NFUN_173__(int(Instigator.Role), int(ROLE_Authority))), __NFUN_173__(int(Instigator.RemoteRole), int(ROLE_AutonomousProxy))))
@@ -933,7 +933,7 @@ simulated event DoFire_Effects()
 }
 
 // Export UWeapon::execEject_Casing(FFrame&, void* const)
-native(1071) k2call simulated function Eject_Casing(optional EventInfo AnimEventInfo)
+native(1071) animevent simulated function Eject_Casing(optional EventInfo AnimEventInfo)
 {
 	//native.AnimEventInfo;	
 }
@@ -1274,12 +1274,12 @@ simulated function bool CanMelee()
 	return;
 }
 
-k2call simulated function WeaponCallback_MeleeComplete()
+animevent simulated function WeaponCallback_MeleeComplete()
 {
 	return;
 }
 
-k2call simulated function Melee_Effects(optional EventInfo AnimEventInfo)
+animevent simulated function Melee_Effects(optional EventInfo AnimEventInfo)
 {
 	// End:0x14
 	if(__NFUN_173__(int(Role), int(ROLE_Authority)))
@@ -1611,7 +1611,7 @@ simulated function ClientSetAmmoLoaded(int NewAmmoLoaded)
 	return;
 }
 
-k2call simulated function Ammo_Inserted(optional EventInfo AnimEventInfo)
+animevent simulated function Ammo_Inserted(optional EventInfo AnimEventInfo)
 {
 	// End:0x53
 	if(__NFUN_150__(__NFUN_173__(int(Role), int(ROLE_Authority)), __NFUN_148__(__NFUN_340__(Instigator, none), Instigator.IsLocallyControlled())))
@@ -1894,17 +1894,17 @@ simulated function bool CanReload()
 	return;
 }
 
-k2call simulated function WeaponCallback_MaybeDoneReloading()
+animevent simulated function WeaponCallback_MaybeDoneReloading()
 {
 	return;
 }
 
-k2call simulated function WeaponCallback_DefinitelyDoneReloading()
+animevent simulated function WeaponCallback_DefinitelyDoneReloading()
 {
 	return;
 }
 
-k2call simulated function Eject_Clip(optional EventInfo AnimEventInfo)
+animevent simulated function Eject_Clip(optional EventInfo AnimEventInfo)
 {
 	local Vector EjectVelocity;
 
@@ -1926,7 +1926,7 @@ k2call simulated function Eject_Clip(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function Mount_Clip_User(optional EventInfo AnimEventInfo)
+animevent simulated function Mount_Clip_User(optional EventInfo AnimEventInfo)
 {
 	// End:0x65
 	if(__NFUN_148__(__NFUN_340__(InsertingClip, none), Instigator.bIsPlayerPawn))
@@ -1939,7 +1939,7 @@ k2call simulated function Mount_Clip_User(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function Mount_Clip_Weapon(optional EventInfo AnimEventInfo)
+animevent simulated function Mount_Clip_Weapon(optional EventInfo AnimEventInfo)
 {
 	// End:0x3E
 	if(__NFUN_340__(InsertingClip, none))
@@ -1951,7 +1951,7 @@ k2call simulated function Mount_Clip_Weapon(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function WeaponCallback_AnimEnd()
+animevent simulated function WeaponCallback_AnimEnd()
 {
 	return;
 }
@@ -2191,7 +2191,7 @@ simulated function bool TryState(name NewState)
 	return;
 }
 
-k2call simulated function WeaponCallback_Activated()
+animevent simulated function WeaponCallback_Activated()
 {
 	return;
 }
@@ -2253,7 +2253,7 @@ state Firing
 		return;
 	}
 
-	k2call simulated function WeaponCallback_MaybeDoneFiring()
+	animevent simulated function WeaponCallback_MaybeDoneFiring()
 	{
 		// End:0x3F
 		if(bDebugWeapon)
@@ -2281,7 +2281,7 @@ state Firing
 		return;
 	}
 
-	k2call simulated function WeaponCallback_DefinitelyDoneFiring()
+	animevent simulated function WeaponCallback_DefinitelyDoneFiring()
 	{
 		// End:0x44
 		if(bDebugWeapon)
@@ -2339,7 +2339,7 @@ state MeleeAttack
 		return;
 	}
 
-	k2call simulated function WeaponCallback_MeleeComplete()
+	animevent simulated function WeaponCallback_MeleeComplete()
 	{
 		global.WeaponCallback_MeleeComplete();
 		// End:0x1C
@@ -2423,7 +2423,7 @@ state Reloading
 		return;
 	}
 
-	k2call simulated function WeaponCallback_MaybeDoneReloading()
+	animevent simulated function WeaponCallback_MaybeDoneReloading()
 	{
 		// End:0x12
 		if(CanReload())
@@ -2437,7 +2437,7 @@ state Reloading
 		return;
 	}
 
-	k2call simulated function WeaponCallback_DefinitelyDoneReloading()
+	animevent simulated function WeaponCallback_DefinitelyDoneReloading()
 	{
 		TryState('idle');
 		return;
@@ -2504,7 +2504,7 @@ state Activating
 		return;
 	}
 
-	k2call simulated function WeaponCallback_Activated()
+	animevent simulated function WeaponCallback_Activated()
 	{
 		DoneActivating();
 		return;
@@ -2584,7 +2584,7 @@ state Deactivating
 		return;
 	}
 
-	k2call simulated function WeaponCallback_Deactivated()
+	animevent simulated function WeaponCallback_Deactivated()
 	{
 		DoneDeactivating();
 		return;

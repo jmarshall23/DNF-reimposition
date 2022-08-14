@@ -15,5 +15,12 @@ defaultproperties
 	InitialVelocity=(X=1.291857E-41,Y=2.797242E-17,Z=0)
 	MaxVelocityVariance=(X=1.291857E-41,Y=2.797242E-17,Z=0)
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.LensFlares.RPGafterglow'
+	StartDrawScale=2
+	RotationVariance=0
+	RotationVelocityMaxVariance=2
+	bForceNonFinalBlendBlooms=true
+	CollisionRadius=0
+	CollisionHeight=0
+	Style=6
 }

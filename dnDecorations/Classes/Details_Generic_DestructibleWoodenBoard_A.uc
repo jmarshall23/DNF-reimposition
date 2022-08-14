@@ -10,6 +10,29 @@ class Details_Generic_DestructibleWoodenBoard_A extends Details_Generic
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	bDontSetOwner="O"
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Board_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=Destruct_Wood
+	object end
+	// Reference: DecoActivities_Sound'Details_Generic_DestructibleWoodenBoard_A.DA_Sound_Board_Destroyed'
+	DestroyedActivities(1)=DA_Sound_Board_Destroyed
+	HealthPrefab=1
+	SpawnOnDestroyed(0)=(SpawnClass='Details_Generic_DestructibleWoodenBoard_A_Gib',RenderObject='sm_class_decorations.Door_boards.Door_Board_A_Gib01',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.797242E-17,Z=24),Z=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	begin object name=MP_Board_Gibs class=MotionPrefab
+		VelocityRelativeType=3
+		Velocity=(X=1.291717E-41,Y=2.797242E-17,Z=0)
+		VelocityVariance=(X=1.291717E-41,Y=2.797242E-17,Z=150)
+		RotationRate=(Pitch=1619010053,Yaw=571080715,Roll=0)
+		RotationRateVariance=(Pitch=1614815749,Yaw=571080714,Roll=0)
+	object end
+	// Reference: MotionPrefab'Details_Generic_DestructibleWoodenBoard_A.MP_Board_Gibs'
+	DefaultMotionPrefab=MP_Board_Gibs
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	PhysicsMassType=1
+	CollisionRadius=55
+	CollisionHeight=6
+	Mass=5
+	StaticMesh='sm_class_decorations.Door_boards.Door_Board_A'
 }

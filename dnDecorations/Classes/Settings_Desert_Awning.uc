@@ -7,3 +7,28 @@
  *******************************************************************************/
 class Settings_Desert_Awning extends aFinalDecoration
 	collapsecategories;
+
+defaultproperties
+{
+	SpawnOnDestroyed(0)=(SpawnClass='Settings_Desert_Metal_Gib',RenderObject='SM_Lvl_Desert.Destructible.gen_sheetmetal_2',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.81342E-17,Z=-122),Z=173)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=-939449851,Yaw=571146239,Roll=65537),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=None,MotionInfo=none)
+	SpawnOnDestroyed(6)=(SpawnClass='Settings_Desert_Metal_Gib',RenderObject='SM_Lvl_Desert.Destructible.gen_sheetmetal_3',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(7)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.802641E-17,Z=-40),Z=173)
+	SpawnOnDestroyed(8)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(9)=(Rotation=(Pitch=-939449851,Yaw=571146239,Roll=65537),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	begin object name=Desert_Awning_Gib class=MotionPrefab
+		VelocityRelativeType=3
+		Velocity=(X=1.291717E-41,Y=2.802898E-17,Z=0)
+		VelocityVariance=(X=1.291717E-41,Y=2.802941E-17,Z=200)
+		RotationRate=(Pitch=1073488389,Yaw=571080704,Roll=0)
+		RotationRateVariance=(Pitch=8709,Yaw=571080704,Roll=16380)
+	object end
+	// Reference: MotionPrefab'Settings_Desert_Awning.Desert_Awning_Gib'
+	DefaultMotionPrefab=Desert_Awning_Gib
+	StaticMesh='SM_Lvl_Desert.GhostTown.GhostTown_Awning'
+}

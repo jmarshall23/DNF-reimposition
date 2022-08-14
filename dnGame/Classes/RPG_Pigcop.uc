@@ -11,5 +11,7 @@ defaultproperties
 {
 	WeaponConfig='RPGWeaponConfig_Pigcop'
 	AmmoLoaded=3
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun_Pigcop'
+	MountMeshItem=mount_rpg_r
+	DrawScale=1.67
 }

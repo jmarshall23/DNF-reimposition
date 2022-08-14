@@ -11,5 +11,19 @@ class dnExplosion3_SElect_Smoke extends dnExplosion3_SmallElectronic
 
 defaultproperties
 {
-	AdditionalSpawn=/* Array type was not detected. */
+	AdditionalSpawn(0)=(SpawnClass='dnExplosion3_SElec_Fire',TakeParentTag=false,Mount=false,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	AdditionalSpawn(1)=(MountAngles=(Pitch=8719,Yaw=571539456,Roll=0),Roll=0)
+	PrimeCount=3
+	Lifetime=3
+	InitialVelocity=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	MaxVelocityVariance=(X=1.291857E-41,Y=2.802853E-17,Z=48)
+	AlphaEnd=0
+	Textures(0)='dt_effects.Smoke.gensmoke1dRC'
+	StartDrawScale=0.5
+	EndDrawScale=2
+	RotationVariance=65535
+	DamageAmount=0
+	DamageRadius=0
+	CollisionRadius=24
+	CollisionHeight=24
 }

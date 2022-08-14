@@ -20,5 +20,11 @@ defaultproperties
 	AlphaStart=0.6
 	AlphaMid=0.6
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Smoke.gensmoke1dRC'
+	StartDrawScale=0.01
+	EndDrawScale=0.3
+	DrawScaleVariance=0.075
+	RotationVariance=65535
+	RotationVelocityMaxVariance=1
+	KLinearDamping=1
 }

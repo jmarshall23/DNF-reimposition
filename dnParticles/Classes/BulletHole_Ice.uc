@@ -10,5 +10,6 @@ class BulletHole_Ice extends BulletHole_Decal
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.bulletholes.bhole_ice1aRC_fb'
+	DrawScale=0.075
 }

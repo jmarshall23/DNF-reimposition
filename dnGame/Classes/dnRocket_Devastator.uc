@@ -31,5 +31,22 @@ defaultproperties
 	DamageRadius=96
 	DamageClass='DevastatorDamage'
 	ShakeScalar=3
-	ShakeInfo=/* Array type was not detected. */
+	ShakeInfo(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.7,ShakeFrequency=0.05,ShakeMagnitude=450,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=dnRocket_Devastator_Shake)
+	RumbleInfo(0)=(RumbleName=dnRocket_Devastator_Rumble,RumbleDuration=1,RumbleLeftMagnitude=0.6,RumbleRightMagnitude=0,FalloffActor=none,FalloffDistance=0)
+	ExplosionDecal='dnParticles.dnDecal_BlastMark_Devastator'
+	ExplosionClass='p_Weapons.Devestator_Explosion.Devestator_ExplosionSmall_Spawner'
+	UnderwaterExplosionClass='p_Weapons.Devestator_Explosion_Underwater.Devestator_Explosion_Underwater_Spawner'
+	ExplosionLight='dnExplosionLight_Devastator'
+	ExplosionSoundName=ProjectileExplode
+	bTelekineticableSingleOnly=true
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Weapon_LightEx_Devastator',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.965356E-17,Z=0),Z=-3),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=-16384)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	DrawType=8
+	StaticMesh='sm_class_decorations.Devastator_Rocket.Devastator_Rocket'
+	SoundVolume=96
+	SoundPitch=128
+	SoundRadius=1000
+	SoundInnerRadius=500
+	VoicePack='SoundConfig.Inventory.VoicePack_Devastator'
 }

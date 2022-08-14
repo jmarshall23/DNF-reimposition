@@ -10,6 +10,17 @@ class Details_Generic_DestructibleWoodenBoard_B extends Details_Generic
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	bDontSetOwner="O"
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Details_Generic_DestructibleWoodenBoard_A.DA_Sound_Board_Destroyed'
+	HealthPrefab=1
+	SpawnOnDestroyed(0)=(SpawnClass='Details_Generic_DestructibleWoodenBoard_B_Gib',RenderObject='sm_class_decorations.Door_boards.Door_Board_B_Gib01',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.797242E-17,Z=24),Z=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DefaultMotionPrefab=MotionPrefab'Details_Generic_DestructibleWoodenBoard_A.MP_Board_Gibs'
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	PhysicsMassType=1
+	CollisionRadius=55
+	CollisionHeight=6
+	Mass=5
+	StaticMesh='sm_class_decorations.Door_boards.Door_Board_B'
 }

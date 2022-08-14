@@ -84,5 +84,16 @@ defaultproperties
 	SlideOutTime=3.6
 	HealthPrefab=1
 	bNoDamage=true
-	SpawnOnDestroyedSimple=/* Array type was not detected. */
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Paper1'
+	bIgnoresPhysicsDamage=true
+	Physics=9
+	bBlockActors=false
+	bBlockPlayers=false
+	bBlockKarma=false
+	bCollideWorld=false
+	CollisionRadius=6
+	CollisionHeight=0.1
+	DrawType=2
+	Mesh='c_generic.Paper_Sheaf'
+	Skins(0)='dt_Props.Paper.buttscanRC_diff'
 }

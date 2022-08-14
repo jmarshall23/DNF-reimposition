@@ -9,7 +9,7 @@ class MP_HolodukePickup extends MP_WeaponPickup
 	collapsecategories;
 
 var bool bOnlyOneHolodukeMode;
-var int netIntialForceState;
+var netupdate(NU_ForceState) int netIntialForceState;
 
 replication
 {

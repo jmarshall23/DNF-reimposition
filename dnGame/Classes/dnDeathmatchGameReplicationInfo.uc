@@ -29,8 +29,8 @@ var bool bOffenseDefenseGame;
 var int OffensiveTeam;
 var InteractiveActor Cylinder;
 var float HillCountdown;
-var dnDeathmatchGameReplicationInfo.EBabeState Team0BabeState;
-var dnDeathmatchGameReplicationInfo.EBabeState Team1BabeState;
+var netupdate(NU_Babe0StateChange) dnDeathmatchGameReplicationInfo.EBabeState Team0BabeState;
+var netupdate(NU_Babe1StateChange) dnDeathmatchGameReplicationInfo.EBabeState Team1BabeState;
 var float StandingTimeStamp;
 
 replication

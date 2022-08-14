@@ -28,5 +28,17 @@ defaultproperties
 	AlphaMid=0.75
 	AlphaEnd=0
 	AlphaRampMid=0.125
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Smoke.gensmoke1dRC'
+	StartDrawScale=0.125
+	EndDrawScale=0.375
+	RotationVariance=65535
+	RotationVelocityMaxVariance=0.5
+	TriggerType=1
+	Physics=9
+	DestroyOnDismount=true
+	bDirectional=true
+	CollisionRadius=0
+	CollisionHeight=0
+	Style=3
+	DrawScale=0.25
 }

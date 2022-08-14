@@ -71,7 +71,7 @@ var array<Actor> ActorPoolOnDestroyed;
 var() array<name> BonesToDrawInTheEditor;
 var AnimationControllerEx AnimationController;
 var class<AnimationControllerEx> AnimationControllerClass;
-var const editconst transient pointer MovementBoneTracker;
+var const editconst transient nontrans pointer MovementBoneTracker;
 var const transient int LoadedIKSystemInfos;
 
 replication

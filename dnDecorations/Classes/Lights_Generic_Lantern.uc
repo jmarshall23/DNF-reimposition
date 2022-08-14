@@ -26,11 +26,7 @@ defaultproperties
 	DamageFalloffStart=164
 	bSurviveDeath=false
 	HealthPrefab=1
-	DestroyedParticleFriendEffects=/* Array type was not detected. */
-	bAbsoluteRotation=false
-	Scale=0.5
-	BoneName=None
-	Location=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	Rotation=(Pitch=8709,Yaw=571080704,Roll=0)
-	Effect='p_Decorations.BarrelExplosion.Barrel_Explosion_Spawner'
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0.5,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	Physics=18
+	StaticMesh='sm_class_lights.Hanging.Desert_Lantern'
 }

@@ -51,3 +51,22 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 	super(dnRocket).RegisterPrecacheComponents(PrecacheIndex);
 	return;
 }
+
+defaultproperties
+{
+	MP_MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Weapons.Devastator_Trail.Devastator_Trail_MainMP',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.965356E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MP_MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	PoolLifeSpan=6
+	Damage=25
+	DamageRadius=150
+	ExplosionDecal=none
+	ExplosionClass='p_Weapons.Devestator_Explosion.Devestator_ExplosionSmall_SpawnerMP'
+	bHidden=true
+	bIsProjectilePool=true
+	bCastStencilShadows=false
+	bNetTemporary=false
+	bIgnoreInstigatorCollision=true
+	TickStyle=0
+	LifeSpan=0
+	RemoteRole=0
+}

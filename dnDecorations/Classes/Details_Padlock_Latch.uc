@@ -8,7 +8,7 @@
 class Details_Padlock_Latch extends Details_Padlock;
 
 var Details_Padlock_Base MyBase;
-var name OpenAnim;
+var anim name OpenAnim;
 
 function PostBeginPlay()
 {
@@ -45,6 +45,17 @@ defaultproperties
 {
 	OpenAnim=pll_a_open
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	Pitch=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=none
+	HealthPrefab=5
+	Health=20
+	HealthCap=20
+	bNeverMeshAccurate=true
+	bBlockActors=false
+	bBlockPlayers=false
+	bBlockKarma=false
+	CollisionRadius=0
+	CollisionHeight=0
+	DrawType=2
+	Mesh='c_generic.PadLockLatch'
 }

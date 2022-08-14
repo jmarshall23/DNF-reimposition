@@ -11,7 +11,7 @@ class Biology_Generic_ShrinkPod extends Biology_Generic
 var() noexport float ShrinkTime "Time to shrink player. If less than 0, then shrink forever";
 var() noexport float ParticleTimer "How often to emit particle effect";
 var() noexport float ParticleCoolDown "Cooldown in seconds before reimmitting particles";
-var bool CoolingDown;
+var netupdate(NU_CoolingDown) bool CoolingDown;
 var SoftParticleSystem ParticleSystem;
 var SoftParticleSystem ParticleBurstSystem;
 var() class<SoftParticleSystem> ParticleSystemClass;
@@ -201,5 +201,24 @@ defaultproperties
 	ParticleCoolDown=1
 	ParticleSystemClass='p_Decorations.ShrinkPod.ShrinkPod_Main'
 	ParticleBurstSystemClass='p_Decorations.podfx.ShrinkPodBurstFX'
-	DecoActivities_Default=/* Array type was not detected. */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(Play_Idle_Active),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Biology_Generic_ShrinkPod.DA_Anim_ShrinkPod_IdleActive'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(Play_Idle),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Biology_Generic_ShrinkPod.DA_Anim_ShrinkPod_Idle'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	begin object name=DA_Anim_ShrinkPod_Idle class=DecoActivities_Animation
+		AnimActivities(0)=(Flags=(bLoop=true,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=a_idle,Channel=0,Rate=0,TweenTime=0.2)
+	object end
+	// Reference: DecoActivities_Animation'Biology_Generic_ShrinkPod.DA_Anim_ShrinkPod_Idle'
+	StartupActivities(0)=DA_Anim_ShrinkPod_Idle
+	begin object name=DA_Sound_ShrinkPod_Ambience class=DecoActivities_Sound
+		SoundNames(0)=ShrinkPod_Amb
+	object end
+	// Reference: DecoActivities_Sound'Biology_Generic_ShrinkPod.DA_Sound_ShrinkPod_Ambience'
+	StartupActivities(1)=DA_Sound_ShrinkPod_Ambience
+	bAcceptMeshAccurateMoveActorTrace=true
+	CollisionRadius=17
+	CollisionHeight=5
+	TouchClasses(0)='Engine.PlayerPawn'
+	DrawType=2
+	PrePivot=(X=1.291717E-41,Y=2.797242E-17,Z=0)
+	Mesh='c_characters.ShrinkPad'
+	ActorColorList(0)=(ActorColor=(B=76,G=3,R=1,A=255),G=255,B=255,A=255)
 }

@@ -22,14 +22,11 @@ defaultproperties
 	AlphaMid=1
 	AlphaEnd=0
 	AlphaRampMid=0.75
-	Textures=/* Array type was not detected. */
-	
-/* Exception thrown while deserializing KarmaOverride
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealPackage.GetIndexName(Int32 nameIndex) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealPackage.cs:line 1840
-   at UELib.UnrealStreamImplementations.ReadName(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 828
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 574 */
+	Textures(0)='dt_effects.Fire.flamehotend1RC'
+	Textures(1)='dt_effects.Fire.flamehotend3RC'
+	StartDrawScale=0
+	EndDrawScale=0.04
+	bForceNonFinalBlendBlooms=true
+	NonFinalBlendBloomTint=(B=85,G=1,R=1,A=64)
+	Style=6
 }

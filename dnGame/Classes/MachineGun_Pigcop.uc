@@ -23,5 +23,7 @@ defaultproperties
 {
 	BaseDamagePerShot=4
 	WeaponConfig='MachineGunWeaponConfig_Pigcop'
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun_Pigcop'
+	MountMeshItem=mount_machinegun_r
+	DrawScale=1.67
 }

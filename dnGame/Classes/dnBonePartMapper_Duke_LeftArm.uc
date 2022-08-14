@@ -10,7 +10,5 @@ class dnBonePartMapper_Duke_LeftArm extends dnBonePartMapper_Male_LeftArm
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y=-8.118
-	Z=0.132
+	Gibs(0)=(BoneName=arm_left_lower,ReqBones=none,RenderObject='sm_class_effects.Duke_Nukem_Gibs.Duke_ForeArmL_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=300.2815,Y=2.9542E-17,Z=-8.118),Z=0.132)
 }

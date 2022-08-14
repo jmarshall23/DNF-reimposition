@@ -408,5 +408,11 @@ defaultproperties
 	bDirectional=true
 	CollisionRadius=200
 	CollisionHeight=100
-	DesiredLocation=/* Array type was not detected. */
+	DesiredLocation(0)=(bTemporal=false,bComplete=false,bRelativeMotion=true,Target=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=100)
+	DesiredLocation(1)=(TargetVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	TickStyle=3
+	DrawType=8
+	DrawScale=0.1
+	OverlayMaterial='dt_Effects_mp.IconsGiveGet.IconGet_FB'
+	StaticMesh='SM_Multiplayer.MP_Icons.Icon_Give'
 }

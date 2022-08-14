@@ -8,7 +8,7 @@
 class Containers_BleachBottle extends Containers_Generic
 	collapsecategories;
 
-var bool bBroken;
+var netupdate(NU_Broken) bool bBroken;
 var bool bPostNetInit;
 
 replication
@@ -54,5 +54,21 @@ simulated event Destroyed()
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	begin object name=DA_Display_Containers_BleachBottle_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_decorations.Bottles.BleachBrkn_cd'
+	object end
+	// Reference: DecoActivities_Display'Containers_BleachBottle.DA_Display_Containers_BleachBottle_Brkn'
+	DestroyedActivities(2)=DA_Display_Containers_BleachBottle_Brkn
+	DestroyedActivities(3)='dnGame.DecoActivityDeclarations.DA_Physics_Density_Sink'
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_WaterSplash'
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Plastic'
+	PhysicsMassType=1
+	Physics=18
+	CollisionRadius=5
+	CollisionHeight=9
+	Mass=30
+	StaticMesh='sm_class_decorations.Bottles.Bleach_cd'
 }

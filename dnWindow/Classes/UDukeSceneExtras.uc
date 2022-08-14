@@ -114,3 +114,16 @@ function OnNavForward()
 
 	return;
 }
+
+defaultproperties
+{
+	Entries(0)=(Text="ENTER BONUS CODE",Help="Enter code to unlock bonuses.",Command="dnWindow.UDukeEnterBonusCodeMB",Button=none)
+	Entries(1)=(Text="CONCEPT ART",Help="View concept art.",Command="dnWindow.UDukeSceneConceptArt",Button=none)
+	Entries(2)=(Text="SCREENSHOTS",Help="View screenshots.",Command="dnWindow.UDukeSceneScreenShots",Button=none)
+	Entries(3)=(Text="MOVIES",Help="View movies.",Command="dnWindow.UDukeSceneExtrasMovies",Button=none)
+	Entries(4)=(Text="TRIPTYCH OFFICE PHOTOS",Help="View Triptych office photos.",Command="dnWindow.UDukeSceneOfficePhotos",Button=none)
+	Entries(5)=(Text="DEVELOPMENT TIMELINE",Help="View development timeline.",Command="dnWindow.UDukeSceneTimeline",Button=none)
+	Entries(6)=(Text="EXTRA GAME SETTINGS",Help="Change extra gameplay settings.",Command="dnWindow.UDukeSceneExtraSettings",Button=none)
+	Entries(7)=(Text="DUKE SOUND BOARD",Help="Listen to Duke talk.",Command="dnWindow.UDukeSceneSoundBoard",Button=none)
+	TitleText="<?int?dnWindow.UDukeSceneExtras.TitleText?>"
+}

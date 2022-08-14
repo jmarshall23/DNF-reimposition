@@ -8,12 +8,12 @@
 class Details_Trash_CrushedFortyOunce extends Details_Trash
 	collapsecategories;
 
-k2call simulated function DrinkConsumed(optional EventInfo AnimEventInfo)
+animevent simulated function DrinkConsumed(optional EventInfo AnimEventInfo)
 {
 	return;
 }
 
-k2call simulated function DrinkRelease(optional EventInfo AnimEventInfo)
+animevent simulated function DrinkRelease(optional EventInfo AnimEventInfo)
 {
 	return;
 }
@@ -27,5 +27,15 @@ defaultproperties
 	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
 	KLinearDamping=0.2
 	KAngularDamping=0.8
-	PhysicsSoundOverrides=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.BeerCan_01','a_impact.SpecialCase.BeerCan_02','a_impact.SpecialCase.BeerCan_03','a_impact.SpecialCase.BeerCan_04'),SoundInfo=(InputRange=(Min=16,Max=1280),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.4,Max=0.8)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.BeerCan_Roll_01'),SoundInfo=(InputRange=(Min=8,Max=40),OutputPitchRange=(Min=0.95,Max=1.125),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(2)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.BeerCan_Slide_01'),SoundInfo=(InputRange=(Min=400,Max=500),OutputPitchRange=(Min=0.9,Max=1),OutputVolumeRange=(Min=0.5,Max=0.75)),bDisableSoundInWater=true)
+	bNoNativeTick=false
+	bTickOnlyRecent=false
+	CollisionRadius=2.5
+	CollisionHeight=5.8
+	Mass=10
+	TickStyle=2
+	DrawType=2
+	Mesh='c_dukeitems.Beer_40oz'
 }

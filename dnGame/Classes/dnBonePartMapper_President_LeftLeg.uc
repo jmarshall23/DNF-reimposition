@@ -10,7 +10,5 @@ class dnBonePartMapper_President_LeftLeg extends dnBonePartMapper_Male_LeftLeg
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y=0.752
-	Z=-9.54
+	Gibs(0)=(BoneName=LeftLeg,ReqBones=none,RenderObject='sm_class_effects.President_Gibs.President_FootL_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-5.010145E-05,Y=2.954479E-17,Z=0.752),Z=-9.54)
 }

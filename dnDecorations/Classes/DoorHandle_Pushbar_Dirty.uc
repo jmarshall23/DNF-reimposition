@@ -9,5 +9,6 @@ class DoorHandle_Pushbar_Dirty extends DoorHandle_Pushbar;
 
 defaultproperties
 {
-	Skins=/* Array type was not detected. */
+	Skins(0)='mt_Skins.doorpushbar.doorpushbardirty_bs'
+	Skins(1)='mt_Skins.doorpushbar.doorpushbarcyldirty_bs'
 }

@@ -19,5 +19,16 @@ defaultproperties
 	TracerBubblesClass='p_Weapons.Generic.WaterBubblesTracer'
 	HorizShotError=0.01
 	VertShotError=0.01
-	ViewKicks=/* Array type was not detected. */
+	ViewKicks(0)=(bNoLerp=false,bToggleSign=false,Style=0,Function=4,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.03,ShakeFrequency=0.12,ShakeMagnitude=400,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=Pistol_ViewKick_0)
+	ViewKicks(1)=(bNoLerp=false,bToggleSign=false,Style=1,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.03,ShakeFrequency=0.12,ShakeMagnitude=200,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=Pistol_ViewKick_1)
+	RumbleKicks(0)=(RumbleName=Pistol_Rumble,RumbleDuration=0.15,RumbleLeftMagnitude=0.2,RumbleRightMagnitude=0.75,FalloffActor=none,FalloffDistance=0)
+	MuzzleInfo(0)=(MuzzleFireStartAnim=FireStart,MuzzleFireAnim=Fire,MuzzleFireStopAnim=FireStop,MuzzleFlashClass='p_Weapons.Pistol_MuzzleFlash.Pistol_MuzzleFlash_SpawnerMP',MuzzleBoneName=mount_muzzle,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MuzzleLightClass='Weapon_LightEx_Pistol'
+	NumMeleeAttacks=2
+	MeleeDamageType='MeleeDamage'
+	bFireInterruptFiring=true
+	AmmoWarnPCT=0.15
+	LockoutFireTime=0.15
+	WeaponHeatAttackRate=0.15
+	WeaponAnimName=Pistol
 }

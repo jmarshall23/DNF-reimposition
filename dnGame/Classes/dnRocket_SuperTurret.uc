@@ -53,5 +53,5 @@ defaultproperties
 	PrePivot=(X=1.292418E-41,Y=2.954683E-17,Z=0)
 	DrawScale=4
 	StaticMesh='sm_class_effects.tracers.SuperTurret_Tracer'
-	Skins=/* Array type was not detected. */
+	Skins(0)='dt_editor.Surface.Climbable_Masking'
 }

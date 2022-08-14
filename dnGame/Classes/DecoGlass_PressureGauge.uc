@@ -12,5 +12,8 @@ defaultproperties
 {
 	bUnBreakable=true
 	DrawScale3D=(X=1.292418E-41,Y=2.954546E-17,Z=10)
-	Skins=/* Array type was not detected. */
+	Skins(0)='mt_Skins.Gauges.Gauge_GlassFinalBlend'
+	Skins(1)='dt_masking.Glass_Materials.brokenglass1bc_envcomb'
+	Skins(2)='dt_masking.Glass_Materials.brokenglass1bc_envcomb'
+	Skins(3)='dt_masking.Glass_Materials.glassdirty1bc_finalblend'
 }

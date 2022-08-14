@@ -10,7 +10,5 @@ class dnBonePartMapper_PigCopA_LeftLeg extends dnBonePartMapper_PigCop_LeftLeg
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y=-13.268
-	Z=5.556
+	Gibs(0)=(BoneName=knee_left_a,ReqBones=none,RenderObject='sm_class_effects.Pigcop_Gibs.Pigcop_FootL_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=7.120547E-07,Y=2.965176E-17,Z=-13.268),Z=5.556)
 }

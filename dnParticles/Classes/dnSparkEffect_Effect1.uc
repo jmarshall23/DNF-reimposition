@@ -16,5 +16,18 @@ defaultproperties
 	UseLines=true
 	ConstantLength=true
 	TriggerOnSpawn=true
-	AdditionalSpawn=/* Array type was not detected. */
+	AdditionalSpawn(0)=(SpawnClass=none,TakeParentTag=false,Mount=false,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnNumber=4
+	Lifetime=0.5
+	LifetimeVariance=1.5
+	InitialVelocity=(X=1.291857E-41,Y=2.797242E-17,Z=100)
+	InitialAcceleration=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	MaxVelocityVariance=(X=1.291857E-41,Y=2.802941E-17,Z=100)
+	LineStartWidth=6
+	LineEndWidth=6
+	Textures(0)='dt_effects.Sparks.spark3RC'
+	StartDrawScale=15
+	EndDrawScale=25
+	DrawScaleVariance=2
+	TriggerType=4
 }

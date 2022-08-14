@@ -7,27 +7,27 @@
  *******************************************************************************/
 class DualPistolDummy extends RenderActor;
 
-k2call simulated function PlayInvSound()
+animevent simulated function PlayInvSound()
 {
 	return;
 }
 
-k2call simulated function Fire_Effects()
+animevent simulated function Fire_Effects()
 {
 	return;
 }
 
-k2call simulated function SpawnClip()
+animevent simulated function SpawnClip()
 {
 	return;
 }
 
-k2call simulated function Ammo_Inserted()
+animevent simulated function Ammo_Inserted()
 {
 	return;
 }
 
-k2call simulated function Eject_Casing()
+animevent simulated function Eject_Casing()
 {
 	return;
 }

@@ -41,5 +41,11 @@ defaultproperties
 	PickupClass='ATCaptainLaserPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=21
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_ATCaptainLaser'
+	Mesh='c_dnWeapon.at_capt_gun'
+	SoundVolume=200
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_AT_Hyperblaster'
 }

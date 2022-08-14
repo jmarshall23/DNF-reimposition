@@ -10,7 +10,5 @@ class dnBonePartMapper_PigCopA_RightArm extends dnBonePartMapper_PigCop_RightArm
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y=14.867
-	Z=2.669
+	Gibs(0)=(BoneName=arm_right_lower_a,ReqBones=none,RenderObject='sm_class_effects.Pigcop_Gibs.PigCopA_ForeArmR_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-1.593778E-23,Y=2.965301E-17,Z=14.867),Z=2.669)
 }

@@ -18,5 +18,5 @@ defaultproperties
 	CollisionHeight=20.7
 	Mass=20
 	StaticMesh='sm_class_decorations.Chairs.FoldingChair'
-	Skins=/* Array type was not detected. */
+	Skins(0)='mt_Skins.FoldingChair.FoldingChair_bs'
 }

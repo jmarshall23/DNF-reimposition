@@ -16,5 +16,6 @@ static function bool AllowDeathWhenInvincible()
 
 defaultproperties
 {
-	
+	DamageVibrations(0)=(bNoLerp=false,bToggleSign=false,Style=6,Function=5,FalloffActor=none,FalloffDistance=0,ShakeDuration=1,ShakeFrequency=0.03,ShakeMagnitude=4096,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=FatalFallingDamage_Shake_0)
+	DamageVibrations(1)=(bNoLerp=false,bToggleSign=false,Style=0,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0,ShakeFrequency=0,ShakeMagnitude=0,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=FatalFallingDamage_Shake_1)
 }

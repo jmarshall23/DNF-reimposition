@@ -42,7 +42,7 @@ simulated event ScriptGetActorColor()
 	return;
 }
 
-k2call simulated function InternalFlash_Left()
+animevent simulated function InternalFlash_Left()
 {
 	// End:0x3D
 	if(__NFUN_148__(Owner.bIsPlayerPawn, PlayerPawn(Owner).IsLocallyControlled()))
@@ -53,7 +53,7 @@ k2call simulated function InternalFlash_Left()
 	return;
 }
 
-k2call simulated function InternalFlash_Right()
+animevent simulated function InternalFlash_Right()
 {
 	// End:0x4B
 	if(__NFUN_148__(__NFUN_148__(__NFUN_340__(Owner, none), Owner.bIsPlayerPawn), PlayerPawn(Owner).IsLocallyControlled()))
@@ -125,5 +125,12 @@ defaultproperties
 	PickupClass='MP_DevastatorPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=4
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Devastator'
+	AnimationControllerClass='dnAnimationControllerEx_Devastator'
+	bNeedsScriptActorColor=true
+	Mesh='c_dnWeapon.Devastator'
+	SoundVolume=200
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_Devastator'
 }

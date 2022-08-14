@@ -10,5 +10,12 @@ class IKSystemInfo_DukeLeftArm extends IKSystemInfo_InteractiveDecoration
 
 defaultproperties
 {
-	IKHierarchy=/* Array type was not detected. */
+	IKHierarchy(0)=(BoneName="leftarm",ConstrainY=170,ConstrainZ=170,ConstrainZPitch=0,ConstrainX=170)
+	IKHierarchy(1)=(BoneName="leftforearm",ConstrainY=70,ConstrainZ=160,ConstrainZPitch=0,ConstrainX=10)
+	IKHierarchy(2)=(BoneName="lefthand",ConstrainY=30,ConstrainZ=160,ConstrainZPitch=0,ConstrainX=28)
+	LimbID=LeftArm
+	IKEvents(0)=(EventType=1,EventName="IK_Detach_Left",EventData="")
+	IKEvents(1)=(EventType=0,EventName="IK_Attach_Left",EventData="mount_ik_hand_l")
+	IKEvents(2)=(EventType=0,EventName="IK_Attach_Left_Pigcop",EventData="mount_extinguisher")
+	IKEvents(3)=(EventType=0,EventName="IK_Attach_Left_Self",EventData="mount_holster_hip_left")
 }

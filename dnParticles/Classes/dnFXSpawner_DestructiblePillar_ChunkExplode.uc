@@ -11,11 +11,5 @@ class dnFXSpawner_DestructiblePillar_ChunkExplode extends dnHitFX_Spawner_Bullet
 
 defaultproperties
 {
-	NamedFriends=/* Array type was not detected. */
-	bMatchRotation=false
-	bMatchScale=false
-	bRelativeVelocity=false
-	bRelativeAcceleration=false
-	bInheritVelocity=false
-	bInheritAcceleration=false
+	NamedFriends(0)=(FriendData=(FriendStyle=0,FriendInfos=((RequestingParticleInfo=(bMatchLocation=false,bMatchRotation=false,bMatchScale=false,bRelativeVelocity=false,bRelativeAcceleration=false,bInheritVelocity=false,bInheritAcceleration=false),VolumeResponse=0,bFireAndForget=true,SpawnChance=1,SpawnCount=20,SpawnCountVariance=20,FriendClass='p_hit_effects.Destructible_Pillar_Debris01',FriendDelay=0,FriendDuration=0,bUseParticleTime=false,FriendActor=none),(RequestingParticleInfo=(bMatchLocation=false,bMatchRotation=false,bMatchScale=false,bRelativeVelocity=false,bRelativeAcceleration=false,bInheritVelocity=false,bInheritAcceleration=false),VolumeResponse=0,bFireAndForget=true,SpawnChance=1,SpawnCount=3,SpawnCountVariance=2,FriendClass='p_hit_effects.Destructible_Pillar_Debris02',FriendDelay=0,FriendDuration=0,bUseParticleTime=false,FriendActor=none)),FriendIndex=0,bDisabled=false,FriendDuration=0,FriendDelay=0),FriendName=SysTriggeredFriend)
 }

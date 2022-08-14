@@ -174,37 +174,27 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 
 defaultproperties
 {
-	IceShards(0)=ObjectProperty'dnUsableSomething.User'
-	IceShards(1)='sm_class_effects.FreezeRay.FreezeShard_01'
-	IceShards(2)='sm_class_effects.FreezeRay.FreezeShard_02'
-	IceShards(3)='sm_class_effects.FreezeRay.FreezeShard_03'
-	IceShards(4)=BoolProperty'DukeMultiPlayer.FadeToPowerupEffect.body'
-	IceShards(5)='DukeHUD'
-	IceShards(6)='p_Weapons.FreezeRay_Projectile.FreezeRay_Projectile_Small_Spawner'
-	bInterrupt=40
+	IceShards(0)='sm_class_effects.FreezeRay.FreezeShard_01'
+	IceShards(1)='sm_class_effects.FreezeRay.FreezeShard_02'
+	IceShards(2)='sm_class_effects.FreezeRay.FreezeShard_03'
+	BounceEffect='p_Weapons.FreezeRay_Projectile.FreezeRay_Projectile_Small_Spawner'
+	bDamageDirectly=true
+	bBreakGlass=true
+	bWaterSplash=false
+	Speed=1000
+	MaxSpeed=1000
+	Damage=40
 	DamageClass='Engine.ColdDamage'
 	ImpactSoundName=ProjectileImpact
 	ExplosionClass='p_Weapons.FreezeRay_Projectile.FreezeRay_Projectile_Spawner'
 	bTelekineticable=false
-	MountOnSpawn=/* Array type was not detected. */
-	AnimationName=/* Unknown default property type! */
-	bSurviveDismount=true
-	bDontScaleByDrawScale=false
-	bScaleByDrawScaleNonDefault=false
-	bTransformDrawScale3DChange=false
-	bTakeParentTag=false
-	bTransferToCorpse=false
-	bDontSetOwner=false
-	MountParentTag=None
-	DrawScaleOverride=0
-	AppendToTag=None
-	ForceTag=None
-	ForceEvent=None
-	MountMeshItem=None
-	MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0)
-	MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0)
-	MountAngles=(Pitch=8741,Yaw=572915712,Roll=0)
-	MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0)
-	MountType=0
-	DismountPhysics=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Weapons.FreezeRay_Projectile.FreezeRay_Projectile_Main',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	bCastStencilShadows=false
+	RotationRate=(Pitch=8741,Yaw=572915712,Roll=0)
+	DrawType=8
+	AlphaSortGroup=8
+	StaticMesh='sm_class_effects.FreezeRay.FreezeMesh'
+	LifeSpan=0.35
+	AmbientSound='dnsweapn.FreezeRay.FreezeRay_Projectile01_LP'
+	VoicePack='SoundConfig.Inventory.VoicePack_FreezeRay'
 }

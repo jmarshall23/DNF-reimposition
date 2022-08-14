@@ -468,12 +468,15 @@ defaultproperties
 	bStartupOff=true
 	bSurviveDeath=true
 	HealthPrefab=5
-	DamageTypesAcceptedOnly=/* Array type was not detected. */
-	Z=180
+	DamageTypesAcceptedOnly(0)='dnGame.BulletDamage'
+	DamageTypesAcceptedOnly(1)='Engine.ExplosionDamage'
+	Health=180
 	HealthCap=180
 	bTickOnlyWhenPhysicsAwake=true
 	ImpactSoundRadius=16384
 	ImpactSoundInnerRadius=512
 	PhysicsEntityGroup=VehiclesDecoGroup
-	PhysicsSoundOverrides=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.Vehicles.Veh_Impact_01','a_impact.Vehicles.Veh_Impact_02','a_impact.Vehicles.Veh_Impact_03','a_impact.Vehicles.Veh_Impact_04'),SoundInfo=(InputRange=(Min=64,Max=1200),OutputPitchRange=(Min=0.7,Max=0.8),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.Vehicles.Veh_Roll_Loop_01'),SoundInfo=(InputRange=(Min=0.4,Max=8),OutputPitchRange=(Min=0.9,Max=1.1),OutputVolumeRange=(Min=0.75,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(2)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.metal.BoatScrape01'),SoundInfo=(InputRange=(Min=128,Max=400),OutputPitchRange=(Min=0.7,Max=0.8),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
 }

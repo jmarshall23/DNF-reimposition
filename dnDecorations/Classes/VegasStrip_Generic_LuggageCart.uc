@@ -15,5 +15,17 @@ defaultproperties
 	DynamicInteractionClassification=0
 	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
 	PhysicsMassType=2
-	PhysicsSoundOverrides=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.Cart_Impact_01','a_impact.SpecialCase.Cart_Impact_02','a_impact.SpecialCase.Cart_Impact_03','a_impact.SpecialCase.Cart_Impact_04','a_impact.SpecialCase.Cart_Impact_05'),SoundInfo=(InputRange=(Min=16,Max=190),OutputPitchRange=(Min=1,Max=1.25),OutputVolumeRange=(Min=0.75,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.Cart_Roll_LP_01'),SoundInfo=(InputRange=(Min=9,Max=70),OutputPitchRange=(Min=0.9,Max=1.1),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(2)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.metal.BoatScrape01'),SoundInfo=(InputRange=(Min=16,Max=80),OutputPitchRange=(Min=0.9,Max=1),OutputVolumeRange=(Min=0.5,Max=0.75)),bDisableSoundInWater=true)
+	Physics=18
+	bAcceptsProjectors=false
+	bAcceptsDecalProjectors=false
+	bLowerByCollision=true
+	CollisionRadius=28
+	CollisionHeight=40
+	Mass=50
+	DrawType=2
+	PrePivot=(X=1.291717E-41,Y=2.797242E-17,Z=0)
+	Mesh='c_generic.LuggageCart'
 }

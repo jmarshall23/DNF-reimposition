@@ -117,7 +117,7 @@ defaultproperties
 	Style=3
 	DrawType=8
 	StaticMesh='sm_class_decorations.Multiplayer.NukeSymbol'
-	ActorColorList=/* Array type was not detected. */
-	Y=0
-	Z=0
+	ActorColorList(0)=(ActorColor=(B=121,G=2,R=1,A=21),G=142,B=24,A=0)
+	NetUpdateFrequency=5
+	RemoteRole=0
 }

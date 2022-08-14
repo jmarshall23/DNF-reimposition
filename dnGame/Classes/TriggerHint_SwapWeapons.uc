@@ -21,6 +21,5 @@ defaultproperties
 	MessageMWOnly="<?int?dnGame.TriggerHint_SwapWeapons.MessageMWOnly?>"
 	Message="<?int?dnGame.TriggerHint_SwapWeapons.Message?>"
 	MaxDisplayTime=3
-	SpecialKeys=/* Array type was not detected. */
-	Pitch=/* Unknown default property type! */
+	SpecialKeys(0)=37
 }

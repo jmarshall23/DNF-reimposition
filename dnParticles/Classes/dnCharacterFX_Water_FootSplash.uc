@@ -13,6 +13,19 @@ defaultproperties
 {
 	DestroyWhenEmpty=true
 	UseZoneGravity=false
-	AdditionalSpawn=/* Array type was not detected. */
-	bFireAndForget=/* Unknown default property type! */
+	AdditionalSpawn(0)=(SpawnClass='dnCharacterFX_Water_FootHaze',TakeParentTag=false,Mount=false,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	PrimeCount=1
+	SpawnNumber=0
+	MaximumParticles=1
+	Lifetime=0.15
+	InitialVelocity=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	MaxVelocityVariance=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	AlphaEnd=0.1
+	Textures(0)='dt_effects.liquids.waterimpact5RC'
+	StartDrawScale=0.1
+	EndDrawScale=0.3
+	RotationVariance=65535
+	CollisionRadius=0
+	CollisionHeight=0
+	Style=3
 }

@@ -151,7 +151,7 @@ struct SClientAdjustment
 {
 	var bool bAckGoodMove;
 	var float Timestamp;
-	var edfindable Vector NewLocation;
+	var edfindable nocompress Vector NewLocation;
 	var Actor.EPostureStateEx NewPosture;
 };
 
@@ -447,7 +447,7 @@ var travel float DrunkEndTime;
 var travel float DrunkLevel;
 var Actor CigarAttachment;
 var transient float DebugSlomo;
-var bool bHoloDukeActive;
+var netupdate(NU_HoloDukeActive) bool bHoloDukeActive;
 var MaterialEx HoloDukeEffectMaterial;
 var array<SHoloDukeEffectActor> HoloDukeEffectActors;
 var Weapon DetonatorRef;
@@ -564,11 +564,11 @@ var Actor MyDebugView;
 var int MaxVoteCount;
 var int VoteCount;
 var float CrouchSpeedScaleEx;
-var float TargetWalkSpeedEx;
-var float TargetSprintSpeedEx;
-var float TargetJumpSpeedEx;
-var float TargetSwimSpeedEx;
-var float TargetLadderJumpSpeedEx;
+var netupdate(NU_TargetWalkSpeedEx) float TargetWalkSpeedEx;
+var netupdate(NU_TargetSprintSpeedEx) float TargetSprintSpeedEx;
+var netupdate(NU_TargetJumpSpeedEx) float TargetJumpSpeedEx;
+var netupdate(NU_TargetSwimSpeedEx) float TargetSwimSpeedEx;
+var netupdate(NU_TargetLadderJumpSpeedEx) float TargetLadderJumpSpeedEx;
 var(MovementEx) float WalkSpeedEx;
 var(MovementEx) float SprintSpeedEx;
 var(MovementEx) float JumpSpeedEx;
@@ -1068,7 +1068,7 @@ native(986) function NativeTick(float DeltaTime)
 	//native.DeltaTime;	
 }
 
-simulated event Tick(float DeltaTime)
+cached simulated event Tick(float DeltaTime)
 {
 	super(Actor).Tick(DeltaTime);
 	NativeTick(DeltaTime);
@@ -1111,7 +1111,7 @@ final simulated event UpdateGameSpeed()
 	return;
 }
 
-k2call simulated function KillPause(optional EventInfo AnimEventInfo)
+animevent simulated function KillPause(optional EventInfo AnimEventInfo)
 {
 	return;
 }
@@ -8183,19 +8183,19 @@ simulated function bool ShouldPeformFootstepEffect(int FootIndex)
 	return;
 }
 
-k2call function HeavyContactRumble(optional EventInfo AnimEventInfo)
+animevent function HeavyContactRumble(optional EventInfo AnimEventInfo)
 {
 	AddRumble(HeavyContactRumbleInfo);
 	return;
 }
 
-k2call function MediumContactRumble(optional EventInfo AnimEventInfo)
+animevent function MediumContactRumble(optional EventInfo AnimEventInfo)
 {
 	AddRumble(MediumContactRumbleInfo);
 	return;
 }
 
-k2call function LightContactRumble(optional EventInfo AnimEventInfo)
+animevent function LightContactRumble(optional EventInfo AnimEventInfo)
 {
 	AddRumble(LightContactRumbleInfo);
 	return;
@@ -9810,5 +9810,151 @@ defaultproperties
 	FloatingPushUpIntensity=0.2
 	HeatVisionBackground=(B=6,G=1,R=0,A=7)
 	ShakeFadeRate=4
-	
+	SprintingCameraBob(0)=(bNoLerp=false,bToggleSign=true,Style=1,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=-1,ShakeFrequency=0.25,ShakeMagnitude=240,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=PlayerPawn_Sprinting_0)
+	SprintingCameraBob(1)=(bNoLerp=false,bToggleSign=false,Style=0,Function=4,FalloffActor=none,FalloffDistance=0,ShakeDuration=-1,ShakeFrequency=0.25,ShakeMagnitude=240,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=PlayerPawn_Sprinting_2)
+	BobPCT=1
+	DamageViewKickSoft=1024
+	DamageViewKickHard=8192
+	DamageViewKickHardThreshold=20
+	MeleeContactShake=(bNoLerp=false,bToggleSign=true,Style=1,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.4,ShakeFrequency=0.07,ShakeMagnitude=1000,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=PlayerPawn_MeleeContact_Shake)
+	ExecutionContactShake=(bNoLerp=false,bToggleSign=true,Style=1,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.4,ShakeFrequency=0.07,ShakeMagnitude=2000,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=PlayerPawn_MeleeContact_Shake)
+	MeleeContactRumble=(RumbleName=MeleeRumble,RumbleDuration=0.17,RumbleLeftMagnitude=0.33,RumbleRightMagnitude=0.33,FalloffActor=none,FalloffDistance=0)
+	ExecutionContactRumble=(RumbleName=ExecutionRumble,RumbleDuration=0.45,RumbleLeftMagnitude=0.5,RumbleRightMagnitude=0.45,FalloffActor=none,FalloffDistance=0)
+	LightContactRumbleInfo=(RumbleName=LightContactRumble,RumbleDuration=0.4,RumbleLeftMagnitude=0.5,RumbleRightMagnitude=0.15,FalloffActor=none,FalloffDistance=0)
+	MediumContactRumbleInfo=(RumbleName=MediumContactRumble,RumbleDuration=0.65,RumbleLeftMagnitude=0.6,RumbleRightMagnitude=0.15,FalloffActor=none,FalloffDistance=0)
+	HeavyContactRumbleInfo=(RumbleName=HeavyContactRumble,RumbleDuration=0.3,RumbleLeftMagnitude=0.85,RumbleRightMagnitude=0.1,FalloffActor=none,FalloffDistance=0)
+	EgoCapIncreaseRumbleInfo=(RumbleName=EgoCapIncreaseRumble,RumbleDuration=0.18,RumbleLeftMagnitude=0.4,RumbleRightMagnitude=0.1,FalloffActor=none,FalloffDistance=0)
+	HeatFogColor=(B=6,G=1,R=0,A=7)
+	NightFogColor=(B=6,G=1,R=0,A=7)
+	ZoneFogOverride=(OverrideGroupID=ZoneFogOverride,OverrideFog=(Color=(B=6,G=1,R=0,A=7),Engine=/*ERROR: System.Exception: Unsupported property tag type None
+   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 898
+   at UELib.Core.UDefaultProperty.TryDeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 434*/,B=0,A=0),Start=0,End=0,Opacity=0)
+	VolumeFogOverride=(OverrideGroupID=VolumeFogOverride,OverrideFog=(Color=(B=6,G=1,R=0,A=7),Engine=/*ERROR: System.Exception: Unsupported property tag type None
+   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 898
+   at UELib.Core.UDefaultProperty.TryDeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 434*/,B=0,A=0),Start=0,End=0,Opacity=0)
+	DefaultFOV=75
+	DefaultFOVShrunk=70
+	LastKillTime=-999
+	QuickSaveString="<?int?Engine.PlayerPawn.QuickSaveString?>"
+	NoPauseMessage="<?int?Engine.PlayerPawn.NoPauseMessage?>"
+	ViewingFrom="<?int?Engine.PlayerPawn.ViewingFrom?>"
+	OwnCamera="<?int?Engine.PlayerPawn.OwnCamera?>"
+	FailedView="<?int?Engine.PlayerPawn.FailedView?>"
+	JoinSpectatorText="<?int?Engine.PlayerPawn.JoinSpectatorText?>"
+	LeaveSpectatorText="<?int?Engine.PlayerPawn.LeaveSpectatorText?>"
+	LookUpAnalogInfo[0]=(Speed=1600,AccelSpeed=0,AccelThreshold=0,AccelTime=0,AccelWarmup=0)
+	LookUpAnalogInfo[1]=(Speed=2100,AccelSpeed=0,AccelThreshold=0,AccelTime=0,AccelWarmup=0)
+	LookUpAnalogInfo[2]=(Speed=2600,AccelSpeed=0,AccelThreshold=0,AccelTime=0,AccelWarmup=0)
+	LookUpAnalogInfo[3]=(Speed=3100,AccelSpeed=0,AccelThreshold=0,AccelTime=0,AccelWarmup=0)
+	LookUpAnalogInfo[4]=(Speed=3600,AccelSpeed=0,AccelThreshold=0,AccelTime=0,AccelWarmup=0)
+	LookUpAnalogInfo[5]=(Speed=4100,AccelSpeed=0,AccelThreshold=0,AccelTime=0,AccelWarmup=0)
+	LookUpAnalogInfo[6]=(Speed=4600,AccelSpeed=0,AccelThreshold=0,AccelTime=0,AccelWarmup=0)
+	LookUpAnalogInfo[7]=(Speed=5100,AccelSpeed=0,AccelThreshold=0,AccelTime=0,AccelWarmup=0)
+	LookUpAnalogInfo[8]=(Speed=5600,AccelSpeed=0,AccelThreshold=0,AccelTime=0,AccelWarmup=0)
+	LookUpAnalogInfo[9]=(Speed=6100,AccelSpeed=0,AccelThreshold=0,AccelTime=0,AccelWarmup=0)
+	TurnAnalogInfo[0]=(Speed=2500,AccelSpeed=5000,AccelThreshold=1,AccelTime=0.5,AccelWarmup=0.1)
+	TurnAnalogInfo[1]=(Speed=3000,AccelSpeed=6000,AccelThreshold=1,AccelTime=0.5,AccelWarmup=0.1)
+	TurnAnalogInfo[2]=(Speed=3500,AccelSpeed=7000,AccelThreshold=1,AccelTime=0.5,AccelWarmup=0.1)
+	TurnAnalogInfo[3]=(Speed=4000,AccelSpeed=8000,AccelThreshold=1,AccelTime=0.5,AccelWarmup=0.1)
+	TurnAnalogInfo[4]=(Speed=4500,AccelSpeed=9000,AccelThreshold=1,AccelTime=0.5,AccelWarmup=0.1)
+	TurnAnalogInfo[5]=(Speed=5000,AccelSpeed=10000,AccelThreshold=1,AccelTime=0.5,AccelWarmup=0.1)
+	TurnAnalogInfo[6]=(Speed=5500,AccelSpeed=11000,AccelThreshold=1,AccelTime=0.5,AccelWarmup=0.1)
+	TurnAnalogInfo[7]=(Speed=6000,AccelSpeed=12000,AccelThreshold=1,AccelTime=0.5,AccelWarmup=0.1)
+	TurnAnalogInfo[8]=(Speed=6500,AccelSpeed=13000,AccelThreshold=1,AccelTime=0.5,AccelWarmup=0.1)
+	TurnAnalogInfo[9]=(Speed=7000,AccelSpeed=14000,AccelThreshold=1,AccelTime=0.5,AccelWarmup=0.1)
+	BladderLevel=5
+	EgoDepletedHUDEffectMaterial='dt_hud.hitefx.neardeatheyeball'
+	EgoDepletedHUDEffectAmp=0.4
+	EgoDepletedHUDEffectFreq=8
+	EgoDepletedHUDEffectOffset=0.9
+	MaxDrunkLevel=1
+	DrunkRampUpTime=2
+	DrunkTime=21
+	DrunkRecoveryTime=1
+	DrunkBlurAmount=0.66
+	DrunkZoomDuration=2
+	DrunkZoomPct=0.08
+	DrunkRingingSound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=6,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.293258E-41,Y=3.079134E-17,Z=0),Z=0),Velocity3D=(X=1.293258E-41,Y=3.079134E-17,Z=0),Z=0)
+	DrunkRingingSoundVolume=0.8
+	DrunkDeafFactorBase=0.6
+	DrunkDeafFactorDelta=0.1
+	DrunkHiccupTime=5
+	DrunkHiccupTimeVar=1
+	DrunkDamageAbsorbPct=0.8
+	SteroidDamageAbsorbPct=0.667
+	HoloDukeEffectMaterial='dt_effects.FrameBuffers.HoloDukeEffect_FB'
+	IdleWarningTime=180
+	bCheatsEnabled=true
+	bCanSprint=true
+	bSprintFatigue=true
+	PainDelay=0.7
+	MinViewPitch=16384
+	MaxViewPitch=49152
+	MaxVoteCount=5
+	CrouchSpeedScaleEx=0.6
+	TargetWalkSpeedEx=260
+	TargetSprintSpeedEx=320
+	TargetJumpSpeedEx=330
+	TargetSwimSpeedEx=130
+	TargetLadderJumpSpeedEx=285
+	WalkSpeedEx=260
+	SprintSpeedEx=320
+	JumpSpeedEx=330
+	ShrunkenJumpSpeedEx=96.75
+	SwimSpeedEx=130
+	LadderJumpSpeedEx=285
+	WaterExitJumpSpeedEx=435
+	SprintTotalTime=8
+	SprintRecoverTime=5
+	SprintFOVScale=1.125
+	VehiclePOV=1
+	SizeChangeFOVScale=1.075
+	SizeChangeFOVApplyTime=0.5
+	SizeChangeFOVRemoveTime=1
+	SizeChangeMotionBlur=1
+	SizeChangeMotionBlurTime=4
+	bPhysicsControllerActive=true
+	bCanHear=true
+	bIsPlayer=true
+	bAutoActivate=true
+	bWeaponsActive=true
+	bViewTarget=true
+	Faction='AIFactionDuke'
+	SteroidHUDEffectMaterial='dt_hud.steriods.steroids_fb1'
+	SteroidHUDEffectMaterial2='dt_hud.steriods.steroids_fb2'
+	DesiredSpeed=0.3
+	FootBones(0)=(bRightSide=false,BoneName=leftfoot,BoneID=foot_left_1,BoneRotOffset=(Pitch=8751,Yaw=38404096,Roll=34))
+	FootBones(1)=(Roll=0)
+	CameraMount=mount_camera
+	bMultiEMPulse=true
+	EMPDisableTime=10
+	bClientSidePhysics=true
+	bStartEnabled=true
+	DynamicInteractionClassification=5
+	EnableDisableThreshold=0
+	Physics=18
+	bIsPlayerPawn=true
+	bIgnoreBList=true
+	bTravel=true
+	bCollideWorld=false
+	bUsePlayerCollisions=true
+	Mass=200
+	NetworkTweenRate=15
+	NetPriority=3
+	ScaleModifierGroupList(0)=(Modifiers=none,Identifier=SizeChange,DefaultModValue=0,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(1)=(Modifiers=none,Identifier=Blur,DefaultModValue=0,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(2)=(Modifiers=none,Identifier=FOV,DefaultModValue=1,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(3)=(Modifiers=none,Identifier=Volume,DefaultModValue=1,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(4)=(Modifiers=none,Identifier=MovementSpeed,DefaultModValue=1,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(5)=(Modifiers=none,Identifier=MotionBlur,DefaultModValue=0,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(6)=(Modifiers=none,Identifier=Bloom,DefaultModValue=1,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(7)=(Modifiers=none,Identifier=BlurBrightness,DefaultModValue=1,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(8)=(Modifiers=none,Identifier=DOFBlurAmount,DefaultModValue=-1,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(9)=(Modifiers=none,Identifier=DOFFocalDistance,DefaultModValue=-1,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(10)=(Modifiers=none,Identifier=DOFFocalRangeMax,DefaultModValue=-1,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(11)=(Modifiers=none,Identifier=DOFFocalRangeMin,DefaultModValue=-1,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(12)=(Modifiers=none,Identifier=ZoneFogOverride,DefaultModValue=0,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(13)=(Modifiers=none,Identifier=VolumeFogOverride,DefaultModValue=0,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(14)=(Modifiers=none,Identifier=AnimationValues,DefaultModValue=1,LastValue=0,NoUpdate=false)
+	ScaleModifierGroupList(15)=(Modifiers=none,Identifier=TimeDilation,DefaultModValue=1,LastValue=1,NoUpdate=false)
 }

@@ -19,5 +19,11 @@ defaultproperties
 	AlphaMid=0.375
 	AlphaEnd=0
 	AlphaRampMid=0.625
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.LensFlares.subtle_flare6BC'
+	StartDrawScale=2
+	EndDrawScale=2
+	RotationVariance=65535
+	bForceNonFinalBlendBlooms=true
+	CollisionRadius=0
+	CollisionHeight=0
 }

@@ -11,4 +11,16 @@ class Settings_FoodService_SodaFountain extends Settings_FoodService
 defaultproperties
 {
 	HealthPrefab=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Settings_FoodService_SodaDispenser_PepClassic',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=-1.075528E+08,Y=2.802759E-17,Z=16.5),Z=-4),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=0,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(5)=(bSkipVerifySelf=false,SpawnClass='Settings_FoodService_SodaDispenser_PepDiet',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=-1.075528E+08,Y=2.802759E-17,Z=11),Z=-4),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(6)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(7)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	bAcceptsDecalProjectors=false
+	CollisionRadius=20
+	CollisionHeight=25
+	StaticMesh='sm_class_decorations.SodaFountain.SodaFountain'
 }

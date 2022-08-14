@@ -52,10 +52,12 @@ function HideComponents()
 defaultproperties
 {
 	HealthPrefab=0
-	MountOnSpawn=/* Array type was not detected. */
-	SpawnClass='Settings_Workout_SpeedBag_Bag'
-	SpawnChance=0
-	MountPrefab=(bDontActuallyMount=true,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=-14.5)
-	RenderObject=none
-	DrawScale=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Settings_Workout_SpeedBag_Bag',SpawnChance=0,MountPrefab=(bDontActuallyMount=true,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=-14.5),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Hollow'
+	PhysicsMassType=1
+	PlacementZOffset=120
+	CollisionRadius=30
+	CollisionHeight=3
+	Mass=10
+	StaticMesh='sm_geo_decorations.Supports.SpeedBagSupport'
 }

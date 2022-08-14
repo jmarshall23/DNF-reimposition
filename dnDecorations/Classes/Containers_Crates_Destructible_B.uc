@@ -10,5 +10,11 @@ class Containers_Crates_Destructible_B extends Containers_Crates_Destructible
 
 defaultproperties
 {
-	SpawnOnDestroyed=/* Array type was not detected. */
+	SpawnOnDestroyed(0)=(SpawnClass='Containers_Crates_Destructible_B_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=1,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=true,Offset=(X=-3.368329E-11,Y=2.802806E-17,Z=-13.285),Z=11.777)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=None,MotionInfo=none)
+	StaticMesh='sm_class_decorations.WoodenCrate.WoodenCrate'
 }

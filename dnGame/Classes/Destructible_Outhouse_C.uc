@@ -6,3 +6,22 @@
  * All rights belong to their respective owners.
  *******************************************************************************/
 class Destructible_Outhouse_C extends dnDestructibleBuildingDefinition within dnDestructibleBuilding;
+
+defaultproperties
+{
+	Parts(0)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_Doorframe',Location=(X=-6.879503E+10,Y=2.954609E-17,Z=2.039124),Z=0.485199)
+	Parts(1)=(Rotation=(Pitch=67117605,Yaw=572915712,Roll=63488),Roll=0)
+	Parts(2)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0.7),Z=0)
+	Parts(3)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(4)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_Plank',Location=(X=-6.879503E+10,Y=2.954598E-17,Z=-26.96088),Z=0.485199)
+	Parts(5)=(Rotation=(Pitch=-2147474907,Yaw=572915712,Roll=14336),Roll=64512)
+	Parts(6)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0.86)
+	Parts(7)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(8)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_Plank',Location=(X=-7.258872E+24,Y=2.954625E-17,Z=30.03912),Z=0.485199)
+	Parts(9)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=16384),Roll=0)
+	Parts(10)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0.86)
+	Parts(11)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(12)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_walla1',Location=(X=-1.111444E-16,Y=2.954566E-17,Z=-32.96002),Z=-16.5148)
+	ParticleEffects(0)=(SpawnerClass='p_Decorations.Debris_WoodBuilding.Debris_WoodBuilding_Spawner',LocationOffset=(X=1.292418E-41,Y=2.94903E-17,Z=4),Z=-62)
+	ShellPart=(StaticMesh='SM_Lvl_Desert.Destructible_Shells.Outhouse_C',Location=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+}

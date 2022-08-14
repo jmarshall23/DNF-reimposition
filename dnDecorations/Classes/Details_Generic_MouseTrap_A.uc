@@ -113,5 +113,20 @@ defaultproperties
 {
 	TrapDamage=20
 	TrapTimer=0.15
-	DecoActivities_Default=/* Array type was not detected. */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(SpringTrap),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Details_Generic_MouseTrap_A.DA_Sound_Details_Generic_MouseTrap_A_SpringTrap','dnGame.DecoActivityDeclarations.DA_Ticking_TICK_NoRules'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(Snapped),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Details_Generic_MouseTrap_A.DA_Sound_Details_Generic_MouseTrap_A_Snapped',DecoActivities_KarmaImpulse'Details_Generic_MouseTrap_A.DA_KImpulse_Details_Generic_MouseTrap_A_Snapped','dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Disable','dnGame.DecoActivityDeclarations.DA_Ticking_TICK_Normal'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	HealthPrefab=0
+	bForceUsePhrase=true
+	bUsable=true
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Details_Generic_MouseTrap_HingeBar_A',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=HingeBar,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=-0.5),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	bIgnorePawnAirCushion=true
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	KImpactThreshold=25
+	Physics=18
+	CollisionRadius=8
+	CollisionHeight=1.3
+	Mass=10
+	StaticMesh='sm_class_decorations.RatTrap.RatTrap_cd'
 }

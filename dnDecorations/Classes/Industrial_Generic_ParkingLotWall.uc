@@ -10,6 +10,20 @@ class Industrial_Generic_ParkingLotWall extends Pillars_Destructible
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	SpawnOnDestroyed=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Industrial_Generic_ConcreteBlock_A.DA_Sound_ConcreteBlock_Destroyed'
+	begin object name=DA_ParkingLotWall_BRKN class=DecoActivities_Display
+		RenderObject='sm_geo_decorations.ParkingLotWall.ParkingLotWall_brkn'
+	object end
+	// Reference: DecoActivities_Display'Industrial_Generic_ParkingLotWall.DA_ParkingLotWall_BRKN'
+	DestroyedActivities(2)=DA_ParkingLotWall_BRKN
+	SpawnOnDestroyed(0)=(SpawnClass='Industrial_Generic_ParkingLotWall_Gibs',RenderObject='sm_geo_decorations.ParkingLotWall.ParkingLotWall_gib1',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.797242E-17,Z=82),Z=30)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bBlockPath=true
+	CollisionHeight=48
+	StaticMesh='sm_geo_decorations.ParkingLotWall.ParkingLotWall'
 }

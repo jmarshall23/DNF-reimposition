@@ -116,9 +116,9 @@ var(KarmaCollision) noexport class<dnFriendFX_Spawners> WaterSplash "Class to us
 var(KarmaCollision) noexport float MinSplashTime "Minimum time between splashes";
 var array<SPhysicsWaterInteraction> WaterInteractions;
 var float NextSplashTime;
-var const editconst transient pointer PhysicsUserData;
-var const editconst transient pointer MeqConstraints;
-var const editconst transient array<transient pointer> PhysicsStateStack;
+var const editconst transient nontrans pointer PhysicsUserData;
+var const editconst transient nontrans pointer MeqConstraints;
+var const editconst transient nontrans array<transient pointer> PhysicsStateStack;
 var const int iAwake;
 var const transient int PseudoDynamicsHandle;
 var(Karma) float ImpactSoundRadius;
@@ -128,7 +128,7 @@ var(Karma) noexport float ImpactSoundTimer "This much time must pass between eac
 var float NextLegalImpactSoundTime;
 var int NextLegalImpactSoundOffset;
 var(Karma) const KarmaActor.EStaticInteractionClassification StaticInteractionClassification;
-var(Karma) const KarmaActor.EDynamicInteractionClassification DynamicInteractionClassification;
+var(Karma) const netupdate(SetDynamicInteractionClassification) KarmaActor.EDynamicInteractionClassification DynamicInteractionClassification;
 var transient Object.ESoundSlot PersistantEffectType;
 var transient Object.ESoundSlot LastPersistantEffectType;
 var transient int PersistantEffectDBIndex;

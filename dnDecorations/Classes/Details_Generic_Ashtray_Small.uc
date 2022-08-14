@@ -17,12 +17,17 @@ event TakeDamage(Pawn Instigator, float Damage, Vector DamageOrigin, Vector Dama
 
 defaultproperties
 {
-	DecoActivities_Default=/* Array type was not detected. */
-	X=/* Unknown default property type! */
-	
-/* Exception thrown while deserializing Engine
-System.ArgumentOutOfRangeException: Length cannot be less than zero.
-Parameter name: length
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(15),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_HealthChange'Details_Generic_Ashtray_Small.DA_Health_Details_Generic_Ashtray_Small_100Damage'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Glass_Small'
+	HealthPrefab=1
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Glass1'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_SmokeSubtle'
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Plastic'
+	Physics=18
+	CollisionRadius=2.4
+	CollisionHeight=0.5
+	Mass=10
+	StaticMesh='sm_geo_decorations.AshTray.AshTray'
 }

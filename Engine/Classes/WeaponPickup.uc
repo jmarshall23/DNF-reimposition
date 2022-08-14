@@ -50,5 +50,10 @@ defaultproperties
 	RespawnTime=30
 	bTickOnlyWhenPhysicsAwake=true
 	PhysicsEntityGroup=CorpsePhysicsEntityGroup
-	PhysicsSoundOverrides(0)=(Color=(Engine=/* Unknown default property type! */,OtherMaterialTypes=(none,class'DrawScaleRatio',class'Instigator',class'Yaw',none,class'Scene',class'Jetpack',class'Pawn',class'Actor',class'Weapon_Drop_01',class'Weapon_Drop_02',class'HUD',class'TriggerWhenClassCarried',class'Level',class'Wins',class'Pawn',class'GeneratePatternList',class'Vector',class'Game',class'aOther',class'Inventory',none,none,class'GameTimeSeconds',class'bTraceTexture',class'Vector',class'Inventory',none,none,class'MaximumMotionActor',class'ReturnValue',class'TargetRotationPitch',class'GeneratePatternList'),Engine=85,Engine=0.9,Max=1),OutputVolumeRange=(Min=0.5,Max=1))
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.Generic.Weapon_Drop_01','a_impact.Generic.Weapon_Drop_02'),SoundInfo=(InputRange=(Min=10,Max=250),OutputPitchRange=(Min=0.9,Max=1),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=none,SoundInfo=(InputRange=(Min=0,Max=0),OutputPitchRange=(Min=0,Max=0),OutputVolumeRange=(Min=0,Max=0)),bDisableSoundInWater=false)
+	PhysicsSoundOverrides(2)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=none,SoundInfo=(InputRange=(Min=0,Max=0),OutputPitchRange=(Min=0,Max=0),OutputVolumeRange=(Min=0,Max=0)),bDisableSoundInWater=false)
+	bDoOverlayEffect=true
+	bOverlayEffectUsedAsHint=true
+	OverlayMaterial='dt_effects.OverlayMaterial.OverlayMaterial_Boss'
 }

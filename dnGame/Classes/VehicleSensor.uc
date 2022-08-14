@@ -24,5 +24,7 @@ event BeginSenseObject(KarmaActor Actor)
 
 defaultproperties
 {
-	OnlySenseClasses=/* Array type was not detected. */
+	OnlySenseClasses(0)='Engine.Pickup'
+	StaticInteractionClassification=1
+	bIsVehicleSensor=true
 }

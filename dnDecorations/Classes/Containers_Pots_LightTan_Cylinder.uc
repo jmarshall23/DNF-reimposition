@@ -11,6 +11,18 @@ class Containers_Pots_LightTan_Cylinder extends Containers_Pots
 defaultproperties
 {
 	DirtHeight=10
-	DestroyedActivities=/* Array type was not detected. */
-	TurnRight3=class'dnControlHelper_Pinball_Light'
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Containers_Pots.DA_Sound_LargePot_Brkn'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	DestroyedActivities(3)=DecoActivities_Interaction'Containers_Pots.DA_Interact_Containers_Pots_Brkn'
+	begin object name=DA_Display_Containers_Pots_LightTan_Cylinder_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_decorations.Containers.HedgePot_brkn'
+	object end
+	// Reference: DecoActivities_Display'Containers_Pots_LightTan_Cylinder.DA_Display_Containers_Pots_LightTan_Cylinder_Brkn'
+	DestroyedActivities(4)=DA_Display_Containers_Pots_LightTan_Cylinder_Brkn
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Plants_Generic_Potted_Hedge_Tall_Round_A',SpawnChance=0,MountPrefab=(bDontActuallyMount=true,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=Plant,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(0)=(SpawnClass='Details_Generic_DirtPile_B',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	CollisionRadius=19
+	CollisionHeight=15
+	StaticMesh='sm_class_decorations.Containers.HedgePot'
 }

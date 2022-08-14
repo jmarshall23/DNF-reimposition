@@ -76,7 +76,7 @@ function LinkRockets()
 	return;
 }
 
-k2call simulated function Fire_Effects(optional EventInfo AnimEventInfo)
+animevent simulated function Fire_Effects(optional EventInfo AnimEventInfo)
 {
 	super(Weapon).Fire_Effects(AnimEventInfo);
 	// End:0x72
@@ -116,6 +116,12 @@ defaultproperties
 	PickupClass='MP_EnforcerGunPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=17
-	AutoRegisterIKClasses=/* Array type was not detected. */
-	EndingBlendAlpha='SoundConfig.Inventory.VoicePack_EnforcerGun'
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_EnforcerGun'
+	Mesh='c_dnWeapon.Enforcer_Gun'
+	Skins(0)='dt_multiplayer_shared.Weapons.Enfgun2_BS'
+	SoundVolume=200
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_EnforcerGun'
 }

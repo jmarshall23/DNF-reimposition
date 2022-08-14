@@ -953,31 +953,25 @@ defaultproperties
 	VisibleHeaderText="<?int?dnWindow.UDukeSceneVideoOptions.VisibleHeaderText?>"
 	ConfirmDefaultsText="<?int?dnWindow.UDukeSceneVideoOptions.ConfirmDefaultsText?>"
 	ConfirmDefaultsTitle="<?int?dnWindow.UDukeSceneVideoOptions.ConfirmDefaultsTitle?>"
-	DisplayModes4x3(0)="640x480 800x600 	1024x768 	1152x864 	1200x900"
-	DisplayModes4x3(1)=
-/* Exception thrown while deserializing DisplayModes4x3
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 174
-   at UELib.UObjectStream.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 722
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 447 */
-	DisplayModes4x3(2)=
-/* Exception thrown while deserializing DisplayModes4x3
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 156
-   at UELib.UObjectStream.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 722
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 447 */
-	Text=/* Unknown default property type! */
-	Button=829960248
-	SetText=5
-	Notify=/* Unknown default property type! */
-	NavigateBack=/* Unknown default property type! */
-	Button=Text
-	StructProperty=ObjectProperty'UDukeSceneStats.StatDisplay'
-	AliasNames=/* Unknown default property type! */
-	Commands=822673456
-	HideWindow=52
-	Text=none
+	DisplayModes4x3(0)="640x480"
+	DisplayModes4x3(1)="800x600"
+	DisplayModes4x3(2)="1024x768"
+	DisplayModes4x3(3)="1152x864"
+	DisplayModes4x3(4)="1200x900"
+	DisplayModes5x4(0)="600x480"
+	DisplayModes5x4(1)="800x640"
+	DisplayModes5x4(2)="1000x800"
+	DisplayModes5x4(3)="1280x1024"
+	DisplayModes16x9(0)="800x450"
+	DisplayModes16x9(1)="960x540"
+	DisplayModes16x9(2)="1280x720"
+	DisplayModes16x9(3)="1440x810"
+	DisplayModes16x9(4)="1600x900"
+	DisplayModes16x10(0)="800x500"
+	DisplayModes16x10(1)="1152x720"
+	DisplayModes16x10(2)="1200x750"
+	DisplayModes16x10(3)="1408x880"
+	DisplayModes16x10(4)="1680x1050"
+	MessageBoxSwapDelay=0.1
+	TitleText="<?int?dnWindow.UDukeSceneVideoOptions.TitleText?>"
 }

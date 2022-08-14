@@ -16,5 +16,7 @@ defaultproperties
 	bAllowUsePickup=false
 	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_PipeBomb'
 	Density=2.8
-	PhysicsSoundOverrides=/* Array type was not detected. */
+	PhysicsSoundOverrides=none
+	CollisionHeight=6
+	StaticMesh='sm_class_decorations.Weapon_Pickups.PipeBomb_Static'
 }

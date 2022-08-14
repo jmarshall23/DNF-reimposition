@@ -10,6 +10,15 @@ class Industrial_Generic_Propanetank_Gibs extends dnDecoration_Gibs
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_class_decorations.Propanetank.Propanetank_Gib2',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_class_decorations.Propanetank.Propanetank_Gib3',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_class_decorations.Propanetank.Propanetank_Gib4',bForcedOnly=false)
+	Gibs(3)=(RenderObject='sm_class_decorations.Propanetank.Propanetank_Gib5',bForcedOnly=false)
+	Gibs(4)=(RenderObject='sm_class_decorations.Propanetank.Propanetank_Gib6',bForcedOnly=false)
+	bPermanent=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid'
+	PhysicsEntityGroup=PropaneTankGibs
+	Physics=18
+	bBlockPlayers=true
+	Mass=15
 }

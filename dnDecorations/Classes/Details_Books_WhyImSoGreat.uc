@@ -10,7 +10,13 @@ class Details_Books_WhyImSoGreat extends Details_Books
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	PhysicsSoundOverrides=/* Array type was not detected. */
-	OtherMaterialTypes=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Wood_Small'
+	begin object name=DA_Display_Details_Books_WhyImSoGreat_Brkn class=DecoActivities_Display
+		Skins(0)=(Index=0,NewMaterialEx='mt_Skins.Book.Book1tw_D2BRKN')
+	object end
+	// Reference: DecoActivities_Display'Details_Books_WhyImSoGreat.DA_Display_Details_Books_WhyImSoGreat_Brkn'
+	DestroyedActivities(2)=DA_Display_Details_Books_WhyImSoGreat_Brkn
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.Book_Impact_01','a_impact.SpecialCase.Book_Impact_02','a_impact.SpecialCase.Book_Impact_03','a_impact.SpecialCase.Book_Impact_04'),SoundInfo=(InputRange=(Min=64,Max=1280),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.4,Max=0.8)),bDisableSoundInWater=true)
+	Mesh='c_generic.book_whygreatest'
 }

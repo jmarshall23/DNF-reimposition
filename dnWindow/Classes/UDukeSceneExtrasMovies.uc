@@ -31,15 +31,13 @@ function ButtonClicked(UDukeMenuButton Button, string Command)
 
 defaultproperties
 {
-	Entries(0)=System=/* Unknown default property type! */,OnLeaderboardUpdate=/* Unknown default property type! */,Button=/* Array type was not detected. */,AliasNames=/* Unknown default property type! */,CreatedWindows=/* Unknown default property type! */,
-/* Exception thrown while deserializing Entries
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
+	Entries(0)=(Text="1998 E3 Trailer",Help="",Command="Extra_E3_1998",Button=none)
+	Entries(1)=(Text="2001 E3 Trailer",Help="",Command="Extra_E3_2001",Button=none)
+	Entries(2)=(Text="2003 Gameplay Video",Help="",Command="Extra_DNF_2003",Button=none)
+	Entries(3)=(Text="2006 Gameplay Video",Help="",Command="Extra_DNF_2006",Button=none)
+	Entries(4)=(Text="2007 Christmas Teaser",Help="",Command="Extra_Xmas_2007",Button=none)
+	Entries(5)=(Text="Triptych Promotional Trailer",Help="",Command="Extra_TriptychTrailer",Button=none)
+	Entries(6)=(Text="Killed In Action",Help="",Command="KIA",Button=none)
+	TitleText="<?int?dnWindow.UDukeSceneExtrasMovies.TitleText?>"
+	SoundNavigateBackInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=(0),Volume=0.5,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=true,bNoFilter=true,bNoOcclude=true,bNoAIHear=true,bNoScale=true,bSpoken=false,bPlayThroughListener=false,bNoDoppler=true,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=true),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=1,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
 }

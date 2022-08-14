@@ -21,5 +21,17 @@ defaultproperties
 	MaxVelocityVariance=(X=1.291857E-41,Y=2.802996E-17,Z=480)
 	LocalFriction=256
 	BounceElasticity=0.325
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Debris.woodshard4aRC'
+	Textures(1)='dt_effects.Debris.woodshard4bRC'
+	Textures(2)='dt_effects.Debris.woodshard4cRC'
+	Textures(3)='dt_effects.Debris.woodshard4dRC'
+	Textures(4)='dt_effects.Debris.woodshard4eRC'
+	StartDrawScale=0.325
+	EndDrawScale=0.325
+	DrawScaleVariance=0.1
+	RotationVariance=65535
+	TriggerType=0
+	CollisionRadius=16
+	CollisionHeight=16
+	Style=2
 }

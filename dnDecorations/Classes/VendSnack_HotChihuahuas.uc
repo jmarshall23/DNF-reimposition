@@ -11,6 +11,6 @@ class VendSnack_HotChihuahuas extends Details_Generic_VendSnack
 defaultproperties
 {
 	GrabInfo=(bCanDuckWhileHeld=true,MountItemOverride=mount_handright,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	PhysicsSoundOverrides=/* Array type was not detected. */
-	OtherMaterialTypes=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.SnackBox_01','a_impact.SpecialCase.SnackBox_02','a_impact.SpecialCase.SnackBox_03','a_impact.SpecialCase.SnackBox_04'),SoundInfo=(InputRange=(Min=64,Max=1280),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.4,Max=0.8)),bDisableSoundInWater=true)
+	StaticMesh='sm_class_decorations.VendingMachine.snack_2'
 }

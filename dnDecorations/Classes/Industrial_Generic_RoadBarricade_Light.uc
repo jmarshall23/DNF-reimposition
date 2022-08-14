@@ -18,5 +18,29 @@ event Destroyed()
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	begin object name=DA_Collision_RoadBarricade_Light_On class=DecoActivities_Collision
+		bCollideActorsModifier=1
+		bCollideWorldModifier=1
+		bBlockActorsModifier=1
+		bBlockPlayersModifier=1
+		bBlockKarmaModifier=1
+	object end
+	// Reference: DecoActivities_Collision'Industrial_Generic_RoadBarricade_Light.DA_Collision_RoadBarricade_Light_On'
+	DestroyedActivities(2)=DA_Collision_RoadBarricade_Light_On
+	DestroyedActivities(3)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	begin object name=DA_Impulse_RoadBarricade_Light class=DecoActivities_KarmaImpulse
+		ImpulseForce=10
+		ImpulseOffsetVariance=(X=1.291717E-41,Y=2.802716E-17,Z=0)
+	object end
+	// Reference: DecoActivities_KarmaImpulse'Industrial_Generic_RoadBarricade_Light.DA_Impulse_RoadBarricade_Light'
+	DestroyedActivities(4)=DA_Impulse_RoadBarricade_Light
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsEntityGroup=RoadBarricadeGibs
+	bBlockKarma=false
+	CollisionRadius=5
+	CollisionHeight=5
+	Mass=20
+	StaticMesh='sm_class_decorations.Barricade.Barricade_Light'
 }

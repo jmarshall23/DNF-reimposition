@@ -12,10 +12,10 @@ class dnCaptureTheBabe_Player extends DukeMultiplayerAssets
 	dependson(PlayerProgression)
 	dependson(MetagameHUD);
 
-var bool bCarryingBabe;
-var bool bButtSlap;
-var Pawn carriedbabe;
-var bool carrierShrinking;
+var netupdate(NU_SetClientCarryingBabe) bool bCarryingBabe;
+var netupdate(NU_SetClientButtSlap) bool bButtSlap;
+var netupdate(NU_SetClientTouchedEnemyBabe2) Pawn carriedbabe;
+var netupdate(NU_SetClientCarrierShrinking) bool carrierShrinking;
 var bool MarkedForSquish;
 var class<Weapon> SavedWeapon;
 var int SavedAmmo;
@@ -1002,5 +1002,12 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 defaultproperties
 {
 	bCanSlap=true
-	ButtSlapSound(0)=Vector
+	ButtSlapSound(0)=ST_Getup_Pat_01
+	ButtSlapSound(1)=ST_Getup_Pat_02
+	ButtSlapSound(2)=ST_Getup_Pat_03
+	ButtSlapSound(3)=ST_Getup_Pat_03_Ex
+	CollisionModifierWithBabe=-1
+	MinBusyTime=0.2
+	bIsCaptureTheBabePlayer=true
+	MountType=2
 }

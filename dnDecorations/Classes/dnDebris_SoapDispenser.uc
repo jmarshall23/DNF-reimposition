@@ -13,5 +13,12 @@ defaultproperties
 	MaxVelocityVariance=(X=1.291717E-41,Y=2.803001E-17,Z=512)
 	LineStartColor=(B=76,G=3,R=1,A=255)
 	LineEndColor=(B=76,G=3,R=1,A=255)
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.liquids.soapsplatter2RC'
+	Textures(1)=none
+	Textures(2)=none
+	Textures(3)=none
+	Textures(4)=none
+	Textures(5)=none
+	SpawnOnDeath='Soapbomb'
+	Style=4
 }

@@ -16,5 +16,5 @@ defaultproperties
 	CollisionHeight=4
 	PrePivot=(X=1.292418E-41,Y=2.954472E-17,Z=0)
 	StaticMesh='sm_class_decorations.Weapon_Pickups.1911Pistol_Static'
-	Skins=/* Array type was not detected. */
+	Skins(0)='mt_skins6.1911Pistol.PigCop1911_BS'
 }

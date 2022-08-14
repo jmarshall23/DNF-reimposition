@@ -244,7 +244,18 @@ defaultproperties
 	BurningColor=(B=121,G=2,R=1,A=255)
 	SmokeCallBack=0.6
 	ThirdPersonMountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=f_Jaw,MountOrigin=(X=1.609595E+22,Y=2.954501E-17,Z=1.463),Z=-0.413)
-	
-	BlendTotalTime=/* Unknown default property type! */
-	bAdjustStart=0
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(PuffCigar_Cool),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'CigarAttachment.DA_Sound_Cigar_Attach_Cool'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='dnParticles.CigarSmoke',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=SMOKE_THIN,ForceEvent=None,MountMeshItem=ashtip,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=16384),Roll=0)
+	AnimationControllerClass='acCigar'
+	bDumbMesh=false
+	bDontSimulateMotion=true
+	bCollideActors=false
+	CollisionRadius=0
+	CollisionHeight=0
+	TickStyle=3
+	Mesh='c_dukeitems.Cigar'
+	OwnerSeeStyle=1
+	ActorColorList(0)=(ActorColor=(B=121,G=2,R=1,A=32),G=0,B=0,A=255)
+	VoicePack='SoundConfig.Inventory.VoicePack_Cigar'
 }

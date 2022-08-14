@@ -132,12 +132,43 @@ defaultproperties
 	DelayedExplosionTime=3
 	DelayedExplosionVariance=0.5
 	BulletFireClass='p_Decorations.Oil_Fire.OilFire_Main'
-	DecoActivities_Default=/* Array type was not detected. */
-	X=/* Unknown default property type! */
-	
-/* Exception thrown while deserializing Engine
-System.ArgumentOutOfRangeException: Length cannot be less than zero.
-Parameter name: length
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(21),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Camera_Explosion_Shake_Generic'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Industrial_PropaneTank_Explode class=DecoActivities_Sound
+		SoundNames(0)=Propane_Explode
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Generic_Propanetank.DA_Sound_Industrial_PropaneTank_Explode'
+	DestroyedActivities(1)=DA_Sound_Industrial_PropaneTank_Explode
+	begin object name=DA_Display_Generic_Propanetank class=DecoActivities_Display
+		RenderObject='sm_class_decorations.Propanetank.Propanetank_Gib1'
+	object end
+	// Reference: DecoActivities_Display'Industrial_Generic_Propanetank.DA_Display_Generic_Propanetank'
+	DestroyedActivities(2)=DA_Display_Generic_Propanetank
+	begin object name=DA_RadiusDamage_Propanetank class=DA_RadiusDamage_Standard
+		Damage=200
+		Radius=400
+	object end
+	// Reference: DA_RadiusDamage_Standard'Industrial_Generic_Propanetank.DA_RadiusDamage_Propanetank'
+	DestroyedActivities(3)=DA_RadiusDamage_Propanetank
+	HealthPrefab=5
+	Health=75
+	SpawnOnDestroyed(0)=(SpawnClass='Industrial_Generic_Propanetank_Gib2',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.813687E-17,Z=1),Z=17)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=None,MotionInfo=MotionPrefab'Industrial_Generic_Propanetank.MP_Propanetank_Gibs')
+	SpawnOnDestroyed(6)=(SpawnClass='Industrial_Generic_Propanetank_Gib3',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(7)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.802873E-17,Z=0),Z=18)
+	SpawnOnDestroyed(8)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.813698E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(1)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(2)=(Effect='p_Decorations.BarrelExplosion.Barrel_Explosion_Spawner')
+	PhysicsEntityGroup=PropaneTankGibs
+	bBlockPath=true
+	bAlwaysRelevant=true
+	CollisionRadius=50
+	CollisionHeight=32
+	StaticMesh='sm_class_decorations.Propanetank.Propanetank'
 }

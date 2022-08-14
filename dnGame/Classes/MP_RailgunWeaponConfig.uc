@@ -19,8 +19,14 @@ defaultproperties
 	TraceDamageType='RailgunDamage'
 	TracerBubblesClass='p_Weapons.Generic.WaterBubblesTracer'
 	ZoomErrorPct=0
-	ViewKicks=/* Array type was not detected. */
-	bDefaultInteractionClass=(SAnimationFadeBlend=/* Unknown default property type! */)
-	Railgun_Rumble=/* Unknown default property type! */
-	ProximityBeamAnchor=EndingBlendAlpha
+	ViewKicks(0)=(bNoLerp=false,bToggleSign=false,Style=0,Function=4,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.08,ShakeFrequency=0.16,ShakeMagnitude=1024,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=Railgun_ViewKick_0)
+	RumbleKicks(0)=(RumbleName=Railgun_Rumble,RumbleDuration=0.26,RumbleLeftMagnitude=0.5,RumbleRightMagnitude=0.9,FalloffActor=none,FalloffDistance=0)
+	MuzzleInfo(0)=(MuzzleFireStartAnim=FireStart,MuzzleFireAnim=Fire,MuzzleFireStopAnim=FireStop,MuzzleFlashClass='p_Weapons.Sniper_MuzzleFlash.Sniper_MuzzleFlash_SpawnerMP',MuzzleBoneName=mount_muzzle,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MuzzleLightClass='Weapon_LightEx_Pistol'
+	MeleeDamageType='MeleeDamage'
+	LockoutFireTime=1.5
+	WeaponHeatAttackRate=0.5
+	WeaponHeatDecayRate=0.125
+	ZoomAmount=0.2
+	WeaponAnimName=Railgun
 }

@@ -10,25 +10,6 @@ class dnCorpse_LimbCap_Male_Neck extends dnCorpse_LimbCap_Male
 
 defaultproperties
 {
-	LimbMountOnSpawn=/* Array type was not detected. */
-	AnimationName=/* Unknown default property type! */
-	bSurviveDismount=false
-	bDontScaleByDrawScale=false
-	bScaleByDrawScaleNonDefault=false
-	bTransformDrawScale3DChange=false
-	bTakeParentTag=false
-	bTransferToCorpse=false
-	bDontSetOwner=false
-	MountParentTag=None
-	DrawScaleOverride=0
-	AppendToTag=None
-	ForceTag=None
-	ForceEvent=None
-	MountMeshItem=None
-	MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0)
-	MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0)
-	MountAngles=(Pitch=1073750565,Yaw=572915712,Roll=0)
-	MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0)
-	MountType=0
-	DismountPhysics=0
+	LimbMountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_hit_effects.Blood_HeadShot.Blood_HeadShot_Spawner',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=5),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	StaticMesh='sm_class_effects.BodyStumps.NeckStump'
 }

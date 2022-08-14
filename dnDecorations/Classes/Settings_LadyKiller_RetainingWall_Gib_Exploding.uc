@@ -11,11 +11,6 @@ class Settings_LadyKiller_RetainingWall_Gib_Exploding extends Settings_LadyKille
 
 defaultproperties
 {
-	DestroyedParticleFriendEffects=/* Array type was not detected. */
-	bAbsoluteRotation=false
-	Scale=1
-	BoneName=None
-	Location=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	Rotation=(Pitch=8709,Yaw=571080704,Roll=0)
-	Effect='dnParticles.dnFXSpawner_LadyKillerWall_GibExplode'
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=1,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	Mass=10
 }

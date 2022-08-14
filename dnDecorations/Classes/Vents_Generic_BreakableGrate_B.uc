@@ -10,8 +10,15 @@ class Vents_Generic_BreakableGrate_B extends Vents_Generic_BreakableGrate_NonSol
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	DA_Interact_bUseTriggered_Disable=true
-	StructProperty[2]=1913985027
-	dnGame=9238
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Vents_Generic_BreakableGrate.DA_Sound_Vents_Generic_BreakableGrate_Brkn_A'
+	DestroyedActivities(2)=DecoActivities_Collision'Vents_Generic_BreakableGrate.DA_Collide_Vents_Generic_BreakableGrate_Brkn'
+	DestroyedActivities(3)=DecoActivities_Interaction'Vents_Generic_BreakableGrate.DA_Interaction_Vents_Generic_BreakableGrate_Brkn'
+	DestroyedActivities(4)='dnGame.DecoActivityDeclarations.DA_Coll_bBlockKarma_Disable'
+	DestroyedActivities(5)=DecoActivities_Display'Vents_Generic_BreakableGrate.DA_Display_Vents_Generic_BreakableGrate_Brkn_A'
+	SpawnOnDestroyed(0)=(SpawnClass='Vents_Generic_BreakableGrate_C_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bAlwaysRelevant=true
+	StaticMesh='sm_class_decorations.Grates.StdVentGrateA'
 }

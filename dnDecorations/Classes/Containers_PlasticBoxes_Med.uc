@@ -13,5 +13,5 @@ defaultproperties
 	Density=8
 	CollisionRadius=10
 	StaticMesh='sm_class_decorations.Containers.PlasticContainer1'
-	Skins=/* Array type was not detected. */
+	Skins(0)='smt_skins3.Containers.Container1_bs'
 }

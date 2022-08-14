@@ -20,6 +20,8 @@ defaultproperties
 	bDrawHUDInfo=true
 	bDrawUsePhrase=false
 	DrawScale3D=(X=2.717021E+23,Y=2.802823E-17,Z=11.2)
-	Skins=/* Array type was not detected. */
-	Flags[7]=/* Array type was not detected. */
+	Skins(0)='smt_skins3.PokerMachine.pokermachineglass_top'
+	Skins(1)='smt_skins3.PokerMachine.pokermachineglass_top_broken'
+	Skins(2)='smt_skins3.PokerMachine.pokermachineglass_top_broken'
+	Skins(3)='dt_masking.Glass_Materials.glassdirty1bc_finalblend'
 }

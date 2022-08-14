@@ -10,7 +10,24 @@ class Pillars_Destructible_Marble_3Corners extends Pillars_Destructible
 
 defaultproperties
 {
-	StartupActivities=/* Array type was not detected. */
-	ObjectProperty=1333221120
-	DA_Anim_Containers_CoffeeMachine_Pot_Filling=/* Unknown default property type! */
+	StartupActivities(0)=DecoActivities_Display'Pillars_Destructible.DA_Display_Pilr_Destr_Marb_UnBroken'
+	DestroyedActivities(0)=none
+	begin object name=DA_Display_Pilr_Destr_Marb_3C class=DecoActivities_Display
+		RenderObject='sm_lvl_ladykiller.Pillars.LKcas_SqareCol_BRKN3'
+	object end
+	// Reference: DecoActivities_Display'Pillars_Destructible_Marble_3Corners.DA_Display_Pilr_Destr_Marb_3C'
+	DestroyedActivities(1)=DA_Display_Pilr_Destr_Marb_3C
+	SpawnOnDestroyed(0)=(SpawnClass='Pillars_Destructible_Marble_Chunk_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.802768E-17,Z=-12),Z=54)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=None,MotionInfo=MotionPrefab'Pillars_Destructible.MP_PC_NoMotion')
+	SpawnOnDestroyed(6)=(SpawnClass='Pillars_Destructible_Marble_Chunk_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(7)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.802768E-17,Z=12),Z=54)
+	SpawnOnDestroyed(8)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(9)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=16384),Roll=0)
+	SpawnOnDestroyed(10)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(11)=(BoneName=None,MotionInfo=MotionPrefab'Pillars_Destructible.MP_PC_NoMotion')
+	StaticMesh='sm_lvl_ladykiller.Pillars.LKcas_SqareCol_BRKN3'
 }

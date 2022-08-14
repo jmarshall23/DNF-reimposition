@@ -26,7 +26,12 @@ defaultproperties
 	AlphaMid=1
 	AlphaEnd=0
 	AlphaRampMid=0.85
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Debris.stuffing1RC'
+	Textures(1)='dt_effects.Debris.stuffing2RC'
+	Textures(2)='dt_effects.Debris.stuffing3RC'
+	Textures(3)='dt_effects.Debris.stuffing4aRC'
+	Textures(4)='dt_effects.Debris.stuffing4bRC'
+	Textures(5)='dt_effects.Debris.stuffing4cRC'
 	StartDrawScale=0.0625
 	EndDrawScale=0.0625
 	DrawScaleVariance=0.0625

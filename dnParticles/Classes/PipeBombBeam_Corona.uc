@@ -19,5 +19,14 @@ defaultproperties
 	Lifetime=0
 	InitialVelocity=(X=1.291857E-41,Y=2.797242E-17,Z=0)
 	MaxVelocityVariance=(X=1.291857E-41,Y=2.797242E-17,Z=0)
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Particles.boatturretflash1RC'
+	StartDrawScale=0.05
+	EndDrawScale=0.05
+	TriggerType=0
+	Physics=9
+	IndependentRotation=true
+	bNetTemporary=true
+	CollisionRadius=0
+	CollisionHeight=0
+	Style=6
 }

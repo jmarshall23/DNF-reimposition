@@ -11,11 +11,5 @@ class dnHitFX_Spawner_Melee_Metal extends dnHitFX_Spawner_Melee
 
 defaultproperties
 {
-	NamedFriends=/* Array type was not detected. */
-	bMatchRotation=false
-	bMatchScale=false
-	bRelativeVelocity=false
-	bRelativeAcceleration=false
-	bInheritVelocity=false
-	bInheritAcceleration=false
+	NamedFriends(0)=(FriendData=(FriendStyle=0,FriendInfos=((RequestingParticleInfo=(bMatchLocation=false,bMatchRotation=false,bMatchScale=false,bRelativeVelocity=false,bRelativeAcceleration=false,bInheritVelocity=false,bInheritAcceleration=false),VolumeResponse=0,bFireAndForget=true,SpawnChance=0.7,SpawnCount=1,SpawnCountVariance=0,FriendClass='dnHitFX_Effect_SparkFlash',FriendDelay=0,FriendDuration=0,bUseParticleTime=false,FriendActor=none),(RequestingParticleInfo=(bMatchLocation=false,bMatchRotation=false,bMatchScale=false,bRelativeVelocity=false,bRelativeAcceleration=false,bInheritVelocity=false,bInheritAcceleration=false),VolumeResponse=0,bFireAndForget=true,SpawnChance=0.7,SpawnCount=6,SpawnCountVariance=4,FriendClass='dnHitFX_Effect_Spark',FriendDelay=0,FriendDuration=0,bUseParticleTime=false,FriendActor=none)),FriendIndex=0,bDisabled=false,FriendDuration=0,FriendDelay=0),FriendName=SysTriggeredFriend)
 }

@@ -14,12 +14,12 @@ class DoorExtras extends Decoration
 var() noexport bool bAnimates "Whether the extra is supposed to animate or not.";
 var() noexport Vector LocationOffset "Amount to offset the extra from the door.";
 var() noexport Rotator RotationOffset "Amount to modify the base rotation once the extra is mounted to the door.";
-var() noexport name OpenSequence "Sequence to play when the door starts being opened. If left empty, will default to 'open'";
-var() noexport name OpenedSequence "Sequence to play when the door is opened.";
-var() noexport name KickedOpenSequence "Sequence to play when the door is kicked open.";
-var() noexport name CloseSequence "Sequence to play when the door starts closing.";
-var() noexport name ClosedSequence "Sequence to play when the door is closed.";
-var() noexport name LockedSequence "Sequence to play when the door is locked. If left empty, will default to 'locked'";
+var() noexport anim name OpenSequence "Sequence to play when the door starts being opened. If left empty, will default to 'open'";
+var() noexport anim name OpenedSequence "Sequence to play when the door is opened.";
+var() noexport anim name KickedOpenSequence "Sequence to play when the door is kicked open.";
+var() noexport anim name CloseSequence "Sequence to play when the door starts closing.";
+var() noexport anim name ClosedSequence "Sequence to play when the door is closed.";
+var() noexport anim name LockedSequence "Sequence to play when the door is locked. If left empty, will default to 'locked'";
 var() noexport Object LeftRenderObject "RenderObject to display when the handle is to the 'left' of the hinge. If empty, defaults to the RenderObject specified under Display.";
 var() noexport Object RightRenderObject "RenderObject to display when the handle is to the 'right' of the hinge. If empty, defaults to the RenderObject specified under Display.";
 

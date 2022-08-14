@@ -582,14 +582,34 @@ defaultproperties
 	TexPowerDown='ezmail.ezmail_screensaver'
 	TexBlueScreen='dt_Electronics.DisplayScreens.BlueScreen1_BS'
 	TexDesktop='dt_signs.stratosfear.WHEW_1TW'
-	TexDesktops(0)=StructProperty'dnCorpsePinata.WebbedBones'
-	TexDesktops(1)='dt_signs.stratosfear.avam_1tw'
-	TexDesktops(2)='dt_signs.stratosfear.avam_2tw'
-	TexDesktops(3)='dt_signs.stratosfear.avam_3tw'
-	TexDesktops(4)='dt_signs.stratosfear.avam_4tw'
-	TexDesktops(5)=ObjectProperty'dnControl_NutAndBolt.TurnLeft3.EndState.NewNut'
-	TexDesktops(6)=ByteProperty'Lights_Alien_ShortPod_Brown.MovementMode'
-	TexDesktops(7)='sm_geo_decorations.Statues'
-	TexDesktops(8)='dnControlHelper_Pinball_Light'
-	Offset[3]=/* Unknown default property type! */
+	TexDesktops(0)='dt_signs.stratosfear.avam_1tw'
+	TexDesktops(1)='dt_signs.stratosfear.avam_2tw'
+	TexDesktops(2)='dt_signs.stratosfear.avam_3tw'
+	TexDesktops(3)='dt_signs.stratosfear.avam_4tw'
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(3),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Sound_SmallSwitch_Standard'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(PowerUp),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Ticking_TICK_NoRules',DecoActivities_Events'Electronics_Generic_Computer_CPU.DA_Events_ElctrGen_Cmptr_CPU_Display_PowerUp',DecoActivities_Sound'Electronics_Generic_Computer_CPU.DA_Sound_ElctrGen_Cmptr_CPU_PowerUp'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(PowerOn),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Ticking_TICK_Normal',DecoActivities_Events'Electronics_Generic_Computer_CPU.DA_Events_ElctrGen_Cmptr_CPU_Display_PowerOn',DecoActivities_Sound'Electronics_Generic_Computer_CPU.DA_Sound_ElctrGen_Cmptr_CPU_PowerOn'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(3)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(PowerDown),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Ticking_TICK_NoRules',DecoActivities_Events'Electronics_Generic_Computer_CPU.DA_Events_ElctrGen_Cmptr_CPU_Display_PowerDown',DecoActivities_Sound'Electronics_Generic_Computer_CPU.DA_Sound_ElctrGen_Cmptr_CPU_PowerDown'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(4)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(PowerOff),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Ticking_TICK_Never',DecoActivities_Events'Electronics_Generic_Computer_CPU.DA_Events_ElctrGen_Cmptr_CPU_Display_PowerOff',DecoActivities_Sound'Electronics_Generic_Computer_CPU.DA_Sound_ElctrGen_Cmptr_CPU_PowerOff'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(5)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(BSOD),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Ticking_TICK_Normal',DecoActivities_Sound'Electronics_Generic_Computer_CPU.DA_Sound_ElctrGen_Cmptr_CPU_BSOD',DecoActivities_Events'Electronics_Generic_Computer_CPU.DA_Events_ElctrGen_Cmptr_CPU_Display_BSOD'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Electronics_Generic.DA_Sound_Destroyed_Electronic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Disable'
+	DestroyedActivities(3)='dnGame.DecoActivityDeclarations.DA_HUD_bForceUsePhrase_Disable'
+	begin object name=DA_Events_ElctrGen_Cmptr_CPU_Display_PowerOff class=DecoActivities_Events
+		Callbacks(0)=(Delay=0,DelayVariance=0,bLoop=false,bEnforceLoop=false,bDontOverwrite=false,bIndependent=false,Callback=0,CallbackScript=Display_PowerOff)
+	object end
+	// Reference: DecoActivities_Events'Electronics_Generic_Computer_CPU.DA_Events_ElctrGen_Cmptr_CPU_Display_PowerOff'
+	DestroyedActivities(4)=DA_Events_ElctrGen_Cmptr_CPU_Display_PowerOff
+	DestroyedActivities(5)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	begin object name=DA_Sound_ElctrGen_Cmptr_CPU_PowerOff class=DecoActivities_Sound
+		bClearAmbientSound=true
+	object end
+	// Reference: DecoActivities_Sound'Electronics_Generic_Computer_CPU.DA_Sound_ElctrGen_Cmptr_CPU_PowerOff'
+	DestroyedActivities(6)=DA_Sound_ElctrGen_Cmptr_CPU_PowerOff
+	bForceUsePhrase=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
+	PhysicsMassType=1
+	CollisionHeight=12.5
+	Mass=35
 }

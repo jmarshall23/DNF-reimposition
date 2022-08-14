@@ -13,5 +13,16 @@ defaultproperties
 {
 	SynchAnimFrame=false
 	DieOnLastFrame=true
-	AdditionalSpawn=/* Array type was not detected. */
+	AdditionalSpawn(0)=(SpawnClass=none,TakeParentTag=false,Mount=false,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	AdditionalSpawn(1)=(MountAngles=(Pitch=8719,Yaw=571539456,Roll=0),Roll=0)
+	PrimeCount=2
+	Lifetime=0
+	Textures(0)='dt_effects.explosions.X_fi_001'
+	StartDrawScale=0.625
+	EndDrawScale=0.75
+	RotationVariance=65535
+	DamageAmount=0
+	DamageRadius=200
+	CollisionRadius=16
+	CollisionHeight=16
 }

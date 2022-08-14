@@ -31,9 +31,9 @@ var string PlayerName;
 var string PlayerTitle;
 var string OldName;
 var int PlayerID;
-var int RoomMemberID;
+var netupdate(NU_RoomMemberIdChanged) int RoomMemberID;
 var string TeamName;
-var byte Team;
+var netupdate(NU_TeamChanged) byte Team;
 var int TeamID;
 var int Score;
 var int Deaths;
@@ -64,7 +64,7 @@ var int XUIDLower;
 var int StartTime;
 var int TimeAcc;
 var int DukeLevel;
-var bool bTeamGame;
+var netupdate(NU_bTeamGame) bool bTeamGame;
 var bool bPlayerLeft;
 
 replication

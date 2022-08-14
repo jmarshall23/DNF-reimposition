@@ -10,6 +10,21 @@ class dnBonePartMapper_PigCop_RightArm extends BonePartMapper
 
 defaultproperties
 {
-	PartMapping=/* Array type was not detected. */
-	AnimCallback_AnimEnd=/* Unknown default property type! */
+	PartMapping(0)=(BoneName=Root,Part=7,BoneNameForDestroy=None)
+	PartMapping(1)=(BoneName=shoulder_right,Part=7,BoneNameForDestroy=None)
+	PartMapping(2)=(BoneName=arm_right_upper_a,Part=9,BoneNameForDestroy=None)
+	PartMapping(3)=(BoneName=arm_right_lower_a,Part=9,BoneNameForDestroy=arm_right_lower_a)
+	PartMapping(4)=(BoneName=arm_right_lower_b,Part=9,BoneNameForDestroy=arm_right_lower_a)
+	PartMapping(5)=(BoneName=hand_right_a,Part=11,BoneNameForDestroy=arm_right_lower_a)
+	PartMapping(6)=(BoneName=finger_index_right_lower,Part=11,BoneNameForDestroy=arm_right_lower_a)
+	PartMapping(7)=(BoneName=finger_index_right_upper,Part=11,BoneNameForDestroy=arm_right_lower_a)
+	PartMapping(8)=(BoneName=finger_middle_right_lower,Part=11,BoneNameForDestroy=arm_right_lower_a)
+	PartMapping(9)=(BoneName=finger_middle_right_upper,Part=11,BoneNameForDestroy=arm_right_lower_a)
+	PartMapping(10)=(BoneName=thumb_right_lower,Part=11,BoneNameForDestroy=arm_right_lower_a)
+	PartMapping(11)=(BoneName=thumb_right_upper,Part=11,BoneNameForDestroy=arm_right_lower_a)
+	DestroyableBones(0)=(BoneName=arm_right_lower_a,bAddToLimbCount=true,LimbCapClass='dnCorpse_LimbCap_Male_ArmRight_Upper',LimbCapMountInfo=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=12),Z=-1),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(0)=(BoneName=arm_right_lower_a,ReqBones=none,RenderObject=none,DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-1.593778E-23,Y=2.965301E-17,Z=14.867),Z=2.669)
+	FullyGibbedSoundName=Corpse_LimbExplode
+	FullyGibbedFrozenSoundName=IcePart_Shatter_Small
+	NumLimbsUntilDestructible=1
 }

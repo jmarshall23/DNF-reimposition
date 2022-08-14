@@ -11,6 +11,18 @@ class Electronics_Generic_Speaker_Ceiling extends Electronics_Generic
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	X=1
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Electronics_Generic.DA_Sound_Destroyed_Electronic'
+	begin object name=DA_Display_Electronics_Generic_Speaker_Ceiling_Brkn class=DecoActivities_Display
+		RenderObject='sm_geo_decorations.Ceiling_Speakers.Speaker_Grill_BRKN'
+	object end
+	// Reference: DecoActivities_Display'Electronics_Generic_Speaker_Ceiling.DA_Display_Electronics_Generic_Speaker_Ceiling_Brkn'
+	DestroyedActivities(2)=DA_Display_Electronics_Generic_Speaker_Ceiling_Brkn
+	HealthPrefab=1
+	SpawnOnDestroyed(0)=(SpawnClass='dnParticles.dnDebris_Smoke',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.802684E-17,Z=0),Z=0)
+	bAcceptsDecalProjectors=false
+	CollisionRadius=6.5
+	CollisionHeight=2
+	StaticMesh='sm_geo_decorations.Ceiling_Speakers.Speaker_Grill'
 }

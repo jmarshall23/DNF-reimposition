@@ -13,6 +13,11 @@ defaultproperties
 	HealthPrefab=0
 	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
 	PhysicsMassType=1
-	PhysicsSoundOverrides=/* Array type was not detected. */
-	OtherMaterialTypes=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaMetal.FoldingTable_Slide_01'),SoundInfo=(InputRange=(Min=16,Max=500),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.4,Max=0.8)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaMetal.MetalChairImpact01','a_impact.KarmaMetal.MetalChairImpact02','a_impact.KarmaMetal.MetalChairImpact03','a_impact.KarmaMetal.MetalChairImpact04'),SoundInfo=(InputRange=(Min=128,Max=1280),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.4,Max=0.8)),bDisableSoundInWater=true)
+	Physics=18
+	CollisionRadius=14
+	CollisionHeight=27
+	Mass=14
+	StaticMesh='sm_class_decorations.Chairs.BreakroomChair_cd'
 }

@@ -21,5 +21,12 @@ defaultproperties
 	InitialVelocity=(X=1.291857E-41,Y=2.797242E-17,Z=0)
 	MaxVelocityVariance=(X=1.291857E-41,Y=2.802853E-17,Z=48)
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Smoke.gensmoke1cRC'
+	StartDrawScale=0.5
+	DrawScaleVariance=0.5
+	RotationVariance=65535
+	TriggerType=0
+	CollisionRadius=0
+	CollisionHeight=0
+	Style=3
 }

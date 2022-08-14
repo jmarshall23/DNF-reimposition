@@ -14,5 +14,11 @@ defaultproperties
 	MaxTraceDistance=0
 	ProjectileClass='dnRocket_Nuke'
 	bCheatMuzzleBlockage=true
-	ViewKicks=/* Array type was not detected. */
+	ViewKicks(0)=(bNoLerp=false,bToggleSign=false,Style=0,Function=4,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.2,ShakeFrequency=0.4,ShakeMagnitude=1500,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=Nuke_ViewKick_0)
+	MuzzleInfo(0)=(MuzzleFireStartAnim=FireStart,MuzzleFireAnim=Fire,MuzzleFireStopAnim=FireStop,MuzzleFlashClass='dnParticles.dnMuzzleFX_Spawner_Nuke',MuzzleBoneName=mount_muzzle,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MeleeDamageType='MeleeDamage'
+	WeaponHeatAttackRate=0.5
+	WeaponHeatDecayRate=0.125
+	DoneActivatingStateTransition=PreIdle
+	WeaponAnimName=Nuke
 }

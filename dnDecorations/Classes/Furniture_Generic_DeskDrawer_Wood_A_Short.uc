@@ -11,5 +11,8 @@ class Furniture_Generic_DeskDrawer_Wood_A_Short extends Furniture_Generic_DeskDr
 defaultproperties
 {
 	CollisionHeight=4
-	DesiredLocation=/* Array type was not detected. */
+	DesiredLocation(0)=(bTemporal=false,bComplete=false,bRelativeMotion=true,Target=(X=1.291717E-41,Y=2.80279E-17,Z=0),Z=0)
+	DesiredLocation(1)=(TargetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	StaticMesh='sm_class_decorations.Tables.DeskDrawerSmall'
+	Skins(0)='smt_skins3.Desk.WoodDeskDrawSmall_bs'
 }

@@ -98,5 +98,11 @@ defaultproperties
 	CurrentTargetState=-1
 	LevelUpParticleClass='p_multiplayer.levelup.levelup_star'
 	RotationRate=(Pitch=8741,Yaw=572915712,Roll=24000)
-	DesiredLocation=/* Array type was not detected. */
+	DesiredLocation(0)=(bTemporal=false,bComplete=false,bRelativeMotion=true,Target=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=100)
+	DesiredLocation(1)=(TargetVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	TickStyle=3
+	DrawType=8
+	DrawScale=0.0001
+	StaticMesh='SM_Multiplayer.MP_Icons.Icon_LevelUp'
+	RemoteRole=0
 }

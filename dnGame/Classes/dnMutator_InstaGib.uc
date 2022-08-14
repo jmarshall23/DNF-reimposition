@@ -77,14 +77,9 @@ function MutatorTakeDamage(out float ActualDamage, Pawn Victim, Pawn InstigatedB
 
 defaultproperties
 {
-	IG_Inventory(0)=class'PlayerProgress'
-	IG_Inventory(1)=class'MP_MightyFoot'
-	IG_Inventory(2)=class'Upgrade_ZoomMode'
-	IG_Inventory(3)=class'MP_Railgun'
-	IG_Inventory(4)=class'dnCaptureTheBabe_BabeRevolver'
-	IG_Inventory(5)=class'PrecacheIndex'
-	IG_Inventory(6)=class'BubbleVector'
-	IG_Inventory(7)=class'LaserBeam'
-	IG_Inventory(8)=class'dnDestructibleBuildingDefinition'
-	NukeExplosio=Mass
+	IG_Inventory(0)='MP_MightyFoot'
+	IG_Inventory(1)='Upgrade_ZoomMode'
+	IG_Inventory(2)='MP_Railgun'
+	IG_Inventory(3)='dnCaptureTheBabe_BabeRevolver'
+	MutatorName="<?int?dnGame.dnMutator_InstaGib.MutatorName?>"
 }

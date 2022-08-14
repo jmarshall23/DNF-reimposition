@@ -90,7 +90,7 @@ struct SAnimationInfo
 {
 	var() name AnimationName;
 	var() SAnimChannelLink AnimationChannel;
-	var() name AnimSequence;
+	var() anim name AnimSequence;
 	var() float AnimStartingFrame;
 	var() float AnimRate;
 	var() float AnimRateVariance;
@@ -131,7 +131,7 @@ struct SAnimationGrid
 {
 	var() name AnimationGridName;
 	var() SAnimChannelLink AnimationChannel;
-	var() name AnimGridSequence;
+	var() anim name AnimGridSequence;
 	var() bool bIs3DGrid;
 	var() int AnimationLink;
 };

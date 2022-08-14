@@ -15,7 +15,7 @@ cpptext
 // Stripped
 }
 
-var const transient int MyConstraints[3];
+var const transient nontrans int MyConstraints[3];
 var Vector ConstraintAxis[3];
 var float DesiredSpeed;
 var float Strength;

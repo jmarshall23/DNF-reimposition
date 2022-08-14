@@ -22,7 +22,6 @@ defaultproperties
 	bCollisionAssumeValid=true
 	bCastStencilShadows=false
 	TickStyle=0
-	ActorColorList=/* Array type was not detected. */
-	Y=0
-	Z=0
+	ActorColorList(0)=(ActorColor=(B=121,G=2,R=1,A=255),G=255,B=255,A=205)
+	RemoteRole=0
 }

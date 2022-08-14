@@ -13,5 +13,12 @@ defaultproperties
 	ReloadClipAmmo=16
 	HorizShotError=0.04
 	VertShotError=0.04
-	MuzzleInfo=/* Array type was not detected. */
+	MuzzleInfo(0)=(MuzzleFireStartAnim=StartFireLeft,MuzzleFireAnim=FireLeftTransitionToFireRight,MuzzleFireStopAnim=FireLeftEnd,MuzzleFlashClass='p_Weapons.Pistol_MuzzleFlash.Pistol_MuzzleFlash_Spawner',MuzzleBoneName=mount_muzzle,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MuzzleInfo(1)=(ShellEjectionBoneName=mount_eject,ShellEjectionDir=(X=1.292418E-41,Y=2.95443E-17,Z=1.5),Z=1)
+	NumMeleeAttacks=1
+	bHasFireStart=true
+	bHasLoopingFire=true
+	bHasFireStop=true
+	bFireInterruptFiring=false
+	WeaponAnimName=DualPistol
 }

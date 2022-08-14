@@ -9,7 +9,7 @@ class Biology_Generic_DestructiblePumpkin extends Biology_Generic
 	collapsecategories;
 
 var class<dnScreenSplatters> ScreenSplatterClass;
-var bool bBroken;
+var netupdate(NU_Broken) bool bBroken;
 var bool bPostNetInit;
 
 replication
@@ -65,10 +65,48 @@ defaultproperties
 	ScreenSplatterClass='dnScreenSplatter_Pumpkin'
 	bAutoNavDoor_AutoToggle=true
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_DestructiblePumpkin_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=HivePumpkin_Break
+	object end
+	// Reference: DecoActivities_Sound'Biology_Generic_DestructiblePumpkin.DA_Sound_DestructiblePumpkin_Destroyed'
+	DestroyedActivities(1)=DA_Sound_DestructiblePumpkin_Destroyed
+	begin object name=DA_Display_DestructiblePumpkin_Brkn class=DecoActivities_Display
+		RenderObject='sm_geo_decorations.alien.alien_egg_base1'
+	object end
+	// Reference: DecoActivities_Display'Biology_Generic_DestructiblePumpkin.DA_Display_DestructiblePumpkin_Brkn'
+	DestroyedActivities(2)=DA_Display_DestructiblePumpkin_Brkn
 	DestroyActionPointRadius=60
 	HealthPrefab=5
-	DamageTypesInstaKill=/* Array type was not detected. */
-	bDisabled=/* Array type was not detected. */
-	ObjectProperty=/* Unknown default property type! */
+	DamageTypesInstaKill(0)='Engine.ExplosionDamage'
+	DamageTypesInstaKill(1)='dnGame.RocketDamage'
+	DamageIgnoreRules(0)=(QualifierInstigatorType='Engine.BaseAI',QualifierNetMode=0,MinDistanceFromLocalPlayer=0,MaxDistanceFromLocalPlayer=250)
+	TelekinesisThrowVel=2000
+	Health=40
+	HealthCap=40
+	SpawnOnDestroyed(0)=(SpawnClass='Biology_Generic_DestructiblePumpkin_Gibs',RenderObject='sm_geo_decorations.alien.alien_Egg01_Gib',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.562776E-17,Y=2.813653E-17,Z=-0.933945),Z=55.29331)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	begin object name=MP_DestructiblePumpkin_Gibs class=MotionPrefab
+		VelocityRelativeType=3
+		Velocity=(X=1.291717E-41,Y=2.802966E-17,Z=0)
+		VelocityVariance=(X=1.291717E-41,Y=2.802941E-17,Z=0)
+		RotationRate=(Pitch=1829773829,Yaw=571080709,Roll=0)
+		RotationRateVariance=(Pitch=1170219525,Yaw=571080708,Roll=0)
+	object end
+	// Reference: MotionPrefab'Biology_Generic_DestructiblePumpkin.MP_DestructiblePumpkin_Gibs'
+	DefaultMotionPrefab=MP_DestructiblePumpkin_Gibs
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Flesh'
+	PhysicsEntityGroup=DestructiblePumpkin
+	bAITransparent=true
+	bStepUpAble=false
+	bAutoNavDoor=true
+	CollisionRadius=25
+	CollisionHeight=25
+	VisibleCollidingCenterOffset=(X=1.291717E-41,Y=2.813595E-17,Z=3)
+	StaticMesh='sm_geo_decorations.alien.alien_eggandbase_together'
 }

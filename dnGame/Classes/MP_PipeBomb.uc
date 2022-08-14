@@ -155,7 +155,7 @@ simulated function name GetWeaponAnimReq(byte WeaponStateReq, optional out byte 
 	return;
 }
 
-k2call simulated function Fire_Effects(optional EventInfo AnimEventInfo)
+animevent simulated function Fire_Effects(optional EventInfo AnimEventInfo)
 {
 	return;
 }
@@ -247,7 +247,7 @@ state Throw
 		return;
 	}
 
-	k2call simulated function WeaponCallback_DefinitelyDoneFiring()
+	animevent simulated function WeaponCallback_DefinitelyDoneFiring()
 	{
 		bDeactivationAllowed = true;
 		ChangeSpeed = 1;

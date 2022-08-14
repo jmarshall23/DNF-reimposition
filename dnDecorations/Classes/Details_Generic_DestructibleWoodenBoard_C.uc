@@ -10,7 +10,28 @@ class Details_Generic_DestructibleWoodenBoard_C extends Details_Generic
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	deltaUpAngle=55509249
-	Y=/* Unknown default property type! */
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Board_C_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=Destruct_Wood
+	object end
+	// Reference: DecoActivities_Sound'Details_Generic_DestructibleWoodenBoard_C.DA_Sound_Board_C_Destroyed'
+	DestroyedActivities(1)=DA_Sound_Board_C_Destroyed
+	HealthPrefab=1
+	SpawnOnDestroyed(0)=(SpawnClass='Details_Generic_DestructibleWoodenBoard_C_Gib',RenderObject='SM_Lvl_Desert.Destructible.WoodBridgePlankA1',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.813731E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	begin object name=MP_Board_Gibs_C class=MotionPrefab
+		VelocityRelativeType=3
+		Velocity=(X=1.291717E-41,Y=2.797242E-17,Z=0)
+		VelocityVariance=(X=1.291717E-41,Y=2.797242E-17,Z=150)
+		RotationRateVariance=(Pitch=655368709,Yaw=571080704,Roll=680000)
+	object end
+	// Reference: MotionPrefab'Details_Generic_DestructibleWoodenBoard_C.MP_Board_Gibs_C'
+	DefaultMotionPrefab=MP_Board_Gibs_C
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	PhysicsMassType=1
+	CollisionRadius=55
+	CollisionHeight=6
+	Mass=20
+	StaticMesh='SM_Lvl_Desert.Destructible.WoodBridgePlank'
 }

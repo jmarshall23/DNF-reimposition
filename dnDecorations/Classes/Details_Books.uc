@@ -12,6 +12,15 @@ class Details_Books extends Details_Generic
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	Rotator=/* Unknown default property type! */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Wood_Small'
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Paper1'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Smoke'
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Cardboard'
+	Physics=18
+	CollisionRadius=12
+	CollisionHeight=8
+	Mass=15
+	DrawType=2
 }

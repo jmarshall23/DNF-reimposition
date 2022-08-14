@@ -24,8 +24,11 @@ defaultproperties
 	AlphaStart=0.75
 	AlphaMid=0.25
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
-	StructProperty=/* Unknown default property type! */
+	Textures(0)='dt_effects.liquids.waterimpact5RC'
+	StartDrawScale=0.2
+	EndDrawScale=0.6
+	DrawScaleVariance=0.1
+	RotationVariance=65535
 	RotationVelocityMaxVariance=2
 	TriggerType=0
 	CollisionRadius=16

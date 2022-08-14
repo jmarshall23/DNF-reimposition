@@ -11,6 +11,41 @@ class Barrels_Generic_WoodenBarrel extends Barrels_Generic
 defaultproperties
 {
 	bAutoNavDoor_AutoToggle=true
-	DestroyedActivities=/* Array type was not detected. */
-	LargeCaliberBulletDamage=/* Unknown default property type! */
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_WoodBarrel_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=Destruct_Wood
+	object end
+	// Reference: DecoActivities_Sound'Barrels_Generic_WoodenBarrel.DA_Sound_WoodBarrel_Destroyed'
+	DestroyedActivities(1)=DA_Sound_WoodBarrel_Destroyed
+	DestroyActionPointRadius=45
+	HealthPrefab=5
+	DamageTypesInstaKill(0)='Engine.ExplosionDamage'
+	DamageTypesInstaKill(1)='dnGame.RocketDamage'
+	DamageIgnoreRules(0)=(QualifierInstigatorType='Engine.BaseAI',QualifierNetMode=0,MinDistanceFromLocalPlayer=0,MaxDistanceFromLocalPlayer=250)
+	bGrabbable=false
+	GrabInfo=(bCanDuckWhileHeld=false,MountItemOverride=mount_handright,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	Health=40
+	HealthCap=40
+	SpawnOnDestroyed(0)=(SpawnClass='Barrels_Generic_WoodenBarrel_Gibs',RenderObject='sm_class_decorations.Barrels.WoodBarrel_Gib_01',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=-2.704139E+16,Y=2.802787E-17,Z=6.056641),Z=-4.661369)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(1)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	begin object name=MP_WoodBarrel_Gibs class=MotionPrefab
+		VelocityRelativeType=3
+		Velocity=(X=1.291717E-41,Y=2.802941E-17,Z=0)
+		VelocityVariance=(X=1.291717E-41,Y=2.802941E-17,Z=0)
+	object end
+	// Reference: MotionPrefab'Barrels_Generic_WoodenBarrel.MP_WoodBarrel_Gibs'
+	DefaultMotionPrefab=MP_WoodBarrel_Gibs
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Hollow'
+	PhysicsEntityGroup=WoodBarrel
+	Physics=0
+	bAITransparent=true
+	bStepUpAble=false
+	bAutoNavDoor=true
+	CollisionRadius=20
+	StaticMesh='sm_class_decorations.Barrels.WoodBarrel'
 }

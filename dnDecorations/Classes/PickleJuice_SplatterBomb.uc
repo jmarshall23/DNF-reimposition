@@ -11,5 +11,7 @@ class PickleJuice_SplatterBomb extends PaintBomb
 defaultproperties
 {
 	DecalSize=0.075
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.duke_sauce.pickle_splat1_FB'
+	Decals(1)='dt_effects.duke_sauce.pickle_splat2_FB'
+	Decals(2)='dt_effects.duke_sauce.pickle_splat3_FB'
 }

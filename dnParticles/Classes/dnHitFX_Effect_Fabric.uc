@@ -11,7 +11,10 @@ class dnHitFX_Effect_Fabric extends dnHitFX_Effect_Debris_Light
 
 defaultproperties
 {
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Debris.stuffing4aRC'
+	Textures(1)='dt_effects.Debris.stuffing4bRC'
+	Textures(2)='dt_effects.Debris.stuffing4cRC'
+	StartDrawScale=0.05
 	EndDrawScale=0.05
 	DrawScaleVariance=0.035
 	Style=3

@@ -841,17 +841,35 @@ function DukeSuperMessageBoxDone(int Result, Engine.Object.EConsole_Dialog id)
 
 defaultproperties
 {
-	ButtonEvents(0)=class'StatDisplay'
-	ButtonEvents(1)=class'UDukeSceneMPQuickMatch'
-	ButtonEvents(2)=class'UDukeSceneMPPrivateMatch'
-	ButtonEvents(3)=class'UAgentSceneBrowserList'
+	ButtonEvents(0)='UDukeSceneMPQuickMatch'
+	ButtonEvents(1)='UDukeSceneMPPrivateMatch'
+	ButtonEvents(2)='UAgentSceneBrowserList'
+	ButtonEvents(3)=none
 	ButtonEvents(4)=none
-	ButtonEvents(5)=none
-	ButtonEvents(6)=class'UDukeSceneStat_Chall_LB'
+	ButtonEvents(5)='UDukeSceneStat_Chall_LB'
+	ButtonEvents(6)=none
 	ButtonEvents(7)=none
-	ButtonEvents(8)=none
-	ButtonEvents(9)=class't'
-	ButtonEvents(10)=class'VSlideSmallTop'
-	ButtonEvents(11)=class'OnlineAgent'
-	ButtonEvents(12)=class'ModeSelect'
+	InviteText="<?int?dnWindow.UDukeSceneMultiplayer.InviteText?>"
+	QuickMatch="<?int?dnWindow.UDukeSceneMultiplayer.QuickMatch?>"
+	PrivateMatch="<?int?dnWindow.UDukeSceneMultiplayer.PrivateMatch?>"
+	ServerBrowser="<?int?dnWindow.UDukeSceneMultiplayer.ServerBrowser?>"
+	LIVEParty="<?int?dnWindow.UDukeSceneMultiplayer.LIVEParty?>"
+	stats="<?int?dnWindow.UDukeSceneMultiplayer.stats?>"
+	myDigs="<?int?dnWindow.UDukeSceneMultiplayer.myDigs?>"
+	ChangeRoom="<?int?dnWindow.UDukeSceneMultiplayer.ChangeRoom?>"
+	DLC="<?int?dnWindow.UDukeSceneMultiplayer.DLC?>"
+	InviteTextHelp="<?int?dnWindow.UDukeSceneMultiplayer.InviteTextHelp?>"
+	QuickMatchHelp="<?int?dnWindow.UDukeSceneMultiplayer.QuickMatchHelp?>"
+	PrivateMatchHelp="<?int?dnWindow.UDukeSceneMultiplayer.PrivateMatchHelp?>"
+	ServerBrowserHelp="<?int?dnWindow.UDukeSceneMultiplayer.ServerBrowserHelp?>"
+	LIVEPartyHelp="<?int?dnWindow.UDukeSceneMultiplayer.LIVEPartyHelp?>"
+	StatsHelp="<?int?dnWindow.UDukeSceneMultiplayer.StatsHelp?>"
+	MyDigsHelp="<?int?dnWindow.UDukeSceneMultiplayer.MyDigsHelp?>"
+	ChangeRoomHelp="<?int?dnWindow.UDukeSceneMultiplayer.ChangeRoomHelp?>"
+	DLCHelp="<?int?dnWindow.UDukeSceneMultiplayer.DLCHelp?>"
+	InviteBuddy="<?int?dnWindow.UDukeSceneMultiplayer.InviteBuddy?>"
+	RemoveBuddy="<?int?dnWindow.UDukeSceneMultiplayer.RemoveBuddy?>"
+	SelectBuddy="<?int?dnWindow.UDukeSceneMultiplayer.SelectBuddy?>"
+	TitleText="<?int?dnWindow.UDukeSceneMultiplayer.TitleText?>"
+	bFadeAll=true
 }

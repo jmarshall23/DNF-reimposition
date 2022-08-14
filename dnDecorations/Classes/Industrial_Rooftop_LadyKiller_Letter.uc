@@ -11,6 +11,26 @@ class Industrial_Rooftop_LadyKiller_Letter extends Industrial_Generic
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	Merch_Box_D=(X=4,Mass=5000,StaticMesh='sm_lvl_ladykiller.LK_RoofTop.LadyKiller_L')
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	begin object name=DA_KImpulse_Letter_Destroyed class=DecoActivities_KarmaImpulse
+		ImpulseForce=80000
+		ImpulseOffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=10)
+		ImpulseDirectionVariance=(Pitch=1073750533,Yaw=571080704,Roll=16384)
+	object end
+	// Reference: DecoActivities_KarmaImpulse'Industrial_Rooftop_LadyKiller_Letter.DA_KImpulse_Letter_Destroyed'
+	DestroyedActivities(2)=DA_KImpulse_Letter_Destroyed
+	begin object name=DA_Display_Rooftop_LK_Letter_Destroyed class=DecoActivities_Display
+		Skins(0)=(Index=0,NewMaterialEx='smt_skins9.LK_RoofTop.LK_rooftop_letters_destroyed_BS')
+	object end
+	// Reference: DecoActivities_Display'Industrial_Rooftop_LadyKiller_Letter.DA_Display_Rooftop_LK_Letter_Destroyed'
+	DestroyedActivities(3)=DA_Display_Rooftop_LK_Letter_Destroyed
+	begin object name=DA_Sound_Rooftop_LK_Letter_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=Neon_Explode
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Rooftop_LadyKiller_Letter.DA_Sound_Rooftop_LK_Letter_Destroyed'
+	DestroyedActivities(4)=DA_Sound_Rooftop_LK_Letter_Destroyed
+	HealthPrefab=4
+	Mass=5000
+	StaticMesh='sm_lvl_ladykiller.LK_RoofTop.LadyKiller_L'
 }

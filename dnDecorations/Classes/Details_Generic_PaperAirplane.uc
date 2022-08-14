@@ -117,10 +117,24 @@ defaultproperties
 	ForceIntervalVariance=0.75
 	ForceAmount=300
 	HealthPrefab=0
-	DamageTypesIgnored=/* Array type was not detected. */
-	Pitch=true
+	DamageTypesIgnored(0)='dnGame.MeleeDamage'
+	DamageTypesIgnored(1)='dnGame.MightyFootDamage'
+	bGrabbable=true
 	UsePhrase="<?int?dnDecorations.Details_Generic_PaperAirplane.UsePhrase?>"
 	GrabInfo=(bCanDuckWhileHeld=true,MountItemOverride=mount_handright,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
 	ThrowForceScale=0.5
-	SpawnOnDestroyedSimple=/* Array type was not detected. */
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Paper1'
+	bIgnorePawnDownwardForce=true
+	bCanCrushOthers=false
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Paper'
+	KLinearDamping=0
+	KAngularDamping=0
+	GravityScale=0
+	EnableDisableThreshold=0.5
+	Physics=18
+	bNoNativeTick=false
+	CollisionRadius=4
+	CollisionHeight=1
+	Mass=1
 }

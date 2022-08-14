@@ -11,5 +11,7 @@ class Settings_LadyKiller extends aFinalDecoration
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=none
+	VoicePack='SoundConfig.Interactive.VoicePack_LadyKiller'
 }

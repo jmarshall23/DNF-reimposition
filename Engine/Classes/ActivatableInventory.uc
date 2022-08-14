@@ -25,7 +25,7 @@ var bool bAutoActivate;
 var bool bActivatable;
 var bool bActivatableByCategoryIteration;
 var bool bActivatableByGlobalIteration;
-var travel bool bActive;
+var travel netupdate(NU_Active) bool bActive;
 var bool bActivationRequiresHands;
 var bool bActivatableWhileAttached;
 var byte dnInventoryCategory;

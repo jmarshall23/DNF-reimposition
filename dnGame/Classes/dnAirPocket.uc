@@ -82,25 +82,16 @@ defaultproperties
 	bInitiallyActive=true
 	BubbleSpawnPeriod=0.1
 	BubbleSpawnNumber=1
-	MountOnSpawn=/* Array type was not detected. */
-	AnimationName=/* Unknown default property type! */
-	bSurviveDismount=false
-	bDontScaleByDrawScale=false
-	bScaleByDrawScaleNonDefault=false
-	bTransformDrawScale3DChange=false
-	bTakeParentTag=false
-	bTransferToCorpse=false
-	bDontSetOwner=false
-	MountParentTag=None
-	DrawScaleOverride=0
-	AppendToTag=None
-	ForceTag=None
-	ForceEvent=None
-	MountMeshItem=None
-	MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0)
-	MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0)
-	MountAngles=(Pitch=8741,Yaw=572915712,Roll=0)
-	MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0)
-	MountType=0
-	DismountPhysics=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Particles.dnAirPocket_Bubbles',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	bTraceUsable=false
+	bTraceShootable=false
+	bBlockCamera=false
+	bHidden=true
+	bCanExistOutOfWorld=true
+	bCollideActors=true
+	CollisionRadius=32
+	CollisionHeight=48
+	TickStyle=0
+	Sprite='dt_editor.Icons.dnJetskiPoint'
+	Texture='dt_editor.Icons.dnJetskiPoint'
 }

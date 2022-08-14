@@ -10,6 +10,14 @@ class dnBonePartMapper_Enforcer_RightArm extends BonePartMapper
 
 defaultproperties
 {
-	PartMapping=/* Array type was not detected. */
-	AnimTween=1.38139E-25
+	PartMapping(0)=(BoneName=RightShoulder,Part=7,BoneNameForDestroy=None)
+	PartMapping(1)=(BoneName=RightArm,Part=9,BoneNameForDestroy=None)
+	PartMapping(2)=(BoneName=RightForeArm,Part=9,BoneNameForDestroy=RightForeArm)
+	PartMapping(3)=(BoneName=RightForeArmRoll,Part=9,BoneNameForDestroy=RightForeArm)
+	PartMapping(4)=(BoneName=righthand,Part=9,BoneNameForDestroy=RightForeArm)
+	DestroyableBones(0)=(BoneName=RightForeArm,bAddToLimbCount=true,LimbCapClass='dnCorpse_LimbCap_Enforcer_ArmRight_Lower',LimbCapMountInfo=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=-1.882454E+25,Y=2.965253E-17,Z=0.212),Z=-10.205),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(0)=(BoneName=RightForeArm,ReqBones=none,RenderObject='sm_class_effects.Enforcer_Gibs.Enforcer_ForearmR_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-2.307466E+20,Y=2.954385E-17,Z=-1.43),Z=-16.36)
+	FullyGibbedSoundName=Corpse_LimbExplode
+	FullyGibbedFrozenSoundName=IcePart_Shatter_Small
+	NumLimbsUntilDestructible=1
 }

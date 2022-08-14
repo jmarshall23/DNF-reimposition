@@ -360,6 +360,6 @@ defaultproperties
 	bNoLogo=true
 	bNoBackground=true
 	bNoLines=true
-	SoundMenuAmbience=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */,Y=/* Unknown default property type! */,SlotPriority=0,VolumePrefab=0,Slots=/* Array type was not detected. */,Y=/* Array type was not detected. */,R=/* Unknown default property type! */)
+	SoundMenuAmbience=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=(none),SlotPriority=0,VolumePrefab=0,Slots=(25),Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=true,bMenuSound=false,bNoFilter=true,bNoOcclude=true,bNoAIHear=false,bNoScale=true,bSpoken=false,bPlayThroughListener=false,bNoDoppler=true,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=true),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=1,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
 	bIgnoreAllInputs=true
 }

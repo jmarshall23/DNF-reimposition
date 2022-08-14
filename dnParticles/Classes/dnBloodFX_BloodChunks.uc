@@ -14,5 +14,27 @@ defaultproperties
 	DieOnBounce=true
 	ParticlesCollideWithWorld=true
 	UseZoneGravity=true
-	AdditionalSpawn=/* Array type was not detected. */
+	AdditionalSpawn(0)=(SpawnClass=none,TakeParentTag=false,Mount=false,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	PrimeCount=32
+	MaximumParticles=32
+	Lifetime=0.85
+	LifetimeVariance=0.25
+	InitialVelocity=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	MaxVelocityVariance=(X=1.291857E-41,Y=2.802959E-17,Z=256)
+	AlphaEnd=1
+	Textures(0)='dt_effects.blood.genbloodgib1RC'
+	Textures(1)='dt_effects.blood.genbloodgib2RC'
+	Textures(2)='dt_effects.blood.genbloodgib3RC'
+	Textures(3)='dt_effects.blood.genbloodgib4RC'
+	Textures(4)='dt_effects.blood.genbloodgib5RC'
+	StartDrawScale=0.05
+	EndDrawScale=0.05
+	DrawScaleVariance=0.075
+	RotationVelocityMaxVariance=32
+	SpawnOnBounceChance=0.8
+	SpawnOnBounce='dnBloodFX_BloodSplat'
+	CollisionRadius=16
+	CollisionHeight=16
+	Style=2
+	TimeWarp=0.7
 }

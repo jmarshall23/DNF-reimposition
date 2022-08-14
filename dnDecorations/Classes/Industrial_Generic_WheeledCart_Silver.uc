@@ -16,6 +16,13 @@ defaultproperties
 	DynamicInteractionClassification=0
 	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
 	PhysicsMassType=1
-	PhysicsSoundOverrides=/* Array type was not detected. */
-	OtherMaterialTypes=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaMetal.MetalObj_WheelsRoll_01'),SoundInfo=(InputRange=(Min=16,Max=128),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.75,Max=1)),bDisableSoundInWater=false)
+	Physics=18
+	bAcceptsProjectors=false
+	bAcceptsDecalProjectors=false
+	CollisionRadius=27
+	CollisionHeight=19
+	Mass=56
+	DrawType=2
+	Mesh='c_generic.WheeledCart'
 }

@@ -60,6 +60,38 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 defaultproperties
 {
 	ScreenSplatterClass='dnScreenSplatter_Pumpkin'
-	DestroyedActivities=/* Array type was not detected. */
-	bTransferToCorpse=/* Unknown default property type! */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Biology_Generic_DestructiblePumpkin.DA_Sound_DestructiblePumpkin_Destroyed'
+	DestroyActionPointRadius=60
+	HealthPrefab=5
+	DamageTypesInstaKill(0)='Engine.ExplosionDamage'
+	DamageTypesInstaKill(1)='dnGame.RocketDamage'
+	DamageIgnoreRules(0)=(QualifierInstigatorType='Engine.BaseAI',QualifierNetMode=0,MinDistanceFromLocalPlayer=0,MaxDistanceFromLocalPlayer=250)
+	bTelekineticable=true
+	TelekinesisThrowVel=2000
+	Health=40
+	HealthCap=40
+	SpawnOnDestroyed(0)=(SpawnClass='Biology_Generic_DestructiblePumpkin_Gibs',RenderObject='sm_geo_decorations.alien.alien_Egg01_Gib',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.562776E-17,Y=2.813634E-17,Z=-3.933945),Z=28.29331)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DefaultMotionPrefab=MotionPrefab'Biology_Generic_DestructiblePumpkin.MP_DestructiblePumpkin_Gibs'
+	bCanBreakGlass=true
+	bTickOnlyWhenPhysicsAwake=true
+	DynamicInteractionClassification=0
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Flesh'
+	KImpactThreshold=100000
+	FixedPhysicsDamageToNotPlayer=50
+	FixedPhysicsDamageToPlayer=40
+	PhysicsEntityGroup=DestructiblePumpkin
+	bAITransparent=true
+	bStepUpAble=false
+	bAutoNavDoor=true
+	CollisionRadius=25
+	CollisionHeight=25
+	VisibleCollidingCenterOffset=(X=1.291717E-41,Y=2.797242E-17,Z=0)
+	Mass=50
+	StaticMesh='sm_geo_decorations.alien.alien_egg1'
 }

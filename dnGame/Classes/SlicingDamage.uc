@@ -12,5 +12,6 @@ defaultproperties
 {
 	DeathMessage="<?int?dnGame.SlicingDamage.DeathMessage?>"
 	SuicideDeathMessage="<?int?dnGame.SlicingDamage.SuicideDeathMessage?>"
-	DamageVibrations=/* Array type was not detected. */
+	DamageVibrations(0)=(bNoLerp=false,bToggleSign=true,Style=2,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.4,ShakeFrequency=0.08,ShakeMagnitude=1000,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=MeleeDamage_Shake)
+	DamageVibrations(1)=(bNoLerp=false,bToggleSign=true,Style=2,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.4,ShakeFrequency=0.08,ShakeMagnitude=1000,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=MeleeDamage_Shake)
 }

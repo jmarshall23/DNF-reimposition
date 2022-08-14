@@ -16,5 +16,7 @@ defaultproperties
 	WeaponConfig='WallBombWeaponConfig'
 	InventoryReferenceClass='WallBomb'
 	PickupClass='WallBombPickup'
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	Mesh='c_hands.Wall_Bomb'
+	VoicePack='SoundConfig.Inventory.VoicePack_WallBomb'
 }

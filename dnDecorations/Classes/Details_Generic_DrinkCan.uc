@@ -54,5 +54,26 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=none
+	HealthPrefab=0
+	bGrabbable=true
+	UsePhrase="<?int?dnDecorations.Details_Generic_DrinkCan.UsePhrase?>"
+	GrabInfo=(bCanDuckWhileHeld=true,MountItemOverride=mount_handright,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
+	KLinearDamping=0.2
+	KAngularDamping=0.8
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.FullCan_Impact_01','a_impact.SpecialCase.FullCan_Impact_02','a_impact.SpecialCase.FullCan_Impact_03','a_impact.SpecialCase.FullCan_Impact_04'),SoundInfo=(InputRange=(Min=16,Max=1280),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.4,Max=0.8)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.FullCan_Roll_01'),SoundInfo=(InputRange=(Min=8,Max=40),OutputPitchRange=(Min=0.95,Max=1.125),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(2)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.FullCan_Slide_01'),SoundInfo=(InputRange=(Min=400,Max=500),OutputPitchRange=(Min=0.9,Max=1),OutputVolumeRange=(Min=0.5,Max=0.75)),bDisableSoundInWater=true)
+	bNoNativeTick=false
+	bTickOnlyRecent=false
+	CollisionRadius=2.5
+	CollisionHeight=5.8
+	Mass=10
+	TickStyle=2
+	StaticMesh='sm_class_dukeitems.Beer_40oz.Beer_40oz_sm'
+	Skins(0)=none
+	Skins(1)='mt_skins7.Beer_40oz.ChubbeCola_bs'
 }

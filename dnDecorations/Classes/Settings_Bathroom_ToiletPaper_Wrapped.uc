@@ -12,8 +12,9 @@ defaultproperties
 {
 	HealthPrefab=1
 	DamageThreshold=5
-	SpawnOnDestroyedSimple=/* Array type was not detected. */
-	X=true
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Smoke'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Paper1'
+	bTickOnlyWhenPhysicsAwake=true
 	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Paper'
 	Physics=18
 	CollisionRadius=4

@@ -17,7 +17,7 @@ var float UseDelayTime;
 var STraceHitResult PlacementTraceResult;
 var bool bPlacingMine;
 
-k2call simulated function StartSmacker()
+animevent simulated function StartSmacker()
 {
 	ArmMineMaterial.SetPause(false);
 	return;
@@ -223,7 +223,7 @@ simulated function Fire(optional bool bContinueFire)
 
 state Firing
 {
-	k2call simulated function WeaponCallback_DefinitelyDoneFiring()
+	animevent simulated function WeaponCallback_DefinitelyDoneFiring()
 	{
 		bArmed = false;
 		// End:0x30
@@ -299,7 +299,7 @@ state Throw
 		return;
 	}
 
-	k2call simulated function WeaponCallback_DefinitelyDoneFiring()
+	animevent simulated function WeaponCallback_DefinitelyDoneFiring()
 	{
 		bDeactivationAllowed = true;
 		ChangeSpeed = 1;

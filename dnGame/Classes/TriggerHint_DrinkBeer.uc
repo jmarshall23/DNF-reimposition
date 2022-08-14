@@ -12,6 +12,5 @@ defaultproperties
 {
 	Message="<?int?dnGame.TriggerHint_DrinkBeer.Message?>"
 	MaxDisplayTime=3
-	SpecialKeys=/* Array type was not detected. */
-	AnimGridLink=/* Unknown default property type! */
+	SpecialKeys(0)=36
 }

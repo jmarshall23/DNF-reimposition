@@ -20,5 +20,8 @@ defaultproperties
 	AlphaMid=1
 	AlphaEnd=0
 	AlphaRampMid=0.85
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Sparks.sparkblast3RC'
+	StartDrawScale=0.1
+	EndDrawScale=0.25
+	bForceNonFinalBlendBlooms=true
 }

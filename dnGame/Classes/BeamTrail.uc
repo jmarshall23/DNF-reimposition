@@ -155,7 +155,6 @@ defaultproperties
 	bTickOnlyWhenOwnerShould=true
 	Style=3
 	AlphaSortGroup=8
-	ActorColorList=/* Array type was not detected. */
-	Y=0
-	Z=0
+	ActorColorList(0)=(ActorColor=(B=121,G=2,R=1,A=255),G=205,B=205,A=205)
+	RemoteRole=1
 }

@@ -15,6 +15,17 @@ defaultproperties
 	Damage=125
 	DamageRadius=260
 	ShakeScalar=2.25
-	ShakeInfo=/* Array type was not detected. */
-	OverrideSurvivalChance=(EndingBlendAlpha=/* Unknown default property type! */)
+	ShakeInfo(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.55,ShakeFrequency=0.05,ShakeMagnitude=800,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=dnRocket_RPG_Shake)
+	RumbleInfo(0)=(RumbleName=dnRocket_RPG_Rumble,RumbleDuration=0.5,RumbleLeftMagnitude=0.8,RumbleRightMagnitude=0,FalloffActor=none,FalloffDistance=0)
+	ExplosionDecal='dnParticles.dnDecal_BlastMarkBlack'
+	ExplosionClass='p_Weapons.Rpg_Explosion.RPG_Explosion_Spawner'
+	UnderwaterExplosionClass='p_Weapons.RPG_Explosion_Underwater.RPG_Explosion_Underwater_Spawner'
+	ExplosionLight='dnExplosionLight_RPG'
+	ExplosionSoundName=ProjectileExplode
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Weapon_LightEx_Rocket',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.965399E-17,Z=0),Z=-6),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=-16384)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	DrawType=8
+	StaticMesh='sm_class_dukeitems.rpg_rocket.rpg_rocket'
+	VoicePack='SoundConfig.Inventory.VoicePack_RPG'
 }

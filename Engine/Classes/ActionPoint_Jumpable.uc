@@ -21,5 +21,7 @@ defaultproperties
 	bCheckShrunk=false
 	bJumpPoint=true
 	MaxJumpDistance=2500
-	DefaultJumpToInfo(0)=(System=39864643,bMasked=/* Unknown default property type! */)
+	DefaultJumpToInfo(0)=(JumpType=Pregnator,CollisionHeight=14,CollisionRadius=20,Padding=2,StartHeight=75,EndHeight=500,JumpPreset=(JumpVel=(X=1.293258E-41,Y=3.079134E-17,Z=0),Z=0),HeavyLandingThresh=0,FocusActor=none,GravityScale=1,JumpTime=-1,FlyToTarget=false,TargetPos=(X=1.293258E-41,Y=3.079134E-17,Z=0),Z=0)
+	DefaultJumpToInfo(1)=(JumpType=0,bSnapToTarget=false,bUseAccelaration=false,DefGravityScale=0,bFaceTarget=false)
+	Texture=Texture'S_PurpleActionPoint'
 }

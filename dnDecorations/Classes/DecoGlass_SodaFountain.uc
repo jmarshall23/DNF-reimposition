@@ -15,6 +15,8 @@ defaultproperties
 	bAlignTextureOnBreak=false
 	bStaticEdgePieces=false
 	DrawScale3D=(X=1.291717E-41,Y=2.802819E-17,Z=15)
-	Skins=/* Array type was not detected. */
-	Yaw[117]=none
+	Skins(0)='smt_skins8.SodaFountain.sodaftn_drnksign_bs'
+	Skins(1)='smt_skins8.SodaFountain.sodaftn_drnksign_bs'
+	Skins(2)='smt_skins8.SodaFountain.sodaftn_drnksign_bs'
+	Skins(3)='smt_skins8.SodaFountain.sodaftn_drnksign_bs'
 }

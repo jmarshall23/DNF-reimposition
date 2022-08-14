@@ -10,5 +10,8 @@ class dnExitWound_Human extends dnExitWound
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.blood.BloodSplatter1RC'
+	Decals(1)='dt_effects.blood.BloodSplatter2RC'
+	Decals(2)='dt_effects.blood.BloodSplatter3RC'
+	Decals(3)='dt_effects.blood.BloodSplatter4RC'
 }

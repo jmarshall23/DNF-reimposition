@@ -22,5 +22,11 @@ defaultproperties
 	AlphaMid=1
 	AlphaEnd=0
 	AlphaRampMid=0.75
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Fire.Flamestill1bRC'
+	Textures(1)='dt_effects.Fire.flamehotend2RC'
+	StartDrawScale=0.0625
+	EndDrawScale=0
+	bForceNonFinalBlendBlooms=true
+	NonFinalBlendBloomTint=(B=85,G=1,R=1,A=64)
+	Style=6
 }

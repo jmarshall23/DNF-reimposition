@@ -30,8 +30,8 @@ var bool bResetRotation;
 var name ResetCompleteEvent;
 var Rotator BaseRotation;
 var float MaxResetRotationSpeed;
-var name OpenAnim;
-var name CloseAnim;
+var anim name OpenAnim;
+var anim name CloseAnim;
 
 function PostVerifySelf()
 {
@@ -277,5 +277,33 @@ defaultproperties
 	HealthPrefab=0
 	bEnemy=true
 	bIgnoreAimAssist=true
-	MountOnSpawn=/* Array type was not detected. */
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_MapEvents.Map02_MotherShip_GunBeam.MotherShip_GunBeam_Charge_Main',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=BeamCharge,ForceEvent=None,MountMeshItem=mount_gun,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(5)=(bSkipVerifySelf=false,SpawnClass='p_MapEvents.Map02_MotherShip_GunBeam.MotherShip_GunBeam_Origin_Main',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=BeamShoot,ForceEvent=None,MountMeshItem=mount_gun,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(6)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(7)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(8)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(9)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(10)=(bSkipVerifySelf=false,SpawnClass='p_MapEvents.Map02_MotherShip_GunBeam.MotherShip_Gun_Muzzle_Spawner',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=BeamMuzzleFlash,ForceEvent=None,MountMeshItem=mount_gun,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(11)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(12)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(13)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(14)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(15)=(bSkipVerifySelf=false,SpawnClass='dnMothershipGunArmor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=gun_pivot,MountOrigin=(X=-1.204739E+14,Y=2.95492E-17,Z=-1049.995),Z=1094.372),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	PhysicsEntityGroup=dnMothershipGunArmor
+	bCollisionAssumeValid=true
+	bAcceptMeshAccurateMoveActorTrace=true
+	bBlockPlayers=false
+	bTickOnlyRecent=false
+	bTickOnlyZoneRecent=false
+	bNoFailMountedMovement=true
+	bCollideWorld=false
+	CollisionRadius=16384
+	CollisionHeight=16384
+	TickStyle=3
+	DrawScale=5
+	Mesh='c_vehicles.alien_mothership_gun'
 }

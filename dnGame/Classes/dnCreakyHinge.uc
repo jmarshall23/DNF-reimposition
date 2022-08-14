@@ -11,12 +11,6 @@ class dnCreakyHinge extends KHinge
 
 defaultproperties
 {
-	CreakSoundInfo=bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */,
-/* Exception thrown while deserializing CreakSoundInfo
-System.ArgumentOutOfRangeException: Non-negative number required.
-Parameter name: value
-   at System.IO.MemoryStream.set_Position(Int64 value)
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 184
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
+	CreakSoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('a_ambient.Creaks.Creak26','a_ambient.Creaks.Creak27','a_ambient.Creaks.Creak41','a_ambient.Creaks.Creak42'),SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0.8,VolumeVariance=0.1,InnerRadius=96,InnerRadiusVariance=0,Radius=600,RadiusVariance=0,Pitch=1,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
 	CreakInfo=(bEnableCreakSounds=true,bDebugCreakVelocity=false,CreakTimeMinimumDelay=0.5,NextCreakTime=0,SwingMinimumVolumeVelocity=0.5,SwingMaximumVolumeVelocity=25,SwingMinimumVolume=0.8,SwingMaximumVolume=1,LastSwingVelocity=0,DirectionSpinAmount=0)
 }

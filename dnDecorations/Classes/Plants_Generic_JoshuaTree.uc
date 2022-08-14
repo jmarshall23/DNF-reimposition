@@ -12,7 +12,14 @@ class Plants_Generic_JoshuaTree extends Plants_Generic
 defaultproperties
 {
 	bSurviveDeath=false
-	DestroyedActivities=/* Array type was not detected. */
-	relativeAngularVel=108004609
-	Pitch=/* Unknown default property type! */
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_JoshuaTree_Destruct class=DecoActivities_Sound
+		SoundNames(0)=JoshTreeBust
+	object end
+	// Reference: DecoActivities_Sound'Plants_Generic_JoshuaTree.DA_Sound_JoshuaTree_Destruct'
+	DestroyedActivities(1)=DA_Sound_JoshuaTree_Destruct
+	HealthPrefab=5
+	DamageThreshold=50
+	Health=50
+	bLowerByCollision=false
 }

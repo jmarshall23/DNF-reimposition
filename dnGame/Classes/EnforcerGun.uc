@@ -14,7 +14,7 @@ function AdjustProjectileSpawn(out Vector SpawnLocation, out Rotator SpawnRotati
 	return;
 }
 
-k2call simulated function Fire_Effects(optional EventInfo AnimEventInfo)
+animevent simulated function Fire_Effects(optional EventInfo AnimEventInfo)
 {
 	super.Fire_Effects(AnimEventInfo);
 	// End:0x95
@@ -56,5 +56,11 @@ defaultproperties
 	PickupClass='EnforcerGunPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=17
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_EnforcerGun'
+	Mesh='c_dnWeapon.Enforcer_Gun'
+	SoundVolume=200
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_EnforcerGun'
 }

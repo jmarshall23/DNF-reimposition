@@ -10,8 +10,24 @@ class Settings_Bathroom_MopBucket extends Settings_Bathroom
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	Rotator=""
-	ObjectProperty=/* Unknown default property type! */
-	Z=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Wood_Small'
+	HealthPrefab=0
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Wood1'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Smoke'
+	SpawnOnDestroyedSimple(2)='dnParticles.dnDebris_Sparks1_Small'
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Hollow'
+	PhysicsMassType=1
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaPlastic.MopBucket_Impact_01','a_impact.KarmaPlastic.MopBucket_Impact_02','a_impact.KarmaPlastic.MopBucket_Impact_03','a_impact.KarmaPlastic.MopBucket_Impact_04'),SoundInfo=(InputRange=(Min=64,Max=1280),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.35,Max=0.8)),bDisableSoundInWater=false)
+	PhysicsSoundOverrides(1)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaPlastic.MopBucket_Roll_01'),SoundInfo=(InputRange=(Min=12,Max=50),OutputPitchRange=(Min=1,Max=1.25),OutputVolumeRange=(Min=0.4,Max=0.8)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(2)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaPlastic.MopBucket_Slide_01'),SoundInfo=(InputRange=(Min=32,Max=1250),OutputPitchRange=(Min=0.75,Max=0.75),OutputVolumeRange=(Min=0.3,Max=0.8)),bDisableSoundInWater=false)
+	Physics=18
+	bAcceptsProjectors=false
+	bAcceptsDecalProjectors=false
+	CollisionRadius=20
+	CollisionHeight=17
+	Mass=30
+	DrawType=2
+	Mesh='c_generic.MopBucket'
 }

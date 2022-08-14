@@ -10,5 +10,5 @@ class FootPrint_Sand extends FootPrint
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.Footprints.DukesFPsand1RC'
 }

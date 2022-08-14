@@ -9,6 +9,13 @@ class Industrial_Generic_Gibs_ConcreteBlock_A extends aFinalDecoration_Gibs;
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_class_decorations.concrete.ConcreteBLK_MedChunkL',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_class_decorations.concrete.ConcreteBLK_Smallchunk',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_class_decorations.concrete.ConcreteBLK_MedChunkT',bForcedOnly=false)
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Stone'
+	PhysicsMassType=0
+	Density=5
+	Physics=0
+	bBlockActors=false
+	bStepUpAble=false
 }

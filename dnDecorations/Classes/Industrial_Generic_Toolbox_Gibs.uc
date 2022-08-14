@@ -10,6 +10,13 @@ class Industrial_Generic_Toolbox_Gibs extends aFinalDecoration_Gibs
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y=PerformAgainDelay
+	Gibs(0)=(RenderObject='sm_class_decorations.ToolBox_Gibs.ToolBox_Gib_01',bForcedOnly=false)
+	SurvivalTime=10
+	SurvivalTimeVariance=2
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
+	Density=5
+	PhysicsEntityGroup=ToolBox
+	bBlockActors=false
+	bStepUpAble=false
+	StaticMesh='sm_class_decorations.ToolBox_Gibs.ToolBox_Gib_01'
 }

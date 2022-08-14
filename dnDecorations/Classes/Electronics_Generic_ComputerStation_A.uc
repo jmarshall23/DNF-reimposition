@@ -10,8 +10,41 @@ class Electronics_Generic_ComputerStation_A extends Electronics_Generic_Computer
 
 defaultproperties
 {
-	BodyTextures(0)=MotionPrefab'Pillars_Destructible.MP_PC_NoMotion'
-	BodyTextures(1)='smt_skins5.ComputerStation.CompStation_cd'
-	BodyTextures(2)=ObjectProperty'Biology_Generic_GasPod.KImpact.Other'
-	ObjectProperty=true
+	BodyTextures(0)='smt_skins5.ComputerStation.CompStation_cd'
+	DestroyedBodyTextures(0)='smt_skins5.ComputerStation.CompStation_cd_brkn'
+	PanelTextures(0)='smt_skins5.ComputerStation.CompStationPanel01_cd'
+	PanelTextures(1)='smt_skins5.ComputerStation.CompStationPanel02_cd'
+	PanelTextures(2)='smt_skins5.ComputerStation.CompStationPanel03_cd'
+	PanelTextures(3)='smt_skins5.ComputerStation.CompStationPanel04_cd'
+	PanelTextures(4)='smt_skins5.ComputerStation.CompStationPanel05_cd'
+	PanelTextures(5)='smt_skins5.ComputerStation.CompStationPanel06_cd'
+	PanelTextures(6)='smt_skins5.ComputerStation.CompStationPanel07_cd'
+	DestroyedPanelTextures(0)='smt_skins5.ComputerStation.CompStationPanel01_cd_brkn'
+	DestroyedPanelTextures(1)='smt_skins5.ComputerStation.CompStationPanel02_cd_brkn'
+	DestroyedPanelTextures(2)='smt_skins5.ComputerStation.CompStationPanel03_cd_brkn'
+	DestroyedPanelTextures(3)='smt_skins5.ComputerStation.CompStationPanel04_cd_brkn'
+	DestroyedPanelTextures(4)='smt_skins5.ComputerStation.CompStationPanel05_cd_brkn'
+	DestroyedPanelTextures(5)='smt_skins5.ComputerStation.CompStationPanel06_cd_brkn'
+	DestroyedPanelTextures(6)='smt_skins5.ComputerStation.CompStationPanel07_cd_brkn'
+	FlickerLight=(FlickerLightActor=none,FlickerLightExActor=none,bUseFlickerLight=false,bUseFlickerLightEx=false,bInitialEffect=true,bInitialEffectOnly=false,FlickerLightMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Electronics_Generic.DA_Sound_Destroyed_Electronic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Sound_Ambient_Clear'
+	begin object name=DA_Display_Electronics_Generic_CompStation_A_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_decorations.Electronics.compstationBrkn'
+	object end
+	// Reference: DecoActivities_Display'Electronics_Generic_ComputerStation_A.DA_Display_Electronics_Generic_CompStation_A_Brkn'
+	DestroyedActivities(3)=DA_Display_Electronics_Generic_CompStation_A_Brkn
+	begin object name=DA_Spawn_Elec_Gen_CompStation_A_Brkn class=DecoActivities_Spawn
+		MountedSpawns(0)=(bSkipVerifySelf=false,SpawnClass='dnGame.ParticleSystemTimer_Sparks_Malfunction_Blue',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=16),Z=22),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+		MountedSpawns(1)=(MountAngles=(Pitch=536879621,Yaw=571080704,Roll=0),Roll=0)
+	object end
+	// Reference: DecoActivities_Spawn'Electronics_Generic_ComputerStation_A.DA_Spawn_Elec_Gen_CompStation_A_Brkn'
+	DestroyedActivities(4)=DA_Spawn_Elec_Gen_CompStation_A_Brkn
+	SpawnOnDestroyedSimple(0)=none
+	SpawnOnDestroyedSimple(1)=none
+	SpawnOnDestroyedSimple(2)=none
+	CollisionRadius=0
+	CollisionHeight=30
+	StaticMesh='sm_class_decorations.Electronics.compstation'
 }

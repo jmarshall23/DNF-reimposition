@@ -40,7 +40,7 @@ simulated function OnDestroyed()
 	return;
 }
 
-k2call simulated function Mount_Shell_User(optional EventInfo AnimEventInfo)
+animevent simulated function Mount_Shell_User(optional EventInfo AnimEventInfo)
 {
 	// End:0x38
 	if(Instigator.bIsPlayerPawn)
@@ -51,7 +51,7 @@ k2call simulated function Mount_Shell_User(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function Shell_Inserted(optional EventInfo AnimEventInfo)
+animevent simulated function Shell_Inserted(optional EventInfo AnimEventInfo)
 {
 	DisableReloadShell();
 	return;
@@ -123,7 +123,7 @@ state Firing
 		return;
 	}
 
-	k2call simulated function WeaponCallback_MaybeDoneFiring()
+	animevent simulated function WeaponCallback_MaybeDoneFiring()
 	{
 		ClearLockout();
 		super.WeaponCallback_MaybeDoneFiring();
@@ -153,7 +153,7 @@ state Reloading
 		return;
 	}
 
-	k2call simulated function WeaponCallback_MaybeDoneReloading()
+	animevent simulated function WeaponCallback_MaybeDoneReloading()
 	{
 		// End:0x11
 		if(__NFUN_145__(AttemptFire()))
@@ -163,7 +163,7 @@ state Reloading
 		return;
 	}
 
-	k2call simulated function WeaponCallback_DefinitelyDoneReloading()
+	animevent simulated function WeaponCallback_DefinitelyDoneReloading()
 	{
 		// End:0x11
 		if(__NFUN_145__(AttemptFire()))
@@ -196,6 +196,13 @@ defaultproperties
 	PickupClass='MP_ShotgunPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=1
-	AutoRegisterIKClasses=/* Array type was not detected. */
-	AnimEnd_FunctionCallName=/* Unknown default property type! */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_Shotgun'
+	CollisionRadius=19
+	CollisionHeight=6
+	Mesh='c_dnWeapon.Shotgun'
+	SoundVolume=255
+	SoundRadius=3200
+	SoundInnerRadius=1600
+	VoicePack='SoundConfig.Inventory.VoicePack_Shotgun'
 }

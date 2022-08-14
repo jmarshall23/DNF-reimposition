@@ -14,7 +14,7 @@ class dnTeamInfo extends Info
 var string TeamName;
 var int Size;
 var int Score;
-var int TeamIndex;
+var netupdate(NU_TeamIndexChanged) int TeamIndex;
 var class<dnDeathmatchGame_TeamDM> GameInfoClass;
 
 replication

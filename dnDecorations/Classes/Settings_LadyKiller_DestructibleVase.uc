@@ -28,10 +28,54 @@ simulated function bool UseThrowingFix()
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	X=5
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=none
+	begin object name=DA_Sound_DestructibleVase_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=CeramicVase_Large_Smash
+	object end
+	// Reference: DecoActivities_Sound'Settings_LadyKiller_DestructibleVase.DA_Sound_DestructibleVase_Destroyed'
+	DestroyedActivities(2)=DA_Sound_DestructibleVase_Destroyed
+	HealthPrefab=5
 	bGrabbable=true
 	GrabInfo=(bCanDuckWhileHeld=false,MountItemOverride=mount_handright,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
 	ThrowBaseRotation=(Pitch=8709,Yaw=571080704,Roll=0)
 	Health=10
+	SpawnOnDestroyed(0)=(SpawnClass='Settings_LadyKiller_DestructibleVase_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=1,SpawnCopies=1,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.813558E-17,Z=0),Z=-31)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=None,MotionInfo=none)
+	SpawnOnDestroyed(6)=(SpawnClass='Settings_LadyKiller_DestructibleVase_Gib_B',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(7)=(SpawnChance=0.5,SpawnCopies=1,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.802716E-17,Z=5),Z=-32)
+	SpawnOnDestroyed(8)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(9)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(10)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(11)=(BoneName=None,MotionInfo=none)
+	SpawnOnDestroyed(12)=(SpawnClass='Settings_LadyKiller_DestructibleVase_Gib_C',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(13)=(SpawnChance=1,SpawnCopies=1,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.802705E-17,Z=-3),Z=-28)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	begin object name=LKVase_Gibs_Motion class=MotionPrefab
+		bUseParentVelocity=false
+		bUseParentRotationRate=false
+		VelocityRelativeType=3
+		Velocity=(X=1.291717E-41,Y=2.802924E-17,Z=0)
+		VelocityVariance=(X=1.291717E-41,Y=2.802885E-17,Z=80)
+		RotationRate=(Pitch=-56827,Yaw=571080704,Roll=0)
+		RotationRateVariance=(Pitch=-1006624251,Yaw=571080713,Roll=0)
+	object end
+	// Reference: MotionPrefab'Settings_LadyKiller_DestructibleVase.LKVase_Gibs_Motion'
+	DefaultMotionPrefab=LKVase_Gibs_Motion
+	bCanBreakGlass=true
+	bTickOnlyWhenPhysicsAwake=true
+	DynamicInteractionClassification=7
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Stone'
+	PhysicsMassType=1
+	FixedPhysicsDamageToNotPlayer=100
+	Physics=18
+	bAITransparent=true
+	CollisionRadius=17
+	CollisionHeight=40
+	Mass=40
+	StaticMesh='sm_class_decorations.Containers.VaseLarge'
 }

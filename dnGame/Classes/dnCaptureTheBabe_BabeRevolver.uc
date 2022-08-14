@@ -83,5 +83,7 @@ defaultproperties
 	HUDPickupEventIcon=-1
 	AnimationControllerClass='dnAnimationControllerEx_Babegun'
 	Mesh='c_dnWeapon.pistol_babegun'
-	Skins=/* Array type was not detected. */
+	Skins(0)=none
+	Skins(1)=none
+	Skins(2)=none
 }

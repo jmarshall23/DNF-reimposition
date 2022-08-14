@@ -20,10 +20,10 @@ struct SLipSyncCue
 struct SLipSyncPhoneRegion
 {
 	var array<SLipSyncCue> Cues;
-	var name Pose;
+	var anim name Pose;
 	var float MinBlend;
 	var float MaxBlend;
 };
 
-var name NeutralPose;
+var anim name NeutralPose;
 var array<SLipSyncPhoneRegion> PhoneRegions;

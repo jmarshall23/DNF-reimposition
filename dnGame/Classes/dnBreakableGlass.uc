@@ -258,5 +258,8 @@ defaultproperties
 {
 	bCanCrushOthers=false
 	bBlockActors=true
-	Skins=/* Array type was not detected. */
+	Skins(0)='dt_masking.Glass_Materials.glassdirty1bc_finalblend'
+	Skins(1)='dt_masking.Glass_Materials.brokenglass1bc_envcomb'
+	Skins(2)='dt_masking.Glass_Materials.brokenglass1bc_envcomb'
+	Skins(3)='dt_masking.Glass_Materials.glassdirty1bc_finalblend'
 }

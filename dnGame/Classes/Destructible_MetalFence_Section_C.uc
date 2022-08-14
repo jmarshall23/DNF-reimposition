@@ -6,3 +6,21 @@
  * All rights belong to their respective owners.
  *******************************************************************************/
 class Destructible_MetalFence_Section_C extends dnDestructibleBuildingDefinition within dnDestructibleBuilding;
+
+defaultproperties
+{
+	Parts(0)=(StaticMesh='SM_Lvl_Desert.Destructible.gen_sheetmetal_2',Location=(X=-4.512566E+07,Y=2.965522E-17,Z=0.375),Z=-4.501205)
+	Parts(1)=(Rotation=(Pitch=3088933,Yaw=572915712,Roll=48096),Roll=930)
+	Parts(2)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Parts(3)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid',bDefaultInteractionClass=false)
+	Parts(4)=(StaticMesh='SM_Lvl_Desert.Destructible.gen_sheetmetal_3',Location=(X=7.643398E-08,Y=2.954681E-17,Z=-1.624023),Z=-3.501205)
+	Parts(5)=(Rotation=(Pitch=-2612699,Yaw=572915712,Roll=16375),Roll=60357)
+	Parts(6)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Parts(7)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid',bDefaultInteractionClass=false)
+	Parts(8)=(StaticMesh='SM_Lvl_Desert.Destructible.gen_sheetmetal_5',Location=(X=-3.492022E+09,Y=2.954589E-17,Z=-1.625),Z=30.49879)
+	Parts(9)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=17420),Roll=16384)
+	Parts(10)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	ParticleEffects(0)=(SpawnerClass='p_Decorations.Debris_WoodBuilding.Debris_WoodBuilding_Spawner',LocationOffset=(X=1.292418E-41,Y=2.965526E-17,Z=0),Z=-32)
+	ParticleEffects(1)=(RotationOffset=(Pitch=8741,Yaw=572915712,Roll=16384),Roll=0)
+	ShellPart=(StaticMesh='SM_Lvl_Desert.Destructible_Shells.MetalFence_Section_C',Location=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+}

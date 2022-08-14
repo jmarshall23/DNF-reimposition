@@ -12,5 +12,6 @@ defaultproperties
 {
 	CollisionHeight=8
 	StaticMesh='sm_class_decorations.Tables.DeskDrawerLarge'
-	Skins=/* Array type was not detected. */
+	Skins(0)='smt_skins3.Desk.WoodDeskDrawSmall_bs'
+	Skins(1)='smt_skins3.Desk.WoodDeskDrawerlarge_diff'
 }

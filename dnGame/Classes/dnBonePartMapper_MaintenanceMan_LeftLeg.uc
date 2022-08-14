@@ -10,7 +10,5 @@ class dnBonePartMapper_MaintenanceMan_LeftLeg extends dnBonePartMapper_Male_Left
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y=0.783
-	Z=-10.256
+	Gibs(0)=(BoneName=LeftLeg,ReqBones=none,RenderObject='sm_class_effects.Maintence_man_Gibs.Maintenance_man_FootL_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=4.063928E+29,Y=2.954463E-17,Z=0.783),Z=-10.256)
 }

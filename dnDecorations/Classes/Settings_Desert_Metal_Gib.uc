@@ -10,5 +10,13 @@ class Settings_Desert_Metal_Gib extends aFinalDecoration_Gibs
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
+	Gibs(0)=(RenderObject='SM_Lvl_Desert.Bar_Saloon.Saloon_Chair_BRKN_A',bForcedOnly=false)
+	bNoDamage=true
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid'
+	PhysicsMassType=0
+	Density=5
+	Physics=0
+	bDontUseMeqonPhysics=true
+	Mass=20
 }

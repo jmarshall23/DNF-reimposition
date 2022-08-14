@@ -450,7 +450,7 @@ simulated function float GetTraceFireDamageScale(Pawn DamageInstigator, class<Da
 
 state Firing
 {
-	k2call simulated function WeaponCallback_MaybeDoneFiring()
+	animevent simulated function WeaponCallback_MaybeDoneFiring()
 	{
 		// End:0x53
 		if(__NFUN_148__(__NFUN_148__(__NFUN_340__(Owner, none), Owner.bIsPlayerPawn), PlayerPawn(Owner).IsFrozen()))

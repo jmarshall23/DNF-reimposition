@@ -18,12 +18,31 @@ function Destroyed()
 
 defaultproperties
 {
-	DecoActivities_Default=/* Array type was not detected. */
-	X=/* Unknown default property type! */
-	
-/* Exception thrown while deserializing Engine
-System.ArgumentOutOfRangeException: Length cannot be less than zero.
-Parameter name: length
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(7),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Details_Balls_BasketBall.DA_Sound_Basketball_Grip'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	bSurviveDeath=true
+	begin object name=DA_Display_Details_Balls_BasketBall_Brkn class=DecoActivities_Display
+		RenderObject='c_generic.basketballflat'
+	object end
+	// Reference: DecoActivities_Display'Details_Balls_BasketBall.DA_Display_Details_Balls_BasketBall_Brkn'
+	DestroyedActivities(0)=DA_Display_Details_Balls_BasketBall_Brkn
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	HealthPrefab=1
+	bGrabbable=true
+	UsePhrase="<?int?dnDecorations.Details_Balls_BasketBall.UsePhrase?>"
+	GrabInfo=(bCanDuckWhileHeld=true,MountItemOverride=mount_handright,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	ThrowForceScale=0.5
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Smoke'
+	bIgnorePawnDownwardForce=true
+	bCanCrushOthers=false
+	bIgnoresPhysicsDamage=true
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Basketball'
+	KRestitution=0.8
+	Physics=18
+	bCollisionAssumeValid=false
+	CollisionRadius=5.8
+	CollisionHeight=5.8
+	Mass=10
+	DrawType=2
+	Mesh='c_generic.Basketball'
 }

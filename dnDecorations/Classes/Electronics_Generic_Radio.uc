@@ -177,12 +177,19 @@ function ForcePowerOn()
 defaultproperties
 {
 	PauseStatic=0.4
-	DecoActivities_Default=/* Array type was not detected. */
-	X=/* Unknown default property type! */
-	
-/* Exception thrown while deserializing Engine
-System.ArgumentOutOfRangeException: Length cannot be less than zero.
-Parameter name: length
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(3),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=(1),ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Events'Electronics_Generic_Radio.DA_Events_Electronics_Generic_Radio_Used','dnGame.DecoActivityDeclarations.DA_Sound_SmallSwitch_Standard'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Glass_Small'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_HUD_bForceUsePhrase_Disable'
+	bForceUsePhrase=true
+	bUsable=true
+	bTickOnlyWhenPhysicsAwake=true
+	bAcceptsDecalProjectors=false
+	SoundScaled=false
+	Mass=10
+	TickStyle=2
+	AmbientMusicVolume=0.6
+	AmbientMusicInnerRadius=256
+	AmbientMusicRadius=512
+	AmbientMusicCrossfadeTime=0
 }

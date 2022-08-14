@@ -10,5 +10,5 @@ class FOOTPRINT_Flaming extends FootPrint
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.Footprints.DukesFPchar1RC'
 }

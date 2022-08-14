@@ -35,5 +35,13 @@ function ForcePowerOff()
 defaultproperties
 {
 	bPoweredOn=true
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Destroyed_Electronic class=DecoActivities_Sound
+		SoundNames(0)=Electronics_Destruct
+	object end
+	// Reference: DecoActivities_Sound'Electronics_Generic.DA_Sound_Destroyed_Electronic'
+	DestroyedActivities(1)=DA_Sound_Destroyed_Electronic
+	bDisableUseOnEMP=true
+	EMPDisableTime=10
+	VoicePack='SoundConfig.Interactive.VoicePack_Electronics'
 }

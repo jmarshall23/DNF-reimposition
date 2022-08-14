@@ -31,12 +31,8 @@ defaultproperties
 	GlassAmbientShatteredColor=(B=76,G=3,R=1,A=128)
 	bStaticEdgePieces=false
 	DrawScale3D=(X=1.291717E-41,Y=2.80288E-17,Z=50)
-	Skins=/* Array type was not detected. */
-	Rotator[117]=
-/* Exception thrown while deserializing Rotator
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadInt32()
-   at UELib.UObjectStream.ReadInt32() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 712
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 463 */
+	Skins(0)='dt_masking.Glass_Materials.LKcas_StainedGlass_fb'
+	Skins(1)='dt_masking.Glass_Materials.brokenglass1bc_envcomb'
+	Skins(2)='dt_masking.Glass_Materials.brokenglass1bc_envcomb'
+	Skins(3)='dt_masking.Glass_Materials.LKcas_StainedGlass_fb'
 }

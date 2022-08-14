@@ -10,6 +10,12 @@ class Settings_Desert_Furniture_Gib extends aFinalDecoration_Gibs
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y="\\"
+	Gibs(0)=(RenderObject='SM_Lvl_Desert.Bar_Saloon.Saloon_Chair_BRKN_A',bForcedOnly=false)
+	HealthPrefab=2
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	PhysicsMassType=0
+	Density=5
+	Physics=0
+	bDontUseMeqonPhysics=true
 }

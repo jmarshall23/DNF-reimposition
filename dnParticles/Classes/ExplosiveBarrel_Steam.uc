@@ -18,5 +18,9 @@ defaultproperties
 	InitialVelocity=(X=1.291857E-41,Y=2.802896E-17,Z=0)
 	MaxVelocityVariance=(X=1.291857E-41,Y=2.802896E-17,Z=8)
 	AlphaRampMid=0.75
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Smoke.rustsmoke1dRC'
+	Textures(1)='dt_effects.Smoke.greensmoke1bRC'
+	StartDrawScale=0.005
+	EndDrawScale=0.05
+	KLinearDamping=6
 }

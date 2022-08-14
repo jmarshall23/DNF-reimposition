@@ -9,5 +9,6 @@ class SilverHandle_Pushbar extends DoorHandle_Pushbar;
 
 defaultproperties
 {
-	Skins=/* Array type was not detected. */
+	Skins(0)='mt_Skins.doorpushbar.doorpushbar-silver_bshader'
+	Skins(1)='mt_Skins.doorpushbar.doorpushbarcyl-silver_bshader'
 }

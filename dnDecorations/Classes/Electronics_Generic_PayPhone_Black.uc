@@ -7,3 +7,35 @@
  *******************************************************************************/
 class Electronics_Generic_PayPhone_Black extends Electronics_Generic
 	collapsecategories;
+
+defaultproperties
+{
+	AutoConstraints(0)=(bConstraintDisabledOnDeath=true,bConstraintOnDeath=false,BoneName=Root,ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	AutoConstraints(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	begin object name=DA_Display_PayphoneBlack_Pose class=DecoActivities_Animation
+		AnimActivities(0)=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=hangup,Channel=0,Rate=0,TweenTime=0)
+	object end
+	// Reference: DecoActivities_Animation'Electronics_Generic_PayPhone_Black.DA_Display_PayphoneBlack_Pose'
+	StartupActivities(0)=DA_Display_PayphoneBlack_Pose
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Electronics_Generic.DA_Sound_Destroyed_Electronic'
+	begin object name=DA_Display_Electronrics_Generic_PayPhoneBlack_Brkn class=DecoActivities_Display
+		RenderObject='c_generic.payphoneblack_brkn'
+	object end
+	// Reference: DecoActivities_Display'Electronics_Generic_PayPhone_Black.DA_Display_Electronrics_Generic_PayPhoneBlack_Brkn'
+	DestroyedActivities(2)=DA_Display_Electronrics_Generic_PayPhoneBlack_Brkn
+	bUseDecoAnim=false
+	StartAnimSequence=hangup
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Plastic'
+	PhysicsMassType=1
+	Physics=18
+	bNoNativeTick=false
+	bDumbMesh=false
+	CollisionRadius=8
+	CollisionHeight=19.65
+	TickStyle=2
+	DrawType=2
+	Mesh='c_generic.PayPhoneBlack'
+}

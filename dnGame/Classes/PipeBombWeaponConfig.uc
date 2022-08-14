@@ -14,6 +14,12 @@ defaultproperties
 	MaxTraceDistance=0
 	ProjectileClass='dnPipeBombProjectile'
 	bSkipProjectileFindSpot=true
-	RumbleKicks=/* Array type was not detected. */
-	MuzzleInfo=/* Array type was not detected. */
+	RumbleKicks(0)=(RumbleName=Pipebomb_Rumble,RumbleDuration=0.25,RumbleLeftMagnitude=0.2,RumbleRightMagnitude=0.5,FalloffActor=none,FalloffDistance=0)
+	MuzzleInfo(0)=(MuzzleFireStartAnim=ThrowStart,MuzzleFireAnim=Throw,MuzzleFireStopAnim=FireStop,MuzzleFlashClass=none,MuzzleBoneName=mount_muzzle,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MeleeDamageType='MeleeDamage'
+	bMeleeInterruptFiring=false
+	bMeleeInterruptReloading=false
+	AmmoWarnPCT=0.25
+	bHUDAmmoActivateOnReload=false
+	WeaponAnimName=PipeBomb
 }

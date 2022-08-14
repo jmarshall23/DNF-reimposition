@@ -40,7 +40,7 @@ var SoftParticleSystem ParticleSystem;
 var TriggerLightEx Light;
 var bool bFadeIn;
 var float SoundTime;
-var bool bParticleOn;
+var netupdate(NU_PlayParticle) bool bParticleOn;
 
 replication
 {

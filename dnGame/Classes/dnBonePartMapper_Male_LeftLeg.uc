@@ -10,6 +10,16 @@ class dnBonePartMapper_Male_LeftLeg extends BonePartMapper
 
 defaultproperties
 {
-	PartMapping=/* Array type was not detected. */
-	AnimCallback_AnimEnd=/* Unknown default property type! */
+	PartMapping(0)=(BoneName=Root,Part=12,BoneNameForDestroy=None)
+	PartMapping(1)=(BoneName=LeftUpLeg,Part=12,BoneNameForDestroy=None)
+	PartMapping(2)=(BoneName=leftuplegroll,Part=12,BoneNameForDestroy=None)
+	PartMapping(3)=(BoneName=LeftLeg,Part=14,BoneNameForDestroy=LeftLeg)
+	PartMapping(4)=(BoneName=leftlegroll,Part=14,BoneNameForDestroy=LeftLeg)
+	PartMapping(5)=(BoneName=leftfoot,Part=16,BoneNameForDestroy=LeftLeg)
+	PartMapping(6)=(BoneName=LeftToeBase,Part=16,BoneNameForDestroy=LeftLeg)
+	DestroyableBones(0)=(BoneName=LeftLeg,bAddToLimbCount=true,LimbCapClass='dnCorpse_LimbCap_Male_LegLeft_Lower',LimbCapMountInfo=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=3.105952E-35,Y=2.965082E-17,Z=0.527),Z=-20.445),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(0)=(BoneName=LeftLeg,ReqBones=none,RenderObject=none,DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	FullyGibbedSoundName=Corpse_LimbExplode
+	FullyGibbedFrozenSoundName=IcePart_Shatter_Small
+	NumLimbsUntilDestructible=1
 }

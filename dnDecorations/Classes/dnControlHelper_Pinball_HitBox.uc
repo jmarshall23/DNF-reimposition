@@ -10,8 +10,8 @@ class dnControlHelper_Pinball_HitBox extends dnControlHelper_Pinball
 
 var dnControlHelper_Pinball_HitBoxSet HitBoxSet;
 var dnControlHelper_Pinball_Light Light;
-var name UpAnim;
-var name DownAnim;
+var anim name UpAnim;
+var anim name DownAnim;
 
 simulated event PostBeginPlay()
 {

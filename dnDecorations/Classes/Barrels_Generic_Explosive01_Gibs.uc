@@ -25,6 +25,14 @@ function PostBeginPlay()
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_class_decorations.Barrels.Barrel_Gib_Bottom',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_class_decorations.Barrels.Barrel_Gib_Piece_1',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_class_decorations.Barrels.Barrel_Gib_Piece_2',bForcedOnly=false)
+	Gibs(3)=(RenderObject='sm_class_decorations.Barrels.Barrel_Gib_Piece_3',bForcedOnly=false)
+	Gibs(4)=(RenderObject='sm_class_decorations.Barrels.Barrel_Gib_Top',bForcedOnly=false)
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid'
+	PhysicsMassType=0
+	Density=3
+	bDontUseMeqonPhysics=true
+	Skins(0)='smt_skins.Barrels.Barrel_Explosive_destroy_bs'
 }

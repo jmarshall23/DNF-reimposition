@@ -11,5 +11,5 @@ class Settings_FoodService_SodaDispenser_PepClassic extends Settings_FoodService
 defaultproperties
 {
 	SprayColor=(B=76,G=3,R=1,A=80)
-	Skins=/* Array type was not detected. */
+	Skins(0)='smt_skins8.SodaFountain.sodaftn_pep_bs'
 }

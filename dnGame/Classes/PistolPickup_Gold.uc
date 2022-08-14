@@ -11,5 +11,7 @@ class PistolPickup_Gold extends PistolPickup
 defaultproperties
 {
 	InventoryType='Pistol_Gold'
-	Skins=/* Array type was not detected. */
+	Skins(0)=none
+	Skins(1)=none
+	Skins(2)=none
 }

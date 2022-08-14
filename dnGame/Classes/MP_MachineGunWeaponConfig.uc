@@ -19,6 +19,21 @@ defaultproperties
 	TracerBubblesClass='p_Weapons.Generic.WaterBubblesTracer'
 	HorizShotError=0.05
 	VertShotError=0.05
-	ViewKicks=/* Array type was not detected. */
-	RandomSeed=none
+	ViewKicks(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=-1,ShakeFrequency=0.025,ShakeMagnitude=50,ShakeFullMagnitude=250,ShakeFullMagnitudeTime=3,ShakeName=MachineGun_ViewKick_0)
+	RumbleKicks(0)=(RumbleName=MachineGun_Rumble,RumbleDuration=0.12,RumbleLeftMagnitude=0.25,RumbleRightMagnitude=0.5,FalloffActor=none,FalloffDistance=0)
+	MuzzleInfo(0)=(MuzzleFireStartAnim=FireStart,MuzzleFireAnim=Fire,MuzzleFireStopAnim=FireStop,MuzzleFlashClass='p_Weapons.Ripper_Muzzleflash.Ripper_Muzzleflash_Spawner',MuzzleBoneName=mount_barrel_left,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MuzzleInfo(1)=(ShellEjectionBoneName=mount_eject,ShellEjectionDir=(X=1.292418E-41,Y=2.954409E-17,Z=2),Z=5)
+	MuzzleInfo(2)=(ShellEjectionVariance=(X=1.292418E-41,Y=2.954409E-17,Z=1.5),Z=2.5)
+	MuzzleLightClass='Weapon_LightEx_M16'
+	MuzzleLightBoneName=mount_barrel_middle
+	bMuzzleShellEjectionOwnerVelIndependent=true
+	MeleeDamageType='MeleeDamage'
+	bHasFireStart=true
+	bHasFireStop=true
+	bFireInterruptFiring=true
+	AmmoWarnPCT=0.05
+	LockoutFireTime=0.06
+	WeaponHeatAttackRate=0.065
+	WeaponHeatDecayRate=0.095
+	WeaponAnimName=MachineGun
 }

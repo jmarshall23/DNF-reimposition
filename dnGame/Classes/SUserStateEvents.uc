@@ -1,5 +1,5 @@
 struct SUserStateEvents
 {
-	var() editinline name State;
+	var() editinline state name State;
 	var() array<SOutEvents> Events;
 };

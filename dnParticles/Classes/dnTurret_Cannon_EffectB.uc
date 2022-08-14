@@ -15,5 +15,6 @@ defaultproperties
 	Lifetime=0.125
 	AlphaStart=0.1
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.explosions.Twil_004'
+	EndDrawScale=0.26
 }

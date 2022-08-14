@@ -98,5 +98,21 @@ defaultproperties
 	Enabled=false
 	DynamicBeamPoints=100024
 	BeamTexture='dt_Effects2.Beams.BlueBeam_FB'
-	BeamSegments=/* Array type was not detected. */
+	BeamSegments(0)=(Lifetime=999999,Actor1=none,Actor2=none,Location1=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	BeamType=0
+	bBeamOnlyCheckDynamicShootable=true
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Vehicles.Alien_Fighter_Attack.Alien_Fighter_Attack_Melt',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.954687E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Physics=9
+	bTraceShootable=false
+	bCanExistOutOfWorld=true
+	bDumbMesh=false
+	bTickOnlyRecent=false
+	bTickOnlyZoneRecent=false
+	CollisionRadius=100
+	CollisionHeight=2000
+	TouchClasses(0)='dnDecoration'
+	TouchClasses(1)='Engine.BaseAI'
+	TickStyle=3
+	Style=6
+	VoicePack='SoundConfig.Vehicles.VoicePack_AlienFighter'
 }

@@ -10,6 +10,15 @@ class Lights_Generic_FluorescentLight_Studio extends Lights_Generic_FluorescentL
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	DA_Anim_SlickWilly_Open_Idle="$"
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Glass_Large'
+	DestroyedActivities(2)=DecoActivities_Events'Lights_Generic.DA_Events_Lights_Generic_Destroyed'
+	begin object name=DA_Display_Lights_Generic_Flrscnt_Studio_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_lights.WallMounted.LightTube_Studio_BRKN'
+		Skins(0)=(Index=0,NewMaterialEx=none)
+	object end
+	// Reference: DecoActivities_Display'Lights_Generic_FluorescentLight_Studio.DA_Display_Lights_Generic_Flrscnt_Studio_Brkn'
+	DestroyedActivities(3)=DA_Display_Lights_Generic_Flrscnt_Studio_Brkn
+	CollisionHeight=3
+	StaticMesh='sm_class_lights.WallMounted.LightTube_Studio'
 }

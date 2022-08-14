@@ -7,3 +7,17 @@
  *******************************************************************************/
 class dnBonePartMapper_Host extends dnBonePartMapper_Male
 	exportstructs;
+
+defaultproperties
+{
+	Gibs(0)=(BoneName=neck,ReqBones=none,RenderObject='sm_class_effects.Host_Gibs.Host_Head_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-5.862266E-10,Y=2.954383E-17,Z=-0.097),Z=3.65)
+	Gibs(1)=(RotOffset=(Pitch=197272101,Yaw=572915712,Roll=-1133),Roll=-919)
+	Gibs(2)=(Mass=10,GibChance=1,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+	Gibs(3)=(BoneName=LeftArm,ReqBones=(LeftForeArm),RenderObject='c_gibs.host_arm_gib_l',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(4)=(RotOffset=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Gibs(5)=(Mass=20,GibChance=1,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+	Gibs(6)=(BoneName=RightArm,ReqBones=(RightForeArm),RenderObject='c_gibs.host_arm_gib_r',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(7)=(RotOffset=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Gibs(8)=(Mass=20,GibChance=0.5,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+	Gibs(9)=(BoneName=LeftForeArm,ReqBones=none,RenderObject='sm_class_effects.Host_Gibs.Host_ForearmL_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=2.610177E+07,Y=2.965184E-17,Z=0.093),Z=-8.28)
+}

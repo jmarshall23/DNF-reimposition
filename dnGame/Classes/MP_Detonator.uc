@@ -67,7 +67,7 @@ simulated function bool CanActivateNow()
 	return;
 }
 
-final k2call simulated function PushButton(optional EventInfo AnimEventInfo)
+final animevent simulated function PushButton(optional EventInfo AnimEventInfo)
 {
 	rPushButton();
 	return;
@@ -208,7 +208,7 @@ state Activating
 
 state Firing
 {
-	k2call simulated function WeaponCallback_DefinitelyDoneFiring()
+	animevent simulated function WeaponCallback_DefinitelyDoneFiring()
 	{
 		Instigator.PreviousWeapon = PreviousWeapon;
 		Instigator.BringUpLastWeapon();
@@ -232,5 +232,13 @@ defaultproperties
 	CommandAlias="UseWeapon dnGame.MP_Detonator"
 	InventoryReferenceClass='MP_Detonator'
 	PickupClass='MP_PipeBombPickup'
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	bAnimateOffscreen=true
+	AnimationControllerClass='dnAnimationControllerEx_Detonator'
+	bNeedsScriptActorColor=true
+	bTravel=false
+	bNeverTravel=true
+	MountMeshItem=mount_handleft
+	Mesh='c_dnWeapon.pipebomb_detonator'
+	VoicePack='SoundConfig.Inventory.VoicePack_PipeBomb_Detonator'
 }

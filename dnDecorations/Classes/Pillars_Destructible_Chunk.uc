@@ -73,6 +73,43 @@ simulated event Destroyed()
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	ConstVel=56360961
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_DestructiblePillarChunk_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=ConcretePillarChunk_Destroyed
+	object end
+	// Reference: DecoActivities_Sound'Pillars_Destructible_Chunk.DA_Sound_DestructiblePillarChunk_Destroyed'
+	DestroyedActivities(1)=DA_Sound_DestructiblePillarChunk_Destroyed
+	begin object name=DA_Display_DestructiblePillarChunk_Destroyed class=DecoActivities_Display
+		DrawScale=0.5
+		DrawScaleVariance=0.2
+		DrawScaleModifier=2
+	object end
+	// Reference: DecoActivities_Display'Pillars_Destructible_Chunk.DA_Display_DestructiblePillarChunk_Destroyed'
+	DestroyedActivities(2)=DA_Display_DestructiblePillarChunk_Destroyed
+	DestroyedActivities(3)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	begin object name=DA_Impulse_DestructiblePillarChunk_Destroyed class=DecoActivities_KarmaImpulse
+		ImpulseForce=200
+		ImpulseForceVariance=100
+		ImpulseDirection=(Pitch=8709,Yaw=571080704,Roll=-8192)
+	object end
+	// Reference: DecoActivities_KarmaImpulse'Pillars_Destructible_Chunk.DA_Impulse_DestructiblePillarChunk_Destroyed'
+	DestroyedActivities(4)=DA_Impulse_DestructiblePillarChunk_Destroyed
+	begin object name=DA_Torque_DestructiblePillarChunk_Destroyed class=DecoActivities_KarmaImpulse
+		ImpulseStyle=1
+		ImpulseForceVariance=1000
+		ImpulseDirectionVariance=(Pitch=-72080891,Yaw=571080704,Roll=65536)
+	object end
+	// Reference: DecoActivities_KarmaImpulse'Pillars_Destructible_Chunk.DA_Torque_DestructiblePillarChunk_Destroyed'
+	DestroyedActivities(5)=DA_Torque_DestructiblePillarChunk_Destroyed
+	HealthPrefab=0
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=1,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bTickOnlyWhenPhysicsAwake=true
+	DynamicInteractionClassification=7
+	bAITransparent=true
+	bGibActor=true
+	bStepUpAble=false
+	bCollideWorld=false
+	Mass=25
+	TraceFireHitResponse=1
+	RemoteRole=0
 }

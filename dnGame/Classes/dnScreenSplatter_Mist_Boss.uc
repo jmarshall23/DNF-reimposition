@@ -16,13 +16,20 @@ defaultproperties
 	Lifetime=4
 	LifetimeVariance=2
 	bInverse=false
-	Textures(0)=ObjectProperty'DukeMultiPlayer.PlayerProgress'
-	Textures(1)='dt_Effects2.Decals.WetSpot1_FB'
-	Textures(2)='dt_Effects2.Decals.WetSpot2_FB'
-	Textures(3)='dt_Effects2.Decals.WetSpot3_FB'
-	Textures(4)='dt_Effects2.Decals.WetSpot4_FB'
-	Textures(5)=Function'dnContinuousFireWeapon.RegisterPrecacheComponents'
-	Textures(6)=ObjectProperty'dnControl_CameraViewer_Fullscreen.CurrentCamera'
-	Textures(7)=none
-	Textures(8)=none
+	Textures(0)='dt_Effects2.Decals.WetSpot1_FB'
+	Textures(1)='dt_Effects2.Decals.WetSpot2_FB'
+	Textures(2)='dt_Effects2.Decals.WetSpot3_FB'
+	Textures(3)='dt_Effects2.Decals.WetSpot4_FB'
+	EffectDrawScale=0.5
+	EffectDrawScaleVariance=0.9
+	ScaleXStart=0
+	ScaleXMid=1
+	ScaleXEnd=1
+	ScaleYStart=0
+	ScaleYMid=1
+	ScaleYEnd=1
+	LocationInitialVariance=(X=1.292418E-41,Y=2.954843E-17,Z=720)
+	VelocityInitial=(X=1.292418E-41,Y=2.94903E-17,Z=0)
+	AccelerationInitial=(X=1.292418E-41,Y=2.94903E-17,Z=0)
+	AccelerationInitialVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0)
 }

@@ -14,5 +14,15 @@ defaultproperties
 	Enabled=false
 	DestroyWhenEmpty=true
 	UseZoneGravity=false
-	AdditionalSpawn=/* Array type was not detected. */
+	AdditionalSpawn(0)=(SpawnClass='dnTurret_Cannon_EffectA',TakeParentTag=false,Mount=false,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	AdditionalSpawn(1)=(MountAngles=(Pitch=8719,Yaw=571539456,Roll=0),Roll=0)
+	AdditionalSpawn(2)=(MountType=0,AppendToTag=None,SpawnRotation=(Pitch=8719,Yaw=571539456,Roll=0),Roll=0)
+	AdditionalSpawn(3)=(SpawnRotationVariance=(Pitch=8719,Yaw=571539456,Roll=0),Roll=0)
+	PrimeCount=1
+	SpawnNumber=0
+	SpawnPeriod=0
+	Lifetime=0.25
+	StartDrawScale=10
+	EndDrawScale=0.1
+	TriggerType=0
 }

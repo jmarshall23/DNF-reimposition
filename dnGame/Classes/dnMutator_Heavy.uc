@@ -134,15 +134,9 @@ function ModifyDefaultInventory(class<GameInfo> GameType, out array< class<Inven
 
 defaultproperties
 {
-	IG_Inventory(0)=class'PlayerProgress'
-	IG_Inventory(1)=class'MP_MightyFoot'
-	IG_Inventory(2)=class'Upgrade_ZoomMode'
-	IG_Inventory(3)=class'MP_Shotgun'
-	IG_Inventory(4)=class'dnCaptureTheBabe_BabeRevolver'
-	IG_Inventory(5)=class'PrecacheIndex'
-	IG_Inventory(6)=class'MP_ShotgunWeaponConfig'
-	IG_Inventory(7)=class'QuestItems'
-	IG_Inventory(8)=class'dnDestructibleBuildingDefinition'
-	goop_back=/* Unknown default property type! */
-	a_monstertruck_ignition=1258307135
+	IG_Inventory(0)='MP_MightyFoot'
+	IG_Inventory(1)='Upgrade_ZoomMode'
+	IG_Inventory(2)='MP_Shotgun'
+	IG_Inventory(3)='dnCaptureTheBabe_BabeRevolver'
+	MutatorName="<?int?dnGame.dnMutator_Heavy.MutatorName?>"
 }

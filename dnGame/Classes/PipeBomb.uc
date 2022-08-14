@@ -205,7 +205,7 @@ state Throw
 		return;
 	}
 
-	k2call simulated function WeaponCallback_DefinitelyDoneFiring()
+	animevent simulated function WeaponCallback_DefinitelyDoneFiring()
 	{
 		bDeactivationAllowed = true;
 		ChangeSpeed = 1;

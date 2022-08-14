@@ -17,5 +17,35 @@ event Destroyed()
 
 defaultproperties
 {
-	StartupActivities=/* Array type was not detected. */
+	begin object name=DA_Sound_Industrial_Generic_AirConditioner_Vent_Amb class=DecoActivities_Sound
+		SoundNames(0)=AirConditioner_Vent
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Generic_AirConditioner_Vent.DA_Sound_Industrial_Generic_AirConditioner_Vent_Amb'
+	StartupActivities(0)=DA_Sound_Industrial_Generic_AirConditioner_Vent_Amb
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Industrial_Generic_AirConditioner_Vent_Brkn class=DecoActivities_Sound
+		SoundNames(0)=IndMetal_Destruct
+		bClearAmbientSound=true
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Generic_AirConditioner_Vent.DA_Sound_Industrial_Generic_AirConditioner_Vent_Brkn'
+	DestroyedActivities(1)=DA_Sound_Industrial_Generic_AirConditioner_Vent_Brkn
+	begin object name=DA_Display_AC_Vent_Brkn class=DecoActivities_Display
+		RenderObject='sm_geo_decorations.AirConditioners.CylindricalVent1LO_BRKN'
+	object end
+	// Reference: DecoActivities_Display'Industrial_Generic_AirConditioner_Vent.DA_Display_AC_Vent_Brkn'
+	DestroyedActivities(2)=DA_Display_AC_Vent_Brkn
+	HealthPrefab=5
+	Health=50
+	SpawnOnDestroyed(0)=(SpawnClass='Industrial_Generic_AirConditioner_Vent_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.80262E-17,Z=-2),Z=-26)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(1)=(Rotation=(Pitch=536879621,Yaw=571080704,Roll=0),Roll=0)
+	PhysicsEntityGroup=Vent
+	CollisionRadius=50
+	CollisionHeight=52
+	StaticMesh='sm_geo_decorations.AirConditioners.CylindricalVent1LO'
 }

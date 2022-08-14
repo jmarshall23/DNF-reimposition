@@ -15,7 +15,7 @@ cpptext
 // Stripped
 }
 
-var() noexport float EgoRecoveryRate "how fast ego recovers";
+var() noexport netupdate(ApplyEgoRecoveryRate) float EgoRecoveryRate "how fast ego recovers";
 
 // Export UdnMPTuner::execLoadDevIni(FFrame&, void* const)
 native function LoadDevIni();
@@ -103,5 +103,26 @@ defaultproperties
 	EgoRecoveryRate=5
 	StartingEgo=80
 	WeaponStayTime=5
-	ConsoleCommands=/* Array type was not detected. */
+	ConsoleCommands(0)="set Pistol BaseDamagePerShot 40"
+	ConsoleCommands(1)="set Shotgun BaseDamagePerShot 15"
+	ConsoleCommands(2)="set Shotgun HighBaseDamagePerShot 20"
+	ConsoleCommands(3)="set MachineGun BaseDamagePerShot 18"
+	ConsoleCommands(4)="set dnRocket_ATLaser Damage 20"
+	ConsoleCommands(5)="set dnRocket_ATCaptainLaser Damage 20"
+	ConsoleCommands(6)="set dnRocket_RPG_HeatSeek Damage 30"
+	ConsoleCommands(7)="set dnRocket_RPG_Homing Damage 90"
+	ConsoleCommands(8)="set dnPipeBombProjectile Damage 90"
+	ConsoleCommands(9)="set LaserMine Damage 90"
+	ConsoleCommands(10)="set dnRocket_Devastator Damage 25"
+	ConsoleCommands(11)="set Pistol BaseDamagePerShot 1"
+	ConsoleCommands(12)="set Shotgun BaseDamagePerShot 15"
+	ConsoleCommands(13)="set Shotgun HighBaseDamagePerShot 20"
+	ConsoleCommands(14)="set MachineGun BaseDamagePerShot 18"
+	ConsoleCommands(15)="set dnRocket_ATLaser Damage 20"
+	ConsoleCommands(16)="set dnRocket_ATCaptainLaser Damage 20"
+	ConsoleCommands(17)="set dnRocket_RPG_HeatSeek Damage 30"
+	ConsoleCommands(18)="set dnRocket_RPG_Homing Damage 90"
+	ConsoleCommands(19)="set dnPipeBombProjectile Damage 90"
+	ConsoleCommands(20)="set LaserMine Damage 90"
+	ConsoleCommands(21)="set dnRocket_Devastator Damage 25"
 }

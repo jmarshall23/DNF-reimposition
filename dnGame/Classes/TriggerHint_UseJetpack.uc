@@ -23,6 +23,5 @@ defaultproperties
 	KeyboardMessage="<?int?dnGame.TriggerHint_UseJetpack.KeyboardMessage?>"
 	Message="<?int?dnGame.TriggerHint_UseJetpack.Message?>"
 	MaxDisplayTime=3
-	SpecialKeys=/* Array type was not detected. */
-	bBatchAnim=/* Unknown default property type! */
+	SpecialKeys(0)=17
 }

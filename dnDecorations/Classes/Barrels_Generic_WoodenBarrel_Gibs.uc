@@ -24,6 +24,13 @@ function PostBeginPlay()
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y="r"
+	Gibs(0)=(RenderObject='sm_class_decorations.Crate.Wooden_CrateA_Gib',bForcedOnly=false)
+	HealthPrefab=1
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	PhysicsMassType=0
+	Density=5
+	PhysicsEntityGroup=WoodBarrel
+	Physics=0
+	bBlockActors=false
+	bStepUpAble=false
 }

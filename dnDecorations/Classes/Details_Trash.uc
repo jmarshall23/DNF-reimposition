@@ -14,5 +14,13 @@ defaultproperties
 	HealthPrefab=1
 	AIStompedInfo=(StompType=2,ImpulseMag=8000,ImpulseRnd=500,Torque=0)
 	bGrabbable=true
-	SpawnOnDestroyedSimple=/* Array type was not detected. */
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Paper1'
+	bCanCrushOthers=false
+	bIgnoresPhysicsDamage=true
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Paper'
+	GravityScale=0.5
+	Physics=18
+	CollisionRadius=6
+	CollisionHeight=2
 }

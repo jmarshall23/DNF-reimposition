@@ -77,23 +77,23 @@ static function string GetString(optional int Switch, optional PlayerReplication
 Parameter name: index
    at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
    at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1864
-   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1725
+   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1872
+   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1733
 	// 1 & Type:Switch Position:0x0B1
 	return;
 	// Failed to format nests!:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
 Parameter name: index
    at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
    at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1864
-   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1725
+   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1872
+   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1733
 	// 1 & Type:Switch Position:0x0B1
 	// Failed to format remaining nests!:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
 Parameter name: index
    at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
    at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1864
-   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1745
+   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1872
+   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1753
 	// 1 & Type:Switch Position:0x0B1
 }
 

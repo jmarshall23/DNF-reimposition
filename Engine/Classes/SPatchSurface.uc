@@ -17,5 +17,5 @@ struct SPatchSurface
 	var bool bSmoothGroup4;
 	var SFoliageGrid FoliageGrid[64];
 	var SPaintData PaintData[4];
-	var transient PatchActor SelectedOwner;
+	var transient nontrans PatchActor SelectedOwner;
 };

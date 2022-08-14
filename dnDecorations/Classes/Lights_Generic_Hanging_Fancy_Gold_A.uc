@@ -10,12 +10,22 @@ class Lights_Generic_Hanging_Fancy_Gold_A extends Lights_Generic
 
 defaultproperties
 {
-	AutoConstraints=/* Array type was not detected. */
-	bConstraintOnDeath=false
-	BoneName=Root
-	ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	OtherConstraintActor=none
-	OtherConstraintBone=None
-	ConstraintClass=none
-	ConstraintActor=none
+	AutoConstraints(0)=(bConstraintDisabledOnDeath=false,bConstraintOnDeath=false,BoneName=Root,ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	FlickerLight=(FlickerLightActor=none,FlickerLightExActor=none,bUseFlickerLight=true,bUseFlickerLightEx=true,bInitialEffect=true,bInitialEffectOnly=false,FlickerLightMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=Lamp,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Glass_Large'
+	DestroyedActivities(2)=DecoActivities_Events'Lights_Generic.DA_Events_Lights_Generic_Destroyed'
+	begin object name=DA_Display_Lights_Generic_Hanging_Fancy_Gold_A_Brkn class=DecoActivities_Display
+		RenderObject='c_generic.HangingLightGold_brkn'
+		Skins(0)=(Index=1,NewMaterialEx=none)
+	object end
+	// Reference: DecoActivities_Display'Lights_Generic_Hanging_Fancy_Gold_A.DA_Display_Lights_Generic_Hanging_Fancy_Gold_A_Brkn'
+	DestroyedActivities(3)=DA_Display_Lights_Generic_Hanging_Fancy_Gold_A_Brkn
+	Physics=18
+	CollisionRadius=12
+	CollisionHeight=40
+	Mass=20
+	DrawType=2
+	PrePivot=(X=1.291717E-41,Y=2.797242E-17,Z=0)
+	Mesh='c_generic.HangingLightGold'
 }

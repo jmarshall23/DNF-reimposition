@@ -323,12 +323,23 @@ defaultproperties
 	object end
 	// Reference: MotionPrefab'Barrels_Generic_Unstable.MP_Barrel_Unstable_NoMotion'
 	MP_NoMotion=MP_Barrel_Unstable_NoMotion
-	DecoActivities_Default=/* Array type was not detected. */
-	X=/* Unknown default property type! */
-	
-/* Exception thrown while deserializing Engine
-System.ArgumentOutOfRangeException: Length cannot be less than zero.
-Parameter name: length
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(1,18),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Health_Damage_100'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Metal_LargeThinSheets'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_RadiusDamage_Standard'
+	HealthPrefab=5
+	bCanShowSelf=true
+	Health=40
+	HealthCap=40
+	begin object name=Barrels_Gibs_Motion class=MotionPrefab
+		bUseParentRotationRate=false
+		VelocityRelativeType=3
+		Velocity=(X=1.291717E-41,Y=2.802898E-17,Z=0)
+		VelocityVariance=(X=1.291717E-41,Y=2.802941E-17,Z=200)
+		RotationRate=(Pitch=8709,Yaw=571080729,Roll=0)
+		RotationRateVariance=(Pitch=8709,Yaw=571080704,Roll=1638400)
+	object end
+	// Reference: MotionPrefab'Barrels_Generic_Unstable.Barrels_Gibs_Motion'
+	DefaultMotionPrefab=Barrels_Gibs_Motion
+	bAlwaysRelevant=true
 }

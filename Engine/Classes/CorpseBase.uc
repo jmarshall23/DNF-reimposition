@@ -518,7 +518,7 @@ function MakeRagdoll()
 	return;
 }
 
-k2call simulated function KillMe(optional EventInfo AnimEventInfo)
+animevent simulated function KillMe(optional EventInfo AnimEventInfo)
 {
 	// End:0x31
 	if(bDelayedRagdoll)
@@ -801,7 +801,7 @@ simulated function HeadBlownOff(Pawn P)
 	return;
 }
 
-k2call simulated function Destroy_Bone(optional EventInfo AnimEventInfo)
+animevent simulated function Destroy_Bone(optional EventInfo AnimEventInfo)
 {
 	local name BoneToDestroy;
 
@@ -814,7 +814,7 @@ k2call simulated function Destroy_Bone(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function Destroy_Bone_NoLimb(optional EventInfo AnimEventInfo)
+animevent simulated function Destroy_Bone_NoLimb(optional EventInfo AnimEventInfo)
 {
 	local name BoneToDestroy;
 

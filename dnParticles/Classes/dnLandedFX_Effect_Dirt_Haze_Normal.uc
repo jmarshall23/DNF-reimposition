@@ -21,5 +21,9 @@ defaultproperties
 	ApexInitialVelocity=512
 	AlphaMid=0.75
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Smoke.dirtcloud1cRC'
+	StartDrawScale=0.5
+	EndDrawScale=1.5
+	RotationVelocityMaxVariance=2
+	CollisionRadius=4
 }

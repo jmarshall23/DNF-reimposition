@@ -16,8 +16,6 @@ defaultproperties
 	bFlyer=true
 	bJumpPoint=true
 	MaxJumpDistance=1000
-	
-	bMasked=/* Unknown default property type! */
-	Texture=2359894
-	bMasked=/* Unknown default property type! */
+	DefaultJumpToInfo(0)=(JumpType=AssTroopJetpack,CollisionHeight=44,CollisionRadius=28,Padding=3,StartHeight=400,EndHeight=50,JumpPreset=(JumpVel=(X=1.293258E-41,Y=3.079134E-17,Z=0),Z=0),HeavyLandingThresh=0,FocusActor=none,GravityScale=0.25,JumpTime=0,FlyToTarget=false,TargetPos=(X=1.293258E-41,Y=3.079134E-17,Z=0),Z=0)
+	Texture=Texture'S_BlueActionPoint'
 }

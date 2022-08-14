@@ -10,7 +10,34 @@ class Industrial_Generic_WoodPallet_A extends Industrial_Generic
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	DeskFan1_brkn_off_diff=58262785
-	Pitch=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_WoodPallet_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=Destruct_Wood
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Generic_WoodPallet_A.DA_Sound_WoodPallet_Destroyed'
+	DestroyedActivities(1)=DA_Sound_WoodPallet_Destroyed
+	HealthPrefab=5
+	Health=40
+	HealthCap=40
+	SpawnOnDestroyed(0)=(SpawnClass='Industrial_Generic_WoodPallet_A_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0.8,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.040777E+09,Y=2.802808E-17,Z=24.2357),Z=1)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=-13)
+	begin object name=MP_WoodPallet_Gibs class=MotionPrefab
+		VelocityRelativeType=3
+		Velocity=(X=1.291717E-41,Y=2.802932E-17,Z=0)
+		VelocityVariance=(X=1.291717E-41,Y=2.802924E-17,Z=0)
+		RotationRate=(Pitch=1244668421,Yaw=571080707,Roll=0)
+		RotationRateVariance=(Pitch=-1088413179,Yaw=571080706,Roll=0)
+	object end
+	// Reference: MotionPrefab'Industrial_Generic_WoodPallet_A.MP_WoodPallet_Gibs'
+	DefaultMotionPrefab=MP_WoodPallet_Gibs
+	bTickOnlyWhenPhysicsAwake=true
+	DynamicInteractionClassification=0
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	PhysicsEntityGroup=WoodPallet
+	Physics=18
+	StaticMesh='sm_class_decorations.Wooden_Pallette1.Pallet'
+	VoicePack='SoundConfig.Interactive.VoicePack_Decorations'
 }

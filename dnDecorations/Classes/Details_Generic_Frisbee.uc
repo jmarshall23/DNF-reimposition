@@ -72,6 +72,14 @@ defaultproperties
 	KRestitution=0.1
 	KAngularDamping=0.2
 	EnableDisableThreshold=0.005
-	PhysicsActions=/* Array type was not detected. */
-	bDontScaleByDrawScale=/* Unknown default property type! */
+	begin object name=PA_Frisbee class=PhysicsAction_Frisbee
+		LiftCoeffecient=0.9
+	object end
+	// Reference: PhysicsAction_Frisbee'Details_Generic_Frisbee.PA_Frisbee'
+	PhysicsActions(0)=PA_Frisbee
+	Physics=18
+	CollisionRadius=7.5
+	CollisionHeight=0.5
+	Mass=5
+	StaticMesh='sm_class_decorations.frisbee.low_frisbee'
 }

@@ -11,30 +11,22 @@ class Settings_Bathroom_Broom_Small extends Settings_Bathroom
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	SpawnOnDestroyedSimple=/* Array type was not detected. */
-	Z=/* Array type was not detected. */
-	RenderObject=none
-	DrawScale=0
-	DrawScaleVariance=0
-	DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	SpawnChance=0
-	SpawnCopies=1
-	SpawnCopiesVariance=0
-	bIgnorePawnAirCushion=false
-	bDontScaleByDrawScale=false
-	bScaleByDrawScaleNonDefault=false
-	bNoCollision=false
-	bFindSpot=false
-	bIgnoreParentRotation=false
-	bTakeParentCollisionSize=false
-	bTakeParentMounting=false
-	bTakeParentActorColors=false
-	bTakeParentSkins=false
-	Offset=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	Rotation=(Pitch=8709,Yaw=571080704,Roll=0)
-	RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0)
-	BoneName=None
-	MotionInfo=none
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Wood_Small'
+	begin object name=DA_Display_Settings_Bathroom_Broom_Small_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_decorations.broom.BroomBrkn_cd'
+	object end
+	// Reference: DecoActivities_Display'Settings_Bathroom_Broom_Small.DA_Display_Settings_Bathroom_Broom_Small_Brkn'
+	DestroyedActivities(2)=DA_Display_Settings_Bathroom_Broom_Small_Brkn
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Wood1'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Smoke'
+	SpawnOnDestroyed(0)=(SpawnClass='Settings_Bathroom_Broom_Small_Gibs',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	PhysicsMassType=1
+	Physics=18
+	CollisionRadius=7.2
+	CollisionHeight=33.4
+	Mass=15
+	StaticMesh='sm_class_decorations.broom.Broom_cd'
 }

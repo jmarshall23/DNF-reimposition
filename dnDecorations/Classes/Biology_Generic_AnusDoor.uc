@@ -261,7 +261,7 @@ simulated event AnimEndEx(SAnimEndInfo AnimEndInfo)
 	return;
 }
 
-k2call simulated function DoorOpen()
+animevent simulated function DoorOpen()
 {
 	CollisionSheet.DecoActivity(0, 'UnBlockAnus');
 	CollisionSheet.bBlockCamera = false;
@@ -276,7 +276,7 @@ k2call simulated function DoorOpen()
 	return;
 }
 
-k2call simulated function DoorClosed()
+animevent simulated function DoorClosed()
 {
 	CollisionSheet.DecoActivity(0, 'BlockAnus');
 	CollisionSheet.bBlockCamera = true;
@@ -313,4 +313,32 @@ defaultproperties
 	DamagedCloseDelay=5
 	CloseDelay=2
 	SensorRadius=512
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(OpenAnus),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Biology_Generic_AnusDoor.DA_Anim_AnusDoor_Open',DecoActivities_Sound'Biology_Generic_AnusDoor.DA_Sound_AnusDoor_Open'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(AnusIdleOpen),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Biology_Generic_AnusDoor.DA_Anim_AnusDoor_Open_Idle'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(CloseAnus),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Biology_Generic_AnusDoor.DA_Anim_AnusDoor_Close',DecoActivities_Sound'Biology_Generic_AnusDoor.DA_Sound_AnusDoor_Close'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(3)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(AnusIdleClose),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Biology_Generic_AnusDoor.DA_Anim_AnusDoor_Close_Idle'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	begin object name=DA_Sound_AnusDoor_Amb class=DecoActivities_Sound
+		SoundNames(0)=AnusDoor_Amb
+	object end
+	// Reference: DecoActivities_Sound'Biology_Generic_AnusDoor.DA_Sound_AnusDoor_Amb'
+	StartupActivities(0)=DA_Sound_AnusDoor_Amb
+	bForceUsePhrase=true
+	bUsable=true
+	UsePhrase="<?int?dnDecorations.Biology_Generic_AnusDoor.UsePhrase?>"
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Biology_Generic_AnusDoor_CollisionRing',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	bCollisionAssumeValid=false
+	bAITransparent=true
+	bBlockActors=false
+	bBlockPlayers=false
+	bBlockKarma=false
+	bBlockParticles=false
+	bBlockBeams=false
+	bTickOnlyZoneRecent=false
+	CollisionRadius=50
+	CollisionHeight=112
+	TouchClasses(0)='Engine.Pawn'
+	DrawType=2
+	Mesh='c_generic.AlienAnusDoor'
 }

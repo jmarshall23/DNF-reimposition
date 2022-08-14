@@ -12,7 +12,9 @@ defaultproperties
 	bIgnoreLimit=true
 	Lifetime=4
 	bFullScreen=true
-	Textures(0)='DukeMultiPlayer'
-	Textures(1)='dt_hud.Steam.Steam_d'
-	Textures(2)=ObjectProperty'dnCTBHUD.droppedWarning'
+	Textures(0)='dt_hud.Steam.Steam_d'
+	bUseAlphaRamp=true
+	AlphaStart=0
+	AlphaMid=1
+	AlphaRampMid=0.02
 }

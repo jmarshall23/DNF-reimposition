@@ -45,7 +45,7 @@ simulated event float GetBaseDamage(Actor Victim, optional Pawn Instigator, opti
 	return;
 }
 
-k2call simulated function Eject_Casing(optional EventInfo AnimEventInfo)
+animevent simulated function Eject_Casing(optional EventInfo AnimEventInfo)
 {
 	return;
 }
@@ -62,5 +62,11 @@ defaultproperties
 	CommandAlias="UseWeapon dnGame.MiniGun_BL"
 	InventoryReferenceClass='MiniGun_BL'
 	PickupClass=none
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_BLMiniGun'
+	AnimationControllerClass='dnAnimationControllerEx_MiniGun_BL'
+	DynamicInteractionClassification=9
+	PhysicsEntityGroup=BattleLordEntityGroup
+	MountMeshItem=mount_hand_r
+	Mesh='c_dnWeapon.BatLordMiniGun'
+	SoundRadius=1600
 }

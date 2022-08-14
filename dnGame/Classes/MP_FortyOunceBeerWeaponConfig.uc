@@ -12,5 +12,10 @@ defaultproperties
 	AmmoClass='FortyOunceBeerAmmo'
 	AmmoExpenditure=0
 	AdditionalPickupAmmoMin=1
-	MuzzleInfo=/* Array type was not detected. */
+	MuzzleInfo(0)=(MuzzleFireStartAnim=FireStart,MuzzleFireAnim=BeerActivate,MuzzleFireStopAnim=FireStop,MuzzleFlashClass=none,MuzzleBoneName=mount_muzzle,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	NumMeleeAttacks=0
+	bFlashHUDOnActivate=false
+	bStandardWeaponSwitch=false
+	DoneActivatingStateTransition=ActivateComplete
+	WeaponAnimName=noweapon
 }

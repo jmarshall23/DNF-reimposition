@@ -105,12 +105,9 @@ final simulated function Update()
 
 defaultproperties
 {
-	WebbingStyles(0)='Details_Generic'
-	WebbingStyles(1)='sm_geo_decorations.alien.corpes_Webbing_A'
-	WebbingStyles(2)='sm_geo_decorations.alien.corpes_Webbing_B'
-	WebbingStyles(3)=ObjectProperty'dnControl_Pinball.ScoreBoard'
-	WebbingStyles(4)=MotionPrefab'Pillars_Destructible.MP_PC_NoMotion'
-	X=0
+	WebbingStyles(0)='sm_geo_decorations.alien.corpes_Webbing_A'
+	WebbingStyles(1)='sm_geo_decorations.alien.corpes_Webbing_B'
+	HealthPrefab=0
 	bBlockKarma=false
 	bCanExistOutOfWorld=true
 	bNoNativeTick=false

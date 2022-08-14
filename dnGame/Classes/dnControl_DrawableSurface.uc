@@ -64,7 +64,7 @@ event PreGameInit()
 	return;
 }
 
-k2call simulated function ColorChange()
+animevent simulated function ColorChange()
 {
 	local byte PaletteIndex;
 

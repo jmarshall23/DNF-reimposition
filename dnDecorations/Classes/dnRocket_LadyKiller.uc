@@ -11,16 +11,7 @@ defaultproperties
 {
 	Speed=1200
 	MaxSpeed=2000
-	ShakeInfo=/* Array type was not detected. */
-	bToggleSign=false
-	Style=3
-	Function=0
-	FalloffActor=none
-	FalloffDistance=0
-	ShakeDuration=0.55
-	ShakeFrequency=0.05
-	ShakeMagnitude=800
-	ShakeFullMagnitude=0
-	ShakeFullMagnitudeTime=0
-	ShakeName=dnRocket_LadyKiller_Shake
+	ShakeInfo(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.55,ShakeFrequency=0.05,ShakeMagnitude=800,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=dnRocket_LadyKiller_Shake)
+	SoundRadius=6375
+	SoundInnerRadius=3187
 }

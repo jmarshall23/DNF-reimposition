@@ -99,11 +99,9 @@ native final function string GetStationName(float RadioFreq)
 
 defaultproperties
 {
-	
-	Location=0
-	PauseTime=0
-	SongPool=/* Array type was not detected. */
-	bNoRemoveAnim=/* Unknown default property type! */
-	SkewYaw=/* Array type was not detected. */
-	bNoRemoveAnim=/* Unknown default property type! */
+	Stations(0)=(Freq=95.3,Name="95.3 Ninja Radio",id=Ninja,Program=none,ProgramTime=0,PauseTime=0,SongPool=none,CommercialPool=none)
+	Stations(1)=(Freq=106.7,Name="106.7 HiFiNRgR4v3r",id=HiFiNRG,Program=none,ProgramTime=0,PauseTime=0,SongPool=none,CommercialPool=none)
+	DefaultPauseTime=0.625
+	bHidden=true
+	TickStyle=0
 }

@@ -20,6 +20,15 @@ defaultproperties
 	TracerBeamSystemClass='dnTracerFX_Battlelord'
 	HorizShotError=0.04
 	VertShotError=0.04
-	ViewKicks=/* Array type was not detected. */
-	RandomSeed=none
+	ViewKicks(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=-1,ShakeFrequency=0.025,ShakeMagnitude=50,ShakeFullMagnitude=250,ShakeFullMagnitudeTime=3,ShakeName=BattleLord_ViewKick_0)
+	RumbleKicks(0)=(RumbleName=BattleLord_Rumble,RumbleDuration=0.25,RumbleLeftMagnitude=0,RumbleRightMagnitude=0.5,FalloffActor=none,FalloffDistance=0)
+	MuzzleInfo(0)=(MuzzleFireStartAnim=FireStart,MuzzleFireAnim=Fire,MuzzleFireStopAnim=FireStop,MuzzleFlashClass='p_Creatures.Battlelord_MuzzleFlash.Battlelord_MuzzleFlash_Spawner',MuzzleBoneName=mount_muzzel,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MuzzleLightClass='Weapon_LightEx_Minigun_BL'
+	MuzzleLightBoneName=mount_muzzel
+	bMuzzleShellEjectionOwnerVelIndependent=true
+	bFireInterruptFiring=true
+	LockoutFireTime=0.06
+	WeaponHeatAttackRate=0.065
+	WeaponHeatDecayRate=0.095
+	WeaponAnimName=MiniGun_BL
 }

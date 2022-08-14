@@ -43,37 +43,48 @@ function NavigateBack()
 
 defaultproperties
 {
-	SoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */)
-	Entries(0)=BeforePaint=/* Unknown default property type! */,SliderWidth=1936485473,Z=/* Unknown default property type! */,
-/* Exception thrown while deserializing Entries
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	Entries(1)=
-/* Exception thrown while deserializing Entries
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	Entries(2)=(Offset=/* Unknown default property type! */,SetHelpText=/* Unknown default property type! */,Command="a_dukevoice.DukeLines.Duke_BallsOfSteel_01k",Button=none)
-	Entries(3)=(Text="One-Eyed Freak",Help="",Command="a_dukevoice.DukeLines.DUKE_Map00_Line_04_OneEyeFreak",Button=none)
-	Entries(4)=(Text="Aliens Are Gonna Pay",Help="",Command="a_dukevoice.DukeLines.DUKE_Map03_Line_04",Button=none)
-	Entries(5)=(Text="Power Armor",Help="",Command="a_dukevoice.DukeLines.DUKE_Map04_Line_01_PowerArmor",Button=none)
-	Entries(6)=(Text="Ugly Motherfucker",Help="",Command="a_dukevoice.DukeLines.DUKE_Map04_Line_03_UglyMofo",Button=none)
-	Entries(7)=(Text="Taste of my Ball",Help="",Command="a_dukevoice.DukeLines.DUKE_Map07_Line_05_TasteBall",Button=none)
-	Entries(8)=(Text="Wish I Had Three Guns",Help="",Command="a_dukevoice.DukeLines.DUKE_Map07e_Line_01",Button=none)
-	Entries(9)=(Text="Don't Stand a Chance",Help="",Command="a_dukevoice.DukeLines.DUKE_Map11_02",Button=none)
-	Entries(10)=(Text="Who's Your Daddy Now?",Help="",Command="a_dukevoice.DukeLines.DUKE_Map12b_01_DaddyHelmet",Button=none)
-	Entries(11)=(Text="Piss On Your Brain",Help="",Command="a_dukevoice.DukeLines.DUKE_Map12c_RipEyeOut",Button=none)
+	SoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=(5),Volume=1,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=true,bNoFilter=true,bNoOcclude=true,bNoAIHear=true,bNoScale=true,bSpoken=false,bPlayThroughListener=false,bNoDoppler=true,bDialogSound=true,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=true),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=1,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	Entries(0)=(Text="Balls of Steel",Help="",Command="a_dukevoice.DukeLines.Duke_BallsOfSteel_01k",Button=none)
+	Entries(1)=(Text="One-Eyed Freak",Help="",Command="a_dukevoice.DukeLines.DUKE_Map00_Line_04_OneEyeFreak",Button=none)
+	Entries(2)=(Text="Aliens Are Gonna Pay",Help="",Command="a_dukevoice.DukeLines.DUKE_Map03_Line_04",Button=none)
+	Entries(3)=(Text="Power Armor",Help="",Command="a_dukevoice.DukeLines.DUKE_Map04_Line_01_PowerArmor",Button=none)
+	Entries(4)=(Text="Ugly Motherfucker",Help="",Command="a_dukevoice.DukeLines.DUKE_Map04_Line_03_UglyMofo",Button=none)
+	Entries(5)=(Text="Taste of my Ball",Help="",Command="a_dukevoice.DukeLines.DUKE_Map07_Line_05_TasteBall",Button=none)
+	Entries(6)=(Text="Wish I Had Three Guns",Help="",Command="a_dukevoice.DukeLines.DUKE_Map07e_Line_01",Button=none)
+	Entries(7)=(Text="Don't Stand a Chance",Help="",Command="a_dukevoice.DukeLines.DUKE_Map11_02",Button=none)
+	Entries(8)=(Text="Who's Your Daddy Now?",Help="",Command="a_dukevoice.DukeLines.DUKE_Map12b_01_DaddyHelmet",Button=none)
+	Entries(9)=(Text="Piss On Your Brain",Help="",Command="a_dukevoice.DukeLines.DUKE_Map12c_RipEyeOut",Button=none)
+	Entries(10)=(Text="Run For President",Help="",Command="a_dukevoice.DukeLines.DUKE_Map12c_Run4Pres",Button=none)
+	Entries(11)=(Text="Rest in Pieces",Help="",Command="a_dukevoice.DukeLines.DUKE_RestINPieces_01",Button=none)
+	Entries(12)=(Text="Dead Space Marine",Help="",Command="a_dukevoice.DukeLines.DUKE_SpaceMarine_01",Button=none)
+	Entries(13)=(Text="Fatality!",Help="",Command="a_dukevoice.KillComments.DUKE_EXECUTION_01",Button=none)
+	Entries(14)=(Text="Pain Cake",Help="",Command="a_dukevoice.KillComments.DUKE_EXECUTION_02",Button=none)
+	Entries(15)=(Text="Welcome to Earth",Help="",Command="a_dukevoice.KillComments.DUKE_EXECUTION_04",Button=none)
+	Entries(16)=(Text="My Kung Fu is Still the Best",Help="",Command="a_dukevoice.KillComments.DUKE_EXECUTION_06",Button=none)
+	Entries(17)=(Text="I am The Duke",Help="",Command="a_dukevoice.KillComments.DUKE_GotKill_01",Button=none)
+	Entries(18)=(Text="Dine in Hell",Help="",Command="a_dukevoice.KillComments.DUKE_GotKill_03",Button=none)
+	Entries(19)=(Text="Tell 'em Duke Sent Ya",Help="",Command="a_dukevoice.KillComments.DUKE_GotKill_07",Button=none)
+	Entries(20)=(Text="If it Bleeds...",Help="",Command="a_dukevoice.KillComments.DUKE_GotKill_08",Button=none)
+	Entries(21)=(Text="Ass Kickin' Time",Help="",Command="a_dukevoice.KillComments.DUKE_GotKill_11",Button=none)
+	Entries(22)=(Text="My Balls, Your Face",Help="",Command="a_dukevoice.KillComments.DUKE_GotKill_13",Button=none)
+	Entries(23)=(Text="Suck it Down",Help="",Command="a_dukevoice.KillComments.DUKE_GotKill_14",Button=none)
+	Entries(24)=(Text="Lady Luck",Help="",Command="a_dukevoice.KillComments.DUKE_GotKill_15",Button=none)
+	Entries(25)=(Text="Step Right Up",Help="",Command="a_dukevoice.KillComments.DUKE_GotKill_18",Button=none)
+	Entries(26)=(Text="Eat Shit and Die",Help="",Command="a_dukevoice.KillComments.DUKE_GotKill_24",Button=none)
+	Entries(27)=(Text="Hail to the King",Help="",Command="a_dukevoice.KillComments.DUKE_GotKill_25",Button=none)
+	Entries(28)=(Text="Come Get Some",Help="",Command="a_dukevoice.KillComments.DUKE_GotKill_26",Button=none)
+	Entries(29)=(Text="Lot of Guts",Help="",Command="a_dukevoice.KillComments.DUKE_GotMessKill_05",Button=none)
+	Entries(30)=(Text="Another Day",Help="",Command="a_dukevoice.KillComments.DUKE_GotMessKill_09",Button=none)
+	Entries(31)=(Text="Reducing Headcount",Help="",Command="a_dukevoice.KillComments.DUKE_Headshot_03",Button=none)
+	Entries(32)=(Text="Blow it Out Your Ass",Help="",Command="a_dukevoice.KillComments.DUKE_KillCommander_01",Button=none)
+	Entries(33)=(Text="Brain Matter Gray",Help="",Command="a_dukevoice.KillComments.DUKE_KillOctabrain_01",Button=none)
+	Entries(34)=(Text="Squeal Piggy",Help="",Command="a_dukevoice.KillComments.DUKE_KillPigCop_05",Button=none)
+	Entries(35)=(Text="Rat Bastard",Help="",Command="a_dukevoice.KillComments.DUKE_KillRat_02",Button=none)
+	Entries(36)=(Text="Sit Down and Shut Up",Help="",Command="a_dukevoice.KillComments.DUKE_KungFuKill_03",Button=none)
+	Entries(37)=(Text="Beer Goggles",Help="",Command="a_dukevoice.Beer.DUKE_UseBeer_01",Button=none)
+	Entries(38)=(Text="Bring the Pain",Help="",Command="a_dukevoice.AmmoPickup.DUKE_AMMO_PICKUP_02",Button=none)
+	Entries(39)=(Text="Just Like Christmas",Help="",Command="a_dukevoice.AmmoPickup.DUKE_AMMO_PICKUP_05",Button=none)
+	Entries(40)=(Text="Buy This For a Dollar",Help="",Command="a_dukevoice.AmmoPickup.DUKE_AMMO_PICKUP_06",Button=none)
+	Entries(41)=(Text="I Like It!",Help="",Command="a_dukevoice.AmmoPickup.DUKE_AMMO_PICKUP_08",Button=none)
+	TitleText="<?int?dnWindow.UDukeSceneSoundBoard.TitleText?>"
 }

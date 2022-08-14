@@ -38,10 +38,15 @@ defaultproperties
 	bForceUsePhrase=true
 	bUsable=true
 	UsePhrase="<?int?dnDecorations.Containers_Pile_InfiniteAmmo.UsePhrase?>"
-	MountOnSpawn=/* Array type was not detected. */
-	SpawnClass='Containers_Pile_InfiniteAmmo_Light'
-	SpawnChance=0
-	MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.813547E-17,Z=-12),Z=6)
-	RenderObject=none
-	DrawScale=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Containers_Pile_InfiniteAmmo_Light',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.813547E-17,Z=-12),Z=6),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bNoDamage=true
+	DynamicInteractionClassification=0
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
+	PhysicsMassType=1
+	bAcceptsDecalProjectors=false
+	bLowerByCollision=true
+	bOverlayEffectUsedAsHint=true
+	CollisionRadius=30
+	CollisionHeight=6.4
+	StaticMesh='sm_class_decorations.AmmoPile.AmmoPile'
 }

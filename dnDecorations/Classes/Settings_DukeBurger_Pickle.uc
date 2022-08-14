@@ -10,6 +10,10 @@ class Settings_DukeBurger_Pickle extends Settings_DukeBurger_DukeSauceJar_Gib
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	bTransferToCorpse="\\"
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Plants_Generic_Cactus.DA_Sound_Cactus_Gibs'
+	HealthPrefab=1
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bSilentDestroy=false
+	StaticMesh='sm_class_decorations.Kitchen.pickle'
 }

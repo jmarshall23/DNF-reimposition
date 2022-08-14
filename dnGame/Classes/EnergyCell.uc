@@ -16,5 +16,6 @@ defaultproperties
 	WeaponConfig='EnergyCellWeaponConfig'
 	InventoryReferenceClass='EnergyCell'
 	PickupClass='EnergyCellPickup'
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	Mesh='c_generic.EnergyCell'
 }

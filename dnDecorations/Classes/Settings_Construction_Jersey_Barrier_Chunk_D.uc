@@ -11,11 +11,8 @@ defaultproperties
 {
 	HealthPrefab=5
 	Health=15
-	DestroyedParticleFriendEffects=/* Array type was not detected. */
-	bAbsoluteRotation=false
-	Scale=1
-	BoneName=None
-	Location=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	Rotation=(Pitch=8709,Yaw=571080704,Roll=-8192)
-	Effect='p_Impacts.JerseyBarrier_Destruction.JerseyBarrier_Destruction_Spawner'
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=1,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Concrete'
+	PhysicsMassType=1
+	StaticMesh='sm_geo_decorations.barriers.road_barrier_gib4'
 }

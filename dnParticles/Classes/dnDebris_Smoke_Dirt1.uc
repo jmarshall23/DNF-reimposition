@@ -10,5 +10,7 @@ class dnDebris_Smoke_Dirt1 extends dnDebris_Smoke
 
 defaultproperties
 {
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Smoke.dirtcloud1aRC'
+	StartDrawScale=1
+	EndDrawScale=2
 }

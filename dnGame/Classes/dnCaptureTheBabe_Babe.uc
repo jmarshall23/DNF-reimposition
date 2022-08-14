@@ -46,9 +46,9 @@ var bool DoNotDropMe;
 var int iFreakingOut;
 var Pawn pawnTemp;
 var(Param) noexport int freakOutThreshold "the ammount of crap (being run with, taking damage, etc) the babe will take before freaking out";
-var name curanimname;
-var Pawn Grabber;
-var int UngrabbedRotation;
+var netupdate(NU_SetClientAnim) name curanimname;
+var netupdate(NU_SetClientGrabberChange2) Pawn Grabber;
+var netupdate(NU_SetUngrabbedRotation) int UngrabbedRotation;
 var Vector InitialLocation;
 var Rotator InitialRotation;
 var CustomizationDecoration GunBeltAttachment;
@@ -1520,19 +1520,19 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 	return;
 }
 
-k2call simulated function DustImpactEffect(optional EventInfo AnimEventInfo)
+animevent simulated function DustImpactEffect(optional EventInfo AnimEventInfo)
 {
 	BoneEffectSpawner(__NFUN_343__(AnimEventInfo.EventString), class'BulletImpact_Dust_Spawner', __NFUN_265__(16384, 0, 0), true);
 	return;
 }
 
-k2call simulated function GrassImpactEffect(optional EventInfo AnimEventInfo)
+animevent simulated function GrassImpactEffect(optional EventInfo AnimEventInfo)
 {
 	BoneEffectSpawner(__NFUN_343__(AnimEventInfo.EventString), class'BulletImpact_Grass_Spawner', __NFUN_265__(16384, 0, 0), true);
 	return;
 }
 
-k2call simulated function GroundImpactEffect(optional EventInfo AnimEventInfo)
+animevent simulated function GroundImpactEffect(optional EventInfo AnimEventInfo)
 {
 	BoneEffectSpawner(__NFUN_343__(AnimEventInfo.EventString), class'StompImpact_Large_Brown_Spawner',, true);
 	return;
@@ -1543,6 +1543,59 @@ defaultproperties
 	DropTeleportTime=10
 	ScoreTeleportTime=5
 	freakOutThreshold=3
-	AshleyVOs(0)=AnimRateVariance
-	AnimGridLink=/* Unknown default property type! */
+	AshleyVOs(0)=Twins_SpankReact
+	AshleyVOs(1)=Ashley_Captured
+	AshleyVOs(2)=Ashley_CarrierKilled
+	AshleyVOs(3)=Ashley_CarrierKills
+	AshleyVOs(4)=Ashley_CarrierShrunk
+	AshleyVOs(5)=Ashley_Flirting
+	AshleyVOs(6)=Ashley_Help
+	AshleyVOs(7)=Ashley_Idle
+	AshleyVOs(8)=Ashley_Pickup
+	AshleyVOs(9)=Ashley_PutMeDown
+	AshleyVOs(10)=Ashley_Scream
+	MaryKateVOs(0)=Twins_SpankReact
+	MaryKateVOs(1)=MaryKate_Captured
+	MaryKateVOs(2)=MaryKate_CarrierKilled
+	MaryKateVOs(3)=MaryKate_CarrierKills
+	MaryKateVOs(4)=MaryKate_CarrierShrunk
+	MaryKateVOs(5)=MaryKate_Flirting
+	MaryKateVOs(6)=MaryKate_Help
+	MaryKateVOs(7)=MaryKate_Idle
+	MaryKateVOs(8)=MaryKate_Pickup
+	MaryKateVOs(9)=MaryKate_PutMeDown
+	MaryKateVOs(10)=MaryKate_Scream
+	TeamSkin[0]='mt_skinsFemaleBod.Holsom_twin.Holsom_twins_blue_bs'
+	TeamSkin[1]='mt_skinsFemaleBod.Holsom_twin.Holsom_twins_red_bs'
+	MinBlinkTime=3.5
+	MaxBlinkTime=5
+	NumEyeSets=1
+	ButtSlapDelay=0.75
+	bIgnoreAimAssist=true
+	bPerformLipSync=true
+	LipSyncInfoClass='Engine.LipSyncInfo_Female'
+	bUsable=true
+	bGrabUsable=true
+	bGrabbable=true
+	UsePhrase="<?int?dnGame.dnCaptureTheBabe_Babe.UsePhrase?>"
+	GrabUsePhrase="<?int?dnGame.dnCaptureTheBabe_Babe.GrabUsePhrase?>"
+	UseAngleThreshold=0
+	AnimationControllerClass='dnAnimationControllerEx_Babe_Standing'
+	Physics=2
+	bTraceShootable=false
+	bBlockActors=false
+	bIsCTBBabe=true
+	bAcceptsDecalProjectors=true
+	bLowerByCollision=true
+	bPerformDamageEffect=false
+	bAlwaysRelevant=true
+	bForceCollisionRep=true
+	bDontUseMeqonPhysics=true
+	CollisionRadius=16
+	MountType=2
+	DrawType=2
+	Mesh='c_characters.npc_holsom_twin_b'
+	NetPriority=3
+	RemoteRole=1
+	VoicePack='SoundConfig.NPCs.VoicePack_CTB'
 }

@@ -7,7 +7,7 @@
  *******************************************************************************/
 class dnControlHelper_CircularGymVent extends dnDecoration;
 
-k2call simulated function GoPhysics(optional EventInfo AnimEventInfo)
+animevent simulated function GoPhysics(optional EventInfo AnimEventInfo)
 {
 	UnMimicOwner();
 	__NFUN_631__();

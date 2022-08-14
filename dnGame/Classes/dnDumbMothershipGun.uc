@@ -25,5 +25,22 @@ function PostVerifySelf()
 defaultproperties
 {
 	HealthPrefab=0
-	MountOnSpawn=/* Array type was not detected. */
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='dnMothershipGunArmor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=gun_pivot,MountOrigin=(X=-1.204739E+14,Y=2.95492E-17,Z=-1049.995),Z=1094.372),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=627778085,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject='sm_class_vehicles.Aircraft.Alien_mothership_gunArmor01',DrawScale=0)
+	MountOnSpawn(5)=(bSkipVerifySelf=false,SpawnClass='dnMothershipGunArmor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=gun_pivot,MountOrigin=(X=4.577162E+11,Y=2.954917E-17,Z=-2254.996),Z=-94.983),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(6)=(MountAngles=(Pitch=627778085,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(7)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(8)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(9)=(RenderObject='sm_class_vehicles.Aircraft.Alien_mothership_gunArmor02',DrawScale=0)
+	MountOnSpawn(10)=(bSkipVerifySelf=false,SpawnClass='dnMothershipGunArmor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=gun_pivot,MountOrigin=(X=-50.53518,Y=2.95492E-17,Z=-1104.996),Z=-1123.97),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(11)=(MountAngles=(Pitch=627778085,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(12)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	bCollideActors=false
+	bCollideWorld=false
+	TickStyle=0
+	DrawScale=5
+	Mesh='c_vehicles.alien_mothership_gun'
 }

@@ -13,5 +13,24 @@ defaultproperties
 {
 	Enabled=false
 	TriggerOnSpawn=true
-	AdditionalSpawn=/* Array type was not detected. */
+	AdditionalSpawn(0)=(SpawnClass=none,TakeParentTag=true,Mount=true,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnPeriod=0
+	MaximumParticles=0
+	Lifetime=2
+	LifetimeVariance=0
+	SystemAlphaScaleVelocity=-0.5
+	AlphaStart=1
+	AlphaEnd=0.75
+	Textures(0)='dt_effects.Smoke.gensmoke1aRC'
+	Textures(1)=none
+	Textures(2)=none
+	Textures(3)=none
+	StartDrawScale=0.2
+	EndDrawScale=2.25
+	DrawScaleVariance=0.25
+	PulseSeconds=0.65
+	Physics=2
+	bCollideWorld=true
+	CollisionRadius=1
+	CollisionHeight=1
 }

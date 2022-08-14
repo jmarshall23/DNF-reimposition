@@ -145,17 +145,31 @@ defaultproperties
 {
 	ExplosionLightClass='dnGame.dnExplosionLight_Barrel'
 	SpawnInTime=2
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_RadiusDamage_Standard'
 	HealthPrefab=1
 	bGrabbable=true
 	ThrowPhysics=18
 	GrabInfo=(bCanDuckWhileHeld=true,MountItemOverride=mount_handright,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	SpawnOnDestroyedSimple=/* Array type was not detected. */
-	Z=/* Array type was not detected. */
-	bAbsoluteRotation=false
-	Scale=0
-	BoneName=None
-	Location=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	Rotation=(Pitch=8709,Yaw=571080704,Roll=0)
-	Effect='p_Decorations.BarrelExplosion.Barrel_Explosion_Spawner'
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Smoke'
+	SpawnOnDestroyedSimple(1)='dnGame.dnExplosionLight_Barrel'
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bIgnoresPhysicsDamage=true
+	DynamicInteractionClassification=0
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Flesh'
+	KRestitution=0.8
+	bCollisionAssumeValid=false
+	bAITransparent=true
+	bNoNativeTick=false
+	bTickOnlyRecent=false
+	bTickOnlyZoneRecent=false
+	bStepUpAble=false
+	CollisionRadius=5.8
+	CollisionHeight=5.8
+	TickNearbyRadius=20000
+	Mass=10
+	TickStyle=2
+	StaticMesh='sm_class_decorations.Balls.beachball'
+	Skins(0)='dt_nature2.Goo.webfx_BS'
 }

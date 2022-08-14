@@ -10,7 +10,17 @@ class DecoGlass_SnackMachine extends dnDecoration;
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_DecoGlass_SnackMachine_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=Glass_Crack
+	object end
+	// Reference: DecoActivities_Sound'DecoGlass_SnackMachine.DA_Sound_DecoGlass_SnackMachine_Destroyed'
+	DestroyedActivities(1)=DA_Sound_DecoGlass_SnackMachine_Destroyed
+	begin object name=DA_Display_DecoGlass_SnackMachine_Broken class=DecoActivities_Display
+		Skins(0)=(Index=0,NewMaterialEx='dt_masking.Glass_Materials.brokenglass1bc_envcomb')
+	object end
+	// Reference: DecoActivities_Display'DecoGlass_SnackMachine.DA_Display_DecoGlass_SnackMachine_Broken'
+	DestroyedActivities(2)=DA_Display_DecoGlass_SnackMachine_Broken
 	HealthPrefab=1
 	bMimicOwner=true
 	bPassUseToOwner=true
@@ -22,5 +32,6 @@ defaultproperties
 	DrawType=8
 	DrawScale3D=(X=2.717021E+23,Y=2.802569E-17,Z=0.3)
 	StaticMesh='sm_class_effects.TestQuad.Quad1'
-	Skins=/* Array type was not detected. */
+	Skins(0)='dt_masking.Glass_Materials.glassdirty4bc_finalblend'
+	VoicePack='SoundConfig.Interactive.VoicePack_Glass'
 }

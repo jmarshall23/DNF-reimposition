@@ -11,6 +11,25 @@ class Electronics_Generic_Radio_BoomBox_Blue extends Electronics_Generic_Radio
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	DA_Anim_Bilogy_Generic_GasPod_Pop="~"
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Glass_Small'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_HUD_bForceUsePhrase_Disable'
+	begin object name=DA_Display_Electronics_Generic_Radio_BoomBox_Blue_Brkn class=DecoActivities_Display
+		RenderObject='c_generic.BoomBox_Brkn'
+	object end
+	// Reference: DecoActivities_Display'Electronics_Generic_Radio_BoomBox_Blue.DA_Display_Electronics_Generic_Radio_BoomBox_Blue_Brkn'
+	DestroyedActivities(3)=DA_Display_Electronics_Generic_Radio_BoomBox_Blue_Brkn
+	HealthPrefab=1
+	bUsable=false
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Glass1'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Smoke_Small1'
+	SpawnOnDestroyedSimple(2)='dnParticles.dnDebris_Sparks1_Small'
+	SpawnOnDestroyedSimple(3)='dnParticles.dnSparkFX_BreakingLight_Flash_Up'
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Plastic'
+	PhysicsMassType=2
+	Physics=18
+	CollisionRadius=12.5
+	CollisionHeight=5
+	DrawType=2
+	Mesh='c_generic.BoomBox'
 }

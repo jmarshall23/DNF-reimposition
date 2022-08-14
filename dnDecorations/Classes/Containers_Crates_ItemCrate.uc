@@ -42,7 +42,34 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 defaultproperties
 {
 	SpeakRadius=200
-	DestroyedActivities=/* Array type was not detected. */
-	relativeAngularVel=877987073
-	Pitch='Signs_Generic_WoodenSign_Gibs'
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_ItemCrate_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=Destruct_Wood
+	object end
+	// Reference: DecoActivities_Sound'Containers_Crates_ItemCrate.DA_Sound_ItemCrate_Destroyed'
+	DestroyedActivities(1)=DA_Sound_ItemCrate_Destroyed
+	HealthPrefab=5
+	begin object name=MP_ItemCrate_BottomGib class=MotionPrefab
+		bUseDamageInfo=false
+		bUseParentVelocity=false
+		bUseParentRotationRate=false
+	object end
+	// Reference: MotionPrefab'Containers_Crates_ItemCrate.MP_ItemCrate_BottomGib'
+	SpawnedPickupMotionPrefab=MP_ItemCrate_BottomGib
+	Health=1
+	HealthCap=1
+	SpawnOnDestroyed(0)=(SpawnClass='Containers_Crates_ItemCrate_Gib_Wood_Top_F',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=2.432217E-09,Y=2.813605E-17,Z=-10.014),Z=11.3)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaWood.WoodHollowMed01','a_impact.KarmaWood.WoodHollowMed02','a_impact.KarmaWood.WoodHollowMed03','a_impact.KarmaWood.WoodHollowMed04'),SoundInfo=(InputRange=(Min=32,Max=512),OutputPitchRange=(Min=0.8,Max=1),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=false)
+	PhysicsSoundOverrides(1)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaWood.WoodSolid_SlideConcrete01'),SoundInfo=(InputRange=(Min=4,Max=500),OutputPitchRange=(Min=0.8,Max=1),OutputVolumeRange=(Min=0.25,Max=1)),bDisableSoundInWater=false)
+	PhysicsSoundOverrides(2)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=none,SoundInfo=(InputRange=(Min=1,Max=5),OutputPitchRange=(Min=0,Max=0),OutputVolumeRange=(Min=0,Max=0)),bDisableSoundInWater=false)
+	Physics=18
+	CollisionRadius=16
+	CollisionHeight=12
+	StaticMesh='sm_class_decorations.Crate.ammoCrate'
 }

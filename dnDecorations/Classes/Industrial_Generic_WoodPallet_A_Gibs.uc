@@ -11,6 +11,16 @@ class Industrial_Generic_WoodPallet_A_Gibs extends aFinalDecoration_Gibs
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_class_decorations.Wooden_Pallette1.Pallet_Gib01',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_class_decorations.Wooden_Pallette1.Pallet_Gib02',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_class_decorations.Wooden_Pallette1.PalletPlank1a',bForcedOnly=false)
+	Gibs(3)=(RenderObject='sm_class_decorations.Wooden_Pallette1.PalletPlank1b',bForcedOnly=false)
+	HealthPrefab=1
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	PhysicsMassType=0
+	Density=5
+	PhysicsEntityGroup=WoodPallet
+	Physics=0
+	bBlockActors=false
+	bStepUpAble=false
 }

@@ -10,5 +10,6 @@ class Railgun_Blast extends BulletHole_Decal
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_Effects2.Decals.RailBlast_FB'
+	DrawScale=0.05
 }

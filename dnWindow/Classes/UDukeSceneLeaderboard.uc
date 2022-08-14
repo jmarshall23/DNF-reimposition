@@ -1311,124 +1311,17 @@ defaultproperties
 	UnselectedFontScale=0.8
 	VGridLine='Menu.MP.Divider_Vert'
 	HGridLine='Menu.MP.divider_horiz'
-	ColumnWidths(0)=2.551765E-42
+	ColumnWidths(0)=0
 	ColumnWidths(1)=0
-	ColumnWidths(2)=-1.07479E+08
-	ColumnWidths(3)=-1.076087E+08
-	ColumnWidths(4)=-1.076092E+08
-	ColumnWidths(5)=-1.076087E+08
-	ColumnWidths(6)=2.270664E-41
-	ColumnWidths(7)=6.129388E-28
-	ColumnWidths(8)=-5.044674E-44
-	ColumnWidths(9)=3.171397E-17
-	ColumnWidths(10)=1
-	ColumnWidths(11)=8.182509E-27
-	ColumnWidths(12)=2.417852E+24
-	ColumnWidths(13)=7.284897E-34
-	ColumnWidths(14)=7.471375E+20
-	ColumnWidths(15)=4.153838E+34
-	ColumnWidths(16)=2.595528E-09
-	ColumnWidths(17)=1.804661E+28
-	ColumnWidths(18)=1.765982E+28
-	ColumnWidths(19)=1.759166E+22
-	ColumnWidths(20)=1.198925E+13
-	ColumnWidths(21)=6.949496E+22
-	ColumnWidths(22)=1.774804E+28
-	ColumnWidths(23)=2.643631E+20
-	ColumnWidths(24)=1.117855E+21
-	ColumnWidths(25)=1.788453E+22
-	ColumnWidths(26)=7.394486E+31
-	ColumnWidths(27)=6.268829E+22
-	ColumnWidths(28)=0.1869677
-	ColumnWidths(29)=
-/* Exception thrown while deserializing ColumnWidths
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
-	ColumnWidths(30)=
-/* Exception thrown while deserializing ColumnWidths
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
-	ColumnWidths(31)=
-/* Exception thrown while deserializing ColumnWidths
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
-	ColumnWidths(32)=
-/* Exception thrown while deserializing ColumnWidths
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
-	ColumnWidths(33)=
-/* Exception thrown while deserializing ColumnWidths
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
-	ColumnWidths(34)=
-/* Exception thrown while deserializing ColumnWidths
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
-	ColumnWidths(35)=
-/* Exception thrown while deserializing ColumnWidths
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
-	ColumnWidths(36)=
-/* Exception thrown while deserializing ColumnWidths
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
-	ColumnWidths(37)=
-/* Exception thrown while deserializing ColumnWidths
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
-	ColumnWidths(38)=
-/* Exception thrown while deserializing ColumnWidths
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
-	ColumnWidths(39)=
-/* Exception thrown while deserializing ColumnWidths
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
-	ColumnWidths(40)=
-/* Exception thrown while deserializing ColumnWidths
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
-	ColumnWidths(41)=
-/* Exception thrown while deserializing ColumnWidths
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.FillBuffer(Int32 numBytes)
-   at System.IO.BinaryReader.ReadSingle()
-   at UELib.UObjectStream.ReadFloat() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 672
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 486 */
+	ColumnWidths(2)=0.8
+	ColumnWidths(3)=1.1
+	ColumnWidths(4)=0.8
+	ColumnWidths(5)=0.8
+	ColumnWidths(6)=1
+	HeaderFontScaleX=1
+	HeaderFontScaleY=1
+	HeaderOffsetY=20
+	FilterSelectionDialogClass='UDukeLeaderboardMessageBox'
+	LineBottomY=610
+	TitleText="<?int?dnWindow.UDukeSceneLeaderboard.TitleText?>"
 }

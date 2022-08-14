@@ -10,35 +10,14 @@ class dnBonePartMapper_PigCop_RightLeg extends BonePartMapper
 
 defaultproperties
 {
-	PartMapping=/* Array type was not detected. */
-	AnimTween=
-/* Exception thrown while deserializing AnimTween
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 174
-   at UELib.UObjectStream.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 722
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 447 */
-	BlendTotalTime=51
-	knee_right_a=/* Unknown default property type! */
-	DestroyableBones=/* Array type was not detected. */
-	StartingBlendAlpha=false
-	bSurviveDismount=false
-	bDontScaleByDrawScale=false
-	bScaleByDrawScaleNonDefault=false
-	bTransformDrawScale3DChange=false
-	bTakeParentTag=false
-	bTransferToCorpse=false
-	bDontSetOwner=false
-	MountParentTag=None
-	DrawScaleOverride=0
-	AppendToTag=None
-	ForceTag=None
-	ForceEvent=None
-	MountMeshItem=None
-	MountOrigin=(X=1.292418E-41,Y=2.965251E-17,Z=10)
-	MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0)
-	MountAngles=(Pitch=8741,Yaw=572915712,Roll=0)
-	MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0)
-	MountType=0
-	DismountPhysics=0
+	PartMapping(0)=(BoneName=Root,Part=13,BoneNameForDestroy=None)
+	PartMapping(1)=(BoneName=hip_right_a,Part=13,BoneNameForDestroy=None)
+	PartMapping(2)=(BoneName=knee_right_a,Part=15,BoneNameForDestroy=knee_right_a)
+	PartMapping(3)=(BoneName=heel_right_a,Part=17,BoneNameForDestroy=knee_right_a)
+	PartMapping(4)=(BoneName=ball_right_a,Part=17,BoneNameForDestroy=knee_right_a)
+	DestroyableBones(0)=(BoneName=knee_right_a,bAddToLimbCount=true,LimbCapClass='dnCorpse_LimbCap_Male_LegRight_Upper',LimbCapMountInfo=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.965251E-17,Z=10),Z=1),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(0)=(BoneName=knee_right_a,ReqBones=none,RenderObject=none,DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-4.29469E-37,Y=2.954218E-17,Z=13.403),Z=-5.396)
+	FullyGibbedSoundName=Corpse_LimbExplode
+	FullyGibbedFrozenSoundName=IcePart_Shatter_Small
+	NumLimbsUntilDestructible=1
 }

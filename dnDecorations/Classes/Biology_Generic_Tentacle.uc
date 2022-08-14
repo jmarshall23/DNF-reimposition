@@ -318,7 +318,7 @@ final function AttemptSwipe()
 	return;
 }
 
-final k2call function SwipeAttack()
+final animevent function SwipeAttack()
 {
 	local Vector SwipeLocation;
 
@@ -457,5 +457,41 @@ defaultproperties
 	PassiveIdleName=IdlePassive
 	ActiveIdleName=IdleActive
 	SwipeAttackBoneName=mount_swipe
-	InspectAnimNames(0)=Pitch
+	InspectAnimNames(0)=IdleInspectA
+	InspectAnimNames(1)=IdleInspectB
+	SwipeAnimNames(0)=SwipeA
+	SwipeAnimNames(1)=SwipeB
+	SwipeAnimNames(2)=SwipeC
+	DetectionRadius=384
+	AttackRadius=160
+	MaxAttackAngle=8192
+	ImpulseLift=300
+	ImpulseMag=125
+	StunnedActorColor=(B=76,G=3,R=1,A=163)
+	DefaultActorColor=(B=76,G=3,R=1,A=98)
+	AimGridMin=-1
+	AimGridMax=1
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(Extend),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Biology_Generic_Tentacle.DA_Sound_Tentacle_Extend'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(Retract),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Biology_Generic_Tentacle.DA_Sound_Tentacle_Retract'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(Swipe),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Biology_Generic_Tentacle.DA_Sound_Tentacle_Swipe'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=none
+	bEnemy=true
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Biology_Generic_Tentacle_Collision',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.808084E-17,Z=0),Z=27),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	AnimationControllerClass='acBiology_Generic_Tentacle'
+	StaticInteractionClassification=3
+	bAcceptMeshAccurateMoveActorTrace=true
+	bBlockPlayers=false
+	bNoNativeTick=false
+	bDumbMesh=false
+	bAcceptMinesAtAnyAngle=true
+	bAcceptsDecalProjectors=false
+	CollisionRadius=50
+	CollisionHeight=50
+	VisibleCollidingCenterOffset=(X=1.291717E-41,Y=2.797242E-17,Z=0)
+	TickStyle=2
+	DrawType=2
+	Mesh='c_characters.Tentacle'
 }

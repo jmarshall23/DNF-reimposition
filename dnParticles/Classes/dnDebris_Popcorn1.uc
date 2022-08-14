@@ -21,5 +21,14 @@ defaultproperties
 	MaxVelocityVariance=(X=1.291857E-41,Y=2.803001E-17,Z=512)
 	RealtimeAccelerationVariance=(X=1.291857E-41,Y=2.803086E-17,Z=2048)
 	LocalFriction=800
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Debris.popcorn1RC'
+	Textures(1)='dt_effects.Debris.popcorn2RC'
+	Textures(2)='dt_effects.Debris.popcorn3RC'
+	Textures(3)='dt_effects.Debris.popcorn4RC'
+	StartDrawScale=0.075
+	EndDrawScale=0.075
+	RotationVariance=65535
+	TriggerType=0
+	Style=2
+	TimeWarp=0.75
 }

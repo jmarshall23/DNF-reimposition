@@ -25,6 +25,14 @@ function PostBeginPlay()
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_class_decorations.plants.cactus_gib_1',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_class_decorations.plants.cactus_gib_2',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_class_decorations.plants.cactus_gib_3',bForcedOnly=false)
+	Gibs(3)=(RenderObject='sm_class_decorations.plants.cactus_gib_5',bForcedOnly=false)
+	AdjustRotation=(Pitch=1073750533,Yaw=571080704,Roll=0)
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Body'
+	PhysicsMassType=0
+	bAcceptsDecalProjectors=false
+	bDontUseMeqonPhysics=true
+	Mass=25
 }

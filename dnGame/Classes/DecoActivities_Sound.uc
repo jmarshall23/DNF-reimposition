@@ -24,6 +24,6 @@ var() noexport bool bClearAmbientSound "Set to true to force the decoration to c
 
 defaultproperties
 {
-	SoundNormal=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */)
-	SoundAmbient=(bNoScale=false,MixerGroupOverride=None,AmbientSounds=/* Array type was not detected. */)
+	SoundNormal=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=8,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	SoundAmbient=(bNoScale=false,MixerGroupOverride=None,AmbientSounds=none,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,VolumePrefab=6,Volume=0,VolumeVariance=0,Pitch=0,PitchVariance=0,SoundNoOccludeModifier=0,SoundNoDopplerModifier=0)
 }

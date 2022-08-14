@@ -2152,7 +2152,7 @@ function SetDrunkEffect(float NewDrunkLevel, optional bool bTravel, optional boo
 	return;
 }
 
-k2call simulated function FootStep(optional EventInfo AnimEventInfo)
+animevent simulated function FootStep(optional EventInfo AnimEventInfo)
 {
 	super(Pawn).FootStep(AnimEventInfo);
 	// End:0x33
@@ -3336,25 +3336,25 @@ event EnumerateRawAnimationSequences(out array<SAnimationEnumeration> References
 	return;
 }
 
-k2call simulated function BattlelordSpeedbagImpact(optional EventInfo AnimEventInfo)
+animevent simulated function BattlelordSpeedbagImpact(optional EventInfo AnimEventInfo)
 {
 	BoneEffectSpawner(__NFUN_343__(AnimEventInfo.EventString), class'BulletImpact_Dust_Spawner', __NFUN_267__(float(-1), CalcedViewRotation));
 	return;
 }
 
-k2call simulated function DustImpactEffect(optional EventInfo AnimEventInfo)
+animevent simulated function DustImpactEffect(optional EventInfo AnimEventInfo)
 {
 	BoneEffectSpawner(__NFUN_343__(AnimEventInfo.EventString), class'BulletImpact_Dust_Spawner', __NFUN_265__(16384, 0, 0), true);
 	return;
 }
 
-k2call simulated function GrassImpactEffect(optional EventInfo AnimEventInfo)
+animevent simulated function GrassImpactEffect(optional EventInfo AnimEventInfo)
 {
 	BoneEffectSpawner(__NFUN_343__(AnimEventInfo.EventString), class'BulletImpact_Grass_Spawner', __NFUN_265__(16384, 0, 0), true);
 	return;
 }
 
-k2call simulated function GroundImpactEffect(optional EventInfo AnimEventInfo)
+animevent simulated function GroundImpactEffect(optional EventInfo AnimEventInfo)
 {
 	BoneEffectSpawner(__NFUN_343__(AnimEventInfo.EventString), class'StompImpact_Large_Brown_Spawner',, true);
 	return;
@@ -5035,7 +5035,7 @@ simulated function StartKick(optional bool bFromDoor)
 // Export UDukePlayer::execTickKick(FFrame&, void* const)
 native simulated function TickKick();
 
-k2call simulated function KickDamage(optional EventInfo AnimEventInfo)
+animevent simulated function KickDamage(optional EventInfo AnimEventInfo)
 {
 	local DoorMoverEx KickedDoor;
 	local Weapon KickWeapon;
@@ -5140,7 +5140,7 @@ simulated function ClientStomp()
 	return;
 }
 
-k2call simulated function Stomp(optional EventInfo AnimEventInfo)
+animevent simulated function Stomp(optional EventInfo AnimEventInfo)
 {
 	// End:0x21
 	if(__NFUN_150__(__NFUN_145__(IsMP()), __NFUN_173__(int(Role), int(ROLE_Authority))))
@@ -5306,12 +5306,140 @@ defaultproperties
 	JetpackingAnimationController='dnAnimationControllerEx_Duke_Jetpacking'
 	InteractiveDecorationAnimationController='dnAnimationControllerEx_Duke_Decorations'
 	ChatBeepSound='a_inventory.SOS.SOSVisOn'
-	SteroidsLoop=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=Special,SimpleSingleSound='a_inventory.Steroids.SteroidsEffect01',Sounds=/* Array type was not detected. */)
+	SteroidsLoop=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=Special,SimpleSingleSound='a_inventory.Steroids.SteroidsEffect01',Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=(19),Volume=1,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=true,bNoOcclude=true,bNoAIHear=true,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=true,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=1,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
 	CrackedScreenStretch=0.1
 	CrackedScreenMaterial='dt_masking.Glass_Materials.brokenglassDeath_fb'
 	RestartLevelText="<?int?dnGame.DukePlayer.RestartLevelText?>"
 	LoadLastCheckpointText="<?int?dnGame.DukePlayer.LoadLastCheckpointText?>"
 	DemoDeathMessageBG='dt_hud.ingame_hud.hintbox_75'
 	JetpackMax=0.7
-	HitNotifySounds(0)=(BlendTotalTime=/* Unknown default property type! */)
+	HitNotifySounds(0)=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('a_generic.GameInterfaces.InGameBlip28'),SlotPriority=0,VolumePrefab=0,Slots=none,Volume=1,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MyClassName="Basic Player"
+	StompLookAtTime=0.15
+	StompMinDot=0.85
+	StompKnockbackRadius=64
+	StompKnockbackImpulse=75
+	StompKnockbackLift=250
+	ZoomWalkScalar=0.5
+	NoWeaponWalkScalar=0.6
+	SteroidWalkScalar=1.2
+	bWearsShades=true
+	QARate=1000
+	QALastCheckpoint="levelstart"
+	MovementRustleSoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('dnsMaterials.Generic.Step_Rustle_01','dnsMaterials.Generic.Step_Rustle_02','dnsMaterials.Generic.Step_Rustle_03','dnsMaterials.Generic.Step_Rustle_04'),SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0.25,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=true,bNoScale=true,bSpoken=false,bPlayThroughListener=false,bNoDoppler=true,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=true,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	LandingRustleSoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('dnsMaterials.Generic.Land_Rustle_01','dnsMaterials.Generic.Land_Rustle_02'),SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0.35,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=true,bNoScale=true,bSpoken=false,bPlayThroughListener=false,bNoDoppler=true,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=true,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	KnockdownMinDamage=70
+	EgoCapAwardsEnabled=true
+	EgoCapAwards(0)=1
+	EgoCapAwards(1)=1
+	EgoCapAwards(2)=2
+	EgoCapAwards(3)=1
+	EgoCapAwards(4)=2
+	EgoCapAwards(5)=3
+	EgoCapAwards(6)=1
+	EgoCapAwards(7)=1
+	EgoCapAwards(8)=2
+	EgoCapAwards(9)=3
+	EgoCapAwards(10)=2
+	EgoCapAwards(11)=1
+	EgoCapAwards(12)=1
+	EgoCapAwards(13)=1
+	EgoCapAwards(14)=1
+	EgoCapAwards(15)=1
+	EgoCapAwards(16)=1
+	EgoCapAwards(17)=1
+	EgoCapAwards(18)=1
+	EgoCapAwards(19)=1
+	EgoCapAwards(20)=1
+	EgoCapAwards(21)=1
+	EgoCapAwards(22)=2
+	EgoCapAwards(23)=2
+	EgoCapAwards(24)=1
+	EgoCapAwards(25)=1
+	EgoCapAwards(26)=2
+	EgoCapAwards(27)=3
+	EgoCapAwards(28)=4
+	EgoCapAwards(29)=1
+	EgoCapAwards(30)=2
+	EgoCapAwards(31)=1
+	EgoCapAwards(32)=4
+	EgoCapAwards(33)=3
+	EgoCapAwards(34)=4
+	SteroidsHintMessage="<?int?dnGame.DukePlayer.SteroidsHintMessage?>"
+	BeerHintMessage="<?int?dnGame.DukePlayer.BeerHintMessage?>"
+	HolodukeHintMessage="<?int?dnGame.DukePlayer.HolodukeHintMessage?>"
+	InfiniteAmmoHintMessage="<?int?dnGame.DukePlayer.InfiniteAmmoHintMessage?>"
+	HoloDukeClass='HoloDuke'
+	MightyFootClass='MightyFoot'
+	MaxEgoCap=100
+	PreorderBonusEgo=5
+	PreviousPostureStateEx=2
+	AirControlEx=0.35
+	WaterSplatterClass='dnScreenSplatter_Water'
+	TinnitusLoopSoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=Special,SimpleSingleSound=none,Sounds=('a_ambient.ShellShock.ShellShock01'),SlotPriority=0,VolumePrefab=0,Slots=(3),Volume=1,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=true,bMenuSound=false,bNoFilter=true,bNoOcclude=true,bNoAIHear=true,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=true,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=1,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	TinnitusEndSoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=Special,SimpleSingleSound=none,Sounds=('a_ambient.ShellShock.ShellShockEnd01'),SlotPriority=0,VolumePrefab=0,Slots=none,Volume=1,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=true,bMenuSound=false,bNoFilter=true,bNoOcclude=true,bNoAIHear=true,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=true,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=1,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	DrunkRingingSound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('a_ambient.Ringing.Ringing_Ears01'),SlotPriority=0,VolumePrefab=6,Slots=(17),Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=true,bNoOcclude=true,bNoAIHear=true,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	TargetJumpSpeedEx=280
+	JumpSpeedEx=280
+	ShrunkenJumpSpeedEx=80
+	LoadScreenAmbience=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('a_menu.Menu.Menu_Loading_01','a_menu.Menu.Menu_Loading_02'),SlotPriority=0,VolumePrefab=0,Slots=(25),Volume=1,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=1,PitchVariance=0,Flags=(bNoOverride=true,bMenuSound=true,bNoFilter=true,bNoOcclude=true,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=true,bSkipSoundRadiusTest=true,bIgnoreTimeDilation=true),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=1,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	NavigateSoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('a_menu.Menu.Menu_QuitYes_01_ST'),SlotPriority=0,VolumePrefab=0,Slots=(0),Volume=0.5,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=true,bMenuSound=true,bNoFilter=true,bNoOcclude=true,bNoAIHear=true,bNoScale=true,bSpoken=false,bPlayThroughListener=false,bNoDoppler=true,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=true,bSkipSoundRadiusTest=true,bIgnoreTimeDilation=true),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=1,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	bCanStrafe=true
+	bUseHealthRecovery=true
+	bIsHuman=true
+	bPerformLipSync=true
+	PostureStateEx=2
+	Team=0
+	FieldOfView=-1
+	PawnRotationRate=(Pitch=8741,Yaw=572915712,Roll=0)
+	Ego=40
+	EgoCap=40
+	EyeBone=mount_camera
+	BodyBone=Spine
+	LockOnBone=Spine
+	TargetCollisionRadius=21
+	TargetCollisionHeight=45
+	TargetMaxStepHeightEx=20.08
+	CrouchingCollisionHeight=23.5
+	CrouchingMaxStepHeightEx=20.08
+	HealthRecoveryWaitForRechargeTime=0.5
+	HealthRecoveryRate=9
+	HealthDangerDeafenFactor=1
+	HealthDangerEffectRampTime=0.5
+	HealthDangerMotionBlurFactor=0.3
+	HealthDangerBlurFactor=0.5
+	HealthDangerBlurBrightnessFactor=1.1
+	HealthDangerBloomFactor=1.1
+	EgoRecoveryWaitForRechargeTime=5
+	EgoRecoveryRate=30
+	CorpseType='DukePlayerCorpse'
+	PissEffectClass='dnParticles.dnPissFX_Male'
+	MaxStepHeightEx=20.08
+	AirSpeed=320
+	WalkSpeedScale=0.65
+	AirControl=0.35
+	LandedVelocityThreshold=-200
+	FootstepTraceLength=40
+	LipSyncInfoClass='Engine.LipSyncInfo_Duke'
+	ExitWoundInfo(0)=(DamageType=none,MinimumDamage=1,RandomChance=0.5,ExitWoundDecalClass='dnExitWound_Human')
+	AutoRegisterIKClasses(0)='IKSystemInfo_DukeLeftArm'
+	AutoRegisterIKClasses(1)='IKSystemInfo_DukeRightArm'
+	HealthCap=45
+	bTakeExplosionDamageMomentum=false
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Body'
+	KRestitution=0
+	KImpactThreshold=0
+	bLowerByCollision=true
+	bAnimEarlyEnd=true
+	bNeedsScriptActorColor=true
+	SpecialCollisionTag=DukePlayerCollisionTag
+	CollisionHeight=45
+	AccelRate=2048
+	DrawType=2
+	PrePivot=(X=1.292418E-41,Y=2.954562E-17,Z=0)
+	Mesh='c_characters.Duke'
+	ActorColorList(0)=(ActorColor=(B=121,G=2,R=1,A=115),G=20,B=20,A=0)
+	ActorColorList(1)=(ActorColor_LightEx=none,ActorColor_LightExScale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	TransientSoundVolume=0.8
+	VoicePack='SoundConfig.Players.VoicePack_Duke'
 }

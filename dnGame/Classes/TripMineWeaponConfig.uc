@@ -15,6 +15,12 @@ defaultproperties
 	ProjectileClass='LaserMine_Thrown'
 	bFireProjFromMuzzle=false
 	bSkipProjectileFindSpot=true
-	RumbleKicks=/* Array type was not detected. */
-	MuzzleInfo=/* Array type was not detected. */
+	RumbleKicks(0)=(RumbleName=TripMine_Rumble,RumbleDuration=0.25,RumbleLeftMagnitude=0.2,RumbleRightMagnitude=0.5,FalloffActor=none,FalloffDistance=0)
+	MuzzleInfo(0)=(MuzzleFireStartAnim=FireStart,MuzzleFireAnim=Fire,MuzzleFireStopAnim=FireStop,MuzzleFlashClass=none,MuzzleBoneName=Root,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MeleeDamageType='MeleeDamage'
+	bMeleeInterruptFiring=false
+	AmmoWarnPCT=0.25
+	WeaponHeatAttackRate=0.5
+	WeaponHeatDecayRate=0.125
+	WeaponAnimName=TripMine
 }

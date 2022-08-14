@@ -10,5 +10,5 @@ class Settings_FoodService_SodaDispenser_SpazCola extends Settings_FoodService_S
 
 defaultproperties
 {
-	Skins=/* Array type was not detected. */
+	Skins(0)='smt_skins8.SodaFountain.sodaftn_spaz_bs'
 }

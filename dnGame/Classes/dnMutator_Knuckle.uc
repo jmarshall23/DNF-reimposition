@@ -141,12 +141,9 @@ function MutatorTakeDamage(out float ActualDamage, Pawn Victim, Pawn InstigatedB
 
 defaultproperties
 {
-	IG_Inventory(0)=class'User'
-	IG_Inventory(1)=class'MP_MightyFoot_PrimaryWeapon'
-	IG_Inventory(2)=class'Upgrade_ZoomMode'
-	IG_Inventory(3)=class'dnCaptureTheBabe_BabeRevolver'
-	IG_Inventory(4)=class'BeginState'
-	IG_Inventory(5)=class'DukeHUD'
-	IG_Inventory(6)=class'MP_PipeBombPickup'
-	mp_a_noweapon_stand_moveback_grid3d=/* Unknown default property type! */
+	IG_Inventory(0)='MP_MightyFoot_PrimaryWeapon'
+	IG_Inventory(1)='Upgrade_ZoomMode'
+	IG_Inventory(2)='dnCaptureTheBabe_BabeRevolver'
+	WeaponReplacementForPipebomb='MP_PipeBombPickup'
+	MutatorName="<?int?dnGame.dnMutator_Knuckle.MutatorName?>"
 }

@@ -9,5 +9,5 @@ class SilverHandle_PushPlate extends DoorHandle_PushPlate;
 
 defaultproperties
 {
-	Skins=/* Array type was not detected. */
+	Skins(0)='dt_Doors.Handles.doorhandleplatesilver_bs'
 }

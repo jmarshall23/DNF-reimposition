@@ -17,7 +17,5 @@ defaultproperties
 	AlphaMidPercent=0.25
 	BeamTexture='dt_Effects2.Smoke.SkokeLine_BeamTrail'
 	BeamTextureRotate=90
-	ActorColorList=/* Array type was not detected. */
-	Y=0
-	Z=0
+	ActorColorList(0)=(ActorColor=(B=121,G=2,R=1,A=255),G=255,B=255,A=255)
 }

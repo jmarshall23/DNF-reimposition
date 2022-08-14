@@ -21,5 +21,14 @@ defaultproperties
 	DamageRadius=1024
 	DamageClass='NukeDamage'
 	ShakeScalar=10
-	ShakeInfo=/* Array type was not detected. */
+	ShakeInfo(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=1.8,ShakeFrequency=0.05,ShakeMagnitude=1200,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=dnRocket_Nuke_Shake)
+	AvoidRange=2000
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass=none,SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	SpawnOnDestroyedSimple(0)='dnNukeExplosion'
+	DrawType=8
+	StaticMesh='sm_class_dukeitems.rpg_Nuke.rpg_Nuke'
+	Skins(0)='mt_skins4.RPG.rpgnukebc_bs'
+	SoundPitch=32
+	VoicePack='SoundConfig.Inventory.VoicePack_Nuke'
 }

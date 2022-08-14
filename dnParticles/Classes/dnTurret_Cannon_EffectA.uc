@@ -15,5 +15,21 @@ defaultproperties
 	DestroyWhenEmpty=false
 	DestroyWhenEmptyAfterSpawn=true
 	SpawnAtRadius=true
-	AdditionalSpawn=/* Array type was not detected. */
+	AdditionalSpawn(0)=(SpawnClass=none,TakeParentTag=false,Mount=false,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	AdditionalSpawn(1)=(MountAngles=(Pitch=8719,Yaw=571539456,Roll=0),Roll=0)
+	AdditionalSpawn(2)=(MountType=0,AppendToTag=None,SpawnRotation=(Pitch=8719,Yaw=571539456,Roll=0),Roll=0)
+	AdditionalSpawn(3)=(SpawnRotationVariance=(Pitch=8719,Yaw=571539456,Roll=0),Roll=0)
+	PrimeCount=2
+	SpawnPeriod=0.1
+	InitialVelocity=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	MaxVelocityVariance=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	Textures(0)='dt_effects.explosions.Sals_032'
+	StartDrawScale=1E-06
+	EndDrawScale=2
+	RotationVariance=65535
+	PulseSeconds=0.25
+	CollisionRadius=1
+	CollisionHeight=1
+	Style=3
+	TimeWarp=0.5
 }

@@ -17,6 +17,34 @@ event KImpact(name SelfBoneName, KarmaActor Other, name OtherBoneName, Vector Po
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	MountParentTag=/* Unknown default property type! */
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_ConcreteBlock_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=ConcreteBlock_Destruct
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Generic_ConcreteBlock_A.DA_Sound_ConcreteBlock_Destroyed'
+	DestroyedActivities(1)=DA_Sound_ConcreteBlock_Destroyed
+	DamageThreshold=15
+	bGrabbable=true
+	UsePhrase="<?int?dnDecorations.Industrial_Generic_ConcreteBlock_A.UsePhrase?>"
+	GrabInfo=(bCanDuckWhileHeld=true,MountItemOverride=mount_handright,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(0)=(SpawnClass='Industrial_Generic_Gibs_ConcreteBlock_A_GibA',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.813462E-17,Z=-11),Z=0)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bCanBreakGlass=true
+	bIgnorePawnDownwardForce=true
+	bCanCrushOthers=false
+	bTickOnlyWhenPhysicsAwake=true
+	DynamicInteractionClassification=7
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Stone'
+	PhysicsMassType=1
+	KImpactThreshold=1000000
+	FixedPhysicsDamageToNotPlayer=100
+	FixedPhysicsDamageToPlayer=30
+	Physics=18
+	CollisionRadius=14
+	CollisionHeight=6
+	Mass=35
+	StaticMesh='sm_class_decorations.concrete.ConcreteBLK'
 }

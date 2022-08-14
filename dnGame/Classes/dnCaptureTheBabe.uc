@@ -135,14 +135,15 @@ defaultproperties
 	GoalTeamScore=5
 	FragLimit=20
 	GameGoal="<?int?dnGame.dnCaptureTheBabe.GameGoal?>"
-	MinDefaultInventory(0)=class'PlayerProgress'
-	MinDefaultInventory(1)=class'MP_MightyFoot'
-	MinDefaultInventory(2)=class'MP_Pistol'
-	MinDefaultInventory(3)=class'Upgrade_ZoomMode'
-	MinDefaultInventory(4)=class'dnCaptureTheBabe_BabeRevolver'
-	MinDefaultInventory(5)=class'LastFrameEgoCap'
-	MinDefaultInventory(6)=class'DukeMultiPlayer'
-	MinDefaultInventory(7)=class'C'
-	MinDefaultInventory(8)=class'Crosshair'
-	a_coinop_standact_coin=IntProperty'DukeChangeroomPlayer.ParseUnlocks.numShirtLogosLocked'
+	MinDefaultInventory(0)='MP_MightyFoot'
+	MinDefaultInventory(1)='MP_Pistol'
+	MinDefaultInventory(2)='Upgrade_ZoomMode'
+	MinDefaultInventory(3)='dnCaptureTheBabe_BabeRevolver'
+	GameType=2
+	HUDType='dnCTBHUD'
+	MapPrefix=""
+	BeaconName=""
+	GameName="<?int?dnGame.dnCaptureTheBabe.GameName?>"
+	ShortGameName="<?int?dnGame.dnCaptureTheBabe.ShortGameName?>"
+	OverridePlayerClass='dnCaptureTheBabe_Player'
 }

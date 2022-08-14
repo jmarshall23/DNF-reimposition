@@ -11,6 +11,41 @@ class Containers_Crates_Destructible extends Containers_Crates
 defaultproperties
 {
 	bAutoNavDoor_AutoToggle=true
-	DestroyedActivities=/* Array type was not detected. */
-	IKSystemInfo_Shotgun=/* Unknown default property type! */
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_DestructibleCrate_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=Destruct_Wood
+	object end
+	// Reference: DecoActivities_Sound'Containers_Crates_Destructible.DA_Sound_DestructibleCrate_Destroyed'
+	DestroyedActivities(1)=DA_Sound_DestructibleCrate_Destroyed
+	DestroyActionPointRadius=45
+	HealthPrefab=5
+	DamageTypesInstaKill(0)='Engine.ExplosionDamage'
+	DamageTypesInstaKill(1)='dnGame.RocketDamage'
+	DamageIgnoreRules(0)=(QualifierInstigatorType='Engine.BaseAI',QualifierNetMode=0,MinDistanceFromLocalPlayer=0,MaxDistanceFromLocalPlayer=250)
+	Health=40
+	HealthCap=40
+	SpawnOnDestroyed(0)=(SpawnClass='Containers_Crates_Destructible_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=1,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=true,Offset=(X=-3.368329E-11,Y=2.802806E-17,Z=-13.285),Z=11.777)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(1)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	begin object name=MP_DestructibleCrate_Gibs class=MotionPrefab
+		VelocityRelativeType=3
+		Velocity=(X=1.291717E-41,Y=2.802941E-17,Z=0)
+		VelocityVariance=(X=1.291717E-41,Y=2.802941E-17,Z=0)
+	object end
+	// Reference: MotionPrefab'Containers_Crates_Destructible.MP_DestructibleCrate_Gibs'
+	DefaultMotionPrefab=MP_DestructibleCrate_Gibs
+	bCanCrushOthers=false
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Hollow'
+	PhysicsMassType=2
+	PhysicsEntityGroup=DestructibleCrate
+	bAITransparent=true
+	bStepUpAble=false
+	bAutoNavDoor=true
+	CollisionRadius=25
+	CollisionHeight=25
+	StaticMesh='sm_class_decorations.Crate.Wooden_Crate_Breakable'
 }

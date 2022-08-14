@@ -11,11 +11,5 @@ class DA_Sound_Ambient_ElectricHum extends DecoActivities_Sound
 
 defaultproperties
 {
-	SoundAmbient=bNoScale=false,MixerGroupOverride=None,AmbientSounds=/* Array type was not detected. */,
-/* Exception thrown while deserializing SoundAmbient
-System.ArgumentOutOfRangeException: Non-negative number required.
-Parameter name: value
-   at System.IO.MemoryStream.set_Position(Int64 value)
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 184
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
+	SoundAmbient=(bNoScale=false,MixerGroupOverride=None,AmbientSounds=('a_ambient.Machine.ElecBox01'),InnerRadius=192,InnerRadiusVariance=0,Radius=384,RadiusVariance=0,VolumePrefab=6,Volume=0,VolumeVariance=0,Pitch=64,PitchVariance=24,SoundNoOccludeModifier=0,SoundNoDopplerModifier=0)
 }

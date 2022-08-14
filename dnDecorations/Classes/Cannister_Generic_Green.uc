@@ -212,6 +212,17 @@ defaultproperties
 	ThrustDecay=1
 	ImpactThreshold=1000
 	ImpactAngleThresh=0.2
-	DestroyedActivities=/* Array type was not detected. */
-	lazerflashfx2RC=MountAngles
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Cannister_Green_Explode class=DecoActivities_Sound
+		SoundNames(0)=Barrel_Explode
+	object end
+	// Reference: DecoActivities_Sound'Cannister_Generic_Green.DA_Sound_Cannister_Green_Explode'
+	DestroyedActivities(1)=DA_Sound_Cannister_Green_Explode
+	DamageThreshold=1
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Cannister_Generic_Green_Tip',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=true,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=34.5),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyedSimple(0)='dnGame.dnExplosionLight_Barrel'
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	KImpactThreshold=100
+	CollisionHeight=34
+	StaticMesh='sm_class_decorations.Gas_Cannisters.Gas_Cannister_Green'
 }

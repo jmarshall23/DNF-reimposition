@@ -314,5 +314,11 @@ defaultproperties
 	PickupClass='RPGPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=3
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_RPG'
+	Mesh='c_dnWeapon.RPG'
+	SoundVolume=200
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_RPG'
 }

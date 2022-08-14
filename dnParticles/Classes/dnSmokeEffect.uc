@@ -27,7 +27,11 @@ defaultproperties
 	MaxVelocityVariance=(X=1.291857E-41,Y=2.80279E-17,Z=16)
 	AlphaStart=0.5
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Smoke.gensmoke1aRC'
+	Textures(1)='dt_effects.Smoke.gensmoke1bRC'
+	Textures(2)='dt_effects.Smoke.gensmoke1cRC'
+	Textures(3)='dt_effects.Smoke.gensmoke1dRC'
+	StartDrawScale=0.05
 	EndDrawScale=0.2
 	DrawScaleVariance=0.1
 	RotationVariance=32768

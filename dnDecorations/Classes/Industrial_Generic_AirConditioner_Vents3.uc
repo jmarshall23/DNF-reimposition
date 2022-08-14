@@ -10,5 +10,32 @@ class Industrial_Generic_AirConditioner_Vents3 extends Industrial_Generic
 
 defaultproperties
 {
-	StartupActivities=/* Array type was not detected. */
+	begin object name=DA_Sound_Industrial_Generic_AirConditioner_Vents3_Amb class=DecoActivities_Sound
+		SoundNames(0)=CylindricalVent3
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Generic_AirConditioner_Vents3.DA_Sound_Industrial_Generic_AirConditioner_Vents3_Amb'
+	StartupActivities(0)=DA_Sound_Industrial_Generic_AirConditioner_Vents3_Amb
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Industrial_Generic_AirConditioner_Vents3_Brkn class=DecoActivities_Sound
+		SoundNames(0)=IndMetal_Destruct
+		bClearAmbientSound=true
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Generic_AirConditioner_Vents3.DA_Sound_Industrial_Generic_AirConditioner_Vents3_Brkn'
+	DestroyedActivities(1)=DA_Sound_Industrial_Generic_AirConditioner_Vents3_Brkn
+	begin object name=DA_Display_AC_Vents3_Brkn class=DecoActivities_Display
+		RenderObject='sm_geo_decorations.AirConditioners.CylindricalVents3LO_brkn'
+	object end
+	// Reference: DecoActivities_Display'Industrial_Generic_AirConditioner_Vents3.DA_Display_AC_Vents3_Brkn'
+	DestroyedActivities(2)=DA_Display_AC_Vents3_Brkn
+	HealthPrefab=5
+	Health=50
+	SpawnOnDestroyed(0)=(SpawnClass='Industrial_Generic_AirConditioner_Vents3_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.797242E-17,Z=1),Z=-6)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	PhysicsEntityGroup=Vents3
+	CollisionRadius=16
+	CollisionHeight=18
+	StaticMesh='sm_geo_decorations.AirConditioners.CylindricalVents3LO'
 }

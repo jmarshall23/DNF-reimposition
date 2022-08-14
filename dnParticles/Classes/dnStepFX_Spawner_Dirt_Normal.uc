@@ -11,11 +11,5 @@ class dnStepFX_Spawner_Dirt_Normal extends dnStepFX_Spawners
 
 defaultproperties
 {
-	NamedFriends=/* Array type was not detected. */
-	bMatchRotation=false
-	bMatchScale=false
-	bRelativeVelocity=false
-	bRelativeAcceleration=false
-	bInheritVelocity=false
-	bInheritAcceleration=false
+	NamedFriends(0)=(FriendData=(FriendStyle=0,FriendInfos=((RequestingParticleInfo=(bMatchLocation=false,bMatchRotation=false,bMatchScale=false,bRelativeVelocity=false,bRelativeAcceleration=false,bInheritVelocity=false,bInheritAcceleration=false),VolumeResponse=0,bFireAndForget=true,SpawnChance=0,SpawnCount=2,SpawnCountVariance=1,FriendClass='dnStepFX_Effect_Dirt_Haze_Normal',FriendDelay=0,FriendDuration=0,bUseParticleTime=false,FriendActor=none)),FriendIndex=0,bDisabled=false,FriendDuration=0,FriendDelay=0),FriendName=SysTriggeredFriend)
 }

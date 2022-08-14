@@ -61,8 +61,8 @@ var Rotator rServerViewAngles;
 var Rotator rTargetDeathBoneRotation;
 var float fTimeSinceDeath;
 var float fTimeSinceBirth;
-var name IdleWallAnim;
-var name IdleCeilingAnim;
+var anim name IdleWallAnim;
+var anim name IdleCeilingAnim;
 var bool bNetTransmitRotation;
 var int iNetTransmitTicks;
 var int iNetTransmitTicksRemaining;
@@ -752,6 +752,22 @@ defaultproperties
 	CameraFOVs[2]=0.33
 	bActivated=true
 	ViewBoneName=bone_lens
-	SpawnOnDestroyedSimple=/* Array type was not detected. */
-	ACH_MaxEgoAchievedDLC03=true
+	SpawnOnDestroyedSimple(0)='dnParticles.dnSparkFX_BreakingLight_Flash_Down'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnExplosion3_SElec_Fire'
+	bBlockKarma=true
+	bHasEvalBonesHelper=true
+	bDumbMesh=false
+	bAlwaysRelevant=true
+	bForceTagEventRep=true
+	bDirectional=true
+	bCollideWorld=false
+	CollisionRadius=15
+	CollisionHeight=12
+	Mesh='c_generic.Sec_CameraA'
+	SoundVolume=255
+	SoundRadius=400
+	SoundInnerRadius=200
+	TransientSoundVolume=1
+	TransientSoundRadius=400
+	TransientSoundInnerRadius=200
 }

@@ -56,5 +56,25 @@ defaultproperties
 	Damage=40
 	DamageRadius=100
 	ShakeScalar=50
-	ShakeInfo=/* Array type was not detected. */
+	ShakeInfo(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.5,ShakeFrequency=0.05,ShakeMagnitude=400,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=dnRocket_RPG_Shake)
+	WaterScaler=0.6
+	ExplosionDecal='dnParticles.dnDecal_BlastMarkBlack'
+	ExplosionClass='p_Weapons.EnforcerRocket_Explode.EnforcerRocket_Explode_Spawner'
+	ExplosionLight='dnExplosionLight_RPG_HeatSeek'
+	ExplosionSoundName=ProjectileExplode
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='RPG_HeatSeek_TrailBeam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.965335E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=0,DismountPhysics=0)
+	KRestitution=0.75
+	KAngularDamping=3
+	PhysicsEntityGroup=CycloidEntityGroup
+	bDumbMesh=false
+	DrawType=8
+	StaticMesh='sm_class_dukeitems.rpg_rocket.rpg_rocket'
+	LifeSpan=0
+	SoundVolume=128
+	SoundRadius=1600
+	SoundInnerRadius=800
+	AmbientSound='dnsweapn.RPG.RPG_Projectile_Ambient01_LP'
 }

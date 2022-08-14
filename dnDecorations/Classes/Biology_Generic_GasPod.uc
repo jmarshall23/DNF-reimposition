@@ -25,7 +25,7 @@ var float IdleCollisionRadius;
 var float IdleCollisionHeight;
 var float ExpandCollisionRadius;
 var float ExpandCollisionHeight;
-var bool bBroken;
+var netupdate(NU_Broken) bool bBroken;
 var bool bPostNetInit;
 
 replication
@@ -363,5 +363,45 @@ defaultproperties
 	IdleCollisionHeight=48
 	ExpandCollisionRadius=66
 	ExpandCollisionHeight=66
-	AnimTriggers=/* Array type was not detected. */
+	AnimTriggers(0)=(AnimEvent=None,AnimFunction=None,AnimActivities=(Popped),TestAnims=(gp_a_explode_grid3d),TestChannels=none)
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(Prime),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Biology_Generic_GasPod.DA_Sound_Biology_Generic_GasPod_Prime'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(UnPrime),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Biology_Generic_GasPod.DA_Sound_Biology_Generic_GasPod_UnPrime','dnGame.DecoActivityDeclarations.DA_Sound_Ambient_Clear'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(ForcePop),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_HealthChange'Biology_Generic_GasPod.DA_HealthChange_Biology_Generic_GasPod_Pop','dnGame.DecoActivityDeclarations.DA_Ticking_TICK_NoRules'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(3)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(Pop),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Biology_Generic_GasPod.DA_Anim_Bilogy_Generic_GasPod_Pop',DecoActivities_Interaction'Barrels_Generic_Explosive01_NoGibs.DA_Interact_Barrel_Explosive_SetAvoidRange',DecoActivities_Collision'Biology_Generic_GasPod.DA_Collide_Biology_Generic_GasPod_Pop','dnGame.DecoActivityDeclarations.DA_Ticking_TICK_NoRules'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(4)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(Popped),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Display'Biology_Generic_GasPod.DA_Display_Biology_Generic_GasPod_Pop',DecoActivities_Sound'Biology_Generic_GasPod.DA_Sound_Biology_Generic_GasPod_Pop',DecoActivities_Events'Biology_Generic_GasPod.DA_RadiusDamage_Biology_Generic_GasPod_Pop','dnGame.DecoActivityDeclarations.DA_Sound_Ambient_Clear','dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Disable','dnGame.DecoActivityDeclarations.DA_HUD_UsePhrase_NULL','dnGame.DecoActivityDeclarations.DA_Ticking_TICK_Never'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	begin object name=DA_Anim_Bilogy_Generic_GasPod_Idle class=DecoActivities_Animation
+		AnimActivities(0)=(Flags=(bLoop=true,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=gp_a_idle_grid3d,Channel=0,Rate=0,TweenTime=0)
+	object end
+	// Reference: DecoActivities_Animation'Biology_Generic_GasPod.DA_Anim_Bilogy_Generic_GasPod_Idle'
+	StartupActivities(0)=DA_Anim_Bilogy_Generic_GasPod_Idle
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=none
+	HealthPrefab=1
+	DamageThreshold=1
+	bEnemy=true
+	bIgnoreAimAssist=true
+	bForceUsePhrase=true
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Biology_Generic_AlienSensor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bIgnoresPhysicsDamage=true
+	KRestitution=0.5
+	KImpactThreshold=0
+	bCollisionAssumeValid=false
+	bHasEvalBonesHelper=true
+	bNoNativeTick=false
+	bDumbMesh=false
+	bAcceptMinesInMultiplayer=false
+	bAcceptMines=false
+	bAlwaysRelevant=true
+	CollisionRadius=20
+	CollisionHeight=20
+	TouchClasses(0)='Engine.Pawn'
+	TouchClasses(1)='dnGame.VehicleBase'
+	VisibleCollidingCenterOffset=(X=1.291717E-41,Y=2.797242E-17,Z=0)
+	TickStyle=2
+	DrawType=2
+	Mesh='c_characters.ExplodingSack'
+	ActorColorList(0)=(ActorColor=(B=76,G=3,R=1,A=84),G=53,B=91,A=255)
+	ScaleModifierGroupList(0)=(Modifiers=none,Identifier=Expansion,DefaultModValue=0,LastValue=0,NoUpdate=false)
 }

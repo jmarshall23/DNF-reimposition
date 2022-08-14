@@ -10,6 +10,12 @@ class IKSystemInfo_DukeRightArm extends IKSystemInfo_InteractiveDecoration
 
 defaultproperties
 {
-	IKHierarchy=/* Array type was not detected. */
-	mp_a_freezeray_stand_moveback_grid3d[13]=/* Unknown default property type! */
+	IKHierarchy(0)=(BoneName="rightarm",ConstrainY=170,ConstrainZ=170,ConstrainZPitch=0,ConstrainX=170)
+	IKHierarchy(1)=(BoneName="rightforearm",ConstrainY=70,ConstrainZ=160,ConstrainZPitch=0,ConstrainX=10)
+	IKHierarchy(2)=(BoneName="righthand",ConstrainY=30,ConstrainZ=160,ConstrainZPitch=0,ConstrainX=28)
+	LimbID=RightArm
+	IKEvents(0)=(EventType=1,EventName="IK_Detach_Right",EventData="")
+	IKEvents(1)=(EventType=0,EventName="IK_Attach_Right",EventData="mount_ik_hand_r")
+	IKEvents(2)=(EventType=0,EventName="IK_Attach_Right_Pigcop",EventData="mount_carryitem")
+	IKEvents(3)=(EventType=0,EventName="IK_Attach_Right_Self",EventData="mount_holster_hip_right")
 }

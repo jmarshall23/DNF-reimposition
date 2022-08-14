@@ -35,7 +35,7 @@ var bool bLinkComplete;
 var SMountedActorPrefab ShieldMountPrefab;
 var int UpwardsViewBoost;
 var array<Actor> HurtRadiusIgnoreActors;
-var bool bArmed;
+var netupdate(NU_bArmedChange) bool bArmed;
 var LaserMineBeam LaserBeam;
 var float jumpPadGravityScalar;
 var float ForceArmTimer;
@@ -768,6 +768,45 @@ defaultproperties
 	DamageRadius=100
 	DamageClass='LaserMineDamage'
 	ShakeScalar=2.25
-	ShakeInfo=/* Array type was not detected. */
-	OverrideSurvivalChance=(EndingBlendAlpha=/* Unknown default property type! */)
+	ShakeInfo(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.55,ShakeFrequency=0.05,ShakeMagnitude=800,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=LaserMine_Shake)
+	RumbleInfo(0)=(RumbleName=LaserMine_Rumble,RumbleDuration=0.5,RumbleLeftMagnitude=0.8,RumbleRightMagnitude=0,FalloffActor=none,FalloffDistance=0)
+	ExplosionClass='p_Weapons.Rpg_Explosion.RPG_Explosion_SpawnerMP'
+	UnderwaterExplosionClass='p_Weapons.RPG_Explosion_Underwater.RPG_Explosion_Underwater_Spawner'
+	ExplosionLight='dnExplosionLight_RPG'
+	ExplosionSoundName=ProjectileExplode
+	bDestroyOnVolumeTouch=true
+	bDrawHUDInfo=true
+	bUsable=true
+	bTelekineticable=false
+	ThrowForce=600
+	EMPDisableTime=5
+	StartAnimSequence=tm_open
+	HealthCap=1
+	KImpactThreshold=50
+	Physics=9
+	bTraceShootable=true
+	bAcceptMeshAccurateMoveActorTrace=true
+	bBlockActors=false
+	bBlockPlayers=false
+	bDebugEvents=true
+	bNoFailMountedMovement=true
+	bAcceptMinesInMultiplayer=false
+	bAcceptMines=false
+	bCastStencilShadows=false
+	bNetTemporary=false
+	bAlwaysRelevant=true
+	bDontSimulateMotion=true
+	bCollideWorld=false
+	CollisionRadius=1
+	CollisionHeight=1
+	TickStyle=0
+	PrePivot=(X=1.292418E-41,Y=2.965293E-17,Z=0)
+	Mesh='c_dnWeapon.TripMine'
+	Skins(0)=none
+	Skins(1)='mt_skins5.TripMine.tripmine2bc_armed'
+	LifeSpan=0
+	SoundVolume=48
+	SoundRadius=400
+	SoundInnerRadius=200
+	VoicePack='SoundConfig.Inventory.VoicePack_TripMine'
 }

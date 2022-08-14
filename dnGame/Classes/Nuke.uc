@@ -115,13 +115,13 @@ simulated function bool IsCountdownComplete()
 	return;
 }
 
-k2call simulated function SwitchRocket()
+animevent simulated function SwitchRocket()
 {
 	NukeArmTime = -1;
 	return;
 }
 
-k2call simulated function TapRocket()
+animevent simulated function TapRocket()
 {
 	NukeArmTime = Level.GameTimeSeconds;
 	return;
@@ -144,7 +144,7 @@ simulated function ResetProjectileMeshes()
 	return;
 }
 
-k2call simulated function Remove_Rocket(optional EventInfo AnimEventInfo)
+animevent simulated function Remove_Rocket(optional EventInfo AnimEventInfo)
 {
 	// End:0x65
 	if(__NFUN_148__(__NFUN_340__(EjectingClip, none), Instigator.bIsPlayerPawn))
@@ -157,7 +157,7 @@ k2call simulated function Remove_Rocket(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function Mount_Nuke_Player(optional EventInfo AnimEventInfo)
+animevent simulated function Mount_Nuke_Player(optional EventInfo AnimEventInfo)
 {
 	// End:0x4E
 	if(__NFUN_148__(__NFUN_340__(EjectingClip, none), Instigator.bIsPlayerPawn))
@@ -177,7 +177,7 @@ k2call simulated function Mount_Nuke_Player(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function Mount_Nuke_Weapon(optional EventInfo AnimEventInfo)
+animevent simulated function Mount_Nuke_Weapon(optional EventInfo AnimEventInfo)
 {
 	// End:0x3E
 	if(__NFUN_340__(InsertingClip, none))
@@ -236,7 +236,7 @@ state PreIdle
 		return;
 	}
 
-	k2call simulated function WeaponCallback_AnimEnd()
+	animevent simulated function WeaponCallback_AnimEnd()
 	{
 		TryState('idle');
 		return;
@@ -300,5 +300,12 @@ defaultproperties
 	PickupClass='NukePickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=5
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_Nuke'
+	bNeedsScriptActorColor=true
+	Mesh='c_dnWeapon.RPG'
+	SoundVolume=200
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_Nuke'
 }

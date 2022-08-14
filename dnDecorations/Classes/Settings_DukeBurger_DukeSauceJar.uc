@@ -231,7 +231,30 @@ defaultproperties
 	object end
 	// Reference: MotionPrefab'Settings_DukeBurger_DukeSauceJar.MP_DukeSauceJar_CapGib'
 	CapMotionInfo=MP_DukeSauceJar_CapGib
-	DestroyedActivities=/* Array type was not detected. */
-	bLeftFlipper=108004609
-	Pitch=/* Unknown default property type! */
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_DukeSauce_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=DukeSauceJar_Break
+	object end
+	// Reference: DecoActivities_Sound'Settings_DukeBurger_DukeSauceJar.DA_Sound_DukeSauce_Destroyed'
+	DestroyedActivities(1)=DA_Sound_DukeSauce_Destroyed
+	HealthPrefab=5
+	DamageThreshold=1
+	Health=1
+	SpawnOnDestroyed(0)=(SpawnClass='Settings_DukeBurger_DukeSauceJar_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=-1.075528E+08,Y=2.802391E-17,Z=0.011),Z=12.4)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DynamicInteractionClassification=7
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Glass'
+	PhysicsMassType=1
+	MinDamageVelocity=80
+	MaxImpactDamage=10
+	FixedPhysicsDamageToNotPlayer=1
+	bAITransparent=true
+	CollisionRadius=10
+	CollisionHeight=15
+	Mass=10
+	PrePivot=(X=1.291717E-41,Y=2.797242E-17,Z=0)
+	StaticMesh='sm_class_decorations.Kitchen.jar_dukesauce'
 }

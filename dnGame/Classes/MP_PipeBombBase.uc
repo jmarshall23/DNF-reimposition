@@ -17,7 +17,7 @@ var Vector ThrowAngVelocity;
 var float ThrowSpinRate;
 var bool bCheatCollision;
 
-k2call simulated function Fire_Effects(optional EventInfo AnimEventInfo)
+animevent simulated function Fire_Effects(optional EventInfo AnimEventInfo)
 {
 	__NFUN_590__(true);
 	super(Weapon).Fire_Effects(AnimEventInfo);

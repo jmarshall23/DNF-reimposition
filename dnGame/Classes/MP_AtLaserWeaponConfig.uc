@@ -17,6 +17,14 @@ defaultproperties
 	TracerBeamChance=1
 	bCheatMuzzleBlockage=true
 	ImpactProjectileClass='MP_dnRocket_ATLaser'
-	ViewKicks=/* Array type was not detected. */
-	RandomSeed=none
+	ViewKicks(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=-1,ShakeFrequency=0.015,ShakeMagnitude=32,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=FreezeRay_ViewKick_0)
+	RumbleKicks(0)=(RumbleName=ATLaser_Rumble,RumbleDuration=0.58,RumbleLeftMagnitude=0.37,RumbleRightMagnitude=0.43,FalloffActor=none,FalloffDistance=0)
+	MuzzleInfo(0)=(MuzzleFireStartAnim=FireStart,MuzzleFireAnim=Fire,MuzzleFireStopAnim=FireStop,MuzzleFlashClass='p_Weapons.ATGun_MuzzleFlash.ATGun_MuzzleFlash_Spawner',MuzzleBoneName=mount_muzzle,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MuzzleLightClass='Weapon_LightEx_AssTroopGrunt'
+	MeleeDamageType='MeleeDamage'
+	bHasLoopingFire=true
+	bHasFireStop=true
+	bForceResetFire=false
+	AmmoWarnPCT=0.14
+	WeaponAnimName=ATLaser
 }

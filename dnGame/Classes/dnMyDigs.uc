@@ -645,14 +645,13 @@ exec function unlockch(string S)
 
 defaultproperties
 {
-	WallpaperTextures(0)=ObjectProperty'DukeMultiPlayer.PlayerProgress'
-	WallpaperTextures(1)='dt_hud.Inventory.mitem_nuke'
-	WallpaperTextures(2)='dt_hud.Inventory.mitem_multibomb'
-	WallpaperTextures(3)='dt_hud.Inventory.mitem_tripmines'
-	WallpaperTextures(4)='dt_hud.Inventory.mitem_nuke'
-	WallpaperTextures(5)=FloatProperty'DukeHUD.LastFrameEgoCap'
-	WallpaperTextures(6)='DukeMultiPlayer'
-	WallpaperTextures(7)=ObjectProperty'dnUsableSomething.PlayerUser'
-	WallpaperTextures(8)=ObjectProperty'dnControl_Turret.Crosshair'
-	H=a_superturret_standact_idle_camnormal
+	WallpaperTextures(0)='dt_hud.Inventory.mitem_nuke'
+	WallpaperTextures(1)='dt_hud.Inventory.mitem_multibomb'
+	WallpaperTextures(2)='dt_hud.Inventory.mitem_tripmines'
+	WallpaperTextures(3)='dt_hud.Inventory.mitem_nuke'
+	GameType=15
+	HUDType='dnDigsHud'
+	GameName="<?int?dnGame.dnMyDigs.GameName?>"
+	bOverridePlayerClass=true
+	OverridePlayerClass='DukeMyDigsPlayer'
 }

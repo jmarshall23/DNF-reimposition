@@ -10,5 +10,5 @@ class Settings_FoodService_SodaDispenser_Water extends Settings_FoodService_Soda
 
 defaultproperties
 {
-	Skins=/* Array type was not detected. */
+	Skins(0)='smt_skins8.SodaFountain.sodaftn_water_bs'
 }

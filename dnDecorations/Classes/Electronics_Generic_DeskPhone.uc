@@ -165,4 +165,31 @@ defaultproperties
 	EndOfMessages=Phone_EndMSG
 	OffTheHook=Phone_OffHook
 	Beep=Phone_Beep
+	AutoConstraints(0)=(bConstraintDisabledOnDeath=true,bConstraintOnDeath=false,BoneName=Root,ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	AutoConstraints(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=none
+	begin object name=DA_Display_Electronics_Generic_DeskPhone_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_decorations.Electronics.deskphone_brkn'
+	object end
+	// Reference: DecoActivities_Display'Electronics_Generic_DeskPhone.DA_Display_Electronics_Generic_DeskPhone_Brkn'
+	DestroyedActivities(2)=DA_Display_Electronics_Generic_DeskPhone_Brkn
+	HealthPrefab=1
+	bForceUsePhrase=true
+	bUsable=true
+	bIgnorePawnDownwardForce=true
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Plastic'
+	PhysicsMassType=1
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaPlastic.Plastic_Obj_01','a_impact.KarmaPlastic.Plastic_Obj_02','a_impact.KarmaPlastic.Plastic_Obj_03','a_impact.KarmaPlastic.Plastic_Obj_04'),SoundInfo=(InputRange=(Min=1,Max=250),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.25,Max=1)),bDisableSoundInWater=false)
+	PhysicsSoundOverrides(1)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaPlastic.MopBucket_Slide_01'),SoundInfo=(InputRange=(Min=4,Max=200),OutputPitchRange=(Min=1.75,Max=2),OutputVolumeRange=(Min=0.25,Max=1)),bDisableSoundInWater=false)
+	PhysicsSoundOverrides(2)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=none,SoundInfo=(InputRange=(Min=0,Max=0),OutputPitchRange=(Min=0,Max=0),OutputVolumeRange=(Min=0,Max=0)),bDisableSoundInWater=false)
+	Physics=18
+	CollisionRadius=7
+	CollisionHeight=3.1
+	Mass=15
+	TickStyle=2
+	DrawType=2
+	Mesh='c_generic.DeskPhone'
 }

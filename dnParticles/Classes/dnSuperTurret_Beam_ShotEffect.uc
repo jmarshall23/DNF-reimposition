@@ -22,11 +22,7 @@ defaultproperties
 	NonFinalBlendBloomTint=(B=85,G=1,R=1,A=255)
 	TickStyle=3
 	Style=6
-	ActorColorList=/* Array type was not detected. */
-	
-/* Exception thrown while deserializing Networking
-System.ArgumentOutOfRangeException: Length cannot be less than zero.
-Parameter name: length
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */
+	ActorColorList(0)=(ActorColor=(B=85,G=1,R=1,A=255),G=255,B=255,A=255)
+	ActorColorList(1)=(ActorColor_LightEx=none,ActorColor_LightExScale=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	RemoteRole=0
 }

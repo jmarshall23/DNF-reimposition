@@ -84,5 +84,5 @@ defaultproperties
 	TickStyle=0
 	DrawType=8
 	StaticMesh='sm_class_decorations.Arcades.Pinball_TrackBlocker'
-	Skins=/* Array type was not detected. */
+	Skins(0)='smt_skins14.Pinball_Blocker.Metal_Red_fb'
 }

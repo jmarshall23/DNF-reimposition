@@ -1,6 +1,6 @@
 struct STriggerableAnims
 {
-	var() noexport name Sequence "Raw animation sequence name to play when AnimTag is triggered.";
+	var() noexport anim name Sequence "Raw animation sequence name to play when AnimTag is triggered.";
 	var() noexport name Tag "Trigger this event to make this animation play.";
 	var() noexport bool bLoopAnim "If true, this animation will loop.";
 	var() noexport float Frame "Frame to start animation on.";

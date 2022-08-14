@@ -13,7 +13,7 @@ var() noexport class<Actor> SpawnActor "Type of actor to spawn.";
 var() noexport bool bMountToSpawner "Whether the spawned actor should be mounted to the spawner";
 var() noexport bool bSpawnDuplicates "If this is true, then we can spawn again even if the last copy of the actor we spawned still exists.";
 var Actor SpawnedActor;
-var byte TriggerImpulse;
+var netupdate(NU_TriggerImpulse) byte TriggerImpulse;
 
 replication
 {

@@ -18,7 +18,26 @@ defaultproperties
 	UseZoneGravity=false
 	bUseAlphaRamp=true
 	UseParticleCollisionActors=true
-	ParticleSystemAmbientSounds=/* Array type was not detected. */
-	X=196
-	X=false
+	ParticleSystemAmbientSounds(0)=(SystemSoundType=2,SystemSound=(bNoScale=false,MixerGroupOverride=None,AmbientSounds=('a_ambient.Steam.Steam02'),InnerRadius=192,InnerRadiusVariance=0,Radius=384,RadiusVariance=0,VolumePrefab=0,Volume=140,VolumeVariance=0,Pitch=0,PitchVariance=0,SoundNoOccludeModifier=0,SoundNoDopplerModifier=0))
+	ParticleSystemAmbientSounds(1)=(SystemSoundType=3,SystemSound=(bNoScale=false,MixerGroupOverride=None,AmbientSounds=none,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,VolumePrefab=0,Volume=0,VolumeVariance=0,Pitch=0,PitchVariance=0,SoundNoOccludeModifier=0,SoundNoDopplerModifier=0))
+	SpawnPeriod=0.025
+	Lifetime=0.25
+	LifetimeVariance=0.1
+	InitialVelocity=(X=1.291857E-41,Y=2.802959E-17,Z=0)
+	MaxVelocityVariance=(X=1.291857E-41,Y=2.802874E-17,Z=16)
+	AlphaMid=0.75
+	AlphaEnd=0
+	Textures(0)='dt_effects.Smoke.gensmoke1dRC'
+	StartDrawScale=0.125
+	EndDrawScale=0.5
+	DrawScaleVariance=0.125
+	RotationVariance=65535
+	RotationVelocityMaxVariance=2
+	ParticlesPerCollision=6
+	NumCollisionActors=2
+	CollisionActorClass='SteamCollisionActor'
+	bIgnoreBList=true
+	CollisionRadius=0
+	CollisionHeight=0
+	Style=3
 }

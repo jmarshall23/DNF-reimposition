@@ -1,5 +1,5 @@
 struct SSuperTurretExitAnims
 {
-	var() name EnterName;
-	var() name ExitName;
+	var() anim name EnterName;
+	var() anim name ExitName;
 };

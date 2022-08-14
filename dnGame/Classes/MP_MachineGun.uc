@@ -88,5 +88,11 @@ defaultproperties
 	PickupClass='MP_MachineGunPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=2
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_MachineGun'
+	Mesh='c_dnWeapon.MachineGun'
+	SoundVolume=200
+	SoundRadius=2048
+	SoundInnerRadius=512
+	VoicePack='SoundConfig.Inventory.VoicePack_MachineGun'
 }

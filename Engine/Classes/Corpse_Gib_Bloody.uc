@@ -11,5 +11,5 @@ class Corpse_Gib_Bloody extends Corpse_Gib
 
 defaultproperties
 {
-	
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_hit_effects.Gibs.GibBlood',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.293258E-41,Y=3.079134E-17,Z=0),Z=0),MountOriginVariance=(X=1.293258E-41,Y=3.079134E-17,Z=0),Z=0)
 }

@@ -101,4 +101,13 @@ defaultproperties
 {
 	TimeBeforeBoot=0.5
 	UsesBeforeCatMessage=2
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(ActivateATM),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Display'Electronics_Generic_ATM.DA_Display_Elec_Gen_ATM_OutOfOrder','dnGame.DecoActivityDeclarations.DA_HUD_bDrawUsePhrase_Disable','dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Disable',DecoActivities_Events'Electronics_Generic_ATM.DA_Events_Elec_Gen_ATM_Activate'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(ResetATM),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Display'Electronics_Generic_ATM.DA_Display_Elec_Gen_ATM_Normal','dnGame.DecoActivityDeclarations.DA_HUD_bDrawUsePhrase_Enable','dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Enable'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(ShowKitty),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Display'Electronics_Generic_ATM.DA_Display_Elec_Gen_ATM_Kitty'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	HealthPrefab=0
+	bUsable=true
+	ShrunkUseStyle=2
+	CollisionRadius=14
+	CollisionHeight=37
+	StaticMesh='sm_class_decorations.Electronics.EZCASH'
 }

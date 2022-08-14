@@ -11,4 +11,12 @@ class dnFlybyPlane_Fighter_Gib_A extends dnFlybyPlane_Fighter_Gibs
 defaultproperties
 {
 	ForcedIndex=0
+	SpawnOnDestroyed(0)=(SpawnClass='dnFlybyPlane_Fighter_Lesser_Gib_B',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.292418E-41,Y=2.954546E-17,Z=-42),Z=4)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	GravityScale=1.5
+	StaticMesh='sm_class_vehicles.Aircraft.AlienDroneShip_GIB1'
+	LifeSpan=0.5
+	LifeSpanVariance=0.2
 }

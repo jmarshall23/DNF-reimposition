@@ -69,5 +69,18 @@ function Destroyed()
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=none
+	HealthPrefab=5
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Details_Padlock_Latch',SpawnChance=0,MountPrefab=(bDontActuallyMount=true,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=Latch,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=-1.075528E+08,Y=2.802518E-17,Z=-3.2),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	Health=1
+	HealthCap=1
+	bNeverMeshAccurate=true
+	bBlockActors=false
+	bBlockPlayers=false
+	bBlockKarma=false
+	CollisionRadius=0
+	CollisionHeight=0
+	StaticMesh='sm_class_decorations.padlock.PadLockMount_cd'
 }

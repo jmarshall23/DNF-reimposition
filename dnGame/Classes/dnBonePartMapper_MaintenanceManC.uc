@@ -7,3 +7,17 @@
  *******************************************************************************/
 class dnBonePartMapper_MaintenanceManC extends dnBonePartMapper_MaintenanceMan
 	exportstructs;
+
+defaultproperties
+{
+	Gibs(0)=(BoneName=neck,ReqBones=none,RenderObject='sm_class_effects.Maintence_man_Gibs.Maintenance_man_HeadB_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-1.593778E-23,Y=2.954353E-17,Z=-0.031),Z=3.799)
+	Gibs(1)=(RotOffset=(Pitch=161751589,Yaw=572915712,Roll=0),Roll=3)
+	Gibs(2)=(Mass=10,GibChance=1,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+	Gibs(3)=(BoneName=LeftArm,ReqBones=(LeftForeArm),RenderObject='c_gibs.maintenance_man_arm_gib_l',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(4)=(RotOffset=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Gibs(5)=(Mass=20,GibChance=1,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+	Gibs(6)=(BoneName=RightArm,ReqBones=(RightForeArm),RenderObject='c_gibs.maintenance_man_arm_gib_r',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(7)=(RotOffset=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Gibs(8)=(Mass=20,GibChance=0.5,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+	Gibs(9)=(BoneName=LeftForeArm,ReqBones=none,RenderObject='sm_class_effects.Maintence_man_Gibs.Maintenance_man_ForearmL_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=4.170945E-08,Y=2.965215E-17,Z=0.591),Z=-8.256)
+}

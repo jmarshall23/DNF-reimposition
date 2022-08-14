@@ -10,5 +10,5 @@ class dnShipThrusterEffect_Wasp extends dnShipThrusterEffect
 
 defaultproperties
 {
-	Skins=/* Array type was not detected. */
+	Skins(0)='dt_Effects2.AttackShip_Thrusters.EdfThrusters_FB'
 }

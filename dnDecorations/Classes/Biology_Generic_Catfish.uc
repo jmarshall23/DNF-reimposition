@@ -10,6 +10,19 @@ class Biology_Generic_Catfish extends Biology_Generic
 
 defaultproperties
 {
-	IdleActivities=/* Array type was not detected. */
-	X=false
+	IdleActivities(0)=(IdleAnimInfo=(Flags=(bLoop=true,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=idle,Channel=0,Rate=0,TweenTime=0),IdleElements=none)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	begin object name=DA_Sound_Biology_Generic_Catfish_Death class=DecoActivities_Sound
+		SoundNames(0)=Catfish_Death
+	object end
+	// Reference: DecoActivities_Sound'Biology_Generic_Catfish.DA_Sound_Biology_Generic_Catfish_Death'
+	DestroyedActivities(2)=DA_Sound_Biology_Generic_Catfish_Death
+	HealthPrefab=1
+	SpawnOnDestroyedSimple(0)='p_Creatures.Catfish.Catfish_Death'
+	Physics=9
+	CollisionRadius=19
+	CollisionHeight=10
+	DrawType=2
+	Mesh='c_characters.Catfish'
 }

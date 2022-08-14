@@ -11,14 +11,9 @@ class Vents_Generic_BreakableGrate_NonSolid extends Vents_Generic_BreakableGrate
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	GetTotalWeight[13]=
-/* Exception thrown while deserializing GetTotalWeight
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealPackage.GetIndexObject(Int32 objectIndex) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealPackage.cs:line 1821
-   at UELib.UObjectStream.ReadObject() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 742
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 515 */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Vents_Generic_BreakableGrate.DA_Sound_Vents_Generic_BreakableGrate_Brkn_A'
+	DestroyedActivities(2)=DecoActivities_Collision'Vents_Generic_BreakableGrate.DA_Collide_Vents_Generic_BreakableGrate_Brkn'
+	DestroyedActivities(3)=DecoActivities_Interaction'Vents_Generic_BreakableGrate.DA_Interaction_Vents_Generic_BreakableGrate_Brkn'
+	DestroyedActivities(4)='dnGame.DecoActivityDeclarations.DA_Coll_bBlockKarma_Disable'
 }

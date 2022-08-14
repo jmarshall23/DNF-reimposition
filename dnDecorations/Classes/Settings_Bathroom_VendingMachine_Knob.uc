@@ -37,5 +37,12 @@ final function VendItem()
 
 defaultproperties
 {
-	DecoActivities_Default=/* Array type was not detected. */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(TurnKnob),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Settings_Bathroom_VendingMachine_Knob.DA_Sound_Settings_Bthrm_VendMach_Knob_Turn','dnGame.DecoActivityDeclarations.DA_HUD_bDrawUsePhrase_Disable','dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Disable',DecoActivities_Keyframes'Settings_Bathroom_VendingMachine_Knob.DA_Keyframes_Settings_Bthrm_VendMach_Knob_Turn'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(TurnComplete),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_HUD_bDrawUsePhrase_Enable','dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Enable'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	HealthPrefab=0
+	bUsable=true
+	CollisionRadius=1
+	CollisionHeight=1
+	DesiredRotationRoll(0)=(bTemporal=false,bComplete=false,bLinked=false,bShortestDist=false,Target=16384,RealTarget=0,Start=0,Delta=0,Rate=0,Exponent=0,TimeTotal=0.7,TimeMid=0.3,Timer=0,Style=3,StyleStopped=0,CrushDamage=(DamageHow=0,Damage=(Value=0,Variance=0),Rate=(Value=0,Variance=0),Timer=0),Event=None,FunctionComplete=VendItem,EventAbort=None,FunctionAbort=None)
+	StaticMesh='sm_class_decorations.CondomTamponMachine.CondomTamponMachineKnob'
 }

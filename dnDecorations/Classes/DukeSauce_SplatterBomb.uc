@@ -84,22 +84,23 @@ static simulated event CustomInitDefaults(Actor inOwner)
 
 defaultproperties
 {
-	ClassicDecals(0)='Electronics_Generic'
-	ClassicDecals(1)='dt_effects.duke_sauce.sauce_splat1_fb'
-	ClassicDecals(2)='dt_effects.duke_sauce.sauce_splat2_fb'
-	ClassicDecals(3)='dt_effects.duke_sauce.sauce_splat3_fb'
-	ClassicDecals(4)=ObjectProperty'dnControl_Panel_KeyPad.PowerOffTexture'
-	ClassicDecals(5)=ObjectProperty'Industrial_Generic_PseudoMagnet.AttemptAttach.NewConstraint'
-	ClassicDecals(6)=ClassProperty'dnControl_CoinOp_SlotMachine.MyInfo'
-	bScaleByDrawScaleNonDefault=
-/* Exception thrown while deserializing bScaleByDrawScaleNonDefault
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
+	ClassicDecals(0)='dt_effects.duke_sauce.sauce_splat1_fb'
+	ClassicDecals(1)='dt_effects.duke_sauce.sauce_splat2_fb'
+	ClassicDecals(2)='dt_effects.duke_sauce.sauce_splat3_fb'
+	KetchupDecals(0)='dt_effects.duke_sauce.ketch_splat1_fb'
+	KetchupDecals(1)='dt_effects.duke_sauce.ketch_splat2_fb'
+	KetchupDecals(2)='dt_effects.duke_sauce.ketch_splat3_fb'
+	MayoDecals(0)='dt_effects.duke_sauce.mayo_splat1_fb'
+	MayoDecals(1)='dt_effects.duke_sauce.mayo_splat2_fb'
+	MayoDecals(2)='dt_effects.duke_sauce.mayo_splat3_fb'
+	MustardDecals(0)='dt_effects.duke_sauce.must_splat1_fb'
+	MustardDecals(1)='dt_effects.duke_sauce.must_splat2_fb'
+	MustardDecals(2)='dt_effects.duke_sauce.must_splat3_fb'
+	HotSauceDecals(0)='dt_effects.duke_sauce.Hotsauce_splat1_FB'
+	HotSauceDecals(1)='dt_effects.duke_sauce.hotsauce_splat2_FB'
+	HotSauceDecals(2)='dt_effects.duke_sauce.hotsauce_splat3_FB'
+	DecalSize=0.075
+	Decals(0)='dt_effects.duke_sauce.sauce_splat1_fb'
+	Decals(1)='dt_effects.duke_sauce.sauce_splat2_fb'
+	Decals(2)='dt_effects.duke_sauce.sauce_splat3_fb'
 }

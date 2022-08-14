@@ -15,5 +15,24 @@ defaultproperties
 	RelativeSpawn=true
 	RelativeSpawnVelocity=true
 	TriggerOnSpawn=true
-	AdditionalSpawn=/* Array type was not detected. */
+	AdditionalSpawn(0)=(SpawnClass=none,TakeParentTag=false,Mount=false,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnNumber=1
+	Lifetime=0.5
+	InitialAcceleration=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	MaxAccelerationVariance=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	AlphaRampMid=0.25
+	LineStartColor=(B=85,G=1,R=1,A=128)
+	LineEndColor=(B=85,G=1,R=1,A=128)
+	LineStartWidth=4
+	LineEndWidth=4
+	Textures(0)='dt_effects.Sparks.comettrail4RC'
+	StartDrawScale=0.125
+	EndDrawScale=0.25
+	RotationVariance=32767
+	TriggerType=4
+	PulseSeconds=0.65
+	Physics=2
+	bCollideWorld=true
+	CollisionRadius=16
+	CollisionHeight=16
 }

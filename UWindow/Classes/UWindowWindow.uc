@@ -2536,5 +2536,5 @@ defaultproperties
 	WhiteColor=(B=13,G=1,R=255,A=12)
 	NavRepeatTime=0.5
 	NavRepeatTimeHold=0.1
-	SoundNavigateInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */,X=211,Y=class'WinWidth')
+	SoundNavigateInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('a_menu.Menu.Menu_Roll_Level3_01_ST'),SlotPriority=0,VolumePrefab=0,Slots=(0),Volume=0.3,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=true,bNoFilter=true,bNoOcclude=true,bNoAIHear=true,bNoScale=true,bSpoken=false,bPlayThroughListener=false,bNoDoppler=true,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=true),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=1,Location3D=(X=1.291857E-41,Y=2.818926E-17,Z=0),Z=0),Velocity3D=(X=1.291857E-41,Y=2.818926E-17,Z=0),Z=0)
 }

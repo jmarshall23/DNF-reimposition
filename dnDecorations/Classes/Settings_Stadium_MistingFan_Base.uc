@@ -10,10 +10,10 @@ class Settings_Stadium_MistingFan_Base extends Settings_Stadium
 
 defaultproperties
 {
-	MountOnSpawn=/* Array type was not detected. */
-	SpawnClass='Settings_Stadium_MistingFan_Blades'
-	SpawnChance=0
-	MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.813642E-17,Z=0),Z=75)
-	RenderObject=none
-	DrawScale=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Settings_Stadium_MistingFan_Blades',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.813642E-17,Z=0),Z=75),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.MistFan_Impact_01','a_impact.SpecialCase.MistFan_Impact_02','a_impact.SpecialCase.MistFan_Impact_03','a_impact.SpecialCase.MistFan_Impact_04'),SoundInfo=(InputRange=(Min=64,Max=800),OutputPitchRange=(Min=0.65,Max=0.85),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaMetal.MetalSolid_SlideConcrete01'),SoundInfo=(InputRange=(Min=128,Max=700),OutputPitchRange=(Min=0.75,Max=0.8),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	StaticMesh='sm_FBstadium.MistingFan.MistingFan_Base'
 }

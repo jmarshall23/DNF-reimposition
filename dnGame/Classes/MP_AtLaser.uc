@@ -35,7 +35,7 @@ simulated function float GetBaseFiringDamage()
 	return;
 }
 
-k2call simulated function Fire_Effects(optional EventInfo AnimEventInfo)
+animevent simulated function Fire_Effects(optional EventInfo AnimEventInfo)
 {
 	super(Weapon).Fire_Effects(AnimEventInfo);
 	// End:0x72
@@ -76,6 +76,12 @@ defaultproperties
 	PickupClass='MP_AtLaserPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=16
-	AutoRegisterIKClasses=/* Array type was not detected. */
-	EndingBlendAlpha='SoundConfig.Inventory.VoicePack_ATlaser'
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_ATLaser'
+	Mesh='c_dnWeapon.at_gun'
+	Skins(0)='dt_multiplayer_shared.Weapons.Assault_Trooper_Gun2_BS'
+	SoundVolume=200
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_ATlaser'
 }

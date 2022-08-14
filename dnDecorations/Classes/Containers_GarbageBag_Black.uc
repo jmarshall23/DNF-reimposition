@@ -12,6 +12,28 @@ defaultproperties
 {
 	DamageThreshold=100
 	AIStompedInfo=(StompType=1,ImpulseMag=1,ImpulseRnd=0,Torque=0)
-	SpawnOnDestroyedSimple=/* Array type was not detected. */
-	bScaleByDrawScaleNonDefault[105]=(X=1.008046E-34,Y=1.11195E-23,Z=1.034135E-25)
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Fabric1'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Fabric1'
+	SpawnOnDestroyedSimple(2)='dnParticles.dnDebris_Popcorn1'
+	SpawnOnDestroyedSimple(3)='dnParticles.dnDebris_Paper1'
+	SpawnOnDestroyedSimple(4)='dnParticles.dnDebris_Smoke'
+	SpawnOnDestroyed(0)=(SpawnClass='Details_Trash_CrumpledPaper_Ball',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0.5,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=None,MotionInfo=none)
+	SpawnOnDestroyed(6)=(SpawnClass='Details_Trash_CrumpledPaper_Ball',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Body'
+	PhysicsMassType=1
+	Physics=18
+	bAcceptsProjectors=false
+	bAcceptsDecalProjectors=false
+	CollisionRadius=13
+	CollisionHeight=15
+	Mass=40
+	DrawType=2
+	Mesh='c_generic.GarbageBag'
 }

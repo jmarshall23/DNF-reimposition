@@ -10,5 +10,18 @@ class Plants_Generic_JoshuaTree_E extends Plants_Generic_JoshuaTree
 
 defaultproperties
 {
-	SpawnOnDestroyed=/* Array type was not detected. */
+	SpawnOnDestroyed(0)=(SpawnClass='Plants_Generic_JoshuaTree_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=9.106791E-33,Y=2.802893E-17,Z=18.93),Z=14)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=-403103227,Yaw=571146239,Roll=6144),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=None,MotionInfo=MotionPrefab'Plants_Generic_JoshuaTree.MP_JoshuaTree_Gibs')
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.802832E-17,Z=-10),Z=72)
+	DestroyedParticleFriendEffects(1)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(2)=(Effect='p_Decorations.JoshuaTree.JoshuaTree_Carhit_Spawner')
+	DestroyedParticleFriendEffects(3)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.813731E-17,Z=-24),Z=20)
+	DestroyedParticleFriendEffects(4)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	CollisionRadius=100
+	CollisionHeight=184
+	StaticMesh='sm_geo_decorations.desert.joshua_tree_5'
 }

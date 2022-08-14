@@ -25,14 +25,12 @@ defaultproperties
 	SpawnCountVariance=2
 	Lifetime=4.5
 	bInverse=true
-	Textures(0)=ObjectProperty'dnUsableSomething.User'
-	Textures(1)='dt_effects.liquids.JizzBomb_FB'
-	Textures(2)='dt_effects.liquids.Jizzbomb_B_FB'
-	Textures(3)='dt_effects.liquids.Jizzbomb_C_FB'
-	Textures(4)=ObjectProperty'dnTeamGameScoreboard.DrawVictoryConditions.GRI'
-	Textures(5)=ObjectProperty'dnControl_CameraViewer_Fullscreen.CurrentCamera'
-	Textures(6)=none
-	X=64
-	Y=64
-	Z=0
+	Textures(0)='dt_effects.liquids.JizzBomb_FB'
+	Textures(1)='dt_effects.liquids.Jizzbomb_B_FB'
+	Textures(2)='dt_effects.liquids.Jizzbomb_C_FB'
+	ScaleXStart=2.5
+	ScaleXEnd=2.5
+	ScaleYStart=2.5
+	ScaleYEnd=3.5
+	LocationInitialVariance=(X=1.292418E-41,Y=2.954663E-17,Z=64)
 }

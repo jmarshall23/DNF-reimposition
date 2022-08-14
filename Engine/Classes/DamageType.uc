@@ -348,7 +348,9 @@ defaultproperties
 	BodyPartDamageScaleLerp=1
 	DeathMomentumScale=1.5
 	DeathLiftScale=0.14
-	DamageScreenFlash=(bAlwaysTick=false,bOnlyReplace=false,bResumeFlash=true,Priority=900,ReplaceMin=0,FlashID=PainFlash,FlashType=0,FlashStyle=3,ColorStart=(B=6,G=1,R=0,A=7),Engine=/* Unknown default property type! */,B=0,A=0)
+	DamageScreenFlash=(bAlwaysTick=false,bOnlyReplace=false,bResumeFlash=true,Priority=900,ReplaceMin=0,FlashID=PainFlash,FlashType=0,FlashStyle=3,ColorStart=(B=6,G=1,R=0,A=7),Engine=/*ERROR: System.Exception: Unsupported property tag type None
+   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 898
+   at UELib.Core.UDefaultProperty.TryDeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 434*/,B=0,A=0)
 	DamageScreenFlashScaleDenominator=20
 	DamageScreenFlashColorMin=(B=6,G=1,R=128,A=7)
 	DamageScreenFlashColorMax=(B=6,G=1,R=255,A=7)

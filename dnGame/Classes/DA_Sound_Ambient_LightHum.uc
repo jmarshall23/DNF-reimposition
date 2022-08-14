@@ -11,5 +11,5 @@ class DA_Sound_Ambient_LightHum extends DecoActivities_Sound
 
 defaultproperties
 {
-	SoundAmbient=(bNoScale=false,MixerGroupOverride=None,AmbientSounds=/* Array type was not detected. */,BlendTotalTime[37]=/* Array type was not detected. */,AnimEnd_FunctionCallName=/* Unknown default property type! */)
+	SoundAmbient=(bNoScale=false,MixerGroupOverride=None,AmbientSounds=('a_ambient.Lights.LightHum01'),InnerRadius=192,InnerRadiusVariance=0,Radius=384,RadiusVariance=0,VolumePrefab=6,Volume=0,VolumeVariance=0,Pitch=64,PitchVariance=24,SoundNoOccludeModifier=0,SoundNoDopplerModifier=0)
 }

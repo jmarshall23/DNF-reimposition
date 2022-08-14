@@ -18,4 +18,11 @@ simulated function PostBeginPlay()
 defaultproperties
 {
 	HealthPrefab=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Barrels_Generic_Explosive_FireExt',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.80262E-17,Z=0),Z=-4),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid'
+	PhysicsMassType=1
+	CollisionRadius=11
+	CollisionHeight=17.5
+	StaticMesh='sm_class_decorations.FireExtinguisher_Box.FEX_Box'
 }

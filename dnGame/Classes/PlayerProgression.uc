@@ -19,7 +19,8 @@ class PlayerProgression extends Info
 	dependson(dnRocket_RPG_Homing)
 	dependson(dnDeathmatchGame)
 	dependson(MP_Announcer)
-	hidecategories(movement,Collision,Lighting,LightColor);
+	hidecategories(movement,Collision,Lighting,LightColor)
+	nativedestructor;
 
 struct SEnforcerChallenge
 {
@@ -54,14 +55,14 @@ struct SEndGamePacket
 };
 
 var bool bDebug;
-var const editconst transient pointer StatMap;
-var const editconst transient pointer ChallengeStorage;
-var const editconst transient pointer BackupChallengeStorage;
+var const editconst transient nontrans pointer StatMap;
+var const editconst transient nontrans pointer ChallengeStorage;
+var const editconst transient nontrans pointer BackupChallengeStorage;
 var array<int> AwardedChallengesInMatch;
 var int TotalXP;
-var int MatchXP;
+var netupdate(NU_MatchXP) int MatchXP;
 var int ScreenMatchXP;
-var int CurrentLevel;
+var netupdate(NU_CurrentLevel) int CurrentLevel;
 var config int OverDriveLevel;
 var config float OverDriveModifier;
 var bool bSeenOverdriveMsg;
@@ -100,7 +101,7 @@ var MP_LaserMine LimboMine;
 var bool bLimbo;
 var bool bDoubleMicrowave;
 var int TotalStats[250];
-var int MatchStats[250];
+var netupdate(NU_MatchStats) int MatchStats[250];
 var float GroundDistanceUpdateTimeCount;
 var float GroundDistanceUpdateTime;
 var Vector GroundDistanceLastLocation;

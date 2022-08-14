@@ -25,5 +25,12 @@ defaultproperties
 	LineEndColor=(B=85,G=1,R=1,A=202)
 	LineStartWidth=0.6
 	LineEndWidth=0.6
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.liquids.urinestream2RC'
+	StartDrawScale=0.01
+	EndDrawScale=0.3
+	DrawScaleVariance=0.07
+	CollisionRadius=0
+	CollisionHeight=0
+	TickStyle=3
+	Style=3
 }

@@ -52,7 +52,7 @@ simulated function bool CanActivateNow()
 	return;
 }
 
-final k2call simulated function PushButton(optional EventInfo AnimEventInfo)
+final animevent simulated function PushButton(optional EventInfo AnimEventInfo)
 {
 	rPushButton();
 	return;
@@ -186,7 +186,7 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 
 state Firing
 {
-	k2call simulated function WeaponCallback_DefinitelyDoneFiring()
+	animevent simulated function WeaponCallback_DefinitelyDoneFiring()
 	{
 		return;
 	}
@@ -207,5 +207,12 @@ defaultproperties
 	ChargeDisplayType=0
 	CommandAlias="UseWeapon dnGame.Detonator"
 	InventoryReferenceClass='Detonator'
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_Detonator'
+	bNeedsScriptActorColor=true
+	bTravel=false
+	bNeverTravel=true
+	MountMeshItem=mount_handleft
+	Mesh='c_dnWeapon.pipebomb_detonator'
+	VoicePack='SoundConfig.Inventory.VoicePack_PipeBomb_Detonator'
 }

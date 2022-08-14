@@ -6,3 +6,34 @@
  * All rights belong to their respective owners.
  *******************************************************************************/
 class Destructible_Outhouse_A extends dnDestructibleBuildingDefinition within dnDestructibleBuilding;
+
+defaultproperties
+{
+	Parts(0)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_Doorframe',Location=(X=-4.935801E-32,Y=2.95463E-17,Z=0.77121),Z=-15.09961)
+	Parts(1)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=1024),Roll=0)
+	Parts(2)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0.7),Z=0)
+	Parts(3)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(4)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_Plank',Location=(X=-4.935801E-32,Y=2.954634E-17,Z=-28.22879),Z=-15.09961)
+	Parts(5)=(Rotation=(Pitch=-2147474907,Yaw=572915712,Roll=16384),Roll=0)
+	Parts(6)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0.86)
+	Parts(7)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(8)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_Plank',Location=(X=-4.935801E-32,Y=2.954626E-17,Z=29.77121),Z=-15.09961)
+	Parts(9)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=16384),Roll=0)
+	Parts(10)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0.86)
+	Parts(11)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(12)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_OuthouseRoof',Location=(X=-4.935801E-32,Y=2.954626E-17,Z=2.77121),Z=54.90039)
+	Parts(13)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=1024),Roll=0)
+	Parts(14)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Parts(15)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(16)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_walla1',Location=(X=1.65618E-24,Y=2.954611E-17,Z=-33.22794),Z=-32.09961)
+	Parts(17)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=49152),Roll=16384)
+	Parts(18)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0.76),Z=0)
+	Parts(19)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=68528,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(20)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_walla2',Location=(X=4.14045E-25,Y=2.954611E-17,Z=-33.22879),Z=-7.099609)
+	Parts(21)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=49152),Roll=16384)
+	Parts(22)=(Scale=(X=1.292418E-41,Y=2.94903E-17,Z=0.76),Z=0)
+	Parts(23)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=68528,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(24)=(StaticMesh='SM_Lvl_Desert.Destructible.WoodShack_walla1',Location=(X=3.722228E+19,Y=2.954497E-17,Z=-34.22952),Z=-0.099609)
+	ParticleEffects(0)=(SpawnerClass='p_Decorations.Debris_WoodBuilding.Debris_WoodBuilding_Spawner',LocationOffset=(X=1.292418E-41,Y=2.94903E-17,Z=4),Z=-62)
+	ShellPart=(StaticMesh='SM_Lvl_Desert.Destructible_Shells.Outhouse_A',Location=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+}

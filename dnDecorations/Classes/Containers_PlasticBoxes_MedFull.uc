@@ -11,6 +11,24 @@ class Containers_PlasticBoxes_MedFull extends Containers_PlasticBoxes
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	dnMaterial="O"
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	begin object name=DA_Physics_Density_PlasticBoxes_MedFull class=DecoActivities_Physics
+		DensitySet=10
+	object end
+	// Reference: DecoActivities_Physics'Containers_PlasticBoxes_MedFull.DA_Physics_Density_PlasticBoxes_MedFull'
+	DestroyedActivities(2)=DA_Physics_Density_PlasticBoxes_MedFull
+	begin object name=DA_Display_Containers_PlasticBoxes_Broken class=DecoActivities_Display
+		RenderObject='sm_class_decorations.Containers.PlasticContainer1'
+	object end
+	// Reference: DecoActivities_Display'Containers_PlasticBoxes_MedFull.DA_Display_Containers_PlasticBoxes_Broken'
+	DestroyedActivities(3)=DA_Display_Containers_PlasticBoxes_Broken
+	HealthPrefab=2
+	SpawnOnDestroyed(0)=(SpawnClass='Containers_PlasticBoxes_MedLids',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	PhysicsMassType=2
+	CollisionRadius=10
+	Mass=25
+	StaticMesh='sm_class_decorations.Containers.PlasticContainer1_closed'
+	Skins(0)='smt_skins3.Containers.Container1_bs'
+	Skins(1)='smt_skins3.Containers.container1lid_bs'
 }

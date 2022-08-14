@@ -10,28 +10,17 @@ class Settings_Construction_Jersey_Barrier extends Pillars_Destructible
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	DA_Physics_PHYS_KarmaRagdoll_Set=true
-	StructProperty=class'WebbedBones'
-	X=0
-	DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	SpawnChance=0
-	SpawnCopies=0
-	SpawnCopiesVariance=0
-	bIgnorePawnAirCushion=false
-	bDontScaleByDrawScale=false
-	bScaleByDrawScaleNonDefault=false
-	bNoCollision=false
-	bFindSpot=false
-	bIgnoreParentRotation=false
-	bTakeParentCollisionSize=false
-	bTakeParentMounting=false
-	bTakeParentActorColors=false
-	bTakeParentSkins=false
-	Offset=(X=1.291717E-41,Y=2.797242E-17,Z=-77.09998)
-	OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	Rotation=(Pitch=8709,Yaw=571080704,Roll=0)
-	RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0)
-	BoneName=None
-	MotionInfo=MotionPrefab'Pillars_Destructible.MP_PC_NoMotion'
+	DestroyedActivities(0)=none
+	begin object name=DA_Display_Barrier_BRKN class=DecoActivities_Display
+		RenderObject='sm_geo_decorations.barriers.road_barrier_broke_base'
+	object end
+	// Reference: DecoActivities_Display'Settings_Construction_Jersey_Barrier.DA_Display_Barrier_BRKN'
+	DestroyedActivities(1)=DA_Display_Barrier_BRKN
+	SpawnOnDestroyed(0)=(SpawnClass='Settings_Construction_Jersey_Barrier_Chunk_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.797242E-17,Z=-77.09998),Z=33.95001)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	bBlockPath=true
+	StaticMesh='sm_geo_decorations.barriers.road_barrier1'
 }

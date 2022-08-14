@@ -10,6 +10,18 @@ class Industrial_Rooftop_AirConditioner_Gibs extends aFinalDecoration_Gibs
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_geo_decorations.AirConditioners.acunit_gib01',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_geo_decorations.AirConditioners.acunit_gib04',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_geo_decorations.AirConditioners.acunit_gib05',bForcedOnly=false)
+	Gibs(3)=(RenderObject='sm_geo_decorations.AirConditioners.acunit_gib06',bForcedOnly=false)
+	Gibs(4)=(RenderObject='sm_geo_decorations.AirConditioners.acunit_gib07',bForcedOnly=false)
+	Gibs(5)=(RenderObject='sm_geo_decorations.AirConditioners.acunit2_gib1',bForcedOnly=false)
+	Gibs(6)=(RenderObject='sm_geo_decorations.AirConditioners.acunit2_gib2',bForcedOnly=false)
+	Gibs(7)=(RenderObject='sm_geo_decorations.AirConditioners.acunit2_gib3',bForcedOnly=false)
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
+	Density=5
+	PhysicsEntityGroup=RoofTopAC
+	Physics=0
+	bBlockActors=false
+	bStepUpAble=false
 }

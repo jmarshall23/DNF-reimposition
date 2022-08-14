@@ -40,7 +40,7 @@ simulated function name GetWeaponAnimReq(byte WeaponStateReq, optional out byte 
 	return;
 }
 
-k2call simulated function ActivateItem()
+animevent simulated function ActivateItem()
 {
 	local CigarAttachment MountedCigar;
 
@@ -127,5 +127,8 @@ defaultproperties
 	PickupClass='CigarPickup'
 	Charge=1
 	MaxCharge=1
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='acCigar'
+	Mesh='c_dukeitems.Cigar'
+	VoicePack='SoundConfig.Inventory.VoicePack_Cigar'
 }

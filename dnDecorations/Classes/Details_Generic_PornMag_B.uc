@@ -21,5 +21,5 @@ simulated function GrabComplete()
 
 defaultproperties
 {
-	Skins=/* Array type was not detected. */
+	Skins(0)='mt_skins7.PornMag.PornMag3'
 }

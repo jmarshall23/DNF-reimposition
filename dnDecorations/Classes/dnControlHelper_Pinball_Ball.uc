@@ -118,6 +118,17 @@ defaultproperties
 	GravityScale=0
 	EnableDisableThreshold=0
 	DamageScaler=0
-	PhysicsSoundOverrides=/* Array type was not detected. */
-	OtherMaterialTypes=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_generic.Pinball.PB_Roll_01'),SoundInfo=(InputRange=(Min=16,Max=100),OutputPitchRange=(Min=0.9,Max=1.5),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	Physics=18
+	bCollisionAssumeValid=true
+	bBlockKarma=true
+	bTickOnlyRecent=false
+	bCollideActors=false
+	bCollideWorld=false
+	CollisionRadius=0
+	CollisionHeight=0
+	Mass=10
+	DrawType=8
+	DrawScale=0.75
+	StaticMesh='sm_class_decorations.Balls.Pinball_x'
 }

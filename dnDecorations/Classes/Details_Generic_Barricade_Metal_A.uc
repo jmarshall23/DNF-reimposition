@@ -22,9 +22,26 @@ simulated event Destroyed()
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	begin object name=DA_KImpulse_Metal_Barricade_Destroyed class=DecoActivities_KarmaImpulse
+		ImpulseForce=80000
+		ImpulseOffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=10)
+		ImpulseDirectionVariance=(Pitch=1073750533,Yaw=571080704,Roll=16384)
+	object end
+	// Reference: DecoActivities_KarmaImpulse'Details_Generic_Barricade_Metal_A.DA_KImpulse_Metal_Barricade_Destroyed'
+	DestroyedActivities(2)=DA_KImpulse_Metal_Barricade_Destroyed
 	DestroyActionPointRadius=30
 	HealthPrefab=5
-	DamageIgnoreRules=/* Array type was not detected. */
-	ObjectProperty=/* Unknown default property type! */
+	DamageIgnoreRules(0)=(QualifierInstigatorType='Engine.BaseAI',QualifierNetMode=0,MinDistanceFromLocalPlayer=0,MaxDistanceFromLocalPlayer=250)
+	Health=10
+	HealthCap=10
+	bIgnorePawnAirCushion=true
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid'
+	PhysicsMassType=1
+	bAITransparent=true
+	bDirectional=true
+	Mass=25
+	StaticMesh='sm_class_decorations.Barricade.Barricade_Metal_01'
 }

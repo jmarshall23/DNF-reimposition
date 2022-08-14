@@ -13,5 +13,19 @@ defaultproperties
 {
 	Enabled=false
 	TriggerOnSpawn=true
-	AdditionalSpawn=/* Array type was not detected. */
+	AdditionalSpawn(0)=(SpawnClass=none,TakeParentTag=false,Mount=false,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	PrimeCount=25
+	Lifetime=1
+	LifetimeVariance=1
+	InitialAcceleration=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	MaxVelocityVariance=(X=1.291857E-41,Y=2.802981E-17,Z=390)
+	LineStartColor=(B=85,G=1,R=1,A=255)
+	LineStartWidth=10
+	LineEndWidth=10
+	Textures(0)='dt_effects.Sparks.comettrail4RC'
+	StartDrawScale=0.01
+	EndDrawScale=0.75
+	RotationVariance=32767
+	TriggerType=4
+	PulseSeconds=0
 }

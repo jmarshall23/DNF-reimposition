@@ -126,8 +126,10 @@ defaultproperties
 	BurnTime=10
 	BurnTimeVariance=3
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
 	bTickOnlyWhenPhysicsAwake=true
-	PhysicsSoundOverrides=/* Array type was not detected. */
-	OtherMaterialTypes=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.Vehicles.Veh_Part_01','a_impact.Vehicles.Veh_Part_02','a_impact.Vehicles.Veh_Part_03','a_impact.Vehicles.Veh_Part_04'),SoundInfo=(InputRange=(Min=24,Max=500),OutputPitchRange=(Min=0.9,Max=1.1),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	Mass=50
 }

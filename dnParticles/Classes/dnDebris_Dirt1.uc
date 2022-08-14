@@ -24,5 +24,14 @@ defaultproperties
 	BounceElasticity=0.1
 	AlphaMid=1
 	AlphaRampMid=0.85
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Debris.dirtparticle2aR'
+	Textures(1)='dt_effects.Debris.dirtparticle2bR'
+	StartDrawScale=0.25
+	EndDrawScale=0.25
+	DrawScaleVariance=0.2
+	RotationVariance=65535
+	TriggerType=0
+	CollisionRadius=16
+	CollisionHeight=16
+	Style=2
 }

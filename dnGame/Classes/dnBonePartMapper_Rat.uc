@@ -7,3 +7,16 @@
  *******************************************************************************/
 class dnBonePartMapper_Rat extends BonePartMapper
 	exportstructs;
+
+defaultproperties
+{
+	Gibs(0)=(BoneName=Root,ReqBones=none,RenderObject='sm_class_effects.rat_gibs.rat_gib1',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(1)=(RotOffset=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Gibs(2)=(Mass=1,GibChance=1,bKDNoPawnInteractions=true,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=true,bStaticGib=false,GibBloodyMess=none)
+	Gibs(3)=(BoneName=Root,ReqBones=none,RenderObject='sm_class_effects.rat_gibs.rat_gib2',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.292418E-41,Y=2.954541E-17,Z=0),Z=0)
+	GibEffects(0)=(ParticleEffect='p_hit_effects.Flesh_Human.Flesh_Human_Spawner',BoneName=Root,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	FrozenGibEffects(0)=(ParticleEffect='p_Weapons.FreezeRay_Projectile.FreezeRay_Projectile_Small_Spawner',BoneName=Root,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	GibBloodyMess=none
+	FullyGibbedSoundName=Corpse_LimbExplode
+	FullyGibbedFrozenSoundName=IcePart_Shatter_Small
+}

@@ -12,5 +12,9 @@ defaultproperties
 {
 	bUnBreakable=true
 	bBlockActors=true
-	Skins=/* Array type was not detected. */
+	Skins(0)='dt_masking.Glass_Materials.wireglass2bc_finalblend'
+	Skins(1)=none
+	Skins(2)=none
+	Skins(3)='dt_masking.Glass_Materials.wireglass2bc_finalblend'
+	TraceFireHitResponse=0
 }

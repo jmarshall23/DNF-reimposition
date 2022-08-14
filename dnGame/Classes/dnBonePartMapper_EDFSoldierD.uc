@@ -7,3 +7,17 @@
  *******************************************************************************/
 class dnBonePartMapper_EDFSoldierD extends dnBonePartMapper_EDFSoldier
 	exportstructs;
+
+defaultproperties
+{
+	Gibs(0)=(BoneName=neck,ReqBones=none,RenderObject='sm_class_effects.EDF_Gibs.EDF_headD_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-2.33256E-17,Y=2.954419E-17,Z=-0.136),Z=3.019)
+	Gibs(1)=(RotOffset=(Pitch=207823397,Yaw=572915712,Roll=1),Roll=3)
+	Gibs(2)=(Mass=10,GibChance=1,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+	Gibs(3)=(BoneName=LeftArm,ReqBones=(LeftForeArm),RenderObject='c_gibs.edf_arm_gib_l',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(4)=(RotOffset=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Gibs(5)=(Mass=20,GibChance=0.5,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+	Gibs(6)=(BoneName=RightArm,ReqBones=(RightForeArm),RenderObject='c_gibs.edf_arm_gib_r',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(7)=(RotOffset=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Gibs(8)=(Mass=20,GibChance=1,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+	Gibs(9)=(BoneName=LeftForeArm,ReqBones=none,RenderObject='sm_class_effects.EDF_Gibs.EDF_ForearmL_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=0.05887225,Y=2.95437E-17,Z=0.079),Z=-8.8467)
+}

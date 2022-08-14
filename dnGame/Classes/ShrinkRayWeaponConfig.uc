@@ -15,7 +15,7 @@ defaultproperties
 	MaxTraceDistance=0
 	ProjectileClass='dnRocket_ShrinkBlast'
 	bCheatMuzzleBlockage=true
-	RumbleKicks=/* Array type was not detected. */
+	RumbleKicks(0)=(RumbleName=ShrinkRay_Rumble,RumbleDuration=0.75,RumbleLeftMagnitude=0.45,RumbleRightMagnitude=0.35,FalloffActor=none,FalloffDistance=0)
 	MuzzleLightClass='Weapon_LightEx_Shrinker'
 	MeleeDamageType='MeleeDamage'
 	AmmoWarnPCT=0.1

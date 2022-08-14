@@ -23,5 +23,16 @@ defaultproperties
 	MaxAccelerationVariance=(X=1.291857E-41,Y=2.802941E-17,Z=200)
 	RealtimeVelocityVariance=(X=-1.291857E-41,Y=2.803063E-17,Z=1500)
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Debris.metalshard1aRC'
+	Textures(1)='dt_effects.Debris.metalshard1bRC'
+	Textures(2)='dt_effects.Debris.metalshard1cRC'
+	Textures(3)='dt_effects.Debris.metalshard1dRC'
+	StartDrawScale=0.19
+	EndDrawScale=1E-06
+	RotationVariance=32768
+	PulseSeconds=0.001
+	CollisionRadius=1
+	CollisionHeight=1
+	Style=2
+	TimeWarp=0.5
 }

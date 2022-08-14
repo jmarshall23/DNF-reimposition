@@ -10,5 +10,15 @@ class Settings_FoodService_MiniFridge extends Settings_FoodService
 
 defaultproperties
 {
-	StartupActivities=/* Array type was not detected. */
+	begin object name=DA_Sound_MiniFridge_Ambience class=DecoActivities_Sound
+		SoundNames(0)=Fridge_Amb
+	object end
+	// Reference: DecoActivities_Sound'Settings_FoodService_MiniFridge.DA_Sound_MiniFridge_Ambience'
+	StartupActivities(0)=DA_Sound_MiniFridge_Ambience
+	HealthPrefab=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Settings_FoodService_MiniFridge_Door',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.802786E-17,Z=-21.8),Z=3),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bCanCrushOthers=false
+	CollisionRadius=15.25
+	CollisionHeight=52.5
+	StaticMesh='sm_class_decorations.BeerCooler.BeerCooler'
 }

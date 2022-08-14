@@ -10,6 +10,17 @@ class dnBonePartMapper_AssaultCommander_LeftArm extends BonePartMapper
 
 defaultproperties
 {
-	PartMapping=/* Array type was not detected. */
-	AnimCallback_AnimEnd=/* Unknown default property type! */
+	PartMapping(0)=(BoneName=shoulder_left,Part=6,BoneNameForDestroy=None)
+	PartMapping(1)=(BoneName=arm_upper_left,Part=8,BoneNameForDestroy=None)
+	PartMapping(2)=(BoneName=arm_lower_left,Part=8,BoneNameForDestroy=None)
+	PartMapping(3)=(BoneName=wrist_left,Part=10,BoneNameForDestroy=None)
+	PartMapping(4)=(BoneName=finger_left_pinky,Part=10,BoneNameForDestroy=None)
+	PartMapping(5)=(BoneName=finger_left_mid_upper,Part=10,BoneNameForDestroy=None)
+	PartMapping(6)=(BoneName=finger_left_mid_lower,Part=10,BoneNameForDestroy=None)
+	PartMapping(7)=(BoneName=thumb_left_upper,Part=10,BoneNameForDestroy=None)
+	PartMapping(8)=(BoneName=thumb_left_lower,Part=10,BoneNameForDestroy=None)
+	Gibs(0)=(BoneName=arm_lower_left,ReqBones=none,RenderObject='sm_class_effects.AssCommander_Gibs.AssCommander_ForeArmL_GIb',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-4.947405E+32,Y=2.965317E-17,Z=13.7),Z=0.7)
+	FullyGibbedSoundName=Corpse_LimbExplode
+	FullyGibbedFrozenSoundName=IcePart_Shatter_Small
+	NumLimbsUntilDestructible=1
 }

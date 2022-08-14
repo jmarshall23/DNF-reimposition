@@ -13,6 +13,10 @@ defaultproperties
 	HealthPrefab=0
 	bTickOnlyWhenPhysicsAwake=true
 	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
-	PhysicsSoundOverrides=/* Array type was not detected. */
-	OtherMaterialTypes=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.SpecialCase.BroomStick_01','a_impact.SpecialCase.BroomStick_02','a_impact.SpecialCase.BroomStick_03','a_impact.SpecialCase.BroomStick_04'),SoundInfo=(InputRange=(Min=32,Max=1280),OutputPitchRange=(Min=1,Max=2),OutputVolumeRange=(Min=0.4,Max=0.8)),bDisableSoundInWater=true)
+	Physics=18
+	CollisionRadius=10
+	CollisionHeight=33.75
+	Mass=10
+	StaticMesh='sm_class_decorations.PushBroom.PushBroom_1'
 }

@@ -26,6 +26,15 @@ defaultproperties
 	MaxVelocityVariance=(X=1.291857E-41,Y=2.80262E-17,Z=1)
 	AlphaStart=0.25
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
-	Style=/* Unknown default property type! */
+	Textures(0)='dt_effects.Smoke.alphasmoke1RC'
+	StartDrawScale=0.02
+	EndDrawScale=0.62
+	DrawScaleEndVariance=0.04
+	RotationVariance=6.18
+	TriggerAfterSeconds=0.125
+	bIgnoreBList=true
+	CollisionRadius=1
+	CollisionHeight=1
+	TickStyle=3
+	Style=8
 }

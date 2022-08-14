@@ -14,8 +14,8 @@ const kSuperTurretExit_Kaboom = 2;
 
 struct SSuperTurretExitAnims
 {
-	var() name EnterName;
-	var() name ExitName;
+	var() anim name EnterName;
+	var() anim name ExitName;
 };
 
 struct STurretProjectileHitEffect
@@ -216,13 +216,13 @@ function TriggerFunc_PowerUp()
 	return;
 }
 
-k2call simulated function AnimEvent_TurretActivate(optional EventInfo AnimEventInfo)
+animevent simulated function AnimEvent_TurretActivate(optional EventInfo AnimEventInfo)
 {
 	FindAndPlaySound('SuperTurret_Activate', 1);
 	return;
 }
 
-k2call simulated function AnimEvent_TurretHitGround(optional EventInfo AnimEventInfo)
+animevent simulated function AnimEvent_TurretHitGround(optional EventInfo AnimEventInfo)
 {
 	DecoActivity(0, 'SuperTurret_HitGround');
 	return;
@@ -627,90 +627,97 @@ defaultproperties
 	ExhaustTime=0.5
 	LightTime=0.1
 	ExplosionClass='dnParticles.dnTurret_Cannon'
-	MyExitAnimNames(0)=(Z=/* Unknown default property type! */,ExitName=a_superturret_deactivateleft)
+	MyExitAnimNames(0)=(EnterName=a_superturret_activateleft,ExitName=a_superturret_deactivateleft)
 	MyExitAnimNames(1)=(EnterName=a_superturret_activateright,ExitName=a_superturret_deactivateright)
 	MyExitAnimNames(2)=(EnterName=None,ExitName=a_superturret_boom)
-	MyExitAnimNames(3)=(FireEffectClass='p_Weapons.SuperTurret_MuzzleFlash.SuperTurret_MuzzleFlash_Spawner',TracerInfo=DecoActivities_Spawn'dnControl_Turret_SuperTurret.DA_Spawn_SuperTurret_RocketA',TracerInfo[1]=DecoActivities_Spawn'dnControl_Turret_SuperTurret.DA_Spawn_SuperTurret_RocketB',MinPitch=-4096,MaxPitch=8192,MinYaw=-16384,MaxYaw=16384,ShotRate=0.7,PitchAimRate=8192,YawAimRate=8192,RotatePitchAdjust=-4096,RotationSoundName=SuperTurret_Rotation,RotationSoundModSideways=(Min=0,Max=0),RotationSoundModUpDown=(Min=0,Max=0),FireHeightBoneName=mount_beam,Crosshair='dt_hud.crosshairs.SuperTurret_Crosshair_fb',FireViewShake=(bNoLerp=false,bToggleSign=true,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.5,ShakeFrequency=0.05,ShakeMagnitude=1000,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=SuperTurret_Fire_Shake),FireRumble=(RumbleName=SuperTurret_Rumble,RumbleDuration=0.19,RumbleLeftMagnitude=0.55,RumbleRightMagnitude=0.18,FalloffActor=none,FalloffDistance=0),OverheatMaxTime=5,CoolDownTime=3,CoolDownLevel=50,HeatPerShot=1.5,OverheatNoFireSound=SuperTurret_NoFire,OverheatWarnTimePCT=0.8,OverheatSmokeClass='p_Weapons.MG42_MuzzleFlash.MG42_Overheat_Main',OverheatMountName=mount_beam,OverheatScale=10,CrosshairIndex=15,States=/* Array type was not detected. */,Flags=/* Unknown default property type! */,DrawScale=/* Unknown default property type! */,X=/* Array type was not detected. */)
-	MyExitAnimNames(4)=(Transitions=/* Array type was not detected. */,Y=
-/* Exception thrown while deserializing Y
-System.ArgumentOutOfRangeException: startIndex cannot be larger than length of string.
-Parameter name: startIndex
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */,CustomName=None,NewState=AttachUserLERP)
-	MyExitAnimNames(5)=(UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */),SlotPriority=0,VolumePrefab=0,Slots=/* Array type was not detected. */)
-	MyExitAnimNames(6)=(Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	MyExitAnimNames(7)=none
-	MyExitAnimNames(8)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=/* Array type was not detected. */)
-	MyExitAnimNames(9)=(Filters=/* Array type was not detected. */)
-	MyExitAnimNames(10)=none
-	MyExitAnimNames(11)=(MySoundName=None,SubAnims=/* Array type was not detected. */)
-	MyExitAnimNames(12)=none
-	MyExitAnimNames(13)=(StateName=AttachUserLERP,OutEvents=/* Array type was not detected. */)
-	MyExitAnimNames(14)=(Transitions=/* Array type was not detected. */,Y=
-/* Exception thrown while deserializing Y
-System.ArgumentOutOfRangeException: startIndex cannot be larger than length of string.
-Parameter name: startIndex
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */,CustomName=None,NewState=AttachUserAnim)
-	MyExitAnimNames(15)=(UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */),SlotPriority=0,VolumePrefab=0,Slots=/* Array type was not detected. */)
-	MyExitAnimNames(16)=(Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	MyExitAnimNames(17)=none
-	MyExitAnimNames(18)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=/* Array type was not detected. */)
-	MyExitAnimNames(19)=(Filters=/* Array type was not detected. */)
-	MyExitAnimNames(20)=none
-	MyExitAnimNames(21)=(MySoundName=None,SubAnims=/* Array type was not detected. */)
-	MyExitAnimNames(22)=none
-	MyExitAnimNames(23)=(StateName=AttachUserAnim,OutEvents=/* Array type was not detected. */)
-	MyExitAnimNames(24)=(Transitions=/* Array type was not detected. */,X=
-/* Exception thrown while deserializing X
-System.ArgumentOutOfRangeException: startIndex cannot be larger than length of string.
-Parameter name: startIndex
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */,CustomName=idle,NewState=idle)
-	MyExitAnimNames(25)=(ControlEvent=0,CustomName=IdleLow,NewState=IdleLow)
-	MyExitAnimNames(26)=(UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */),SlotPriority=0,VolumePrefab=0,Slots=/* Array type was not detected. */)
-	MyExitAnimNames(27)=(Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	MyExitAnimNames(28)=none
-	MyExitAnimNames(29)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=/* Array type was not detected. */)
-	MyExitAnimNames(30)=(Filters=/* Array type was not detected. */)
-	MyExitAnimNames(31)=none
-	MyExitAnimNames(32)=(MySoundName=None,SubAnims=/* Array type was not detected. */)
-	MyExitAnimNames(33)=none
-	MyExitAnimNames(34)=(StateName=DetachUser,OutEvents=/* Array type was not detected. */)
-	MyExitAnimNames(35)=(Transitions=/* Array type was not detected. */,Y=
-/* Exception thrown while deserializing Y
-System.ArgumentOutOfRangeException: startIndex cannot be larger than length of string.
-Parameter name: startIndex
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */,CustomName=None,NewState=DetachUserLERP)
-	MyExitAnimNames(36)=(UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */),SlotPriority=0,VolumePrefab=0,Slots=/* Array type was not detected. */)
-	MyExitAnimNames(37)=(Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	MyExitAnimNames(38)=none
-	MyExitAnimNames(39)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=/* Array type was not detected. */)
-	MyExitAnimNames(40)=(Filters=/* Array type was not detected. */)
-	MyExitAnimNames(41)=none
-	MountOrigin="~j#}i#u?~Vu?}h#u?p.?&Om8O?p8K\" ???I\"    E\" ???D\" @  f7$333?C\"    B\"    j7\" ???Ay4@ZHo$    p$    u?ZHo$    p$    u?{zy?&uZCFtS s? QU M
- N
-$    i$   ?h$??L=a\"?  _\"    ]$    [g#u?rZA(f#~$\\?B>}$???|$?Q8>M
- N
-$    u?i$  ?@|7$  @@n$  HBg$  ??lHk$??L?i?hzC8$   AX\"   @i0PlU	 RY'LVu?Ksu?SVu?WVu?VZNEZ|#MS {S zS yS vS ES xS FS u? Vu?}\"    &$    w$    u?Qjb@fS iS JVu?j !	 n C p	 H$    I$    B$    A$    ?$    G$    $    D$    Zl?sS PS eS YS dS @S ]S `S cS mS aS _S ^S \\S [S u?rZQCOS qS X UZ$    $    $    u?NZ$    $    $    u?u?\"    >$    t\"    \"\"    oZZ&W$    V$    T$    SVu?RVu?u?kVu?h	 g	 u?XVu?T	 u?PsU	 RY'LVu?Ktu?SVu?WVu?VZNEZ|#MS {S zS yS vS ES xS FS u? Vu?}\"    &$    w$    u?Qjb@fS iS JVu?j !	 n C p	 H$    I$    B$    A$    ?$    G$    $    D$    Zl?sS PS eS YS dS @S ]S `S cS mS aS _S ^S \\S [S u?rZQCOS qS X UZ$    $    $    u?NZ$    $    $    u?u?\"    >$    t\"    \"\"    oZZ&W$    V$    T$    SVu?RVu?u?kVu?h	 g	 u?XVu?T	 u?PtU	 RY!' LtKtu?' LO
-KO
-u?SVu?WVu?VZNEZ|#MS {S zS yS vS ES xS FS u? Vu?}\"    &$    w$    u?Qjb@fS iS JVu?j !	 n C p	 H$    I$    B$    A$    ?$    G$    $    D$    Zl?sS PS eS YS dS @S ]S `S cS mS aS _S ^S \\S [S u?rZQCOS qS X UZ$    $    $    u?NZ$    $    $    u?u?\"    >$    t\"    \"\"    oZZ&W$    V$    T$    SVu?RVu?u?kVu?h	 g	 u?XVu?T	 u?PZU	 RY'LVu?Kiu?SVu?WVu?VZNEZ|#MS {S zS yS vS ES xS FS u? Vu?}\"    &$    w$    u?Qjb@fS iS JVu?j !	 n C p	 H$    I$    B$    A$    ?$    G$    $    D$    Zl?sS PS eS YS dS @S ]S `S cS mS aS _S ^S \\S [S u?rZQCOS qS X UZ$    $    $    u?NZ$    $    $    u?u?\"    >$    t\"    \"\"    oZZ&W$    V$    T$    SVu?RVu?u?kVu?h	 g	 u?XVu?T	 u?PiU	 RY'LVu?Klu?SVu?WVu?VZNEZ|#MS {S zS yS vS ES xS FS u? Vu?}\"    &$    w$    u?Qjb@fS iS JVu?j !	 n C p	 H$    I$    B$    A$    ?$    G$    $    D$    Zl?sS PS eS YS dS @S ]S `S cS mS aS _S ^S \\S [S u?rZQCOS qS X UZ$    $    $    u?NZ$    $    $    u?u?\"    >$    t\"    \"\"    oZZ&W$    V$    T$    SVu?RVu?u?kVu?h	 g	 u?XVu?T	 u?PtU	 RYE'LVu?Ku?'LVu?KZu?' L]K]u?' LoKou?ScWVu?VZNCZ|#M? {S zS yS vS ES xS FS u? f}\"    &$    w$    u?Qjb@fS iS JVu?j !	 n C p	 H$    I$    B$    A$    ?$    G$    $    D$    Zl?sS PS eS YS dS @S ]S `S cS mS aS _S ^S \\S [S u?rZQCOS qS X UZ$    $    $    u?NZ$    $    $    u?u?\"    >$    t\"    \"\"    oZZ&W$    V$    T$    SVu?RVu?u?kVu?h	 g	 u?XVu?T	 u?PU	 RYC'LVu?Kh	u?' LHKtu?' LoKh	u?' L]K]u?SYWVu?VZNCZ|#M? {S zS yS vS ES xS FS u? e#}\"    &$   @w$    u?Qjb@fS iS JVu?j !	 n C p	 H$    I$    B$    A$    ?$    G$    $    D$    Zl?sS PS eS YS dS @S ]S `S cS mS aS _S ^S \\S [S u?rZQCOS qS X UZ$    $    $    u?NZ$    $    $    u?u?\"    >$    t\"    \"\"    oZZ&W$    V$    T$    SVu?RVu?u?kVu?h	 g	 u?XVu?T	 u?PoU	 RY3'LVu?KZu?' LXKtu?' L]K]u?ScWVu?VZNCZ|#M? {S zS yS vS ES xS FS u? f}\"    &$    w$    u?Qjb@fS iS JVu?j !	 n C p	 H$    I$    B$    A$    ?$    G$    $    D$    Zl?sS PS eS YS dS @S ]S `S cS mS aS _S ^S \\S [S u?rZQCOS qS X UZ$    $    $    u?NZ$    $    $    u?u?\"    >$    t\"    \"\"    oZZ&W$    V$    T$    SVu?RVu?u?kVu?h	 g	 u?XVu?T	 u?PO
-U	 RY' LGKGu?Sg>WVu?VZNCZ|#M? {S zS yS vS ES xS FS u? f}\"    &$    w$    u?Qjb@fS iS JVu?j !	 n C p	 H$    I$    B$    A$    ?$    G$    $    D$    Zl?sS PS eS YS dS @S ]S `S cS mS aS _S ^S \\S [S u?rZQCOS qS X UZ$    $    $    u?NZ$    $    $    u?u?\"    >$    t\"    \"\"    oZZ&W$    V$    T$    SVu?RVu?u?kVu?h	 g	 u?XVu?T	 u?Ph	U	 RY#'	LVu?Ktu?' L]K]u?SVu?WVu?VZNEZ|#MS {S zS yS vS ES xS FS u? Vu?}\"    &$    w$    u?Qjb@fS iS JVu?j !	 n C p	 H$    I$    B$    A$    ?$    G$    $    D$    Zl?sS PS eS YS dS @S ]S `S cS mS aS _S ^S \\S [S u?rZQCOS qS X UZ$    $    $    u?NZ$    $    $    u?u?\"    >$    t\"    \"\"    oZZ&W$    V$    T$    SVu?RVu?u?kVu?h	 g	 u?XVu?T	 u?P]U	 RY'	LVu?Ktu?Si>WVu?VZNEZ|#MS {S zS yS vS ES xS FS u? Vu?}\"    &$    w$    u?Qjb@fS iS JVu?j !	 n C p	 H$    I$    B$    A$    ?$    G$    $    D$    Zl?sS PS eS YS dS @S ]S `S cS mS aS _S ^S \\S [S u?rZQCOS qS X UZ$    $    $    u?NZ$    $    $    u?u?\"    >$    t\"    \"\"    oZZ&W$    V$    T$    SVu?RVu?u?kVu?h	 g	 u?XVu?T	 u?PGU	 RY'	LVu?Ktu?Se>WVu?VZNCZ|#M? {S zS yS vS ES xS FS u? f}\"    &$    w$    u?Qjb@fS iS JVu?j !	 n C p	 H$    I$    B$    A$    ?$    G$    $    D$    Zl?sS PS eS YS dS @S ]S `S cS mS aS _S ^S \\S [S u?rZQCOS qS X UZ$    $    $    u?NZ$    $    $    u?u?\"    >$    t\"    \"\"    oZZ&W$    V$    T$    SVu?RVu?u?kVu?h	 g	 u?XVu?T	 u?PlU	 RY!' LtKtu?' LO
-KO
-u?Sh>WVu?VZNCZ|#MS {S zS yS vS ES xS FS u? d#}\"    &$    w$    u?Qjb@fS iS JVu?j !	 n C p	 H$    I$    B$    A$    ?$    G$    $    D$    Zl?sS PS eS YS dS @S ]S `S cS mS aS _S ^S \\S [S u?rZQCOS qS X UZ$    $    $    u?NZ$    $    $    u?u?\"    >$    t\"    \"\"    oZZ&W$    V$    T$    SVu?RVu?u?kVu?h	 g	 u?XVu?T	 u?p5$   Bq5$  HBu5lsi?W? [ZH@Z$?9?$?LP?$?Q??u?FZ\"    
-\" @  	\"    u? tytu?aZH@Z$??3?$ffP?$????u?FZ\"    
-\" ?  	\"    u? SySu?_ZHDZ$    $    $    u?FZ\"    
-\"    	\"    u? Vu?yVu?u?u?W? [ZH@Z$?9?$??<B$?Q??u?FZ\"    
-\" ???	\"    u? xyxu?aZH@Z$??<?$?w3B$????u?FZ\"    
-\" ?  	\"    u? yyyu?_ZHDZ$    $    $    u?FZ\"    
-\"    	\"    u? Vu?yVu?u?u?WS [ZHDZ$    $    $    u?FZ\"    
-\"    	\"    u? Vu?yVu?u?aZH@Z$Nb??$
-W6?$??u?FZ\"    
-\"    	\"    u? TyTu?_ZHDZ$    $    $    u?FZ\"    
-\"    	\"    u? Vu?yVu?u?u?RZ*?)S 1S =S +S -S .S /? ? S 0S 6S 9S :? ;Vu?<$    8Vu?7Vu?5Vu?4G#Z$    $    $    u?3Z$    $    $    u?$Z\"    
-\"    	\"    u?2Z\"    
-\"    	\"    u?,( u?v? RR7EVu?MiAkZ`cS g\"    h$    l$    u?jYuPb	 i f	 e	 d aYV_	 ^Ylq[ZS S \"    \"    $    u?]	 \\ZS S \"    \"    $    u?u?S u?kZ`cS g\"    h$    l$    u?jYuWb	 i f	 e	 d aYX_	 ^Y?mq[ZS S \"    \"    $    u?]	 \\ZS S \"    \"    $    u?u?S u?kZ`cS g\"    h$    l$    u?jYujb	 i f	 e	 d aY?_	 ^Ym8[ZS S \"    \"    $    u?]	 \\ZS S \"    \"    $    u?u?_	 ^Yp8[ZS S \"    \"    $    u?]	 \\ZS S \"    \"    $    u?u?S u?uY ???}i	ZS ?$    YZ*?)S 1S =S +S -S .S /S S S 0S 6S 9S :S ;Vu?<$    8Vu?7c#5Vu?4b##Z$    $    $    u?3Z$    $    $    u?$Z\"    
-\"    	\"    u?2Z\"    
-\"    	\"    u?,( u?"
+	FireEffectClass='p_Weapons.SuperTurret_MuzzleFlash.SuperTurret_MuzzleFlash_Spawner'
+	begin obje[0]ct name=DA_Spawn_SuperTurret_RocketA class=DecoActivities_Spawn
+		MountedSpawns(0)=(bSkipVerifySelf=false,SpawnClass='dnGame.dnRocket_SuperTurret',SpawnChance=0,MountPrefab=(bDontActuallyMount=true,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_beam,MountOrigin=(X=1.291717E-41,Y=2.802813E-17,Z=-25),Z=-25),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+		MountedSpawns(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	object end
+	// Reference: DecoActivities_Spawn'dnControl_Turret_SuperTurret.DA_Spawn_SuperTurret_RocketA'
+	TracerInfo=DA_Spawn_SuperTurret_RocketA
+	begin object name=DA_Spawn_SuperTurret_RocketB class=DecoActivities_Spawn
+		MountedSpawns(0)=(bSkipVerifySelf=false,SpawnClass='dnGame.dnRocket_SuperTurret',SpawnChance=0,MountPrefab=(bDontActuallyMount=true,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_beam,MountOrigin=(X=1.291717E-41,Y=2.802813E-17,Z=-25),Z=25),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+		MountedSpawns(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	object end
+	// Reference: DecoActivities_Spawn'dnControl_Turret_SuperTurret.DA_Spawn_SuperTurret_RocketB'
+	TracerInfo=DA_Spawn_SuperTurret_RocketB
+	MinPitch=-4096
+	MaxPitch=8192
+	MinYaw=-16384
+	MaxYaw=16384
+	ShotRate=0.7
+	PitchAimRate=8192
+	YawAimRate=8192
+	RotatePitchAdjust=-4096
+	RotationSoundName=SuperTurret_Rotation
+	RotationSoundModSideways=(Min=0,Max=0)
+	RotationSoundModUpDown=(Min=0,Max=0)
+	FireHeightBoneName=mount_beam
+	Crosshair='dt_hud.crosshairs.SuperTurret_Crosshair_fb'
+	FireViewShake=(bNoLerp=false,bToggleSign=true,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.5,ShakeFrequency=0.05,ShakeMagnitude=1000,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=SuperTurret_Fire_Shake)
+	FireRumble=(RumbleName=SuperTurret_Rumble,RumbleDuration=0.19,RumbleLeftMagnitude=0.55,RumbleRightMagnitude=0.18,FalloffActor=none,FalloffDistance=0)
+	OverheatMaxTime=5
+	CoolDownTime=3
+	CoolDownLevel=50
+	HeatPerShot=1.5
+	OverheatNoFireSound=SuperTurret_NoFire
+	OverheatWarnTimePCT=0.8
+	OverheatSmokeClass='p_Weapons.MG42_MuzzleFlash.MG42_Overheat_Main'
+	OverheatMountName=mount_beam
+	OverheatScale=10
+	CrosshairIndex=15
+	States(0)=(StateName=Useable,OutEvents=none,Transitions=((ControlEvent=3,CustomName=None,NewState=AttachUserLERP)),UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	States(1)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=none,Filters=none)
+	States(2)=(MySoundName=None,SubAnims=none)
+	States(3)=(StateName=AttachUserLERP,OutEvents=none,Transitions=((ControlEvent=5,CustomName=None,NewState=AttachUserAnim)),UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	States(4)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=none,Filters=none)
+	States(5)=(MySoundName=None,SubAnims=none)
+	States(6)=(StateName=AttachUserAnim,OutEvents=none,Transitions=((ControlEvent=0,CustomName=idle,NewState=idle),(ControlEvent=0,CustomName=IdleLow,NewState=IdleLow)),UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	States(7)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=none,Filters=none)
+	States(8)=(MySoundName=None,SubAnims=none)
+	States(9)=(StateName=DetachUser,OutEvents=none,Transitions=((ControlEvent=8,CustomName=None,NewState=DetachUserLERP)),UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	States(10)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=none,Filters=none)
+	States(11)=(MySoundName=None,SubAnims=none)
+	States(12)=(StateName=DetachUserLERP,OutEvents=none,Transitions=((ControlEvent=6,CustomName=None,NewState=Useable)),UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	DamageTriggerRadius=40
+	DamageTriggerHeight=50
+	ForceAttachStateName=AttachUserAnimInstant
+	UsableExits(0)=(bEnabled=true,EnterInfo=(LocationOffset=(X=1.949665E-20,Y=2.813693E-17,Z=-52.075),Z=-92.66),RotationOffset=(Pitch=8709,Yaw=571080704,Roll=16384),Roll=0)
+	UsableExits(1)=(Animation=SuperTurret_ActivateLeft,SoundName=SuperTurret_ActivateLeft)
+	UsableExits(2)=(ExitInfo=(LocationOffset=(X=-1.593777E-23,Y=2.813691E-17,Z=-52.1),Z=-90.96),RotationOffset=(Pitch=8709,Yaw=571080704,Roll=32768),Roll=0)
+	UserMountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=true,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=true,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_duke,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bDisableCrosshairHUD=true
+	AttachUserSoundName=BodyMotion_Medium
+	DetachUserSoundName=None
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(SuperTurret_HitGround),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'dnControl_Turret_SuperTurret.DA_Sound_dnControl_Turret_SuperTurret_HitGround'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(SuperTurret_Disengage),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Sound_Ambient_Clear',DecoActivities_Sound'dnControl_Turret_SuperTurret.DA_Sound_dnControl_Turret_SuperTurret_Disengage'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(SuperTurret_FireProjectile),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Spawn'dnControl_Turret_SuperTurret.DA_Spawn_SuperTurret_RocketA'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0)),(ActivityRules=none,ActivityElements=(DecoActivities_Spawn'dnControl_Turret_SuperTurret.DA_Spawn_SuperTurret_RocketB'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Ambient_Clear'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Disable'
+	DestroyedActivities(3)='dnGame.DecoActivityDeclarations.DA_HUD_bDrawUsePhrase_Disable'
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='dnParticles.dnSuperTurret_Smoke_Idle',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=ExhaustFX0,ForceEvent=None,MountMeshItem=mount_exhaustports_left01,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(5)=(bSkipVerifySelf=false,SpawnClass='dnParticles.dnSuperTurret_Smoke_Idle',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=ExhaustFX1,ForceEvent=None,MountMeshItem=mount_exhaustports_left02,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(6)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(7)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(8)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(9)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(10)=(bSkipVerifySelf=false,SpawnClass='dnParticles.dnSuperTurret_Smoke_Idle',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=ExhaustFX2,ForceEvent=None,MountMeshItem=mount_exhaustports_left03,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bBlockPlayers=true
+	CollisionRadius=100
+	CollisionHeight=75
+	Mesh='c_dnWeapon.superturret'
+	ActorColorList(0)=(ActorColor=(B=76,G=3,R=1,A=0),G=0,B=0,A=0)
+	ActorColorList(1)=(ActorColor_LightEx=none,ActorColor_LightExScale=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SoundRadius=768
+	SoundInnerRadius=384
+	TransientSoundRadius=768
+	TransientSoundInnerRadius=384
+	ScaleModifierGroupList(0)=(Modifiers=none,Identifier=RenderProperties,DefaultModValue=0,LastValue=0,NoUpdate=false)
 }

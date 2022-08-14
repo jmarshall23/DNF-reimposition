@@ -16,8 +16,8 @@ var MaterialEx TargetUL;
 var MaterialEx TargetLL;
 var MaterialEx TargetUR;
 var MaterialEx TargetLR;
-var bool bPlayLockSound;
-var bool bPlayAcquiringSound;
+var netupdate(NU_PlayLockSound) bool bPlayLockSound;
+var netupdate(NU_PlayAcquiringSound) bool bPlayAcquiringSound;
 
 replication
 {
@@ -429,5 +429,11 @@ defaultproperties
 	PickupClass='MP_RPGPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=3
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_RPG'
+	Mesh='c_dnWeapon.RPG'
+	SoundVolume=200
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_RPG'
 }

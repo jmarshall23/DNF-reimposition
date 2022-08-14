@@ -12,5 +12,14 @@ defaultproperties
 {
 	InitialThrust=45
 	CenterOfMassOffset=(X=1.291717E-41,Y=2.802663E-17,Z=0)
-	PhysicsActions=/* Array type was not detected. */
+	begin object name=PA_PaperAirplaneB_Lift class=PhysicsAction_Lift
+		CenterOfMassOffset=(X=1.291717E-41,Y=2.802663E-17,Z=0)
+		LiftCoeffecient=0.4
+		ForwardLinearDrag=0.01
+		LinearDrag=5
+		AngularDrag=30
+	object end
+	// Reference: PhysicsAction_Lift'Details_Generic_PaperAirplane_B.PA_PaperAirplaneB_Lift'
+	PhysicsActions(0)=PA_PaperAirplaneB_Lift
+	StaticMesh='sm_class_decorations.paperairplanes.paperairplane_2'
 }

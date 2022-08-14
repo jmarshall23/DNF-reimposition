@@ -27,5 +27,17 @@ defaultproperties
 	AlphaMid=1
 	AlphaEnd=0
 	AlphaRampMid=0.85
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Debris.papershard1aRC'
+	Textures(1)='dt_effects.Debris.papershard4aRC'
+	AnimStopThreshold=0.02
+	StartDrawScale=0.075
+	EndDrawScale=0.075
+	DrawScaleVariance=0.1
+	RotationVariance=65535
+	RotationVelocityMaxVariance=4
+	TriggerType=0
+	CollisionRadius=16
+	CollisionHeight=16
+	Style=3
+	TimeWarp=0.75
 }

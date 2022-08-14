@@ -11,7 +11,22 @@ class Settings_FoodService_Plate extends Details_Generic_Frisbee
 defaultproperties
 {
 	InitialThrust=500
-	DestroyedActivities=/* Array type was not detected. */
-	deltaUpAngle=89784577
-	Y=none
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Plate_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=PlateStack_Break
+	object end
+	// Reference: DecoActivities_Sound'Settings_FoodService_Plate.DA_Sound_Plate_Destroyed'
+	DestroyedActivities(1)=DA_Sound_Plate_Destroyed
+	HealthPrefab=1
+	bGrabbable=false
+	SpawnOnDestroyed(0)=(SpawnClass='Settings_FoodService_Plate_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=-1.075528E+08,Y=2.802603E-17,Z=7.9),Z=0)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Glass'
+	PhysicsMassType=0
+	CollisionRadius=12
+	CollisionHeight=1
+	Mass=10
+	StaticMesh='sm_class_decorations.Plate.Plate'
 }

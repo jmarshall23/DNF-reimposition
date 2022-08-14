@@ -10,27 +10,13 @@ class dnBonePartMapper_AssaultTrooper_LeftLeg extends BonePartMapper
 
 defaultproperties
 {
-	PartMapping=/* Array type was not detected. */
-	EndingBlendAlpha=/* Unknown default property type! */
-	DestroyableBones=/* Array type was not detected. */
-	StartingBlendAlpha=false
-	bSurviveDismount=false
-	bDontScaleByDrawScale=false
-	bScaleByDrawScaleNonDefault=false
-	bTransformDrawScale3DChange=false
-	bTakeParentTag=false
-	bTransferToCorpse=false
-	bDontSetOwner=false
-	MountParentTag=None
-	DrawScaleOverride=0
-	AppendToTag=None
-	ForceTag=None
-	ForceEvent=None
-	MountMeshItem=None
-	MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0)
-	MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0)
-	MountAngles=(Pitch=8741,Yaw=572915712,Roll=0)
-	MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0)
-	MountType=0
-	DismountPhysics=0
+	PartMapping(0)=(BoneName=LeftUpLeg,Part=12,BoneNameForDestroy=None)
+	PartMapping(1)=(BoneName=LeftLeg,Part=14,BoneNameForDestroy=LeftLeg)
+	PartMapping(2)=(BoneName=leftfoot,Part=16,BoneNameForDestroy=LeftLeg)
+	PartMapping(3)=(BoneName=LeftToeBase,Part=16,BoneNameForDestroy=LeftLeg)
+	DestroyableBones(0)=(BoneName=LeftLeg,bAddToLimbCount=true,LimbCapClass='dnCorpse_LimbCap_Male_LegLeft_Lower',LimbCapMountInfo=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=12),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(0)=(BoneName=LeftLeg,ReqBones=none,RenderObject='sm_class_effects.Assault_Trooper_Gibs.Assault_Trooper_FootL_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-1.789188E-06,Y=2.965351E-17,Z=-3.403139),Z=14.90217)
+	FullyGibbedSoundName=Corpse_LimbExplode
+	FullyGibbedFrozenSoundName=IcePart_Shatter_Small
+	NumLimbsUntilDestructible=1
 }

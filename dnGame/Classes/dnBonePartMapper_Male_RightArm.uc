@@ -7,3 +7,41 @@
  *******************************************************************************/
 class dnBonePartMapper_Male_RightArm extends BonePartMapper
 	exportstructs;
+
+defaultproperties
+{
+	PartMapping(0)=(BoneName=Root,Part=7,BoneNameForDestroy=None)
+	PartMapping(1)=(BoneName=RightShoulder,Part=7,BoneNameForDestroy=None)
+	PartMapping(2)=(BoneName=RightArm,Part=9,BoneNameForDestroy=None)
+	PartMapping(3)=(BoneName=rightarmroll,Part=9,BoneNameForDestroy=None)
+	PartMapping(4)=(BoneName=rightflex,Part=9,BoneNameForDestroy=None)
+	PartMapping(5)=(BoneName=rightunderarm,Part=9,BoneNameForDestroy=None)
+	PartMapping(6)=(BoneName=RightForeArm,Part=9,BoneNameForDestroy=RightForeArm)
+	PartMapping(7)=(BoneName=RightForeArmRoll,Part=9,BoneNameForDestroy=RightForeArm)
+	PartMapping(8)=(BoneName=righthand,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(9)=(BoneName=righthandthumb1,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(10)=(BoneName=righthandthumb2,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(11)=(BoneName=righthandthumb3,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(12)=(BoneName=righthandthumb4,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(13)=(BoneName=righthandindex1,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(14)=(BoneName=righthandindex2,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(15)=(BoneName=righthandindex3,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(16)=(BoneName=righthandindex4,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(17)=(BoneName=righthandmiddle1,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(18)=(BoneName=righthandmiddle2,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(19)=(BoneName=righthandmiddle3,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(20)=(BoneName=righthandmiddle4,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(21)=(BoneName=righthandring1,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(22)=(BoneName=righthandring2,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(23)=(BoneName=righthandring3,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(24)=(BoneName=righthandring4,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(25)=(BoneName=righthandpinky1,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(26)=(BoneName=righthandpinky2,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(27)=(BoneName=righthandpinky3,Part=11,BoneNameForDestroy=RightForeArm)
+	PartMapping(28)=(BoneName=righthandpinky4,Part=11,BoneNameForDestroy=RightForeArm)
+	DestroyableBones(0)=(BoneName=RightForeArm,bAddToLimbCount=true,LimbCapClass='dnCorpse_LimbCap_Male_ArmRight_Lower',LimbCapMountInfo=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=-3.36833E-11,Y=2.965168E-17,Z=-0.123),Z=10.928),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(0)=(BoneName=RightForeArm,ReqBones=none,RenderObject=none,DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	FullyGibbedSoundName=Corpse_LimbExplode
+	FullyGibbedFrozenSoundName=IcePart_Shatter_Small
+	NumLimbsUntilDestructible=1
+}

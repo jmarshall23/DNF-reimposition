@@ -77,7 +77,6 @@ defaultproperties
 	TickNearbyRadius=2048
 	Style=3
 	AlphaSortGroup=8
-	ActorColorList=/* Array type was not detected. */
-	Y=0
-	Z=0
+	ActorColorList(0)=(ActorColor=(B=121,G=2,R=1,A=129),G=129,B=129,A=0)
+	RemoteRole=0
 }

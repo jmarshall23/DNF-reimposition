@@ -37,5 +37,15 @@ final function VendItem()
 
 defaultproperties
 {
-	DecoActivities_Default=/* Array type was not detected. */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(PullKnob),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Electronics_Generic_CigaretteMachine_Knob.DA_Sound_Elec_Gen_CigMach_Knob_Pull','dnGame.DecoActivityDeclarations.DA_HUD_bDrawUsePhrase_Disable','dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Disable',DecoActivities_Keyframes'Electronics_Generic_CigaretteMachine_Knob.DA_Keyframes_Elec_Gen_CigMach_Knob_Pull'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(PullComplete),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_HUD_bDrawUsePhrase_Enable','dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Enable'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	HealthPrefab=0
+	bUsable=true
+	bBlockActors=false
+	bBlockPlayers=false
+	bBlockKarma=false
+	CollisionRadius=0.5
+	CollisionHeight=0.5
+	DesiredLocation(0)=(bTemporal=false,bComplete=false,bRelativeMotion=false,Target=(X=1.291717E-41,Y=2.802641E-17,Z=0),Z=0)
+	StaticMesh='sm_class_decorations.CigVendMachine.CigVendKnob'
 }

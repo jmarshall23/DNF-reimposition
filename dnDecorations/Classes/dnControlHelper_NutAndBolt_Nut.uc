@@ -8,9 +8,9 @@
 class dnControlHelper_NutAndBolt_Nut extends dnDecoration
 	collapsecategories;
 
-var name IdleAnims[3];
-var name TurnLeftAnims[3];
-var name TurnRightAnims[3];
+var anim name IdleAnims[3];
+var anim name TurnLeftAnims[3];
+var anim name TurnRightAnims[3];
 
 final simulated function PlayIdle(int Index)
 {

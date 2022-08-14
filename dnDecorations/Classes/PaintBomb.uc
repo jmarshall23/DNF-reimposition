@@ -19,6 +19,10 @@ defaultproperties
 	MaxTraceDistance=64
 	DecalSize=0.25
 	DecalSizeVariance=0.05
-	Decals=/* Array type was not detected. */
-	DrawScale=class'SwitchStates'
+	Decals(0)='dt_effects.liquids.paint1RC'
+	Decals(1)='dt_effects.liquids.paint2RC'
+	Decals(2)='dt_effects.liquids.paint3RC'
+	BehaviorArgument=4
+	Behavior=3
+	bUnlit=true
 }

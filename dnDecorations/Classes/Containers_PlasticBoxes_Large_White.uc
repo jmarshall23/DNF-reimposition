@@ -10,6 +10,5 @@ class Containers_PlasticBoxes_Large_White extends Containers_PlasticBoxes_Large
 
 defaultproperties
 {
-	ActorColorList=/* Array type was not detected. */
-	Z=false
+	ActorColorList(0)=(ActorColor=(B=76,G=3,R=1,A=255),G=255,B=255,A=255)
 }

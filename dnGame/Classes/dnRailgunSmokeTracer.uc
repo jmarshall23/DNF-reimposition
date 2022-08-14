@@ -103,9 +103,20 @@ defaultproperties
 	AlphaEnd=0
 	LineStartWidth=2
 	LineEndWidth=2
-	Textures=/* Array type was not detected. */
-	StartingBlendAlpha=27
-	G=108
-	B=139
-	A=0
+	Textures(0)='dt_Effects2.Smoke.SkokeLine_01'
+	StartDrawScale=375
+	EndDrawScale=375
+	DrawScaleEndVariance=0
+	DrawScaleMidVariance=0
+	NonFinalBlendBloomTint=(B=121,G=2,R=1,A=27)
+	KLinearDamping=1
+	KAngularDamping=1
+	bNoNativeTick=false
+	bTickOnlyRecent=false
+	bTickOnlyZoneRecent=false
+	CollisionRadius=0
+	CollisionHeight=0
+	TickStyle=3
+	Style=3
+	AlphaSortGroup=10
 }

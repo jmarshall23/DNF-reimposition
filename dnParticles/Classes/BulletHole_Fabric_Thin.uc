@@ -10,5 +10,6 @@ class BulletHole_Fabric_Thin extends BulletHole_Decal
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.bulletholes.bhole_fabric1cR_fb'
+	DrawScale=0.03
 }

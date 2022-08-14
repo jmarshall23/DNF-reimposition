@@ -446,14 +446,38 @@ defaultproperties
 	BlasterOffsets[0]=(X=-7.385188E+20,Y=2.954707E-17,Z=-202.3237)
 	BlasterOffsets[1]=(X=-7.385188E+20,Y=2.954707E-17,Z=199.6763)
 	ShootingInfo=(ShotStyle=0,ShotDamage=2,ShotDamageVariance=0,ShotLength=8000,ShotTargetVariance=(X=1.292418E-41,Y=2.954684E-17,Z=96),Z=96)
-	DestroyedActivities(0)=ObjectProperty'DukeHUD.DrawDebugHUD.C'
-	DestroyedActivities(1)=none
+	DestroyedActivities(0)=none
 	begin object name=DA_Sound_FlyByPlane_Fighter_Explode class=DecoActivities_Sound
-		SoundNames=/* Array type was not detected. */
+		SoundNames(0)=FlyByPlane_Fighter_Explode
 	object end
 	// Reference: DecoActivities_Sound'dnFlybyPlane_Fighter.DA_Sound_FlyByPlane_Fighter_Explode'
-	DestroyedActivities(2)=DA_Sound_FlyByPlane_Fighter_Explode
-	DestroyedActivities(3)=Function'dnUsableSomething.PostBeginPlay'
-	DestroyedActivities(4)='DukeMultiPlayer'
-	AnimationName=5.600067E+11
+	DestroyedActivities(1)=DA_Sound_FlyByPlane_Fighter_Explode
+	HealthPrefab=5
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Vehicles.Alien_Fighter_MuzzleFlash.Alien_Fighter_MuzzleFlash_Spawner',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=MuzzleFlashLeft,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.954711E-17,Z=-200),Z=-75),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=0,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(5)=(bSkipVerifySelf=false,SpawnClass='p_Vehicles.Alien_Fighter_MuzzleFlash.Alien_Fighter_MuzzleFlash_Spawner',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=MuzzleFlashRight,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.954711E-17,Z=200),Z=-75),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(6)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(7)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(8)=(MountType=0,DismountPhysics=0)
+	MountOnSpawn(9)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(10)=(bSkipVerifySelf=false,SpawnClass='dnFlybyPlane_Fighter_VaporBeam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=ConTrailA,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.965526E-17,Z=200),Z=-30),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Health=150
+	HealthCap=150
+	SpawnOnDestroyed(0)=(SpawnClass='dnFlybyPlane_Fighter_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.292418E-41,Y=2.954573E-17,Z=1),Z=-1)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	SoundScaled=false
+	CollisionRadius=260
+	CollisionHeight=95
+	Mass=5000
+	DrawType=8
+	StaticMesh='sm_class_vehicles.Aircraft.AlienDroneShip'
+	TransientSoundVolume=0.7
+	VoicePack='SoundConfig.Vehicles.VoicePack_AlienFighter'
 }

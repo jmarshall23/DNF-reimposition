@@ -11,5 +11,5 @@ class TransferredDamage extends SpecialDamage
 defaultproperties
 {
 	DamageName="<?int?dnGame.TransferredDamage.DamageName?>"
-	DamageRumbles=/* Array type was not detected. */
+	DamageRumbles(0)=(RumbleName=TraceDamageRumble,RumbleDuration=0.1,RumbleLeftMagnitude=0.7,RumbleRightMagnitude=0.7,FalloffActor=none,FalloffDistance=0)
 }

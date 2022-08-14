@@ -18,5 +18,12 @@ simulated event PostLoadMap()
 defaultproperties
 {
 	bEnemy=false
-	DestroyedParticleFriendEffects=/* Array type was not detected. */
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Physics=0
+	bTraceShootable=false
+	bBlockCamera=false
+	bCastStencilShadows=false
+	bCollideActors=false
+	DrawType=8
+	StaticMesh='sm_class_vehicles.Aircraft.AlienDroneShip_LO'
 }

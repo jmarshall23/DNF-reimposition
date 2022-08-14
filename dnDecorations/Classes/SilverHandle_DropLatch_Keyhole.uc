@@ -9,5 +9,5 @@ class SilverHandle_DropLatch_Keyhole extends DoorHandle_DropLatch_Keyhole;
 
 defaultproperties
 {
-	Skins=/* Array type was not detected. */
+	Skins(0)='mt_Skins.doorhandles.DoorHandle-silver_cd'
 }

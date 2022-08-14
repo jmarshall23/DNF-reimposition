@@ -171,5 +171,10 @@ defaultproperties
 	UpdateRate=0.25
 	bHidden=true
 	bNoNativeTick=false
-	DesiredLocation=/* Array type was not detected. */
+	DesiredLocation(0)=(bTemporal=false,bComplete=false,bRelativeMotion=false,Target=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	DesiredRotationPitch(0)=(bTemporal=false,bComplete=false,bLinked=false,bShortestDist=false,Target=0,RealTarget=0,Start=0,Delta=0,Rate=0,Exponent=0,TimeTotal=0,TimeMid=0,Timer=0,Style=0,StyleStopped=0,CrushDamage=(DamageHow=0,Damage=(Value=0,Variance=0),Rate=(Value=0,Variance=0),Timer=0),Event=None,FunctionComplete=None,EventAbort=None,FunctionAbort=None)
+	DesiredRotationRoll(0)=(bTemporal=false,bComplete=false,bLinked=false,bShortestDist=false,Target=0,RealTarget=0,Start=0,Delta=0,Rate=0,Exponent=0,TimeTotal=0,TimeMid=0,Timer=0,Style=0,StyleStopped=0,CrushDamage=(DamageHow=0,Damage=(Value=0,Variance=0),Rate=(Value=0,Variance=0),Timer=0),Event=None,FunctionComplete=None,EventAbort=None,FunctionAbort=None)
+	TickStyle=2
+	DrawScale=2
+	Texture='dt_editor.Icons.GeoWaterBobPoint'
 }

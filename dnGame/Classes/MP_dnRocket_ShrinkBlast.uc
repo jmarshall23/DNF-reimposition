@@ -68,6 +68,28 @@ defaultproperties
 	DamageClass='Engine.ShrinkerDamage'
 	DamageRadiusDrawscaleExponent=0.25
 	ShakeScalar=2
-	ShakeInfo=/* Array type was not detected. */
-	OverrideSurvivalChance=(BlendTotalTime=/* Unknown default property type! */)
+	ShakeInfo(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.5,ShakeFrequency=0.05,ShakeMagnitude=300,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=dnRocket_BrainBlast_Shake)
+	ExplosionOffset=0
+	ExplosionClass='p_Weapons.ShrinkRay_Impact.ShrinkRay_Impact_SpawnerMP'
+	ExplosionSoundName=ProjectileExplode
+	bTelekineticable=false
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Weapons.ShrinkRay_Projectile.ShrinkRay_Projectile_MainMP',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	bHidden=true
+	bIsProjectilePool=true
+	bDumbMesh=false
+	bCastStencilShadows=false
+	bNetTemporary=false
+	bIgnoreInstigatorCollision=true
+	TickStyle=0
+	DrawType=8
+	DrawScale=0.675
+	StaticMesh='sm_geo_decorations.CollisionPrimitives.CP_Cube_64'
+	Skins(0)='dt_editor.Surface.Climbable_Masking'
+	LifeSpan=0
+	RemoteRole=0
+	SoundVolume=255
+	SoundRadius=1000
+	SoundInnerRadius=500
+	VoicePack='SoundConfig.Inventory.VoicePack_ShrinkRay'
 }

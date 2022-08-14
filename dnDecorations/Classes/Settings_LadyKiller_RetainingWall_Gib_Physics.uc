@@ -12,6 +12,8 @@ class Settings_LadyKiller_RetainingWall_Gib_Physics extends Settings_LadyKiller_
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Settings_LadyKiller_RetainingWall_Gib.DA_Sound_LK_RetainingWallGib_Destroyed'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
 	Mass=10
 }

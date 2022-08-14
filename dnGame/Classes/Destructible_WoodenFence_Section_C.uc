@@ -6,3 +6,31 @@
  * All rights belong to their respective owners.
  *******************************************************************************/
 class Destructible_WoodenFence_Section_C extends dnDestructibleBuildingDefinition within dnDestructibleBuilding;
+
+defaultproperties
+{
+	Parts(0)=(StaticMesh='SM_Lvl_Desert.Destructible.gen_2x4_short',Location=(X=-8.737549E-11,Y=2.965507E-17,Z=-2.411133),Z=-50.75802)
+	Parts(1)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=49141),Roll=49021)
+	Parts(2)=(Scale=(X=-1.075528E+08,Y=2.954391E-17,Z=0.48),Z=0.8)
+	Parts(3)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(4)=(StaticMesh='SM_Lvl_Desert.Destructible.gen_2x4_short',Location=(X=2.793618E+10,Y=2.954665E-17,Z=-2.411133),Z=-50.75802)
+	Parts(5)=(Rotation=(Pitch=8741,Yaw=572915712,Roll=49141),Roll=49021)
+	Parts(6)=(Scale=(X=-1.075528E+08,Y=2.954391E-17,Z=0.48),Z=0.8)
+	Parts(7)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(8)=(StaticMesh='SM_Lvl_Desert.Destructible.gen_2x4_short',Location=(X=-2.912943E-10,Y=2.965508E-17,Z=-2.410156),Z=-17.75802)
+	Parts(9)=(Rotation=(Pitch=-122331,Yaw=572915712,Roll=49140),Roll=50044)
+	Parts(10)=(Scale=(X=-1.075528E+08,Y=2.954391E-17,Z=0.8),Z=0.8)
+	Parts(11)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(12)=(StaticMesh='SM_Lvl_Desert.Destructible.gen_2x4_short',Location=(X=2.941321E-38,Y=2.954664E-17,Z=-2.411133),Z=-31.08826)
+	Parts(13)=(Rotation=(Pitch=-122331,Yaw=572915712,Roll=49140),Roll=50044)
+	Parts(14)=(Scale=(X=-1.075528E+08,Y=2.954391E-17,Z=0.8),Z=0.8)
+	Parts(15)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(16)=(StaticMesh='SM_Lvl_Desert.Destructible.gen_plank_1',Location=(X=-2.912943E-10,Y=2.965516E-17,Z=0.589844),Z=-0.758018)
+	Parts(17)=(Rotation=(Pitch=-2612699,Yaw=572915712,Roll=16375),Roll=32764)
+	Parts(18)=(Scale=(X=-1.593778E-23,Y=2.954374E-17,Z=0.6),Z=0.6)
+	Parts(19)=(SkewPitch=0,SkewYaw=0,SkewRoll=0,RandomSeed=0,OverrideSurvivalChance=0,OverrideCollisionChance=0,OverrideDensity=0,Mass=0,PhysicsMaterial=none,bDefaultInteractionClass=false)
+	Parts(20)=(StaticMesh='SM_Lvl_Desert.Destructible.gen_plank_2',Location=(X=-2.912943E-10,Y=2.965516E-17,Z=0.589844),Z=-0.758018)
+	ParticleEffects(0)=(SpawnerClass='p_Decorations.Debris_WoodBuilding.Debris_WoodBuilding_Spawner',LocationOffset=(X=1.292418E-41,Y=2.965526E-17,Z=0),Z=-32)
+	ParticleEffects(1)=(RotationOffset=(Pitch=8741,Yaw=572915712,Roll=16384),Roll=0)
+	ShellPart=(StaticMesh='SM_Lvl_Desert.Destructible_Shells.WoodenFence_Section_C',Location=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+}

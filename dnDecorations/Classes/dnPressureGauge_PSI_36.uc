@@ -10,6 +10,13 @@ class dnPressureGauge_PSI_36 extends dnPressureGauge
 
 defaultproperties
 {
-	GaugeStates=/* Array type was not detected. */
-	Sounds=1276512630
+	GaugeStates(0)=(AnimIdle=idle_n3,AnimLeft=gol_n3,AnimRight=gor_n2,OutEvent=None)
+	GaugeStates(1)=(AnimIdle=idle_n2,AnimLeft=gol_n3,AnimRight=gor_n1,OutEvent=None)
+	GaugeStates(2)=(AnimIdle=idle_n1,AnimLeft=gol_n2,AnimRight=gor_0,OutEvent=None)
+	GaugeStates(3)=(AnimIdle=idle_0,AnimLeft=gol_n1,AnimRight=gor_p1,OutEvent=None)
+	GaugeStates(4)=(AnimIdle=idle_p1,AnimLeft=gol_0,AnimRight=gor_p2,OutEvent=None)
+	GaugeStates(5)=(AnimIdle=idle_p2,AnimLeft=gol_p1,AnimRight=gor_p3,OutEvent=None)
+	GaugeStates(6)=(AnimIdle=idle_p3,AnimLeft=gol_p2,AnimRight=gor_p3,OutEvent=None)
+	Mesh='c_generic.GaugeA'
+	Skins(0)='mt_Skins.Gauges.GaugeC_BumpShader'
 }

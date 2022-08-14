@@ -25,7 +25,7 @@ simulated event bool CanActivateNow()
 	return;
 }
 
-k2call function Swallow(optional EventInfo AnimEventInfo)
+animevent function Swallow(optional EventInfo AnimEventInfo)
 {
 	local DukePlayer DP;
 
@@ -182,5 +182,9 @@ defaultproperties
 	Charge=1
 	MaxCharge=3
 	HUDPickupEventIcon=19
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Steroids'
+	AnimationControllerClass='dnAnimationControllerEx_Steroids'
+	MountMeshItem=mount_camera
+	Mesh='c_dukeitems.Steroids'
+	VoicePack='SoundConfig.Inventory.VoicePack_Steroids'
 }

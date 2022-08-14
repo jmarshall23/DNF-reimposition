@@ -21,6 +21,18 @@ defaultproperties
 	DamageRadius=5
 	DamageClass='LaserDamage'
 	ShakeScalar=5
-	ShakeInfo=/* Array type was not detected. */
-	OverrideSurvivalChance=(BlendTotalTime=/* Unknown default property type! */)
+	ShakeInfo(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.3,ShakeFrequency=0.05,ShakeMagnitude=300,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=dnRocket_AssaultTrooper_Laser_Shake)
+	ExplosionClass='p_Vehicles.Alien_Fighter_Attack.Alien_Fighter_Laser_Hit_Spawner'
+	UnderwaterExplosionClass='p_Weapons.ATGun_Splash.ATGun_Splash_Spawner'
+	ExplosionLight='dnExplosionLight_ATLaser'
+	ExplosionSoundName=FlyByPlane_Fighter_FireImpact
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Vehicles.Alien_Fighter_Attack.Alien_Fighter_laser_main',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	bCastStencilShadows=false
+	CollisionRadius=1
+	CollisionHeight=1
+	DrawScale3D=(X=1.292418E-41,Y=2.954514E-17,Z=8)
+	Mesh='c_dnWeapon.tracer_genA'
+	Skins(0)='dt_masking.Alphanumeric.DigitalFont_blank'
+	VoicePack='SoundConfig.Vehicles.VoicePack_AlienFighter'
 }

@@ -30,5 +30,18 @@ defaultproperties
 	LineEndColor=(B=85,G=1,R=1,A=147)
 	LineStartWidth=4
 	LineEndWidth=3
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.liquids.paintdrop3RC'
+	Textures(1)=none
+	Textures(2)=none
+	Textures(3)=none
+	Textures(4)=none
+	Textures(5)=none
+	StartDrawScale=16
+	EndDrawScale=24
+	DrawScaleVariance=1
+	RotationVariance=65535
+	SpawnOnBounceChance=10000
+	SpawnOnDeathChance=10000
+	TriggerType=0
+	Style=3
 }

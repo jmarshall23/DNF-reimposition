@@ -17,6 +17,8 @@ defaultproperties
 	bBlockKarma=false
 	bOccludeSounds=false
 	DrawScale3D=(X=1.291717E-41,Y=2.802839E-17,Z=79)
-	Skins=/* Array type was not detected. */
-	Rotator[7]=/* Array type was not detected. */
+	Skins(0)='smt_skins15.VendingMachine.VendingMachineSign_bs'
+	Skins(1)='smt_skins15.VendingMachine.VendingMachineSign_off'
+	Skins(2)='smt_skins15.VendingMachine.VendingMachineSign_off'
+	Skins(3)='dt_masking.Glass_Materials.glassdirty1bc_finalblend'
 }

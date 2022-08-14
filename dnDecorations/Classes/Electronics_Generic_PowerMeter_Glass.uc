@@ -25,28 +25,8 @@ event Destroyed()
 defaultproperties
 {
 	HealthPrefab=1
-	SpawnOnDestroyed=/* Array type was not detected. */
-	RenderObject=none
-	DrawScale=0
-	DrawScaleVariance=0
-	DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	SpawnChance=0
-	SpawnCopies=0
-	SpawnCopiesVariance=0
-	bIgnorePawnAirCushion=false
-	bDontScaleByDrawScale=false
-	bScaleByDrawScaleNonDefault=false
-	bNoCollision=false
-	bFindSpot=false
-	bIgnoreParentRotation=false
-	bTakeParentCollisionSize=false
-	bTakeParentMounting=false
-	bTakeParentActorColors=false
-	bTakeParentSkins=false
-	Offset=(X=1.291717E-41,Y=2.802684E-17,Z=0)
-	OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	Rotation=(Pitch=8709,Yaw=571080704,Roll=0)
-	RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0)
-	BoneName=None
-	MotionInfo='Engine.RenderActor.MP_NoMotion'
+	SpawnOnDestroyed(0)=(SpawnClass='dnParticles.dnDebris_Glass1',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	CollisionRadius=5
+	CollisionHeight=4
+	StaticMesh='sm_class_decorations.Electronics.PowerMeter_Glass'
 }

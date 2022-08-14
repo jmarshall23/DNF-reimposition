@@ -10,5 +10,6 @@ class BulletHole_FleshAlien extends BulletHole_Decal
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.bulletholes.bhole_blood1_fb'
+	Decals(1)='dt_effects.bulletholes.bhole_blood2_fb'
 }

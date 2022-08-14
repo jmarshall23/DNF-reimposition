@@ -247,7 +247,14 @@ defaultproperties
 	ShrunkenDamageScale=0.125
 	bPlayDeathSequence=true
 	bPlayStartLevelSequence=true
-	DefaultInventory=/* Array type was not detected. */
-	bInterrupt=NameProperty'dnDecoration.PushPendingActivity.ActivateSequence'
-	mp_u_rpg_stand_melee_grid3d=/* Unknown default property type! */
+	DefaultInventory(0)='MightyFoot'
+	DefaultInventory(1)='Upgrade_ZoomMode'
+	HUDType='DukeHUD'
+	MapPrefix="!Z"
+	BeaconName="!Z"
+	bOverridePlayerClass=true
+	bAutoDuckJump=true
+	GameReplicationInfoClass='SPGameReplicationInfo'
+	OverridePlayerClass='DukePlayer'
+	ForcedPlayerTag=DukePlayer
 }

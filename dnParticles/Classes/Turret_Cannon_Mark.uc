@@ -10,6 +10,9 @@ class Turret_Cannon_Mark extends dnDecal
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
-	X=/* Unknown default property type! */
+	Decals(0)='dt_effects.Decals.blastmarks3RC'
+	BehaviorArgument=2
+	Behavior=3
+	bProjectPawn=false
+	DrawScale=0.1
 }

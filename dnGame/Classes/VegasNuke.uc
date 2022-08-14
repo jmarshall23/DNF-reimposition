@@ -170,7 +170,7 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 
 defaultproperties
 {
-	NukeExplosion=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */,BlendTotalTime[49]=/* Unknown default property type! */,SlotPriority=0,VolumePrefab=0,Slots=/* Array type was not detected. */)
+	NukeExplosion=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('dnsweapn.Nuke.Nuke_Explosion_01'),SlotPriority=0,VolumePrefab=0,Slots=none,Volume=2,VolumeVariance=0,InnerRadius=4000,InnerRadiusVariance=0,Radius=5000,RadiusVariance=0,Pitch=1,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
 	DistortionFlashClass='p_VegasRuins.Nuke.Nuke_Spawner'
 	DistortionFlashScale=3
 	DistortionFlashOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0)

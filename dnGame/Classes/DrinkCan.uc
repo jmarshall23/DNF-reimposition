@@ -7,7 +7,7 @@
  *******************************************************************************/
 class DrinkCan extends FortyOunceBeer;
 
-k2call function DrinkConsumed(optional EventInfo AnimEventInfo)
+animevent function DrinkConsumed(optional EventInfo AnimEventInfo)
 {
 	// End:0x1D
 	if(__NFUN_340__(Instigator, none))

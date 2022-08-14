@@ -10,6 +10,10 @@ class IKSystemInfo_BLMiniGun extends IKSystemInfo_Inventory
 
 defaultproperties
 {
-	IKHierarchy=/* Array type was not detected. */
-	mp_a_freezeray_stand_moveback_grid3d[10]=/* Unknown default property type! */
+	IKHierarchy(0)=(BoneName="l_arm_up",ConstrainY=170,ConstrainZ=170,ConstrainZPitch=0,ConstrainX=170)
+	IKHierarchy(1)=(BoneName="l_arm_low",ConstrainY=70,ConstrainZ=160,ConstrainZPitch=0,ConstrainX=10)
+	IKHierarchy(2)=(BoneName="l_arm_hand",ConstrainY=30,ConstrainZ=160,ConstrainZPitch=0,ConstrainX=28)
+	MountBoneName="mount_hand_l"
+	IKEvents(0)=(EventType=1,EventName="Weapon_IK_Detach",EventData="")
+	IKEvents(1)=(EventType=0,EventName="Weapon_IK_Attach",EventData="mount_hand_l")
 }

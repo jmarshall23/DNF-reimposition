@@ -194,13 +194,24 @@ function HurtRadiusActivity(Actor DamageInstigator, float DamageAmount, Vector D
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	ByteProperty=80
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=none
+	begin object name=DA_Display_LK_RetainingWall_Broken class=DecoActivities_Display
+		RenderObject='sm_lvl_ladykiller.Casino.LKCasinoRetainingWall_BRKN'
+	object end
+	// Reference: DecoActivities_Display'Settings_LadyKiller_RetainingWall.DA_Display_LK_RetainingWall_Broken'
+	DestroyedActivities(2)=DA_Display_LK_RetainingWall_Broken
+	DestroyActionPointRadius=80
 	HealthPrefab=5
-	MountOnSpawn=/* Array type was not detected. */
-	SpawnClass='DecoGlass_LadyKiller_RetainingWall'
-	SpawnChance=0
-	MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=18),Z=72)
-	RenderObject=none
-	DrawScale=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='DecoGlass_LadyKiller_RetainingWall',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=18),Z=72),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	Health=15
+	SpawnOnDestroyed(0)=(SpawnClass='Settings_LadyKiller_RetainingWall_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=1,SpawnCopies=1,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.797242E-17,Z=-26),Z=88)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=None,MotionInfo=MotionPrefab'Settings_LadyKiller.MP_LK_NoMotion')
+	SpawnOnDestroyed(6)=(SpawnClass='Settings_LadyKiller_RetainingWall_Gib_B',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bAITransparent=true
+	StaticMesh='sm_lvl_ladykiller.Casino.LKCasinoRetainingWall'
 }

@@ -59,7 +59,23 @@ function Destroyed()
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	TurnRight3="p"
-	MountAngles=/* Unknown default property type! */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	begin object name=DA_Interact_Containers_Pots_Brkn class=DecoActivities_Interaction
+		bNewDynamicInteractionClassification=true
+		NewDynamicInteractionClassification=1
+	object end
+	// Reference: DecoActivities_Interaction'Containers_Pots.DA_Interact_Containers_Pots_Brkn'
+	DestroyedActivities(3)=DA_Interact_Containers_Pots_Brkn
+	HealthPrefab=1
+	DamageThreshold=5
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Plants_Generic_Potted_A',SpawnChance=0,MountPrefab=(bDontActuallyMount=true,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=Plant,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Dirt1'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Smoke_Dirt1'
+	SpawnOnDestroyed(0)=(SpawnClass='Details_Generic_DirtPile_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	PhysicsMassType=1
+	PhysicsEntityGroup=PlantPotsPhysicsEntityGroup
+	Mass=20
+	VoicePack='SoundConfig.Interactive.VoicePack_LadyKiller'
 }

@@ -13,5 +13,5 @@ defaultproperties
 	DamageName="<?int?dnGame.MicrowaveDamage.DamageName?>"
 	DeathMessage="<?int?dnGame.MicrowaveDamage.DeathMessage?>"
 	SuicideDeathMessage="<?int?dnGame.MicrowaveDamage.SuicideDeathMessage?>"
-	DamageRumbles=/* Array type was not detected. */
+	DamageRumbles(0)=(RumbleName=TraceDamageRumble,RumbleDuration=0.1,RumbleLeftMagnitude=0.7,RumbleRightMagnitude=0.7,FalloffActor=none,FalloffDistance=0)
 }

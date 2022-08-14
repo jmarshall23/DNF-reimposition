@@ -29,5 +29,20 @@ defaultproperties
 	MaxVelocityVariance=(X=1.291857E-41,Y=2.80262E-17,Z=1)
 	AlphaMid=1
 	AlphaRampMid=0.125
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.liquids.waterdrop1hRC'
+	StartDrawScale=0.25
+	EndDrawScale=0.25
+	DrawScaleMid=0.25
+	DrawScaleRampMid=0.7
+	DrawScaleEndVariance=0
+	DrawScaleMidVariance=0
+	TextureScaleX=0.2
+	TextureScaleY=0.2
+	TextureScaleEndX=0.2
+	TextureScaleEndY=0.2
+	bStepUpAble=false
+	CollisionRadius=16
+	CollisionHeight=16
+	Style=3
+	DrawScale=0.25
 }

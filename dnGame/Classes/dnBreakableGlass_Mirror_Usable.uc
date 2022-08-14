@@ -76,5 +76,9 @@ defaultproperties
 	UsePhrase="<?int?dnGame.dnBreakableGlass_Mirror_Usable.UsePhrase?>"
 	bDontReflect=true
 	bOneSidedMirror=true
-	Skins=/* Array type was not detected. */
+	Skins(0)='dt_masking.GlassMirror_Materials.GlassMirrorDirty1024_FinalBlend'
+	Skins(1)='dt_masking.GlassMirror_Materials.BrokenGlassMirror_1024_FinalBlend'
+	Skins(2)='dt_masking.GlassMirror_Materials.BrokenGlassMirror_1024_FinalBlend'
+	Skins(3)='dt_masking.Glass_Materials.glassdirty1bc_finalblend'
+	MirrorRenderTarget='dt_masking.GlassMirror_Materials.glassmirror_rendertarget1024'
 }

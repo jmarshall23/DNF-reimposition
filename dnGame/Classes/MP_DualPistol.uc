@@ -50,7 +50,7 @@ event ApplyAIScale(Pawn Other)
 	return;
 }
 
-k2call simulated function SpawnClip()
+animevent simulated function SpawnClip()
 {
 	return;
 }
@@ -139,7 +139,7 @@ simulated function DetachSupportActors()
 	return;
 }
 
-k2call simulated function Fire_Effects(optional EventInfo AnimEventInfo)
+animevent simulated function Fire_Effects(optional EventInfo AnimEventInfo)
 {
 	super(Weapon).Fire_Effects(AnimEventInfo);
 	UpdateBullets(PistolInfo[MuzzleFireIndex]);
@@ -323,5 +323,6 @@ defaultproperties
 	HUDPickupEventIcon=0
 	AnimationControllerClass='dnAnimationControllerEx_DualPistol_Primary'
 	Mesh='c_dnWeapon.Pistol'
-	Skins=/* Array type was not detected. */
+	Skins(0)='mt_skins6.1911Pistol.PigCop1911_BS'
+	VoicePack='SoundConfig.Inventory.VoicePack_Pistol'
 }

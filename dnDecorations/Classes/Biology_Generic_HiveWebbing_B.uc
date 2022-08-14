@@ -10,6 +10,18 @@ class Biology_Generic_HiveWebbing_B extends Biology_Generic_HiveWebbing
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	SpawnOnDestroyed=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Biology_Generic_HiveWebbing.DA_Sound_HiveWebbing_Destroyed'
+	begin object name=DA_Display_HiveWebB_Destroyed class=DecoActivities_Display
+		RenderObject='sm_geo_decorations.alien.HiveA_webbing_Ends'
+	object end
+	// Reference: DecoActivities_Display'Biology_Generic_HiveWebbing_B.DA_Display_HiveWebB_Destroyed'
+	DestroyedActivities(2)=DA_Display_HiveWebB_Destroyed
+	SpawnOnDestroyed(0)=(SpawnClass='Biology_Generic_HiveWebbing_Gib_F',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=-2.952526E-06,Y=2.802574E-17,Z=60.98),Z=-2.791)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=-40),Z=-3)
+	DestroyedParticleFriendEffects(1)=(Rotation=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	StaticMesh='sm_geo_decorations.alien.HiveA_webbing_Breakable'
 }

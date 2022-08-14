@@ -20,5 +20,11 @@ defaultproperties
 	InitialVelocity=(X=1.291857E-41,Y=2.797242E-17,Z=0)
 	MaxVelocityVariance=(X=1.291857E-41,Y=2.797242E-17,Z=0)
 	AlphaStart=0.35
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Particles.plasmaFX2cRC'
+	StartDrawScale=0.32
+	EndDrawScale=0
+	RotationVariance=65535
+	CollisionRadius=0
+	CollisionHeight=0
+	Style=3
 }

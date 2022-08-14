@@ -10,5 +10,35 @@ class Industrial_Generic_PortableGenerator extends Industrial_Generic
 
 defaultproperties
 {
-	StartupActivities=/* Array type was not detected. */
+	begin object name=DA_Sound_PortableGenerator_Ambience class=DecoActivities_Sound
+		SoundNames(0)=Generator_Portable
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Generic_PortableGenerator.DA_Sound_PortableGenerator_Ambience'
+	StartupActivities(0)=DA_Sound_PortableGenerator_Ambience
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_PortableGenerator_Destroy class=DecoActivities_Sound
+		SoundNames(0)=IndMetal_Destruct
+		bClearAmbientSound=true
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Generic_PortableGenerator.DA_Sound_PortableGenerator_Destroy'
+	DestroyedActivities(1)=DA_Sound_PortableGenerator_Destroy
+	begin object name=DA_Display_PortableGenerator_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_decorations.Portable_lightandGenerator.Portable_generator_Destroyed'
+	object end
+	// Reference: DecoActivities_Display'Industrial_Generic_PortableGenerator.DA_Display_PortableGenerator_Brkn'
+	DestroyedActivities(2)=DA_Display_PortableGenerator_Brkn
+	begin object name=DA_Spawn_Elec_PortableGenerator_Brkn class=DecoActivities_Spawn
+		MountedSpawns(0)=(bSkipVerifySelf=false,SpawnClass='dnGame.ParticleSystemTimer_Sparks_Malfunction',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.813526E-17,Z=4),Z=1),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	object end
+	// Reference: DecoActivities_Spawn'Industrial_Generic_PortableGenerator.DA_Spawn_Elec_PortableGenerator_Brkn'
+	DestroyedActivities(3)=DA_Spawn_Elec_PortableGenerator_Brkn
+	HealthPrefab=5
+	Health=50
+	HealthCap=50
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bLowerByCollision=true
+	CollisionRadius=20
+	CollisionHeight=15
+	StaticMesh='sm_class_decorations.Portable_lightandGenerator.Portable_Generator'
 }

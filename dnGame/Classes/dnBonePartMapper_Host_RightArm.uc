@@ -10,7 +10,5 @@ class dnBonePartMapper_Host_RightArm extends dnBonePartMapper_Male_RightArm
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y=-0.19
-	Z=8.21
+	Gibs(0)=(BoneName=RightForeArm,ReqBones=none,RenderObject='sm_class_effects.Host_Gibs.Host_ForearmR_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-5.010145E-05,Y=2.954355E-17,Z=-0.19),Z=8.21)
 }

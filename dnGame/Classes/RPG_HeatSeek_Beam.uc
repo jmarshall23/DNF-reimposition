@@ -18,7 +18,6 @@ defaultproperties
 	BeamTexture='dt_Effects2.Flashes.MuzzleFlashSide_Blue_01'
 	BeamTextureRotate=270
 	Style=6
-	ActorColorList=/* Array type was not detected. */
-	Y=0
-	Z=0
+	ActorColorList(0)=(ActorColor=(B=121,G=2,R=1,A=157),G=155,B=152,A=255)
+	RemoteRole=0
 }

@@ -10,7 +10,17 @@ class Vehicles_Deco_Car_Standard_Windows extends Vehicles_Deco_Parts_Mounted;
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	begin object name=DA_VD_Car_Windows_Brkn_Sound class=DecoActivities_Sound
+		SoundNames(0)=Glass_Crack
+	object end
+	// Reference: DecoActivities_Sound'Vehicles_Deco_Car_Standard_Windows.DA_VD_Car_Windows_Brkn_Sound'
+	DestroyedActivities(1)=DA_VD_Car_Windows_Brkn_Sound
+	begin object name=DA_VD_Car_Windows_Brkn class=DecoActivities_Display
+		Skins(0)=(Index=0,NewMaterialEx='dt_masking.Glass_Materials.brokenglass1bc_shatter_fb')
+	object end
+	// Reference: DecoActivities_Display'Vehicles_Deco_Car_Standard_Windows.DA_VD_Car_Windows_Brkn'
+	DestroyedActivities(2)=DA_VD_Car_Windows_Brkn
 	bBlockKarma=true
 	VoicePack='SoundConfig.Interactive.VoicePack_Glass'
 }

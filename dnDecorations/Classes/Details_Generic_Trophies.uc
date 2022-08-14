@@ -24,5 +24,11 @@ defaultproperties
 	PhysicsMassType=1
 	FixedPhysicsDamageToNotPlayer=60
 	FixedPhysicsDamageToPlayer=30
-	PhysicsSoundOverrides=/* Array type was not detected. */
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.metal.MetalSolid_Obj_01','a_impact.metal.MetalSolid_Obj_02','a_impact.metal.MetalSolid_Obj_03','a_impact.metal.MetalSolid_Obj_04'),SoundInfo=(InputRange=(Min=32,Max=1800),OutputPitchRange=(Min=0.65,Max=0.8),OutputVolumeRange=(Min=0.75,Max=2)),bDisableSoundInWater=false)
+	PhysicsSoundOverrides(1)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.metal.MetalSolid_Obj_Roll_01'),SoundInfo=(InputRange=(Min=2,Max=30),OutputPitchRange=(Min=0.65,Max=0.8),OutputVolumeRange=(Min=0.33,Max=2)),bDisableSoundInWater=false)
+	PhysicsSoundOverrides(2)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.metal.MetalSolid_Obj_Slide_01'),SoundInfo=(InputRange=(Min=32,Max=1000),OutputPitchRange=(Min=0.75,Max=1),OutputVolumeRange=(Min=0.33,Max=2)),bDisableSoundInWater=false)
+	Physics=18
+	CollisionRadius=5
+	CollisionHeight=13.75
+	Mass=20
 }

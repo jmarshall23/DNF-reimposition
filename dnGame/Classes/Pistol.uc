@@ -65,7 +65,7 @@ function float PickedUpAdditionalCopyCustom(Pawn Other, class<Inventory> InvClas
 	return;
 }
 
-k2call simulated function Fire_Effects(optional EventInfo AnimEventInfo)
+animevent simulated function Fire_Effects(optional EventInfo AnimEventInfo)
 {
 	super(Weapon).Fire_Effects(AnimEventInfo);
 	UpdateBullets(PistolInfo);
@@ -187,5 +187,9 @@ defaultproperties
 	PickupClass='PistolPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=22
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_Pistol'
+	Mesh='c_dnWeapon.Pistol'
+	Skins(0)='mt_skins6.1911Pistol.PigCop1911_BS'
+	VoicePack='SoundConfig.Inventory.VoicePack_Pistol'
 }

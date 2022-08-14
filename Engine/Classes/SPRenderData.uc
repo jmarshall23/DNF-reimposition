@@ -19,5 +19,5 @@ struct SPRenderData
 	var Rotator RotationInitial3d;
 	var PointRegion Region;
 	var MaterialEx Texture;
-	var const editconst transient pointer TexAnimController;
+	var const editconst transient nontrans pointer TexAnimController;
 };

@@ -34,6 +34,15 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 defaultproperties
 {
 	bSurviveDeath=false
-	DestroyedActivities=/* Array type was not detected. */
-	bTransferToCorpse=""
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Cactus_Gibs class=DecoActivities_Sound
+		SoundNames(0)=CactusGib
+	object end
+	// Reference: DecoActivities_Sound'Plants_Generic_Cactus.DA_Sound_Cactus_Gibs'
+	DestroyedActivities(1)=DA_Sound_Cactus_Gibs
+	HealthPrefab=2
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Smoke'
+	bBlockCamera=false
+	bAcceptsDecalProjectors=false
+	bLowerByCollision=false
 }

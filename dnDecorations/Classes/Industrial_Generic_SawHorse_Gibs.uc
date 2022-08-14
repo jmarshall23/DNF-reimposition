@@ -9,6 +9,11 @@ class Industrial_Generic_SawHorse_Gibs extends aFinalDecoration_Gibs;
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_class_decorations.SawHorse.SawHorse_gib1',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_class_decorations.SawHorse.SawHorse_gib2',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_class_decorations.SawHorse.SawHorse_gib3',bForcedOnly=false)
+	Gibs(3)=(RenderObject='sm_class_decorations.SawHorse.SawHorse_gib4',bForcedOnly=false)
+	DynamicInteractionClassification=7
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Wood_Solid'
+	Mass=15
 }

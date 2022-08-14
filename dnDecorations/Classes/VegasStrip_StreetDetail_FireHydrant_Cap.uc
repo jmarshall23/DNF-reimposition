@@ -27,12 +27,16 @@ function Destroyed()
 
 defaultproperties
 {
-	DecoActivities_Default=/* Array type was not detected. */
-	X=/* Unknown default property type! */
-	
-/* Exception thrown while deserializing Engine
-System.ArgumentOutOfRangeException: Length cannot be less than zero.
-Parameter name: length
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(22),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set',DecoActivities_Sound'VegasStrip_StreetDetail_FireHydrant_Cap.DA_Sound_VgsStrp_StrtDtl_FireHydrant_Cap_Pop',DecoActivities_HUDInfo'VegasStrip_StreetDetail_FireHydrant_Cap.DA_HUD_VgsStrp_StrtDtl_FireHydrant_Cap_Pop',DecoActivities_KarmaImpulse'VegasStrip_StreetDetail_FireHydrant_Cap.DA_KImpulse_VgsStrp_StrtDtl_FireHydrant_Cap_Pop'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=none
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid'
+	PhysicsMassType=1
+	bBlockPlayers=false
+	CollisionRadius=8.25
+	CollisionHeight=3.5
+	Mass=30
+	StaticMesh='sm_class_decorations.FireHydrant.FHydrant_Cap'
 }

@@ -10,6 +10,11 @@ class dnDecal_BlastMarkBlack extends dnDecal_BlastMark
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
-	DestroyOnDeath=/* Unknown default property type! */
+	Decals(0)='dt_Effects2.Decals.BlastMark_01_FB'
+	Decals(1)='dt_Effects2.Decals.BlastMark_02_FB'
+	Decals(2)='dt_Effects2.Decals.BlastMark_03_FB'
+	RandomDrawscale=0.2
+	MaxTraceDistance=32
+	FadeOutStart=900
+	DrawScale=0.3
 }

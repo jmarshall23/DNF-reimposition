@@ -17,7 +17,8 @@ defaultproperties
 	bActivatable=false
 	InventoryReferenceClass='gascan'
 	PickupClass='GasCanPickup'
-	AutoRegisterIKClasses=/* Array type was not detected. */
-	Rotator=/* Unknown default property type! */
-	ByteProperty=/* Unknown default property type! */
+	AutoRegisterIKClasses(0)='dnGame.IKSystemInfo_Shotgun'
+	DrawType=8
+	StaticMesh='sm_class_decorations.Containers.gascan_pickup'
+	VoicePack='SoundConfig.Inventory.VoicePack_GasCan'
 }

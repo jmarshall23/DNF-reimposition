@@ -13,8 +13,8 @@ const kToilet_InvalidGenderAnimIndex = -1;
 struct SToiletGenderAnims
 {
 	var() Engine.Object.EPawnGender Gender;
-	var() name ToiletUpAnim;
-	var() name ToiletDownAnim;
+	var() anim name ToiletUpAnim;
+	var() anim name ToiletDownAnim;
 };
 
 var() array<SToiletGenderAnims> GenderAnims;
@@ -65,25 +65,25 @@ function AttachPawnSuccess(Pawn Attachee, optional bool bForced)
 	return;
 }
 
-final k2call function AnimEvent_SeatDown(optional EventInfo AnimEventInfo)
+final animevent function AnimEvent_SeatDown(optional EventInfo AnimEventInfo)
 {
 	FindAndPlaySound('Toilet_LidCreak', 1);
 	return;
 }
 
-final k2call function AnimEvent_SeatUp(optional EventInfo AnimEventInfo)
+final animevent function AnimEvent_SeatUp(optional EventInfo AnimEventInfo)
 {
 	FindAndPlaySound('Toilet_LidCreak', 1);
 	return;
 }
 
-final k2call function AnimEvent_SeatUpClunk(optional EventInfo AnimEventInfo)
+final animevent function AnimEvent_SeatUpClunk(optional EventInfo AnimEventInfo)
 {
 	FindAndPlaySound('Toilet_SeatUpClunk', 1);
 	return;
 }
 
-final k2call function AnimEvent_SeatDownClunk(optional EventInfo AnimEventInfo)
+final animevent function AnimEvent_SeatDownClunk(optional EventInfo AnimEventInfo)
 {
 	FindAndPlaySound('Toilet_SeatDownClunk', 1);
 	return;
@@ -114,34 +114,30 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 
 defaultproperties
 {
-	GenderAnims(0)=(Y=/* Unknown default property type! */,VolumePrefab=/* Unknown default property type! */,ToiletUpAnim=a_toilet_up,ToiletDownAnim=a_toilet_down)
-	GenderAnims(1)=(FlushSoundName=Toilet_Flush,FlushAnim=Flush,PeeSplashPrefab=(bSkipVerifySelf=false,SpawnClass='p_Decorations.Pee.Pee_Splash01',SpawnChance=1,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.8028E-17,Z=0),Z=-2),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
-	GenderAnims(2)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
-	GenderAnims(3)=(MountType=0,DismountPhysics=0)
-	GenderAnims(4)=(RenderObject=none,DrawScale=0)
-	GenderAnims(5)=(States=/* Array type was not detected. */,Roll=/* Unknown default property type! */,DrawScale=/* Unknown default property type! */,X=/* Array type was not detected. */)
-	GenderAnims(6)=(Transitions=/* Array type was not detected. */,Y=
-/* Exception thrown while deserializing Y
-System.ArgumentOutOfRangeException: startIndex cannot be larger than length of string.
-Parameter name: startIndex
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */,CustomName=None,NewState=AttachUserLERP)
-	GenderAnims(7)=(UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */),SlotPriority=0,VolumePrefab=0,Slots=/* Array type was not detected. */)
-	GenderAnims(8)=(Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	GenderAnims(9)=none
-	GenderAnims(10)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=/* Array type was not detected. */)
-	GenderAnims(11)=(Filters=/* Array type was not detected. */)
-	GenderAnims(12)=none
-	GenderAnims(13)=(MySoundName=None,SubAnims=/* Array type was not detected. */)
-	GenderAnims(14)=none
-	GenderAnims(15)=(StateName=AttachUserLERP,OutEvents=/* Array type was not detected. */)
-	GenderAnims(16)=(Transitions=/* Array type was not detected. */,Y=
-/* Exception thrown while deserializing Y
-System.ArgumentOutOfRangeException: startIndex cannot be larger than length of string.
-Parameter name: startIndex
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */,CustomName=None,NewState=AttachUserAnim)
-	GenderAnims(17)=(UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */),SlotPriority=0,VolumePrefab=0,Slots=/* Array type was not detected. */)
-	ToiletUpAnim=a_toilet_up
-	ToiletDownAnim=a_toilet_down
+	GenderAnims(0)=(Gender=0,ToiletUpAnim=a_toilet_up,ToiletDownAnim=a_toilet_down)
+	FlushSoundName=Toilet_Flush
+	FlushAnim=Flush
+	PeeSplashPrefab=(bSkipVerifySelf=false,SpawnClass='p_Decorations.Pee.Pee_Splash01',SpawnChance=1,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.8028E-17,Z=0),Z=-2),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	States(0)=(StateName=Useable,OutEvents=none,Transitions=((ControlEvent=3,CustomName=None,NewState=AttachUserLERP)),UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	States(1)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=none,Filters=none)
+	States(2)=(MySoundName=None,SubAnims=none)
+	States(3)=(StateName=AttachUserLERP,OutEvents=none,Transitions=((ControlEvent=5,CustomName=None,NewState=AttachUserAnim)),UserAnimName=None,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=0,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	States(4)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=none,Filters=none)
+	States(5)=(MySoundName=None,SubAnims=none)
+	States(6)=(StateName=AttachUserAnim,OutEvents=none,Transitions=((ControlEvent=7,CustomName=None,NewState=idle)),UserAnimName=Toilet_Activate,UserSoundName=None,MyAnim=(Flags=(bLoop=false,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=None,Channel=1,Rate=0,TweenTime=0),MySound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=none,SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0))
+	States(7)=(Offset=0,Delay=0,SlotIndex=0,ForcedIndex=0,SoundFadeInfo=(FadeInDuration=0,FadeOutStartTime=0,FadeOutDuration=0,FadeInEndCallback=None,FadeOutEndCallback=None),SoundEndCallback=None,PlayedSounds=none,Filters=none)
+	States(8)=(MySoundName=None,SubAnims=none)
+	bUseHomePose=false
+	InterpolationInTime=0.3
+	InterpolationOutTime=0.3
+	UsableExits(0)=(bEnabled=true,EnterInfo=(LocationOffset=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),RotationOffset=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	UserMountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=true,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=true,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.802872E-17,Z=0),Z=-20)
+	HeadAimMinOffset=(Pitch=-327671291,Yaw=571146239,Roll=-4000)
+	HeadAimMaxOffset=(Pitch=-327671291,Yaw=571146239,Roll=4000)
+	bBlockKarma=true
+	bAcceptsDecalProjectors=false
+	PlacementZOffset=20
+	CollisionHeight=20
+	Mass=23
+	Mesh='c_generic.ToiletA'
 }

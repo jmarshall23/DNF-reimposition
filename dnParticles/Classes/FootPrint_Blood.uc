@@ -10,5 +10,5 @@ class FootPrint_Blood extends FootPrint
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.Footprints.DukesFPblood1RC'
 }

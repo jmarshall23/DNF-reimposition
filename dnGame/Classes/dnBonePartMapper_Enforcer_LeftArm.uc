@@ -10,6 +10,22 @@ class dnBonePartMapper_Enforcer_LeftArm extends BonePartMapper
 
 defaultproperties
 {
-	PartMapping=/* Array type was not detected. */
-	AnimTween=ArrayProperty'DukeHUD.QuestItems'
+	PartMapping(0)=(BoneName=LeftShoulder,Part=6,BoneNameForDestroy=None)
+	PartMapping(1)=(BoneName=LeftArm,Part=8,BoneNameForDestroy=None)
+	PartMapping(2)=(BoneName=LeftForeArm,Part=8,BoneNameForDestroy=LeftForeArm)
+	PartMapping(3)=(BoneName=LeftForeArmRoll,Part=8,BoneNameForDestroy=LeftForeArm)
+	PartMapping(4)=(BoneName=lefthand,Part=10,BoneNameForDestroy=LeftForeArm)
+	PartMapping(5)=(BoneName=lefthandring1,Part=10,BoneNameForDestroy=LeftForeArm)
+	PartMapping(6)=(BoneName=lefthandring2,Part=10,BoneNameForDestroy=LeftForeArm)
+	PartMapping(7)=(BoneName=LeftHandThumb1,Part=10,BoneNameForDestroy=LeftForeArm)
+	PartMapping(8)=(BoneName=LeftHandThumb2,Part=10,BoneNameForDestroy=LeftForeArm)
+	PartMapping(9)=(BoneName=LeftHandIndex1,Part=10,BoneNameForDestroy=LeftForeArm)
+	PartMapping(10)=(BoneName=LeftHandIndex2,Part=10,BoneNameForDestroy=LeftForeArm)
+	PartMapping(11)=(BoneName=LeftHandPinky1,Part=10,BoneNameForDestroy=LeftForeArm)
+	PartMapping(12)=(BoneName=LeftHandPinky2,Part=10,BoneNameForDestroy=LeftForeArm)
+	DestroyableBones(0)=(BoneName=LeftForeArm,bAddToLimbCount=true,LimbCapClass='dnCorpse_LimbCap_Enforcer_ArmLeft_Lower',LimbCapMountInfo=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=-8.732209E+12,Y=2.954406E-17,Z=-0.603),Z=10.245),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(0)=(BoneName=LeftForeArm,ReqBones=none,RenderObject='sm_class_effects.Enforcer_Gibs.Enforcer_ForearmL_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=2.732711E-14,Y=2.965302E-17,Z=-0.56),Z=13)
+	FullyGibbedSoundName=Corpse_LimbExplode
+	FullyGibbedFrozenSoundName=IcePart_Shatter_Small
+	NumLimbsUntilDestructible=1
 }

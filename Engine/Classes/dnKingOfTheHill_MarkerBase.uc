@@ -42,7 +42,7 @@ var(dnKingOfTheHill_MarkerProjector) noexport name TurnOffTag "Trigger this even
 var(dnKingOfTheHill_MarkerCylinder) float CylinderDrawScale;
 var(dnKingOfTheHill_MarkerCylinder) Vector CylinderOffset;
 var bool bInit;
-var bool bActive;
+var netupdate(SetActive) bool bActive;
 var int currentLocIndex;
 var bool bKeyFrameLoopSet;
 var() bool bInitial;

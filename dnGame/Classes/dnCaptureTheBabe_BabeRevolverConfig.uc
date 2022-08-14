@@ -12,5 +12,7 @@ defaultproperties
 	AmmoClass='BabegunAmmo'
 	ReloadCount=6
 	TraceDamageType='BabeGunDamage'
-	MuzzleInfo=/* Array type was not detected. */
+	MuzzleInfo(0)=(MuzzleFireStartAnim=FireStart,MuzzleFireAnim=Fire,MuzzleFireStopAnim=FireStop,MuzzleFlashClass='p_Weapons.Pistol_MuzzleFlash.Pistol_MuzzleFlash_Spawner',MuzzleBoneName=mount_muzzle,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	LockoutFireTime=1.1
+	WeaponAnimName=BabeGun
 }

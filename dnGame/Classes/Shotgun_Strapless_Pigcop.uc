@@ -20,5 +20,7 @@ defaultproperties
 	DamageFalloffStart=128
 	DamageFalloffEnd=256
 	WeaponConfig='ShotgunWeaponConfig_Pigcop'
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun_Pigcop'
+	MountMeshItem=mount_shotgun_r
+	DrawScale=1.67
 }

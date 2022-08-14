@@ -10,6 +10,14 @@ class Lights_Generic_Hanging_CoolieHat_Metal_Dirty_A extends Lights_Generic_Hang
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	DA_Anim_SlickWilly_Close=/* Unknown default property type! */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Glass_Large'
+	DestroyedActivities(2)=DecoActivities_Events'Lights_Generic.DA_Events_Lights_Generic_Destroyed'
+	begin object name=DA_Display_Lights_Generic_Hng_CHat_Metal_Dirty_A_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_lights.Hanging.HangingLampRustBrkn_cd'
+		Skins(0)=(Index=1,NewMaterialEx=none)
+	object end
+	// Reference: DecoActivities_Display'Lights_Generic_Hanging_CoolieHat_Metal_Dirty_A.DA_Display_Lights_Generic_Hng_CHat_Metal_Dirty_A_Brkn'
+	DestroyedActivities(3)=DA_Display_Lights_Generic_Hng_CHat_Metal_Dirty_A_Brkn
+	StaticMesh='sm_class_lights.Hanging.HangingLampRustOn_cd'
 }

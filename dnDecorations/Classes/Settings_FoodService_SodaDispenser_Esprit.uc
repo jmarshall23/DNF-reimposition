@@ -11,5 +11,5 @@ class Settings_FoodService_SodaDispenser_Esprit extends Settings_FoodService_Sod
 defaultproperties
 {
 	SprayColor=(B=76,G=3,R=1,A=0)
-	Skins=/* Array type was not detected. */
+	Skins(0)='smt_skins8.SodaFountain.sodaftn_esprit_bs'
 }

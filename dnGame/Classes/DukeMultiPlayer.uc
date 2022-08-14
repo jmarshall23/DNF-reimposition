@@ -158,7 +158,7 @@ var Vector deathcamcorpseLoc;
 var Vector deathcamlocTop;
 var Vector deathcamtargetLoc;
 var Vector deathcamwantedLoc;
-var SCustomizationInfo CustomizationInfo;
+var netupdate(NU_ApplyCustomization) SCustomizationInfo CustomizationInfo;
 var bool bAppliedSkin;
 var int BlueTeamShirtColorIdx;
 var int RedTeamShirtColorIdx;
@@ -247,7 +247,7 @@ var float ReFreezeTime;
 var float JetpackJumpDownTimer;
 var float JetpackTapOffTime;
 var float RocketJumpDamageResistanceFactor;
-var bool bOfficiallyInGame;
+var netupdate(NU_bOfficiallyInGame) bool bOfficiallyInGame;
 var DukeMultiPlayer.EDeathCamStatus DeathCamStatus;
 var float BallsOfSteelDelay;
 var float MaxBallsOfSteelDelay;
@@ -262,7 +262,7 @@ var float tauntDelayTime;
 var float VODelayTime;
 var bool bCanPlayTriggeredVO;
 var float StandardVOChance;
-var float HostStartTime;
+var netupdate(NU_HostStartTime) float HostStartTime;
 var int EnforcerID;
 var bool bBeingStomped;
 var bool bHeadshots;
@@ -287,7 +287,7 @@ var float JumpPadStartLocationHeight;
 var SSoundInfo InvincibilityPickupSnd;
 var bool usingInventoryItem;
 var GasPodManager GPM;
-var int OMPLID;
+var netupdate(NU_OMPLID) int OMPLID;
 var float BecomeUnfrozenTime;
 var int LookHitActorUpdateFrame;
 var float CurrentlyAllowedPowerupEffectAlpha;
@@ -775,7 +775,7 @@ simulated exec function CreateSkins(Actor A)
 	return;
 }
 
-k2call simulated function FootStep(optional EventInfo AnimEventInfo)
+animevent simulated function FootStep(optional EventInfo AnimEventInfo)
 {
 	// End:0x0B
 	if(IsDead())
@@ -5906,7 +5906,7 @@ function PrepareForStomp(Pawn StompInstigator)
 	return;
 }
 
-k2call simulated function FinishedThrowingTripMine()
+animevent simulated function FinishedThrowingTripMine()
 {
 	return;
 }
@@ -6162,7 +6162,6 @@ defaultproperties
 	bAlwaysRelevant=true
 	bDontUseMeqonPhysics=true
 	CollisionHeight=40
-	ActorColorList=/* Array type was not detected. */
-	Y=0
-	Z=0
+	ActorColorList(0)=(ActorColor=(B=121,G=2,R=1,A=255),G=255,B=255,A=0)
+	ActorColorList(1)=(ActorColor_LightEx=none,ActorColor_LightExScale=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
 }

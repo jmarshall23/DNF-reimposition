@@ -20,5 +20,20 @@ defaultproperties
 	InitialVelocity=(X=1.292418E-41,Y=2.94903E-17,Z=0)
 	MaxVelocityVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0)
 	AlphaEnd=0
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.LensFlares.lensflare10RC'
+	StartDrawScale=0.01
+	EndDrawScale=0.1
+	DrawScaleVariance=0.05
+	RotationVariance=16384
+	TriggerType=4
+	PulseSeconds=0
+	PulseMagnitude=10
+	SpawnShape=4
+	SpawnShapeScale=(X=1.292418E-41,Y=2.954525E-17,Z=7)
+	bTickOnlyRecent=false
+	bTickOnlyZoneRecent=false
+	CollisionRadius=0
+	CollisionHeight=0
+	Style=3
+	DrawScale=0.33
 }

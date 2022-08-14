@@ -28,5 +28,11 @@ defaultproperties
 {
 	RemoveCheckTime=0
 	LimbEgoBoost=-1
-	ExitWoundInfo=/* Array type was not detected. */
+	ExitWoundInfo(0)=(DamageType=none,MinimumDamage=1,RandomChance=1,ExitWoundDecalClass='dnExitWound_Human')
+	PhysicsStartupTime=3
+	Physics=18
+	bBlockKarma=true
+	bNoAutoCleanup=true
+	bLowerByCollision=true
+	Mesh='c_characters.Duke'
 }

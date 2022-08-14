@@ -10,5 +10,38 @@ class dnBonePartMapper_Pregnator extends BonePartMapper
 
 defaultproperties
 {
-	PartMapping=/* Array type was not detected. */
+	PartMapping(0)=(BoneName=),Part=0,BoneNameForDestroy=None)
+	PartMapping(1)=(BoneName=),Part=1,BoneNameForDestroy=None)
+	PartMapping(2)=(BoneName=),Part=2,BoneNameForDestroy=None)
+	PartMapping(3)=(BoneName=),Part=3,BoneNameForDestroy=None)
+	PartMapping(4)=(BoneName=),Part=4,BoneNameForDestroy=None)
+	PartMapping(5)=(BoneName=),Part=5,BoneNameForDestroy=None)
+	PartMapping(6)=(BoneName=),Part=6,BoneNameForDestroy=None)
+	PartMapping(7)=(BoneName=),Part=7,BoneNameForDestroy=None)
+	PartMapping(8)=(BoneName=),Part=8,BoneNameForDestroy=None)
+	PartMapping(9)=(BoneName=),Part=9,BoneNameForDestroy=None)
+	PartMapping(10)=(BoneName=),Part=10,BoneNameForDestroy=None)
+	PartMapping(11)=(BoneName=),Part=11,BoneNameForDestroy=None)
+	PartMapping(12)=(BoneName=),Part=12,BoneNameForDestroy=None)
+	PartMapping(13)=(BoneName=),Part=13,BoneNameForDestroy=None)
+	PartMapping(14)=(BoneName=),Part=14,BoneNameForDestroy=None)
+	PartMapping(15)=(BoneName=),Part=15,BoneNameForDestroy=None)
+	PartMapping(16)=(BoneName=),Part=16,BoneNameForDestroy=None)
+	PartMapping(17)=(BoneName=),Part=17,BoneNameForDestroy=None)
+	PartMapping(18)=(BoneName=),Part=18,BoneNameForDestroy=None)
+	PartMapping(19)=(BoneName=),Part=19,BoneNameForDestroy=None)
+	Gibs(0)=(BoneName=sac_scale,ReqBones=none,RenderObject='sm_class_effects.Pregnator_Gibs.pregnatorA_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=2.79),Z=-1.27)
+	Gibs(1)=(RotOffset=(Pitch=1022566949,Yaw=572915712,Roll=-16384),Roll=0)
+	Gibs(2)=(Mass=10,GibChance=1,bKDNoPawnInteractions=true,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
+	Gibs(3)=(BoneName=Head,ReqBones=none,RenderObject='sm_class_effects.Pregnator_Gibs.pregnatorB_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	Gibs(4)=(RotOffset=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	Gibs(5)=(Mass=4,GibChance=1,bKDNoPawnInteractions=true,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=true,bStaticGib=false,GibBloodyMess=none)
+	Gibs(6)=(BoneName=Root,ReqBones=none,RenderObject='sm_class_effects.Pregnator_Gibs.pregnatorB_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.904355E+17,Y=2.954564E-17,Z=0.06),Z=10.65)
+	Gibs(7)=(RotOffset=(Pitch=224928293,Yaw=572915712,Roll=-6224),Roll=0)
+	Gibs(8)=(Mass=8,GibChance=0.8,bKDNoPawnInteractions=true,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=true,bStaticGib=false,GibBloodyMess=none)
+	Gibs(9)=(BoneName=Root,ReqBones=none,RenderObject='sm_class_effects.Pregnator_Gibs.pregnatorC_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-7.482761E-36,Y=2.954587E-17,Z=-0.39),Z=-1.98)
+	GibEffects(0)=(ParticleEffect='p_hit_effects.Blood_BodyExplode.Blood_BodyExplode_Spawner',BoneName=Root,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	FrozenGibEffects(0)=(ParticleEffect='p_Weapons.FreezeRay_Projectile.FreezeRay_Projectile_Small_Spawner',BoneName=Root,LocOffset=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	GibBloodyMess=none
+	FullyGibbedSoundName=Corpse_HeadExplode
 }

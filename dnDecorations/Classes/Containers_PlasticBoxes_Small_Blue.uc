@@ -10,10 +10,5 @@ class Containers_PlasticBoxes_Small_Blue extends Containers_PlasticBoxes_Small
 
 defaultproperties
 {
-	ActorColorList=/* Array type was not detected. */
-	Z=false
-	Y=/* Unknown default property type! */
-	Z=0
-	B=255
-	A=255
+	ActorColorList(0)=(ActorColor=(B=76,G=3,R=1,A=0),G=0,B=255,A=255)
 }

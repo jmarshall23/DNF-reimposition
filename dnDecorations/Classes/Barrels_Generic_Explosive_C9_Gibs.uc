@@ -25,6 +25,13 @@ function PostBeginPlay()
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_class_decorations.Containers.c9_GIb_1',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_class_decorations.Containers.c9_GIb_2',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_class_decorations.Containers.c9_GIb_3',bForcedOnly=false)
+	Gibs(3)=(RenderObject='sm_class_decorations.Containers.c9_GIb_4',bForcedOnly=false)
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid'
+	PhysicsMassType=0
+	Density=3
+	PhysicsEntityGroup=C9BarellGibsEntityGroup
+	bDontUseMeqonPhysics=true
 }

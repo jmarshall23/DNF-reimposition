@@ -15,7 +15,7 @@ var int EORCountDownTime;
 var int EORTimeoutTime;
 var dnTeamInfo Teams[4];
 var int EORTimeoutMaxTime;
-var int EORCountTime;
+var netupdate(NU_EORCountTime) int EORCountTime;
 var delegate<EORComplete> __EORComplete__Delegate;
 var delegate<EORBeep> __EORBeep__Delegate;
 var delegate<EORKillMsgBoxes> __EORKillMsgBoxes__Delegate;

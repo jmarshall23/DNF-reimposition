@@ -70,9 +70,14 @@ static final function RegisterChannelInfoPrecacheComponents(PrecacheIndex Precac
 
 defaultproperties
 {
-	DestroyedActivities(0)=ObjectProperty'DukeHUD.DrawDebugHUD.C'
-	DestroyedActivities(1)=none
-	DestroyedActivities(2)=DA_Sound_Destroyed_Generic'DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
-	DestroyedActivities(3)=ObjectProperty'DukeMultiPlayer.ChangeToWeapon.NewWeapon'
-	DestroyedActivities(4)='DukeMultiPlayer'
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DA_Sound_Destroyed_Generic'DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	ShrunkUseStyle=1
+	bModifyTickOnPhysicsChange=true
+	DynamicInteractionClassification=1
+	bCollisionAssumeValid=true
+	bBlockKarma=true
+	bNoNativeTick=true
+	TickStyle=0
+	DrawType=8
 }

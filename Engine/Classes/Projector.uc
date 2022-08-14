@@ -48,7 +48,7 @@ var() float OverrideNearPlaneDist;
 var() float ProjectorOpacity;
 var() noexport name TurnOnTag "Trigger this event to turn the Projector on.  Will not work when bLevelStatic = true.";
 var() noexport name TurnOffTag "Trigger this event to turn the Projector off.  Will not work when bLevelStatic = true.";
-var const editconst transient pointer InternalData;
+var const editconst transient nontrans pointer InternalData;
 var() deprecated Actor ExclusiveActor;
 
 // Export UProjector::execAttachProjector(FFrame&, void* const)

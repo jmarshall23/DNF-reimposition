@@ -10,6 +10,13 @@ class dnBonePartMapper_AssaultCommander_RightArm extends BonePartMapper
 
 defaultproperties
 {
-	PartMapping=/* Array type was not detected. */
-	AnimCallback_AnimEnd=/* Unknown default property type! */
+	PartMapping(0)=(BoneName=shoulder_right,Part=7,BoneNameForDestroy=None)
+	PartMapping(1)=(BoneName=arm_upper_right,Part=9,BoneNameForDestroy=None)
+	PartMapping(2)=(BoneName=arm_lower_right,Part=9,BoneNameForDestroy=None)
+	PartMapping(3)=(BoneName=arm_lower_right_end,Part=11,BoneNameForDestroy=None)
+	PartMapping(4)=(BoneName=mount_muzzle,Part=11,BoneNameForDestroy=None)
+	Gibs(0)=(BoneName=arm_lower_right,ReqBones=none,RenderObject='sm_class_effects.AssCommander_Gibs.AssCommander_ForeArmR_GIb',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=1.949666E-20,Y=2.954283E-17,Z=-20.93),Z=-4.02)
+	FullyGibbedSoundName=Corpse_LimbExplode
+	FullyGibbedFrozenSoundName=IcePart_Shatter_Small
+	NumLimbsUntilDestructible=1
 }

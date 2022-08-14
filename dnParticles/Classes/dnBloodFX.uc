@@ -14,6 +14,24 @@ defaultproperties
 	Enabled=false
 	DestroyWhenEmpty=true
 	UseZoneGravity=false
-	AdditionalSpawn=/* Array type was not detected. */
-	bFireAndForget=/* Unknown default property type! */
+	AdditionalSpawn(0)=(SpawnClass='dnBloodFX_BloodChunksBulletImpact',TakeParentTag=false,Mount=false,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	PrimeCount=2
+	PrimeTimeIncrement=0
+	SpawnNumber=0
+	MaximumParticles=2
+	Lifetime=0.625
+	InitialVelocity=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	MaxVelocityVariance=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	AlphaEnd=0
+	Textures(0)='dt_effects.Smoke.genbloodp1aRC'
+	StartDrawScale=0.125
+	EndDrawScale=0.25
+	RotationVariance=65535
+	TriggerType=0
+	bTickOnlyRecent=false
+	bTickOnlyZoneRecent=false
+	CollisionRadius=0
+	CollisionHeight=0
+	TickStyle=3
+	Style=3
 }

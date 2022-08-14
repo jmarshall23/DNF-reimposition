@@ -11,4 +11,20 @@ class dnMotherShip extends dnDecoration_Characters
 defaultproperties
 {
 	HealthPrefab=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='dnMothershipGun',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=MotherGun1,ForceEvent=None,MountMeshItem=mount_gun_1,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	bCollisionAssumeValid=true
+	bBlockActors=false
+	bBlockPlayers=false
+	bNoNativeTick=true
+	bTickOnlyRecent=false
+	bTickOnlyZoneRecent=false
+	SoundNoOcclude=true
+	bCollideWorld=false
+	DrawScale=5
+	Mesh='c_vehicles.Alien_Mothership'
+	SoundVolume=255
+	SoundRadius=32768
+	AmbientSound='a_ambient.Mothership.MotherHum01'
 }

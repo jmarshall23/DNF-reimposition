@@ -10,5 +10,5 @@ class dnDebris_SmokeSubtle extends dnDebris_Smoke
 
 defaultproperties
 {
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Smoke.gensmoke1dRC'
 }

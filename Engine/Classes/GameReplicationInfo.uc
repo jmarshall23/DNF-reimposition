@@ -26,7 +26,7 @@ var bool bShowScoresAfterDeath;
 var bool bShowScoresAfterGame;
 var float LastReplicatedElapsedTime;
 var float ElapsedTime;
-var float SyncElapsedTime;
+var netupdate(NU_SyncElapsedTime) float SyncElapsedTime;
 var bool bDidSyncElapsedTime;
 var bool bDidInitialTimeSync;
 var float RoundEndTime;

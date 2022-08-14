@@ -10,10 +10,5 @@ class Containers_PlasticBoxes_Med_Grey extends Containers_PlasticBoxes_Med
 
 defaultproperties
 {
-	ActorColorList=/* Array type was not detected. */
-	Z=false
-	Y[75]=/* Unknown default property type! */
-	Y[73]=/* Unknown default property type! */
-	Y[74]=/* Unknown default property type! */
-	Y[5]=/* Unknown default property type! */
+	ActorColorList(0)=(ActorColor=(B=76,G=3,R=1,A=128),G=128,B=128,A=255)
 }

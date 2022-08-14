@@ -10,5 +10,7 @@ class dnBonePartMapper_PodGirlD extends dnBonePartMapper_PodGirlA
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
+	Gibs(0)=(BoneName=neck,ReqBones=none,RenderObject='sm_class_effects.podGirl_Gibs.Podgirl_D_Head_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=2.354264E+28,Y=2.954372E-17,Z=-1.674),Z=3.245)
+	Gibs(1)=(RotOffset=(Pitch=79766053,Yaw=572915712,Roll=-2522),Roll=-1255)
+	Gibs(2)=(Mass=9,GibChance=1,bKDNoPawnInteractions=false,bExplodeOut=false,bNoBloodyMess=false,bIgnorePawnAirCushion=false,bStaticGib=false,GibBloodyMess=none)
 }

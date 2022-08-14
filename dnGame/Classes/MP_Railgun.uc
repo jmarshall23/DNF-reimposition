@@ -153,5 +153,14 @@ defaultproperties
 	PickupClass='MP_RailgunPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=15
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_Railgun'
+	bAlwaysRelevant=true
+	CollisionRadius=19
+	CollisionHeight=6
+	Mesh='c_dnWeapon.sniper_rifle'
+	SoundVolume=255
+	SoundRadius=3200
+	SoundInnerRadius=1600
+	VoicePack='SoundConfig.Inventory.VoicePack_Sniper'
 }

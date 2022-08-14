@@ -9,11 +9,5 @@ class LaserNearMissEffect extends NearMissEffect;
 
 defaultproperties
 {
-	NearMissSoundInfo=bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */,
-/* Exception thrown while deserializing NearMissSoundInfo
-System.ArgumentOutOfRangeException: Non-negative number required.
-Parameter name: value
-   at System.IO.MemoryStream.set_Position(Int64 value)
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 184
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
+	NearMissSoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('a_impact.Bullet.BulletWhiz01','a_impact.Bullet.BulletWhiz02','a_impact.Bullet.BulletWhiz03','a_impact.Bullet.BulletWhiz04','a_impact.Bullet.BulletWhiz05','a_impact.Bullet.BulletWhiz06','a_impact.Bullet.BulletWhiz07','a_impact.Bullet.BulletWhiz08'),SlotPriority=0,VolumePrefab=2,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=50,InnerRadiusVariance=0,Radius=100,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),Velocity3D=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
 }

@@ -160,8 +160,11 @@ defaultproperties
 	BounceElasticity=0
 	FlockToCenterVelocity=49
 	FlockCenterWeight=32
-	Textures=/* Array type was not detected. */
-	SpawnCount=/* Unknown default property type! */
+	Textures(0)='dt_effects.Creatures.genfly1aRC'
+	StartDrawScale=0.0025
+	EndDrawScale=0.0025
+	DrawScaleVariance=0.00375
+	RotationVariance=2
 	ParticleAmbientLight=(B=85,G=1,R=1,A=32)
 	bUnlit=false
 	bCollideActors=true

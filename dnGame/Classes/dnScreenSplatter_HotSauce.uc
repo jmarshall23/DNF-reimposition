@@ -9,23 +9,7 @@ class dnScreenSplatter_HotSauce extends dnScreenSplatters;
 
 defaultproperties
 {
-	Textures(0)=ObjectProperty'dnUsableSomething.User'
-	Textures(1)='dt_effects.Sauce_Splatter.HotSauceScreenFX_a_fb'
-	Textures(2)='dt_effects.Sauce_Splatter.HotSauceScreenFX_b_fb'
-	Textures(3)='dt_effects.Sauce_Splatter.HotSauceScreenFX_c_fb'
-	Textures(4)=FloatProperty'dnRadioTower.SCustomRadioStation.Freq'
-	Textures(5)=
-/* Exception thrown while deserializing Textures
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UObjectStream.ReadObject() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 742
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 515 */
-	Textures(6)=
-/* Exception thrown while deserializing Textures
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UObjectStream.ReadObject() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 742
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 515 */
+	Textures(0)='dt_effects.Sauce_Splatter.HotSauceScreenFX_a_fb'
+	Textures(1)='dt_effects.Sauce_Splatter.HotSauceScreenFX_b_fb'
+	Textures(2)='dt_effects.Sauce_Splatter.HotSauceScreenFX_c_fb'
 }

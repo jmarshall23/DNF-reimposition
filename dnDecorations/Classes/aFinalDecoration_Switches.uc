@@ -54,7 +54,7 @@ var bool bPausing;
 var bool bLastAnimWasStuck;
 var bool bQueuedSwitch;
 var int QueuedSynchState;
-var int nUsable;
+var netupdate(NU_nUsable) int nUsable;
 
 replication
 {
@@ -648,7 +648,7 @@ simulated function AnimCallback_UserReleased()
 	return;
 }
 
-k2call simulated function PlayActivate(optional EventInfo EventParms)
+animevent simulated function PlayActivate(optional EventInfo EventParms)
 {
 	// End:0x23
 	if(__NFUN_145__(bSynching))
@@ -658,7 +658,7 @@ k2call simulated function PlayActivate(optional EventInfo EventParms)
 	return;
 }
 
-k2call simulated function PlayStuck(optional EventInfo EventParms)
+animevent simulated function PlayStuck(optional EventInfo EventParms)
 {
 	// End:0x23
 	if(__NFUN_145__(bSynching))

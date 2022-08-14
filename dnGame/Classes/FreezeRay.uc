@@ -361,7 +361,7 @@ final function bool HandleSelfFreeze()
 	return;
 }
 
-k2call simulated function Fire_Effects(optional EventInfo AnimEventInfo)
+animevent simulated function Fire_Effects(optional EventInfo AnimEventInfo)
 {
 	SelectNextFireMuzzle();
 	// End:0x24
@@ -513,4 +513,15 @@ defaultproperties
 	PickupClass='FreezeRayPickup'
 	bIsPrimaryWeapon=true
 	HUDPickupEventIcon=8
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Weapon_LightEx_FreezeRay_Siren',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=true,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=siren,MountOrigin=(X=2.717022E+23,Y=2.9544E-17,Z=0),Z=0.8),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=-1073733083,Yaw=572981247,Roll=0),Roll=0)
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_FreezeRay'
+	bNoNativeTick=false
+	bNeedsScriptActorColor=true
+	Mesh='c_dnWeapon.FreezeRay'
+	SoundVolume=200
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_FreezeRay'
 }

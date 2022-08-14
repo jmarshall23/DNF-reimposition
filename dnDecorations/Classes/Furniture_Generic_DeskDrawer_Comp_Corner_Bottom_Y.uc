@@ -11,5 +11,7 @@ class Furniture_Generic_DeskDrawer_Comp_Corner_Bottom_Y extends Furniture_Generi
 defaultproperties
 {
 	CollisionHeight=4
-	DesiredLocation=/* Array type was not detected. */
+	DesiredLocation(0)=(bTemporal=false,bComplete=false,bRelativeMotion=true,Target=(X=1.291717E-41,Y=2.81365E-17,Z=0),Z=0)
+	DesiredLocation(1)=(TargetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	StaticMesh='sm_class_decorations.computer_desk.droor'
 }

@@ -29,5 +29,5 @@ defaultproperties
 	CollisionHeight=60
 	DrawScale3D=(X=1.291717E-41,Y=2.802673E-17,Z=2.5)
 	StaticMesh='sm_class_decorations.Barrels.Barrel_Generic'
-	Skins=/* Array type was not detected. */
+	Skins(0)='dt_editor.Surface.Climbable_Masking'
 }

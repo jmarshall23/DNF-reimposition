@@ -32,5 +32,17 @@ defaultproperties
 	AlphaVariance=0.5
 	AlphaStart=1
 	AlphaMid=0.75
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Smoke.greensmoke1aRC'
+	Textures(1)='dt_effects.Smoke.greensmoke1bRC'
+	StartDrawScale=0.01
+	EndDrawScale=0.2
+	DrawScaleVariance=0.05
+	DrawScaleEndVariance=-1
+	RotationVelocity=2.5
+	RotationVelocityMaxVariance=4
+	TriggerAfterSeconds=5
+	TriggerType=2
+	bForceNonFinalBlendBlooms=true
+	NonFinalBlendBloomTint=(B=85,G=1,R=1,A=128)
+	Style=1
 }

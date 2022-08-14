@@ -11,5 +11,13 @@ class dnHitFX_Effect_Wood extends dnHitFX_Effect_Debris_Heavy
 
 defaultproperties
 {
-	Textures=/* Array type was not detected. */
+	Textures(0)='dt_effects.Debris.woodshard4aRC'
+	Textures(1)='dt_effects.Debris.woodshard4bRC'
+	Textures(2)='dt_effects.Debris.woodshard4cRC'
+	Textures(3)='dt_effects.Debris.woodshard4dRC'
+	Textures(4)='dt_effects.Debris.woodshard4eRC'
+	StartDrawScale=0.15
+	EndDrawScale=0.15
+	DrawScaleVariance=0.1
+	Style=2
 }

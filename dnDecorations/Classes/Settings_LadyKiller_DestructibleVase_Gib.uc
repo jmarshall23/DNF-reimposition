@@ -16,6 +16,33 @@ simulated event ResumeCallbackTimerDestroyedActorPool()
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib01',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib02',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib03',bForcedOnly=false)
+	Gibs(3)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib04',bForcedOnly=false)
+	Gibs(4)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib05',bForcedOnly=false)
+	Gibs(5)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib06',bForcedOnly=false)
+	Gibs(6)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib07',bForcedOnly=false)
+	Gibs(7)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib08',bForcedOnly=false)
+	Gibs(8)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib09',bForcedOnly=false)
+	Gibs(9)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib10',bForcedOnly=false)
+	Gibs(10)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib11',bForcedOnly=false)
+	Gibs(11)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib12',bForcedOnly=false)
+	Gibs(12)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib13',bForcedOnly=false)
+	Gibs(13)=(RenderObject='sm_class_decorations.Containers.VaseLarge_Gib14',bForcedOnly=false)
+	HealthPrefab=5
+	AdjustRotation=(Pitch=1073750533,Yaw=571080704,Roll=0)
+	Health=1
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bIgnoreVehicles=false
+	DynamicInteractionClassification=7
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Glass'
+	PhysicsEntityGroup=DestructibleVaseGibPET
+	Physics=18
+	bAITransparent=true
+	bBlockKarma=true
+	bCollideWorld=false
+	Mass=5
+	DrawType=8
+	VoicePack='SoundConfig.Interactive.VoicePack_LadyKiller'
 }

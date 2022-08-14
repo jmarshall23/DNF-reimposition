@@ -51,12 +51,30 @@ event Destroyed()
 
 defaultproperties
 {
-	AutoConstraints=/* Array type was not detected. */
-	bConstraintOnDeath=false
-	BoneName=Root
-	ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	OtherConstraintActor=none
-	OtherConstraintBone=None
-	ConstraintClass=none
-	ConstraintActor=none
+	AutoConstraints(0)=(bConstraintDisabledOnDeath=true,bConstraintOnDeath=false,BoneName=Root,ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	begin object name=DA_KImpulse_Plants_Generic_Potted_Brkn class=DecoActivities_KarmaImpulse
+		ImpulseForce=300
+		ImpulseForceVariance=500
+		ImpulseOffsetAbsolute=true
+		ImpulseOffset=(X=1.291717E-41,Y=2.797242E-17,Z=1)
+		ImpulseDirectionAbsolute=true
+		ImpulseDirection=(Pitch=1073750533,Yaw=571080704,Roll=0)
+	object end
+	// Reference: DecoActivities_KarmaImpulse'Plants_Generic_Potted.DA_KImpulse_Plants_Generic_Potted_Brkn'
+	DestroyedActivities(2)=DA_KImpulse_Plants_Generic_Potted_Brkn
+	bIgnorePawnAirCushion=true
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMassType=1
+	Density=10
+	PhysicsEntityGroup=LevelPhysicsEntityGroup
+	Physics=18
+	bBlockAI=true
+	bBlockPath=true
+	bCanExistOutOfWorld=true
+	bAIMoveable=false
+	Mass=30
+	DrawType=2
+	RemoteRole=0
 }

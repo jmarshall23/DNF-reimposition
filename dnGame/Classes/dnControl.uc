@@ -74,7 +74,7 @@ struct SOutEvents
 
 struct SUserStateEvents
 {
-	var() editinline name State;
+	var() editinline state name State;
 	var() array<SOutEvents> Events;
 };
 
@@ -111,7 +111,7 @@ var bool bChangeCrossHair;
 var() noexport array<SUserStateEvents> StateEvents "Mapper-set events for things that are supposed to happen in various states.";
 var editconst noexport array<SState> States "The states table and available transitions for this decoration. Mappers, stop setting this or terrible things will happen to you.";
 var int InitStateIndex;
-var int CurrentStateIndex;
+var netupdate(NU_CurrentStateIndex) int CurrentStateIndex;
 var int PreviousStateIndex;
 var bool NotifyUserOnStateChange;
 var bool bDelayedDetach;
@@ -124,9 +124,9 @@ var() noexport float PassedPhysicsDamageScale "How much to scale damage from phy
 var() noexport float PassedPhysicsDamageScaleAI "Same as PassedPhysicsDamageScale, but used when user is not a PlayerPawn.  If < 0, will use PassedPhysicsDamageScale.";
 var noexport bool bPowerOff "Is the power off?";
 var bool bOverheated;
-var() noexport editinline name ForceAttachStateName "When forcing the player to attach, use this state name to jump them to.";
-var() noexport editinline name ForceDetachStateName "When forcing the player to detach, use this state name.";
-var() noexport editinline name PawnLostStateName "When user has been 'lost' (died, shot, etc), go to this state.";
+var() noexport editinline state name ForceAttachStateName "When forcing the player to attach, use this state name to jump them to.";
+var() noexport editinline state name ForceDetachStateName "When forcing the player to detach, use this state name.";
+var() noexport editinline state name PawnLostStateName "When user has been 'lost' (died, shot, etc), go to this state.";
 var() noexport array<Engine.Actor.EControlRemapperKeyType> DisabledKeyTypes "KeyTypes to disable for this dnControl, used to turn off specific states and their hint icons.";
 var() noexport bool AIHoldFire "Should AI hold there fire when the player is in on this control.";
 var() noexport bool bAlternateMovementBoneStyle "Don't use this unless I tell you to.";

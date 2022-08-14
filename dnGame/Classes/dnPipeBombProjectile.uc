@@ -198,5 +198,41 @@ defaultproperties
 	DamageClass='PipeBombDamage'
 	NumBounces=-1
 	ShakeScalar=2.25
-	ShakeInfo=/* Array type was not detected. */
+	ShakeInfo(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.55,ShakeFrequency=0.05,ShakeMagnitude=700,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=dnPipeBombProjectile_Shake)
+	RumbleInfo(0)=(RumbleName=dnPipeBombProjectile_Rumble,RumbleDuration=0.5,RumbleLeftMagnitude=0.8,RumbleRightMagnitude=0,FalloffActor=none,FalloffDistance=0)
+	ExplosionClass='p_Weapons.PipeBomb_Explosion.PipeBomb_Explosion_Spawner'
+	UnderwaterExplosionClass='p_Weapons.PipeBomb_Explosion_Underwater.PipeBomb_Explosion_Underwater_Spawner'
+	ExplosionLight='dnExplosionLight_RPG'
+	ExplosionSoundName=ProjectileExplode
+	AvoidRange=200
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='PipeBombBeam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.95452E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	HealthCap=1
+	bResetOnFellOutOfWorld=true
+	bStartEnabled=true
+	bDoPhysicsWaterEffects=true
+	WaterSplash='p_Decorations.WaterSplash_Medium.WaterSplash_Medium_Spawner'
+	DynamicInteractionClassification=1
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_PipeBomb'
+	KRestitution=0.5
+	KLinearDamping=0.28
+	KAngularDamping=0.58
+	Density=2.8
+	bBlockActors=false
+	bBlockPlayers=false
+	bIsPipeBombOrTripMine=true
+	bDumbMesh=false
+	bNetTemporary=false
+	CollisionRadius=8
+	CollisionHeight=8
+	Mass=5
+	DrawType=8
+	StaticMesh='sm_class_decorations.Weapon_Pickups.PipeBomb_Static'
+	LifeSpan=0
+	NetPriority=1
+	TransientSoundVolume=0.5
+	TransientSoundRadius=800
+	TransientSoundInnerRadius=400
+	VoicePack='SoundConfig.Inventory.VoicePack_PipeBomb'
 }

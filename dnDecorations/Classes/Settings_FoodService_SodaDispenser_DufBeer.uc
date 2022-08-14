@@ -11,5 +11,5 @@ class Settings_FoodService_SodaDispenser_DufBeer extends Settings_FoodService_So
 defaultproperties
 {
 	SprayColor=(B=76,G=3,R=1,A=200)
-	Skins=/* Array type was not detected. */
+	Skins(0)='smt_skins8.SodaFountain.sodaftn_duf_bs'
 }

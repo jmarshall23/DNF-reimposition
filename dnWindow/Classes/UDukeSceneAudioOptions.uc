@@ -339,14 +339,8 @@ defaultproperties
 	DialogVolumeHelp="<?int?dnWindow.UDukeSceneAudioOptions.DialogVolumeHelp?>"
 	VOIPVolumeText="<?int?dnWindow.UDukeSceneAudioOptions.VOIPVolumeText?>"
 	VOIPVolumeHelp="<?int?dnWindow.UDukeSceneAudioOptions.VOIPVolumeHelp?>"
-	VolumeChangedSoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */,Y[10]=/* Unknown default property type! */,SlotPriority=0,VolumePrefab=0,Slots=/* Array type was not detected. */,Y=Volume,R=/* Unknown default property type! */)
-	DialogVolumeChangedSoundInfo=bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */,
-/* Exception thrown while deserializing DialogVolumeChangedSoundInfo
-System.ArgumentOutOfRangeException: Non-negative number required.
-Parameter name: value
-   at System.IO.MemoryStream.set_Position(Int64 value)
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 184
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
+	VolumeChangedSoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('a_generic.Menu.MenuAction'),SlotPriority=0,VolumePrefab=0,Slots=(6),Volume=1,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=true,bMenuSound=true,bNoFilter=true,bNoOcclude=true,bNoAIHear=true,bNoScale=true,bSpoken=false,bPlayThroughListener=false,bNoDoppler=true,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=1,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DialogVolumeChangedSoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('a_dukevoice.DukeLines.DUKE_Map13_StripLine_01','a_dukevoice.DukeLines.DUKE_RestINPieces_01','a_dukevoice.KillComments.DUKE_GotKill_01','a_dukevoice.KillComments.DUKE_GotKill_25'),SlotPriority=0,VolumePrefab=0,Slots=(5),Volume=1,VolumeVariance=0,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=true,bMenuSound=true,bNoFilter=true,bNoOcclude=true,bNoAIHear=true,bNoScale=true,bSpoken=false,bPlayThroughListener=false,bNoDoppler=true,bDialogSound=true,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=1,Location3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
 	ConfirmDefaultsText="<?int?dnWindow.UDukeSceneAudioOptions.ConfirmDefaultsText?>"
 	ConfirmDefaultsTitle="<?int?dnWindow.UDukeSceneAudioOptions.ConfirmDefaultsTitle?>"
 	TitleText="<?int?dnWindow.UDukeSceneAudioOptions.TitleText?>"

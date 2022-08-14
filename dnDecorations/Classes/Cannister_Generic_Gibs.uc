@@ -9,6 +9,11 @@ class Cannister_Generic_Gibs extends aFinalDecoration_Gibs;
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_class_decorations.Gas_Cannisters.Gas_Cannister_Shards1',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_class_decorations.Gas_Cannisters.Gas_Cannister_Shards2',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_class_decorations.Gas_Cannisters.Gas_Cannister_Shards3',bForcedOnly=false)
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid'
+	PhysicsMassType=0
+	Density=4
+	StaticMesh='sm_class_decorations.Gas_Cannisters.Gas_Cannister_Shards1'
 }

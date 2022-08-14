@@ -14,6 +14,15 @@ defaultproperties
 	AdditionalPickupAmmoRnd=50
 	MaxTraceDistance=0
 	bCheatMuzzleBlockage=true
-	ViewKicks=/* Array type was not detected. */
-	RandomSeed=none
+	ViewKicks(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=-1,ShakeFrequency=0.015,ShakeMagnitude=32,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=FreezeRay_ViewKick_0)
+	RumbleKicks(0)=(RumbleName=FreezeRay_Rumble,RumbleDuration=0.33,RumbleLeftMagnitude=0.17,RumbleRightMagnitude=0.6,FalloffActor=none,FalloffDistance=0)
+	MuzzleInfo(0)=(MuzzleFireStartAnim=FireStart,MuzzleFireAnim=Fire,MuzzleFireStopAnim=FireStop,MuzzleFlashClass='p_Weapons.FreezeRay_MuzzleFlash.FreezeRay_MuzzleFlash_Spawner',MuzzleBoneName=mount_muzzle,MuzzleMountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	MeleeDamageType='MeleeDamage'
+	bHasFireStart=true
+	bHasLoopingFire=true
+	bHasFireStop=true
+	AmmoWarnPCT=0.14
+	WeaponHeatAttackRate=-0.1
+	WeaponHeatDecayRate=-0.1
+	WeaponAnimName=FreezeRay
 }

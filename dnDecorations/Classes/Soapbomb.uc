@@ -13,6 +13,10 @@ defaultproperties
 	TraceNum=4
 	TraceRotationVariance=(Pitch=-56827,Yaw=571080704,Roll=65535)
 	MaxTraceDistance=128
-	Decals=/* Array type was not detected. */
-	LoopCount=class'SwitchStates'
+	Decals(0)='dt_effects.liquids.soapsplatter1RC'
+	Decals(1)='dt_effects.liquids.soapsplatter2RC'
+	Decals(2)='dt_effects.liquids.soapsplatter3RC'
+	BehaviorArgument=4
+	Behavior=3
+	bUnlit=true
 }

@@ -13,5 +13,7 @@ defaultproperties
 	CommandAlias="UseWeapon dnGame.MP_Pistol_Gold"
 	PickupClass='MP_PistolPickup_Gold'
 	HUDPickupEventIcon=0
-	Skins=/* Array type was not detected. */
+	Skins(0)=none
+	Skins(1)=none
+	Skins(2)=none
 }

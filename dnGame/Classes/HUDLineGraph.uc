@@ -271,14 +271,20 @@ defaultproperties
 	GraphLength=512
 	GraphHeight=64
 	MyCopySource='smt_skins8.Whiteboard.Whiteboard1tw_d'
-	DrawColors(0)=9
-	DrawColors(1)=255
-	DrawColors(2)=252
-	DrawColors(3)=251
-	DrawColors(4)=250
-	DrawColors(5)=254
-	DrawColors(6)=195
-	DrawColors(7)=253
-	DrawColors(8)=199
-	DrawColors(9)=198
+	DrawColors(0)=255
+	DrawColors(1)=252
+	DrawColors(2)=251
+	DrawColors(3)=250
+	DrawColors(4)=254
+	DrawColors(5)=195
+	DrawColors(6)=253
+	DrawColors(7)=199
+	DrawColors(8)=198
+	LineColorIndex=4
+	AxisColorIndex=2
+	Alpha=0.5
+	DataInfo(0)=(Min=99999,Max=0,Avg=0,RunningSum=0,NumValues=0,ClearInterval=-1,str="Lifetime:",TimeLastClear=0)
+	DataInfo(1)=(Min=99999,Max=0,Avg=0,RunningSum=0,NumValues=0,ClearInterval=5,str="Last 5 secs:",TimeLastClear=0)
+	HeadingColor=(B=121,G=2,R=1,A=255)
+	WhiteColor=(B=121,G=2,R=1,A=255)
 }

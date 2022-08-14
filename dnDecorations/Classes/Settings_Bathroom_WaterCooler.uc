@@ -275,87 +275,33 @@ function Destroyed()
 
 defaultproperties
 {
-	FaucetPoints(0)=(X=-1324460508,bNoScale=2.3,Z=8.78)
+	FaucetPoints(0)=(X=5.533,Y=2.3,Z=8.78)
 	FaucetPoints(1)=(X=5.533,Y=-2.3,Z=8.78)
-	FaucetPoints(2)=(DeltaHealth=5,DecoActivities_Default=/* Array type was not detected. */,Pitch=/* Unknown default property type! */,SDecoActivitiesData=/* Unknown default property type! */,bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0)
-	FaucetPoints(3)=(ActivityIDScript=/* Array type was not detected. */,Z=106,SDecoActivitySetup=40435723,Y=/* Unknown default property type! */,ActivityStates_Success=/* Array type was not detected. */)
-	FaucetPoints(4)=(ActivityStates_Failure=/* Array type was not detected. */)
-	FaucetPoints(5)=(ActivityDebugID="",Activities=/* Array type was not detected. */,ActivityRules=/* Array type was not detected. */)
-	FaucetPoints(6)=(ActivityElements=/* Array type was not detected. */,Z[3]=/* Array type was not detected. */,TriggerFunc_ToggleLock=/* Unknown default property type! */,FlushSoundName=/* Unknown default property type! */,bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0)
-	FaucetPoints(7)=(FailureActivityElements=/* Array type was not detected. */)
-	FaucetPoints(8)=(FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))
-	FaucetPoints(9)=(bDisabled=false)
-	FaucetPoints(10)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=/* Array type was not detected. */,Z=108,SDecoActivitySetup=40435723,Y=/* Unknown default property type! */,ActivityStates_Success=/* Array type was not detected. */)
-	FaucetPoints(11)=(ActivityStates_Failure=/* Array type was not detected. */)
-	FaucetPoints(12)=(ActivityDebugID="",Activities=/* Array type was not detected. */,ActivityRules=/* Array type was not detected. */)
-	FaucetPoints(13)=(ActivityElements=/* Array type was not detected. */,Z[3]=/* Array type was not detected. */,TriggerFunc_ToggleLock=/* Unknown default property type! */,FlushSoundName=/* Unknown default property type! */,bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0)
-	FaucetPoints(14)=(FailureActivityElements=/* Array type was not detected. */)
-	FaucetPoints(15)=(FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))
-	FaucetPoints(16)=(bDisabled=false)
-	FaucetPoints(17)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=/* Array type was not detected. */,Z=99,SDecoActivitySetup=40435723,Y=/* Unknown default property type! */,ActivityStates_Success=/* Array type was not detected. */)
-	FaucetPoints(18)=(ActivityStates_Failure=/* Array type was not detected. */)
-	FaucetPoints(19)=(ActivityDebugID="",Activities=/* Array type was not detected. */,ActivityRules=/* Array type was not detected. */)
-	FaucetPoints(20)=(ActivityElements=/* Array type was not detected. */,Z=/* Unknown default property type! */,DrawScaleOverride=X,FlushSoundName=/* Unknown default property type! */,bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0)
-	FaucetPoints(21)=(FailureActivityElements=/* Array type was not detected. */)
-	FaucetPoints(22)=(FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))
-	FaucetPoints(23)=(bDisabled=false)
-	FaucetPoints(24)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=/* Array type was not detected. */,Z=103,SDecoActivitySetup=40435723,Y=/* Unknown default property type! */,ActivityStates_Success=/* Array type was not detected. */)
-	FaucetPoints(25)=(ActivityStates_Failure=/* Array type was not detected. */)
-	FaucetPoints(26)=(ActivityDebugID="",Activities=/* Array type was not detected. */,ActivityRules=/* Array type was not detected. */)
-	FaucetPoints(27)=(ActivityElements=/* Array type was not detected. */,Z=/* Unknown default property type! */,DrawScaleOverride=/* Unknown default property type! */,FlushSoundName=/* Unknown default property type! */,bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0)
-	FaucetPoints(28)=(FailureActivityElements=/* Array type was not detected. */)
-	FaucetPoints(29)=(FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))
-	FaucetPoints(30)=(bDisabled=false)
-	FaucetPoints(31)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=/* Array type was not detected. */,Z=98,SDecoActivitySetup=40435723,Y=/* Unknown default property type! */,ActivityStates_Success=/* Array type was not detected. */)
-	FaucetPoints(32)=(ActivityStates_Failure=/* Array type was not detected. */)
-	FaucetPoints(33)=(ActivityDebugID="",Activities=/* Array type was not detected. */,ActivityRules=/* Array type was not detected. */)
-	FaucetPoints(34)=(ActivityElements=/* Array type was not detected. */,X=(X=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=/* Array type was not detected. */),FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))
-	FaucetPoints(35)=(bDisabled=false)
-	FaucetPoints(36)=StartupActivities=/* Array type was not detected. */,Y=true,bSurviveDeath=true,DestroyedActivities=/* Array type was not detected. */,Pitch=/* Unknown default property type! */,
-/* Exception thrown while deserializing FaucetPoints
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	FaucetPoints(37)=
-/* Exception thrown while deserializing FaucetPoints
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	FaucetPoints(38)=
-/* Exception thrown while deserializing FaucetPoints
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	FaucetPoints(39)=
-/* Exception thrown while deserializing FaucetPoints
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	FaucetPoints(40)=(HealthPrefab=4,bForceUsePhrase=true,bUsable=true,bUnUsable=true,MountOnSpawn=/* Array type was not detected. */,Z=none,SpawnClass='Containers_WaterCooler_Jug',SpawnChance=1,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=WaterJug,ForceEvent=None,MountMeshItem=jugmount,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
-	FaucetPoints(41)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
-	FaucetPoints(42)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	DeltaHealth=5
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(UseLeftKnob),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Sound_SmallSwitch_Standard',DecoActivities_Animation'Settings_Bathroom_WaterCooler.DA_Anim_Settings_Bathroom_WaterCooler_TurnOn_Left',DecoActivities_Events'Settings_Bathroom_WaterCooler.DA_Events_Settings_Bathroom_WaterCooler_BubbleTimer'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(UseRightKnob),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=('dnGame.DecoActivityDeclarations.DA_Sound_SmallSwitch_Standard',DecoActivities_Animation'Settings_Bathroom_WaterCooler.DA_Anim_Settings_Bathroom_WaterCooler_TurnOn_Right',DecoActivities_Events'Settings_Bathroom_WaterCooler.DA_Events_Settings_Bathroom_WaterCooler_BubbleTimer'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(UnUseLeftKnob),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Settings_Bathroom_WaterCooler.DA_Anim_Settings_Bathroom_WaterCooler_TurnOff_Left',DecoActivities_Events'Settings_Bathroom_WaterCooler.DA_Events_Settings_Bathroom_WaterCooler_EndBubbleTimer',DecoActivities_Sound'Settings_Bathroom_WaterCooler.DA_Sound_Settings_Bathroom_WaterCooler_EndBubbles'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(3)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(UnUseRightKnob),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Settings_Bathroom_WaterCooler.DA_Anim_Settings_Bathroom_WaterCooler_TurnOff_Right',DecoActivities_Events'Settings_Bathroom_WaterCooler.DA_Events_Settings_Bathroom_WaterCooler_EndBubbleTimer',DecoActivities_Sound'Settings_Bathroom_WaterCooler.DA_Sound_Settings_Bathroom_WaterCooler_EndBubbles'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(4)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(BubbleEffect),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Settings_Bathroom_WaterCooler.DA_Sound_Settings_Bathroom_WaterCooler_Bubbles',DecoActivities_Sound'Settings_Bathroom_WaterCooler.DA_Sound_Settings_Bathroom_WaterCooler_Drink'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	StartupActivities(0)='dnGame.DecoActivityDeclarations.DA_Sound_Ambient_VendingHum'
+	bSurviveDeath=true
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Generic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Sound_Ambient_Clear'
+	DestroyedActivities(3)='dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Disable'
+	DestroyedActivities(4)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	HealthPrefab=4
+	bForceUsePhrase=true
+	bUsable=true
+	bUnUsable=true
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Containers_WaterCooler_Jug',SpawnChance=1,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=WaterJug,ForceEvent=None,MountMeshItem=jugmount,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_WaterSplash'
+	bTickOnlyWhenPhysicsAwake=true
+	DynamicInteractionClassification=0
+	CollisionRadius=8
+	CollisionHeight=27.25
+	DrawType=2
+	Mesh='c_generic.watercooler'
 }

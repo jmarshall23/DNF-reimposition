@@ -11,29 +11,19 @@ class Electronics_Casino_Slot_Marquee_Million extends Electronics_Casino
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	SpawnOnDestroyed=/* Array type was not detected. */
-	RenderObject=none
-	DrawScale=0
-	DrawScaleVariance=0
-	DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	SpawnChance=0
-	SpawnCopies=0
-	SpawnCopiesVariance=0
-	bIgnorePawnAirCushion=false
-	bDontScaleByDrawScale=false
-	bScaleByDrawScaleNonDefault=false
-	bNoCollision=false
-	bFindSpot=false
-	bIgnoreParentRotation=false
-	bTakeParentCollisionSize=false
-	bTakeParentMounting=false
-	bTakeParentActorColors=false
-	bTakeParentSkins=false
-	Offset=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	Rotation=(Pitch=8709,Yaw=571080704,Roll=0)
-	RotationVariance=(Pitch=8709,Yaw=571080704,Roll=0)
-	BoneName=None
-	MotionInfo='Engine.RenderActor.MP_NoMotion'
+	DestroyedActivities(0)=none
+	begin object name=DA_Display_SlotMarqueeMillionBRKN class=DecoActivities_Display
+		RenderObject='sm_lvl_ladykiller.Casino.LK_SlotMarqueeMillion_BRKN'
+	object end
+	// Reference: DecoActivities_Display'Electronics_Casino_Slot_Marquee_Million.DA_Display_SlotMarqueeMillionBRKN'
+	DestroyedActivities(1)=DA_Display_SlotMarqueeMillionBRKN
+	begin object name=DA_Sound_SlotMarqueeMillionBRKN class=DecoActivities_Sound
+		SoundNames(0)=NeonSign_Explode
+	object end
+	// Reference: DecoActivities_Sound'Electronics_Casino_Slot_Marquee_Million.DA_Sound_SlotMarqueeMillionBRKN'
+	DestroyedActivities(2)=DA_Sound_SlotMarqueeMillionBRKN
+	SpawnOnDestroyed(0)=(SpawnClass='p_Decorations.MarqueeSparks.MarqueeExplosion_Main',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	CollisionRadius=58
+	CollisionHeight=38.5
+	StaticMesh='sm_lvl_ladykiller.Casino.LK_SlotMarqueeMillion'
 }

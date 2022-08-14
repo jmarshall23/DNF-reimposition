@@ -169,5 +169,21 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 
 defaultproperties
 {
-	DecoActivities_Default=/* Array type was not detected. */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(TurnOn),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Settings_Bathroom_Shower.DA_Sound_Settings_Bathroom_Shower_TurnHandle',DecoActivities_Sound'Settings_Bathroom_Shower.DA_Sound_Settings_Bathroom_Shower_TurnOn',DecoActivities_Animation'Settings_Bathroom_Shower.DA_Anim_Settings_Bathroom_Shower_TurnOn','dnGame.DecoActivityDeclarations.DA_HUD_UsePhrase_TurnOff'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(TurnOff),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Settings_Bathroom_Shower.DA_Sound_Settings_Bathroom_Shower_TurnHandle','dnGame.DecoActivityDeclarations.DA_Sound_Ambient_Clear',DecoActivities_Animation'Settings_Bathroom_Shower.DA_Anim_Settings_Bathroom_Shower_TurnOff','dnGame.DecoActivityDeclarations.DA_HUD_UsePhrase_TurnOn'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(3),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=('dnGame.DecoActivityDeclarations.DAR_Anim_NoneAllowed'),ActivityElements=(DecoActivities_Events'Settings_Bathroom_Shower.DA_Events_Settings_Bathroom_Shower_UsedOn'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=1),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0)),(ActivityRules=('dnGame.DecoActivityDeclarations.DAR_Anim_NoneAllowed'),ActivityElements=(DecoActivities_Events'Settings_Bathroom_Shower.DA_Events_Settings_Bathroom_Shower_UsedOff'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=1),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	StartupActivities(0)='dnGame.DecoActivityDeclarations.DA_HUD_UsePhrase_TurnOn'
+	HealthPrefab=0
+	bForceUsePhrase=true
+	bUsable=true
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Decorations.Shower.Shower_Main',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=ShowerParticles,ForceEvent=None,MountMeshItem=Water,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bCollideWorld=false
+	CollisionRadius=11
+	CollisionHeight=46
+	DrawType=2
+	Mesh='c_generic.Shower'
+	SoundRadius=300
+	SoundInnerRadius=150
+	TransientSoundRadius=300
+	TransientSoundInnerRadius=150
 }

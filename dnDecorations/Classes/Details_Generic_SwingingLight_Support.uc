@@ -16,8 +16,6 @@ defaultproperties
 	bCollideWorld=false
 	DrawScale3D=(X=-1.518873E+14,Y=2.802378E-17,Z=0.02)
 	StaticMesh='sm_geo_decorations.CollisionPrimitives.CP_Cube_64'
-	Skins=/* Array type was not detected. */
-	StructProperty=/* Unknown default property type! */
-	Z=0
-	A=255
+	Skins(0)='dt_effects.ActorColor.GenericActorColor'
+	ActorColorList(0)=(ActorColor=(B=76,G=3,R=1,A=0),G=0,B=0,A=255)
 }

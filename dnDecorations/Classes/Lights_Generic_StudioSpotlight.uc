@@ -10,5 +10,20 @@ class Lights_Generic_StudioSpotlight extends Lights_Generic
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Glass_Large'
+	DestroyedActivities(2)=DecoActivities_Events'Lights_Generic.DA_Events_Lights_Generic_Destroyed'
+	begin object name=DA_Display_Lights_Generic_StudioSpotlight_Brkn class=DecoActivities_Display
+		RenderObject='sm_class_lights.Hanging.spotlightBrkn_cd'
+		Skins(0)=(Index=1,NewMaterialEx=none)
+	object end
+	// Reference: DecoActivities_Display'Lights_Generic_StudioSpotlight.DA_Display_Lights_Generic_StudioSpotlight_Brkn'
+	DestroyedActivities(3)=DA_Display_Lights_Generic_StudioSpotlight_Brkn
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass=none,SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	bDirectional=true
+	CollisionRadius=6
+	CollisionHeight=6
+	Mass=15
+	StaticMesh='sm_class_lights.Hanging.spotlightON_cd'
 }

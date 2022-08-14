@@ -11,6 +11,13 @@ class Settings_FoodService_Plate_Gibs extends dnDecoration_Gibs
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	bForcedOnly=false
+	Gibs(0)=(RenderObject='sm_class_decorations.Plate.Plate_GibA',bForcedOnly=false)
+	Gibs(1)=(RenderObject='sm_class_decorations.Plate.Plate_GibB',bForcedOnly=false)
+	Gibs(2)=(RenderObject='sm_class_decorations.Plate.Plate_GibC',bForcedOnly=false)
+	Gibs(3)=(RenderObject='sm_class_decorations.Plate.Plate_GibD',bForcedOnly=false)
+	bIgnorePawnAirCushion=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Glass'
+	Physics=18
+	Mass=15
+	DrawType=8
 }

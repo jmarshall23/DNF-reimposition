@@ -20,3 +20,22 @@ function KarmaSetConstraintProperties(KConstraint ConstraintActor)
 	}
 	return;
 }
+
+defaultproperties
+{
+	AutoConstraints(0)=(bConstraintDisabledOnDeath=false,bConstraintOnDeath=false,BoneName=None,ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	AutoConstraints(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	HealthPrefab=0
+	bModifyTickOnPhysicsChange=false
+	bTickOnlyWhenPhysicsAwake=true
+	DynamicInteractionClassification=8
+	KAngularDamping=1
+	Physics=18
+	bHidden=true
+	bTickOnlyWhenOwnerShould=true
+	bCollideActors=false
+	bCollideWorld=false
+	Mass=10
+	TickStyle=2
+	StaticMesh='sm_geo_decorations.CollisionPrimitives.CP_Cube_64'
+}

@@ -10,5 +10,8 @@ class BulletHole_Wood extends BulletHole_Decal
 
 defaultproperties
 {
-	Decals=/* Array type was not detected. */
+	Decals(0)='dt_effects.bulletholes.bhole_wood1aRC_fb'
+	Decals(1)='dt_effects.bulletholes.bhole_wood2aRC_fb'
+	bRandomRotation=false
+	DrawScale=0.05
 }

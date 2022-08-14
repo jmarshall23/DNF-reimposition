@@ -10,16 +10,10 @@ class Barrels_Generic_Rusty01 extends Barrels_Generic
 
 defaultproperties
 {
-	SpawnOnDestroyedSimple=/* Array type was not detected. */
-	Y[21]=
-/* Exception thrown while deserializing Y
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
+	SpawnOnDestroyedSimple(0)='dnParticles.dnDebris_Sparks1'
+	SpawnOnDestroyedSimple(1)='dnParticles.dnDebris_Sparks1'
+	SpawnOnDestroyedSimple(2)='dnParticles.dnDebris_Smoke'
+	SpawnOnDestroyedSimple(3)='dnParticles.dnDebris_Metal1'
+	StaticMesh='sm_class_decorations.Barrels.Barrel_Generic'
+	Skins(0)='smt_skins.Barrels.Barrel_D_bs'
 }

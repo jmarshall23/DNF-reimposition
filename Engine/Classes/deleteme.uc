@@ -33,7 +33,5 @@ defaultproperties
 {
 	Sprite=Texture'S_Obsolete'
 	Texture=Texture'S_Obsolete'
-	Skins(0)=Struct'Object.Vector'
-	Skins(1)=Texture'S_Obsolete'
-	Skins(2)=BoolProperty'Actor.CanBeUsedBy.ReturnValue'
+	Skins(0)=Texture'S_Obsolete'
 }

@@ -17,7 +17,29 @@ simulated function bool UseThrowingFix()
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	ByteProperty=""
-	Radius=false
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Sound_Destroyed_Metal_LargeThinSheets'
+	HealthPrefab=0
+	bGrabbable=true
+	bTelekineticable=true
+	UsePhrase="<?int?dnDecorations.Barrels_Generic.UsePhrase?>"
+	GrabInfo=(bCanDuckWhileHeld=false,MountItemOverride=mount_handright,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	ThrowBaseRotation=(Pitch=8709,Yaw=571080704,Roll=0)
+	ThrowBaseRotationVariance=(Pitch=8709,Yaw=571080704,Roll=0)
+	ThrowForceScale=0.6
+	bCanBreakGlass=true
+	bCanCrushOthers=false
+	bTickOnlyWhenPhysicsAwake=true
+	DynamicInteractionClassification=0
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Hollow'
+	PhysicsMassType=2
+	Density=0.8
+	FixedPhysicsDamageToNotPlayer=100
+	FixedPhysicsDamageToPlayer=30
+	Physics=18
+	bDisturbWaterSurface=true
+	bDirectional=true
+	CollisionRadius=16
+	CollisionHeight=24
+	Mass=50
 }

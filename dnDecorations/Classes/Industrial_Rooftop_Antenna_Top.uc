@@ -25,13 +25,20 @@ simulated event DetachedFromMountParent()
 defaultproperties
 {
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	begin object name=DA_Sound_Rooftop_Antenna_Top_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=IndMetal_Destruct
+	object end
+	// Reference: DecoActivities_Sound'Industrial_Rooftop_Antenna_Top.DA_Sound_Rooftop_Antenna_Top_Destroyed'
+	DestroyedActivities(2)=DA_Sound_Rooftop_Antenna_Top_Destroyed
 	HealthPrefab=4
-	DestroyedParticleFriendEffects=/* Array type was not detected. */
-	bAbsoluteRotation=false
-	Scale=0
-	BoneName=None
-	Location=(X=1.291717E-41,Y=2.797242E-17,Z=0)
-	Rotation=(Pitch=8709,Yaw=571080704,Roll=0)
-	Effect='p_MapEvents.Map02_RoofTop_Decorations.RoofTop_Electronics_Spawner'
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid'
+	PhysicsMassType=2
+	KAngularDamping=3
+	CollisionRadius=50
+	CollisionHeight=52
+	StaticMesh='sm_lvl_ladykiller.LK_RoofTop.LadyKiller_Tower_Top_Section'
 }

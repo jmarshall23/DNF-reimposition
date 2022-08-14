@@ -17,7 +17,7 @@ var float UseDelayTime;
 var STraceHitResult PlacementTraceResult;
 var bool bPlacingMine;
 
-k2call simulated function StartSmacker()
+animevent simulated function StartSmacker()
 {
 	ArmMineMaterial.SetPause(false);
 	return;
@@ -182,7 +182,7 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 
 state Firing
 {
-	k2call simulated function WeaponCallback_DefinitelyDoneFiring()
+	animevent simulated function WeaponCallback_DefinitelyDoneFiring()
 	{
 		bArmed = false;
 		Instigator.BringUpLastWeapon();
@@ -220,5 +220,12 @@ defaultproperties
 	InventoryReferenceClass='TripMine'
 	PickupClass='TripMinePickup'
 	HUDPickupEventIcon=7
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='IKSystemInfo_Shotgun'
+	AnimationControllerClass='dnAnimationControllerEx_TripMine'
+	CollisionHeight=8
+	Mesh='c_dnWeapon.TripMine'
+	SoundVolume=200
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_TripMine'
 }

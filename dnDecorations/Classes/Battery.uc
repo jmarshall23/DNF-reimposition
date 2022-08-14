@@ -16,5 +16,7 @@ defaultproperties
 	WeaponConfig='BatteryWeaponConfig'
 	InventoryReferenceClass='Battery'
 	PickupClass='BatteryPickup'
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='dnGame.IKSystemInfo_Shotgun'
+	Mesh='c_generic.wreckingcrane_battery'
+	VoicePack='SoundConfig.Inventory.VoicePack_CraneBattery'
 }

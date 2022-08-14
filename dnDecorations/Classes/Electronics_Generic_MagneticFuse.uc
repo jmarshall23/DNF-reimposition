@@ -244,4 +244,17 @@ defaultproperties
 {
 	OnTargetRequiredTime=0.25
 	bPowerOn=true
+	AutoConstraints(0)=(bConstraintDisabledOnDeath=false,bConstraintOnDeath=false,BoneName=None,ConstraintMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	AutoConstraints(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=16384),Roll=0)
+	HealthPrefab=0
+	bTakeDamageMomentum=false
+	bTakeExplosionDamageMomentum=false
+	DynamicInteractionClassification=0
+	EnableDisableThreshold=0.01
+	PhysicsEntityGroup=MagneticFuse_PhysicsEntityGroup
+	Physics=18
+	bWorldGeometry=true
+	Mass=25
+	Rotation=(Pitch=8709,Yaw=571080704,Roll=-16384)
+	StaticMesh='SM_Lvl_Area51.Tech.FuseCase'
 }

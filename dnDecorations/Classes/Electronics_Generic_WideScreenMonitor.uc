@@ -71,6 +71,17 @@ simulated function PostVerifySelf()
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	Y[6]=91
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=DecoActivities_Sound'Electronics_Generic.DA_Sound_Destroyed_Electronic'
+	DestroyedActivities(2)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	DestroyedActivities(3)='dnGame.DecoActivityDeclarations.DA_Interact_bUsable_Disable'
+	DestroyedActivities(4)='dnGame.DecoActivityDeclarations.DA_Physics_PHYS_Karma_Set'
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='DecoGlass_WideScreenMonitor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=Glass,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.291717E-41,Y=2.802673E-17,Z=0),Z=0),MountOriginVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8709,Yaw=571080704,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=0,DismountPhysics=0)
+	bCollideWorld=false
+	CollisionRadius=30
+	CollisionHeight=17
+	StaticMesh='sm_class_decorations.WideScreenMonitor.WideScreenMonitor'
 }

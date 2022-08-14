@@ -10,7 +10,5 @@ class dnBonePartMapper_EDFSoldier_LeftLeg extends dnBonePartMapper_Male_LeftLeg
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
-	Y=0.404
-	Z=-10.646
+	Gibs(0)=(BoneName=LeftLeg,ReqBones=none,RenderObject='sm_class_effects.EDF_Gibs.EDF_FootL_Gib',DrawScale=0,DrawScaleVariance=0,LocOffset=(X=-1.422305E+35,Y=2.954463E-17,Z=0.404),Z=-10.646)
 }

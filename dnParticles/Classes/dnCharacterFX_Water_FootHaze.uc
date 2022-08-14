@@ -11,5 +11,12 @@ class dnCharacterFX_Water_FootHaze extends dnCharacterFX_Water_FootSplash
 
 defaultproperties
 {
-	AdditionalSpawn=/* Array type was not detected. */
+	AdditionalSpawn(0)=(SpawnClass=none,TakeParentTag=false,Mount=false,MountOrigin=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0)
+	ParticleSystemSounds(0)=(bPlayRelative=false,bIgnoreVelocity=false,SystemSoundType=0,SystemSound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('dnsMaterials.Mud_Squishy.LeatherMud14'),SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0,VolumeVariance=0,InnerRadius=192,InnerRadiusVariance=0,Radius=384,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0),Velocity3D=(X=1.291857E-41,Y=2.797242E-17,Z=0),Z=0))
+	Lifetime=1
+	InitialVelocity=(X=1.291857E-41,Y=2.797242E-17,Z=0)
+	AlphaEnd=0
+	Textures(0)='dt_effects.Smoke.gensmoke1dRC'
+	StartDrawScale=0.25
+	EndDrawScale=0.5
 }

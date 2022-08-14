@@ -26,7 +26,6 @@ defaultproperties
 	DrawScale=0.8
 	Mesh='c_dukeitems.Cigar'
 	OwnerSeeStyle=2
-	ActorColorList=/* Array type was not detected. */
-	Y=0
-	Z=0
+	ActorColorList(0)=(ActorColor=(B=121,G=2,R=1,A=32),G=0,B=0,A=255)
+	VoicePack='SoundConfig.Inventory.VoicePack_Cigar'
 }

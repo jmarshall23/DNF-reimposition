@@ -133,7 +133,7 @@ struct SAnimTriggers
 	var() noexport deprecated name AnimEvent "Event you want to trigger when an animation ends on this decoration that matches the specified rule set below.";
 	var() noexport name AnimFunction "Function to call when the animation completes. Like a CallbackTimer, no paramters allowed. This is highly unlikely to be useful to non-programmers.";
 	var() noexport array<name> AnimActivities "Activities you want to fire off when the animation ends and the rule set below is met.";
-	var() noexport array<name> TestAnims "Animation name must match one of these in order to fire off the event. If empty, will only check Channels.";
+	var() noexport anim array<name> TestAnims "Animation name must match one of these in order to fire off the event. If empty, will only check Channels.";
 	var() noexport array<int> TestChannels "Channel the animation is completing on must match one of these in order to fire off. If empty, will only check Anims.";
 };
 
@@ -1182,17 +1182,17 @@ simulated event AnimationControllerAnimStateEnd(name AnimState)
 	return;
 }
 
-k2call simulated function Weapon_IK_Attach(optional EventInfo AnimEventInfo)
+animevent simulated function Weapon_IK_Attach(optional EventInfo AnimEventInfo)
 {
 	return;
 }
 
-k2call simulated function Weapon_IK_Attach_Reload(optional EventInfo AnimEventInfo)
+animevent simulated function Weapon_IK_Attach_Reload(optional EventInfo AnimEventInfo)
 {
 	return;
 }
 
-k2call simulated function Weapon_IK_Detach(optional EventInfo AnimEventInfo)
+animevent simulated function Weapon_IK_Detach(optional EventInfo AnimEventInfo)
 {
 	return;
 }
@@ -2496,10 +2496,23 @@ simulated delegate ClientExecuteDestroyedActivities()
 defaultproperties
 {
 	FlickerLight=(FlickerLightActor=none,FlickerLightExActor=none,bUseFlickerLight=false,bUseFlickerLightEx=false,bInitialEffect=false,bInitialEffectOnly=false,FlickerLightMounting=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
-	DestroyedActivities(0)=ObjectProperty'DukeHUD.DrawDebugHUD.C'
+	DestroyedActivities(0)=none
 	DestroyedActivities(1)=none
-	DestroyedActivities(2)=none
-	Vector=100
+	HealthPrefab=2
+	bUseDecoAnim=true
+	WaterSplashMinVel=30
+	ActivityDeclarations=DecoActivityDeclarations'dnDecoration.DecoActivityDeclarations'
+	begin object name=dnDecoration_MotionPrefab_SpawnedPickup class=MotionPrefab
+		bUseDamageInfo=false
+		bUseParentVelocity=false
+		bUseParentRotationRate=false
+		Velocity=(X=1.292418E-41,Y=2.94903E-17,Z=0)
+		VelocityVariance=(X=1.292418E-41,Y=2.954755E-17,Z=300)
+	object end
+	// Reference: MotionPrefab'dnDecoration.dnDecoration_MotionPrefab_SpawnedPickup'
+	SpawnedPickupMotionPrefab=dnDecoration_MotionPrefab_SpawnedPickup
+	bDrawHUDInfo=true
+	Health=100
 	HealthCap=100
 	KImpactThreshold=250
 	bBlockActors=true

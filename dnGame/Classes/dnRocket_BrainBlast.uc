@@ -30,6 +30,21 @@ defaultproperties
 	DamageRadius=180
 	DamageClass='BrainBlastDamage'
 	ShakeScalar=2
-	ShakeInfo=/* Array type was not detected. */
-	OverrideSurvivalChance=(BlendTotalTime=/* Unknown default property type! */)
+	ShakeInfo(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.5,ShakeFrequency=0.05,ShakeMagnitude=300,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=dnRocket_BrainBlast_Shake)
+	ExplosionClass='p_Creatures.OctaBrainBlast_impact.OctaBrainBlast_impact_Spawner'
+	ExplosionSoundName=Sound_BlastImpact
+	WillNotHarmClasses(0)=Octababy
+	WillNotHarmClasses(1)=Octaling
+	WillNotHarmClasses(2)=Octabrain
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.OctaBrainBlast.OctaBrainBlast_Main',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0),MountOriginVariance=(X=1.292418E-41,Y=2.94903E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8741,Yaw=572915712,Roll=0),Roll=0)
+	bCastStencilShadows=false
+	CollisionRadius=14
+	CollisionHeight=14
+	DrawType=8
+	DrawScale=0.5
+	StaticMesh='sm_geo_decorations.CollisionPrimitives.CP_Cube_64'
+	Skins(0)='dt_editor.Surface.Climbable_Masking'
+	SoundVolume=255
+	VoicePack='SoundConfig.Enemies.VoicePack_Octabrain'
 }

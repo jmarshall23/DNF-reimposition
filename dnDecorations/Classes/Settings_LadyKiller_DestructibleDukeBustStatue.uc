@@ -10,7 +10,27 @@ class Settings_LadyKiller_DestructibleDukeBustStatue extends Settings_LadyKiller
 
 defaultproperties
 {
-	DestroyedActivities=/* Array type was not detected. */
-	X=5
+	DestroyedActivities(0)=none
+	DestroyedActivities(1)=none
+	begin object name=DA_Sound_DestructibleDukeBustStatue_Destroyed class=DecoActivities_Sound
+		SoundNames(0)=DukeBust_Destroyed
+	object end
+	// Reference: DecoActivities_Sound'Settings_LadyKiller_DestructibleDukeBustStatue.DA_Sound_DestructibleDukeBustStatue_Destroyed'
+	DestroyedActivities(2)=DA_Sound_DestructibleDukeBustStatue_Destroyed
+	HealthPrefab=5
 	Health=40
+	SpawnOnDestroyed(0)=(SpawnClass='Settings_LadyKiller_DestructibleDukeBustStatue_Gib_A',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=14)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0.6,BoneName=None,Location=(X=1.291717E-41,Y=2.797242E-17,Z=0),Z=0)
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Stone'
+	PhysicsMassType=1
+	Physics=18
+	bAITransparent=true
+	CollisionRadius=14
+	CollisionHeight=21
+	Mass=60
+	PrePivot=(X=1.291717E-41,Y=2.797242E-17,Z=0)
+	StaticMesh='sm_class_decorations.DukeBust.DukeBust'
 }

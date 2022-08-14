@@ -17,8 +17,8 @@ var MaterialEx MonthMaterials[6];
 var MaterialEx GirlyMaterials[6];
 var byte MonthViewed[6];
 var byte MonthsViewed;
-var name FlipUpAnim;
-var name FlipDownAnim;
+var anim name FlipUpAnim;
+var anim name FlipDownAnim;
 
 event PostVerifySelf()
 {
@@ -167,12 +167,14 @@ defaultproperties
 	GirlyMaterials[5]='mt_skins6.Calendar.CalendarPic_6_bs'
 	FlipUpAnim=a_calendar_downtoup
 	FlipDownAnim=a_calendar_uptodown
-	DecoActivities_Default=/* Array type was not detected. */
-	X=/* Unknown default property type! */
-	
-/* Exception thrown while deserializing Engine
-System.ArgumentOutOfRangeException: Length cannot be less than zero.
-Parameter name: length
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=none,ActivityID=(3),ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Sound'Details_Generic_Calendar.DA_Sound_Calendar'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	HealthPrefab=0
+	bUsable=true
+	StartAnimSequence=a_calendar_downpose
+	bBlockKarma=false
+	bNoNativeTick=false
+	CollisionRadius=10
+	CollisionHeight=15
+	DrawType=2
+	Mesh='c_generic.Calendar_1'
 }
