@@ -11,7 +11,7 @@ namespace UELib.Core
     /// Represents a unreal class.
     /// </summary>
     [UnrealRegisterClass]
-    public partial class UClass : UState
+    public partial class UClass : UState, IUnrealExportable
     {
         /// <summary>
         /// Implements FDependency.
@@ -205,8 +205,8 @@ namespace UELib.Core
                     DeserializeHideCategories();
                     if (_Buffer.Version >= 137)
                     {
-                        _Buffer.ReadArray(out UArray<string> dnfStringArray);
-                        Record(nameof(dnfStringArray), dnfStringArray);
+                        _Buffer.ReadArray(out UArray<string> dnfTags);
+                        Record(nameof(dnfTags), dnfTags);
                     }
 
                     if (_Buffer.Version >= 113)
