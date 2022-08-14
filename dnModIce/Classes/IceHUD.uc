@@ -21,6 +21,12 @@ simulated function Tick(float Delta)
 {
 	super(Actor).Tick(Delta);
 	TickScreenFlashes(Delta);
+	TickEgoChanges(Delta);
+	TickPickupEvents(Delta);
+	TickStatusIndex(Delta);
+	TickHUDEffects(Delta);
+	TickQuestItemInfo(Delta);
+	TickInventory(Delta);
 }
 
 simulated function DrawNewCrosshair(Canvas C)
