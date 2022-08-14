@@ -50,6 +50,7 @@ simulated function DrawNewCrosshair(Canvas C)
 simulated event PostPostRender(Canvas C)
 {
 	local int ego;
+	local int currentAmmo;
 
 	bHideHUD = false;
 	bHideCrosshair = false;
@@ -61,14 +62,39 @@ simulated event PostPostRender(Canvas C)
 
 	ego = PlayerOwner.Ego;
 
-	C.SetPos(ScaleWidth(C, 238), C.SizeY-ScaleHeight(C,63));
+	if(ego >= 100)
+	{
+		C.SetPos(ScaleWidth(C, 225), C.SizeY-ScaleHeight(C,63));
+	}
+	else if(ego >= 10)
+	{
+		C.SetPos(ScaleWidth(C, 238), C.SizeY-ScaleHeight(C,63));
+	}
+	else
+	{
+		C.SetPos(ScaleWidth(C, 251), C.SizeY-ScaleHeight(C,63));
+	}
 	C.DrawText(ego, false, false, false, 2.0, 2.0);
 
 	if(PlayerOwner.Weapon != none)
 	{
 		if(PlayerOwner.Weapon.GetMaximumAmmo() > 0)
 		{
-			C.SetPos(ScaleWidth(C, 765), C.SizeY-ScaleHeight(C,63));
+			currentAmmo = PlayerOwner.Weapon.GetTotalAmmo();
+
+			if(currentAmmo >= 100)
+			{
+				C.SetPos(ScaleWidth(C, 752), C.SizeY-ScaleHeight(C,63));
+			}
+			else if(currentAmmo >= 10)
+			{
+				C.SetPos(ScaleWidth(C, 765), C.SizeY-ScaleHeight(C,63));
+			}
+			else
+			{
+				C.SetPos(ScaleWidth(C, 778), C.SizeY-ScaleHeight(C,63));
+			}
+
 			C.DrawText(PlayerOwner.Weapon.GetTotalAmmo(), false, false, false, 2.0, 2.0);			
 		}
 	}
