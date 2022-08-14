@@ -23,12 +23,27 @@ simulated function Tick(float Delta)
 	TickScreenFlashes(Delta);
 }
 
+simulated function DrawNewCrosshair(Canvas C)
+{
+	local int width;
+	local int height;
+
+	width = CrosshairTextures[5].GetUSize();
+	height = CrosshairTextures[5].GetVSize();
+
+	C.SetPos(ScaleWidth(C, 640 - (width / 2)), ScaleHeight(C, 360 - (height / 2)));
+	C.DrawTile(CrosshairTextures[5], width, height, 0, 0, width, height);
+	
+}
+
 simulated event PostPostRender(Canvas C)
 {
 	local int ego;
 
 	bHideHUD = false;
 	bHideCrosshair = false;
+
+	DrawNewCrosshair(C);
 
 	C.SetPos(0, C.SizeY-ScaleHeight(C, 113));
 	C.DrawTile(dnHudBackground, C.SizeX, ScaleHeight(C, 190), 0, 0, 1920, 256);
