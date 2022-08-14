@@ -69,4 +69,5 @@ defaultproperties
 {
 	bPlayDeathSequence=true
 	bPlayStartLevelSequence=true
+	HUDType=IceHud
 }
