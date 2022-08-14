@@ -10,10 +10,19 @@ Please support Gearbox and go buy Duke Nukem Forever on Steam. This work hopeful
 DNF-Reimposition is a mod designed to fix up DNF 2011. We have a working DNF 2011 editor. 
 
 This project uses Zombie's MegaPackageInstaller, the latest version can be found here: https://github.com/DaZombieKiller/MegaPackageExtractor/releases
-MegaPackageInstaller 1.2 is included in the depot. 
+MegaPackageInstaller 1.2 is included in the depot.
 
 Installation:
 1) Install VS 2022 runtimes.
 2) Install .NET 4.8.
 3) Run setup.bat
 4) Launch RunEditor.bat
+
+Discord:
+If you want to chat about the tools join us on discord!
+
+Duke4
+https://discord.gg/FQkMQ7r
+
+Duke Nukem Forever Community
+https://discord.gg/eRWJPe2WTx
