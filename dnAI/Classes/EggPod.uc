@@ -619,10 +619,71 @@ defaultproperties
 	RndPreOpenPeriod=0.4
 	PregnatorTag=Pregnator_EggPod
 	MyPregnatorClass='Pregnator_EggPod'
-	Gibs(0)=(SAnimationFadeBlend=/* Unknown default property type! */,Ident='Engine.Corpse_Gib',RenderObject='sm_geo_decorations.alien.EggPod_Base',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	Gibs(0)=(SpawnClass='Engine.Corpse_Gib',RenderObject='sm_geo_decorations.alien.EggPod_Base',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 	Gibs(1)=(SpawnChance=1,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=-23)
 	Gibs(2)=(OffsetVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 	Gibs(3)=(Rotation=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
 	Gibs(4)=(RotationVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
 	Gibs(5)=(BoneName=None,MotionInfo=MotionPrefab'EggPod.MP_EggPod_NoMotion')
+	Gibs(6)=(SpawnClass='Engine.Corpse_Gib',RenderObject='sm_geo_decorations.alien.EggPod_Gib1',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	StartPreOpenDist=512
+	OpenFastDist=312
+	Nodes(0)=(Ident=Root,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(1)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(2)=(Ident=FUBAR,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=1,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(3)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(4)=(Ident=PreOpen,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(5)=(Ident=Pain,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=96,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(6)=(Ident=Open,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=6,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(7)=(Ident=OpenFast,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=6,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(8)=(Ident=Opened,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=24,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	FSMStates(0)=(FSM=Root,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=Opened,Cond=0,Func=AlreadyOpened,Win=0,Code=0,StateTableIndex=0),(Ident=PreOpen,Cond=0,Func=ShouldPreOpen,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(1)=(FSM=Root,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=OpenFast,Cond=0,Func=ShouldOpenFastTriggered,Win=0,Code=0,StateTableIndex=0),(Ident=Open,Cond=0,Func=ShouldOpenTriggered,Win=0,Code=0,StateTableIndex=0),(Ident=PreOpen,Cond=0,Func=ShouldPreOpen,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(2)=(FSM=Root,Ident=PreOpen,FSMSucc=false,FSMFail=false,Transitions=((Ident=OpenFast,Cond=0,Func=ShouldOpenFastTriggered,Win=0,Code=0,StateTableIndex=0),(Ident=Open,Cond=0,Func=ShouldOpenTriggered,Win=0,Code=0,StateTableIndex=0),(Ident=OpenFast,Cond=0,Func=ShouldOpenFast,Win=0,Code=0,StateTableIndex=0),(Ident=Open,Cond=0,Func=ShouldOpen,Win=0,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(3)=(FSM=Root,Ident=Open,FSMSucc=false,FSMFail=false,Transitions=((Ident=Opened,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(4)=(FSM=Root,Ident=OpenFast,FSMSucc=false,FSMFail=false,Transitions=((Ident=Opened,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(5)=(FSM=Root,Ident=Opened,FSMSucc=false,FSMFail=false,Transitions=none,NodeIndex=0)
+	Relationships(0)=(m_aClass='Engine.AIFactionHoloduke',m_eAttitude=1,m_fDamageThreshold=1)
+	Relationships(1)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(2)=(m_aClass='Engine.AIFactionHuman',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(3)=(m_aClass='Engine.AIFactionAlien',m_eAttitude=5,m_fDamageThreshold=1)
+	bUseAnimDispSpeed=false
+	bUseAnimDispDir=false
+	AlignYaw=false
+	AnimControllers[0]=(m_eFallback=0,m_cClass='acEggPod',m_oController=none)
+	AnimControllers[1]=(m_eFallback=1,m_cClass='acEggPod_Ceiling',m_oController=none)
+	AnimControllers[2]=(m_eFallback=1,m_cClass='acEggPod_Wall',m_oController=none)
+	AnimControllers[3]=(m_eFallback=1,m_cClass='acEggPod',m_oController=none)
+	AnimControllers[4]=(m_eFallback=1,m_cClass='acEggPod',m_oController=none)
+	AnimControllers[5]=(m_eFallback=1,m_cClass='acEggPod',m_oController=none)
+	AnimControllers[6]=(m_eFallback=1,m_cClass='acEggPod',m_oController=none)
+	AnimControllers[7]=(m_eFallback=1,m_cClass='acEggPod',m_oController=none)
+	AnimControllers[8]=(m_eFallback=1,m_cClass='acEggPod',m_oController=none)
+	SpawnAnim=Anim_Spawn
+	OptionalPathClass='Pregnator_EggPod'
+	bShouldCauseKillSound=false
+	NoDecorationPain=false
+	bShrinkable=false
+	bIgnoreAimAssist=true
+	FootstepCategory=8
+	FieldOfView=-1
+	EyeBone=spine_2
+	BodyBone=spine_2
+	LockOnBone=spine_2
+	CorpseType='AlienCorpse'
+	MaxStepHeightEx=0
+	bCanShowSelf=false
+	Health=25
+	HealthCap=25
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	StaticInteractionClassification=0
+	Physics=0
+	CollisionRadius=23
+	CollisionHeight=23
+	VisibleCollidingCenterOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0)
+	Mesh='c_characters.pod'
+	SoundVolume=180
+	SoundRadius=800
+	SoundInnerRadius=400
+	VoicePack='SoundConfig.Enemies.VoicePack_EggPod'
 }

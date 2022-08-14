@@ -94,5 +94,14 @@ simulated event Tick(float DeltaSeconds)
 defaultproperties
 {
 	SphereSensorRadius=96
-	OnlySenseClasses=/* Array type was not detected. */
+	OnlySenseClasses(0)='dnGame.DukePlayer'
+	PhysicsEntityGroup=AlienQueenEntityGroup
+	bTraceShootable=false
+	bCollisionAssumeValid=true
+	bBlockCamera=false
+	bCanExistOutOfWorld=true
+	bNoNativeTick=true
+	bNoFailMountedMovement=true
+	CollisionRadius=64
+	CollisionHeight=64
 }

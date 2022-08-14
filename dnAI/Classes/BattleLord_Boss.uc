@@ -268,7 +268,7 @@ function StartCarKick(KarmaActor Other)
 	return;
 }
 
-k2call function DoKick(optional EventInfo AnimEventInfo)
+animevent function DoKick(optional EventInfo AnimEventInfo)
 {
 	local Vector DirToTarget2D, MyDir2D, FinalVelocity, FinalTorque;
 	local float DotToTarget;
@@ -327,7 +327,7 @@ event bool ShouldProceduralFire()
 	return;
 }
 
-k2call simulated function FireSecondary(optional EventInfo AnimEventInfo)
+animevent simulated function FireSecondary(optional EventInfo AnimEventInfo)
 {
 	// End:0x0E
 	if(__NFUN_339__(Weapon, none))
@@ -479,7 +479,7 @@ event float GetDefaultGotoXHeight()
 	return;
 }
 
-k2call simulated function FootStep(optional EventInfo AnimEventInfo)
+animevent simulated function FootStep(optional EventInfo AnimEventInfo)
 {
 	super(Pawn).FootStep(AnimEventInfo);
 	// End:0x47
@@ -490,7 +490,7 @@ k2call simulated function FootStep(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call function weaponcollisionon(optional EventInfo AnimEventInfo)
+animevent function weaponcollisionon(optional EventInfo AnimEventInfo)
 {
 	// End:0x1E
 	if(__NFUN_340__(Weapon, none))
@@ -500,7 +500,7 @@ k2call function weaponcollisionon(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call function weaponcollisionoff(optional EventInfo AnimEventInfo)
+animevent function weaponcollisionoff(optional EventInfo AnimEventInfo)
 {
 	// End:0x1E
 	if(__NFUN_340__(Weapon, none))
@@ -510,7 +510,7 @@ k2call function weaponcollisionoff(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call function Hide_Weapon(optional EventInfo AnimEventInfo)
+animevent function Hide_Weapon(optional EventInfo AnimEventInfo)
 {
 	bWeaponHidden = true;
 	// End:0x22
@@ -521,7 +521,7 @@ k2call function Hide_Weapon(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call function Show_Weapon(optional EventInfo AnimEventInfo)
+animevent function Show_Weapon(optional EventInfo AnimEventInfo)
 {
 	bWeaponHidden = false;
 	// End:0x22
@@ -539,7 +539,7 @@ final function SetNewHealth(float NewHealth)
 	return;
 }
 
-k2call simulated function FailDamage(optional EventInfo AnimEventInfo)
+animevent simulated function FailDamage(optional EventInfo AnimEventInfo)
 {
 	// End:0x87
 	if(__NFUN_148__(__NFUN_340__(ControlXParms.MyControl, none), __NFUN_340__(ControlXParms.MyControl.User, none)))
@@ -588,7 +588,7 @@ function DropToKneesComplete()
 	return;
 }
 
-k2call simulated function StartExpandingCollision()
+animevent simulated function StartExpandingCollision()
 {
 	SetCollisionInterpolationTarget(200, default.CollisionHeight, TargetMaxStepHeightEx, 1.5);
 	return;
@@ -614,7 +614,7 @@ function ControlX_ForcePlayerAttach()
 	return;
 }
 
-k2call simulated function BattleFailRoarEffects(optional EventInfo AnimEventInfo)
+animevent simulated function BattleFailRoarEffects(optional EventInfo AnimEventInfo)
 {
 	local PlayerPawn P;
 
@@ -631,13 +631,13 @@ k2call simulated function BattleFailRoarEffects(optional EventInfo AnimEventInfo
 	return;
 }
 
-k2call simulated function BloodSprayAttach(optional EventInfo AnimEventInfo)
+animevent simulated function BloodSprayAttach(optional EventInfo AnimEventInfo)
 {
 	BloodSprayAttachHelper('face_eye_l', __NFUN_232__(2.201, -0.936, -0.833), __NFUN_265__(1024, -7167, 0));
 	return;
 }
 
-k2call simulated function JewelShot(optional EventInfo AnimEventInfo)
+animevent simulated function JewelShot(optional EventInfo AnimEventInfo)
 {
 	// End:0x3E
 	if(__NFUN_148__(__NFUN_145__(bForMap10c), __NFUN_340__(Level.__NFUN_1161__(), none)))
@@ -833,7 +833,7 @@ event NotifyOpEnded(Engine.BaseAI.EAIOp Op, Engine.BaseAI.EAIOpStatus Status)
 	return;
 }
 
-k2call simulated function DisableFinishMoveRagDollCollision()
+animevent simulated function DisableFinishMoveRagDollCollision()
 {
 	SetCollisionInterpolationTarget(50, default.CollisionHeight, 0, 0);
 	SetCollisionInterpolationTarget(default.CollisionRadius, default.CollisionHeight, 0, 3);
@@ -1174,36 +1174,144 @@ defaultproperties
 	MortarDamageRadius=100
 	StrengthTapFailDamage=70
 	MaxWeaponAimOffset=0.7854
-	DamageScaleInfo(0)=(Ident=none,DamageScale=0,QualifierDamageTypes=(none,class'SensorEnabled',class'DefaultAITickMSGraph',class'm_aTarget',class'AnimXParms',class'GotoXParms',class'ExplosionDamage',class'LargeCaliberBulletDamage',class'ReturnValue',class'Other',class'AnimName',class'i',class'PrecacheIndex',class'm_aTarget',class'AnimCtrl',class'WeaponClasses',class'FreeMoveParms',class'm_aTarget',none,class'AIActorFactory',class'JumpAttackParms',class'i',class'm_aTarget',class'm_aTarget',class'i',class'bSucceedOnFail',class'ReturnValue',class'FinishMeControlType',class'm_aTarget',class'm_aTarget',class'AnimIndex',class'bSucceedOnFail',class'ReturnValue',class'PrecacheIndex',class'm_aTarget',none,class'TKObj',class'PrecacheIndex',none,none,none,none,class'DamageInfo',class'PrimaryTarget',class'JumpParms',none,class'PrecacheIndex',class'PrimaryTarget',class'CurrentOp',none,class'TurnToXParms',class'PrecacheIndex',none,none,none,none,class'ReturnValue',class'm_aTarget',class'AnimCtrl',class'j',class'FreeMoveParms',class'm_aTarget',none,class'AIActorFactory',class'JumpAttackParms',class'i',class'm_aTarget',class'm_aTarget',class'i',class'bSucceedOnFail',class'ReturnValue'),FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(1)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(2)=(CurStateIndex=0)
-	DamageScaleInfo(3)=(Ident=Wait,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(4)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(5)=(CurStateIndex=0)
-	DamageScaleInfo(6)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(7)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(8)=(CurStateIndex=0)
-	DamageScaleInfo(9)=(Ident=FUBAR,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=1,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(10)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(11)=(CurStateIndex=0)
-	DamageScaleInfo(12)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(13)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(14)=(CurStateIndex=0)
-	DamageScaleInfo(15)=(Ident=FaceTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=145,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(16)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(17)=(CurStateIndex=0)
-	DamageScaleInfo(18)=(Ident=FaceGuardedActor,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=143,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(19)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(20)=(CurStateIndex=0)
-	DamageScaleInfo(21)=(Ident=HoldFire,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=82,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(22)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(23)=(CurStateIndex=0)
-	DamageScaleInfo(24)=(Ident=ResumeFire,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=105,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(25)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(26)=(CurStateIndex=0)
-	DamageScaleInfo(27)=(Ident=Stomp,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=135,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(28)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(29)=(CurStateIndex=0)
-	DamageScaleInfo(30)=(Ident=Roar,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=107,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(31)=(StateTable=/* Array type was not detected. */)
+	DamageScaleInfo(0)=(QualifierClass=none,DamageScale=0,QualifierDamageTypes=none,QualifierNotDamageTypes=('Engine.ExplosionDamage','dnGame.LargeCaliberBulletDamage'))
+	Nodes(0)=(Ident=Root,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(1)=(Ident=Attack,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(2)=(Ident=Wait,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(3)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(4)=(Ident=FUBAR,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=1,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(5)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(6)=(Ident=FaceTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=145,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(7)=(Ident=FaceGuardedActor,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=143,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(8)=(Ident=HoldFire,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=82,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(9)=(Ident=ResumeFire,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=105,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(10)=(Ident=Stomp,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=135,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(11)=(Ident=Roar,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=107,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(12)=(Ident=AttackMGun,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=95,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(13)=(Ident=Pain,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=96,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(14)=(Ident=move,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=65,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(15)=(Ident=GotoActionPoint,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=55,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(16)=(Ident=GotoGoalFaceActor,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=55,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(17)=(Ident=GotoGoalFacePos,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=49,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(18)=(Ident=StepAside,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=46,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(19)=(Ident=MeleeAttack,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=92,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(20)=(Ident=ShootProjectile,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=117,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	FSMStates(0)=(FSM=Root,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Roar,Cond=0,Func=COND_ShouldRoar,Win=0,Code=0,StateTableIndex=0),(Ident=FaceTarget,Cond=60,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Attack,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(1)=(FSM=Root,Ident=Pain,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Roar,Cond=0,Func=COND_ShouldRoar,Win=0,Code=0,StateTableIndex=0),(Ident=Attack,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(2)=(FSM=Root,Ident=Wait,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Attack,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Roar,Cond=0,Func=COND_ShouldRoar,Win=0,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(3)=(FSM=Root,Ident=Attack,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Roar,Cond=0,Func=COND_ShouldRoar,Win=0,Code=0,StateTableIndex=0),(Ident=FaceTarget,Cond=0,Func=COND_TurnTowardsTarget,Win=0,Code=0,StateTableIndex=0),(Ident=Attack,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(4)=(FSM=Root,Ident=Roar,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Attack,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(5)=(FSM=Root,Ident=FaceTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=Attack,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(6)=(FSM=Attack,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=Stomp,Cond=101,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=GotoActionPoint,Cond=0,Func=COND_ShouldGotoActionPoint,Win=1,Code=0,StateTableIndex=0),(Ident=AttackMGun,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(7)=(FSM=Attack,Ident=GotoActionPoint,FSMSucc=false,FSMFail=false,Transitions=((Ident=Stomp,Cond=101,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=AttackMGun,Cond=19,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoActionPoint,Cond=0,Func=COND_ShouldGotoActionPoint,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(8)=(FSM=Attack,Ident=AttackMGun,FSMSucc=false,FSMFail=false,Transitions=((Ident=Stomp,Cond=101,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=GotoActionPoint,Cond=19,Func=COND_ShouldGotoAP,Win=1,Code=0,StateTableIndex=0),(Ident=AttackMGun,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(9)=(FSM=Attack,Ident=Stomp,FSMSucc=false,FSMFail=false,Transitions=((Ident=Stomp,Cond=101,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoActionPoint,Cond=0,Func=COND_ShouldGotoActionPoint,Win=1,Code=0,StateTableIndex=0),(Ident=AttackMGun,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(10)=(FSM=Attack,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=Stomp,Cond=101,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoActionPoint,Cond=0,Func=COND_ShouldGotoActionPoint,Win=1,Code=0,StateTableIndex=0),(Ident=AttackMGun,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(11)=(FSM=Wait,Ident=Default,FSMSucc=true,FSMFail=true,Transitions=((Ident=FaceTarget,Cond=59,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=0,Code=0,StateTableIndex=0),(Ident=FaceGuardedActor,Cond=9,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(12)=(FSM=Wait,Ident=FaceTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=0,Code=0,StateTableIndex=0),(Ident=FaceGuardedActor,Cond=9,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(13)=(FSM=Wait,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=FaceTarget,Cond=59,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=0,Code=0,StateTableIndex=0),(Ident=FaceGuardedActor,Cond=9,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(14)=(FSM=Wait,Ident=StepAside,FSMSucc=false,FSMFail=false,Transitions=((Ident=FaceTarget,Cond=59,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=1,Code=0,StateTableIndex=0),(Ident=FaceGuardedActor,Cond=9,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(15)=(FSM=Wait,Ident=FaceGuardedActor,FSMSucc=false,FSMFail=false,Transitions=((Ident=FaceTarget,Cond=59,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	WeaponConfig='WeaponCfg_BattleLordBoss'
+	Weapons(0)='dnGame.MiniGun_BL'
+	bIgnoreTripMines=true
+	UseActionPoints=true
+	Relationships(0)=(m_aClass='Engine.AIFactionHoloduke',m_eAttitude=1,m_fDamageThreshold=1)
+	Relationships(1)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(2)=(m_aClass='Engine.AIFactionHuman',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(3)=(m_aClass='Engine.AIFactionAlien',m_eAttitude=5,m_fDamageThreshold=1)
+	UseTurnAnimRot=true
+	BodyAlignRate=0.5
+	BodyAlignRateFlying=0.5
+	AnimControllers[0]=(m_eFallback=0,m_cClass='acBattleLordBoss',m_oController=none)
+	AnimControllers[1]=(m_eFallback=1,m_cClass='acBattleLordBoss',m_oController=none)
+	AnimControllers[2]=(m_eFallback=1,m_cClass='acBattleLordBoss',m_oController=none)
+	AnimControllers[3]=(m_eFallback=1,m_cClass='acBattleLordBoss',m_oController=none)
+	AnimControllers[4]=(m_eFallback=1,m_cClass='acBattleLordBoss',m_oController=none)
+	AnimControllers[5]=(m_eFallback=1,m_cClass='acBattleLordBoss',m_oController=none)
+	AnimControllers[6]=(m_eFallback=1,m_cClass='acBattleLordBoss',m_oController=none)
+	AnimControllers[7]=(m_eFallback=1,m_cClass='acBattleLordBoss',m_oController=none)
+	AnimControllers[8]=(m_eFallback=1,m_cClass='acBattleLordBoss',m_oController=none)
+	ControlXParms=(ControlType=none,MyControl=none,AnimName=None,Time=0,IsControlled=false,DieOnTakeDamage=false,AssumeCanFit=true)
+	GotoXParms=(TargetType=0,TargetActor=none,TargetPos=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	DroolParms=(MinSpitTime=0,RndSpitTime=0,SpitOnPainChance=0,Bone=face_jaw,Location=(X=1.298303E-41,Y=3.778648E-17,Z=0),Z=94)
+	MultiAnimParms(0)=(AnimIndex=0,MinTime=5,RndTime=0.5,Gate=0,MinInterval=3,RequireLOS=false,RequireLOSFromWeapon=true,FaceTarget=true,AnimName=Anim_ContinuousFire)
+	DeathAnimChance=1
+	FinishMeControlType='dnControl_BattleLord_BattleC'
+	FaceDamage=false
+	FaceDeath=false
+	BoneAim(0)=(BoneName=Spine_1,Yaw=0,Pitch=0,Weight=0.3)
+	BoneAim(1)=(BoneName=spine_2,Yaw=0,Pitch=0,Weight=0.3)
+	BoneAim(2)=(BoneName=Spine_3,Yaw=0,Pitch=0,Weight=0.4)
+	HasBoneAimer=true
+	DisableAimGrids=true
+	ProceduralMovingFire=true
+	ProcFireOps(0)=85
+	ProcFireOps(1)=86
+	ProcFireOps(2)=100
+	ProcFireOps(3)=95
+	ProcFireMaxTimeSinceSeen=100
+	MinMovingFireInterval=5
+	HasWeaponAimer=true
+	MinIdleTime=5
+	RndIdleTime=1
+	GotoPosRange=50
+	GotoPosHeight=50
+	MinMeleeRange=80
+	RndMeleeRange=60
+	MeleeZone=50
+	MeleeZoneHeight=25
+	StompInfo(0)=(StompRadius=100,AnimName=Anim_StompRight,BoneName=l_leg_toe_1,StompDamageAmount=30,StompDamageRadius=400,StompDamageVel=200,StompDamageLift=350,bDebug=false,SafeHeight=100,bCanStompShrunk=true,ShakeInfo=(bNoLerp=false,bToggleSign=true,Style=2,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.6,ShakeFrequency=0.08,ShakeMagnitude=2500,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=BattleLordStompShake),ShakeRadius=1100,ParticleEffectClass='p_Creatures.Cycloid_Stomp.CycloidStomp_Spawner',AdditionalEffectBones=none,StompLocation=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	PlayerShrunkFootstepViewShake=(bNoLerp=false,bToggleSign=true,Style=2,Function=1,FalloffActor=none,FalloffDistance=1000,ShakeDuration=0.6,ShakeFrequency=0.08,ShakeMagnitude=550,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=BLordStepShake)
+	MinProjectileFireInterval=0.5
+	AvoidDangers=true
+	PathID=AIPATH_Boss
+	DynamicPathingPriority=3
+	PathSizeOverrideRadius=180
+	bIsBoss=true
+	bShouldCauseKillSound=false
+	bShrinkable=false
+	bFreezable=false
+	FootstepCategory=1
+	FootprintType=0
+	SlopeMinimumDotEx=-2
+	EyeBone=spine_head
+	BodyBone=waist
+	LockOnBone=spine_head
+	CorpseType='AlienCorpse'
+	MaxStepHeightEx=2
+	MaxStepHeight=2
+	FootBones(0)=(bRightSide=false,BoneName=l_leg_ankle,BoneID=foot_left_1,BoneRotOffset=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	FootBones(1)=none
+	FootstepTraceLength=60
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='BattleLord_Armor_RightArm',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=true,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=true,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_armor_1,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(5)=(bSkipVerifySelf=false,SpawnClass='BattleLord_Armor_RightShoulder',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=true,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=true,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_armor_2,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(6)=(MountAngles=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(7)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(8)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(9)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(10)=(bSkipVerifySelf=false,SpawnClass='BattleLord_Armor_LeftShoulder',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=true,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=true,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_armor_3,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(11)=(MountAngles=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(12)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(13)=(MountType=2,DismountPhysics=0)
+	AutoRegisterIKClasses(0)='IKSystemInfo_Walker_BattleLord'
+	Health=400
+	HealthCap=400
+	bTakeDamageMomentum=false
+	bTakeExplosionDamageMomentum=false
+	PhysicsMassType=2
+	PhysicsEntityGroup=BattleLordEntityGroup
+	bAcceptMeshAccurateMoveActorTrace=true
+	bCanExistOutOfWorld=false
+	bOverlayEffectUsedAsHint=true
+	CollisionRadius=120
+	CollisionHeight=170
+	Mass=3000
+	OverlayMaterial='dt_effects.OverlayMaterial.OverlayMaterial_Boss'
+	Mesh='c_characters.Battlelord'
+	VoicePack='SoundConfig.Enemies.VoicePack_BattleLord_Boss'
 }

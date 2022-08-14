@@ -96,7 +96,15 @@ function bool DebugTreeOnEnter(optional bool Found)
 
 defaultproperties
 {
-	
-	Cond=255
-	A=0
+	ColorTable(0)=(R=255,G=255,B=255,A=0)
+	ColorTable(1)=(R=255,G=0,B=0,A=0)
+	ColorTable(2)=(R=0,G=255,B=0,A=0)
+	ColorTable(3)=(R=0,G=0,B=255,A=0)
+	ColorTable(4)=(R=255,G=255,B=0,A=0)
+	ColorTable(5)=(R=255,G=0,B=255,A=0)
+	ColorTable(6)=(R=0,G=255,B=255,A=0)
+	ColorTable(7)=(R=255,G=128,B=64,A=0)
+	ColorTable(8)=(R=64,G=128,B=255,A=0)
+	ColorTable(9)=(R=128,G=64,B=255,A=0)
+	ColorTable(10)=(R=64,G=255,B=128,A=0)
 }

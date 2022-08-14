@@ -24,8 +24,9 @@ event EnumerateWeaponClasses(PrecacheIndex PrecacheIndex, out array< class<Weapo
 defaultproperties
 {
 	WeaponConfig='WeaponCfg_PigCopMachinegun'
-	Weapons(0)=class'C'
-	RndMoveAroundDist=/* Unknown default property type! */
-	Yaw=-16379
-	Roll=1
+	Weapons(0)='dnGame.MachineGun_Pigcop'
+	DroolParms=(MinSpitTime=10,RndSpitTime=5,SpitOnPainChance=1,Bone=jaw,Location=(X=1.298303E-41,Y=3.773024E-17,Z=-11.5),Z=-1.7)
+	Mesh='c_characters.PigCopC'
+	ActorColorList(0)=(ActorColor=(B=87,G=5,R=1,A=159),G=135,B=117,A=255)
+	ActorColorList(1)=(ActorColor_LightEx=none,ActorColor_LightExScale=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 }

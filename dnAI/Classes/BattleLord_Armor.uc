@@ -18,5 +18,8 @@ event PreBeginPlay()
 
 defaultproperties
 {
-	DamageTypesAcceptedOnly=/* Array type was not detected. */
+	DamageTypesAcceptedOnly(0)='Engine.ExplosionDamage'
+	Health=150
+	HealthCap=150
+	Mass=35
 }

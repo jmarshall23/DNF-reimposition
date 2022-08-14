@@ -63,5 +63,5 @@ defaultproperties
 	TickStyle=0
 	Texture='dt_editor.Icons.DumbActor'
 	StaticMesh='sm_geo_decorations.CollisionPrimitives.CP_Cube_64'
-	Skins=/* Array type was not detected. */
+	Skins(0)='dt_editor.Surface.Climbable_Masking'
 }

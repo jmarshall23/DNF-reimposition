@@ -31,8 +31,13 @@ defaultproperties
 {
 	ChanceBezerk=0
 	WeaponConfig='WeaponCfg_PigCopCaptain'
-	Weapons(0)=class'C'
-	RndMoveAroundDist=/* Unknown default property type! */
-	Yaw=-16379
-	Roll=1
+	Weapons(0)='dnGame.RPG_Pigcop'
+	DroolParms=(MinSpitTime=10,RndSpitTime=5,SpitOnPainChance=1,Bone=jaw,Location=(X=1.298303E-41,Y=3.773024E-17,Z=-11.5),Z=-1.7)
+	DeathAnimChance=0
+	RndMeleeRange=40
+	MeleeZone=160
+	Health=150
+	HealthCap=150
+	DrawScale=1.33
+	Mesh='c_characters.PigCopC'
 }

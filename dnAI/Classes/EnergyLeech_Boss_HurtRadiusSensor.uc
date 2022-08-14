@@ -134,13 +134,20 @@ defaultproperties
 {
 	SensorEnabled=true
 	SphereSensorRadius=96
-	OnlySenseClasses=/* Array type was not detected. */
-	Anim_PopOutVaultMachinegun=3
-	Ident[14081]=
-/* Exception thrown while deserializing Ident
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UObjectStream.ReadObject() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 742
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 515 */
+	OnlySenseClasses(0)='dnGame.DukePlayer'
+	PhysicsEntityGroup=EnergyLeechPhysicsEntityGroup
+	bTraceShootable=false
+	bCollisionAssumeValid=true
+	bBlockActors=true
+	bBlockCamera=false
+	bHidden=false
+	bCanExistOutOfWorld=true
+	bNoNativeTick=true
+	bNoFailMountedMovement=true
+	bCollideActors=true
+	CollisionRadius=64
+	CollisionHeight=64
+	DrawType=8
+	StaticMesh='sm_geo_decorations.CollisionPrimitives.CP_Cube_64'
+	Skins(0)='dt_editor.Surface.Climbable_Masking'
 }

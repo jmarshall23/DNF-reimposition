@@ -22,13 +22,13 @@ var bool ShouldIdle;
 var float TargetTimeWarp;
 var bool DamagedPlayer;
 
-k2call simulated function StartScriptedSlowdown()
+animevent simulated function StartScriptedSlowdown()
 {
 	TargetTimeWarp = 0.45;
 	return;
 }
 
-k2call simulated function StopScriptedSlowdown()
+animevent simulated function StopScriptedSlowdown()
 {
 	TargetTimeWarp = 1;
 	return;
@@ -164,7 +164,7 @@ simulated event Vector GetProjectileFireLocation()
 	return;
 }
 
-k2call simulated function ShootProjectile(optional EventInfo AnimEventInfo)
+animevent simulated function ShootProjectile(optional EventInfo AnimEventInfo)
 {
 	FireProjectile(ProjectileMuzzleName, ProjectileClass, CalcLeadTime(ProjectileClass.default.MaxSpeed), false);
 	return;
@@ -236,7 +236,7 @@ function float CalculateFlyContraintStrengthScalar(float DeltaTime)
 	return;
 }
 
-k2call simulated function BladeDamage()
+animevent simulated function BladeDamage()
 {
 	local Actor ActorDamaged;
 
@@ -467,32 +467,145 @@ defaultproperties
 	MovingShotMinInterval=2.5
 	TracerBeamClass='dnParticles.AssaultCommander_Beam_ShotEffect'
 	TracerBubblesClass='p_Weapons.Generic.WaterBubblesTracer'
-	DamageScaleInfo(0)=(Ident='MaleCombat',DamageScale=0,QualifierDamageTypes=(none,class'SensorEnabled',class'PrimaryTarget',class'AimInfo',none,class'ReturnValue',class'Other',class'AnimName',class'TKObj',class'RegisterAIAnimationControllerEntry',class'PrecacheIndex',class'm_aTarget',class'AnimCtrl',class'WeaponClasses',class'FreeMoveParms',class'm_aTarget',none,class'AIActorFactory',class'JumpAttackParms',class'i',class'm_aTarget',none,class'i',class'bSucceedOnFail',class'ReturnValue',class'FinishMeControlType',class'm_aTarget',none,class'AnimIndex',class'bSucceedOnFail',class'ReturnValue',class'PrecacheIndex',class'm_aTarget',none,class'TKObj',class'PrecacheIndex',none,none,none,none,class'DamageInfo',class'PrimaryTarget',class'JumpParms',none,class'PrecacheIndex',class'PrimaryTarget',class'CurrentOp',none,class'TurnToXParms',class'PrecacheIndex',none,none,none,none,class'ReturnValue',class'm_aTarget',class'AnimCtrl',class'UsableControllers',class'FreeMoveParms',class'm_aTarget',none,class'AIActorFactory',class'JumpAttackParms',class'i',class'm_aTarget',none,class'i',class'bSucceedOnFail',class'ReturnValue',class'FinishMeControlType',class'm_aTarget'))
-	DamageScaleInfo(1)=(FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(2)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(3)=(CurStateIndex=0)
-	DamageScaleInfo(4)=(Ident=Engage,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(5)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(6)=(CurStateIndex=0)
-	DamageScaleInfo(7)=(Ident=EngageAP,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(8)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(9)=(CurStateIndex=0)
-	DamageScaleInfo(10)=(Ident=ChargeAttack,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(11)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(12)=(CurStateIndex=0)
-	DamageScaleInfo(13)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=150,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(14)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(15)=(CurStateIndex=0)
-	DamageScaleInfo(16)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(17)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(18)=(CurStateIndex=0)
-	DamageScaleInfo(19)=(Ident=Pain,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=96,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(20)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(21)=(CurStateIndex=0)
-	DamageScaleInfo(22)=(Ident=ShootProjectile,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=117,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(23)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(24)=(CurStateIndex=0)
-	DamageScaleInfo(25)=(Ident=MovingShot,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=117,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(26)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(27)=(CurStateIndex=0)
+	DamageScaleInfo(0)=(QualifierClass='MaleCombat',DamageScale=0,QualifierDamageTypes=none,QualifierNotDamageTypes=none)
+	Nodes(0)=(Ident=Root,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(1)=(Ident=SeekTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(2)=(Ident=Engage,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(3)=(Ident=EngageAP,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(4)=(Ident=ChargeAttack,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(5)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=150,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(6)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(7)=(Ident=Pain,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=96,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(8)=(Ident=ShootProjectile,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=117,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(9)=(Ident=MovingShot,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=117,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(10)=(Ident=GotoNearTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=41,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(11)=(Ident=GotoMeleeRange,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=61,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(12)=(Ident=GotoGoal,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=52,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(13)=(Ident=GotoGoalFocusTargetFullBody,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=53,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(14)=(Ident=GotoMeleeRangeFocusActor,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=62,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(15)=(Ident=FaceTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=145,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(16)=(Ident=MeleeAttack,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=92,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(17)=(Ident=Charge,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=14,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(18)=(Ident=ChargeStart,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=15,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(19)=(Ident=PostChargeRetreat,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=50,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	FSMStates(0)=(FSM=Root,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=MeleeAttack,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=SeekTarget,Cond=8,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=EngageAP,Cond=0,Func=COND_ShouldGotoActionPointFlyer,Win=0,Code=0,StateTableIndex=0),(Ident=Engage,Cond=4,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(1)=(FSM=Root,Ident=Pain,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Default,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(2)=(FSM=Root,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Default,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(3)=(FSM=Root,Ident=SeekTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=MeleeAttack,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Engage,Cond=4,Func=None,Win=0,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(4)=(FSM=Root,Ident=Engage,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=MeleeAttack,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=SeekTarget,Cond=8,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=EngageAP,Cond=15,Func=COND_ShouldGotoActionPointFlyer,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(5)=(FSM=Root,Ident=EngageAP,FSMSucc=false,FSMFail=false,Transitions=((Ident=Charge,Cond=0,Func=COND_IsCharging,Win=1,Code=0,StateTableIndex=0),(Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=MeleeAttack,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Default,Cond=9,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=3,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(6)=(FSM=Root,Ident=MeleeAttack,FSMSucc=false,FSMFail=false,Transitions=((Ident=PostChargeRetreat,Cond=0,Func=COND_ShouldGotoActionPointFlyer,Win=1,Code=0,StateTableIndex=0),(Ident=Default,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(7)=(FSM=Root,Ident=Charge,FSMSucc=false,FSMFail=false,Transitions=((Ident=Default,Cond=3,Func=COND_NotCharging,Win=0,Code=0,StateTableIndex=0),(Ident=PostChargeRetreat,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(8)=(FSM=Root,Ident=PostChargeRetreat,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=EngageAP,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(9)=(FSM=SeekTarget,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=GotoNearTarget,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=FaceTarget,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(10)=(FSM=SeekTarget,Ident=GotoNearTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(11)=(FSM=SeekTarget,Ident=GotoMeleeRangeFocusActor,FSMSucc=false,FSMFail=false,Transitions=((Ident=Default,Cond=4,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(12)=(FSM=SeekTarget,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=GotoNearTarget,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoGoal,Cond=15,Func=COND_ShouldGotoActionPointFlyer,Win=1,Code=0,StateTableIndex=0),(Ident=FaceTarget,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(13)=(FSM=SeekTarget,Ident=FaceTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(14)=(FSM=SeekTarget,Ident=GotoGoal,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(15)=(FSM=Engage,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=ShootProjectile,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(16)=(FSM=Engage,Ident=ShootProjectile,FSMSucc=false,FSMFail=false,Transitions=((Ident=Default,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(17)=(FSM=Engage,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=Default,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(18)=(FSM=EngageAP,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=GotoGoalFocusTargetFullBody,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=ShootProjectile,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=ChargeAttack,Cond=98,Func=COND_ShouldBladeChargeFromActionPoint,Win=0,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(19)=(FSM=EngageAP,Ident=GotoGoalFocusTargetFullBody,FSMSucc=false,FSMFail=false,Transitions=((Ident=MovingShot,Cond=0,Func=COND_MakeMovingShot,Win=0,Code=0,StateTableIndex=0),(Ident=ShootProjectile,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Default,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(20)=(FSM=EngageAP,Ident=ShootProjectile,FSMSucc=false,FSMFail=false,Transitions=((Ident=ChargeAttack,Cond=98,Func=COND_ShouldBladeChargeFromActionPoint,Win=1,Code=0,StateTableIndex=0),(Ident=GotoGoalFocusTargetFullBody,Cond=12,Func=COND_ShouldGotoActionPointFlyer,Win=1,Code=0,StateTableIndex=0),(Ident=Default,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(21)=(FSM=EngageAP,Ident=MovingShot,FSMSucc=false,FSMFail=false,Transitions=((Ident=GotoGoalFocusTargetFullBody,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Default,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(22)=(FSM=EngageAP,Ident=ChargeAttack,FSMSucc=false,FSMFail=false,Transitions=none,NodeIndex=0)
+	FSMStates(23)=(FSM=ChargeAttack,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=ChargeStart,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(24)=(FSM=ChargeAttack,Ident=ChargeStart,FSMSucc=false,FSMFail=false,Transitions=((Ident=Default,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	WeaponTrackRate=100
+	HasWeaponManager=true
+	WeaponConfig='WeaponCfg_AssaultCommander'
+	Weapons(0)=none
+	Weapons(1)='dnGame.IntegratedWeapon'
+	WpnSteadyHorizError=50
+	WpnSteadyVertError=50
+	WpnMovingHorizError=1000
+	WpnMovingVertError=1000
+	ForceDirectShot=true
+	bIgnoreTripMines=true
+	UseActionPoints=true
+	Relationships(0)=(m_aClass='Engine.AIFactionHoloduke',m_eAttitude=1,m_fDamageThreshold=1)
+	Relationships(1)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(2)=(m_aClass='Engine.AIFactionHuman',m_eAttitude=3,m_fDamageThreshold=1)
+	Relationships(3)=(m_aClass='Engine.AIFactionAlien',m_eAttitude=5,m_fDamageThreshold=1)
+	AutoRollRate=5
+	bUseAnimDispSpeed=false
+	bUseAnimDispDir=false
+	BodyAlignRateFlying=2.6
+	AnimControllers[0]=(m_eFallback=0,m_cClass='acAssaultCommander',m_oController=none)
+	AnimControllers[1]=(m_eFallback=1,m_cClass='acAssaultCommander',m_oController=none)
+	AnimControllers[2]=(m_eFallback=1,m_cClass='acAssaultCommander',m_oController=none)
+	AnimControllers[3]=(m_eFallback=1,m_cClass='acAssaultCommander',m_oController=none)
+	AnimControllers[4]=(m_eFallback=1,m_cClass='acAssaultCommander',m_oController=none)
+	AnimControllers[5]=(m_eFallback=1,m_cClass='acAssaultCommander',m_oController=none)
+	AnimControllers[6]=(m_eFallback=1,m_cClass='acAssaultCommander',m_oController=none)
+	AnimControllers[7]=(m_eFallback=1,m_cClass='acAssaultCommander',m_oController=none)
+	AnimControllers[8]=(m_eFallback=1,m_cClass='acAssaultCommander',m_oController=none)
+	FreeMoveParms=(Mode=0,MinDotToTarget=0,MaxDotToTarget=0,ExitTime=0,FreeMoveTarget=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	ChargeParms=(ChargeDir=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	RndPainOpInterval=1
+	PainImpulseMagnitude=250
+	PainImpulseMinDamage=5
+	BoneAim(0)=(BoneName=Root,Yaw=0,Pitch=0,Weight=1)
+	HasBoneAimer=true
+	HasWeaponAimer=true
+	MinIdleTime=1
+	RndIdleTime=2
+	ShouldTurnThreshold=10
+	FaceThreshold=0
+	RunSpeedScale=1.5
+	SideArcTurnSpeedThresh=10
+	StartAngleSideSector=60
+	StartAngleBackSector=120
+	MoveBackwardsDistThresh=20
+	SideStepDistThresh=20
+	GotoPosRange=1
+	GotoPosHeight=1
+	GotoPosFlyingRange=1
+	GotoPosFlyingHeight=1
+	MinDistToGoal=100
+	MinMoveAroundDist=100
+	RndMoveAroundDist=150
+	MinMeleeRange=5
+	RndMeleeRange=30
+	RndMeleeHeight=35
+	MeleeZone=150
+	MeleeZoneHeight=60
+	MeleeAttackRange=175
+	MeleeFaceTarget=true
+	ClawDamageVel=(X=1.298303E-41,Y=3.778765E-17,Z=0)
+	ProjectileClass='dnGame.dnRocket_AssaultCommander'
+	ProjectileMuzzleName=mount_anus
+	bShootProjectileRequireLOS=false
+	bShootProjectileRequireSemiClearShot=true
+	MinAirAttackHeight=15
+	MaxAirAttackHeight=64
+	bIsFlying=true
+	PathID=AIPATH_ExtraLarge
+	DebugInfiniteLoop=true
+	DynamicPathingPriority=5
+	ChanceFly=1
+	bCanFly=true
+	FootstepCategory=8
+	FluidFrictionScale=0.5
+	EyeBone=Head
+	LockOnBone=Head
+	CustomKillSoundName=GotKillCommander
+	CorpseType='AlienCorpseFullCollision'
+	ExpandingBoneName=Head
+	ExitWoundInfo(0)=(DamageType=none,MinimumDamage=1,RandomChance=1,ExitWoundDecalClass='dnGame.dnExitWound_Human')
+	Health=1000
+	HealthCap=1000
+	KLinearDamping=0.5
+	bIsAssaultTrooper=true
+	bCanExistOutOfWorld=false
+	CollisionRadius=66
+	CollisionHeight=66
+	AccelRate=600
+	Mass=300
+	Mesh='c_characters.AssaultCommander'
+	ActorColorList(0)=(ActorColor=(B=87,G=5,R=1,A=255),G=0,B=0,A=255)
+	ActorColorList(1)=(ActorColor_LightEx=none,ActorColor_LightExScale=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	VoicePack='SoundConfig.Enemies.VoicePack_AssaultCommander'
 }

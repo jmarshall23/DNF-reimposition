@@ -155,4 +155,16 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 defaultproperties
 {
 	TorqueVector=(X=1.298303E-41,Y=3.773024E-17,Z=-50)
+	UnderwaterGorePrefabs(0)=(SpawnClass='p_Creatures.Catfish.Catfish_Death',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	UnderwaterGorePrefabs(1)=(SpawnChance=1,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=-10)
+	UnderwaterGorePrefabs(2)=(OffsetVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	FadeDelay=5
+	TimeToFade=5
+	bActorColorFade=true
+	ActorColorToFade=Generic0
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=Root,Location=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	KAngularDamping=0
+	TickStyle=3
+	ActorColorList(0)=(ActorColor=(B=87,G=5,R=1,A=0),G=0,B=0,A=0)
+	VoicePack='SoundConfig.Enemies.VoicePack_Octabrain'
 }

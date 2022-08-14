@@ -452,35 +452,43 @@ defaultproperties
 		MaxValue=100
 		GraphLength=768
 		GraphHeight=128
-		AxisInfo=/* Array type was not detected. */
-		ThrowPipeBomb=Op
-		Vector=None
+		AxisInfo(0)=(Value=30,Label="30fps",ColorIndex=1,PixelValue=0)
+		AxisInfo(1)=(Value=60,Label="60fps",ColorIndex=3,PixelValue=0)
 	object end
 	// Reference: HUDLineGraph'AIPerfHUD.AIPERF_FPSGraph'
 	FPSLineGraph=AIPERF_FPSGraph
 	begin object name=AIPERF_TickMSGraph class=HUDLineGraph
 		MaxValue=2
-		AxisInfo=/* Array type was not detected. */
-		bTakeParentCollisionSize=1.060025E-38
-		QShotgun=/* Unknown default property type! */
-		ChannelLink=1
-		PixelValue=0
+		AxisInfo(0)=(Value=1,Label="1ms",ColorIndex=1,PixelValue=0)
 	object end
 	// Reference: HUDLineGraph'AIPerfHUD.AIPERF_TickMSGraph'
 	DefaultAITickMSGraph=AIPERF_TickMSGraph
 	begin object name=AIPERF_PathingGraph class=HUDLineGraph
 		MaxValue=0.5
-		AxisInfo=/* Array type was not detected. */
-		=Y
-		Y=7564597
-		AnimEnd_FunctionCallName=0
+		AxisInfo(0)=(Value=0.25,Label="0.25ms",ColorIndex=1,PixelValue=0)
 	object end
 	// Reference: HUDLineGraph'AIPerfHUD.AIPERF_PathingGraph'
 	PathGraph=AIPERF_PathingGraph
-	
-	Anim_Idle1=/* Array type was not detected. */
-	R=255
-	G=0
-	B=0
-	A=0
+	AIStateInfo(0)=(ColorIndex=1,RGBColor=(B=87,G=5,R=1,A=255),G=0,B=0,A=0)
+	AIStateInfo(1)=(StateName=GotoX,PathingExName=AvoidDynamicObstacles)
+	AIStateInfo(2)=(ColorIndex=2,RGBColor=(B=87,G=5,R=1,A=0),G=0,B=255,A=0)
+	AIStateInfo(3)=(StateName=AnimX,PathingExName=GenerateStaticPath)
+	AIStateInfo(4)=(ColorIndex=3,RGBColor=(B=87,G=5,R=1,A=0),G=255,B=0,A=0)
+	DrawPathingTime=true
+	DrawPathingEx=true
+	DebugTreeItems(0)=(Text="Options",ConsoleCommand="",TriggerEvent=None,Func=None,Pop=false,Push=true,bHideChildren=true,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(1)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Toggle_Graphs,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(2)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Disable_DecisionTree,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(3)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Enable_DecisionTree,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(4)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Disable_Ticking,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(5)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Enable_Ticking,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(6)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Force_Idle,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(7)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Disable_GotoXEval,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(8)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Toggle_MarkDecisionTree,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(9)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Toggle_MarkSetLocation,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(10)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Toggle_DrawPathingTime,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(11)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Toggle_ProcAimTime,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(12)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Toggle_PathingEx,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(13)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=ForceCutScene,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(14)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Disable_Physics,Pop=true,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
 }

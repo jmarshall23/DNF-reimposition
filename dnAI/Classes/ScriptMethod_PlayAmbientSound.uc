@@ -26,5 +26,5 @@ event string GetMethodString()
 
 defaultproperties
 {
-	MySoundInfo=(bNoScale=false,MixerGroupOverride=None,AmbientSounds=/* Array type was not detected. */)
+	MySoundInfo=(bNoScale=false,MixerGroupOverride=None,AmbientSounds=none,InnerRadius=0,InnerRadiusVariance=0,Radius=0,RadiusVariance=0,VolumePrefab=6,Volume=0,VolumeVariance=0,Pitch=0,PitchVariance=0,SoundNoOccludeModifier=0,SoundNoDopplerModifier=0)
 }

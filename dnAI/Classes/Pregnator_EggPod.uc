@@ -78,7 +78,7 @@ function ForceAnim(Engine.BaseAI.EAIAnimXType AnimType, name AnimName, Actor Tar
 	return;
 }
 
-k2call simulated function LeftEggPod(optional EventInfo AnimEventInfo)
+animevent simulated function LeftEggPod(optional EventInfo AnimEventInfo)
 {
 	InEggPod = false;
 	__NFUN_621__(true, true, true, true, true);
@@ -94,7 +94,7 @@ k2call simulated function LeftEggPod(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function ApplyVelocity(optional EventInfo AnimEventInfo)
+animevent simulated function ApplyVelocity(optional EventInfo AnimEventInfo)
 {
 	// End:0x0F
 	if(InEggPod)
@@ -219,9 +219,8 @@ state Fall
 defaultproperties
 {
 	bPhysicsControllerActive=false
-	AutoRegisterIKClasses=/* Array type was not detected. */
-	Ident=/* Unknown default property type! */
-	SAnimationFadeBlend=0
+	AutoRegisterIKClasses(0)=none
+	Physics=0
 	bBlockActors=false
 	bBlockPlayers=false
 	bBlockKarma=false

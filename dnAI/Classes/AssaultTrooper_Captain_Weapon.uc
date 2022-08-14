@@ -10,6 +10,12 @@ class AssaultTrooper_Captain_Weapon extends FakeAIWeapon
 
 defaultproperties
 {
-	MuzzleBones(0)=StartingBlendAlpha
-	MuzzleBones(1)=Code
+	MuzzleBones(0)=mount_muzzle_1
+	MuzzleBones(1)=mount_muzzle_2
+	MuzzleBones(2)=mount_muzzle_3
+	MuzzleBones(3)=mount_muzzle_4
+	bCollisionAssumeValid=true
+	PrePivot=(X=-1.075532E+08,Y=3.7891E-17,Z=0)
+	DrawScale=1.46
+	Mesh='c_dnWeapon.at_capt_gun'
 }

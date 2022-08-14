@@ -17,5 +17,11 @@ event EnumerateUsableAnimationControllers(PrecacheIndex PrecacheIndex, out array
 
 defaultproperties
 {
-	OverrideMeshList(0)=StructProperty'AIActor.JumpParms'
+	OverrideMeshList(0)='c_characters.General_Graves'
+	OverrideMeshList(1)='c_characters.General_Graves'
+	OverrideMeshList(2)='c_characters.General_Graves'
+	OverrideMeshList(3)='c_characters.General_Graves'
+	OverrideMeshList(4)='c_characters.General_Graves'
+	Mesh='c_characters.General_Graves'
+	VoicePack='SoundConfig.NPCs.VoicePack_GeneralGraves'
 }

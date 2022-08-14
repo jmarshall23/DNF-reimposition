@@ -704,5 +704,14 @@ final function DrawColorLegend(Canvas C)
 
 defaultproperties
 {
-	DebugTreeItems=/* Array type was not detected. */
+	DebugTreeItems(0)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=ClearMarkers,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(1)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=ShowAll,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(2)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=HideAll,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(3)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=ShowLocked,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(4)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=ShowUsers,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(5)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=ShowDestructible,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(6)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=ShowVaultable,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(7)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=DebugJumpPoint,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(8)=(Text="",ConsoleCommand="APNAV_Debug",TriggerEvent=None,Func=None,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	Tag=AIBrainHUD
 }

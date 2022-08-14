@@ -1162,7 +1162,7 @@ var bool FaceAnims;
 var noexport float MinBlinkTime "Minimum time between blinks.";
 var noexport float MaxBlinkTime "Maximum time between blinks.";
 var noexport int NumEyeSets "How many sets of eyes?";
-var name EyesClosedAnim;
+var anim name EyesClosedAnim;
 var noexport array<SEyeAimInfo> EyeAimInfos "A list of eye bones used for aiming.";
 var Vector RollForwardInfo;
 var Vector RollLeftInfo;
@@ -1514,7 +1514,7 @@ var(AISound) float PainSoundRndInterval;
 var(AISound) bool bDebugAISounds;
 var(AISound) noexport bool bDisableSounds "AI wont explicitly play sounds if this is set.";
 var transient float PainSoundGate;
-var const editconst transient pointer MyLog;
+var const editconst transient nontrans pointer MyLog;
 var(AIDebug) bool bUseMyLog;
 var(AIDebug) bool bValidateDecisionTree;
 var string ShouldFireStr;
@@ -1540,7 +1540,7 @@ var Vector PreviousLocation;
 var Vector DesiredMovement;
 var bool bTrackPhysicsContacts;
 var array<Actor> PhysicsContactActors;
-var int AIRotation;
+var netupdate(NU_AIRotation) int AIRotation;
 var Engine.BaseAI.EAIDynamicPathPriority DynamicPathingPriority;
 var float DynamicPathingPriorityTieBreaker;
 var float GroundConstraintScalerOverride;
@@ -3757,7 +3757,7 @@ simulated event float FindSoundAndSpeak(name SoundName, optional bool bPlayWitho
 	return;
 }
 
-k2call simulated function PlayVoicePackEntry(optional EventInfo AnimEventInfo)
+animevent simulated function PlayVoicePackEntry(optional EventInfo AnimEventInfo)
 {
 	// End:0xAB
 	if(bDebugAISounds)
@@ -4304,14 +4304,14 @@ event float GetGotoMeleeRange()
 	return;
 }
 
-k2call simulated function StartCloaking(optional EventInfo AnimEventInfo)
+animevent simulated function StartCloaking(optional EventInfo AnimEventInfo)
 {
 	ActivateCloaking(true);
 	FindSoundAndSpeak('Sound_Cloak');
 	return;
 }
 
-k2call simulated function StartDeCloaking(optional EventInfo AnimEventInfo)
+animevent simulated function StartDeCloaking(optional EventInfo AnimEventInfo)
 {
 	ActivateCloaking(false);
 	FindSoundAndSpeak('Sound_Cloak');
@@ -4374,7 +4374,7 @@ function NotifyOtherTouched(Actor TouchedActor, Actor TouchingActor)
 	return;
 }
 
-k2call simulated function ThrowTKObj(optional EventInfo AnimEventInfo)
+animevent simulated function ThrowTKObj(optional EventInfo AnimEventInfo)
 {
 	// End:0x0E
 	if(__NFUN_339__(TKObj, none))
@@ -4385,13 +4385,13 @@ k2call simulated function ThrowTKObj(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function DropTKObj(optional EventInfo AnimEventInfo)
+animevent simulated function DropTKObj(optional EventInfo AnimEventInfo)
 {
 	ReleaseTKObj();
 	return;
 }
 
-k2call simulated function ReleaseTKObj(optional EventInfo AnimEventInfo)
+animevent simulated function ReleaseTKObj(optional EventInfo AnimEventInfo)
 {
 	// End:0x0E
 	if(__NFUN_339__(TKObj, none))
@@ -4603,7 +4603,7 @@ function bool CanDoAnimHurl(InteractiveActor DesiredProp)
 	return;
 }
 
-k2call simulated function PickupProp(optional EventInfo AnimEventInfo)
+animevent simulated function PickupProp(optional EventInfo AnimEventInfo)
 {
 	// End:0x0E
 	if(__NFUN_339__(DesiredProp, none))
@@ -4618,7 +4618,7 @@ k2call simulated function PickupProp(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function ThrowProp(optional EventInfo AnimEventInfo)
+animevent simulated function ThrowProp(optional EventInfo AnimEventInfo)
 {
 	local Vector ThrowVel;
 
@@ -4656,7 +4656,7 @@ k2call simulated function ThrowProp(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function HurlProp(optional EventInfo AnimEventInfo)
+animevent simulated function HurlProp(optional EventInfo AnimEventInfo)
 {
 	local Vector ThrowVel;
 
@@ -5198,7 +5198,7 @@ simulated function GetFireParms(name MuzzleName, out Vector MuzzlePos, out Vecto
 	return;
 }
 
-k2call simulated function ForceShoot(optional EventInfo AnimEventInfo)
+animevent simulated function ForceShoot(optional EventInfo AnimEventInfo)
 {
 	local float Chance;
 
@@ -5211,7 +5211,7 @@ k2call simulated function ForceShoot(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function ForceShootNoAnim(optional EventInfo AnimEventInfo)
+animevent simulated function ForceShootNoAnim(optional EventInfo AnimEventInfo)
 {
 	local float Chance;
 
@@ -5225,14 +5225,14 @@ k2call simulated function ForceShootNoAnim(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function ForceShootNoFireAnim(optional EventInfo AnimEventInfo)
+animevent simulated function ForceShootNoFireAnim(optional EventInfo AnimEventInfo)
 {
 	bDontPlayShootAnim = true;
 	AIActor_Weapon_Fire();
 	return;
 }
 
-k2call simulated function ForceShootNoFireAnimNoAim(optional EventInfo AnimEventInfo)
+animevent simulated function ForceShootNoFireAnimNoAim(optional EventInfo AnimEventInfo)
 {
 	bDontPlayShootAnim = true;
 	ForceNonDirectShot = true;
@@ -5763,7 +5763,7 @@ event IgnoreDangerActor(Actor A)
 	return;
 }
 
-k2call simulated function DrawPipeBomb(optional EventInfo AnimEventInfo)
+animevent simulated function DrawPipeBomb(optional EventInfo AnimEventInfo)
 {
 	local Engine.BaseAI.EAIOp CurOp;
 
@@ -5831,7 +5831,7 @@ event DropMyPipeBomb()
 	return;
 }
 
-k2call simulated function ThrowPipeBomb(optional EventInfo AnimEventInfo)
+animevent simulated function ThrowPipeBomb(optional EventInfo AnimEventInfo)
 {
 	// End:0xB5
 	if(__NFUN_340__(MyPipeBomb, none))
@@ -5854,7 +5854,7 @@ k2call simulated function ThrowPipeBomb(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function CalcThrowPipeBomb(optional EventInfo AnimEventInfo)
+animevent simulated function CalcThrowPipeBomb(optional EventInfo AnimEventInfo)
 {
 	local Vector TargetPos;
 	local float Dist, Height;
@@ -7196,7 +7196,7 @@ static function class<AIActor> GetSpawnClass(AIActorFactory Factory)
 	return;
 }
 
-k2call function ActorDisableIK()
+animevent function ActorDisableIK()
 {
 	AIDisableIK();
 	return;
@@ -7221,7 +7221,7 @@ event AIDisableIK()
 	return;
 }
 
-k2call function ActorEnableIK()
+animevent function ActorEnableIK()
 {
 	AIEnableIK();
 	return;
@@ -7602,13 +7602,13 @@ event DestroyRappelEffects()
 	return;
 }
 
-k2call simulated function EndRappel()
+animevent simulated function EndRappel()
 {
 	DestroyRappelEffects();
 	return;
 }
 
-k2call function ForceFall()
+animevent function ForceFall()
 {
 	bWasInAir = true;
 	StartFallHeight = __NFUN_198__(Location.Z, __NFUN_195__(FallDistThresh, 2));
@@ -7928,7 +7928,7 @@ event NotifyArmorLoss(Destructible_Armor Armor)
 	return;
 }
 
-k2call simulated function EnableGravity(optional EventInfo AnimEventInfo)
+animevent simulated function EnableGravity(optional EventInfo AnimEventInfo)
 {
 	SetAnimSync(0, 0, 0, 2, 0);
 	return;
@@ -8157,22 +8157,22 @@ function RefMyClasses()
 	return;
 }
 
-k2call simulated function leftfootstick(optional EventInfo AnimEventInfo)
+animevent simulated function leftfootstick(optional EventInfo AnimEventInfo)
 {
 	return;
 }
 
-k2call simulated function leftunstick(optional EventInfo AnimEventInfo)
+animevent simulated function leftunstick(optional EventInfo AnimEventInfo)
 {
 	return;
 }
 
-k2call simulated function rightfootstick(optional EventInfo AnimEventInfo)
+animevent simulated function rightfootstick(optional EventInfo AnimEventInfo)
 {
 	return;
 }
 
-k2call simulated function rightunstick(optional EventInfo AnimEventInfo)
+animevent simulated function rightunstick(optional EventInfo AnimEventInfo)
 {
 	return;
 }
@@ -9261,7 +9261,7 @@ event bool AICheckActionPointClearTarget()
 	return;
 }
 
-k2call simulated function EndPopoutHold(optional EventInfo AnimEventInfo)
+animevent simulated function EndPopoutHold(optional EventInfo AnimEventInfo)
 {
 	PopUpState.bForceHoldStop = true;
 	return;
@@ -10547,14 +10547,14 @@ function bool ControlX_IsControlled()
 	return;
 }
 
-k2call simulated function EnableFinishMoveRagDollCollision()
+animevent simulated function EnableFinishMoveRagDollCollision()
 {
 	__NFUN_642__(9);
 	__NFUN_861__(false);
 	return;
 }
 
-k2call simulated function DisableFinishMoveRagDollCollision()
+animevent simulated function DisableFinishMoveRagDollCollision()
 {
 	__NFUN_861__(true);
 	__NFUN_642__(18);
@@ -11284,7 +11284,7 @@ function Anim_OpenDoorR()
 	return;
 }
 
-k2call simulated function DoorPush(optional EventInfo EventParms)
+animevent simulated function DoorPush(optional EventInfo EventParms)
 {
 	// End:0x09
 	if(DebugDoors)
@@ -12779,41 +12779,41 @@ function Anim_WalkBackward()
 	return;
 }
 
-k2call simulated function PlaySFX(optional EventInfo EventParms)
+animevent simulated function PlaySFX(optional EventInfo EventParms)
 {
 	FindSoundAndSpeak(__NFUN_343__(EventParms.EventString));
 	return;
 }
 
-k2call simulated function HolsterWeapon(optional EventInfo AnimEventInfo)
+animevent simulated function HolsterWeapon(optional EventInfo AnimEventInfo)
 {
 	return;
 }
 
-k2call simulated function AnimEvent_ApplyJumpVelocity(optional EventInfo AnimEventInfo)
+animevent simulated function AnimEvent_ApplyJumpVelocity(optional EventInfo AnimEventInfo)
 {
 	return;
 }
 
-k2call simulated function JumpTakeoff(optional EventInfo AnimEventInfo)
+animevent simulated function JumpTakeoff(optional EventInfo AnimEventInfo)
 {
 	AnimEvent_ApplyJumpVelocity();
 	return;
 }
 
-k2call simulated function BlastRelease(optional EventInfo AnimEventInfo)
+animevent simulated function BlastRelease(optional EventInfo AnimEventInfo)
 {
 	FireProjectile(ProjectileMuzzleName, ProjectileClass, CalcLeadTime(ProjectileClass.default.MaxSpeed), false);
 	return;
 }
 
-k2call simulated function ShootProjectile(optional EventInfo AnimEventInfo)
+animevent simulated function ShootProjectile(optional EventInfo AnimEventInfo)
 {
 	FireProjectile(ProjectileMuzzleName, ProjectileClass, CalcLeadTime(ProjectileClass.default.MaxSpeed), false);
 	return;
 }
 
-k2call simulated function ScaledClawDamage(optional EventInfo AnimEventInfo)
+animevent simulated function ScaledClawDamage(optional EventInfo AnimEventInfo)
 {
 	local float Scale;
 
@@ -12822,37 +12822,37 @@ k2call simulated function ScaledClawDamage(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function ClawDamage(optional EventInfo AnimEventInfo)
+animevent simulated function ClawDamage(optional EventInfo AnimEventInfo)
 {
 	ApplyDamage(class'MeleeDamage', int(ClawDamageAmount), ClawDamageVel, 4);
 	return;
 }
 
-k2call simulated function BiteDamage(optional EventInfo AnimEventInfo)
+animevent simulated function BiteDamage(optional EventInfo AnimEventInfo)
 {
 	ApplyDamage(class'BiteDamage', int(BiteDamageAmount), BiteDamageVel, 4);
 	return;
 }
 
-k2call simulated function ApplyKickDamage(optional EventInfo AnimEventInfo)
+animevent simulated function ApplyKickDamage(optional EventInfo AnimEventInfo)
 {
 	ApplyDamage(class'BiteDamage', int(KickDamageAmount), KickDamageVel, 4);
 	return;
 }
 
-k2call simulated function StompDamage(optional EventInfo AnimEventInfo)
+animevent simulated function StompDamage(optional EventInfo AnimEventInfo)
 {
 	DoStompDamage();
 	return;
 }
 
-k2call simulated function ConstrainRootOnDeath(optional EventInfo AnimEventInfo)
+animevent simulated function ConstrainRootOnDeath(optional EventInfo AnimEventInfo)
 {
 	bFixCorpseRoot = true;
 	return;
 }
 
-k2call simulated function KillMe(optional EventInfo AnimEventInfo)
+animevent simulated function KillMe(optional EventInfo AnimEventInfo)
 {
 	local AnimChanInfo ChannelInfo;
 
@@ -12881,14 +12881,14 @@ k2call simulated function KillMe(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function DropWeapon(optional EventInfo AnimEventInfo)
+animevent simulated function DropWeapon(optional EventInfo AnimEventInfo)
 {
 	SpawnPickupForWeapon();
 	Level.Game.DiscardInventory(self);
 	return;
 }
 
-k2call simulated function DropCarriedWeapon(optional EventInfo AnimEventInfo)
+animevent simulated function DropCarriedWeapon(optional EventInfo AnimEventInfo)
 {
 	local Weapon MyWeapon;
 	local DualPistol MyDualPistol;
@@ -12899,13 +12899,13 @@ k2call simulated function DropCarriedWeapon(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function DieOnAnimEnd(optional EventInfo AnimEventInfo)
+animevent simulated function DieOnAnimEnd(optional EventInfo AnimEventInfo)
 {
 	DieOnExitState = true;
 	return;
 }
 
-k2call simulated function ForceDeath(optional EventInfo AnimEventInfo)
+animevent simulated function ForceDeath(optional EventInfo AnimEventInfo)
 {
 	Died();
 	return;
@@ -13269,7 +13269,7 @@ event bool ClearOverrideAnim(name AnimName)
 	return;
 }
 
-k2call simulated function DustCloudImpact(optional EventInfo AnimEventInfo)
+animevent simulated function DustCloudImpact(optional EventInfo AnimEventInfo)
 {
 	local name BoneName;
 	local Vector BoneLocation;
@@ -13298,7 +13298,7 @@ k2call simulated function DustCloudImpact(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function DustCloudImpact_Shake(optional EventInfo AnimEventInfo)
+animevent simulated function DustCloudImpact_Shake(optional EventInfo AnimEventInfo)
 {
 	local PlayerPawn P;
 
@@ -13341,13 +13341,13 @@ final simulated function DoBloodSplatter(name BoneName, class<dnScreenSplatters>
 	return;
 }
 
-k2call simulated function BloodSplatterLight(optional EventInfo AnimEventInfo)
+animevent simulated function BloodSplatterLight(optional EventInfo AnimEventInfo)
 {
 	DoBloodSplatter(__NFUN_343__(AnimEventInfo.EventString), class'dnScreenSplatter_Blood');
 	return;
 }
 
-k2call simulated function BloodSplatter(optional EventInfo AnimEventInfo)
+animevent simulated function BloodSplatter(optional EventInfo AnimEventInfo)
 {
 	DoBloodSplatter(__NFUN_343__(AnimEventInfo.EventString), class'dnScreenSplatter_Blood_Boss');
 	return;
@@ -13403,19 +13403,19 @@ final simulated function SoftParticleSystem BloodSprayAttachHelper(name BoneName
 	return;
 }
 
-k2call simulated function LightPlayerRumble(optional EventInfo AnimEventInfo)
+animevent simulated function LightPlayerRumble(optional EventInfo AnimEventInfo)
 {
 	Level.__NFUN_1161__().LightContactRumble(AnimEventInfo);
 	return;
 }
 
-k2call simulated function MediumPlayerRumble(optional EventInfo AnimEventInfo)
+animevent simulated function MediumPlayerRumble(optional EventInfo AnimEventInfo)
 {
 	Level.__NFUN_1161__().MediumContactRumble(AnimEventInfo);
 	return;
 }
 
-k2call simulated function HeavyPlayerRumble(optional EventInfo AnimEventInfo)
+animevent simulated function HeavyPlayerRumble(optional EventInfo AnimEventInfo)
 {
 	Level.__NFUN_1161__().HeavyContactRumble(AnimEventInfo);
 	return;
@@ -13746,7 +13746,7 @@ event TmpHackAroundTheWeaponSystem(Weapon NewWeapon)
 	return;
 }
 
-k2call simulated function DrawWeapon(optional EventInfo AnimEventInfo)
+animevent simulated function DrawWeapon(optional EventInfo AnimEventInfo)
 {
 	local class<Weapon> WeaponClass;
 
@@ -13775,13 +13775,13 @@ final simulated function Weapon GiveWeaponTo(Pawn P, class<Weapon> WeaponClass)
 	return;
 }
 
-k2call simulated function GivePlayerWeapon(optional EventInfo AnimEventInfo)
+animevent simulated function GivePlayerWeapon(optional EventInfo AnimEventInfo)
 {
 	GiveWeaponTo(Level.__NFUN_1161__(), class<Weapon>(__NFUN_359__(__NFUN_343__(AnimEventInfo.EventString))));
 	return;
 }
 
-k2call simulated function GivePlayerWeaponScripted(optional EventInfo AnimEventInfo)
+animevent simulated function GivePlayerWeaponScripted(optional EventInfo AnimEventInfo)
 {
 	local PlayerPawn P;
 	local Weapon NewWeapon;
@@ -14906,31 +14906,31 @@ state AnimX
 Parameter name: index
    at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
    at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1864
-   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1725
+   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1872
+   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1733
 		// 1 & Type:Else Position:0x0D2
 		return FacingTarget;
 		// Failed to format nests!:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
 Parameter name: index
    at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
    at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1864
-   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1725
+   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1872
+   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1733
 		// 1 & Type:Else Position:0x0D2
 		return;
 		// Failed to format nests!:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
 Parameter name: index
    at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
    at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1864
-   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1725
+   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1872
+   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1733
 		// 1 & Type:Else Position:0x0D2
 		// Failed to format remaining nests!:System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
 Parameter name: index
    at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
    at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1864
-   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1745
+   at UELib.Core.UStruct.UByteCodeDecompiler.DecompileNests(Boolean outputAllRemainingNests) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1872
+   at UELib.Core.UStruct.UByteCodeDecompiler.Decompile() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\ByteCodeDecompiler.cs:line 1753
 		// 1 & Type:Else Position:0x0D2
 	}
 
@@ -16952,7 +16952,7 @@ state Jump
 		return;
 	}
 
-	k2call simulated function AnimEvent_ApplyJumpVelocity(optional EventInfo AnimEventInfo)
+	animevent simulated function AnimEvent_ApplyJumpVelocity(optional EventInfo AnimEventInfo)
 	{
 		AlignYaw = false;
 		// End:0x19
@@ -17465,7 +17465,7 @@ state JumpAttack
 		return;
 	}
 
-	k2call simulated function AnimEvent_ApplyJumpVelocity(optional EventInfo AnimEventInfo)
+	animevent simulated function AnimEvent_ApplyJumpVelocity(optional EventInfo AnimEventInfo)
 	{
 		local Vector MyJumpVel;
 
@@ -18170,14 +18170,14 @@ state SelectWeapon
 		return;
 	}
 
-	k2call simulated function HolsterWeapon(optional EventInfo AnimEventInfo)
+	animevent simulated function HolsterWeapon(optional EventInfo AnimEventInfo)
 	{
 		assert(__NFUN_173__(SelectWeaponParms.Mode, 2));
 		PutWeaponInHolster();
 		return;
 	}
 
-	k2call simulated function DrawWeapon(optional EventInfo AnimEventInfo)
+	animevent simulated function DrawWeapon(optional EventInfo AnimEventInfo)
 	{
 		assert(__NFUN_150__(__NFUN_173__(SelectWeaponParms.Mode, 3), __NFUN_173__(SelectWeaponParms.Mode, 4)));
 		DrawWeaponFromHolster(SelectWeaponParms.NewWeaponClass);
@@ -18827,7 +18827,7 @@ state UseX
 		return;
 	}
 
-	k2call simulated function GenericUse(optional EventInfo AnimEventInfo)
+	animevent simulated function GenericUse(optional EventInfo AnimEventInfo)
 	{
 		UseXParms.TargetActor.Used(self, self);
 		return;
@@ -19345,108 +19345,246 @@ defaultproperties
 	ChanceTryGlanceAgain=0.2
 	MinGlanceRest=2.5
 	RndGlanceRest=4.5
-	MuzzleAimerInfo=(MyOwner=none,NotifyStateFuncName=None,NotifyLostFuncName=None,NotifyThresholdFuncName=None,CurrentState=0,TargetStack=(none,(AngleToTarget=0,DeltaAngleToTarget=0,SolutionClamped=false,UseWeaponAimFromPos=true),(WeaponTrackRate=60,HeadTrackRate=100,ShootAngleThresh=10,WeaponConfig='WeaponCfg_Default',Weapons=/* Array type was not detected. */,Ident=/* Unknown default property type! */,SpawnWithWeaponDrawn=true,WpnSteadyHorizError=200,WpnSteadyVertError=150,WpnMovingHorizError=400,WpnMovingVertError=300,AimAtTargetTimeThresh=5,CanScan=true,MinWeaponScanTrackRate=2,RndWeaponScanTrackRate=2,LookTrackRateK=8.5,MinScanInterval=2,RndScanInterval=6,MinScanDuration=8,RndScanDuration=12,MinScanRefreshTime=2,RndScanRefreshTime=2,MinScanPitch=-1500,MaxScanPitch=2000,MinScanYaw=-5000,MaxScanYaw=5000,MinPipeBombInterval=6,RightHandPipebombMount=mount_pipebomb_r,LeftHandPipebombMount=mount_pipebomb_l,MinPipeBombTime=1.5,MaxPipeBombTime=10,MinHorizDistPipeBomb=350,MaxHorizDistPipeBomb=1600,MinVertDistPipeBomb=-300,MaxVertDistPipeBomb=300,MinPipeBombArcHeight=40,MaxPipeBombArcHeight=200,PipeBombChance=0.5,MinTargetVisibleTime=0.2,GuardInf=(CanGuard=true,IsGuardingActor=false,IsGuardingPos=false,GuardedActor=none,GuardedPos=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),InnerRange=0,OuterRange=0,BaseInnerRange=150,BaseOuterRange=300,bDontScaleRangeWithDrawScale=false,AlignWith=false,AlignmentOffset=0,AbortRange=0,MustBeVisible=false,AllowAvoidDanger=false,AllowDodge=false,bStaticGuardHack=false,bAvoidGuardedPlayer=false),(ChanceStayAtActionPoint=0.8,ActionPointMeleeK=1,MinBlinkTime=0.5,MaxBlinkTime=3,EyesClosedAnim=s_eyes_close,RollForwardInfo=(X=1.298303E-41,Y=3.77868E-17,Z=0),Z=0),(RollLeftInfo=(X=1.298303E-41,Y=3.773024E-17,Z=-100),Z=0),(RollRightInfo=(X=1.298303E-41,Y=3.773024E-17,Z=100),Z=0),(RollTime=1,CloakRate=8,CloakMaterial='dt_effects.FrameBuffers.TempCloak3_fake',TKShieldCollisionRadius=100,TKShieldCollisionHeight=100,NumSecondaryTKCatchAnims=2,TKIgnoreClasses=/* Array type was not detected. */,StartingBlendAlpha=1.740939E+25,dnRocket_BrainBlast=class'HitActor',bNoRemoveAnim=/* Unknown default property type! */),
-/* Exception thrown while deserializing TargetStack
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */,(UseLatentMovement=true,AIBaseMoveSpeed=200,ZeroMoveSpeedEnabled=true,AutoRollRate=10,AutoUnrollRate=1,AutoPitchRate=10,AutoUnPitchRate=1,bUseAnimDispSpeed=true,bUseAnimDispDir=true,BodyAlignRate=2.3562,BodyAlignRateFlying=2.3562,BodyAlignThresh=100,BodyAlignScale=0.5,AlignYaw=true,AirSpeedScale=1,GroundSpeedScale=1,AnimDispSpeedScale=1,BackupPathingCooldown=1,JumpPreset=(JumpVel=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),HeavyLandingThresh=0,FocusActor=none,GravityScale=0,JumpTime=0,FlyToTarget=false,TargetPos=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),(JumpType=0,bSnapToTarget=false,bUseAccelaration=false,DefGravityScale=1,bFaceTarget=false),(AmbientSoundInfo=(bDebug=false,TargetAquiredMinInterval=3,NoTargetIdleInterval=3,NoTargetIdleRnd=1,BattleIdleInterval=3,BattleIdleRnd=4,TargetAquiredSoundName=Sound_Alert,TargetLostSoundName=Sound_TargetLost,NoTargetSoundName=Sound_NoTargetIdle,TargetVisibleSoundName=Sound_BattleIdle,TargetNotVisibleSoundName=Sound_NoTargetIdle),InitialAnimController=1,ControlXParms=(ControlType=none,MyControl=none,AnimName=None,Time=0,IsControlled=false,DieOnTakeDamage=true,AssumeCanFit=false),FallParms=(Mode=0,LandingThresh=0,HeavyLandingThresh=0,StartZ=0,RefId=0,AnimSet=0,ToggleIK=true),GotoXParms=(TargetType=0,TargetActor=none,TargetPos=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),RefActor=none,NextPos=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)),FinalDest=0,OffsetType=0,Range=0,Bearing=0,Height=0,ClipTolerance=0,Speed=0,SpeedScale=0,Focus=0,FocusActor=none,FacePos=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MuzzleAimerInfo=(MyOwner=none,NotifyStateFuncName=None,NotifyLostFuncName=None,NotifyThresholdFuncName=None,CurrentState=0,TargetStack=none,AngleToTarget=0,DeltaAngleToTarget=0,SolutionClamped=false,UseWeaponAimFromPos=true)
 	WeaponTrackRate=60
 	HeadTrackRate=100
 	ShootAngleThresh=10
 	WeaponConfig='WeaponCfg_Default'
-	Weapons(0)=class'm_aTarget'
-	Weapons(1)=none
-	Weapons(2)=class'ChanceSayTakeCoverModifier'
-	Weapons(3)=class'Level'
-	Weapons(4)=class'Stage1_Health'
-	Weapons(5)=class'TickingAIList'
-	Weapons(6)=none
-	Weapons(7)=none
-	Weapons(8)=class'ScriptMethod_Prone'
-	Weapons(9)=class'GetUpEvent'
-	Weapons(10)=class'TickingAIList'
-	Weapons(11)=none
-	Weapons(12)=none
-	Weapons(13)=class'AnimCtrl'
-	Weapons(14)=class'WallNormal'
-	Weapons(15)=class'acPregnator'
-	Weapons(16)=class'TickingAIList'
-	Weapons(17)=none
-	Weapons(18)=none
-	Weapons(19)=
-/* Exception thrown while deserializing Weapons
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealPackage.GetIndexObject(Int32 objectIndex) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealPackage.cs:line 1821
-   at UELib.UObjectStream.ReadObject() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 742
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 559 */
-	Weapons(20)=class'NewVelocity'
-	Weapons(21)=class'TickingAIList'
-	Weapons(22)=none
-	Weapons(23)=none
-	Weapons(24)=class'EAICode'
-	Weapons(25)=class'TargetPos'
-	Weapons(26)=class'TracerBeamSystemClass'
-	Weapons(27)=none
-	Weapons(28)=none
-	Weapons(29)=class'DrawColor'
-	Weapons(30)=class'ExecutiveSuspended'
-	Weapons(31)=class'DieOnTakeDamage'
-	Weapons(32)=class'm_strOwnerTag'
-	Weapons(33)=class'TickingAIList'
-	Weapons(34)=none
-	Weapons(35)=none
-	Weapons(36)=none
-	Weapons(37)=class'BackSector'
-	Weapons(38)=class'TracerBeamSystemClass'
-	Weapons(39)=none
-	Weapons(40)=none
-	Weapons(41)=none
-	Weapons(42)=class'K'
-	Weapons(43)=class'TracerBeamSystemClass'
-	Weapons(44)=none
-	Weapons(45)=none
-	Weapons(46)=class'ScriptMethod'
-	Weapons(47)=class'ShockwaveDamage'
-	Weapons(48)=class'TracerBeamSystemClass'
-	Weapons(49)=none
-	Weapons(50)=none
-	Weapons(51)=none
-	Weapons(52)=class'ProjectilesPerFire'
-	Weapons(53)=class'TracerBeamSystemClass'
-	Weapons(54)=none
-	Weapons(55)=none
-	Weapons(56)=
-/* Exception thrown while deserializing Weapons
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealPackage.GetIndexObject(Int32 objectIndex) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealPackage.cs:line 1821
-   at UELib.UObjectStream.ReadObject() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 742
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 559 */
-	Weapons(57)=class'bSpawnOnlyWhenPlayerNotInView'
-	Weapons(58)=class'TickingAIList'
-	Weapons(59)=none
-	Weapons(60)=none
-	Weapons(61)=none
-	Weapons(62)=class'ProcAimingMinPitch'
-	Weapons(63)=class'TracerBeamSystemClass'
-	Weapons(64)=none
-	Weapons(65)=none
-	Weapons(66)=class'AdjustStart'
-	Weapons(67)=class'bSpawnOnlyWhenPlayerNotFacing'
-	Weapons(68)=class'TickingAIList'
-	Weapons(69)=none
-	Weapons(70)=none
-	Ident=/* Unknown default property type! */
-	WeaponCfg_AssaultCommander=class'ScriptMethod_Prone'
+	Weapons(0)=none
+	SpawnWithWeaponDrawn=true
+	WpnSteadyHorizError=200
+	WpnSteadyVertError=150
+	WpnMovingHorizError=400
+	WpnMovingVertError=300
+	AimAtTargetTimeThresh=5
+	CanScan=true
+	MinWeaponScanTrackRate=2
+	RndWeaponScanTrackRate=2
+	LookTrackRateK=8.5
+	MinScanInterval=2
+	RndScanInterval=6
+	MinScanDuration=8
+	RndScanDuration=12
+	MinScanRefreshTime=2
+	RndScanRefreshTime=2
+	MinScanPitch=-1500
+	MaxScanPitch=2000
+	MinScanYaw=-5000
+	MaxScanYaw=5000
+	MinPipeBombInterval=6
+	RightHandPipebombMount=mount_pipebomb_r
+	LeftHandPipebombMount=mount_pipebomb_l
+	MinPipeBombTime=1.5
+	MaxPipeBombTime=10
+	MinHorizDistPipeBomb=350
+	MaxHorizDistPipeBomb=1600
+	MinVertDistPipeBomb=-300
+	MaxVertDistPipeBomb=300
+	MinPipeBombArcHeight=40
+	MaxPipeBombArcHeight=200
+	PipeBombChance=0.5
+	MinTargetVisibleTime=0.2
+	GuardInf=(CanGuard=true,IsGuardingActor=false,IsGuardingPos=false,GuardedActor=none,GuardedPos=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	ChanceStayAtActionPoint=0.8
+	ActionPointMeleeK=1
+	MinBlinkTime=0.5
+	MaxBlinkTime=3
+	EyesClosedAnim=s_eyes_close
+	RollForwardInfo=(X=1.298303E-41,Y=3.77868E-17,Z=0)
+	RollLeftInfo=(X=1.298303E-41,Y=3.773024E-17,Z=-100)
+	RollRightInfo=(X=1.298303E-41,Y=3.773024E-17,Z=100)
+	RollTime=1
+	CloakRate=8
+	CloakMaterial='dt_effects.FrameBuffers.TempCloak3_fake'
+	TKShieldCollisionRadius=100
+	TKShieldCollisionHeight=100
+	NumSecondaryTKCatchAnims=2
+	TKIgnoreClasses(0)=dnRocket_AssaultTrooper_Laser
+	TKIgnoreClasses(1)=dnJizzBomb
+	TKIgnoreClasses(2)=dnRocket_BrainBlast
+	TKIgnoreClasses(3)=dnRocket_BrainBlastSmall
+	PickupItemRange=24
+	UseLatentMovement=true
+	AIBaseMoveSpeed=200
+	ZeroMoveSpeedEnabled=true
+	AutoRollRate=10
+	AutoUnrollRate=1
+	AutoPitchRate=10
+	AutoUnPitchRate=1
+	bUseAnimDispSpeed=true
+	bUseAnimDispDir=true
+	BodyAlignRate=2.3562
+	BodyAlignRateFlying=2.3562
+	BodyAlignThresh=100
+	BodyAlignScale=0.5
+	AlignYaw=true
+	AirSpeedScale=1
+	GroundSpeedScale=1
+	AnimDispSpeedScale=1
+	BackupPathingCooldown=1
+	JumpPreset=(JumpVel=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	AmbientSoundInfo=(bDebug=false,TargetAquiredMinInterval=3,NoTargetIdleInterval=3,NoTargetIdleRnd=1,BattleIdleInterval=3,BattleIdleRnd=4,TargetAquiredSoundName=Sound_Alert,TargetLostSoundName=Sound_TargetLost,NoTargetSoundName=Sound_NoTargetIdle,TargetVisibleSoundName=Sound_BattleIdle,TargetNotVisibleSoundName=Sound_NoTargetIdle)
+	InitialAnimController=1
+	ControlXParms=(ControlType=none,MyControl=none,AnimName=None,Time=0,IsControlled=false,DieOnTakeDamage=true,AssumeCanFit=false)
+	FallParms=(Mode=0,LandingThresh=0,HeavyLandingThresh=0,StartZ=0,RefId=0,AnimSet=0,ToggleIK=true)
+	GotoXParms=(TargetType=0,TargetActor=none,TargetPos=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	JumpAttackParms=(TargetActor=none,Mode=0,Type=0,AttackOnTakeoff=false,Attacked=false,AttackSuccess=false,AppliedJumpVel=false,RefId=0,FrameVelocity=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	RangeParms=(ActionPointClosestMaxTravelDist=1000,ActionPointClosestMaxTargetDist=2000,ActionPointClosestJumpableMaxTravelDist=2000,ActionPointClosestFlyerMaxTravelDist=7500)
+	ShrunkParms=(bRunFromBiggerEnemies=true,MinSafeDistanceFromBigEnemy=500)
+	MultiAnimIndex=-1
+	TeleportParms=(Destination=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	RappelParms=(StartAnimName=Anim_RappelStart,IdleAnimName=Anim_RappelIdle,EndAnimName=Anim_RappelEnd,BoneName=Root,GravityScale=0,bOverrideAttachToInfo=false,AttachToActor=none,AttachToBone=None,BeamSystemClass='AIRappelBeamSystem',MyBeamSystem=none,Mode=0)
+	bPlayDeathSound=true
+	ShowPain=true
+	ThrownObjectDeathAnimChance=0.4
+	FinishMeControlType='dnControl_FinishingMove'
+	FaceDamage=true
+	FaceDeath=true
+	ExpandPopSound=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=Creature,SimpleSingleSound=none,Sounds=('a_impact.body.Head_InfExplode_01'),SlotPriority=0,VolumePrefab=0,Slots=none,Volume=1,VolumeVariance=0,InnerRadius=512,InnerRadiusVariance=0,Radius=8192,RadiusVariance=0,Pitch=1,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=false,bNoScale=false,bSpoken=false,bPlayThroughListener=false,bNoDoppler=false,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),Velocity3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	bMeleeResetPainOpGate=true
+	MinPainOpInterval=2
+	RndPainOpInterval=2
+	MaxConsecutivePainOp=3
+	MaxConsecutivePainInterval=3
+	PainImpulseMinDamage=-1
+	ProcFireStates(0)=GotoX
+	ProcFireOps(0)=85
+	ProcFireOps(1)=86
+	ProcFireOps(2)=100
+	CanProcFire=true
+	ProcFireMaxTimeSinceSeen=2.5
+	MinMovingFireInterval=1.2
+	RndMovingFireInterval=0.6
+	StartTickDisabled=true
+	TryGotoAttackTime=1
+	MaxTravelDist=700
+	MinIdleTime=-1
+	RndIdleTime=-1
+	MinAggressiveIdleTime=-1
+	RndAggressiveIdleTime=-1
+	MinPauseTime=1
+	MinStunTime=1
+	ShouldTurnThreshold=25
+	FaceThreshold=2
+	WalkSpeedScale=0.3
+	RunSpeedScale=1
+	StepBackwardsSpeedThresh=10
+	StartAngleSideSector=45
+	StartAngleBackSector=135
+	MoveBackwardsDistThresh=6
+	SideStepDistThresh=6
+	WalkDistThresh=500
+	GotoPosRange=0.5
+	GotoPosHeight=100
+	GotoPosFlyingRange=20
+	GotoPosFlyingHeight=20
+	MinDistToGoal=5
+	MinMoveAroundDist=30
+	RndMoveAroundDist=80
+	MinBackOffDist=80
+	RndBackOffDist=50
+	MinMoveSideDist=40
+	RndMoveSideDist=60
+	MinSpreadOutTime=0.1
+	RndSpreadOutTime=0.5
+	RndMeleeRange=10
+	RndMeleeHeight=30
+	MaxGotoMeleeSteps=-1
+	MeleeZone=100
+	MeleeZoneHeight=100
+	MinMeleeStrafeRange=20
+	RndMeleeStrafeRange=20
+	MinMeleeStrafeCycles=2
+	RndMeleeStrafeCycles=2
+	MeleeAttackRange=30
+	MeleeAttackArc=0.35
+	BiteDamageAmount=8
+	BiteDamageVel=(X=1.298303E-41,Y=3.778757E-17,Z=0)
+	ClawDamageAmount=8
+	ClawDamageVel=(X=1.298303E-41,Y=3.778757E-17,Z=0)
+	KickDamageAmount=20
+	KickDamageVel=(X=1.298303E-41,Y=3.778757E-17,Z=0)
+	ForcedStompIndex=-1
+	DodgeInfo(0)=(AnimName=Anim_DodgeLeft,PhysicsFrameVelocity=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	DodgeInfo(1)=(DodgeType=1)
+	DodgeInterval=1
+	PlayerShrunkFootstepViewShake=(bNoLerp=false,bToggleSign=true,Style=2,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.6,ShakeFrequency=0.08,ShakeMagnitude=150,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=PlayerShrunkAIFootStep)
+	MinChargeRange=120
+	MaxChargeRange=250
+	MaxChargeHeightDelta=50
+	MinChargeAttackRange=30
+	MaxChargeAttackRange=40
+	MaxChargeSteps=5
+	MinWeaponStrafeCycles=2
+	RndWeaponStrafeCycles=3
+	bShootProjectileRequireLOS=true
+	bShootProjectileFaceTarget=true
+	MaxAirAttackHeight=300
+	MaxJumpAttackRange=180
+	MaxJumpAttackHeight=100
+	JumpVel=(X=1.298303E-41,Y=3.778706E-17,Z=0)
+	FallDistThresh=6
+	LandingThresh=50
+	HeavyLandingThresh=170
+	ChanceLand=1
+	DoJetPackWobble=true
+	CanOpenDoors=true
+	MaxThreatAimAngle=1
+	MoveAroundTime=1
+	RndMoveAroundTime=7
+	HaywireMinDuration=0.33
+	HaywireMaxDuration=3
+	HaywireLinearAccel=(X=1.298303E-41,Y=3.778791E-17,Z=0)
+	HaywireLinearAccelVar=(X=1.298303E-41,Y=3.778748E-17,Z=0)
+	HaywireAngularAccel=(X=1.298303E-41,Y=3.778765E-17,Z=400)
+	HaywireAngularAccelVar=(X=1.298303E-41,Y=3.77868E-17,Z=100)
+	ChanceSayPain=1
+	PainSoundRndInterval=1
+	DynamicPathingPriority=1
+	GroundConstraintScalerOverride=-1
+	EvalGateOverride=-99
+	bAutoStartWeaponTargetEval=true
+	bAutoStartLookTargetEval=true
+	bAutoStartDecisionTree=true
+	PathingHistoryMaxSize=5
+	bPhysicsControllerActive=true
+	bHideDeactivatedWeapons=false
+	bWeaponsActive=true
+	NoDecorationPain=true
+	FootstepSimple=true
+	bPlayPickupSounds=false
+	FootprintType=6
+	Faction='Engine.AIFactionAlien'
+	FieldOfView=-0.7
+	PawnRotationRate=(Pitch=1073750578,Yaw=574554112,Roll=32768)
+	EyeBone=nose
+	PickupMountBone=mount_carryitem
+	PissEffectClass='dnParticles.dnPissFX_Male'
+	MaxStepHeightEx=20.08
+	GroundSpeed=200
+	AirSpeed=200
+	ShrunkUseStyle=2
+	AutoRegisterIKClasses(0)=none
+	bNoDamage=true
+	bStartEnabled=true
+	bCanCrushOthers=false
+	KRestitution=0
+	KLinearDamping=0
+	EnableDisableThreshold=0
+	CrushResistance=-1
+	Physics=18
+	bIsAIActor=true
+	bCanExistOutOfWorld=true
+	bTickOnlyZoneRecent=true
+	bLowerByCollision=true
+	bAnimEarlyEnd=true
+	CollisionRadius=17
+	TickZoneRecentTime=5
+	TickNearbyRadius=2000
+	DrawType=2
+	SoundVolume=225
+	SoundRadius=2048
+	SoundInnerRadius=512
+	TransientSoundVolume=0.8
+	TransientSoundRadius=2048
 }

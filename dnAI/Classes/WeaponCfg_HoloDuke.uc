@@ -10,7 +10,11 @@ class WeaponCfg_HoloDuke extends WeaponCfg
 
 defaultproperties
 {
-	Cfg(0)=(Code=class'AIActor',Cond=/* Unknown default property type! */,ChargeWeapon=false,WeaponChargeTime=0,Min=0,Max=50,IdealMin=5,IdealMax=20,ReloadThresh=0,MinShots=0,RndShots=0,MinVolleyInterval=0,RndVolleyInterval=0,StandingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	Cfg(0)=(Wpn=none,ChargeWeapon=false,WeaponChargeTime=0,Min=0,Max=50,IdealMin=5,IdealMax=20,ReloadThresh=0,MinShots=0,RndShots=0,MinVolleyInterval=0,RndVolleyInterval=0,StandingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 	Cfg(1)=(CrouchingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 	Cfg(2)=(ProneFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	Cfg(3)=(PipeBombFireOffset=(X=-5.862289E-10,Y=3.778582E-17,Z=-23.111),Z=39.06)
+	PreferredWeapons(0)='MachineGun_HoloDuke'
+	PreferredWeapons(1)='Shotgun_HoloDuke'
+	PreferredWeapons(2)='Pistol_HoloDuke'
 }

@@ -10,11 +10,21 @@ class WeaponCfg_DukeClone extends WeaponCfg
 
 defaultproperties
 {
-	Cfg(0)=(StartingBlendAlpha=class'AIActor',Cond=/* Unknown default property type! */,ChargeWeapon=false,WeaponChargeTime=0,Min=0,Max=50,IdealMin=5,IdealMax=20,ReloadThresh=0,MinShots=0,RndShots=0,MinVolleyInterval=0,RndVolleyInterval=0,StandingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	Cfg(0)=(Wpn=none,ChargeWeapon=false,WeaponChargeTime=0,Min=0,Max=50,IdealMin=5,IdealMax=20,ReloadThresh=0,MinShots=0,RndShots=0,MinVolleyInterval=0,RndVolleyInterval=0,StandingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 	Cfg(1)=(CrouchingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 	Cfg(2)=(ProneFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 	Cfg(3)=(PipeBombFireOffset=(X=-5.862289E-10,Y=3.778582E-17,Z=-23.111),Z=39.06)
 	Cfg(4)=(HideWhenMultipleHolstered=false,ActionPointDistance=0,ClearShotRequirement=0,MeleeFrozenTargets=false)
 	Cfg(5)=(Wpn='Pistol_DukeClone',ChargeWeapon=false,WeaponChargeTime=0,Min=100,Max=1000,IdealMin=200,IdealMax=600,ReloadThresh=1,MinShots=7,RndShots=0,MinVolleyInterval=0.2,RndVolleyInterval=0,StandingFireOffset=(X=1.298303E-41,Y=3.778614E-17,Z=0),Z=21)
 	Cfg(6)=(CrouchingFireOffset=(X=1.298303E-41,Y=3.778609E-17,Z=0),Z=2)
+	Cfg(7)=(ProneFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	Cfg(8)=(PipeBombFireOffset=(X=1.139136E-21,Y=3.778577E-17,Z=-25.864),Z=36.248)
+	PreferredWeapons(0)='MachineGun_DukeClone'
+	PreferredWeapons(1)='Shotgun_DukeClone'
+	PreferredWeapons(2)='Pistol_DukeClone'
+	PreferredWeapons(3)='Devastator_DukeClone'
+	PreferredWeapons(4)='RPG_DukeClone'
+	PreferredWeapons(5)='Railgun_DukeClone'
+	PreferredWeapons(6)='FreezeRay_DukeClone'
+	PreferredWeapons(7)='Shrinkray_DukeClone'
 }

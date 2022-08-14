@@ -11,4 +11,8 @@ defaultproperties
 {
 	DestroyedPrePivot=(X=1.298303E-41,Y=3.773024E-17,Z=-20)
 	bSurviveDeath=false
+	SpawnOnDestroyed(0)=(SpawnClass='BattleLord_Armor_Gibs',RenderObject='sm_armor.BattleLord_Armor.battlelord_armor2_GIB_A',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=-2.131007E+29,Y=3.778219E-17,Z=24.80522),Z=27.33974)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	StaticMesh='sm_armor.BattleLord_Armor.battlelord_armor3'
 }

@@ -27,8 +27,11 @@ simulated function bool DamageTypeCanGib(class<DamageType> DamageType)
 
 defaultproperties
 {
-	BoneConstraints=/* Array type was not detected. */
-	OtherBoneName=None
-	ConstraintClass=none
-	Constraint=none
+	BoneConstraints(0)=(BoneName=Root,Other=none,OtherBoneName=None,ConstraintClass=none,Constraint=none)
+	ExitWoundInfo(0)=(DamageType=none,MinimumDamage=1,RandomChance=0.5,ExitWoundDecalClass='dnGame.dnExitWound_Human')
+	DynamicInteractionClassification=0
+	Physics=18
+	bBlockKarma=true
+	bCanExistOutOfWorld=true
+	Mass=120
 }

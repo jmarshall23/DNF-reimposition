@@ -68,5 +68,21 @@ function GetSpawnLocationRoation(out Vector SpawnLocation, out Rotator SpawnRota
 
 defaultproperties
 {
-	DecoActivities_Default=/* Array type was not detected. */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(MortarContract),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Cycloid_MortarLauncher.DA_CycloidMortar_Contract'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(MortarExtend),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'Cycloid_MortarLauncher.DA_CycloidMortar_Extend'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	HealthPrefab=0
+	bTraceUsable=false
+	bAITransparent=true
+	bBlockActors=false
+	bBlockKarma=false
+	bBlockParticles=false
+	bBlockCamera=false
+	bCastStencilShadows=false
+	bStepUpAble=false
+	bCollideWorld=false
+	CollisionRadius=5
+	CollisionHeight=5
+	DrawType=2
+	StaticMesh='sm_armor.Cycloid_Emperor.Cycloid_Emperor_Mortor'
+	Mesh='c_dnWeapon.cycloid_mortar'
 }

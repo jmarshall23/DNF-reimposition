@@ -39,15 +39,19 @@ defaultproperties
 	DamageRadius=90
 	DamageClass='Engine.CrushingDamage'
 	ShakeScalar=2
-	ShakeInfo=/* Array type was not detected. */
-	BlendTotalTime=3
-	Function=0
-	FalloffActor=none
-	FalloffDistance=0
-	ShakeDuration=0.5
-	ShakeFrequency=0.05
-	ShakeMagnitude=300
-	ShakeFullMagnitude=0
-	ShakeFullMagnitudeTime=0
-	ShakeName=dnRocket_BrainBlast_Shake
+	ShakeInfo(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.5,ShakeFrequency=0.05,ShakeMagnitude=300,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=dnRocket_BrainBlast_Shake)
+	ExplosionClass='p_Creatures.EnergyLeech.LeechSpike_Explode_Spawner'
+	UnderwaterExplosionClass='p_Creatures.EnergyLeech.LeechSpike_Explode_Spawner'
+	ExplosionLight='dnGame.dnExplosionLight_RPG_HeatSeek'
+	ExplosionSoundName=Sound_BlastImpact
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.EnergyLeech.EnergyLeech_SpikeTrail_main',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	PhysicsEntityGroup=EnergyLeechPhysicsEntityGroup
+	bCastStencilShadows=false
+	CollisionRadius=30
+	CollisionHeight=30
+	DrawType=8
+	StaticMesh='sm_class_decorations.EnergyLeech.energyleech_spike'
+	SoundVolume=255
+	VoicePack='SoundConfig.Enemies.VoicePack_Octabrain'
 }

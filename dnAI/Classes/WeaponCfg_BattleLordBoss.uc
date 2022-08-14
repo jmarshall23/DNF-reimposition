@@ -10,6 +10,9 @@ class WeaponCfg_BattleLordBoss extends WeaponCfg
 
 defaultproperties
 {
-	Cfg(0)=(StateTableIndex=class'AIActor',Cond=/* Unknown default property type! */,ChargeWeapon=false,WeaponChargeTime=0,Min=0,Max=50,IdealMin=5,IdealMax=20,ReloadThresh=0,MinShots=0,RndShots=0,MinVolleyInterval=0,RndVolleyInterval=0,StandingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	Cfg(0)=(Wpn=none,ChargeWeapon=false,WeaponChargeTime=0,Min=0,Max=50,IdealMin=5,IdealMax=20,ReloadThresh=0,MinShots=0,RndShots=0,MinVolleyInterval=0,RndVolleyInterval=0,StandingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 	Cfg(1)=(CrouchingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	Cfg(2)=(ProneFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	PreferredWeapons(0)='dnGame.MiniGun_BL'
+	PreferredWeapons(1)='dnGame.MachineGun_Pigcop'
 }

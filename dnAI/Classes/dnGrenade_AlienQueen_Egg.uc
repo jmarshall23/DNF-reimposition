@@ -44,15 +44,32 @@ defaultproperties
 	Damage=25
 	DamageRadius=60
 	ShakeScalar=1.5
-	ShakeInfo=/* Array type was not detected. */
-	BlendTotalTime=3
-	Function=0
-	FalloffActor=none
-	FalloffDistance=0
-	ShakeDuration=0.5
-	ShakeFrequency=0.05
-	ShakeMagnitude=200
-	ShakeFullMagnitude=0
-	ShakeFullMagnitudeTime=0
-	ShakeName=dnJizzBomb_Shake
+	ShakeInfo(0)=(bNoLerp=false,bToggleSign=false,Style=3,Function=0,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.5,ShakeFrequency=0.05,ShakeMagnitude=200,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=dnJizzBomb_Shake)
+	ExplosionSplashClass=none
+	ExplosionDecal='dnGame.dnJizzBombFX_Impact_Decal'
+	ExplosionSoundName=ProjectileExplode
+	DeferredExplosionTimer=0
+	DeferredExplosionTimerVariance=0
+	bTelekineticable=false
+	SpawnOnDestroyed(0)=(SpawnClass='Engine.Corpse_Gib',RenderObject='sm_geo_decorations.alien.EggPod_Gib1',DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0.6,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.298303E-41,Y=3.778508E-17,Z=-10),Z=5)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8754,Yaw=574554112,Roll=9216),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=None,MotionInfo=MotionPrefab'dnGrenade_AlienQueen_Egg.MP_FlyingEggpod_GibMotion')
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=true,Scale=0,BoneName=None,Location=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	bClientSidePhysics=true
+	DynamicInteractionClassification=3
+	PhysicsEntityGroup=AlienQueenEntityGroup
+	bBlockActors=false
+	bCollideActors=false
+	bCollideWorld=false
+	RotationRate=(Pitch=8754,Yaw=574554112,Roll=0)
+	Mass=10
+	DrawType=8
+	StaticMesh='sm_geo_decorations.alien.EggPod_Flying'
+	SoundVolume=128
+	SoundRadius=1600
+	SoundInnerRadius=800
+	VoicePack='SoundConfig.Inventory.VoicePack_JizzBomb'
 }

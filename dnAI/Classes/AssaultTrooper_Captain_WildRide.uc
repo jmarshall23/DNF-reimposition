@@ -20,3 +20,17 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 	PrecacheIndex.__NFUN_1282__(class'acAssaultTrooper_Combat', Mesh);
 	return;
 }
+
+defaultproperties
+{
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='AssaultTrooper_Captain_Armor_Helmet',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=true,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=Helmet,ForceEvent=None,MountMeshItem=mount_armor_3,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(5)=(bSkipVerifySelf=false,SpawnClass='AssaultTrooper_Captain_Armor_LeftForeArm',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=true,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=LeftForeArm,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(6)=(MountAngles=(Pitch=87499314,Yaw=574554112,Roll=17553),Roll=23902)
+	MountOnSpawn(7)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	Health=1000
+	HealthCap=1000
+}

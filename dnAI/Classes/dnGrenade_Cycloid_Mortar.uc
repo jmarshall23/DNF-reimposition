@@ -126,4 +126,10 @@ defaultproperties
 	SeekDistance=10000
 	Speed=900
 	ExplosionClass='p_Creatures.cycloid.Cycloid_CarpetbombBreakaway_Spawner'
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='dnGame.Weapon_LightEx_Rocket_HeatSeek',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.298303E-41,Y=3.789392E-17,Z=0),Z=-6),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8754,Yaw=574554112,Roll=0),Roll=-16384)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=0,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	StaticMesh='sm_class_decorations.AlienGrenade.AlienGrenade'
 }

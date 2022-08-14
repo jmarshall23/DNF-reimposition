@@ -253,19 +253,19 @@ final function StartProcAiming()
 	return;
 }
 
-k2call simulated function pauseprocaiming(optional EventInfo EventParms)
+animevent simulated function pauseprocaiming(optional EventInfo EventParms)
 {
 	bProcAimingPaused = true;
 	return;
 }
 
-k2call simulated function startheadaim(optional EventInfo EventParms)
+animevent simulated function startheadaim(optional EventInfo EventParms)
 {
 	bProcAimingEnabledPitch = true;
 	return;
 }
 
-k2call simulated function stopheadaim(optional EventInfo EventParms)
+animevent simulated function stopheadaim(optional EventInfo EventParms)
 {
 	// End:0x11
 	if(bProcAimingEnabledPitch)

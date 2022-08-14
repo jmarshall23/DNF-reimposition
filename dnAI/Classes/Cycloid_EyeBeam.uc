@@ -68,8 +68,21 @@ defaultproperties
 	BeamTextureScaleX=0.025
 	BeamTexturePanX=64
 	BeamTextureRotate=90
-	BeamSegments=/* Array type was not detected. */
-	Cond=/* Unknown default property type! */
-	GotoNearTarget=/* Unknown default property type! */
-	acBugball_WallSocket=/* Unknown default property type! */
+	BeamSegments(0)=(Lifetime=999999,Actor1=none,Actor2=none,Location1=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	BeamType=0
+	bBeamOnlyCheckDynamicShootable=true
+	bForceNonFinalBlendBlooms=true
+	NonFinalBlendBloomTint=(B=87,G=5,R=1,A=255)
+	Physics=9
+	bTraceShootable=false
+	bCanExistOutOfWorld=true
+	bDumbMesh=false
+	bTickOnlyRecent=false
+	bTickOnlyZoneRecent=false
+	CollisionRadius=2
+	CollisionHeight=2
+	TickStyle=3
+	Style=6
+	AlphaSortGroup=8
+	VoicePack='SoundConfig.Interactive.VoicePack_Decorations'
 }

@@ -33,5 +33,7 @@ defaultproperties
 {
 	NumSecondaryTKCatchAnims=0
 	ClawDamageAmount=30
-	Skins=/* Array type was not detected. */
+	Skins(0)=none
+	Skins(1)=none
+	Skins(2)=none
 }

@@ -413,7 +413,7 @@ function SuctionOff()
 	return;
 }
 
-k2call simulated function unhide(optional EventInfo EventParms)
+animevent simulated function unhide(optional EventInfo EventParms)
 {
 	bNoDamage = false;
 	__NFUN_590__(false);
@@ -475,7 +475,7 @@ event name GetShootProjectileAnimName()
 	return;
 }
 
-k2call simulated function ShootProjectile(optional EventInfo AnimEventInfo)
+animevent simulated function ShootProjectile(optional EventInfo AnimEventInfo)
 {
 	ProjectileClass.default.Damage = SpitAttackDamage;
 	// End:0x38
@@ -596,7 +596,7 @@ function CheckSuckBiteAttack(float DeltaSeconds)
 	return;
 }
 
-k2call simulated function SuckBite(optional EventInfo EventParms)
+animevent simulated function SuckBite(optional EventInfo EventParms)
 {
 	local Actor HurtRadiusActor;
 	local Vector SuckBiteAttackOrigin;
@@ -638,7 +638,7 @@ function Engine.BaseAI.EAICode COND_ShouldBiteAttack()
 	return;
 }
 
-k2call simulated function Biteattack(optional EventInfo AnimEventInfo)
+animevent simulated function Biteattack(optional EventInfo AnimEventInfo)
 {
 	local Actor HurtRadiusActor, ClosestActor;
 	local float DistSq, BestDistSq;
@@ -699,7 +699,7 @@ simulated function bool CanHurtRadiusOther(Actor Other)
 	return;
 }
 
-k2call simulated function Slamattack(optional EventInfo AnimEventInfo)
+animevent simulated function Slamattack(optional EventInfo AnimEventInfo)
 {
 	local Actor HurtRadiusActor, ClosestActor;
 	local float DistSq, BestDistSq;
@@ -762,13 +762,13 @@ function DoSlamEffect()
 	return;
 }
 
-k2call simulated function DeathSlam(optional EventInfo AnimEventInfo)
+animevent simulated function DeathSlam(optional EventInfo AnimEventInfo)
 {
 	DoSlamEffect();
 	return;
 }
 
-k2call simulated function EnableSlamAttackDamage(optional EventInfo AnimEventInfo)
+animevent simulated function EnableSlamAttackDamage(optional EventInfo AnimEventInfo)
 {
 	bAllowSlamAttackDamage = true;
 	// End:0x35
@@ -779,7 +779,7 @@ k2call simulated function EnableSlamAttackDamage(optional EventInfo AnimEventInf
 	return;
 }
 
-k2call simulated function DisableSlamAttackDamage(optional EventInfo AnimEventInfo)
+animevent simulated function DisableSlamAttackDamage(optional EventInfo AnimEventInfo)
 {
 	bAllowSlamAttackDamage = false;
 	// End:0x36
@@ -925,13 +925,13 @@ function HurtRadiusActivity(Actor DamageInstigator, float DamageAmount, Vector D
 	return;
 }
 
-k2call simulated function AllowPain(optional EventInfo EventParms)
+animevent simulated function AllowPain(optional EventInfo EventParms)
 {
 	CurrentOpMustFinish = false;
 	return;
 }
 
-k2call simulated function nopain(optional EventInfo EventParms)
+animevent simulated function nopain(optional EventInfo EventParms)
 {
 	CurrentOpMustFinish = true;
 	return;
@@ -1088,7 +1088,7 @@ function SensedPlayer(EnergyLeech_Boss_HurtRadiusSensor Sensor, PlayerPawn P)
 	return;
 }
 
-k2call simulated function FailDamage(optional EventInfo AnimEventInfo)
+animevent simulated function FailDamage(optional EventInfo AnimEventInfo)
 {
 	// End:0x87
 	if(__NFUN_148__(__NFUN_340__(ControlXParms.MyControl, none), __NFUN_340__(ControlXParms.MyControl.User, none)))
@@ -1279,7 +1279,118 @@ defaultproperties
 	SlamEffectOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0)
 	MeleeAnim=Anim_AttackSingle
 	ExplosionParticleSystem='p_Creatures.EnergyLeech.LeechExplode_Spawner'
-	GibRenderObjects(0)=ObjectProperty'AIActor.PrimaryTarget'
-	Cond=114164198
-	Ident[6]=/* Unknown default property type! */
+	GibRenderObjects(0)='sm_class_decorations.EnergyLeech.Leech_Gib_1'
+	GibRenderObjects(1)='sm_class_decorations.EnergyLeech.Leech_Gib_2'
+	GibRenderObjects(2)='sm_class_decorations.EnergyLeech.Leech_Gib_3'
+	GibRenderObjects(3)='sm_class_decorations.EnergyLeech.Leech_Gib_4'
+	StrengthTapTimeout=10
+	StrengthTapFailDamage=70
+	bProcAimingEnabled=true
+	ProcAimingVelocityPitchRampTime=2
+	ProcAimingVelocityYawRampTime=2
+	DamageScaleInfo(0)=(QualifierClass=none,DamageScale=0,QualifierDamageTypes=none,QualifierNotDamageTypes=('Engine.ExplosionDamage','dnGame.LargeCaliberBulletDamage'))
+	Nodes(0)=(Ident=Root,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(1)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(2)=(Ident=Pain,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=96,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(3)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(4)=(Ident=StartupIdle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(5)=(Ident=MeleeAttack,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=92,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(6)=(Ident=Spit,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=117,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(7)=(Ident=SuckAttack,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=95,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	FSMStates(0)=(FSM=Root,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=StartupIdle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(1)=(FSM=Root,Ident=StartupIdle,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=StartupIdle,Cond=0,Func=COND_ShouldPlayStartupIdle,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(2)=(FSM=Root,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Spit,Cond=0,Func=COND_ShouldForceSpit,Win=0,Code=0,StateTableIndex=0),(Ident=MeleeAttack,Cond=0,Func=COND_ShouldBiteAttack,Win=0,Code=0,StateTableIndex=0),(Ident=SuckAttack,Cond=0,Func=COND_ShouldSuckAttack,Win=0,Code=0,StateTableIndex=0),(Ident=MeleeAttack,Cond=0,Func=COND_ShouldSlamAttack,Win=0,Code=0,StateTableIndex=0),(Ident=Spit,Cond=0,Func=COND_ShouldSpitAttack,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(3)=(FSM=Root,Ident=Pain,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(4)=(FSM=Root,Ident=MeleeAttack,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(5)=(FSM=Root,Ident=Spit,FSMSucc=false,FSMFail=false,Transitions=((Ident=Spit,Cond=0,Func=COND_ShouldKeepSpitting,Win=1,Code=0,StateTableIndex=0),(Ident=Pain,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(6)=(FSM=Root,Ident=SuckAttack,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	ForceDirectShot=true
+	Relationships(0)=(m_aClass='Engine.AIFactionHoloduke',m_eAttitude=1,m_fDamageThreshold=1)
+	Relationships(1)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(2)=(m_aClass='Engine.AIFactionHuman',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(3)=(m_aClass='Engine.AIFactionAlien',m_eAttitude=5,m_fDamageThreshold=1)
+	AnimControllers[0]=(m_eFallback=0,m_cClass='acEnergyLeechBoss',m_oController=none)
+	AnimControllers[1]=(m_eFallback=1,m_cClass='acEnergyLeechBoss',m_oController=none)
+	AnimControllers[2]=(m_eFallback=1,m_cClass='acEnergyLeechBoss',m_oController=none)
+	AnimControllers[3]=(m_eFallback=1,m_cClass='acEnergyLeechBoss',m_oController=none)
+	AnimControllers[4]=(m_eFallback=1,m_cClass='acEnergyLeechBoss',m_oController=none)
+	AnimControllers[5]=(m_eFallback=1,m_cClass='acEnergyLeechBoss',m_oController=none)
+	AnimControllers[6]=(m_eFallback=1,m_cClass='acEnergyLeechBoss',m_oController=none)
+	AnimControllers[7]=(m_eFallback=1,m_cClass='acEnergyLeechBoss',m_oController=none)
+	AnimControllers[8]=(m_eFallback=1,m_cClass='acEnergyLeechBoss',m_oController=none)
+	ControlXParms=(ControlType=none,MyControl=none,AnimName=None,Time=0,IsControlled=false,DieOnTakeDamage=false,AssumeCanFit=false)
+	MultiAnimParms(0)=(AnimIndex=0,MinTime=4,RndTime=1,Gate=0,MinInterval=3,RequireLOS=false,RequireLOSFromWeapon=false,FaceTarget=false,AnimName=Anim_Suction)
+	DeathAnimChance=1
+	FinishMeControlType='dnControl_EnergyLeech_Boss_BattleFinish'
+	FaceDamage=false
+	FaceDeath=false
+	BoneAim(0)=(BoneName=body_09,Yaw=0,Pitch=0,Weight=0.2)
+	BoneAim(1)=(BoneName=body_10,Yaw=0,Pitch=0,Weight=0.2)
+	BoneAim(2)=(BoneName=body_11,Yaw=0,Pitch=0,Weight=0.2)
+	BoneAim(3)=(BoneName=body_12,Yaw=0,Pitch=0,Weight=0.2)
+	BoneAim(4)=(BoneName=body_13,Yaw=0,Pitch=0,Weight=0.2)
+	MuzzleBoneAim(0)=(BoneName=body_18,Yaw=0,Pitch=0,Weight=0.5)
+	MuzzleBoneAim(1)=(BoneName=body_19,Yaw=0,Pitch=0,Weight=0.5)
+	ProjectileClass='dnRocket_EnergyLeech_Spike'
+	ProjectileMuzzleName=head_04
+	MinProjectileFireInterval=3
+	bShootProjectileRequireLOS=false
+	bShootProjectileFaceTarget=false
+	bSimplePawnPhysicsCollision=false
+	bShrinkable=false
+	bIgnoreAimAssist=true
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='dnDecorations.Biology_Generic_EnergyLeech_SuctionFunnel',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=head_03,MountOrigin=(X=-4.540732E-36,Y=3.789383E-17,Z=-3.205588),Z=21.095),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=962732594,Yaw=574554112,Roll=-28372),Roll=-88)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(5)=(bSkipVerifySelf=false,SpawnClass='EnergyLeech_AimAssistHelper',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=HurtRadiusActor,ForceEvent=None,MountMeshItem=head_04,MountOrigin=(X=-5.820682E-25,Y=3.77854E-17,Z=-54.62811),Z=-39.84818),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(6)=(MountAngles=(Pitch=457515570,Yaw=574554112,Roll=18632),Roll=-17715)
+	MountOnSpawn(7)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(8)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(9)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(10)=(bSkipVerifySelf=false,SpawnClass='EnergyLeech_Boss_HurtRadiusSensor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=ProjectileSpawn,ForceEvent=None,MountMeshItem=head_04,MountOrigin=(X=-5.820682E-25,Y=3.77854E-17,Z=-54.62811),Z=-39.84818),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(11)=(MountAngles=(Pitch=457515570,Yaw=574554112,Roll=18632),Roll=-17715)
+	MountOnSpawn(12)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(13)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(14)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(15)=(bSkipVerifySelf=false,SpawnClass='EnergyLeech_Boss_HurtRadiusSensor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=head_03,MountOrigin=(X=-2.761329E+14,Y=3.789309E-17,Z=1.774709),Z=14.47402),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(16)=(MountAngles=(Pitch=-1070259662,Yaw=574619647,Roll=3825),Roll=683)
+	MountOnSpawn(17)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(18)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(19)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(20)=(bSkipVerifySelf=false,SpawnClass='EnergyLeech_Boss_HurtRadiusSensor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=head_02,MountOrigin=(X=1.144243E-20,Y=3.778292E-17,Z=3.62816),Z=-17.50162),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(21)=(MountAngles=(Pitch=-1051188686,Yaw=574619647,Roll=5624),Roll=-862)
+	MountOnSpawn(22)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	Health=1400
+	HealthCap=1400
+	SpawnOnDestroyed(0)=(SpawnClass='p_Creatures.EnergyLeech.EnergyLeech_Death',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=true,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=head_03,MotionInfo='Engine.RenderActor.MP_NoMotion')
+	SpawnOnDestroyed(6)=(SpawnClass='p_Creatures.EnergyLeech.EnergyLeech_Death',RenderObject=none,DrawScale=0,DrawScaleVariance=0,DrawScale3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	SpawnOnDestroyed(7)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=true,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	SpawnOnDestroyed(8)=(OffsetVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	SpawnOnDestroyed(9)=(Rotation=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=true,Scale=1.5,BoneName=head_02,Location=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(1)=(Rotation=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(2)=(Effect='p_Weapons.PipeBomb_Explosion_Underwater.PipeBomb_Explosion_Underwater_Spawner')
+	DestroyedParticleFriendEffects(3)=(bAbsoluteLocation=false,bAbsoluteRotation=true,Scale=1.5,BoneName=head_02,Location=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(4)=(Rotation=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(5)=(Effect='p_Weapons.DepthCharge.DepthCharge_Spawner')
+	DestroyedParticleFriendEffects(6)=(bAbsoluteLocation=false,bAbsoluteRotation=true,Scale=1.5,BoneName=body_19,Location=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(7)=(Rotation=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(8)=(Effect='p_Weapons.PipeBomb_Explosion_Underwater.PipeBomb_Explosion_Underwater_Spawner')
+	DestroyedParticleFriendEffects(9)=(bAbsoluteLocation=false,bAbsoluteRotation=true,Scale=1.5,BoneName=body_19,Location=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	StaticInteractionClassification=8
+	PhysicsEntityGroup=EnergyLeechPhysicsEntityGroup
+	Physics=9
+	bAcceptMeshAccurateMoveActorTrace=true
+	CollisionRadius=0
+	CollisionHeight=0
+	Mass=2000
+	Mesh='c_characters.EnergyLeech'
+	VoicePack='SoundConfig.Enemies.VoicePack_Leech'
 }

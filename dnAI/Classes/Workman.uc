@@ -32,5 +32,6 @@ defaultproperties
 	HasLookTargetEvaluator=true
 	LookTargetEvalInfo=(MyOwner=none,EvalInterval=0.5,Suspended=false,bSuspendedWithNoTarget=false,Evaluator=2,ForceUpdate=false,MustBePawn=false,MustBeSighted=false,MustBeReachable=false,CanTargetProjectiles=false,CanAvoidTargetableProjectiles=false,LastTarget=none,LastTargetEndTime=0)
 	DisableAimGrids=true
-	AutoRegisterIKClasses=/* Array type was not detected. */
+	AutoRegisterIKClasses(0)='Engine.IKSystemInfo_Walker'
+	VoicePack='SoundConfig.NPCs.VoicePack_Workman'
 }

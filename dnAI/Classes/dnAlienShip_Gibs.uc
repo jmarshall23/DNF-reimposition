@@ -51,5 +51,25 @@ event KImpact(name SelfBoneName, KarmaActor Other, name OtherBoneName, Vector Po
 
 defaultproperties
 {
-	Gibs=/* Array type was not detected. */
+	Gibs(0)=(RenderObject='sm_class_vehicles.Aircraft.AlienTroopCarrier_GIB2',bForcedOnly=false)
+	begin object name=DA_Sound_AlienShip_Gibs_Amb class=DecoActivities_Sound
+		SoundNames(0)=GibAmbience
+	object end
+	// Reference: DecoActivities_Sound'dnAlienShip_Gibs.DA_Sound_AlienShip_Gibs_Amb'
+	StartupActivities(0)=DA_Sound_AlienShip_Gibs_Amb
+	HealthPrefab=5
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Vehicles.Alien_Fighter_Damaged.FlybyPlane_Damaged_Main',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=CRASHING_EFFECT,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	Health=50
+	bIgnoresPhysicsDamage=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid'
+	KRestitution=0.01
+	GravityScale=2
+	DamageScaler=0
+	PhysicsEntityGroup=dnAlienShip_Gibs
+	Physics=18
+	bBlockActors=false
+	bBlockKarma=true
+	Mass=25000
+	DrawType=8
+	StaticMesh='sm_class_vehicles.Aircraft.AlienTroopCarrier_GIB2'
 }

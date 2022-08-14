@@ -1052,5 +1052,15 @@ defaultproperties
 	MaxHistory=20
 	ShowPass=true
 	ShowFail=true
-	DebugTreeItems=/* Array type was not detected. */
+	DebugTreeItems(0)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=SpawnDude,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(1)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=SpawnDude2,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(2)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=SpawnDudeAtLoc,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(3)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Export_FSM,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(4)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=SaveTXT_FSM,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(5)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Create_FSM,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(6)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=PopulateDebugTree,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(7)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Export_OPNodes,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(8)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=GenLinearTrans,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(9)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=DrawTrans,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	Tag=AIBrainHUD
 }

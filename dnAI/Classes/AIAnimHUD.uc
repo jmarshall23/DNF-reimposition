@@ -564,7 +564,31 @@ function Enable_SinglePlay()
 defaultproperties
 {
 	AnimEntryInfoIndex=-1
-	
-	Cond=255
-	A=0
+	ColorTable(0)=(R=255,G=255,B=255,A=0)
+	ColorTable(1)=(R=255,G=0,B=0,A=0)
+	ColorTable(2)=(R=0,G=255,B=0,A=0)
+	ColorTable(3)=(R=0,G=0,B=255,A=0)
+	ColorTable(4)=(R=255,G=255,B=0,A=0)
+	ColorTable(5)=(R=255,G=0,B=255,A=0)
+	ColorTable(6)=(R=0,G=255,B=255,A=0)
+	ColorTable(7)=(R=255,G=128,B=64,A=0)
+	ColorTable(8)=(R=64,G=128,B=255,A=0)
+	ColorTable(9)=(R=128,G=64,B=255,A=0)
+	ColorTable(10)=(R=64,G=255,B=128,A=0)
+	bDrawDiamonds=true
+	bDrawTargetCylinder=true
+	AnimSinglePlay=true
+	bActiveTargeting=true
+	DebugTreeItems(0)=(Text="Options",ConsoleCommand="",TriggerEvent=None,Func=None,Pop=false,Push=true,bHideChildren=true,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(1)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Draw_TargetCollisionCyclinder,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(2)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=DebugSearch,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(3)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Show_ProgrammerNames,Pop=true,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(4)=(Text="Inspect_Playing_Animations",ConsoleCommand="",TriggerEvent=None,Func=Inspect_Playing_Animations,Pop=false,Push=true,bHideChildren=true,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(5)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Hide_Cylinder,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(6)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Single_Target,Pop=true,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(7)=(Text="Playback",ConsoleCommand="",TriggerEvent=None,Func=None,Pop=false,Push=true,bHideChildren=true,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(8)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Enable_Queuing,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(9)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Play_Queue,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(10)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Clear_Queue,Pop=true,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(11)=(Text="Browse_AnimController",ConsoleCommand="",TriggerEvent=None,Func=Browse_AnimController,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=10,ChildrenOffset=0)
 }

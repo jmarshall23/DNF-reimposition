@@ -598,7 +598,7 @@ final function Vector GetShockwaveSpawnPos()
 	return;
 }
 
-k2call simulated function Shockwave(optional EventInfo AnimEventInfo)
+animevent simulated function Shockwave(optional EventInfo AnimEventInfo)
 {
 	local Cycloid_Shockwave Shockwave;
 	local Cycloid_Shockwave_Sensor Sensor;
@@ -848,13 +848,13 @@ final function SetupMortarSearch()
 	return;
 }
 
-k2call simulated function ExtendMortar(optional EventInfo AnimEventInfo)
+animevent simulated function ExtendMortar(optional EventInfo AnimEventInfo)
 {
 	MortarLauncher.Extend();
 	return;
 }
 
-k2call simulated function LaunchMortar(optional EventInfo AnimEventInfo)
+animevent simulated function LaunchMortar(optional EventInfo AnimEventInfo)
 {
 	local dnGrenade_Cycloid_Mortar Mortar;
 	local Vector SpawnLocation;
@@ -881,13 +881,13 @@ k2call simulated function LaunchMortar(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function ContractMortar(optional EventInfo AnimEventInfo)
+animevent simulated function ContractMortar(optional EventInfo AnimEventInfo)
 {
 	MortarLauncher.Contract();
 	return;
 }
 
-k2call simulated function EndEyeBeam(optional EventInfo AnimEventInfo)
+animevent simulated function EndEyeBeam(optional EventInfo AnimEventInfo)
 {
 	FindAndStopSound('Sound_Scan', 3);
 	EyeBeam.DeactivateBeam();
@@ -957,20 +957,20 @@ final function SetupBeamAttack()
 	return;
 }
 
-k2call simulated function beamattackwarmup(optional EventInfo AnimEventInfo)
+animevent simulated function beamattackwarmup(optional EventInfo AnimEventInfo)
 {
 	EnableParticleSystem(LeftHandChargeParticleSystem);
 	EnableParticleSystem(RightHandChargeParticleSystem);
 	return;
 }
 
-k2call simulated function beamattackstart(optional EventInfo AnimEventInfo)
+animevent simulated function beamattackstart(optional EventInfo AnimEventInfo)
 {
 	ActivateBeams();
 	return;
 }
 
-k2call simulated function beamattackstop(optional EventInfo AnimEventInfo)
+animevent simulated function beamattackstop(optional EventInfo AnimEventInfo)
 {
 	DisableParticleSystem(LeftHandChargeParticleSystem);
 	DisableParticleSystem(RightHandChargeParticleSystem);
@@ -1173,7 +1173,7 @@ function DoBoneAim(out SCycloidBoneAimInfo BoneInfo, Vector TargetPos)
 	return;
 }
 
-k2call simulated function WeaponFire(optional EventInfo AnimEventInfo)
+animevent simulated function WeaponFire(optional EventInfo AnimEventInfo)
 {
 	WeaponIndex = 0;
 	WeaponInfo[WeaponIndex].MuzzleIndex = 0;
@@ -1182,7 +1182,7 @@ k2call simulated function WeaponFire(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function WeaponFireBoth(optional EventInfo AnimEventInfo)
+animevent simulated function WeaponFireBoth(optional EventInfo AnimEventInfo)
 {
 	WeaponIndex = 0;
 	WeaponInfo[WeaponIndex].MuzzleIndex = 0;
@@ -1191,7 +1191,7 @@ k2call simulated function WeaponFireBoth(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function WeaponFireLeft(optional EventInfo AnimEventInfo)
+animevent simulated function WeaponFireLeft(optional EventInfo AnimEventInfo)
 {
 	WeaponIndex = 0;
 	WeaponInfo[WeaponIndex].MuzzleIndex = 1;
@@ -1200,7 +1200,7 @@ k2call simulated function WeaponFireLeft(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function WeaponFireRight(optional EventInfo AnimEventInfo)
+animevent simulated function WeaponFireRight(optional EventInfo AnimEventInfo)
 {
 	WeaponIndex = 0;
 	WeaponInfo[WeaponIndex].MuzzleIndex = 0;
@@ -1209,7 +1209,7 @@ k2call simulated function WeaponFireRight(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function WeaponFireSecondaryRight(optional EventInfo AnimEventInfo)
+animevent simulated function WeaponFireSecondaryRight(optional EventInfo AnimEventInfo)
 {
 	WeaponIndex = 1;
 	WeaponInfo[WeaponIndex].MuzzleIndex = 0;
@@ -1218,7 +1218,7 @@ k2call simulated function WeaponFireSecondaryRight(optional EventInfo AnimEventI
 	return;
 }
 
-k2call simulated function WeaponFireSecondaryLeft(optional EventInfo AnimEventInfo)
+animevent simulated function WeaponFireSecondaryLeft(optional EventInfo AnimEventInfo)
 {
 	WeaponIndex = 1;
 	WeaponInfo[WeaponIndex].MuzzleIndex = 1;
@@ -1320,7 +1320,7 @@ function FireRocketWeapon()
 	return;
 }
 
-k2call simulated function FootStep(optional EventInfo AnimEventInfo)
+animevent simulated function FootStep(optional EventInfo AnimEventInfo)
 {
 	super(Pawn).FootStep(AnimEventInfo);
 	// End:0x47
@@ -1405,7 +1405,7 @@ final function SetNewHealth(float NewHealth)
 	return;
 }
 
-k2call simulated function FailDamage(optional EventInfo AnimEventInfo)
+animevent simulated function FailDamage(optional EventInfo AnimEventInfo)
 {
 	// End:0x87
 	if(__NFUN_148__(__NFUN_340__(ControlXParms.MyControl, none), __NFUN_340__(ControlXParms.MyControl.User, none)))
@@ -1513,7 +1513,7 @@ event NotifyOpEnded(Engine.BaseAI.EAIOp Op, Engine.BaseAI.EAIOpStatus Status)
 	return;
 }
 
-k2call simulated function DisableFinishMoveRagDollCollision()
+animevent simulated function DisableFinishMoveRagDollCollision()
 {
 	SetCollisionInterpolationTarget(50, default.CollisionHeight, 0, 0);
 	SetCollisionInterpolationTarget(default.CollisionRadius, default.CollisionHeight, 0, 3);
@@ -1570,7 +1570,7 @@ simulated function SpawnCorpse()
 	return;
 }
 
-k2call simulated function RightArmSteamEnable(optional EventInfo AnimEventInfo)
+animevent simulated function RightArmSteamEnable(optional EventInfo AnimEventInfo)
 {
 	local int i;
 
@@ -1607,7 +1607,7 @@ k2call simulated function RightArmSteamEnable(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function RightArmSteamDisable(optional EventInfo AnimEventInfo)
+animevent simulated function RightArmSteamDisable(optional EventInfo AnimEventInfo)
 {
 	local int i;
 
@@ -1625,7 +1625,7 @@ k2call simulated function RightArmSteamDisable(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function RightArmDamaged(optional EventInfo AnimEventInfo)
+animevent simulated function RightArmDamaged(optional EventInfo AnimEventInfo)
 {
 	local int i;
 
@@ -1645,7 +1645,7 @@ k2call simulated function RightArmDamaged(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function LeftArmSteamEnable(optional EventInfo AnimEventInfo)
+animevent simulated function LeftArmSteamEnable(optional EventInfo AnimEventInfo)
 {
 	local int i;
 
@@ -1682,7 +1682,7 @@ k2call simulated function LeftArmSteamEnable(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function LeftArmSteamDisable(optional EventInfo AnimEventInfo)
+animevent simulated function LeftArmSteamDisable(optional EventInfo AnimEventInfo)
 {
 	local int i;
 
@@ -1700,7 +1700,7 @@ k2call simulated function LeftArmSteamDisable(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function LeftArmDamaged(optional EventInfo AnimEventInfo)
+animevent simulated function LeftArmDamaged(optional EventInfo AnimEventInfo)
 {
 	local int i;
 
@@ -1720,7 +1720,7 @@ k2call simulated function LeftArmDamaged(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function BackSteamEnable(optional EventInfo AnimEventInfo)
+animevent simulated function BackSteamEnable(optional EventInfo AnimEventInfo)
 {
 	local int i;
 
@@ -1757,7 +1757,7 @@ k2call simulated function BackSteamEnable(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function BackSteamDisable(optional EventInfo AnimEventInfo)
+animevent simulated function BackSteamDisable(optional EventInfo AnimEventInfo)
 {
 	local int i;
 
@@ -1775,7 +1775,7 @@ k2call simulated function BackSteamDisable(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function BackDamaged(optional EventInfo AnimEventInfo)
+animevent simulated function BackDamaged(optional EventInfo AnimEventInfo)
 {
 	local int i;
 
@@ -1794,7 +1794,7 @@ k2call simulated function BackDamaged(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function EyeballSplat(optional EventInfo AnimEventInfo)
+animevent simulated function EyeballSplat(optional EventInfo AnimEventInfo)
 {
 	local Vector BoneLoc;
 
@@ -1806,13 +1806,13 @@ k2call simulated function EyeballSplat(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function StartPrePivotHack(optional EventInfo AnimEventInfo)
+animevent simulated function StartPrePivotHack(optional EventInfo AnimEventInfo)
 {
 	bPrePivotHack = true;
 	return;
 }
 
-k2call simulated function EndPrePivotHack(optional EventInfo AnimEventInfo)
+animevent simulated function EndPrePivotHack(optional EventInfo AnimEventInfo)
 {
 	bPrePivotHack = false;
 	return;
@@ -2236,201 +2236,250 @@ defaultproperties
 	RocketSpeed=900
 	RocketDamage=40
 	RocketDamageRadius=100
-	WeaponInfo(0)=(MuzzleNames=(Cond,Func),r_hand_barrel=/* Unknown default property type! */,MuzzleIndex=0,ProjectileClass='dnGame.dnRocket_Cycloid',ProjectilesPerFire=5,FireLikeGrenade=true,SoundName=Sound_FirePrimary)
-	WeaponInfo(1)=(MuzzleNames=(Cond,Func),r_arm_barrel=/* Unknown default property type! */,CreateAnimatedCorpse=/* Unknown default property type! */,AnimGridLink=/* Unknown default property type! */)
-	WeaponInfo(2)=none
-	WeaponInfo(3)=none
-	WeaponInfo(4)=(ProjectileClass='dnGame.dnRocket_Cycloid_Secondary',ProjectilesPerFire=1,FireLikeGrenade=false,SoundName=Sound_FireSecondary)
-	WeaponInfo(5)=(BoneAimInfo=/* Array type was not detected. */,BoneName=RightForeArm,BoneDir=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=1)
-	WeaponInfo(6)=(EnabledOps=/* Array type was not detected. */,StateTableIndex=123486504,SAnimChannelLink=nimC=LeftForeArm,BoneDir=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=-1)
-	WeaponInfo(7)=(EnabledOps=/* Array type was not detected. */,StateTableIndex=123486504,SAnimChannelLink=nimC=StartCloak,HumiliationCompleteEvent=Cycloid_Humiliation_Complete,ActionPointMoveMinInterval=8,ChargeEnragedMinInterval=5,ChargeMinInterval=10,ChargeImpulseMagnitude=500,ChargeImpulseLift=200,ChargeIgnoreActorList=/* Array type was not detected. */,StateTableIndex=67,a_combat_popoutbackright_fire_stop=/* Unknown default property type! */)
-	WeaponInfo(8)=
-/* Exception thrown while deserializing WeaponInfo
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	WeaponInfo(9)=ChargeMinDistance=250,ChargeHitDamage=30,ChargeCollisionHeight=150,MortarMinInterval=20,MortarSearchTime=5,MortarSearchTimeRnd=5,MortarDamage=55,MortarDamageRadius=130,ShockwaveSpawnCount=1,ShockwaveMinInterval=10,ShockwaveSpawnParticleClass='p_Creatures.Cycloid_Stomp.CycloidStomp_Spawner',ShockwaveEnabled=true,ShockwaveStage2MinTime=1,ShockwaveStage3MinTime=1.8,ShockwaveSpeed=1000,ShockwaveScale=1,ShockwaveDamage=30,BeamAttackMinInterval=20,Health_RecoveryHealth=350,Health_Stage1=800,Health_Stage2=1100,Health_Stage3=1400,Health_Stage4=1400,StrengthTapInitiateTimeout=4.5,StrengthTapTimeout=3,StrengthTapFailDamage=70,Stage1_CompleteEvent=Cycloid_Stage1_Complete,Stage2_CompleteEvent=Cycloid_Stage2_Complete,Stage3_CompleteEvent=Cycloid_Stage3_Complete,SafeHeight=40,
-/* Exception thrown while deserializing WeaponInfo
-System.ArgumentOutOfRangeException: Non-negative number required.
-Parameter name: value
-   at System.IO.MemoryStream.set_Position(Int64 value)
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 184
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	WeaponInfo(10)=(StateTableIndex=/* Unknown default property type! */,Ident='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Steam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=RightForeArm,MountOrigin=(X=4.17096E-08,Y=3.78944E-17,Z=-4.661),Z=0.904),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(11)=(MountAngles=(Pitch=-69066190,Yaw=574619647,Roll=-28530),Roll=-30814)
-	WeaponInfo(12)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(13)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(14)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(15)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Steam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=RightForeArm,MountOrigin=(X=-4.427956E+08,Y=3.789464E-17,Z=-15.209),Z=19.146),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(16)=(MountAngles=(Pitch=-592764366,Yaw=574619647,Roll=-30667),Roll=-29739)
-	WeaponInfo(17)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(18)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(19)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(20)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Steam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=RightForeArm,MountOrigin=(X=0.9888335,Y=3.789441E-17,Z=3.652),Z=1.41),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(21)=(MountAngles=(Pitch=-177003982,Yaw=574619647,Roll=32528),Roll=32639)
-	WeaponInfo(22)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(23)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(24)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(25)=
-/* Exception thrown while deserializing WeaponInfo
-System.ArgumentOutOfRangeException: Non-negative number required.
-Parameter name: value
-   at System.IO.MemoryStream.set_Position(Int64 value)
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 184
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	WeaponInfo(26)=(Win=/* Unknown default property type! */,Ident='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=RightForeArm,MountOrigin=(X=4.17096E-08,Y=3.78944E-17,Z=-4.661),Z=0.904),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(27)=(MountAngles=(Pitch=-69066190,Yaw=574619647,Roll=-28530),Roll=-30814)
-	WeaponInfo(28)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(29)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(30)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(31)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=RightForeArm,MountOrigin=(X=-4.427956E+08,Y=3.789464E-17,Z=-15.209),Z=19.146),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(32)=(MountAngles=(Pitch=-592764366,Yaw=574619647,Roll=-30667),Roll=-29739)
-	WeaponInfo(33)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(34)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(35)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(36)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=RightForeArm,MountOrigin=(X=0.9888335,Y=3.789441E-17,Z=3.652),Z=1.41),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(37)=(MountAngles=(Pitch=-177003982,Yaw=574619647,Roll=32528),Roll=32639)
-	WeaponInfo(38)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(39)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(40)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(41)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Mist',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=RightForeArm,MountOrigin=(X=-4.427956E+08,Y=3.789464E-17,Z=-15.209),Z=19.146),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(42)=(MountAngles=(Pitch=-592764366,Yaw=574619647,Roll=-30667),Roll=-29739)
-	WeaponInfo(43)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(44)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(45)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(46)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Mist',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=RightForeArm,MountOrigin=(X=4.17096E-08,Y=3.78944E-17,Z=-4.661),Z=0.904),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(47)=(MountAngles=(Pitch=-69066190,Yaw=574619647,Roll=-28530),Roll=-30814)
-	WeaponInfo(48)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(49)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(50)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(51)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Mist',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=RightForeArm,MountOrigin=(X=0.9888335,Y=3.789441E-17,Z=3.652),Z=1.41),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(52)=(MountAngles=(Pitch=-177003982,Yaw=574619647,Roll=32528),Roll=32639)
-	WeaponInfo(53)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(54)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(55)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(56)=
-/* Exception thrown while deserializing WeaponInfo
-System.ArgumentOutOfRangeException: Non-negative number required.
-Parameter name: value
-   at System.IO.MemoryStream.set_Position(Int64 value)
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 184
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	WeaponInfo(57)=(StateTableIndex=/* Unknown default property type! */,Ident='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Steam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=LeftForeArm,MountOrigin=(X=1.821514E+09,Y=3.778617E-17,Z=13.877),Z=-22.069),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(58)=(MountAngles=(Pitch=593044018,Yaw=574554112,Roll=2103),Roll=-3032)
-	WeaponInfo(59)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(60)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(61)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(62)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Steam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=LeftForeArm,MountOrigin=(X=7.711175E+25,Y=3.778591E-17,Z=3.632),Z=-2.126),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(63)=(MountAngles=(Pitch=69345842,Yaw=574554112,Roll=4241),Roll=-1953)
-	WeaponInfo(64)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(65)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(66)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(67)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Steam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=LeftForeArm,MountOrigin=(X=-1.075532E+08,Y=3.778593E-17,Z=-3.765),Z=-3.51),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(68)=(MountAngles=(Pitch=177283634,Yaw=574554112,Roll=-236),Roll=127)
-	WeaponInfo(69)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(70)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(71)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(72)=
-/* Exception thrown while deserializing WeaponInfo
-System.ArgumentOutOfRangeException: Non-negative number required.
-Parameter name: value
-   at System.IO.MemoryStream.set_Position(Int64 value)
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 184
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	WeaponInfo(73)=(Win=/* Unknown default property type! */,Ident='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=LeftForeArm,MountOrigin=(X=1.821514E+09,Y=3.778617E-17,Z=13.877),Z=-22.069),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(74)=(MountAngles=(Pitch=593044018,Yaw=574554112,Roll=2103),Roll=-3032)
-	WeaponInfo(75)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(76)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(77)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(78)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=LeftForeArm,MountOrigin=(X=7.711175E+25,Y=3.778591E-17,Z=3.632),Z=-2.126),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(79)=(MountAngles=(Pitch=69345842,Yaw=574554112,Roll=4241),Roll=-1953)
-	WeaponInfo(80)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(81)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(82)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(83)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=LeftForeArm,MountOrigin=(X=-1.075532E+08,Y=3.778593E-17,Z=-3.765),Z=-3.51),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(84)=(MountAngles=(Pitch=177283634,Yaw=574554112,Roll=-236),Roll=127)
-	WeaponInfo(85)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(86)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(87)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(88)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Mist',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=LeftForeArm,MountOrigin=(X=1.821514E+09,Y=3.778617E-17,Z=13.877),Z=-22.069),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(89)=(MountAngles=(Pitch=593044018,Yaw=574554112,Roll=2103),Roll=-3032)
-	WeaponInfo(90)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(91)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(92)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(93)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Mist',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=LeftForeArm,MountOrigin=(X=7.711175E+25,Y=3.778591E-17,Z=3.632),Z=-2.126),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(94)=(MountAngles=(Pitch=69345842,Yaw=574554112,Roll=4241),Roll=-1953)
-	WeaponInfo(95)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(96)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(97)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(98)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Mist',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=LeftForeArm,MountOrigin=(X=-1.075532E+08,Y=3.778593E-17,Z=-3.765),Z=-3.51),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(99)=(MountAngles=(Pitch=177283634,Yaw=574554112,Roll=-236),Roll=127)
-	WeaponInfo(100)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(101)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(102)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(103)=
-/* Exception thrown while deserializing WeaponInfo
-System.ArgumentOutOfRangeException: Non-negative number required.
-Parameter name: value
-   at System.IO.MemoryStream.set_Position(Int64 value)
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 184
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	WeaponInfo(104)=(StateTableIndex=/* Unknown default property type! */,Ident='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Steam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=spine2,MountOrigin=(X=-8.402652E+33,Y=3.78948E-17,Z=0.276),Z=25.97),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(105)=(MountAngles=(Pitch=-31448526,Yaw=574619647,Roll=32312),Roll=0)
-	WeaponInfo(106)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(107)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(108)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(109)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Steam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=spine2,MountOrigin=(X=-1.26794E-26,Y=3.789485E-17,Z=-9.405),Z=-14.523),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(110)=(MountAngles=(Pitch=-172088782,Yaw=574619647,Roll=-31120),Roll=0)
-	WeaponInfo(111)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(112)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(113)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(114)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Steam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=spine2,MountOrigin=(X=2.204484E-33,Y=3.789485E-17,Z=9.796),Z=-15.354),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(115)=(MountAngles=(Pitch=-109960654,Yaw=574619647,Roll=30101),Roll=30700)
-	WeaponInfo(116)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(117)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(118)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(119)=
-/* Exception thrown while deserializing WeaponInfo
-System.ArgumentOutOfRangeException: Non-negative number required.
-Parameter name: value
-   at System.IO.MemoryStream.set_Position(Int64 value)
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 184
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	WeaponInfo(120)=(Win=/* Unknown default property type! */,Ident='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=spine2,MountOrigin=(X=-8.402652E+33,Y=3.78948E-17,Z=0.276),Z=25.97),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(121)=(MountAngles=(Pitch=-31448526,Yaw=574619647,Roll=32312),Roll=0)
-	WeaponInfo(122)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(123)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(124)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(125)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=spine2,MountOrigin=(X=-1.26794E-26,Y=3.789485E-17,Z=-9.405),Z=-14.523),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(126)=(MountAngles=(Pitch=-172088782,Yaw=574619647,Roll=-31120),Roll=0)
-	WeaponInfo(127)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(128)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(129)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(130)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=spine2,MountOrigin=(X=2.204484E-33,Y=3.789485E-17,Z=9.796),Z=-15.354),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(131)=(MountAngles=(Pitch=-109960654,Yaw=574619647,Roll=30101),Roll=30700)
-	WeaponInfo(132)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(133)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(134)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(135)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Mist',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=spine2,MountOrigin=(X=-8.402652E+33,Y=3.78948E-17,Z=0.276),Z=25.97),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(136)=(MountAngles=(Pitch=-31448526,Yaw=574619647,Roll=32312),Roll=0)
-	WeaponInfo(137)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(138)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(139)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(140)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Mist',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=spine2,MountOrigin=(X=-1.26794E-26,Y=3.789485E-17,Z=-9.405),Z=-14.523),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(141)=(MountAngles=(Pitch=-172088782,Yaw=574619647,Roll=-31120),Roll=0)
-	WeaponInfo(142)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(143)=(MountType=2,DismountPhysics=0)
-	WeaponInfo(144)=(RenderObject=none,DrawScale=0)
-	WeaponInfo(145)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Mist',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=spine2,MountOrigin=(X=2.204484E-33,Y=3.789485E-17,Z=9.796),Z=-15.354),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	WeaponInfo(146)=(MountAngles=(Pitch=-109960654,Yaw=574619647,Roll=30101),Roll=30700)
-	WeaponInfo(147)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	WeaponInfo(148)=(MountType=2,DismountPhysics=0)
-	h=None
-	AnimGridLink=/* Unknown default property type! */
+	WeaponInfo(0)=(MuzzleNames=(r_hand_barrel,l_hand_barrel),MuzzleIndex=0,ProjectileClass='dnGame.dnRocket_Cycloid',ProjectilesPerFire=5,FireLikeGrenade=true,SoundName=Sound_FirePrimary)
+	WeaponInfo(1)=(MuzzleNames=(r_arm_barrel,l_arm_barrel),MuzzleIndex=0,ProjectileClass='dnGame.dnRocket_Cycloid_Secondary',ProjectilesPerFire=1,FireLikeGrenade=false,SoundName=Sound_FireSecondary)
+	BoneAimInfo(0)=(BoneName=RightForeArm,BoneDir=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=1)
+	BoneAimInfo(1)=(EnabledOps=(40,65),bDebug=false)
+	HumiliationClass='dnControl_CycloidHumiliation_FieldGoal'
+	HumiliationCompleteEvent=Cycloid_Humiliation_Complete
+	ActionPointMoveMinInterval=8
+	ChargeEnragedMinInterval=5
+	ChargeMinInterval=10
+	ChargeImpulseMagnitude=500
+	ChargeImpulseLift=200
+	ChargeIgnoreActorList(0)=StaticMeshActor_Elevator
+	ChargeForceDistance=2000
+	ChargeMinDistance=250
+	ChargeHitDamage=30
+	ChargeCollisionHeight=150
+	MortarMinInterval=20
+	MortarSearchTime=5
+	MortarSearchTimeRnd=5
+	MortarDamage=55
+	MortarDamageRadius=130
+	ShockwaveSpawnCount=1
+	ShockwaveMinInterval=10
+	ShockwaveSpawnParticleClass='p_Creatures.Cycloid_Stomp.CycloidStomp_Spawner'
+	ShockwaveEnabled=true
+	ShockwaveStage2MinTime=1
+	ShockwaveStage3MinTime=1.8
+	ShockwaveSpeed=1000
+	ShockwaveScale=1
+	ShockwaveDamage=30
+	BeamAttackMinInterval=20
+	Health_RecoveryHealth=350
+	Health_Stage1=800
+	Health_Stage2=1100
+	Health_Stage3=1400
+	Health_Stage4=1400
+	StrengthTapInitiateTimeout=4.5
+	StrengthTapTimeout=3
+	StrengthTapFailDamage=70
+	Stage1_CompleteEvent=Cycloid_Stage1_Complete
+	Stage2_CompleteEvent=Cycloid_Stage2_Complete
+	Stage3_CompleteEvent=Cycloid_Stage3_Complete
+	SafeHeight=40
+	RightArmSteamPrefabs(0)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Steam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=RightForeArm,MountOrigin=(X=4.17096E-08,Y=3.78944E-17,Z=-4.661),Z=0.904),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	RightArmSteamPrefabs(1)=(MountAngles=(Pitch=-69066190,Yaw=574619647,Roll=-28530),Roll=-30814)
+	RightArmSteamPrefabs(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	RightArmDamagedPrefabs(0)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=RightForeArm,MountOrigin=(X=4.17096E-08,Y=3.78944E-17,Z=-4.661),Z=0.904),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	RightArmDamagedPrefabs(1)=(MountAngles=(Pitch=-69066190,Yaw=574619647,Roll=-28530),Roll=-30814)
+	RightArmDamagedPrefabs(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	RightArmDamagedPrefabs(3)=(MountType=2,DismountPhysics=0)
+	RightArmDamagedPrefabs(4)=(RenderObject=none,DrawScale=0)
+	RightArmDamagedPrefabs(5)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=RightForeArm,MountOrigin=(X=-4.427956E+08,Y=3.789464E-17,Z=-15.209),Z=19.146),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	LeftArmSteamPrefabs(0)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Steam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=LeftForeArm,MountOrigin=(X=1.821514E+09,Y=3.778617E-17,Z=13.877),Z=-22.069),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	LeftArmSteamPrefabs(1)=(MountAngles=(Pitch=593044018,Yaw=574554112,Roll=2103),Roll=-3032)
+	LeftArmSteamPrefabs(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	LeftArmDamagedPrefabs(0)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=LeftForeArm,MountOrigin=(X=1.821514E+09,Y=3.778617E-17,Z=13.877),Z=-22.069),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	LeftArmDamagedPrefabs(1)=(MountAngles=(Pitch=593044018,Yaw=574554112,Roll=2103),Roll=-3032)
+	LeftArmDamagedPrefabs(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	LeftArmDamagedPrefabs(3)=(MountType=2,DismountPhysics=0)
+	LeftArmDamagedPrefabs(4)=(RenderObject=none,DrawScale=0)
+	LeftArmDamagedPrefabs(5)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=LeftForeArm,MountOrigin=(X=7.711175E+25,Y=3.778591E-17,Z=3.632),Z=-2.126),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	BackSteamPrefabs(0)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Steam',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=spine2,MountOrigin=(X=-8.402652E+33,Y=3.78948E-17,Z=0.276),Z=25.97),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	BackSteamPrefabs(1)=(MountAngles=(Pitch=-31448526,Yaw=574619647,Roll=32312),Roll=0)
+	BackSteamPrefabs(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	BackDamagedPrefabs(0)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=spine2,MountOrigin=(X=-8.402652E+33,Y=3.78948E-17,Z=0.276),Z=25.97),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	BackDamagedPrefabs(1)=(MountAngles=(Pitch=-31448526,Yaw=574619647,Roll=32312),Roll=0)
+	BackDamagedPrefabs(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	BackDamagedPrefabs(3)=(MountType=2,DismountPhysics=0)
+	BackDamagedPrefabs(4)=(RenderObject=none,DrawScale=0)
+	BackDamagedPrefabs(5)=(bSkipVerifySelf=false,SpawnClass='p_Creatures.Cycloid_DamagedArm.Cycloid_DamagedArm_Spray',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=spine2,MountOrigin=(X=-1.26794E-26,Y=3.789485E-17,Z=-9.405),Z=-14.523),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	DamageScaleInfo(0)=(QualifierClass=none,DamageScale=0,QualifierDamageTypes=none,QualifierNotDamageTypes=('Engine.ExplosionDamage','dnGame.LargeCaliberBulletDamage'))
+	Nodes(0)=(Ident=Root,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(1)=(Ident=Attack,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(2)=(Ident=Charge,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(3)=(Ident=Mortar,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(4)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(5)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(6)=(Ident=Pain,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=96,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(7)=(Ident=Stomp,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=135,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(8)=(Ident=MoveToGoal,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=55,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(9)=(Ident=GotoActionPoint,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=55,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(10)=(Ident=SeekTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=150,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(11)=(Ident=SeekTargetStart,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=145,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(12)=(Ident=SeekTargetMove,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=41,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(13)=(Ident=Shockwave,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=6,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(14)=(Ident=Search,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=6,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(15)=(Ident=LaunchMortar,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=6,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(16)=(Ident=BeamAttack,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=6,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(17)=(Ident=BullRush,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=95,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(18)=(Ident=MultiShockwave,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=95,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(19)=(Ident=FaceTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=145,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(20)=(Ident=Roar,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=107,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(21)=(Ident=StandFire,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=6,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	FSMStates(0)=(FSM=Root,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=Roar,Cond=0,Func=COND_ShouldRoar,Win=0,Code=0,StateTableIndex=0),(Ident=Attack,Cond=2,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(1)=(FSM=Root,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Roar,Cond=0,Func=COND_ShouldRoar,Win=0,Code=0,StateTableIndex=0),(Ident=Attack,Cond=2,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(2)=(FSM=Root,Ident=Attack,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Roar,Cond=0,Func=COND_ShouldRoar,Win=0,Code=0,StateTableIndex=0),(Ident=Attack,Cond=2,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(3)=(FSM=Root,Ident=Pain,FSMSucc=false,FSMFail=false,Transitions=((Ident=Roar,Cond=0,Func=COND_ShouldRoar,Win=0,Code=0,StateTableIndex=0),(Ident=Attack,Cond=2,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(4)=(FSM=Root,Ident=Roar,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Attack,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(5)=(FSM=Attack,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=Stomp,Cond=101,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=GotoActionPoint,Cond=0,Func=COND_ShouldGotoActionPoint,Win=1,Code=0,StateTableIndex=0),(Ident=StandFire,Cond=0,Func=COND_ShouldStandFire,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(6)=(FSM=Attack,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=Stomp,Cond=101,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Charge,Cond=0,Func=COND_ShouldForceCharge,Win=0,Code=0,StateTableIndex=0),(Ident=SeekTarget,Cond=9,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=GotoActionPoint,Cond=11,Func=COND_ShouldGotoActionPoint,Win=0,Code=0,StateTableIndex=0),(Ident=Charge,Cond=0,Func=COND_ShouldCharge,Win=0,Code=0,StateTableIndex=0),(Ident=BeamAttack,Cond=0,Func=COND_ShouldAttackBeam,Win=0,Code=0,StateTableIndex=0),(Ident=Mortar,Cond=0,Func=COND_ShouldMortar,Win=0,Code=0,StateTableIndex=0),(Ident=MultiShockwave,Cond=0,Func=COND_ShouldMultiShockwave,Win=0,Code=0,StateTableIndex=0),(Ident=Shockwave,Cond=0,Func=COND_ShouldShockwave,Win=0,Code=0,StateTableIndex=0),(Ident=GotoActionPoint,Cond=0,Func=COND_ShouldGotoActionPoint,Win=0,Code=0,StateTableIndex=0),(Ident=StandFire,Cond=0,Func=COND_ShouldStandFire,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(7)=(FSM=Attack,Ident=GotoActionPoint,FSMSucc=false,FSMFail=false,Transitions=((Ident=Stomp,Cond=101,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Charge,Cond=0,Func=COND_ShouldForceCharge,Win=0,Code=0,StateTableIndex=0),(Ident=Charge,Cond=0,Func=COND_ShouldCharge,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(8)=(FSM=Attack,Ident=Stomp,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(9)=(FSM=Attack,Ident=Shockwave,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(10)=(FSM=Attack,Ident=MultiShockwave,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(11)=(FSM=Attack,Ident=Mortar,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(12)=(FSM=Attack,Ident=BeamAttack,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(13)=(FSM=Attack,Ident=Charge,FSMSucc=false,FSMFail=false,Transitions=((Ident=FaceTarget,Cond=100,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=MoveToGoal,Cond=0,Func=COND_SetupPostChargeMove,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(14)=(FSM=Attack,Ident=StandFire,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(15)=(FSM=Attack,Ident=MoveToGoal,FSMSucc=false,FSMFail=false,Transitions=((Ident=StandFire,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(16)=(FSM=Attack,Ident=SeekTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=SeekTargetStart,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=SeekTargetMove,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(17)=(FSM=Attack,Ident=SeekTargetStart,FSMSucc=false,FSMFail=false,Transitions=((Ident=SeekTargetMove,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(18)=(FSM=Attack,Ident=SeekTargetMove,FSMSucc=false,FSMFail=false,Transitions=((Ident=StandFire,Cond=0,Func=COND_ShouldStopSeekResumeFire,Win=0,Code=0,StateTableIndex=0),(Ident=SeekTargetMove,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(19)=(FSM=Attack,Ident=FaceTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=StandFire,Cond=0,Func=COND_ShouldResumeFire,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(20)=(FSM=Charge,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=FaceTarget,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=BullRush,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(21)=(FSM=Charge,Ident=FaceTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=BullRush,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(22)=(FSM=Charge,Ident=BullRush,FSMSucc=true,FSMFail=true,Transitions=none,NodeIndex=0)
+	FSMStates(23)=(FSM=Mortar,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=Search,Cond=0,Func=COND_SetupSearch,Win=1,Code=0,StateTableIndex=0),(Ident=LaunchMortar,Cond=0,Func=COND_SetupMortar,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(24)=(FSM=Mortar,Ident=Search,FSMSucc=false,FSMFail=false,Transitions=((Ident=LaunchMortar,Cond=0,Func=COND_SetupMortar,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(25)=(FSM=Mortar,Ident=LaunchMortar,FSMSucc=true,FSMFail=true,Transitions=none,NodeIndex=0)
+	WeaponConeAngle=80
+	HasLookTargetEvaluator=true
+	LookTargetEvalInfo=(MyOwner=none,EvalInterval=2,Suspended=false,bSuspendedWithNoTarget=false,Evaluator=2,ForceUpdate=false,MustBePawn=true,MustBeSighted=false,MustBeReachable=false,CanTargetProjectiles=false,CanAvoidTargetableProjectiles=false,LastTarget=none,LastTargetEndTime=0)
+	LookConeAngle=80
+	WeaponTrackRate=300
+	HeadTrackRate=500
+	HasWeaponManager=true
+	WeaponConfig='WeaponCfg_Enforcer'
+	Weapons(0)=none
+	Weapons(1)='dnGame.IntegratedWeapon'
+	ForceWeaponActive=true
+	ForceDirectShot=true
+	bIgnoreTripMines=true
+	UseActionPoints=true
+	ChanceStayAtActionPoint=0.1
+	MinBlinkTime=0
+	MaxBlinkTime=0
+	PickupItemRange=4
+	Relationships(0)=(m_aClass='Engine.AIFactionHoloduke',m_eAttitude=1,m_fDamageThreshold=1)
+	Relationships(1)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(2)=(m_aClass='Engine.AIFactionHuman',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(3)=(m_aClass='Engine.AIFactionAlien',m_eAttitude=5,m_fDamageThreshold=1)
+	BodyAlignRate=3.4
+	BodyAlignScale=0.8
+	InitialAnimController=5
+	AnimControllers[0]=(m_eFallback=0,m_cClass='acCycloid_Combat',m_oController=none)
+	AnimControllers[1]=(m_eFallback=1,m_cClass='acCycloid_Combat',m_oController=none)
+	AnimControllers[2]=(m_eFallback=1,m_cClass='acCycloid_Combat',m_oController=none)
+	AnimControllers[3]=(m_eFallback=1,m_cClass='acCycloid_Combat',m_oController=none)
+	AnimControllers[4]=(m_eFallback=1,m_cClass='acCycloid_Combat',m_oController=none)
+	AnimControllers[5]=(m_eFallback=1,m_cClass='acCycloid_Combat',m_oController=none)
+	AnimControllers[6]=(m_eFallback=1,m_cClass='acCycloid_Combat',m_oController=none)
+	AnimControllers[7]=(m_eFallback=1,m_cClass='acCycloid_Combat',m_oController=none)
+	AnimControllers[8]=(m_eFallback=1,m_cClass='acCycloid_Combat',m_oController=none)
+	DroolParms=(MinSpitTime=10,RndSpitTime=5,SpitOnPainChance=1,Bone=None,Location=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MultiAnimParms(0)=(AnimIndex=0,MinTime=5,RndTime=0,Gate=0,MinInterval=1,RequireLOS=false,RequireLOSFromWeapon=false,FaceTarget=true,AnimName=Anim_Charge)
+	MultiAnimParms(1)=(AnimIndex=0,MinTime=3,RndTime=0,Gate=0,MinInterval=1,RequireLOS=false,RequireLOSFromWeapon=false,FaceTarget=true,AnimName=Anim_Shockwave)
+	MultiAnimIndex=0
+	DeathAnimChance=1
+	FinishMeControlType='dnControl_Cycloid_BattleA'
+	BoneAim(0)=(BoneName=Spine,Yaw=0,Pitch=0,Weight=0.5)
+	BoneAim(1)=(BoneName=Spine1,Yaw=0,Pitch=0,Weight=0.3)
+	BoneAim(2)=(BoneName=spine2,Yaw=0,Pitch=0,Weight=0.2)
+	HasBoneAimer=true
+	DisableAimGrids=true
+	ProceduralMovingFire=true
+	HasWeaponAimer=true
+	TryGotoAttackTime=2
+	MinIdleTime=0.3
+	RndIdleTime=1
+	ShouldTurnThreshold=40
+	MinMoveAroundDist=200
+	RndMoveAroundDist=300
+	MinSpreadOutTime=1.5
+	RndSpreadOutTime=0.25
+	MinMeleeRange=100
+	RndMeleeRange=250
+	MaxGotoMeleeSteps=3
+	MeleeZone=550
+	RndMeleeStrafeRange=0
+	MinMeleeStrafeCycles=1
+	RndMeleeStrafeCycles=1
+	ClawDamageAmount=45
+	StompInfo(0)=(StompRadius=350,AnimName=Anim_StompRight,BoneName=particle_footR,StompDamageAmount=50,StompDamageRadius=600,StompDamageVel=200,StompDamageLift=550,bDebug=false,SafeHeight=400,bCanStompShrunk=true,ShakeInfo=(bNoLerp=false,bToggleSign=true,Style=2,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.6,ShakeFrequency=0.08,ShakeMagnitude=2500,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=CycloidStompShake),ShakeRadius=400,ParticleEffectClass='p_Creatures.Cycloid_Stomp.CycloidStomp_Spawner',AdditionalEffectBones=none,StompLocation=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	StompInfo(1)=(bDontFaceTarget=false,bLightRumbleOnDamage=true)
+	PlayerShrunkFootstepViewShake=(bNoLerp=false,bToggleSign=true,Style=2,Function=1,FalloffActor=none,FalloffDistance=1000,ShakeDuration=0.6,ShakeFrequency=0.08,ShakeMagnitude=550,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=CycloidStepShake)
+	MinChargeRange=160
+	MaxChargeRange=300
+	ProjectileClass='dnGame.dnRocket_Cycloid'
+	MaxJumpAttackRange=140
+	JumpAttackOnTakeOff=true
+	JumpAttackHeightDelta=-22
+	RndMoveAroundTime=2
+	PathID=AIPATH_Boss
+	bAutoOpenDoors=true
+	DynamicPathingPriority=7
+	bIsBoss=true
+	bShouldCauseKillSound=false
+	bShrinkable=false
+	FootstepCategory=3
+	FootprintType=0
+	PawnRotationRate=(Pitch=-2147474894,Yaw=574554112,Roll=40000)
+	FluidFrictionScale=0.5
+	EyeBone=Head
+	LockOnBone=Head
+	CorpseType='CycloidCorpse'
+	MaxStepHeightEx=10
+	GroundSpeed=280
+	AirSpeed=500
+	MaxStepHeight=10
+	FootBones(0)=(bRightSide=false,BoneName=l_toe_front_l_1,BoneID=foot_left_1,BoneRotOffset=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	FootBones(1)=none
+	FootstepTraceLength=60
+	ExitWoundInfo(0)=(DamageType=none,MinimumDamage=1,RandomChance=1,ExitWoundDecalClass='dnGame.dnExitWound_Human')
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Cycloid_Armor_ShoulderA',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=true,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=true,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_armor_1,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=304292402,Yaw=574554112,Roll=-3946),Roll=-4329)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(5)=(bSkipVerifySelf=false,SpawnClass='Cycloid_Armor_ShoulderB',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=true,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=true,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_armor_2,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(6)=(MountAngles=(Pitch=300032562,Yaw=574554112,Roll=4184),Roll=3979)
+	MountOnSpawn(7)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(8)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(9)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(10)=(bSkipVerifySelf=false,SpawnClass='Cycloid_Armor_ShoulderC',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=true,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=true,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_armor_3,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(11)=(MountAngles=(Pitch=112075314,Yaw=574554112,Roll=3470),Roll=1065)
+	MountOnSpawn(12)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(13)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(14)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(15)=(bSkipVerifySelf=false,SpawnClass='Cycloid_Armor_ShoulderD',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=true,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=true,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_armor_4,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(16)=(MountAngles=(Pitch=77472306,Yaw=574554112,Roll=7520),Roll=1632)
+	MountOnSpawn(17)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(18)=(MountType=2,DismountPhysics=0)
+	AutoRegisterIKClasses(0)='Engine.IKSystemInfo_Walker'
+	Health=1000
+	HealthCap=1000
+	PhysicsEntityGroup=CycloidEntityGroup
+	bAcceptMeshAccurateMoveActorTrace=true
+	bCanExistOutOfWorld=false
+	bOverlayEffectUsedAsHint=true
+	CollisionRadius=100
+	CollisionHeight=190
+	AccelRate=1200
+	Mass=3000
+	OverlayMaterial='dt_effects.OverlayMaterial.OverlayMaterial_Boss'
+	Mesh='c_characters.cycloid'
+	VoicePack='SoundConfig.Enemies.VoicePack_Cycloid'
 }

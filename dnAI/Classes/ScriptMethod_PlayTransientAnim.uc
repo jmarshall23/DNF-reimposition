@@ -15,7 +15,7 @@ cpptext
 // Stripped
 }
 
-var() noexport name AnimName "Anim to play. (Takes priority over SequenceName))";
+var() noexport anim name AnimName "Anim to play. (Takes priority over SequenceName))";
 var() noexport bool UseExactAnimName "Use the name exactly as specified (dont append weapon/prop)?";
 
 event string GetMethodString()

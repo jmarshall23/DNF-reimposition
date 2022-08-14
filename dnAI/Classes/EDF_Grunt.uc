@@ -31,7 +31,7 @@ event PostSpawn()
 	return;
 }
 
-k2call simulated function FootStep(optional EventInfo AnimEventInfo)
+animevent simulated function FootStep(optional EventInfo AnimEventInfo)
 {
 	super(Pawn).FootStep(AnimEventInfo);
 	// End:0x22
@@ -162,202 +162,66 @@ defaultproperties
 	MaxThreatTimeSinceSeen=2
 	ChanceCrouch=0.5
 	bPlayRustleSounds=true
-	MovementRustleSoundInfo=bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */,StartingBlendAlpha=2.151572E-26,
-/* Exception thrown while deserializing MovementRustleSoundInfo
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	LandingRustleSoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=/* Array type was not detected. */,Cond=349770968,SlotPriority=0,VolumePrefab=0,Slots=/* Array type was not detected. */)
+	MovementRustleSoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('dnsMaterials.Generic.Step_Rustle_01','dnsMaterials.Generic.Step_Rustle_02','dnsMaterials.Generic.Step_Rustle_03','dnsMaterials.Generic.Step_Rustle_04'),SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0.45,VolumeVariance=0,InnerRadius=128,InnerRadiusVariance=0,Radius=640,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=true,bNoScale=true,bSpoken=false,bPlayThroughListener=false,bNoDoppler=true,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),Velocity3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	LandingRustleSoundInfo=(bAllowRepeats=false,bPlayAsAmbient=false,MixerGroupOverride=None,SimpleSingleSound=none,Sounds=('dnsMaterials.Generic.Land_Rustle_01','dnsMaterials.Generic.Land_Rustle_02'),SlotPriority=0,VolumePrefab=0,Slots=none,Volume=0.65,VolumeVariance=0,InnerRadius=128,InnerRadiusVariance=0,Radius=640,RadiusVariance=0,Pitch=0,PitchVariance=0,Flags=(bNoOverride=false,bMenuSound=false,bNoFilter=false,bNoOcclude=false,bNoAIHear=true,bNoScale=true,bSpoken=false,bPlayThroughListener=false,bNoDoppler=true,bDialogSound=false,bNoReverb=false,bEnableVis=false,bSkipFlangePrevention=false,bSkipSoundRadiusTest=false,bIgnoreTimeDilation=false),SoundLocationOverride=(bMakeRelativeForLocalPlayer=false,bMakeAbsoluteForActor=false,OverrideType=0,Location3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),Velocity3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 	MinFidgetInterval=10
 	RndFidgetInterval=12
-	DamageScaleInfo(0)=(Ident='dnGame.DukePlayer',DamageScale=0,QualifierDamageTypes=(none,class'SensorEnabled',class'PrimaryTarget',class'AimInfo',none,class'ReturnValue',class'GridAnimName',class'WeaponCfg_Male',class'PrecacheIndex',class'PopUpCfg',class'bSucceedOnFail',class'NotifyBite',class'DeltaSeconds',class'TickingAIList',none,none,
-/* Exception thrown while deserializing QualifierDamageTypes
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealPackage.GetIndexObject(Int32 objectIndex) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealPackage.cs:line 1821
-   at UELib.UObjectStream.ReadObject() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 742
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 559 */,class'ReturnValue',class'bUseAnimDispDir',class'Level',class'StartLight',class'KeyID',class'JumpParms',class'AIActorFactory',class'ValidTargetTime',class'AnimXParms',none,class'DeathInstigator',class'TickingAIList',none,none,none,class'acCycloid_Combat',class'SpawnCorpse',class'JumpAttackParms',class'MyEggPod',class'JumpAttackParms',class'EDF_Grunt',class'm_aTarget',class'GotoXParms',class'AnimInfo',class'JumpAttackParms',class'Octabrain',class'Level',class'Flags',class'JumpAttackParms',class'MinRange',class'JumpAttackParms',class'TraceStart',class'JumpAttackParms',class'A',class'JumpAttackParms',class'Mortar',class'AnimXParms',none,class'GetAttitudeTowards',class'TickingAIList',none,none,none,none,class'ReturnValue',class'ChargeGate',class'TickingAIList',none,none,
-/* Exception thrown while deserializing QualifierDamageTypes
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealPackage.GetIndexObject(Int32 objectIndex) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealPackage.cs:line 1821
-   at UELib.UObjectStream.ReadObject() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 742
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 559 */,class'dmp',class'Level',class'AnimName',class'PrecacheIndex'),ChargeParms=11,Transitions=
-/* Exception thrown while deserializing Transitions
-System.ArgumentOutOfRangeException: Length cannot be less than zero.
-Parameter name: length
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */)
-	DamageScaleInfo(1)=
-/* Exception thrown while deserializing DamageScaleInfo
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	DamageScaleInfo(2)=(PistolClass='dnGame.Pistol_EDF',NumPipeBombs=-1,PipeBombClass='dnGame.dnPipeBombProjectile_Timed_AI',Relationships=/* Array type was not detected. */,m_aClass='Engine.AIFactionHoloduke',m_eAttitude=6,m_fDamageThreshold=1)
-	DamageScaleInfo(3)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=6,m_fDamageThreshold=1)
-	DamageScaleInfo(4)=(m_aClass='Engine.AIFactionHuman',m_eAttitude=5,m_fDamageThreshold=1)
-	DamageScaleInfo(5)=(m_aClass='Engine.AIFactionAlien',m_eAttitude=2,m_fDamageThreshold=1)
-	DamageScaleInfo(6)=(m_aClass='Engine.AIFactionRat',m_eAttitude=4,m_fDamageThreshold=1)
-	DamageScaleInfo(7)=(BodyAlignRate=6,BodyAlignRateFlying=6,BodyAlignScale=0.75,FaceDamage=false,FaceDeath=false,TryGotoAttackTime=0.5,MinIdleTime=0.3,RndIdleTime=1,MeleeZone=70,MinMeleeStrafeRange=25,RndMeleeStrafeRange=5,MinMeleeStrafeCycles=1,RndMeleeStrafeCycles=1,CanJump=true,HasStartFallAnim=true,AvoidDangers=true,PathID=AIPATH_Thin,ChanceSayFireInTheHole=1,ChanceSayTakeCover=0.9,ChanceSayLowHealth=0.75,ChanceSayConfirmKill=1,ChanceSayReloading=0.5,ChanceSayManDown=0.75,ChanceSayFriendlyFire=1,ChanceSayEnemySpotted=1,DynamicPathingPriority=0,bHolsterWeapons=true,Team=0,FootprintType=0,Faction='Engine.AIFactionHuman',FieldOfView=-0.95,EyeBone=Head,BodyBone=Spine,LockOnBone=Spine,CorpseType='HumanCorpse',FootBones=/* Array type was not detected. */,bRightSide=false,BoneName=leftfoot,BoneID=foot_left_1,BoneRotOffset=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	DamageScaleInfo(8)=none
-	DamageScaleInfo(9)=(bRightSide=true,BoneName=rightfoot,BoneID=foot_right_1,BoneRotOffset=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
-	DamageScaleInfo(10)=none
-	DamageScaleInfo(11)=(ExitWoundInfo=/* Array type was not detected. */,Ident=
-/* Exception thrown while deserializing Ident
-System.ArgumentOutOfRangeException: Length cannot be less than zero.
-Parameter name: length
-   at System.String.Substring(Int32 startIndex, Int32 length)
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 578 */,bNoRemoveAnim=/* Unknown default property type! */)
-	DamageScaleInfo(12)=none
-	DamageScaleInfo(13)=(Yaw="")
-	DamageScaleInfo(14)=none
-	DamageScaleInfo(15)=Yaw=/* Unknown default property type! */,
-/* Exception thrown while deserializing DamageScaleInfo
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 838
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	DamageScaleInfo(16)=none
-	DamageScaleInfo(17)=(Group=AIGROUP_Good,CollisionRadius=18,Mesh='c_characters.edf_soldierA')
-	DamageScaleInfo(18)=
-/* Exception thrown while deserializing DamageScaleInfo
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 327
-   at UELib.UObjectStream.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 762
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 837
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	DamageScaleInfo(19)=
-/* Exception thrown while deserializing DamageScaleInfo
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 327
-   at UELib.UObjectStream.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 762
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 837
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	DamageScaleInfo(20)=
-/* Exception thrown while deserializing DamageScaleInfo
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 327
-   at UELib.UObjectStream.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 762
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 837
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	DamageScaleInfo(21)=
-/* Exception thrown while deserializing DamageScaleInfo
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 327
-   at UELib.UObjectStream.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 762
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 837
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	DamageScaleInfo(22)=
-/* Exception thrown while deserializing DamageScaleInfo
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 327
-   at UELib.UObjectStream.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 762
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 837
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	DamageScaleInfo(23)=
-/* Exception thrown while deserializing DamageScaleInfo
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 327
-   at UELib.UObjectStream.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 762
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 837
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	DamageScaleInfo(24)=
-/* Exception thrown while deserializing DamageScaleInfo
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 327
-   at UELib.UObjectStream.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 762
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 837
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	DamageScaleInfo(25)=
-/* Exception thrown while deserializing DamageScaleInfo
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 327
-   at UELib.UObjectStream.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 762
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 837
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	DamageScaleInfo(26)=
-/* Exception thrown while deserializing DamageScaleInfo
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 327
-   at UELib.UObjectStream.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 762
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 837
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
-	DamageScaleInfo(27)=
-/* Exception thrown while deserializing DamageScaleInfo
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 327
-   at UELib.UObjectStream.ReadNameIndex(Int32& num) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 762
-   at UELib.UnrealStreamImplementations.ReadNameReference(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 837
-   at UELib.Core.UDefaultProperty.DeserializeTagUE1() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 204
-   at UELib.Core.UDefaultProperty.DeserializeNextTag() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 193
-   at UELib.Core.UDefaultProperty.Deserialize() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 169
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 767 */
+	DamageScaleInfo(0)=(QualifierClass='dnGame.DukePlayer',DamageScale=0,QualifierDamageTypes=none,QualifierNotDamageTypes=none)
+	SquadChannel=(ChannelName=DefaultEDFSquad,MaxDistance=2000)
+	HasLookTargetEvaluator=true
+	LookTargetEvalInfo=(MyOwner=none,EvalInterval=0.5,Suspended=false,bSuspendedWithNoTarget=false,Evaluator=2,ForceUpdate=false,MustBePawn=true,MustBeSighted=false,MustBeReachable=false,CanTargetProjectiles=false,CanAvoidTargetableProjectiles=false,LastTarget=none,LastTargetEndTime=0)
+	HeadTrackRate=120
+	HasWeaponManager=true
+	WeaponConfig='WeaponCfg_EDFGrunt'
+	Weapons(0)=none
+	Weapons(1)='dnGame.MachineGun_EDF'
+	PistolClass='dnGame.Pistol_EDF'
+	NumPipeBombs=-1
+	PipeBombClass='dnGame.dnPipeBombProjectile_Timed_AI'
+	Relationships(0)=(m_aClass='Engine.AIFactionHoloduke',m_eAttitude=6,m_fDamageThreshold=1)
+	Relationships(1)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=6,m_fDamageThreshold=1)
+	Relationships(2)=(m_aClass='Engine.AIFactionHuman',m_eAttitude=5,m_fDamageThreshold=1)
+	Relationships(3)=(m_aClass='Engine.AIFactionAlien',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(4)=(m_aClass='Engine.AIFactionRat',m_eAttitude=4,m_fDamageThreshold=1)
+	BodyAlignRate=6
+	BodyAlignRateFlying=6
+	BodyAlignScale=0.75
+	FaceDamage=false
+	FaceDeath=false
+	TryGotoAttackTime=0.5
+	MinIdleTime=0.3
+	RndIdleTime=1
+	MeleeZone=70
+	MinMeleeStrafeRange=25
+	RndMeleeStrafeRange=5
+	MinMeleeStrafeCycles=1
+	RndMeleeStrafeCycles=1
+	CanJump=true
+	HasStartFallAnim=true
+	AvoidDangers=true
+	PathID=AIPATH_Thin
+	ChanceSayFireInTheHole=1
+	ChanceSayTakeCover=0.9
+	ChanceSayLowHealth=0.75
+	ChanceSayConfirmKill=1
+	ChanceSayReloading=0.5
+	ChanceSayManDown=0.75
+	ChanceSayFriendlyFire=1
+	ChanceSayEnemySpotted=1
+	DynamicPathingPriority=0
+	bHolsterWeapons=true
+	Team=0
+	FootprintType=0
+	Faction='Engine.AIFactionHuman'
+	FieldOfView=-0.95
+	EyeBone=Head
+	BodyBone=Spine
+	LockOnBone=Spine
+	CorpseType='HumanCorpse'
+	FootBones(0)=(bRightSide=false,BoneName=leftfoot,BoneID=foot_left_1,BoneRotOffset=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	FootBones(1)=none
+	ExitWoundInfo(0)=(DamageType=none,MinimumDamage=1,RandomChance=1,ExitWoundDecalClass='dnGame.dnExitWound_Human')
+	Group=AIGROUP_Good
+	CollisionRadius=18
+	Mesh='c_characters.edf_soldierA'
 }

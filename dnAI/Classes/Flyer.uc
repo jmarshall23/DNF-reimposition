@@ -8,3 +8,61 @@
 class Flyer extends AIActor
 	config
 	collapsecategories;
+
+defaultproperties
+{
+	Nodes(0)=(Ident=Root,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(1)=(Ident=Wait,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(2)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(3)=(Ident=FUBAR,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=1,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(4)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(5)=(Ident=FaceTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=145,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(6)=(Ident=Follow,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=65,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(7)=(Ident=Pain,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=96,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	FSMStates(0)=(FSM=Root,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Follow,Cond=5,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(1)=(FSM=Root,Ident=Pain,FSMSucc=false,FSMFail=false,Transitions=((Ident=Follow,Cond=5,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(2)=(FSM=Root,Ident=Follow,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(3)=(FSM=Root,Ident=Wait,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Follow,Cond=5,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(4)=(FSM=Wait,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=FaceTarget,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(5)=(FSM=Wait,Ident=FaceTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(6)=(FSM=Wait,Ident=idle,FSMSucc=true,FSMFail=true,Transitions=((Ident=FaceTarget,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0)),NodeIndex=0)
+	ClearTargetTime=99999
+	TargetVisTestInt=99999
+	MinBlinkTime=1
+	MaxBlinkTime=2
+	Relationships(0)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=2,m_fDamageThreshold=1)
+	bUseAnimDispDir=false
+	BodyAlignRate=2.5664
+	BodyAlignRateFlying=2.5664
+	AnimControllers[0]=(m_eFallback=0,m_cClass='acOctabrain',m_oController=none)
+	AnimControllers[1]=(m_eFallback=0,m_cClass='acOctabrain',m_oController=none)
+	AnimControllers[2]=(m_eFallback=0,m_cClass='acOctabrain',m_oController=none)
+	AnimControllers[3]=(m_eFallback=0,m_cClass='acOctabrain',m_oController=none)
+	AnimControllers[4]=(m_eFallback=0,m_cClass='acOctabrain',m_oController=none)
+	AnimControllers[5]=(m_eFallback=0,m_cClass='acOctabrain',m_oController=none)
+	AnimControllers[6]=(m_eFallback=0,m_cClass='acOctabrain',m_oController=none)
+	AnimControllers[7]=(m_eFallback=0,m_cClass='acOctabrain',m_oController=none)
+	AnimControllers[8]=(m_eFallback=0,m_cClass='acOctabrain',m_oController=none)
+	SideArcTurnSpeedThresh=10
+	StartAngleSideSector=60
+	StartAngleBackSector=120
+	MoveBackwardsDistThresh=50
+	SideStepDistThresh=50
+	MinMeleeRange=20
+	RndMeleeRange=50
+	MeleeZone=50
+	bIsFlying=true
+	PathID=AIPATH_Medium
+	bCanStrafe=true
+	bCanFly=true
+	FieldOfView=-1
+	PawnRotationRate=(Pitch=-2147474894,Yaw=574554112,Roll=5)
+	EyeBone=Head
+	BodyBone=torso
+	LockOnBone=torso
+	CorpseType='AlienCorpse'
+	CollisionRadius=26
+	CollisionHeight=48
+	AccelRate=600
+	Mesh='c_characters.Octabrain'
+}

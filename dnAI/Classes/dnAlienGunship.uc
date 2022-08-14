@@ -299,3 +299,51 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 	PrecacheIndex.__NFUN_1266__(class'FlybyPlane_Damaged_Main');
 	return;
 }
+
+defaultproperties
+{
+	DamageEffects(0)=(DamageEffectOffset=(X=-0.000121184,Y=3.78932E-17,Z=96.31987),Z=-71.8095)
+	DamageEffects(1)=(DamageEffectRotation=(Pitch=-268426702,Yaw=574619647,Roll=16384),Roll=0)
+	DamageEffects(2)=(EffectClassList=('p_Decorations.BarrelExplosion.Barrel_Explosion_Spawner','dnGame.ParticleSystemTimer_Sparks_Malfunction_Gunship'),EffectList=none,DrawScale=2,bOn=false,bTwoStageEffect=false,SecondStageList=none)
+	DamageEffects(3)=(DamageEffectOffset=(X=-1.369959E+32,Y=3.789527E-17,Z=100.0302),Z=-72.31932)
+	DamageEffects(4)=(DamageEffectRotation=(Pitch=-268426702,Yaw=574619647,Roll=16384),Roll=0)
+	DamageEffects(5)=(EffectClassList=('p_Decorations.BarrelExplosion.Barrel_Explosion_Spawner','dnGame.ParticleSystemTimer_Sparks_Malfunction_Gunship'),EffectList=none,DrawScale=2,bOn=false,bTwoStageEffect=false,SecondStageList=none)
+	DamageEffects(6)=(DamageEffectOffset=(X=-8.795451E-21,Y=3.789527E-17,Z=-101.7487),Z=-72.8095)
+	DamageEffects(7)=(DamageEffectRotation=(Pitch=-335535566,Yaw=574619647,Roll=-16384),Roll=0)
+	DamageEffects(8)=(EffectClassList=('p_Decorations.BarrelExplosion.Barrel_Explosion_Spawner','dnGame.ParticleSystemTimer_Sparks_Malfunction_Gunship'),EffectList=none,DrawScale=2,bOn=false,bTwoStageEffect=false,SecondStageList=none)
+	DamageEffects(9)=(DamageEffectOffset=(X=2.54398E-14,Y=3.789294E-17,Z=-100.1402),Z=-71.8095)
+	DamageEffects(10)=(DamageEffectRotation=(Pitch=-536862158,Yaw=574619647,Roll=-16384),Roll=0)
+	DamageEffects(11)=(EffectClassList=('p_Decorations.BarrelExplosion.Barrel_Explosion_Spawner','dnGame.ParticleSystemTimer_Sparks_Malfunction_Gunship'),EffectList=none,DrawScale=2,bOn=false,bTwoStageEffect=false,SecondStageList=none)
+	DamageThreshold1=800
+	DamageThreshold2=400
+	DamageOverlay='dt_Effects2.Overlays.ElectricalMalFunction_FB'
+	TimeBetweenDamageEffects=2
+	TimeBetweenDamageEffectsVariance=1.2
+	AimInfo(0)=(GunPosition=1,GunType=0,BoneName=gun_turret,bDebug=false,bFiringDisabled=false,MuzzleNames=(mount_gun_1,mount_gun_2),MuzzleIndex=0,bFireThisFrame=false,FireGate=0,MinFOVDot=0,MaxFOVDir=(X=1.298303E-41,Y=3.778402E-17,Z=0),Z=-1)
+	AimInfo(1)=(MaxDist=6000,bCheckLOS=true,LOSGate=0,bLastLOS=false,PosThisFrame=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	AimInfo(2)=(TargetActor=none,TargetTag=None)
+	AimInfo(3)=(GunPosition=2,GunType=1,BoneName=gun_turret_left_front,bDebug=false,bFiringDisabled=false,MuzzleNames=(mount_gun_3,mount_gun_4),MuzzleIndex=0,bFireThisFrame=false,FireGate=0,MinFOVDot=0.707,MaxFOVDir=(X=1.298303E-41,Y=3.773024E-17,Z=-1),Z=-1)
+	AimInfo(4)=(MaxDist=6000,bCheckLOS=true,LOSGate=0,bLastLOS=false,PosThisFrame=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	InitialTargetTag=DukePlayer
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_AlienGunship_Explode class=DecoActivities_Sound
+		SoundNames(0)=Veh_Explosion
+	object end
+	// Reference: DecoActivities_Sound'dnAlienGunship.DA_Sound_AlienGunship_Explode'
+	DestroyedActivities(1)=DA_Sound_AlienGunship_Explode
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Vehicles.Alien_DropShip_GroundDust.Alien_DropShip_GroundDust_Main',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=true,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=GroundDust,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=-89),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=0,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	SpawnOnDestroyed(0)=(SpawnClass='dnAlienGunship_Gibs',RenderObject='sm_class_vehicles.Aircraft.AlienTroopCarrier_GIB1',DrawScale=0.85,DrawScaleVariance=0,DrawScale3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.298303E-41,Y=3.778723E-17,Z=-3),Z=1)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	CollisionRadius=500
+	CollisionHeight=150
+	Mesh='c_vehicles.Alien_Gunship'
+	VoicePack='SoundConfig.Vehicles.VoicePack_AlienGunship'
+}

@@ -9,7 +9,8 @@ interface ScriptMethod_SetEyeTarget extends ScriptMethod
 	native
 	parseconfig
 	exportstructs
-	hidecategories(Object);
+	hidecategories(Object)
+	notlistable;
 
 cpptext
 {

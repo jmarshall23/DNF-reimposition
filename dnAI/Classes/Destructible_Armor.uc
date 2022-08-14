@@ -201,8 +201,31 @@ defaultproperties
 	// Reference: MotionPrefab'Destructible_Armor.MP_DestructibleArmor_FlyOff'
 	MotionPrefab=MP_DestructibleArmor_FlyOff
 	bSurviveDeath=true
-	DestroyedActivities=/* Array type was not detected. */
-	bLoopAnim=false
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_Armor_Destroy class=DecoActivities_Sound
+		SoundNames(0)=Armor_Impact
+	object end
+	// Reference: DecoActivities_Sound'Destructible_Armor.DA_Sound_Armor_Destroy'
+	DestroyedActivities(1)=DA_Sound_Armor_Destroy
+	begin object name=DA_DestructibleArmor_SetBlockKarma class=DecoActivities_Collision
+		bBlockKarmaModifier=1
+	object end
+	// Reference: DecoActivities_Collision'Destructible_Armor.DA_DestructibleArmor_SetBlockKarma'
+	DestroyedActivities(2)=DA_DestructibleArmor_SetBlockKarma
+	HealthPrefab=5
+	Health=1
+	HealthCap=1
+	bIgnoreVehicles=true
+	bTickOnlyWhenPhysicsAwake=true
+	PhysicsMaterial='dnMaterial.dnPhysicsMaterial_Metal_Solid'
+	PhysicsMassType=1
+	PhysicsEntityGroup=CorpsePhysicsEntityGroup
+	bTraceUsable=false
+	bAITransparent=true
+	bBlockActors=false
+	bBlockPlayers=false
+	bBlockKarma=false
+	bBlockParticles=false
 	bBlockCamera=false
 	bIsDestructibleArmor=true
 	bCastStencilShadows=false

@@ -40,13 +40,13 @@ event Landed(Vector HitNormal, Actor LandedOnActor)
 	return;
 }
 
-k2call simulated function ClawDamage(optional EventInfo AnimEventInfo)
+animevent simulated function ClawDamage(optional EventInfo AnimEventInfo)
 {
 	ApplyDamage(class'RatMeleeDamage', int(ClawDamageAmount), ClawDamageVel, 4);
 	return;
 }
 
-k2call simulated function BiteDamage(optional EventInfo AnimEventInfo)
+animevent simulated function BiteDamage(optional EventInfo AnimEventInfo)
 {
 	ApplyDamage(class'RatMeleeDamage', int(BiteDamageAmount), BiteDamageVel, 4);
 	return;
@@ -420,9 +420,162 @@ defaultproperties
 {
 	WaterSpeedScale=2.5
 	DodgeInterval=2
-	Nodes(0)=(AnimEnd_NextAnimStateName=22,Root=8.117489E+11)
-	Nodes(1)=(SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=(none,(StateTable=/* Array type was not detected. */),(CurStateIndex=0),(Ident=GotoGuardPos,Status=0,ReportedInvalid=false,SucCond=79,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */),(StateTable=/* Array type was not detected. */),(CurStateIndex=0),(Ident=Attack,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */),(StateTable=/* Array type was not detected. */),(CurStateIndex=0),(Ident=AttackNormal,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=0,FailFunc=COND_ShouldEndAttackNormal,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */),(StateTable=/* Array type was not detected. */)),CurStateIndex=0)
-	Nodes(2)=(Ident=AttackShrunkWater,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=0,FailFunc=COND_ShouldEndAttackShrunkWater,Op=0,OpRef=0,SharedTransitions=(none,(StateTable=/* Array type was not detected. */),(CurStateIndex=0),(Ident=Melee,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=21,FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */),(StateTable=/* Array type was not detected. */),(CurStateIndex=0),(Ident=Wait,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */),(StateTable=/* Array type was not detected. */),(CurStateIndex=0),(Ident=Dodge,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */),(StateTable=/* Array type was not detected. */)),CurStateIndex=0)
-	Nodes(3)=(Ident=AvoidTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=COND_ShouldNotAvoidTarget,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=(none,(StateTable=/* Array type was not detected. */),(CurStateIndex=0),(Ident=Cower,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */),(StateTable=/* Array type was not detected. */),(CurStateIndex=0),(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=/* Array type was not detected. */),(StateTable=/* Array type was not detected. */),(CurStateIndex=0),(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=/* Array type was not detected. */),(StateTable=/* Array type was not detected. */)),CurStateIndex=0)
-	Nodes(4)=(Ident=FaceTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=145,OpRef=0,SharedTransitions=(none,(StateTable=/* Array type was not detected. */),(CurStateIndex=0),(Ident=FaceGuardedActor,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=143,OpRef=0,SharedTransitions=/* Array type was not detected. */),(StateTable=/* Array type was not detected. */),(CurStateIndex=0),(Ident=GotoSearchPos,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=71,OpRef=0,SharedTransitions=/* Array type was not detected. */),(StateTable=/* Array type was not detected. */),(CurStateIndex=0),(Ident=GotoJumpAttackRange,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=57,OpRef=0,SharedTransitions=/* Array type was not detected. */),(StateTable=/* Array type was not detected. */)),CurStateIndex=0)
+	Nodes(0)=(Ident=Root,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(1)=(Ident=GotoGuardPos,Status=0,ReportedInvalid=false,SucCond=79,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(2)=(Ident=Attack,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(3)=(Ident=AttackNormal,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=0,FailFunc=COND_ShouldEndAttackNormal,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(4)=(Ident=AttackShrunkWater,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=0,FailFunc=COND_ShouldEndAttackShrunkWater,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(5)=(Ident=Melee,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=21,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(6)=(Ident=Wait,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(7)=(Ident=Dodge,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(8)=(Ident=AvoidTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=COND_ShouldNotAvoidTarget,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(9)=(Ident=Cower,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(10)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(11)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(12)=(Ident=FaceTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=145,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(13)=(Ident=FaceGuardedActor,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=143,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(14)=(Ident=GotoSearchPos,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=71,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(15)=(Ident=GotoJumpAttackRange,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=57,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(16)=(Ident=GotoMelee,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=61,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(17)=(Ident=StrafeMelee,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=123,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(18)=(Ident=GotoGoalFacePos,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=47,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(19)=(Ident=StepAside,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=49,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(20)=(Ident=JumpAttack,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=89,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(21)=(Ident=MeleeAttack,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=92,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(22)=(Ident=Roar,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=107,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(23)=(Ident=DodgeLeft,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=25,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(24)=(Ident=DodgeRight,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=26,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(25)=(Ident=FreeMoveSpreadOut,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=40,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	FSMStates(0)=(FSM=Root,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=AvoidTarget,Cond=0,Func=COND_ShouldAvoidTarget,Win=0,Code=0,StateTableIndex=0),(Ident=Attack,Cond=0,Func=COND_ShouldAttack,Win=1,Code=0,StateTableIndex=0),(Ident=GotoGuardPos,Cond=0,Func=COND_ShouldGotoGuardPos,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(1)=(FSM=Root,Ident=Attack,FSMSucc=false,FSMFail=false,Transitions=((Ident=AvoidTarget,Cond=0,Func=COND_ShouldAvoidTarget,Win=0,Code=0,StateTableIndex=0),(Ident=GotoGuardPos,Cond=0,Func=COND_ShouldGotoGuardPos,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(2)=(FSM=Root,Ident=GotoGuardPos,FSMSucc=false,FSMFail=false,Transitions=((Ident=Attack,Cond=0,Func=COND_ShouldAttack,Win=0,Code=0,StateTableIndex=0),(Ident=AvoidTarget,Cond=0,Func=COND_ShouldAvoidTarget,Win=0,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(3)=(FSM=Root,Ident=Wait,FSMSucc=false,FSMFail=false,Transitions=((Ident=Attack,Cond=0,Func=COND_ShouldAttack,Win=0,Code=0,StateTableIndex=0),(Ident=AvoidTarget,Cond=0,Func=COND_ShouldAvoidTarget,Win=0,Code=0,StateTableIndex=0),(Ident=GotoGuardPos,Cond=0,Func=COND_ShouldGotoGuardPos,Win=0,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(4)=(FSM=Root,Ident=AvoidTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=Attack,Cond=0,Func=COND_ShouldAttack,Win=1,Code=0,StateTableIndex=0),(Ident=GotoGuardPos,Cond=0,Func=COND_ShouldGotoGuardPos,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(5)=(FSM=GotoGuardPos,Ident=Default,FSMSucc=true,FSMFail=true,Transitions=((Ident=GotoGoalFacePos,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(6)=(FSM=GotoGuardPos,Ident=GotoGoalFacePos,FSMSucc=true,FSMFail=true,Transitions=none,NodeIndex=0)
+	FSMStates(7)=(FSM=Attack,Ident=Default,FSMSucc=true,FSMFail=true,Transitions=((Ident=AttackShrunkWater,Cond=0,Func=COND_ShouldAttackShrunkWater,Win=1,Code=0,StateTableIndex=0),(Ident=AttackNormal,Cond=0,Func=COND_ShouldAttackNormal,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(8)=(FSM=Attack,Ident=AttackShrunkWater,FSMSucc=false,FSMFail=false,Transitions=((Ident=AttackNormal,Cond=0,Func=COND_ShouldAttackNormal,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(9)=(FSM=Attack,Ident=AttackNormal,FSMSucc=false,FSMFail=false,Transitions=((Ident=AttackShrunkWater,Cond=0,Func=COND_ShouldAttackShrunkWater,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(10)=(FSM=AttackNormal,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=GotoMelee,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=JumpAttack,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoSearchPos,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(11)=(FSM=AttackNormal,Ident=GotoMelee,FSMSucc=false,FSMFail=false,Transitions=((Ident=Dodge,Cond=0,Func=COND_ShouldDodge,Win=0,Code=0,StateTableIndex=0),(Ident=JumpAttack,Cond=13,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=MeleeAttack,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=GotoSearchPos,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(12)=(FSM=AttackNormal,Ident=JumpAttack,FSMSucc=false,FSMFail=false,Transitions=((Ident=Roar,Cond=0,Func=ShouldRoar,Win=1,Code=0,StateTableIndex=0),(Ident=GotoMelee,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoSearchPos,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(13)=(FSM=AttackNormal,Ident=Roar,FSMSucc=false,FSMFail=false,Transitions=((Ident=JumpAttack,Cond=13,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoMelee,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoSearchPos,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(14)=(FSM=AttackNormal,Ident=Wait,FSMSucc=false,FSMFail=false,Transitions=((Ident=Roar,Cond=11,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=JumpAttack,Cond=13,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=GotoMelee,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=GotoSearchPos,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(15)=(FSM=AttackNormal,Ident=FreeMoveSpreadOut,FSMSucc=false,FSMFail=false,Transitions=((Ident=MeleeAttack,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoMelee,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(16)=(FSM=AttackNormal,Ident=Dodge,FSMSucc=false,FSMFail=false,Transitions=((Ident=GotoMelee,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=MeleeAttack,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoSearchPos,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(17)=(FSM=AttackNormal,Ident=MeleeAttack,FSMSucc=false,FSMFail=false,Transitions=((Ident=FreeMoveSpreadOut,Cond=18,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoSearchPos,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(18)=(FSM=AttackNormal,Ident=GotoSearchPos,FSMSucc=false,FSMFail=false,Transitions=((Ident=Default,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(19)=(FSM=AttackShrunkWater,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=Melee,Cond=22,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=StrafeMelee,Cond=15,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoMelee,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(20)=(FSM=AttackShrunkWater,Ident=GotoMelee,FSMSucc=false,FSMFail=false,Transitions=((Ident=Dodge,Cond=0,Func=COND_ShouldDodge,Win=0,Code=0,StateTableIndex=0),(Ident=Melee,Cond=22,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=StrafeMelee,Cond=15,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoMelee,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(21)=(FSM=AttackShrunkWater,Ident=StrafeMelee,FSMSucc=false,FSMFail=false,Transitions=((Ident=Roar,Cond=0,Func=ShouldRoar,Win=1,Code=0,StateTableIndex=0),(Ident=GotoMelee,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(22)=(FSM=AttackShrunkWater,Ident=Melee,FSMSucc=false,FSMFail=false,Transitions=((Ident=Dodge,Cond=0,Func=COND_ShouldDodge,Win=0,Code=0,StateTableIndex=0),(Ident=StrafeMelee,Cond=15,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoMelee,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(23)=(FSM=AttackShrunkWater,Ident=Roar,FSMSucc=false,FSMFail=false,Transitions=((Ident=Dodge,Cond=0,Func=COND_ShouldDodge,Win=0,Code=0,StateTableIndex=0),(Ident=Melee,Cond=22,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoMelee,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(24)=(FSM=AttackShrunkWater,Ident=Wait,FSMSucc=false,FSMFail=false,Transitions=((Ident=Dodge,Cond=0,Func=COND_ShouldDodge,Win=0,Code=0,StateTableIndex=0),(Ident=Melee,Cond=22,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Roar,Cond=11,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=StrafeMelee,Cond=15,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=GotoMelee,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(25)=(FSM=AttackShrunkWater,Ident=Dodge,FSMSucc=false,FSMFail=false,Transitions=((Ident=GotoMelee,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=StrafeMelee,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Melee,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(26)=(FSM=Melee,Ident=Default,FSMSucc=true,FSMFail=true,Transitions=((Ident=MeleeAttack,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(27)=(FSM=Melee,Ident=FaceTarget,FSMSucc=true,FSMFail=true,Transitions=((Ident=MeleeAttack,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(28)=(FSM=Melee,Ident=MeleeAttack,FSMSucc=true,FSMFail=true,Transitions=none,NodeIndex=0)
+	FSMStates(29)=(FSM=Wait,Ident=Default,FSMSucc=true,FSMFail=true,Transitions=((Ident=FaceTarget,Cond=59,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=0,Code=0,StateTableIndex=0),(Ident=FaceGuardedActor,Cond=9,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(30)=(FSM=Wait,Ident=FaceTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=0,Code=0,StateTableIndex=0),(Ident=FaceGuardedActor,Cond=9,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(31)=(FSM=Wait,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=Dodge,Cond=0,Func=COND_ShouldDodge,Win=0,Code=0,StateTableIndex=0),(Ident=FaceTarget,Cond=59,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=0,Code=0,StateTableIndex=0),(Ident=FaceGuardedActor,Cond=9,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(32)=(FSM=Wait,Ident=StepAside,FSMSucc=false,FSMFail=false,Transitions=((Ident=FaceTarget,Cond=59,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=1,Code=0,StateTableIndex=0),(Ident=FaceGuardedActor,Cond=9,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(33)=(FSM=Wait,Ident=FaceGuardedActor,FSMSucc=false,FSMFail=false,Transitions=((Ident=FaceTarget,Cond=59,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(34)=(FSM=Wait,Ident=Dodge,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(35)=(FSM=Dodge,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=FaceTarget,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=DodgeLeft,Cond=0,Func=COND_ShouldDodgeLeft,Win=1,Code=0,StateTableIndex=0),(Ident=DodgeRight,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(36)=(FSM=Dodge,Ident=FaceTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=DodgeLeft,Cond=0,Func=COND_ShouldDodgeLeft,Win=1,Code=0,StateTableIndex=0),(Ident=DodgeRight,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(37)=(FSM=Dodge,Ident=DodgeLeft,FSMSucc=true,FSMFail=true,Transitions=none,NodeIndex=0)
+	FSMStates(38)=(FSM=Dodge,Ident=DodgeRight,FSMSucc=true,FSMFail=true,Transitions=none,NodeIndex=0)
+	FSMStates(39)=(FSM=AvoidTarget,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=GotoGoalFacePos,Cond=0,Func=COND_ShouldGotoAvoidGoal,Win=1,Code=0,StateTableIndex=0),(Ident=Cower,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(40)=(FSM=AvoidTarget,Ident=GotoGoalFacePos,FSMSucc=false,FSMFail=false,Transitions=((Ident=Cower,Cond=0,Func=COND_SafeFromBiggerEnemy,Win=1,Code=0,StateTableIndex=0),(Ident=GotoGoalFacePos,Cond=0,Func=COND_ShouldGotoAvoidGoal,Win=1,Code=0,StateTableIndex=0),(Ident=Cower,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(41)=(FSM=AvoidTarget,Ident=Cower,FSMSucc=false,FSMFail=false,Transitions=((Ident=GotoGoalFacePos,Cond=0,Func=COND_NotSafeFromBigEnemy,Win=0,Code=0,StateTableIndex=0),(Ident=GotoGoalFacePos,Cond=0,Func=COND_ShouldMoveAround,Win=1,Code=0,StateTableIndex=0),(Ident=Cower,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(42)=(FSM=Cower,Ident=Default,FSMSucc=true,FSMFail=true,Transitions=((Ident=FaceTarget,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(43)=(FSM=Cower,Ident=FaceTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(44)=(FSM=Cower,Ident=idle,FSMSucc=true,FSMFail=true,Transitions=none,NodeIndex=0)
+	SquadChannel=(ChannelName=None,MaxDistance=2000)
+	WeaponTargetEvalInfo=(MyOwner=none,EvalInterval=0.3,Suspended=false,bSuspendedWithNoTarget=false,Evaluator=1,ForceUpdate=false,MustBePawn=true,MustBeSighted=false,MustBeReachable=true,CanTargetProjectiles=false,CanAvoidTargetableProjectiles=false,LastTarget=none,LastTargetEndTime=0)
+	WeaponConfig='WeaponCfg_Octababy'
+	MinBlinkTime=0
+	MaxBlinkTime=0
+	Relationships(0)=(m_aClass='Engine.AIFactionHoloduke',m_eAttitude=1,m_fDamageThreshold=1)
+	Relationships(1)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(2)=(m_aClass='Engine.AIFactionHuman',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(3)=(m_aClass='Engine.AIFactionAlien',m_eAttitude=5,m_fDamageThreshold=1)
+	BodyAlignRate=3.28
+	BodyAlignRateFlying=3.28
+	AnimControllers[0]=(m_eFallback=0,m_cClass='acOctababy',m_oController=none)
+	AnimControllers[1]=(m_eFallback=1,m_cClass='acOctababy',m_oController=none)
+	AnimControllers[2]=(m_eFallback=1,m_cClass='acOctababy',m_oController=none)
+	AnimControllers[3]=(m_eFallback=1,m_cClass='acOctababy',m_oController=none)
+	AnimControllers[4]=(m_eFallback=1,m_cClass='acOctababy',m_oController=none)
+	AnimControllers[5]=(m_eFallback=1,m_cClass='acOctababy',m_oController=none)
+	AnimControllers[6]=(m_eFallback=1,m_cClass='acOctababy_Swim',m_oController=none)
+	AnimControllers[7]=(m_eFallback=1,m_cClass='acOctababy',m_oController=none)
+	AnimControllers[8]=(m_eFallback=1,m_cClass='acOctababy',m_oController=none)
+	JumpAttackParms=(TargetActor=none,Mode=0,Type=0,AttackOnTakeoff=false,Attacked=false,AttackSuccess=false,AppliedJumpVel=false,RefId=0,FrameVelocity=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	FaceDamage=false
+	MinIdleTime=0.1
+	RndIdleTime=0.1
+	ShouldTurnThreshold=0.1
+	FaceThreshold=0
+	SideArcTurnSpeedThresh=10
+	StepBackwardsSpeedThresh=1
+	StartAngleSideSector=90
+	StartAngleBackSector=90
+	MoveBackwardsDistThresh=10
+	SideStepDistThresh=0
+	MinSpreadOutTime=0.5
+	RndSpreadOutTime=0.7
+	MinMeleeRange=3
+	RndMeleeRange=2
+	MinMeleeHeight=5
+	RndMeleeHeight=5
+	MinMeleeStrafeRange=25
+	RndMeleeStrafeRange=10
+	MinMeleeStrafeCycles=1
+	RndMeleeStrafeCycles=1
+	MeleeAttackRange=60
+	MeleeAttackArc=1
+	MeleeFaceTarget=true
+	BiteDamageAmount=5
+	BiteDamageVel=(X=1.298303E-41,Y=3.778723E-17,Z=0)
+	ClawDamageAmount=10
+	ClawDamageVel=(X=1.298303E-41,Y=3.778723E-17,Z=0)
+	MinJumpAttackRange=20
+	MaxJumpAttackRange=150
+	MaxJumpAttackHeight=20
+	JumpAttackBearingVariance=180
+	CanJump=true
+	CanOpenDoors=false
+	PathID=AIPATH_Small
+	DynamicPathingPriority=3
+	bAllowSpecialKillSounds=false
+	bShouldCauseStompKillSound=false
+	bInstaGib=true
+	Stompable=true
+	FootstepCategory=8
+	FluidFrictionScale=0.25
+	EyeBone=Head
+	BodyBone=Spine
+	LockOnBone=Head
+	KillSoundRandomChance=0.1
+	CustomKillSoundName=GotKillOctababy
+	CustomKillSoundChance=1
+	CorpseType='OctababyCorpse'
+	ExpandingBoneName=Head
+	MaxStepHeightEx=2.08
+	MaxStepHeight=2
+	ExitWoundInfo(0)=(DamageType=none,MinimumDamage=1,RandomChance=1,ExitWoundDecalClass='dnGame.dnExitWound_Human')
+	Health=4
+	HealthCap=4
+	KImpactThreshold=0
+	PhysicsEntityGroup=DefaultRatPhysicsGroup
+	bNeverMeshAccurate=true
+	bAITransparent=true
+	bCanExistOutOfWorld=false
+	bStepUpAble=true
+	CollisionRadius=5
+	CollisionHeight=8
+	Mass=30
+	Mesh='c_characters.Octababy'
+	VoicePack='SoundConfig.Enemies.VoicePack_Octababy'
 }

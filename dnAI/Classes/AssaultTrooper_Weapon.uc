@@ -10,6 +10,8 @@ class AssaultTrooper_Weapon extends FakeAIWeapon
 
 defaultproperties
 {
-	MuzzleBones(0)=StateTableIndex
-	MuzzleBones(1)=Ident
+	MuzzleBones(0)=mount_muzzle
+	PrePivot=(X=-71.57069,Y=3.789241E-17,Z=0)
+	DrawScale=1.45
+	Mesh='c_dnWeapon.at_gun'
 }

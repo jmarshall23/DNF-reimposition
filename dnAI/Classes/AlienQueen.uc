@@ -407,14 +407,14 @@ event TakeDamage(Pawn Instigator, float Damage, Vector DamageOrigin, Vector Dama
 	return;
 }
 
-k2call simulated function stunned(optional EventInfo EventParms)
+animevent simulated function stunned(optional EventInfo EventParms)
 {
 	GlobalTrigger(StunnedEvent, none, self);
 	bNoDamage = false;
 	return;
 }
 
-k2call simulated function Stunnable(optional EventInfo EventParms)
+animevent simulated function Stunnable(optional EventInfo EventParms)
 {
 	CurrentOpMustFinish = false;
 	bStunnable = true;
@@ -451,14 +451,14 @@ final function SetupOpenMode()
 	return;
 }
 
-k2call simulated function defendstart(optional EventInfo EventParms)
+animevent simulated function defendstart(optional EventInfo EventParms)
 {
 	GlobalTrigger(DefendModeCompleteEvent, none, self);
 	bDefending = true;
 	return;
 }
 
-k2call simulated function defendstop(optional EventInfo EventParms)
+animevent simulated function defendstop(optional EventInfo EventParms)
 {
 	GlobalTrigger(OpenModeCompleteEvent, none, self);
 	bDefending = false;
@@ -508,7 +508,7 @@ function Engine.BaseAI.EAICode COND_ShouldOpen()
 	return;
 }
 
-k2call simulated function StompDamage(optional EventInfo AnimEventInfo)
+animevent simulated function StompDamage(optional EventInfo AnimEventInfo)
 {
 	// End:0x20
 	if(__NFUN_308__(AnimEventInfo.EventString, "left"))
@@ -630,7 +630,7 @@ simulated event Vector GetProjectileFireLocation()
 	return;
 }
 
-k2call simulated function TKBlast(optional EventInfo EventParms)
+animevent simulated function TKBlast(optional EventInfo EventParms)
 {
 	local Vector TKBlastHitLocation;
 	local STraceFlags Flags;
@@ -734,7 +734,7 @@ final function SetupEggLaunch()
 	return;
 }
 
-k2call simulated function LaunchEgg(optional EventInfo EventParms)
+animevent simulated function LaunchEgg(optional EventInfo EventParms)
 {
 	local Vector SpawnLocation;
 
@@ -916,7 +916,7 @@ function int GetSpawnedActorCount()
 	return;
 }
 
-k2call simulated function startsummon(optional EventInfo EventParms)
+animevent simulated function startsummon(optional EventInfo EventParms)
 {
 	GlobalTrigger(SummonEvent, none, self);
 	return;
@@ -1095,7 +1095,7 @@ event Die(optional Pawn Killer, optional int Damage, optional Vector DamageOrigi
 	return;
 }
 
-k2call simulated function BloodSprayAttach(optional EventInfo AnimEventInfo)
+animevent simulated function BloodSprayAttach(optional EventInfo AnimEventInfo)
 {
 	TongueBlood = BloodSprayAttachHelper('tongue_4',, __NFUN_265__(531, -16384, 32768), class'Blood_Spray_Large_Main');
 	// End:0x46
@@ -1106,7 +1106,7 @@ k2call simulated function BloodSprayAttach(optional EventInfo AnimEventInfo)
 	return;
 }
 
-k2call simulated function HeadExplode()
+animevent simulated function HeadExplode()
 {
 	local int i;
 	local PlayerPawn P;
@@ -1378,4 +1378,92 @@ defaultproperties
 	SummonMaxConcurrentSpawnsClass='Octabrain'
 	SummonGate=-1
 	StunnedDuration=6
+	HeadGibPrefabs(0)=(SpawnClass='Engine.Corpse_Gib_Bloody',RenderObject='sm_class_effects.Octabrain_Gibs.octabrain_brain_gib_l',DrawScale=3,DrawScaleVariance=0,DrawScale3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	HeadGibPrefabs(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	HeadGibPrefabs(2)=(OffsetVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	HeadGibPrefabs(3)=(Rotation=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	HeadGibEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=5,BoneName=Head,Location=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	bProcAimingEnabled=true
+	DamageScaleInfo(0)=(QualifierClass=none,DamageScale=0,QualifierDamageTypes=none,QualifierNotDamageTypes=('Engine.ExplosionDamage','dnGame.LargeCaliberBulletDamage'))
+	Nodes(0)=(Ident=Root,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(1)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(2)=(Ident=stunned,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=86,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(3)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(4)=(Ident=Pain,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=96,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(5)=(Ident=StunPain,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=96,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(6)=(Ident=Open,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=6,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(7)=(Ident=Defend,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=6,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(8)=(Ident=Summon,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=6,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(9)=(Ident=EggLaunch,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=6,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(10)=(Ident=TKBlast,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=117,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(11)=(Ident=Stomp,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=135,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	FSMStates(0)=(FSM=Root,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=stunned,Cond=0,Func=COND_IsStunned,Win=1,Code=0,StateTableIndex=0),(Ident=Defend,Cond=0,Func=COND_ShouldDefend,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(1)=(FSM=Root,Ident=stunned,FSMSucc=false,FSMFail=false,Transitions=((Ident=StunPain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=stunned,Cond=0,Func=COND_IsStunned,Win=1,Code=0,StateTableIndex=0),(Ident=TKBlast,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(2)=(FSM=Root,Ident=Defend,FSMSucc=false,FSMFail=false,Transitions=((Ident=Summon,Cond=0,Func=COND_ShouldSummon,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(3)=(FSM=Root,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=Stomp,Cond=0,Func=COND_ShouldStompMiddle,Win=0,Code=0,StateTableIndex=0),(Ident=EggLaunch,Cond=0,Func=COND_ShouldEggLaunch,Win=0,Code=0,StateTableIndex=0),(Ident=Summon,Cond=0,Func=COND_ShouldSummon,Win=0,Code=0,StateTableIndex=0),(Ident=Stomp,Cond=0,Func=COND_ShouldStomp,Win=0,Code=0,StateTableIndex=0),(Ident=TKBlast,Cond=0,Func=COND_ShouldTKBlast,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(4)=(FSM=Root,Ident=TKBlast,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(5)=(FSM=Root,Ident=EggLaunch,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(6)=(FSM=Root,Ident=Pain,FSMSucc=false,FSMFail=false,Transitions=((Ident=stunned,Cond=0,Func=COND_IsStunned,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(7)=(FSM=Root,Ident=StunPain,FSMSucc=false,FSMFail=false,Transitions=((Ident=stunned,Cond=0,Func=COND_IsStunned,Win=1,Code=0,StateTableIndex=0),(Ident=TKBlast,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(8)=(FSM=Root,Ident=Stomp,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(9)=(FSM=Root,Ident=Summon,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	ForceDirectShot=true
+	Relationships(0)=(m_aClass='Engine.AIFactionHoloduke',m_eAttitude=1,m_fDamageThreshold=1)
+	Relationships(1)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(2)=(m_aClass='Engine.AIFactionHuman',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(3)=(m_aClass='Engine.AIFactionAlien',m_eAttitude=5,m_fDamageThreshold=1)
+	IdleInfo(0)=(MinIdleTime=6,RndIdleTime=1,bFaceTarget=false,AnimName=Anim_Stunned)
+	AnimControllers[0]=(m_eFallback=0,m_cClass='acAlienQueen',m_oController=none)
+	AnimControllers[1]=(m_eFallback=1,m_cClass='acAlienQueen',m_oController=none)
+	AnimControllers[2]=(m_eFallback=1,m_cClass='acAlienQueen',m_oController=none)
+	AnimControllers[3]=(m_eFallback=1,m_cClass='acAlienQueen',m_oController=none)
+	AnimControllers[4]=(m_eFallback=1,m_cClass='acAlienQueen',m_oController=none)
+	AnimControllers[5]=(m_eFallback=1,m_cClass='acAlienQueen',m_oController=none)
+	AnimControllers[6]=(m_eFallback=1,m_cClass='acAlienQueen',m_oController=none)
+	AnimControllers[7]=(m_eFallback=1,m_cClass='acAlienQueen',m_oController=none)
+	AnimControllers[8]=(m_eFallback=1,m_cClass='acAlienQueen',m_oController=none)
+	DeathAnimChance=1
+	FinishMeControlType='dnControl_AlienQueen_FinishingMove'
+	FaceDamage=false
+	FaceDeath=false
+	MinPainOpInterval=0.5
+	RndPainOpInterval=0
+	MaxConsecutivePainOp=10
+	MaxConsecutivePainInterval=0
+	BoneAim(0)=(BoneName=Spine1,Yaw=0,Pitch=0,Weight=0.3333334)
+	BoneAim(1)=(BoneName=spine2,Yaw=0,Pitch=0,Weight=0.3333333)
+	BoneAim(2)=(BoneName=spine3,Yaw=0,Pitch=0,Weight=0.3333333)
+	StompInfo(0)=(StompRadius=1000,AnimName=Anim_StompRight,BoneName=rightmiddle_1,StompDamageAmount=50,StompDamageRadius=250,StompDamageVel=200,StompDamageLift=350,bDebug=false,SafeHeight=100,bCanStompShrunk=true,ShakeInfo=(bNoLerp=false,bToggleSign=true,Style=2,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.6,ShakeFrequency=0.08,ShakeMagnitude=2500,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=QueenStompShake),ShakeRadius=1100,ParticleEffectClass='p_Creatures.Cycloid_Stomp.CycloidStomp_Spawner',AdditionalEffectBones=none,StompLocation=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	StompInfo(1)=(bDontFaceTarget=true,bLightRumbleOnDamage=true)
+	StompInfo(2)=(StompRadius=1000,AnimName=Anim_StompLeft,BoneName=leftmiddle_1,StompDamageAmount=50,StompDamageRadius=250,StompDamageVel=200,StompDamageLift=350,bDebug=false,SafeHeight=100,bCanStompShrunk=true,ShakeInfo=(bNoLerp=false,bToggleSign=true,Style=2,Function=1,FalloffActor=none,FalloffDistance=0,ShakeDuration=0.6,ShakeFrequency=0.08,ShakeMagnitude=2500,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=QueenStompShake),ShakeRadius=1100,ParticleEffectClass='p_Creatures.Cycloid_Stomp.CycloidStomp_Spawner',AdditionalEffectBones=none,StompLocation=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	PlayerShrunkFootstepViewShake=(bNoLerp=false,bToggleSign=true,Style=2,Function=1,FalloffActor=none,FalloffDistance=4000,ShakeDuration=1.2,ShakeFrequency=0.08,ShakeMagnitude=1550,ShakeFullMagnitude=0,ShakeFullMagnitudeTime=0,ShakeName=AlienQueenStepShake)
+	ProjectileClass='dnRocket_EnergyLeech_Spike'
+	bShootProjectileRequireLOS=false
+	bShootProjectileFaceTarget=false
+	bSimplePawnPhysicsCollision=false
+	bShrinkable=false
+	EyeBone=jaw
+	BodyBone=spine2
+	LockOnBone=neck
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='dnGame.DumbActor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=StompDamageActorRight,ForceEvent=None,MountMeshItem=rightmiddle_1,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=10),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(5)=(bSkipVerifySelf=false,SpawnClass='dnGame.DumbActor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=StompDamageActorLeft,ForceEvent=None,MountMeshItem=leftmiddle_1,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=10),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	Health=1900
+	HealthCap=1900
+	StaticInteractionClassification=3
+	DynamicInteractionClassification=7
+	PhysicsEntityGroup=AlienQueenEntityGroup
+	Physics=9
+	bTraceUsable=false
+	bAcceptMeshAccurateMoveActorTrace=true
+	bIgnoreMaxRadius=true
+	bHasEvalBonesHelper=true
+	bLowerByCollision=false
+	CollisionRadius=600
+	CollisionHeight=500
+	Mesh='c_characters.alien_queen'
+	VoicePack='SoundConfig.Enemies.VoicePack_Queen'
 }

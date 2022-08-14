@@ -10,6 +10,11 @@ class Enforcer_Weapon extends FakeAIWeapon
 
 defaultproperties
 {
-	MuzzleBones(0)=StartingBlendAlpha
-	MuzzleBones(1)=Code
+	MuzzleBones(0)=mount_muzzle_01
+	MuzzleBones(1)=mount_muzzle_02
+	MuzzleBones(2)=mount_muzzle_03
+	MuzzleBones(3)=mount_muzzle_04
+	PrePivot=(X=2.71703E+23,Y=3.789257E-17,Z=0)
+	DrawScale=1.54
+	Mesh='c_dnWeapon.Enforcer_Gun'
 }

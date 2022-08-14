@@ -149,5 +149,47 @@ defaultproperties
 	SpawnYawVar=16384
 	SpawnPitchVar=3730.66
 	SpawnVelVar=1
-	
+	Nodes(0)=(Ident=Root,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(1)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(2)=(Ident=FUBAR,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=1,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(3)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	FSMStates(0)=(FSM=Root,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(1)=(FSM=Root,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	HasWeaponTargetEvaluator=false
+	Relationships(0)=(m_aClass='Engine.AIFactionHoloduke',m_eAttitude=5,m_fDamageThreshold=1)
+	Relationships(1)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=5,m_fDamageThreshold=1)
+	Relationships(2)=(m_aClass='Engine.AIFactionHuman',m_eAttitude=5,m_fDamageThreshold=1)
+	Relationships(3)=(m_aClass='Engine.AIFactionAlien',m_eAttitude=5,m_fDamageThreshold=1)
+	bUseAnimDispSpeed=false
+	bUseAnimDispDir=false
+	AlignYaw=false
+	AnimControllers[0]=(m_eFallback=0,m_cClass='acPodGirl_HolsomTwin',m_oController=none)
+	AnimControllers[1]=(m_eFallback=1,m_cClass='acPodGirl_HolsomTwin',m_oController=none)
+	AnimControllers[2]=(m_eFallback=1,m_cClass='acPodGirl_HolsomTwin',m_oController=none)
+	AnimControllers[3]=(m_eFallback=1,m_cClass='acPodGirl_HolsomTwin',m_oController=none)
+	AnimControllers[4]=(m_eFallback=1,m_cClass='acPodGirl_HolsomTwin',m_oController=none)
+	AnimControllers[5]=(m_eFallback=1,m_cClass='acPodGirl_HolsomTwin',m_oController=none)
+	AnimControllers[6]=(m_eFallback=1,m_cClass='acPodGirl_HolsomTwin',m_oController=none)
+	AnimControllers[7]=(m_eFallback=1,m_cClass='acPodGirl_HolsomTwin',m_oController=none)
+	AnimControllers[8]=(m_eFallback=1,m_cClass='acPodGirl_HolsomTwin',m_oController=none)
+	ShowPain=false
+	OptionalPathClass='Octababy'
+	bInstaGib=true
+	NoDecorationPain=false
+	bShrinkable=false
+	bPerformLipSync=true
+	FootstepCategory=8
+	Faction='Engine.AIFactionHuman'
+	BodyBone=Spine1
+	LockOnBone=Spine1
+	CorpseType='PodGirl_Corpse'
+	ExpandingBoneName=neck
+	bCanShowSelf=false
+	ExitWoundInfo(0)=(DamageType=none,MinimumDamage=1,RandomChance=0.5,ExitWoundDecalClass='dnGame.dnExitWound_Human')
+	Health=25
+	HealthCap=25
+	Physics=0
+	CollisionRadius=35
+	Mesh='c_characters.Podgirl_D'
+	VoicePack='SoundConfig.NPCs.VoicePack_PodGirl'
 }

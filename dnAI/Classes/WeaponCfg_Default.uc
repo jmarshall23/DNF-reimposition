@@ -10,23 +10,5 @@ class WeaponCfg_Default extends WeaponCfg
 
 defaultproperties
 {
-	
-	Cond=0
-	Min=0
-	Max=50
-	IdealMin=5
-	IdealMax=20
-	ReloadThresh=0
-	MinShots=0
-	RndShots=0
-	MinVolleyInterval=0
-	RndVolleyInterval=0
-	StandingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0)
-	CrouchingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0)
-	ProneFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0)
-	PipeBombFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0)
-	HideWhenMultipleHolstered=false
-	ActionPointDistance=0
-	ClearShotRequirement=0
-	MeleeFrozenTargets=false
+	Cfg(0)=(Wpn=none,ChargeWeapon=false,WeaponChargeTime=0,Min=0,Max=50,IdealMin=5,IdealMax=20,ReloadThresh=0,MinShots=0,RndShots=0,MinVolleyInterval=0,RndVolleyInterval=0,StandingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 }

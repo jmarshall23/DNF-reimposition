@@ -170,5 +170,15 @@ defaultproperties
 	SpawnType=3
 	OctabrainOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0)
 	OctababyOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0)
-	DecoActivities_Default=/* Array type was not detected. */
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(BreakOut),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'OctabrainIncubationChamber.DA_Anim_Chamber_Open'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	begin object name=DA_Anim_Chamber_Idle class=DecoActivities_Animation
+		AnimActivities(0)=(Flags=(bLoop=true,bNoLoopEnd=false,bFade=false,bNoRemove=false,bLoopMovement=false,bInterrupt=false,bEarlyEnd=false,bAdjustStart=false),Animation=idle,Channel=0,Rate=0,TweenTime=0)
+	object end
+	// Reference: DecoActivities_Animation'OctabrainIncubationChamber.DA_Anim_Chamber_Idle'
+	StartupActivities(0)=DA_Anim_Chamber_Idle
+	HealthPrefab=0
+	bAcceptMeshAccurateMoveActorTrace=true
+	DrawType=2
+	Mesh='c_generic.octabrain_chamber'
+	VoicePack='SoundConfig.Interactive.VoicePack_Biology'
 }

@@ -70,32 +70,83 @@ event EnumerateUsableAnimationControllers(PrecacheIndex PrecacheIndex, out array
 
 defaultproperties
 {
-	DamageScaleInfo(0)=(Ident='dnGame.DukePlayer',DamageScale=0,QualifierDamageTypes=(none,class'SensorEnabled',class'PrimaryTarget',class'AimInfo',none,class'ReturnValue',class'Other',class'AnimName',class'WhiteColor',class'GotoXParms',class'C',class'm_aTarget',class'AnimCtrl',class'WeaponClasses',class'FreeMoveParms',class'm_aTarget',none,class'AIActorFactory',class'JumpAttackParms',class'i',class'm_aTarget',class'm_aTarget',class'i',class'bSucceedOnFail',class'ReturnValue',class'FinishMeControlType',class'm_aTarget',class'm_aTarget',class'AnimIndex',class'bSucceedOnFail',class'ReturnValue',class'PrecacheIndex',class'm_aTarget',none,class'TKObj',class'PrecacheIndex',none,none,none,none,class'DamageInfo',class'PrimaryTarget',class'JumpParms',none,class'PrecacheIndex',class'PrimaryTarget',class'CurrentOp',none,class'TurnToXParms',class'PrecacheIndex',none,none,none,none,class'ReturnValue',class'm_aTarget',class'AnimCtrl',class'Prop',class'FreeMoveParms',class'm_aTarget',none,class'AIActorFactory',class'JumpAttackParms',class'i',class'm_aTarget',class'FollowTarget',class'bSucceedOnFail',class'ReturnValue',class'FinishMeControlType',class'm_aTarget',class'm_aTarget'),FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(1)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(2)=(CurStateIndex=0)
-	DamageScaleInfo(3)=(Ident=AvoidDanger,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(4)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(5)=(CurStateIndex=0)
-	DamageScaleInfo(6)=(Ident=Wait,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(7)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(8)=(CurStateIndex=0)
-	DamageScaleInfo(9)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(10)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(11)=(CurStateIndex=0)
-	DamageScaleInfo(12)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(13)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(14)=(CurStateIndex=0)
-	DamageScaleInfo(15)=(Ident=Pain,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=96,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(16)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(17)=(CurStateIndex=0)
-	DamageScaleInfo(18)=(Ident=FaceTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=145,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(19)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(20)=(CurStateIndex=0)
-	DamageScaleInfo(21)=(Ident=FaceGuardedActor,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=143,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(22)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(23)=(CurStateIndex=0)
-	DamageScaleInfo(24)=(Ident=GotoGoalFaceActor,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=52,OpRef=0,SharedTransitions=/* Array type was not detected. */)
-	DamageScaleInfo(25)=(StateTable=/* Array type was not detected. */)
-	DamageScaleInfo(26)=(CurStateIndex=0)
-	DamageScaleInfo(27)=(Ident=GotoGoalFacePos,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=47,OpRef=0,SharedTransitions=/* Array type was not detected. */)
+	DamageScaleInfo(0)=(QualifierClass='dnGame.DukePlayer',DamageScale=0,QualifierDamageTypes=none,QualifierNotDamageTypes=none)
+	Nodes(0)=(Ident=Root,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(1)=(Ident=GotoGuardPos,Status=0,ReportedInvalid=false,SucCond=79,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(2)=(Ident=AvoidDanger,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(3)=(Ident=Wait,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(4)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(5)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(6)=(Ident=Pain,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=96,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(7)=(Ident=FaceTarget,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=145,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(8)=(Ident=FaceGuardedActor,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=143,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(9)=(Ident=GotoGoalFaceActor,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=52,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(10)=(Ident=GotoGoalFacePos,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=47,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(11)=(Ident=GotoGoalFacePosOneStep,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=48,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(12)=(Ident=StepAside,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=46,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	FSMStates(0)=(FSM=Root,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=AvoidDanger,Cond=0,Func=COND_ShouldAvoidDanger,Win=0,Code=0,StateTableIndex=0),(Ident=AvoidDanger,Cond=0,Func=COND_ShouldAvoidTarget,Win=0,Code=0,StateTableIndex=0),(Ident=GotoGuardPos,Cond=0,Func=COND_ShouldGotoGuardPos,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(1)=(FSM=Root,Ident=Pain,FSMSucc=false,FSMFail=false,Transitions=((Ident=AvoidDanger,Cond=0,Func=COND_ShouldAvoidDanger,Win=1,Code=0,StateTableIndex=0),(Ident=AvoidDanger,Cond=0,Func=COND_ShouldAvoidTarget,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(2)=(FSM=Root,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=AvoidDanger,Cond=0,Func=COND_ShouldAvoidDanger,Win=0,Code=0,StateTableIndex=0),(Ident=AvoidDanger,Cond=0,Func=COND_ShouldAvoidTarget,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(3)=(FSM=Root,Ident=Wait,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=AvoidDanger,Cond=0,Func=COND_ShouldAvoidDanger,Win=0,Code=0,StateTableIndex=0),(Ident=AvoidDanger,Cond=0,Func=COND_ShouldAvoidTarget,Win=0,Code=0,StateTableIndex=0),(Ident=GotoGuardPos,Cond=0,Func=COND_ShouldGotoGuardPos,Win=0,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(4)=(FSM=Root,Ident=GotoGuardPos,FSMSucc=false,FSMFail=false,Transitions=((Ident=Pain,Cond=0,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=AvoidDanger,Cond=0,Func=COND_ShouldAvoidDanger,Win=0,Code=0,StateTableIndex=0),(Ident=AvoidDanger,Cond=0,Func=COND_ShouldAvoidTarget,Win=0,Code=0,StateTableIndex=0),(Ident=GotoGuardPos,Cond=0,Func=COND_ShouldGotoGuardPos,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(5)=(FSM=Root,Ident=AvoidDanger,FSMSucc=false,FSMFail=false,Transitions=((Ident=AvoidDanger,Cond=0,Func=COND_ShouldAvoidDanger,Win=1,Code=0,StateTableIndex=0),(Ident=AvoidDanger,Cond=0,Func=COND_ShouldAvoidTarget,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(6)=(FSM=GotoGuardPos,Ident=Default,FSMSucc=true,FSMFail=true,Transitions=((Ident=GotoGoalFaceActor,Cond=5,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=GotoGoalFacePos,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(7)=(FSM=GotoGuardPos,Ident=GotoGoalFaceActor,FSMSucc=true,FSMFail=true,Transitions=((Ident=GotoGoalFacePos,Cond=9,Func=None,Win=0,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(8)=(FSM=GotoGuardPos,Ident=GotoGoalFacePos,FSMSucc=true,FSMFail=true,Transitions=((Ident=GotoGoalFaceActor,Cond=5,Func=None,Win=0,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(9)=(FSM=AvoidDanger,Ident=Default,FSMSucc=true,FSMFail=true,Transitions=((Ident=GotoGoalFacePosOneStep,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=Wait,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(10)=(FSM=AvoidDanger,Ident=GotoGoalFacePosOneStep,FSMSucc=true,FSMFail=true,Transitions=none,NodeIndex=0)
+	FSMStates(11)=(FSM=AvoidDanger,Ident=Wait,FSMSucc=true,FSMFail=true,Transitions=none,NodeIndex=0)
+	FSMStates(12)=(FSM=Wait,Ident=Default,FSMSucc=true,FSMFail=true,Transitions=((Ident=FaceTarget,Cond=59,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=1,Code=0,StateTableIndex=0),(Ident=FaceGuardedActor,Cond=9,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(13)=(FSM=Wait,Ident=FaceTarget,FSMSucc=false,FSMFail=false,Transitions=((Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=0,Code=0,StateTableIndex=0),(Ident=FaceGuardedActor,Cond=9,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(14)=(FSM=Wait,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=FaceTarget,Cond=59,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=0,Code=0,StateTableIndex=0),(Ident=FaceGuardedActor,Cond=9,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(15)=(FSM=Wait,Ident=StepAside,FSMSucc=false,FSMFail=false,Transitions=((Ident=FaceTarget,Cond=59,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=1,Code=0,StateTableIndex=0),(Ident=FaceGuardedActor,Cond=9,Func=None,Win=1,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(16)=(FSM=Wait,Ident=FaceGuardedActor,FSMSucc=false,FSMFail=false,Transitions=((Ident=FaceTarget,Cond=59,Func=None,Win=0,Code=0,StateTableIndex=0),(Ident=StepAside,Cond=0,Func=COND_ShouldStepAside,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	MinBlinkTime=3.5
+	MaxBlinkTime=5
+	NumEyeSets=1
+	EyeAimInfos(0)=(BoneName=eye_l,Alignment=(X=1.298303E-41,Y=3.773024E-17,Z=1),Z=0)
+	EyeAimInfos(1)=(MaxAngleOffset=0.35)
+	Relationships(0)=(m_aClass='Engine.AIFactionHoloduke',m_eAttitude=6,m_fDamageThreshold=1)
+	Relationships(1)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=6,m_fDamageThreshold=1)
+	Relationships(2)=(m_aClass='Engine.AIFactionHuman',m_eAttitude=5,m_fDamageThreshold=1)
+	Relationships(3)=(m_aClass='Engine.AIFactionAlien',m_eAttitude=2,m_fDamageThreshold=1)
+	UseTurnAnimRot=true
+	BodyAlignRate=4.7
+	BodyAlignRateFlying=4.7
+	AnimControllers[0]=(m_eFallback=0,m_cClass='acStripper',m_oController=none)
+	AnimControllers[1]=(m_eFallback=1,m_cClass='acStripper',m_oController=none)
+	AnimControllers[2]=(m_eFallback=1,m_cClass='acStripper',m_oController=none)
+	AnimControllers[3]=(m_eFallback=1,m_cClass='acStripper',m_oController=none)
+	AnimControllers[4]=(m_eFallback=1,m_cClass='acStripper',m_oController=none)
+	AnimControllers[5]=(m_eFallback=1,m_cClass='acStripper',m_oController=none)
+	AnimControllers[6]=(m_eFallback=1,m_cClass='acStripper',m_oController=none)
+	AnimControllers[7]=(m_eFallback=1,m_cClass='acStripper',m_oController=none)
+	AnimControllers[8]=(m_eFallback=1,m_cClass='acStripper',m_oController=none)
+	FaceDamage=false
+	FaceDeath=false
+	BoneAim(0)=(BoneName=Spine,Yaw=0,Pitch=0,Weight=0.2)
+	BoneAim(1)=(BoneName=Spine1,Yaw=0,Pitch=0,Weight=0.3)
+	BoneAim(2)=(BoneName=spine2,Yaw=0,Pitch=0,Weight=0.5)
+	HasBoneAimer=true
+	BoneHeadAim(0)=(BoneName=neck,Yaw=0,Pitch=0,Weight=0.3)
+	BoneHeadAim(1)=(BoneName=Head,Yaw=0,Pitch=0,Weight=0.7)
+	HasBoneHeadAimer=true
+	HasHeadAimer=true
+	AvoidDangers=true
+	PathID=AIPATH_Thin
+	bShrinkable=false
+	bPerformLipSync=true
+	FootprintType=0
+	Faction='Engine.AIFactionHuman'
+	EyeBone=Head
+	BodyBone=Spine
+	LockOnBone=Spine
+	PickupMountBone=mount_handright
+	CorpseType='HumanCorpse'
+	ExpandingBoneName=neck
+	FootBones(0)=(bRightSide=false,BoneName=leftfoot,BoneID=foot_left_1,BoneRotOffset=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	FootBones(1)=none
+	Health=10
+	HealthCap=10
+	CollisionRadius=18
 }

@@ -11,5 +11,8 @@ class Cycloid_Armor extends Destructible_Armor
 
 defaultproperties
 {
-	DamageTypesAcceptedOnly=/* Array type was not detected. */
+	DamageTypesAcceptedOnly(0)='Engine.ExplosionDamage'
+	Health=800
+	HealthCap=800
+	Mass=35
 }

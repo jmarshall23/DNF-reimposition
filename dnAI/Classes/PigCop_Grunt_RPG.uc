@@ -18,5 +18,6 @@ event EnumerateWeaponClasses(PrecacheIndex PrecacheIndex, out array< class<Weapo
 defaultproperties
 {
 	WeaponConfig='WeaponCfg_PigCopRPG'
-	Weapons(0)=class'C'
+	Weapons(0)='dnGame.RPG_Pigcop'
+	MeleeZone=160
 }

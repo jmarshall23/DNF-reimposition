@@ -10,5 +10,8 @@ class WeaponCfg_PigCopDualPistol extends WeaponCfg_PigCopBase
 
 defaultproperties
 {
-	PreferredWeapons(0)=class'PrimaryTarget'
+	PreferredWeapons(0)='dnGame.DualPistol_Pigcop'
+	PreferredWeapons(1)='dnGame.MachineGun_Pigcop'
+	PreferredWeapons(2)='dnGame.RPG_Pigcop'
+	PreferredWeapons(3)='dnGame.Shotgun_Strapless_Pigcop'
 }

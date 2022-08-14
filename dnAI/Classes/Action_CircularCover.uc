@@ -22,6 +22,8 @@ var() noexport float Radius "How far from the action point we should be.";
 defaultproperties
 {
 	Radius=60
-	Popups(0)=5
-	Popups(1)=4
+	Popups(0)=0
+	Popups(1)=1
+	Popups(2)=3
+	Popups(3)=4
 }

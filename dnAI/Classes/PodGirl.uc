@@ -499,5 +499,18 @@ defaultproperties
 	SensorRadius=100
 	HealthPrefab=0
 	bUseDecoAnim=false
-	ExitWoundInfo=/* Array type was not detected. */
+	ExitWoundInfo(0)=(DamageType=none,MinimumDamage=1,RandomChance=0.5,ExitWoundDecalClass='dnGame.dnExitWound_Human')
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='dnDecorations.Biology_Generic_AlienSensor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	AnimationControllerClass='acPodGirl'
+	bBlockKarma=true
+	bBlockPath=true
+	bStaticAI=true
+	bHasEvalBonesHelper=true
+	bDumbMesh=false
+	bLowerByCollision=true
+	bDirectional=true
+	CollisionRadius=35
+	VisibleCollidingCenterOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0)
+	Mesh='c_characters.podgirl_c'
+	VoicePack='SoundConfig.NPCs.VoicePack_PodGirlA'
 }

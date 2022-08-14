@@ -85,9 +85,25 @@ defaultproperties
 {
 	HealthPrefab=0
 	GrabInfo=(bCanDuckWhileHeld=true,MountItemOverride=mount_handright,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	MountOnSpawn=/* Array type was not detected. */
-	SpawnChance=0
-	MountPrefab=(bDontActuallyMount=true,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=true,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	RenderObject=none
-	DrawScale=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Bugball_HelperCylinder',SpawnChance=0,MountPrefab=(bDontActuallyMount=true,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=true,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	bNoDamage=true
+	DynamicInteractionClassification=3
+	PhysicsEntityGroup=CorpsePhysicsEntityGroup
+	PhysicsSoundOverrides(0)=(SoundType=0,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaBody.BodyImpact03','a_impact.KarmaBody.BodyMed03','a_impact.KarmaBody.BodySmall03'),SoundInfo=(InputRange=(Min=32,Max=250),OutputPitchRange=(Min=0.8,Max=1),OutputVolumeRange=(Min=0.75,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(1)=(SoundType=1,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=('a_impact.KarmaStone.Boulder_Roll_01'),SoundInfo=(InputRange=(Min=5,Max=20),OutputPitchRange=(Min=0.25,Max=0.75),OutputVolumeRange=(Min=0.5,Max=1)),bDisableSoundInWater=true)
+	PhysicsSoundOverrides(2)=(SoundType=2,OtherMaterialTypes=none,OtherMassTypes=none,Sounds=none,SoundInfo=(InputRange=(Min=0,Max=0),OutputPitchRange=(Min=0,Max=0),OutputVolumeRange=(Min=0,Max=0)),bDisableSoundInWater=true)
+	Physics=18
+	bCanExistOutOfWorld=true
+	bTickOnlyRecent=false
+	bAcceptsProjectors=false
+	bAcceptsDecalProjectors=false
+	bCastStencilShadows=false
+	CollisionRadius=30
+	CollisionHeight=23
+	Mass=300
+	DrawType=8
+	DrawScale=2.2
+	StaticMesh='sm_class_decorations.Balls.beachball'
+	Skins(0)='dt_editor.Surface.Climbable_Masking'
+	EffectsMaterial='dnMaterial.Flesh_Alien'
 }

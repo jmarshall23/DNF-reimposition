@@ -31,8 +31,4 @@ defaultproperties
 	PainAnims[19]=(Front=Anim_PainFront,Back=Anim_PainBack,Left=None,Right=None,FrontBig=Anim_PainFrontHeadBig,BackBig=Anim_PainBackBig,LeftBig=None,RightBig=None,NewAnimCont=0,WoundedPart=0)
 	WeaponAimerContraints=(MinViewPitchOffset=-4000,MaxViewPitchOffset=4000,IgnoreThresholdPitch=4000,MinViewYawOffset=-6000,MaxViewYawOffset=6000,IgnoreThresholdYaw=1820,SmerpOn=0,SmerpOff=0,Acceleration=0.5,AccelerationReset=0.1,Velocity=5000,VelocityReset=2500)
 	HeadAimerContraints=(MinViewPitchOffset=0,MaxViewPitchOffset=4000,IgnoreThresholdPitch=3420,MinViewYawOffset=-4000,MaxViewYawOffset=4000,IgnoreThresholdYaw=1820,SmerpOn=0,SmerpOff=0,Acceleration=0.1,AccelerationReset=0.1,Velocity=5000,VelocityReset=2500)
-	Animations=/* Array type was not detected. */
-	ChannelName=Bottom
-	ChannelLink=0
-	bLinkedToBlock=false
 }

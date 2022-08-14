@@ -204,7 +204,7 @@ final function FadeFromBlackComplete()
 	return;
 }
 
-k2call simulated function EyeLaunch(optional EventInfo AnimEventInfo)
+animevent simulated function EyeLaunch(optional EventInfo AnimEventInfo)
 {
 	local dnScreenSplatters Splatter;
 	local SoftParticleSystem BloodyMess;

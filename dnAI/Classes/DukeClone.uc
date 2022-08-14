@@ -27,5 +27,36 @@ defaultproperties
 	HeadTrackRate=120
 	HasWeaponManager=true
 	WeaponConfig='WeaponCfg_DukeClone'
-	Weapons(0)=class'C'
+	Weapons(0)='MachineGun_DukeClone'
+	PistolClass='dnGame.Pistol_EDF'
+	PipeBombClass='dnGame.dnPipeBombProjectile_Timed_AI'
+	Relationships(0)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=2,m_fDamageThreshold=1)
+	Relationships(1)=(m_aClass='Engine.AIFactionHuman',m_eAttitude=3,m_fDamageThreshold=1)
+	Relationships(2)=(m_aClass='Engine.AIFactionHoloduke',m_eAttitude=1,m_fDamageThreshold=1)
+	Relationships(3)=(m_aClass='Engine.AIFactionAlien',m_eAttitude=5,m_fDamageThreshold=1)
+	BodyAlignRate=4.5
+	BodyAlignRateFlying=4.5
+	BodyAlignScale=0.75
+	FaceDamage=false
+	FaceDeath=false
+	TryGotoAttackTime=0.5
+	MinIdleTime=0.3
+	RndIdleTime=1
+	CanJump=true
+	HasStartFallAnim=true
+	AvoidDangers=true
+	MaxThreatAimAngle=20
+	PathID=AIPATH_Thin
+	FootprintType=0
+	EyeBone=Head
+	BodyBone=Spine
+	LockOnBone=Spine
+	CorpseType='AlienCorpse'
+	FootBones(0)=(bRightSide=false,BoneName=leftfoot,BoneID=foot_left_1,BoneRotOffset=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	FootBones(1)=none
+	Health=200
+	HealthCap=200
+	CollisionRadius=18
+	Mesh='c_characters.Duke'
+	VoicePack='SoundConfig.Enemies.VoicePack_DukeClone'
 }

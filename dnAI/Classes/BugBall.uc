@@ -276,5 +276,36 @@ defaultproperties
 	RollSoundVelMax=20
 	RollSoundVelMin=1
 	RollSoundVolMax=1
-	Nodes(0)=(Cond=22,Root=8.117489E+11)
+	Nodes(0)=(Ident=Root,Status=0,ReportedInvalid=false,SucCond=1,SucFunc=None,FailCond=1,FailFunc=None,Op=0,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(1)=(Ident=Default,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(2)=(Ident=idle,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=85,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(3)=(Ident=StartBallMode,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=7,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	Nodes(4)=(Ident=EndBallMode,Status=0,ReportedInvalid=false,SucCond=0,SucFunc=None,FailCond=0,FailFunc=None,Op=8,OpRef=0,SharedTransitions=none,StateTable=none,CurStateIndex=0)
+	FSMStates(0)=(FSM=Root,Ident=Default,FSMSucc=false,FSMFail=false,Transitions=((Ident=StartBallMode,Cond=0,Func=COND_ShouldEnterBallMode,Win=0,Code=0,StateTableIndex=0),(Ident=EndBallMode,Cond=0,Func=COND_ShouldEndBallMode,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(1)=(FSM=Root,Ident=idle,FSMSucc=false,FSMFail=false,Transitions=((Ident=StartBallMode,Cond=0,Func=COND_ShouldEnterBallMode,Win=0,Code=0,StateTableIndex=0),(Ident=EndBallMode,Cond=0,Func=COND_ShouldEndBallMode,Win=0,Code=0,StateTableIndex=0),(Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(2)=(FSM=Root,Ident=StartBallMode,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	FSMStates(3)=(FSM=Root,Ident=EndBallMode,FSMSucc=false,FSMFail=false,Transitions=((Ident=idle,Cond=0,Func=None,Win=1,Code=0,StateTableIndex=0)),NodeIndex=0)
+	HasLookTargetEvaluator=true
+	LookTargetEvalInfo=(MyOwner=none,EvalInterval=0.5,Suspended=false,bSuspendedWithNoTarget=false,Evaluator=2,ForceUpdate=false,MustBePawn=false,MustBeSighted=false,MustBeReachable=false,CanTargetProjectiles=false,CanAvoidTargetableProjectiles=false,LastTarget=none,LastTargetEndTime=0)
+	AutoUnrollRate=50
+	bUseAnimRotation=true
+	AnimControllers[0]=(m_eFallback=0,m_cClass='acBugball',m_oController=none)
+	AnimControllers[1]=(m_eFallback=1,m_cClass='acBugball',m_oController=none)
+	AnimControllers[2]=(m_eFallback=1,m_cClass='acBugball',m_oController=none)
+	AnimControllers[3]=(m_eFallback=1,m_cClass='acBugball',m_oController=none)
+	AnimControllers[4]=(m_eFallback=1,m_cClass='acBugball',m_oController=none)
+	AnimControllers[5]=(m_eFallback=1,m_cClass='acBugball',m_oController=none)
+	AnimControllers[6]=(m_eFallback=1,m_cClass='acBugball',m_oController=none)
+	AnimControllers[7]=(m_eFallback=1,m_cClass='acBugball',m_oController=none)
+	AnimControllers[8]=(m_eFallback=1,m_cClass='acBugball',m_oController=none)
+	PathID=AIPATH_Bugball
+	bShrinkable=false
+	bIgnoreAimAssist=true
+	CorpseType='AlienCorpse'
+	PhysicsEntityGroup=CorpsePhysicsEntityGroup
+	bLowerByCollision=false
+	CollisionRadius=40
+	CollisionHeight=23
+	Mesh='c_characters.BugBall'
+	VoicePack='SoundConfig.Enemies.VoicePack_BugBall'
 }

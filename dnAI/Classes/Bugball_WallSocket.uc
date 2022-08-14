@@ -143,7 +143,7 @@ event Tick(float DeltaTime)
 	return;
 }
 
-k2call function MaxExtend()
+animevent function MaxExtend()
 {
 	AttachBallToTip(false);
 	return;
@@ -224,9 +224,15 @@ defaultproperties
 	TipBone=mount_ball
 	BallMountInfo=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=true,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_ball,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 	HealthPrefab=0
-	MountOnSpawn=/* Array type was not detected. */
-	SpawnChance=0
-	MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
-	RenderObject=none
-	DrawScale=0
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='Bugball_WallSocket_Sensor',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	AnimationControllerClass='acBugball_WallSocket'
+	bBlockKarma=false
+	bCanExistOutOfWorld=true
+	bNoNativeTick=false
+	bDumbMesh=false
+	CollisionRadius=20
+	CollisionHeight=30
+	TickStyle=2
+	DrawType=2
+	Mesh='c_characters.bugball_socket'
 }

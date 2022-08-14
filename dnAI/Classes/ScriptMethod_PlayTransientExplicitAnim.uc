@@ -15,7 +15,7 @@ cpptext
 // Stripped
 }
 
-var() noexport name SequenceName "Animation sequence to play.";
+var() noexport anim name SequenceName "Animation sequence to play.";
 var() noexport name ChannelName "Channel to play the anim on.";
 var() noexport float Rate "Animation rate. (1.0 is normal speed)";
 var() noexport float Tween "Tween time.";

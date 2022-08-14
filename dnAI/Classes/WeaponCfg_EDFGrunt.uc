@@ -10,7 +10,7 @@ class WeaponCfg_EDFGrunt extends WeaponCfg
 
 defaultproperties
 {
-	Cfg(0)=(EndingBlendAlpha=class'AIActor',Cond=/* Unknown default property type! */,ChargeWeapon=false,WeaponChargeTime=0,Min=0,Max=50,IdealMin=5,IdealMax=20,ReloadThresh=0,MinShots=0,RndShots=0,MinVolleyInterval=0,RndVolleyInterval=0,StandingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	Cfg(0)=(Wpn=none,ChargeWeapon=false,WeaponChargeTime=0,Min=0,Max=50,IdealMin=5,IdealMax=20,ReloadThresh=0,MinShots=0,RndShots=0,MinVolleyInterval=0,RndVolleyInterval=0,StandingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 	Cfg(1)=(CrouchingFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 	Cfg(2)=(ProneFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
 	Cfg(3)=(PipeBombFireOffset=(X=-5.862289E-10,Y=3.778582E-17,Z=-23.111),Z=39.06)
@@ -18,4 +18,15 @@ defaultproperties
 	Cfg(5)=(Wpn='dnGame.Pistol_EDF',ChargeWeapon=false,WeaponChargeTime=0,Min=100,Max=1000,IdealMin=200,IdealMax=600,ReloadThresh=1,MinShots=7,RndShots=0,MinVolleyInterval=0.2,RndVolleyInterval=0,StandingFireOffset=(X=1.298303E-41,Y=3.778614E-17,Z=0),Z=21)
 	Cfg(6)=(CrouchingFireOffset=(X=1.298303E-41,Y=3.778609E-17,Z=0),Z=2)
 	Cfg(7)=(ProneFireOffset=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	Cfg(8)=(PipeBombFireOffset=(X=1.139136E-21,Y=3.778577E-17,Z=-25.864),Z=36.248)
+	Cfg(9)=(HideWhenMultipleHolstered=false,ActionPointDistance=60,ClearShotRequirement=1,MeleeFrozenTargets=false)
+	PreferredWeapons(0)='dnGame.MachineGun_EDF'
+	PreferredWeapons(1)='dnGame.Shotgun_EDF'
+	PreferredWeapons(2)='dnGame.Pistol_EDF'
+	PreferredWeapons(3)='Devastator_EDF'
+	PreferredWeapons(4)='dnGame.RPG_EDF'
+	PreferredWeapons(5)='Railgun_EDF'
+	PreferredWeapons(6)='FreezeRay_EDF'
+	PreferredWeapons(7)='Shrinkray_EDF'
+	PreferredWeapons(8)='dnGame.Pistol_Gold'
 }

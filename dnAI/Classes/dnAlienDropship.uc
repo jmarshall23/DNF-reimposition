@@ -754,9 +754,79 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 defaultproperties
 {
 	begin object name=SO_AlienDropship_Idle class=ScriptObj
-		Methods=/* Array type was not detected. */
+		Methods(0)=ScriptMethod_SetAbortable'dnAlienDropship.SM_AlienDropShip_SetAbortable'
+		Methods(1)=ScriptMethod_ResumeFire'dnAlienDropship.SM_AlienDropShip_ResumeFire'
+		Methods(2)=ScriptMethod_Idle'dnAlienDropship.SM_AlienDropShip_Idle'
 	object end
 	// Reference: ScriptObj'dnAlienDropship.SO_AlienDropship_Idle'
 	IdleScript=SO_AlienDropship_Idle
 	WeaponConstraint=(MinViewPitchOffset=-8000,MaxViewPitchOffset=16000,IgnoreThresholdPitch=3000,MinViewYawOffset=-5000,MaxViewYawOffset=5000,IgnoreThresholdYaw=3000,SmerpOn=0,SmerpOff=0,Acceleration=0.5,AccelerationReset=0.1,Velocity=5000,VelocityReset=2500)
+	DamageEffects(0)=(DamageEffectOffset=(X=-0.000121184,Y=3.78932E-17,Z=96.31987),Z=-71.8095)
+	DamageEffects(1)=(DamageEffectRotation=(Pitch=-268426702,Yaw=574619647,Roll=16384),Roll=0)
+	DamageEffects(2)=(EffectClassList=('p_Decorations.BarrelExplosion.Barrel_Explosion_Spawner','dnGame.ParticleSystemTimer_Sparks_Malfunction_Gunship'),EffectList=none,DrawScale=2,bOn=false,bTwoStageEffect=false,SecondStageList=none)
+	DamageEffects(3)=(DamageEffectOffset=(X=-1.369959E+32,Y=3.789527E-17,Z=100.0302),Z=-72.31932)
+	DamageEffects(4)=(DamageEffectRotation=(Pitch=-268426702,Yaw=574619647,Roll=16384),Roll=0)
+	DamageEffects(5)=(EffectClassList=('p_Decorations.BarrelExplosion.Barrel_Explosion_Spawner','dnGame.ParticleSystemTimer_Sparks_Malfunction_Gunship'),EffectList=none,DrawScale=2,bOn=false,bTwoStageEffect=false,SecondStageList=none)
+	DamageEffects(6)=(DamageEffectOffset=(X=-8.795451E-21,Y=3.789527E-17,Z=-101.7487),Z=-72.8095)
+	DamageEffects(7)=(DamageEffectRotation=(Pitch=-335535566,Yaw=574619647,Roll=-16384),Roll=0)
+	DamageEffects(8)=(EffectClassList=('p_Decorations.BarrelExplosion.Barrel_Explosion_Spawner','dnGame.ParticleSystemTimer_Sparks_Malfunction_Gunship'),EffectList=none,DrawScale=2,bOn=false,bTwoStageEffect=false,SecondStageList=none)
+	DamageEffects(9)=(DamageEffectOffset=(X=2.54398E-14,Y=3.789294E-17,Z=-100.1402),Z=-71.8095)
+	DamageEffects(10)=(DamageEffectRotation=(Pitch=-536862158,Yaw=574619647,Roll=-16384),Roll=0)
+	DamageEffects(11)=(EffectClassList=('p_Decorations.BarrelExplosion.Barrel_Explosion_Spawner','dnGame.ParticleSystemTimer_Sparks_Malfunction_Gunship'),EffectList=none,DrawScale=2,bOn=false,bTwoStageEffect=false,SecondStageList=none)
+	DamageThreshold1=800
+	DamageThreshold2=400
+	DamageOverlay='dt_Effects2.Overlays.ElectricalMalFunction_FB'
+	TimeBetweenDamageEffects=2
+	TimeBetweenDamageEffectsVariance=1.2
+	MaxSpeed=8500
+	MaxIdleSpeed=2150
+	bIsIdle=true
+	bSetCallback=true
+	SpawnInfo(0)=(ReleaseTag=None,MountBone=mount_astr_left_1,FactoryTag=None,SpawnTag=None,Factory=none,SpawnedActor=none,NextScriptObj=none,RappelAttachToBone=mount_repel_left_1,SpecialEventID=0)
+	SpawnInfo(1)=(ReleaseTag=None,MountBone=mount_astr_left_2,FactoryTag=None,SpawnTag=None,Factory=none,SpawnedActor=none,NextScriptObj=none,RappelAttachToBone=mount_repel_left_2,SpecialEventID=0)
+	SpawnInfo(2)=(ReleaseTag=None,MountBone=mount_astr_right_1,FactoryTag=None,SpawnTag=None,Factory=none,SpawnedActor=none,NextScriptObj=none,RappelAttachToBone=mount_repel_right_1,SpecialEventID=0)
+	SpawnInfo(3)=(ReleaseTag=None,MountBone=mount_astr_right_2,FactoryTag=None,SpawnTag=None,Factory=none,SpawnedActor=none,NextScriptObj=none,RappelAttachToBone=mount_repel_right_2,SpecialEventID=0)
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(OpenDoor),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'dnAlienDropship.DA_DropShip_OpenDoor'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(CloseDoor),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'dnAlienDropship.DA_DropShip_CloseDoor'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(OpenDoorIdle),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'dnAlienDropship.DA_DropShip_OpenDoorIdle'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(3)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(CloseDoorIdle),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'dnAlienDropship.DA_DropShip_CloseDoorIdle'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DestroyedActivities(0)=none
+	begin object name=DA_Sound_AlienDropship_Explode class=DecoActivities_Sound
+		SoundNames(0)=Veh_Explosion
+	object end
+	// Reference: DecoActivities_Sound'dnAlienDropship.DA_Sound_AlienDropship_Explode'
+	DestroyedActivities(1)=DA_Sound_AlienDropship_Explode
+	HealthPrefab=5
+	DamageTypesAcceptedOnly(0)='Engine.ExplosionDamage'
+	DamageTypesAcceptedOnly(1)='dnGame.LargeCaliberBulletDamage'
+	bEnemy=true
+	bIgnoreAimAssist=true
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='dnGame.dnShipThrusterEffect',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=Left_Thruster,ForceEvent=None,MountMeshItem=mount_thruster_left,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=2)
+	Health=1200
+	HealthCap=1200
+	SpawnOnDestroyed(0)=(SpawnClass='dnAlienDropship_Gibs',RenderObject='sm_class_vehicles.Aircraft.AlienTroopCarrier_GIB1',DrawScale=0.85,DrawScaleVariance=0,DrawScale3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	SpawnOnDestroyed(1)=(SpawnChance=0,SpawnCopies=0,SpawnCopiesVariance=0,bIgnorePawnAirCushion=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bNoCollision=false,bFindSpot=false,bIgnoreParentRotation=false,bTakeParentCollisionSize=false,bTakeParentMounting=false,bTakeParentActorColors=false,bTakeParentSkins=false,Offset=(X=1.298303E-41,Y=3.778723E-17,Z=-3),Z=1)
+	SpawnOnDestroyed(2)=(OffsetVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	SpawnOnDestroyed(3)=(Rotation=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	SpawnOnDestroyed(4)=(RotationVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	SpawnOnDestroyed(5)=(BoneName=None,MotionInfo=MotionPrefab'dnAlienDropship.MP_AlienDropship_Main_Body_Gib')
+	SpawnOnDestroyed(6)=(SpawnClass='dnAlienDropship_Gibs',RenderObject='sm_class_vehicles.Aircraft.AlienTroopCarrier_GIB2',DrawScale=0.85,DrawScaleVariance=0,DrawScale3D=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	DestroyedParticleFriendEffects(0)=(bAbsoluteLocation=false,bAbsoluteRotation=false,Scale=0,BoneName=None,Location=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	bPawnRideable=true
+	PhysicsEntityGroup=dnHoverLift_PhysicsEntityGroup
+	Physics=9
+	bCollisionAssumeValid=true
+	bAcceptMeshAccurateMoveActorTrace=true
+	bBlockKarma=true
+	bCollideWorld=false
+	CollisionRadius=500
+	CollisionHeight=150
+	Mass=10000
+	Mesh='c_vehicles.Alien_TroopCarrier'
+	VoicePack='SoundConfig.Vehicles.VoicePack_AlienDropship'
+	HurtRadiusAffectClass='Engine.BaseAI'
 }

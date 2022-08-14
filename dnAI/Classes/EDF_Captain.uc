@@ -12,5 +12,10 @@ class EDF_Captain extends EDF_Grunt
 defaultproperties
 {
 	WeaponConfig='WeaponCfg_EDFCaptain'
-	RandomWeapons(0)=class'SpawnedActor'
+	RandomWeapons(0)='dnGame.RPG_EDF'
+	RandomWeapons(1)='dnGame.RPG_EDF'
+	RandomWeapons(2)='dnGame.RPG_EDF'
+	RightHandPipebombMount=mount_handright
+	Health=200
+	HealthCap=200
 }

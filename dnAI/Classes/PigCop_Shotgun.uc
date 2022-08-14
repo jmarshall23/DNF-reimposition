@@ -24,8 +24,6 @@ event EnumerateWeaponClasses(PrecacheIndex PrecacheIndex, out array< class<Weapo
 defaultproperties
 {
 	WeaponConfig='WeaponCfg_PigCopShotgun'
-	Weapons(0)=class'C'
-	RndMoveAroundDist=/* Unknown default property type! */
-	Yaw=-16379
-	Roll=1
+	Weapons(0)='dnGame.Shotgun_Strapless_Pigcop'
+	DroolParms=(MinSpitTime=10,RndSpitTime=5,SpitOnPainChance=1,Bone=jaw,Location=(X=1.298303E-41,Y=3.773024E-17,Z=-11.5),Z=-1.7)
 }

@@ -485,87 +485,39 @@ defaultproperties
 	SpeakInterval=9
 	SpeakIntervalVariance=2
 	WeaponConfig='WeaponCfg_HoloDuke'
-	Weapons(0)=class'm_aTarget'
-	Weapons(1)=none
-	Weapons(2)=class'ChanceSayPain'
-	Weapons(3)=class'DefaultAITickMSGraph'
-	Weapons(4)=class'm_aTarget'
-	Weapons(5)=class'SpawnedActor'
-	Weapons(6)=class'C'
-	Weapons(7)=class'MachineGun_HoloDuke'
-	Weapons(8)=class'Shotgun_HoloDuke'
-	Weapons(9)=class'Pistol_HoloDuke'
-	Weapons(10)=class'P'
-	Weapons(11)=class'PrecacheIndex'
-	Weapons(12)=class'dnPipeBombProjectile_Timed_AI_HoloDuke'
-	Weapons(13)=class'i'
-	Weapons(14)=class'i'
-	Weapons(15)=class'MuzzleFlash'
-	Weapons(16)=class'AIActorFactoryListener'
-	Weapons(17)=class'PrecacheIndex'
-	Weapons(18)=class'AIFactionDuke'
-	Weapons(19)=class'Mode'
-	Weapons(20)=class'm_aTarget'
-	Weapons(21)=class'm_aTarget'
-	Weapons(22)=class'C'
-	Weapons(23)=class'TickingAIList'
-	Weapons(24)=none
-	Weapons(25)=none
-	Weapons(26)=none
-	Weapons(27)=class'acCycloid_Combat'
-	Weapons(28)=class'ReturnValue'
-	Weapons(29)=class'AIActorFactoryListener'
-	Weapons(30)=class'PrecacheIndex'
-	Weapons(31)=class'AIFactionHuman'
-	Weapons(32)=class'Mode'
-	Weapons(33)=class'm_aTarget'
-	Weapons(34)=class'AnimXParms'
-	Weapons(35)=class'C'
-	Weapons(36)=class'TickingAIList'
-	Weapons(37)=none
-	Weapons(38)=none
-	Weapons(39)=none
-	Weapons(40)=class'acCycloid_Combat'
-	Weapons(41)=class'ReturnValue'
-	Weapons(42)=class'AIActorFactoryListener'
-	Weapons(43)=class'PrecacheIndex'
-	Weapons(44)=class'AIFactionHoloduke'
-	Weapons(45)=class'Mode'
-	Weapons(46)=class'm_aTarget'
-	Weapons(47)=class'AnimXParms'
-	Weapons(48)=class'C'
-	Weapons(49)=class'TickingAIList'
-	Weapons(50)=none
-	Weapons(51)=none
-	Weapons(52)=none
-	Weapons(53)=class'acCycloid_Combat'
-	Weapons(54)=class'ReturnValue'
-	Weapons(55)=class'AIActorFactoryListener'
-	Weapons(56)=class'PrecacheIndex'
-	Weapons(57)=class'AIFactionAlien'
-	Weapons(58)=class'Mode'
-	Weapons(59)=class'm_aTarget'
-	Weapons(60)=class'm_aTarget'
-	Weapons(61)=class'C'
-	Weapons(62)=class'TickingAIList'
-	Weapons(63)=none
-	Weapons(64)=none
-	Weapons(65)=none
-	Weapons(66)=class'acCycloid_Combat'
-	Weapons(67)=class'ReturnValue'
-	Weapons(68)=class'MP_LeechGibs'
-	Weapons(69)=class'JumpAttackParms'
-	Weapons(70)=class'C'
-	Ident=/* Unknown default property type! */
-	_a_neutral_pistol_stan=SAnimationFadeBlend
-	Anim_PainFrontHeadBig="^?"
-	
-/* Exception thrown while deserializing Yaw
-System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
-Parameter name: index
-   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at UELib.UnrealPackage.GetIndexName(Int32 nameIndex) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealPackage.cs:line 1840
-   at UELib.UnrealStreamImplementations.ReadName(IUnrealStream stream) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 828
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 574 */
+	Weapons(0)=none
+	RandomWeapons(0)='MachineGun_HoloDuke'
+	RandomWeapons(1)='Shotgun_HoloDuke'
+	RandomWeapons(2)='Pistol_HoloDuke'
+	PipeBombClass='dnPipeBombProjectile_Timed_AI_HoloDuke'
+	Relationships(0)=(m_aClass='Engine.AIFactionDuke',m_eAttitude=1,m_fDamageThreshold=1)
+	Relationships(1)=(m_aClass='Engine.AIFactionHuman',m_eAttitude=5,m_fDamageThreshold=1)
+	Relationships(2)=(m_aClass='Engine.AIFactionHoloduke',m_eAttitude=5,m_fDamageThreshold=1)
+	Relationships(3)=(m_aClass='Engine.AIFactionAlien',m_eAttitude=1,m_fDamageThreshold=1)
+	ShowPain=false
+	MinMeleeRange=0.0001
+	RndMeleeRange=0.0001
+	MeleeZone=0.0001
+	BiteDamageAmount=0
+	ClawDamageAmount=0
+	KickDamageAmount=0
+	StompInfo=none
+	DynamicPathingPriority=7
+	bIgnoreAimAssist=true
+	Faction='Engine.AIFactionHoloduke'
+	ExpandingBoneName=None
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='p_Items.HoloDuke.Holoduke_main',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=false,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=None,MountOrigin=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=-35),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	Health=100
+	HealthCap=100
+	PhysicsEntityGroup=HoloDukePhysicsEntityGroup
+	bAcceptMinesInMultiplayer=false
+	bAcceptMines=false
+	bAcceptsProjectors=false
+	bDoOverlayEffect=true
+	bUsePlayerCollisions=true
+	AlphaSortGroup=8
+	OverlayMaterial='dt_Effects3.HolographicEffect.HolographicEffect_FB'
+	VoicePack='SoundConfig.Inventory.VoicePack_HoloDuke'
+	EffectsMaterial='dnMaterial.dnMaterial_Nature'
 }

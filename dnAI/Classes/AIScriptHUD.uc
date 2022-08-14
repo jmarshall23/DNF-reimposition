@@ -191,14 +191,7 @@ function Edit_ScriptTrigger()
 defaultproperties
 {
 	AutoPopulateTriggerList=false
-	DebugTreeItems=/* Array type was not detected. */
-	Code=None
-	Func=Respawn_AI
-	Pop=false
-	Push=false
-	bHideChildren=false
-	var1=0
-	var2=0
-	MaxVisibleChildren=0
-	ChildrenOffset=0
+	DebugTreeItems(0)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Respawn_AI,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(1)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Edit_Factory,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
+	DebugTreeItems(2)=(Text="",ConsoleCommand="",TriggerEvent=None,Func=Edit_ScriptTrigger,Pop=false,Push=false,bHideChildren=false,var1=0,var2=0,MaxVisibleChildren=0,ChildrenOffset=0)
 }

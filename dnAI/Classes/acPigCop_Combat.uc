@@ -45,8 +45,4 @@ defaultproperties
 	MeleePainAnims=(Front=Anim_PainFront,FrontLeft=Anim_PainLeft,FrontRight=Anim_PainRight,Back=Anim_PainBack,FrontBig=Anim_PainBig,FrontLeftBig=Anim_PainLeftBig,FrontRightBig=Anim_PainRightBig,BackBig=Anim_PainBackBig)
 	MuzzleAimerContraints=(MinViewPitchOffset=-6000,MaxViewPitchOffset=6000,IgnoreThresholdPitch=6000,MinViewYawOffset=-6000,MaxViewYawOffset=6000,IgnoreThresholdYaw=3000,SmerpOn=0,SmerpOff=0,Acceleration=0.5,AccelerationReset=0.1,Velocity=5000,VelocityReset=2500)
 	WeaponAimerContraints=(MinViewPitchOffset=-8000,MaxViewPitchOffset=16000,IgnoreThresholdPitch=3000,MinViewYawOffset=-16000,MaxViewYawOffset=16000,IgnoreThresholdYaw=3000,SmerpOn=0,SmerpOff=0,Acceleration=0.5,AccelerationReset=0.1,Velocity=5000,VelocityReset=2500)
-	Animations=/* Array type was not detected. */
-	ChannelName=Bottom
-	ChannelLink=0
-	bLinkedToBlock=false
 }

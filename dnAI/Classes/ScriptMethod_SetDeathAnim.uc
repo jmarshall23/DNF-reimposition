@@ -15,7 +15,7 @@ cpptext
 // Stripped
 }
 
-var() noexport name SequenceName "Animation sequence to play.";
+var() noexport anim name SequenceName "Animation sequence to play.";
 var() noexport float Chance "Chance of playing the death anim (0.0 -> 1.0).";
 
 event string GetMethodString()

@@ -159,5 +159,36 @@ event RegisterPrecacheComponents(PrecacheIndex PrecacheIndex)
 
 defaultproperties
 {
-	AimInfo(0)=(Func=/* Array type was not detected. */,GunType=1,BoneName=gun_front_aimer,bDebug=false,bFiringDisabled=false,MuzzleNames=(Cond,Func),gun_front_barrel_right_muzzle=/* Unknown default property type! */)
+	AimInfo(0)=(GunPosition=1,GunType=1,BoneName=gun_front_aimer,bDebug=false,bFiringDisabled=false,MuzzleNames=(gun_front_barrel_right_muzzle,gun_front_barrel_right_muzzle),MuzzleIndex=0,bFireThisFrame=false,FireGate=0,MinFOVDot=0.1,MaxFOVDir=(X=1.298303E-41,Y=3.778402E-17,Z=0),Z=-1)
+	AimInfo(1)=(MaxDist=6000,bCheckLOS=true,LOSGate=0,bLastLOS=false,PosThisFrame=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	InitialTargetTag=DukePlayer
+	MaxSpeed=2800
+	MaxIdleSpeed=1500
+	DecoActivities_Default(0)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(Pickup),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'dnEDFWasp.DA_Anim_Claw_Pickup',DecoActivities_Sound'dnEDFWasp.DA_Sound_Wasp_ArmsOpen'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(1)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(DropOff),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'dnEDFWasp.DA_Anim_Claw_DropOff',DecoActivities_Sound'dnEDFWasp.DA_Sound_Wasp_ArmsClose'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(2)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(PickupIdle),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'dnEDFWasp.DA_Anim_Claw_Pickup_Idle'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	DecoActivities_Default(3)=(ActivityData=(bInitialized=false,CurrentIndex=0,NextPerformTime=0,NextPerformTime_Failure=0),ActivityIDScript=(DropOffIdle),ActivityID=none,ActivityMethod=0,ActivityStates_Success=none,ActivityStates_Failure=none,ActivityDebugID="",Activities=((ActivityRules=none,ActivityElements=(DecoActivities_Animation'dnEDFWasp.DA_Anim_Claw_DropOff_Idle'),ActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0),FailureActivityElements=none,FailureActivitySetup=(bDisabled=false,bPerformedThisRound=false,PerformedCounter=0,LoopCount=0,PerformAgainDelay=0))),bDisabled=false)
+	bEnemy=false
+	MountOnSpawn(0)=(bSkipVerifySelf=false,SpawnClass='dnGame.dnShipThrusterEffect_Wasp',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=true,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_thruster_front_left,MountOrigin=(X=1.298303E-41,Y=3.789244E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(1)=(MountAngles=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(2)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(3)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(4)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(5)=(bSkipVerifySelf=false,SpawnClass='dnGame.dnShipThrusterEffect',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=true,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_thruster_front_left,MountOrigin=(X=1.298303E-41,Y=3.789244E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(6)=(MountAngles=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(7)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(8)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(9)=(RenderObject='sm_class_effects.AttackShip_Thrusters.AttackShip_Thrusters_02',DrawScale=0)
+	MountOnSpawn(10)=(bSkipVerifySelf=false,SpawnClass='dnGame.dnShipThrusterEffect_Wasp',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=true,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_thruster_front_right,MountOrigin=(X=1.298303E-41,Y=3.789244E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	MountOnSpawn(11)=(MountAngles=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(12)=(MountAnglesVariance=(Pitch=8754,Yaw=574554112,Roll=0),Roll=0)
+	MountOnSpawn(13)=(MountType=2,DismountPhysics=0)
+	MountOnSpawn(14)=(RenderObject=none,DrawScale=0)
+	MountOnSpawn(15)=(bSkipVerifySelf=false,SpawnClass='dnGame.dnShipThrusterEffect',SpawnChance=0,MountPrefab=(bDontActuallyMount=false,bHideable=true,bIndependentRotation=false,bIndependentLocation=false,bMatchParentLocation=false,bMatchParentRotation=false,bSurviveDismount=false,bDontScaleByDrawScale=false,bScaleByDrawScaleNonDefault=false,bTransformDrawScale3DChange=false,bTakeParentTag=false,bTransferToCorpse=false,bDontSetOwner=false,MountParentTag=None,DrawScaleOverride=0,AppendToTag=None,ForceTag=None,ForceEvent=None,MountMeshItem=mount_thruster_front_right,MountOrigin=(X=1.298303E-41,Y=3.789244E-17,Z=0),Z=0),MountOriginVariance=(X=1.298303E-41,Y=3.773024E-17,Z=0),Z=0)
+	PhysicsEntityGroup=EDFWasp
+	bAcceptMeshAccurateMoveActorTrace=true
+	CollisionRadius=350
+	CollisionHeight=150
+	Mesh='c_vehicles.edf_wasp'
+	VoicePack='SoundConfig.Vehicles.VoicePack_Wasp'
 }
