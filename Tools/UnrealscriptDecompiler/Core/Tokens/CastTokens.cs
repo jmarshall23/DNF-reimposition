@@ -114,11 +114,6 @@ namespace UELib.Core
 
                 public override string Decompile()
                 {
-                    if(CastClass == null)
-                    {
-                        return "!!CASTCLASS NULLPTR INVALID!!";
-                    }
-
                     return $"{CastClass.Name}({DecompileNext()})";
                 }
             }
