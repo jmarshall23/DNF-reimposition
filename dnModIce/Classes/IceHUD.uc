@@ -33,7 +33,7 @@ simulated function DrawNewCrosshair(Canvas C)
 	width = CrosshairTextures[5].GetUSize();
 	height = CrosshairTextures[5].GetVSize();	
 	
-	HitActor = PlayerOwner.TraceFromCrosshairMesh(1000);
+	HitActor = PlayerOwner.TraceFromCrosshairMesh(6000);
 	HitAIActor = AIActor(HitActor);
 
 	if(HitAIActor != none)
