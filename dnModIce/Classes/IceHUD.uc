@@ -1,6 +1,7 @@
 class IceHUD extends DukeHUD;
 
 var MaterialEx dnHudBackground;
+var MaterialEx dnCrosshair;
 
 function float ScaleHeight(Canvas C, float value)
 {
@@ -35,9 +36,10 @@ simulated function DrawNewCrosshair(Canvas C)
 	local int height;
 	local Actor HitActor;
 	local AIActor HitAIActor;
+	local int i;
 
-	width = CrosshairTextures[5].GetUSize();
-	height = CrosshairTextures[5].GetVSize();	
+	width = dnCrosshair.GetUSize();
+	height = dnCrosshair.GetVSize();	
 	
 	HitActor = PlayerOwner.TraceFromCrosshairMesh(6000);
 	HitAIActor = AIActor(HitActor);
@@ -47,8 +49,11 @@ simulated function DrawNewCrosshair(Canvas C)
 		C.DrawColor = RedColor;
 	}
 
-	C.SetPos(ScaleWidth(C, 640 - (width / 2)), ScaleHeight(C, 360 - (height / 2)));
-	C.DrawTile(CrosshairTextures[5], width, height, 0, 0, width, height);
+	for(i = 0; i < 3; i++)
+	{
+		C.SetPos(ScaleWidth(C, 640 - (width / 2)), ScaleHeight(C, 360 - (height / 2)));
+		C.DrawTile(dnCrosshair, width, height, 0, 0, width, height);	
+	}
 	
 	C.DrawColor = WhiteColor;
 }
@@ -113,5 +118,6 @@ function SaveComplete()
 
 defaultproperties
 {
+	dnCrosshair=hud_effects.crosshairs.crosshair11BC
 	dnHudBackground=dukeui.ui.hud
 }
