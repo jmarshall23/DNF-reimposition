@@ -1,5 +1,7 @@
 class IceGame extends dnSinglePlayer;
 
+var IceSpawnManager spawnManager;
+
 function OnInviteAccepted()
 {
 	SinglePlayerDuke.ConsoleCommand("set DukePlayer bGodMode false");	
@@ -13,6 +15,15 @@ function bool RestartPlayer(Pawn aPlayer)
 	return false;
 }
 
+function PreBeginPlay()
+{
+	super.PreBeginPlay();
+
+	if(spawnManager == none)
+	{
+		spawnManager = Spawn(class'IceSpawnManager',,,,);
+	}
+}
 
 event PlayerPawn Login(string Portal, string Options, out string Error, class<PlayerPawn> SpawnClass)
 {

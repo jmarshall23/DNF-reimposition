@@ -275,6 +275,7 @@ public:
 };
 
 class UClass;
+class				UFunction;
 
 __declspec(dllimport) class UObject {
 public:
@@ -301,6 +302,10 @@ public:
 
 	const wchar_t* GetName() const;
 
+	UFunction* __fastcall FindFunction(const dnName &InName, UBOOL Global=0) const;
+	virtual void ProcessEvent(UFunction* Function, void* Parms, void* Result = NULL);
+
+	UObject* StaticFindObject(UClass* ObjectClass, UObject* InObjectPackage, const TCHAR* InName, UBOOL ExactClass);
 	static UClass* StaticLoadClass(UClass* BaseClass, UObject* InOuter, const TCHAR* Name, const TCHAR* Filename, DWORD LoadFlags, UPackageMap* Sandbox);
 	static void GetRegistryObjects(dnArray<FRegistryObjectInfo>& Results, UClass* Class, UClass* MetaClass, UBOOL ForceRefresh);
 	static UObject* StaticLoadObject(class UClass* ObjectClass, UObject* InOuter, const TCHAR* InName, const TCHAR* Filename, DWORD LoadFlags, UPackageMap* Sandbox);
@@ -1255,3 +1260,9 @@ extern UBOOL* GIsEditor;
 extern UBOOL* GIsUCC;
 extern UBOOL* GLazyLoad;
 extern void* GWarn;
+
+// Find an optional object.
+template< class T > T* FindObject(UObject* Outer, const TCHAR* Name, UBOOL ExactClass = 0)
+{
+	return (T*)UObject::StaticFindObject(T::StaticClass(), Outer, Name, ExactClass);
+}
