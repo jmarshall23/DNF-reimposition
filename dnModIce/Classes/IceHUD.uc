@@ -58,6 +58,43 @@ simulated function DrawNewCrosshair(Canvas C)
 	C.DrawColor = WhiteColor;
 }
 
+event DrawRosterText(Canvas C, int x, int y, string ammoCommand, string weaponId)
+{
+	y = y - 5;
+
+	C.SetPos(ScaleWidth(C, x), C.SizeY-ScaleHeight(C,y));
+
+	if(PlayerOwner.ConsoleCommand("CurrentWeapon") == weaponId)
+	{
+		C.DrawColor = WhiteColor;
+	}
+	else
+	{
+		C.DrawColor = GrayColor;
+	}
+
+	C.DrawText(PlayerOwner.ConsoleCommand(ammoCommand), false, false, false, 0.9, 0.9);
+}
+
+event DrawAmmoRoster(Canvas C)
+{
+	DrawRosterText(C, 430, 77, "GetWeapon1Ammo", "1");
+	DrawRosterText(C, 430, 60, "GetWeapon2Ammo", "2");
+	DrawRosterText(C, 430, 43, "GetWeapon3Ammo", "3");
+
+	DrawRosterText(C, 510, 77, "GetWeapon4Ammo", "4");
+	DrawRosterText(C, 510, 60, "GetWeapon5Ammo", "5");
+	DrawRosterText(C, 510, 43, "GetWeapon6Ammo", "6");
+
+	DrawRosterText(C, 590, 77, "GetWeapon7Ammo", "7");
+	DrawRosterText(C, 590, 60, "GetWeapon8Ammo", "8");
+	DrawRosterText(C, 590, 43, "GetWeapon9Ammo", "9");
+
+	DrawRosterText(C, 650, 43, "GetWeapon0Ammo", "0");
+
+	C.DrawColor = WhiteColor;
+}
+
 simulated event PostPostRender(Canvas C)
 {
 	local int ego;
@@ -66,10 +103,12 @@ simulated event PostPostRender(Canvas C)
 	bHideHUD = false;
 	bHideCrosshair = false;
 
-	DrawNewCrosshair(C);
+	DrawNewCrosshair(C);	
 
 	C.SetPos(0, C.SizeY-ScaleHeight(C, 113));
 	C.DrawTile(dnHudBackground, C.SizeX, ScaleHeight(C, 190), 0, 0, 1920, 256);
+
+	DrawAmmoRoster(C);
 
 	ego = PlayerOwner.Ego;
 

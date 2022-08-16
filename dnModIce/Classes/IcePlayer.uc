@@ -17,6 +17,197 @@ function IceSwitchToWeapon(Weapon NewWeapon)
 
 function string ConsoleCommand(string Command, optional bool bAllowExecFuncs, optional bool bExecsOnly)
 {
+	local int loadedAmmo;
+	local int totalAmmo;
+
+	if(Command == "CurrentWeapon")
+	{
+		if(Weapon == none)
+		{
+			return "";
+		}
+		if(Weapon == InvWeapons[0])
+		{
+			return "0";
+		}
+		else if(Weapon == InvWeapons[1])
+		{
+			return "1";
+		}
+		else if(Weapon == InvWeapons[2])
+		{
+			return "2";
+		}
+		else if(Weapon == InvWeapons[3])
+		{
+			return "3";
+		}
+		else if(Weapon == InvWeapons[4])
+		{
+			return "4";
+		}
+		else if(Weapon == InvWeapons[5])
+		{
+			return "5";
+		}
+		else if(Weapon == InvWeapons[6])
+		{
+			return "6";
+		}
+		else if(Weapon == InvWeapons[7])
+		{
+			return "7";
+		}
+		else if(Weapon == InvWeapons[8])
+		{
+			return "8";
+		}
+		else if(Weapon == InvWeapons[9])
+		{
+			return "9";
+		}
+	}
+	if(Command == "GetWeapon1Ammo")
+	{
+		if(InvWeapons[1] != none)
+		{
+			loadedAmmo = InvWeapons[1].GetLoadedAmmo();
+			totalAmmo  = InvWeapons[1].GetTotalAmmo();
+
+			return "1) " $ loadedAmmo $ "/" $ totalAmmo;
+		}
+		else
+		{
+			return "1) N/A";
+		}
+	}
+	if(Command == "GetWeapon2Ammo")
+	{
+		if(InvWeapons[2] != none)
+		{
+			loadedAmmo = InvWeapons[2].GetLoadedAmmo();
+			totalAmmo  = InvWeapons[2].GetTotalAmmo();
+
+			return "2) " $ loadedAmmo $ "/" $ totalAmmo;
+		}
+		else
+		{
+			return "2) N/A";
+		}
+	}
+	if(Command == "GetWeapon3Ammo")
+	{
+		if(InvWeapons[3] != none)
+		{
+			loadedAmmo = InvWeapons[3].GetLoadedAmmo();
+			totalAmmo  = InvWeapons[3].GetTotalAmmo();
+
+			return "3) " $ loadedAmmo $ "/" $ totalAmmo;
+		}
+		else
+		{
+			return "3) N/A";
+		}
+	}
+	if(Command == "GetWeapon4Ammo")
+	{
+		if(InvWeapons[4] != none)
+		{
+			loadedAmmo = InvWeapons[4].GetLoadedAmmo();
+			totalAmmo  = InvWeapons[4].GetTotalAmmo();
+
+			return "4) " $ loadedAmmo $ "/" $ totalAmmo;
+		}
+		else
+		{
+			return "4) N/A";
+		}
+	}
+	if(Command == "GetWeapon5Ammo")
+	{
+		if(InvWeapons[5] != none)
+		{
+			loadedAmmo = InvWeapons[5].GetLoadedAmmo();
+			totalAmmo  = InvWeapons[5].GetTotalAmmo();
+
+			return "5) " $ loadedAmmo $ "/" $ totalAmmo;
+		}
+		else
+		{
+			return "5) N/A";
+		}
+	}
+	if(Command == "GetWeapon6Ammo")
+	{
+		if(InvWeapons[6] != none)
+		{
+			loadedAmmo = InvWeapons[6].GetLoadedAmmo();
+			totalAmmo  = InvWeapons[6].GetTotalAmmo();
+
+			return "6) " $ loadedAmmo $ "/" $ totalAmmo;
+		}
+		else
+		{
+			return "6) N/A";
+		}
+	}
+	if(Command == "GetWeapon7Ammo")
+	{
+		if(InvWeapons[7] != none)
+		{
+			loadedAmmo = InvWeapons[7].GetLoadedAmmo();
+			totalAmmo  = InvWeapons[7].GetTotalAmmo();
+
+			return "7) " $ loadedAmmo $ "/" $ totalAmmo;
+		}
+		else
+		{
+			return "7) N/A";
+		}
+	}
+	if(Command == "GetWeapon8Ammo")
+	{
+		if(InvWeapons[8] != none)
+		{
+			loadedAmmo = InvWeapons[8].GetLoadedAmmo();
+			totalAmmo  = InvWeapons[8].GetTotalAmmo();
+
+			return "8) " $ loadedAmmo $ "/" $ totalAmmo;
+		}
+		else
+		{
+			return "8) N/A";
+		}
+	}
+	if(Command == "GetWeapon9Ammo")
+	{
+		if(InvWeapons[9] != none)
+		{
+			loadedAmmo = InvWeapons[9].GetLoadedAmmo();
+			totalAmmo  = InvWeapons[9].GetTotalAmmo();
+
+			return "9) " $ loadedAmmo $ "/" $ totalAmmo;
+		}
+		else
+		{
+			return "9) N/A";
+		}
+	}
+	if(Command == "GetWeapon0Ammo")
+	{
+		if(InvWeapons[0] != none)
+		{
+			loadedAmmo = InvWeapons[0].GetLoadedAmmo();
+			totalAmmo  = InvWeapons[0].GetTotalAmmo();
+
+			return "0) " $ loadedAmmo $ "/" $ totalAmmo;
+		}
+		else
+		{
+			return "0) N/A";
+		}
+	}
+
 	if(Command == "Weapon1")
 	{
 		if(InvWeapons[1] == none)
