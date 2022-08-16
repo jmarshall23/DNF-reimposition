@@ -13,5 +13,12 @@ function PostEntitySpawn(Object obj)
 		Log("!!Changing weapons!!!");
 		Weapon(obj).WeaponConfig.default.ReloadCount = Weapon(obj).WeaponConfig.default.ReloadCount * 2;
 		return;
-	}	
+	}
+	//Vinícius Devastator ammo change
+	if(DevastatorAmmo(obj) != none)
+	{
+		DevastatorAmmo(obj).Charge = 99;
+		DevastatorAmmo(obj).MaxCharge = 99;
+	}
+	//Vinícius Devastator ammo change
 }
