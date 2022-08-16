@@ -303,7 +303,9 @@ public:
 	const wchar_t* GetName() const;
 
 	UFunction* __fastcall FindFunction(const dnName &InName, UBOOL Global=0) const;
+#ifdef DNMODICE_API
 	virtual void ProcessEvent(UFunction* Function, void* Parms, void* Result = NULL);
+#endif
 
 	UObject* StaticFindObject(UClass* ObjectClass, UObject* InObjectPackage, const TCHAR* InName, UBOOL ExactClass);
 	static UClass* StaticLoadClass(UClass* BaseClass, UObject* InOuter, const TCHAR* Name, const TCHAR* Filename, DWORD LoadFlags, UPackageMap* Sandbox);
