@@ -14,6 +14,69 @@ event bool KeyEvent(EInputKey Key, EInputAction Action, float Delta)
 		return true;
 	}
 
+	if(!bShowConsole)
+	{
+		if(Action == 1 && Key == IK_1)
+		{
+			IcePlayer(Root.GetPlayerOwner()).ConsoleCommand("Weapon1");
+			return true;
+		}
+
+		if(Action == 1 && Key == IK_2)
+		{
+			IcePlayer(Root.GetPlayerOwner()).ConsoleCommand("Weapon2");
+			return true;
+		}
+
+		if(Action == 1 && Key == IK_3)
+		{
+			IcePlayer(Root.GetPlayerOwner()).ConsoleCommand("Weapon3");
+			return true;
+		}
+
+		if(Action == 1 && Key == IK_4)
+		{
+			IcePlayer(Root.GetPlayerOwner()).ConsoleCommand("Weapon4");
+			return true;
+		}
+
+		if(Action == 1 && Key == IK_5)
+		{
+			IcePlayer(Root.GetPlayerOwner()).ConsoleCommand("Weapon5");
+			return true;
+		}
+
+		if(Action == 1 && Key == IK_6)
+		{
+			IcePlayer(Root.GetPlayerOwner()).ConsoleCommand("Weapon6");
+			return true;
+		}
+
+		if(Action == 1 && Key == IK_7)
+		{
+			IcePlayer(Root.GetPlayerOwner()).ConsoleCommand("Weapon7");
+			return true;
+		}
+
+		if(Action == 1 && Key == IK_8)
+		{
+			IcePlayer(Root.GetPlayerOwner()).ConsoleCommand("Weapon8");
+			return true;
+		}
+
+		if(Action == 1 && Key == IK_9)
+		{
+			IcePlayer(Root.GetPlayerOwner()).ConsoleCommand("Weapon9");
+			return true;
+		}
+
+		if(Action == 1 && Key == IK_0)
+		{
+			IcePlayer(Root.GetPlayerOwner()).ConsoleCommand("Weapon0");
+			return true;
+		}
+	}
+
 	return super.KeyEvent(Key, Action, Delta);
 }
 
