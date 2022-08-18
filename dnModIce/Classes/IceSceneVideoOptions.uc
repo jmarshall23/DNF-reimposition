@@ -1,5 +1,16 @@
 class IceSceneVideoOptions extends UDukeSceneVideoOptions;
 
+function NotifyFromControl(UWindowDialogControl C, byte E)
+{
+	if(C == AdvancedButton && E == 2)
+	{
+		NavigateForward(class'IceSceneVideoAdvancedOptions');
+		return;
+	}
+
+	super.NotifyFromControl(C, E);
+}
+
 defaultproperties
 {
 	DisplayModes16x9(0)="1280x720"
