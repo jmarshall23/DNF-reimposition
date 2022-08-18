@@ -12,17 +12,23 @@ struct ObjectCall_Parms
 	BITFIELD ReturnValue;
 };
 
+void (*__fastcall UObject_DestroyActual)(void* _this, void *edx);
+void __fastcall UObject_Destroy(void* _this, void* edx)
+{
+	if (_this == IceSpawnManager && IceSpawnManager != nullptr)
+	{
+		IceSpawnManager = nullptr;
+	}
+
+	UObject_DestroyActual(_this, edx);
+}
+
 void (*__fastcall AActor__eventSpawnedActual)(AActor* _this, void *edx);
 void __fastcall AActor__eventSpawned(AActor* _this, void *edx)
 {
 	UObject* _object = (UObject*)_this;
 
-	if (wcsstr(_object->GetName(), TEXT("DefaultPhysicsVolume")))
-	{
-		IceSpawnManager = nullptr;
-		AActor__eventSpawnedActual(_this, edx);
-		return;
-	}
+	OutputDebugStringW(_object->GetName());
 
 	if (wcsstr(_object->GetName(), TEXT("IceSpawnManager")))
 	{
@@ -56,7 +62,15 @@ void InitDNFHooks()
 {
 	MH_Initialize();
 
+	
+
 	if (MH_CreateHookApi(TEXT("engine.dll"), MAKEINTRESOURCEA(12968), AActor__eventSpawned, (LPVOID*)&AActor__eventSpawnedActual) != MH_OK) {
+		_asm {
+			int 3
+		}
+	}
+
+	if (MH_CreateHookApi(TEXT("engine.dll"), MAKEINTRESOURCEA(5705), UObject_Destroy, (LPVOID*)&UObject_DestroyActual) != MH_OK) {
 		_asm {
 			int 3
 		}
