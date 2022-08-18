@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowserFrm));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.soundsGroupComboBox = new System.Windows.Forms.TabControl();
             this.actorClassPage = new System.Windows.Forms.TabPage();
             this.actorClassList = new System.Windows.Forms.ListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -73,7 +73,8 @@
             this.staticMeshPage = new System.Windows.Forms.TabPage();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showPlaceableOnlyCheckBox = new System.Windows.Forms.CheckBox();
-            this.tabControl1.SuspendLayout();
+            this.soundGroupComboBox = new System.Windows.Forms.ComboBox();
+            this.soundsGroupComboBox.SuspendLayout();
             this.actorClassPage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.texturePage.SuspendLayout();
@@ -82,19 +83,19 @@
             this.menuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // soundsGroupComboBox
             // 
-            this.tabControl1.Controls.Add(this.actorClassPage);
-            this.tabControl1.Controls.Add(this.levelEntitiesPage);
-            this.tabControl1.Controls.Add(this.texturePage);
-            this.tabControl1.Controls.Add(this.soundPage);
-            this.tabControl1.Controls.Add(this.staticMeshPage);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(687, 565);
-            this.tabControl1.TabIndex = 0;
+            this.soundsGroupComboBox.Controls.Add(this.actorClassPage);
+            this.soundsGroupComboBox.Controls.Add(this.levelEntitiesPage);
+            this.soundsGroupComboBox.Controls.Add(this.texturePage);
+            this.soundsGroupComboBox.Controls.Add(this.soundPage);
+            this.soundsGroupComboBox.Controls.Add(this.staticMeshPage);
+            this.soundsGroupComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.soundsGroupComboBox.Location = new System.Drawing.Point(0, 0);
+            this.soundsGroupComboBox.Name = "soundsGroupComboBox";
+            this.soundsGroupComboBox.SelectedIndex = 0;
+            this.soundsGroupComboBox.Size = new System.Drawing.Size(687, 565);
+            this.soundsGroupComboBox.TabIndex = 0;
             // 
             // actorClassPage
             // 
@@ -199,6 +200,7 @@
             this.textureListBox.Name = "textureListBox";
             this.textureListBox.Size = new System.Drawing.Size(680, 485);
             this.textureListBox.TabIndex = 1;
+            this.textureListBox.SelectedIndexChanged += new System.EventHandler(this.textureListBox_SelectedIndexChanged);
             // 
             // textureBrowserStripMenu
             // 
@@ -228,39 +230,39 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(107, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
@@ -301,6 +303,7 @@
             // 
             // soundPage
             // 
+            this.soundPage.Controls.Add(this.soundGroupComboBox);
             this.soundPage.Controls.Add(this.soundPackageListBox);
             this.soundPage.Controls.Add(this.menuStrip3);
             this.soundPage.Location = new System.Drawing.Point(4, 22);
@@ -312,12 +315,12 @@
             // 
             // soundPackageListBox
             // 
-            this.soundPackageListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.soundPackageListBox.FormattingEnabled = true;
-            this.soundPackageListBox.Location = new System.Drawing.Point(0, 24);
+            this.soundPackageListBox.Location = new System.Drawing.Point(0, 50);
             this.soundPackageListBox.Name = "soundPackageListBox";
-            this.soundPackageListBox.Size = new System.Drawing.Size(679, 515);
+            this.soundPackageListBox.Size = new System.Drawing.Size(679, 485);
             this.soundPackageListBox.TabIndex = 1;
+            this.soundPackageListBox.SelectedIndexChanged += new System.EventHandler(this.soundPackageListBox_SelectedIndexChanged);
             // 
             // menuStrip3
             // 
@@ -346,32 +349,35 @@
             // openToolStripMenuItem1
             // 
             this.openToolStripMenuItem1.Name = "openToolStripMenuItem1";
-            this.openToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.openToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem1.Text = "Open";
             this.openToolStripMenuItem1.Click += new System.EventHandler(this.openToolStripMenuItem1_Click);
             // 
             // saveToolStripMenuItem1
             // 
             this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem1.Text = "Save";
+            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(107, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // importToolStripMenuItem1
             // 
             this.importToolStripMenuItem1.Name = "importToolStripMenuItem1";
-            this.importToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.importToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.importToolStripMenuItem1.Text = "Import";
+            this.importToolStripMenuItem1.Click += new System.EventHandler(this.importToolStripMenuItem1_Click);
             // 
             // exportToolStripMenuItem1
             // 
             this.exportToolStripMenuItem1.Name = "exportToolStripMenuItem1";
-            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.exportToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.exportToolStripMenuItem1.Text = "Export";
+            this.exportToolStripMenuItem1.Click += new System.EventHandler(this.exportToolStripMenuItem1_Click);
             // 
             // editToolStripMenuItem1
             // 
@@ -387,24 +393,25 @@
             // deleteToolStripMenuItem1
             // 
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem1.Text = "Delete";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(104, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // playToolStripMenuItem
             // 
             this.playToolStripMenuItem.Name = "playToolStripMenuItem";
-            this.playToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.playToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.playToolStripMenuItem.Text = "Play";
+            this.playToolStripMenuItem.Click += new System.EventHandler(this.playToolStripMenuItem_Click);
             // 
             // stopToolStripMenuItem
             // 
             this.stopToolStripMenuItem.Name = "stopToolStripMenuItem";
-            this.stopToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.stopToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stopToolStripMenuItem.Text = "Stop";
             // 
             // viewToolStripMenuItem1
@@ -440,19 +447,30 @@
             this.showPlaceableOnlyCheckBox.UseVisualStyleBackColor = true;
             this.showPlaceableOnlyCheckBox.CheckedChanged += new System.EventHandler(this.showPlaceableOnlyCheckBox_CheckedChanged);
             // 
+            // soundGroupComboBox
+            // 
+            this.soundGroupComboBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.soundGroupComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.soundGroupComboBox.FormattingEnabled = true;
+            this.soundGroupComboBox.Location = new System.Drawing.Point(0, 24);
+            this.soundGroupComboBox.Name = "soundGroupComboBox";
+            this.soundGroupComboBox.Size = new System.Drawing.Size(679, 21);
+            this.soundGroupComboBox.TabIndex = 3;
+            this.soundGroupComboBox.SelectedIndexChanged += new System.EventHandler(this.soundGroupComboBox_SelectedIndexChanged);
+            // 
             // BrowserFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 565);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.soundsGroupComboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.textureBrowserStripMenu;
             this.MaximizeBox = false;
             this.Name = "BrowserFrm";
             this.Text = "DukeEdit Browsers";
-            this.tabControl1.ResumeLayout(false);
+            this.soundsGroupComboBox.ResumeLayout(false);
             this.actorClassPage.ResumeLayout(false);
             this.actorClassPage.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -471,7 +489,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl soundsGroupComboBox;
         private System.Windows.Forms.TabPage actorClassPage;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -514,5 +532,6 @@
         private System.Windows.Forms.ListBox textureListBox;
         private System.Windows.Forms.ComboBox textureGroupComboBox;
         private System.Windows.Forms.CheckBox showPlaceableOnlyCheckBox;
+        private System.Windows.Forms.ComboBox soundGroupComboBox;
     }
 }

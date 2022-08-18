@@ -28,7 +28,7 @@ void __fastcall AActor__eventSpawned(AActor* _this, void *edx)
 {
 	UObject* _object = (UObject*)_this;
 
-	OutputDebugStringW(_object->GetName());
+	//OutputDebugStringW(_object->GetName());
 
 	if (wcsstr(_object->GetName(), TEXT("IceSpawnManager")))
 	{

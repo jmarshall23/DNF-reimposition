@@ -53,6 +53,9 @@ namespace DukeEdSharp
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         private static extern int DukeSharp_GetClassFlags([MarshalAs(UnmanagedType.LPWStr)] string clsname);
 
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        public static extern void DukeSharp_ToggleEditor(bool flag);
+
         public static int GetClassFlags(string clsname)
         {
             return DukeSharp_GetClassFlags(clsname);

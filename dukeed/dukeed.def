@@ -7,3 +7,4 @@ EXPORTS
 	DukeSharp_BuildBrush @5
 	DukeSharp_GetParentWindow @6
 	DukeSharp_GetClassFlags @7
+	DukeSharp_ToggleEditor @8

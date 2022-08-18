@@ -23,8 +23,16 @@ namespace DukeEdSharp
 
             this.FormClosing += BrowserFrm_FormClosing;
             textureListBox.DoubleClick += TextureListBox_DoubleClick;
+            soundPackageListBox.DoubleClick += SoundPackageListBox_DoubleClick;
 
           //  textureViewportHandle = EditorInterface.CreateTextureViewport(textureViewportPanel.Handle);
+        }
+
+        private void SoundPackageListBox_DoubleClick(object sender, EventArgs e)
+        {
+            //string groupSelected = (string)soundGroupComboBox.SelectedItem;
+           // string s = String.Format("HOOK CLASSPROPERTIES Class=\"{2}\"", soundPackageName, groupSelected, soundPackageListBox.SelectedItems[0]);
+           // EditorInterface.DukeSharp_Exec(s);
         }
 
         private void TextureListBox_DoubleClick(object sender, EventArgs e)
@@ -90,7 +98,9 @@ namespace DukeEdSharp
 
         private void RefreshSoundList()
         {
-            string temp = EditorInterface.Get("OBJ", "QUERY TYPE=Sound PACKAGE=\"" + soundPackageName + "\"");
+            string groupSelected = (string)soundGroupComboBox.SelectedItem;
+
+            string temp = EditorInterface.Get("OBJ", "QUERY TYPE=Sound PACKAGE=\"" + soundPackageName + "\" GROUP=\"" + groupSelected + "\"");
             string[] sounds = temp.Split(' ');
 
             soundPackageListBox.Items.Clear();
@@ -133,6 +143,7 @@ namespace DukeEdSharp
                 EditorInterface.DukeSharp_Exec(s);
             }
 
+            RefreshSoundGroupList();
             RefreshSoundList();
         }
 
@@ -149,6 +160,21 @@ namespace DukeEdSharp
             }
 
             textureGroupComboBox.SelectedIndex = 0;
+        }
+
+        private void RefreshSoundGroupList()
+        {
+            string temp = EditorInterface.Get("OBJ", "GROUPS CLASS=Sound PACKAGE=\"" + soundPackageName + "\"");
+            string[] groups = temp.Split(',');
+
+            soundGroupComboBox.Items.Clear();
+
+            foreach (string s in groups)
+            {
+                soundGroupComboBox.Items.Add(s);
+            }
+
+            soundGroupComboBox.SelectedIndex = 0;
         }
 
         private void RefreshTextureList()
@@ -322,6 +348,137 @@ namespace DukeEdSharp
         private void showPlaceableOnlyCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             PopulateActorClassList();
+        }
+
+        private void soundGroupComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshSoundList();
+        }
+
+        private void playToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // HACK ALERT! Because the audio files are inside of the .dat files(except for user files) we have to force extract so it loads the data.
+            // Investigate a better way to do this!
+
+            {
+                string temp = String.Format("OBJ EXPORT TYPE=SOUND PACKAGE=\"{0}\" NAME=\"{1}\" FILE=\"{2}\"", soundPackageName, soundPackageListBox.SelectedItem, "../EditorTemp/temp.wav");
+                EditorInterface.DukeSharp_Exec(temp);
+            }
+
+
+            string groupSelected = (string)soundGroupComboBox.SelectedItem;
+            string s = String.Format("AUDIO PLAY NAME=\"{2}\"", soundPackageName, groupSelected, soundPackageListBox.SelectedItem);
+            EditorInterface.DukeSharp_Exec(s);
+        }
+
+        private void importToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            Thread t = new Thread((ThreadStart)(() =>
+            {
+                OpenFileDialog saveFileDialog = new OpenFileDialog();
+                saveFileDialog.InitialDirectory = "..\\sounds\\";
+                saveFileDialog.Filter = "WAV File (*.wav)|*.wav";
+                //    saveFileDialog.FilterIndex = 2;
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = saveFileDialog.FileName;
+                }
+            }));
+
+            // Run your code from a thread that joins the STA Thread
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+
+            string groupSelected = (string)soundGroupComboBox.SelectedItem;
+
+            if (filePath != string.Empty)
+            {
+                SoundImportFrm frm = new SoundImportFrm();
+                frm.SetInfo(filePath, soundPackageName, groupSelected);
+                frm.ShowDialog();
+                RefreshSoundList();
+            }
+        }
+
+        private void exportToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            Thread t = new Thread((ThreadStart)(() =>
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.InitialDirectory = "..\\sounds\\";
+                saveFileDialog.Filter = "WAV file (*.wav)|*.wav";
+                //    saveFileDialog.FilterIndex = 2;
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = saveFileDialog.FileName;
+                }
+            }));
+
+            // Run your code from a thread that joins the STA Thread
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+
+            if (filePath != string.Empty)
+            {
+                string s = String.Format("OBJ EXPORT TYPE=SOUND PACKAGE=\"{0}\" NAME=\"{1}\" FILE=\"{2}\"", soundPackageName, soundPackageListBox.SelectedItem, filePath);
+                EditorInterface.DukeSharp_Exec(s);
+            }
+        }
+
+        private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            Thread t = new Thread((ThreadStart)(() =>
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.InitialDirectory = "..\\sounds\\";
+                saveFileDialog.Filter = "Sound Packages (*.dfx)|*.dfx|All files (*.*)|*.*";
+                //    saveFileDialog.FilterIndex = 2;
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = saveFileDialog.FileName;
+                }
+            }));
+
+            // Run your code from a thread that joins the STA Thread
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+
+            if (filePath != string.Empty)
+            {
+                string s = "OBJ SavePackage FILE=\"" + filePath + "\" Package=\"" + soundPackageName + "\"";
+                EditorInterface.DukeSharp_Exec(s);
+            }
+        }
+
+        private void textureListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void soundPackageListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -39,6 +39,17 @@ extern UViewport* globalInitViewport;
 
 dnArray<UObject*>* UObject::GObjObjects;
 
+int(__fastcall* USoundExporterWAV__ExportBinaryActual)(void* _this, void* edx, struct UObject* a2, const wchar_t* a3, struct dnArchive* a4, struct dnFeedbackContext* a5);
+int __fastcall USoundExporterWAV__ExportBinary(void* _this, void* edx, struct UObject* a2, const wchar_t* a3, struct dnArchive* a4, struct dnFeedbackContext* a5) {
+
+	USound* sound = (USound *)a2;
+	*GIsEditor = false;
+	sound->EnsureData(NULL);
+	*GIsEditor = true;
+
+	return USoundExporterWAV__ExportBinaryActual(_this, edx, a2, a3, a4, a5);
+}
+
 DWORD(__fastcall* ustruct_GetScriptTextCRCActual)(void* _this);
 DWORD ustruct_GetScriptTextCRC(void* _this) {
 	DWORD crc = ustruct_GetScriptTextCRCActual(_this);
@@ -836,10 +847,12 @@ void InitDNFHooks()
 //
 	HINSTANCE editor = LoadLibraryA("editor.dll");
 
-	static void* updateAudioPtr = GetProcAddress(editor, MAKEINTRESOURCEA(1021));
+	
+
+	static void* exportWavPTR = GetProcAddress(editor, MAKEINTRESOURCEA(471));
 	{
-		MH_CreateHook(updateAudioPtr, Editor_UpdateAudio, (LPVOID*)&Editor_UpdateAudioActual);
-		MH_EnableHook(updateAudioPtr);
+		MH_CreateHook(exportWavPTR, USoundExporterWAV__ExportBinary, (LPVOID*)&USoundExporterWAV__ExportBinaryActual);
+		MH_EnableHook(exportWavPTR);
 	}
 
 	//UEditorEngine__Exec = (int(__stdcall*)(void*, const wchar_t*, const void*))GetProcAddress(editor, MAKEINTRESOURCEA(462));

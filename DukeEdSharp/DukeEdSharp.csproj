@@ -72,6 +72,12 @@
     </Compile>
     <Compile Include="Interface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoundImportFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SoundImportFrm.Designer.cs">
+      <DependentUpon>SoundImportFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TextureImportFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BrushScale.resx">
       <DependentUpon>BrushScale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoundImportFrm.resx">
+      <DependentUpon>SoundImportFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TextureImportFrm.resx">
       <DependentUpon>TextureImportFrm.cs</DependentUpon>

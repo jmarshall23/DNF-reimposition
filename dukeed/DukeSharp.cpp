@@ -116,6 +116,11 @@ int __stdcall DukeSharp_GetClassFlags(const wchar_t* _clsname)
 	return _cls->GetClassFlags();
 }
 
+void __stdcall DukeSharp_ToggleEditor(bool flag)
+{
+	*GIsEditor = flag;
+}
+
 void* __stdcall DukeSharp_CreateTextureViewport(HWND hWnd)
 {
 	// Create the texture browser viewport

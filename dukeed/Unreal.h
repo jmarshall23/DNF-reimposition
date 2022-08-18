@@ -1269,4 +1269,9 @@ template< class T > T* FindObject(UObject* Outer, const TCHAR* Name, UBOOL Exact
 	return (T*)UObject::StaticFindObject(T::StaticClass(), Outer, Name, ExactClass);
 }
 
+__declspec(dllimport) class USound {
+public:
+	void EnsureData(class dnCompiledSound *dnCompiledSoundPtr); // Just set dnCompiledSoundPtr to nullptr.
+};
+
 #define ANY_PACKAGE ((UObject*)-1)
