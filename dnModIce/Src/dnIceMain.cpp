@@ -37,6 +37,8 @@ void __fastcall AActor__eventSpawned(AActor* _this, void *edx)
 		return;
 	}
 	
+	AActor__eventSpawnedActual(_this, edx);
+
 	ObjectCall_Parms Params;
 	Params.object = _object;
 	Params.ReturnValue = 0;
@@ -44,10 +46,9 @@ void __fastcall AActor__eventSpawned(AActor* _this, void *edx)
 	UFunction* function = IceSpawnManager->FindFunction(TEXT("PostEntitySpawn"), FALSE);
 	IceSpawnManager->ProcessEvent(function, &Params);
 
-	AActor__eventSpawnedActual(_this, edx);
 
-	OutputDebugStringW(_object->GetName());
-	OutputDebugStringW(TEXT("\n"));
+	//OutputDebugStringW(_object->GetName());
+	//OutputDebugStringW(TEXT("\n"));
 }
 
 

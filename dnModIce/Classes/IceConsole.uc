@@ -6,6 +6,7 @@ event bool KeyEvent(EInputKey Key, EInputAction Action, float Delta)
 {
 	if(Action == 1 && Key == 192)
 	{
+		Log("!!Showing console!!");
 		TypedStr="";
 		bLocked=false;	
 		super.LaunchUWindow();
@@ -125,4 +126,5 @@ exec function DebugHUD()
 defaultproperties
 {
 	bLocked=false
+	RootWindow="dnModIce.IceRootWindow"
 }
