@@ -6,3 +6,4 @@ EXPORTS
 	DukeSharp_CreateTextureViewport @4
 	DukeSharp_BuildBrush @5
 	DukeSharp_GetParentWindow @6
+	DukeSharp_GetClassFlags @7

@@ -50,6 +50,19 @@ namespace DukeEdSharp
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         private static extern IntPtr DukeSharp_CreateTextureViewport(IntPtr hWnd);
 
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        private static extern int DukeSharp_GetClassFlags([MarshalAs(UnmanagedType.LPWStr)] string clsname);
+
+        public static int GetClassFlags(string clsname)
+        {
+            return DukeSharp_GetClassFlags(clsname);
+        }
+
+        public static bool IsClassPlaceable(string clsname)
+        {
+            return (GetClassFlags(clsname) & 0x02000) != 0;
+        }
+
         public static IntPtr CreateTextureViewport(IntPtr hWnd)
         {
             return DukeSharp_CreateTextureViewport(hWnd);

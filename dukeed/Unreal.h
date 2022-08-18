@@ -307,7 +307,7 @@ public:
 	virtual void ProcessEvent(UFunction* Function, void* Parms, void* Result = NULL);
 #endif
 
-	UObject* StaticFindObject(UClass* ObjectClass, UObject* InObjectPackage, const TCHAR* InName, UBOOL ExactClass);
+	static UObject* StaticFindObject(UClass* ObjectClass, UObject* InObjectPackage, const TCHAR* InName, UBOOL ExactClass);
 	static UClass* StaticLoadClass(UClass* BaseClass, UObject* InOuter, const TCHAR* Name, const TCHAR* Filename, DWORD LoadFlags, UPackageMap* Sandbox);
 	static void GetRegistryObjects(dnArray<FRegistryObjectInfo>& Results, UClass* Class, UClass* MetaClass, UBOOL ForceRefresh);
 	static UObject* StaticLoadObject(class UClass* ObjectClass, UObject* InOuter, const TCHAR* InName, const TCHAR* Filename, DWORD LoadFlags, UPackageMap* Sandbox);
@@ -1268,3 +1268,5 @@ template< class T > T* FindObject(UObject* Outer, const TCHAR* Name, UBOOL Exact
 {
 	return (T*)UObject::StaticFindObject(T::StaticClass(), Outer, Name, ExactClass);
 }
+
+#define ANY_PACKAGE ((UObject*)-1)

@@ -48,6 +48,8 @@ namespace DukeEdSharp
 
         public void PopulateActorClassList()
         {
+            actorClassList.Items.Clear();
+
             IntPtr listStrptr = EditorInterface.DukeSharp_FindActorClasses();
             string list = Marshal.PtrToStringAuto(listStrptr);
             string[] actorList = list.Split(',');
@@ -56,7 +58,12 @@ namespace DukeEdSharp
 
             foreach (string s in actorList)
             {
-                actorClassList.Items.Add(s.Remove(0, 1));
+                string clsname = s.Remove(0, 1);
+
+                if (!showPlaceableOnlyCheckBox.Checked || EditorInterface.IsClassPlaceable(clsname))
+                {
+                    actorClassList.Items.Add(clsname);
+                }
             }
         }
 
@@ -301,15 +308,20 @@ namespace DukeEdSharp
             t.Start();
             t.Join();
 
+            string groupSelected = (string)textureGroupComboBox.SelectedItem;
+
             if (filePath != string.Empty)
             {
-                string importFileName = Path.GetFileName(filePath);
-                importFileName = Path.GetFileNameWithoutExtension(importFileName);
-
-                string groupSelected = (string)textureGroupComboBox.SelectedItem;
-                string s = String.Format("TEXTURE IMPORT FILE=\"{0}\" NAME=\"{1}\" PACKAGE=\"{2}\" GROUP=\"{3}\"", filePath, importFileName, texturePackageName, groupSelected);
-                EditorInterface.DukeSharp_Exec(s);
+                TextureImportFrm frm = new TextureImportFrm();
+                frm.SetInfo(filePath, texturePackageName, groupSelected);
+                frm.ShowDialog();
+                RefreshTextureList();
             }
+        }
+
+        private void showPlaceableOnlyCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            PopulateActorClassList();
         }
     }
 }

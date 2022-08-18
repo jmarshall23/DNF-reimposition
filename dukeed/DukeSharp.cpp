@@ -106,6 +106,16 @@ HWND __stdcall DukeSharp_GetParentWindow()
 	return _mainParentHwnd;
 }
 
+int __stdcall DukeSharp_GetClassFlags(const wchar_t* _clsname)
+{
+	UClass* _cls = FindObject<UClass>(ANY_PACKAGE, _clsname);
+
+	if (_cls == nullptr)
+		return 0;
+
+	return _cls->GetClassFlags();
+}
+
 void* __stdcall DukeSharp_CreateTextureViewport(HWND hWnd)
 {
 	// Create the texture browser viewport

@@ -72,6 +72,7 @@
             this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.staticMeshPage = new System.Windows.Forms.TabPage();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showPlaceableOnlyCheckBox = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.actorClassPage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -97,6 +98,7 @@
             // 
             // actorClassPage
             // 
+            this.actorClassPage.Controls.Add(this.showPlaceableOnlyCheckBox);
             this.actorClassPage.Controls.Add(this.actorClassList);
             this.actorClassPage.Controls.Add(this.listBox1);
             this.actorClassPage.Controls.Add(this.menuStrip1);
@@ -111,11 +113,10 @@
             // 
             // actorClassList
             // 
-            this.actorClassList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.actorClassList.FormattingEnabled = true;
-            this.actorClassList.Location = new System.Drawing.Point(3, 27);
+            this.actorClassList.Location = new System.Drawing.Point(3, 53);
             this.actorClassList.Name = "actorClassList";
-            this.actorClassList.Size = new System.Drawing.Size(673, 509);
+            this.actorClassList.Size = new System.Drawing.Size(673, 472);
             this.actorClassList.TabIndex = 3;
             // 
             // listBox1
@@ -227,39 +228,39 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(107, 6);
             // 
             // importToolStripMenuItem
             // 
             this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.importToolStripMenuItem.Text = "Import";
             this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
@@ -426,6 +427,19 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // showPlaceableOnlyCheckBox
+            // 
+            this.showPlaceableOnlyCheckBox.AutoSize = true;
+            this.showPlaceableOnlyCheckBox.Checked = true;
+            this.showPlaceableOnlyCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.showPlaceableOnlyCheckBox.Location = new System.Drawing.Point(7, 30);
+            this.showPlaceableOnlyCheckBox.Name = "showPlaceableOnlyCheckBox";
+            this.showPlaceableOnlyCheckBox.Size = new System.Drawing.Size(127, 17);
+            this.showPlaceableOnlyCheckBox.TabIndex = 4;
+            this.showPlaceableOnlyCheckBox.Text = "Show Placeable Only";
+            this.showPlaceableOnlyCheckBox.UseVisualStyleBackColor = true;
+            this.showPlaceableOnlyCheckBox.CheckedChanged += new System.EventHandler(this.showPlaceableOnlyCheckBox_CheckedChanged);
+            // 
             // BrowserFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -499,5 +513,6 @@
         private System.Windows.Forms.ListBox soundPackageListBox;
         private System.Windows.Forms.ListBox textureListBox;
         private System.Windows.Forms.ComboBox textureGroupComboBox;
+        private System.Windows.Forms.CheckBox showPlaceableOnlyCheckBox;
     }
 }
