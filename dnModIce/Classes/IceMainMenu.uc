@@ -72,7 +72,11 @@ function NotifyFromControl(UWindowDialogControl C, byte E)
 
 function bool PropagateKey(UWindowWindow.WinMessage msg, Canvas C, float X, float Y, int Key)
 {
-	
+	if(msg == WM_KeyDown && key == 192)
+	{
+		Root.Console.ShowConsole();
+		return true;
+	}
 	return super.PropagateKey(msg, C, X, Y, Key);
 }
 
