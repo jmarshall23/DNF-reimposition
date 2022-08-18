@@ -2,7 +2,7 @@ class IceSceneHelpOptions extends UDukeSceneHelpOptions;
 
 function NotifyFromControl(UWindowDialogControl C, byte E)
 {
-	if(C == VideoButton)
+	if(C == VideoButton && E == 2)
 	{
 		NavigateForward(class'IceSceneVideoOptions');
 		return;

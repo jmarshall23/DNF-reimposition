@@ -139,6 +139,8 @@
     <None Include="..\Classes\IceMainMenu.uc" />
     <None Include="..\Classes\IcePlayer.uc" />
     <None Include="..\Classes\IceRootWindow.uc" />
+    <None Include="..\Classes\IceSceneHelpOptions.uc" />
+    <None Include="..\Classes\IceSceneVideoOptions.uc" />
     <None Include="..\Classes\IceSpawnManager.uc" />
     <None Include="..\Classes\IceTestPawn.uc" />
     <None Include="..\Classes\Justin.uc" />

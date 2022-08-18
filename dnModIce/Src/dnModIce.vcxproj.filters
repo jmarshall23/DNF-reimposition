@@ -48,6 +48,12 @@
     <None Include="..\Classes\IceRootWindow.uc">
       <Filter>Classes</Filter>
     </None>
+    <None Include="..\Classes\IceSceneHelpOptions.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\IceSceneVideoOptions.uc">
+      <Filter>Classes</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Inc\dnModIceClasses.h">
