@@ -12,6 +12,44 @@ struct ObjectCall_Parms
 	BITFIELD ReturnValue;
 };
 
+struct FPlaySoundArgs {
+	int unnknown0;
+	int unnknown1;
+	int unnknown2;
+	int unnknown3;
+	int unnknown4;
+	int unnknown5;
+	float volume;
+	int unknonw[21];
+};
+
+void (__fastcall* AActor_InternalPlaySoundActual)(UObject *_this, void* edx, int param, FPlaySoundArgs & ptr);
+void __fastcall AActor_InternalPlaySound(UObject* _this, void* edx, int param, FPlaySoundArgs& ptr)
+{
+	UObject* owner = (UObject*) *((DWORD*)_this + 27);
+
+	if (wcsstr(_this->GetName(), TEXT("IcePlayer")))
+	{
+		if (ptr.volume > 0.5)
+		{
+			ptr.volume = 1.0f;
+		}
+	}
+	else if (owner != nullptr && wcsstr(owner->GetName(), TEXT("IcePlayer")))
+	{
+		if (ptr.volume > 0.5)
+		{
+			ptr.volume = 1.0f;
+		}
+	}
+	else 
+	{
+		ptr.volume -= 0.15f;
+	}
+	AActor_InternalPlaySoundActual(_this, edx, param, ptr);
+}
+
+
 void (*__fastcall UObject_DestroyActual)(void* _this, void *edx);
 void __fastcall UObject_Destroy(void* _this, void* edx)
 {
@@ -71,6 +109,12 @@ void InitDNFHooks()
 	}
 
 	if (MH_CreateHookApi(TEXT("engine.dll"), MAKEINTRESOURCEA(5705), UObject_Destroy, (LPVOID*)&UObject_DestroyActual) != MH_OK) {
+		_asm {
+			int 3
+		}
+	}
+
+	if (MH_CreateHookApi(TEXT("engine.dll"), MAKEINTRESOURCEA(8801), AActor_InternalPlaySound, (LPVOID*)&AActor_InternalPlaySoundActual) != MH_OK) {
 		_asm {
 			int 3
 		}
