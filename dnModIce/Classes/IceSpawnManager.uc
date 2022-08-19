@@ -13,12 +13,7 @@ function PostEntitySpawn(Object obj)
 	if(Weapon(obj) != none)
 	{
 		Log("!!Changing weapons!!!");
-		Weapon(obj).WeaponConfig.default.ReloadCount = Weapon(obj).WeaponConfig.default.ReloadCount * 2;
+		//Weapon(obj).WeaponConfig.default.ReloadCount = Weapon(obj).WeaponConfig.default.ReloadCount * 2;
 		return;
-	}
-
-	if(DamageType(obj) != none)
-	{
-		DamageType(obj).MaterialEffectMappings.Empty();
 	}
 }
