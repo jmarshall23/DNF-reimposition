@@ -85,6 +85,8 @@
             this.importToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.entityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createEntityFromMeshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.soundsGroupComboBox.SuspendLayout();
             this.actorClassPage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -508,7 +510,8 @@
             // menuStrip2
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem3});
+            this.fileToolStripMenuItem3,
+            this.entityToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(679, 24);
@@ -562,6 +565,21 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // entityToolStripMenuItem
+            // 
+            this.entityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createEntityFromMeshToolStripMenuItem});
+            this.entityToolStripMenuItem.Name = "entityToolStripMenuItem";
+            this.entityToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.entityToolStripMenuItem.Text = "Entity";
+            // 
+            // createEntityFromMeshToolStripMenuItem
+            // 
+            this.createEntityFromMeshToolStripMenuItem.Name = "createEntityFromMeshToolStripMenuItem";
+            this.createEntityFromMeshToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.createEntityFromMeshToolStripMenuItem.Text = "Create Entity from Mesh";
+            this.createEntityFromMeshToolStripMenuItem.Click += new System.EventHandler(this.createEntityFromMeshToolStripMenuItem_Click);
             // 
             // BrowserFrm
             // 
@@ -654,5 +672,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox staticMeshListBox;
         private System.Windows.Forms.ComboBox staticMeshGroupComboBox;
+        private System.Windows.Forms.ToolStripMenuItem entityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createEntityFromMeshToolStripMenuItem;
     }
 }

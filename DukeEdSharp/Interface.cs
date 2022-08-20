@@ -48,6 +48,9 @@ namespace DukeEdSharp
 
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         public static extern void DukeSharp_SetPreviewStaticMesh([MarshalAs(UnmanagedType.LPWStr)] string package, [MarshalAs(UnmanagedType.LPWStr)] string group, [MarshalAs(UnmanagedType.LPWStr)] string mesh);
+        
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        public static extern void DukeSharp_AddStaticModelToLevel();
 
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         private static extern IntPtr DukeSharp_CreateTextureViewport(IntPtr hWnd);

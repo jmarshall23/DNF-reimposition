@@ -179,6 +179,18 @@ void __stdcall DukeSharp_SetPreviewStaticMesh(const wchar_t* package, const wcha
 	}
 }
 
+void __stdcall DukeSharp_AddStaticModelToLevel(void)
+{
+	UViewport* Viewport = GEditor->GetCurrentViewport();
+
+	std::wstring s = VAPrintf(TEXT("STATICMESH ADD NAME=%s SNAP=1 X=%1.1f Y=%1.1f Z=%1.1f"),
+		GEditor->GetCurrentStaticMesh()->GetName(),
+		Viewport->GetActor()->GetLocation()[0], Viewport->GetActor()->GetLocation()[1], Viewport->GetActor()->GetLocation()[2]);
+
+	GEditor->exec.Exec(s.c_str());
+	GEditor->exec.Exec(TEXT("POLY SELECT NONE"));
+}
+
 void* __stdcall DukeSharp_CreateTextureViewport(HWND hWnd)
 {
 	// Create the texture browser viewport

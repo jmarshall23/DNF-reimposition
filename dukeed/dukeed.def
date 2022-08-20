@@ -10,3 +10,4 @@ EXPORTS
 	DukeSharp_ToggleEditor @8
 	DukeSharp_CreateStaticMeshViewport @9
 	DukeSharp_SetPreviewStaticMesh @10
+	DukeSharp_AddStaticModelToLevel @11

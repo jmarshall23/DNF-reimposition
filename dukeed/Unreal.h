@@ -16,6 +16,8 @@
 #define FString dnString
 #define TArray dnArray
 
+class UViewport;
+
 __declspec(dllimport) class FRegistryObjectInfo;
 
 // Name index.
@@ -269,11 +271,6 @@ public:
 
 };
 
-__declspec(dllimport) class UViewport {
-public:
-	virtual ~UViewport();
-};
-
 class UClass;
 class				UFunction;
 
@@ -347,7 +344,13 @@ __declspec(dllimport) enum ERenderType
 	REN_MAX = 20
 };
 
-__declspec(dllimport)  class AActor;
+__declspec(dllimport)  class AActor {
+public:
+	float* GetLocation()
+	{
+		return &((float*)this)[123];
+	}
+};
 __declspec(dllimport)  struct FVector;
 __declspec(dllimport)  class UPlayer;
 __declspec(dllimport)  enum ENetRole;
@@ -642,6 +645,13 @@ public:
 		*((DWORD*)this + 37) = (DWORD)StaticMesh;
 	}
 
+	UStaticMesh* GetCurrentStaticMesh()
+	{
+		return (UStaticMesh*) *((DWORD*)this + 37);
+	}
+
+	UViewport* GetCurrentViewport();
+
 	FExec exec;
 };
 
@@ -671,7 +681,6 @@ extern dnOuputDeviceString GetPropResult;
 extern void* globalLog;
 
 class WViewportFrame;
-class UViewport;
 
 typedef struct {
 	INT RendMap;

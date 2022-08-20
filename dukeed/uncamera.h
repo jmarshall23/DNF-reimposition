@@ -1,6 +1,16 @@
 
 #pragma once
 
+__declspec(dllimport) class UViewport {
+public:
+	virtual ~UViewport();
+
+	class AActor* GetActor()
+	{
+		return (class AActor*)*((DWORD*)this + 12);
+	}
+};
+
 __declspec(dllimport) class UWindowsViewport : public UViewport {
 public:
 	virtual ~UWindowsViewport() { }

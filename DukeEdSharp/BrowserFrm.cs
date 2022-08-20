@@ -482,5 +482,10 @@ namespace DukeEdSharp
         {
             RefreshStaticMeshList();
         }
+
+        private void createEntityFromMeshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_AddStaticModelToLevel();
+        }
     }
 }
