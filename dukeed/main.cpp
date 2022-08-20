@@ -18,6 +18,8 @@ BOOL			dumpTobrowserOut = false;
 UEditorEngine* GEditor;
 UWindowsClient* GClient;
 
+static void* UStaticMeshDrawFuncPtr;
+
 void InitEditor(void);
 
 bool skipLogging = false;
@@ -743,6 +745,8 @@ void InitDNFHooks()
 
 	HINSTANCE engine = LoadLibraryA("engine.dll");
 
+	UStaticMeshDrawFuncPtr = GetProcAddress(engine, MAKEINTRESOURCEA(5888));
+
 	//UInput_Init = (void(__fastcall*)(void*, void*, UViewport*))GetProcAddress(engine, MAKEINTRESOURCEA(8396));
 	//void* UInputResetPtr = GetProcAddress(engine, MAKEINTRESOURCEA(10474));
 	//{
@@ -772,11 +776,11 @@ void InitDNFHooks()
 		MH_EnableHook(GetCRCPtr);
 	}
 
-	void* DrawSectionsPtr = GetProcAddress(engine, MAKEINTRESOURCEA(5907));
-	{
-		MH_CreateHook(DrawSectionsPtr, UStaticMesh__DrawSections, (LPVOID*)&UStaticMesh__DrawSectionsActual);
-		MH_EnableHook(DrawSectionsPtr);
-	}
+	//void* DrawSectionsPtr = GetProcAddress(engine, MAKEINTRESOURCEA(5907));
+	//{
+	//	MH_CreateHook(DrawSectionsPtr, UStaticMesh__DrawSections, (LPVOID*)&UStaticMesh__DrawSectionsActual);
+	//	MH_EnableHook(DrawSectionsPtr);
+	//}
 
 	void* isActorHiddenPtr = GetProcAddress(engine, MAKEINTRESOURCEA(8823));
 	{	

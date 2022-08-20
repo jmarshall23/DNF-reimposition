@@ -151,36 +151,35 @@ defaultproperties
 	AutoSave=true
 	AutosaveTimeMinutes=5
 	GameCommandLine="-log"
-	EditPackages(0)="܎湅楧敮܀摅瑩牯ࠀ坕湩"
-	EditPackages(1)=
-/* Exception thrown while deserializing EditPackages
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 174
-   at UELib.UObjectStream.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 722
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 447 */
-	EditPackages(2)=
-/* Exception thrown while deserializing EditPackages
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 156
-   at UELib.UObjectStream.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 722
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 447 */
-	EditPackages(3)=
-/* Exception thrown while deserializing EditPackages
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 156
-   at UELib.UObjectStream.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 722
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 447 */
-	EditPackages(4)=
-/* Exception thrown while deserializing EditPackages
-System.IO.EndOfStreamException: Unable to read beyond the end of the stream.
-   at System.IO.BinaryReader.ReadByte()
-   at UELib.UnrealReader.ReadIndex() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 268
-   at UELib.UnrealReader.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 156
-   at UELib.UObjectStream.ReadText() in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\UnrealStream.cs:line 722
-   at UELib.Core.UDefaultProperty.DeserializeDefaultPropertyValue(PropertyType type, DeserializeFlags& deserializeFlags) in E:\SteamLibrary\steamapps\common\DukeNukem\Tools\UnrealscriptDecompiler\Core\Classes\UDefaultProperty.cs:line 447 */
+	EditPackages(0)="Engine"
+	EditPackages(1)="Editor"
+	EditPackages(2)="UWindow"
+	EditPackages(3)="Fire"
+	EditPackages(4)="IPServer"
+	EditPackages(5)="dnWindow"
+	EditPackages(6)="dnObjLoad"
+	EditPackages(7)="dnParticles"
+	EditPackages(8)="dnMaterial"
+	EditPackages(9)="dnGame"
+	EditPackages(10)="dnDecorations"
+	EditPackages(11)="dnVehicles"
+	EditPackages(12)="dnAI"
+	EditPackages(13)="dnModIce"
+	LoadEntirePackageWhenSaving=true
+	C_View2DAxes=(B=3,G=1,R=112,A=2)
+	C_View2DBackground=(B=3,G=1,R=163,A=2)
+	C_View2DWires=(B=3,G=1,R=128,A=2)
+	C_View3DAxes=(B=3,G=1,R=0,A=2)
+	C_View3DWires=(B=3,G=1,R=0,A=2)
+	C_ViewLightModeAxes=(B=3,G=1,R=32,A=2)
+	C_ViewLightModeWires=(B=3,G=1,R=16,A=2)
+	C_BrushWorking=(B=3,G=1,R=255,A=2)
+	C_BrushAddWire=(B=3,G=1,R=127,A=2)
+	C_BrushSubtractWire=(B=3,G=1,R=255,A=2)
+	C_BrushSemiSolidWire=(B=3,G=1,R=223,A=2)
+	C_BrushNonSolidWire=(B=3,G=1,R=63,A=2)
+	C_BrushPortalWire=(B=3,G=1,R=32,A=2)
+	C_ActorInfoWire=(B=3,G=1,R=163,A=2)
+	C_BackgroundColor=(B=3,G=1,R=255,A=2)
+	CacheSizeMegs=6
 }

@@ -43,6 +43,23 @@ static void __fastcall SerializeEngine(class UObject* _this, void *edx, struct d
 	*GIsEditor = true;
 }
 
+void InitStaticMesh(void* _this)
+{
+	*GIsEditor = false;
+	dnArray<int>* temp_data = (dnArray<int> *)((char*)_this + 112);
+
+	// If we loaded a zero data blob from dnArchive that means we need to pull from the stream.
+	int tableIndex = *((DWORD*)_this + 18);
+	if (temp_data->Num() == 0 && tableIndex > 0)
+	{
+		*((DWORD*)_this + 19) = 0;
+		*((DWORD*)_this + 18) = -1;
+
+		void* data = StaticMesh_GetData((class UStaticMesh*)_this, nullptr);
+	}
+	*GIsEditor = true;
+}
+
 
 void InitMeshDriver(void) {
 	HINSTANCE engine = LoadLibraryA("engine.dll");

@@ -307,6 +307,8 @@ public:
 	virtual void ProcessEvent(UFunction* Function, void* Parms, void* Result = NULL);
 #endif
 
+	UBOOL IsIn(UObject* SomeOuter) const;
+
 	static UObject* StaticFindObject(UClass* ObjectClass, UObject* InObjectPackage, const TCHAR* InName, UBOOL ExactClass);
 	static UClass* StaticLoadClass(UClass* BaseClass, UObject* InOuter, const TCHAR* Name, const TCHAR* Filename, DWORD LoadFlags, UPackageMap* Sandbox);
 	static void GetRegistryObjects(dnArray<FRegistryObjectInfo>& Results, UClass* Class, UClass* MetaClass, UBOOL ForceRefresh);
@@ -432,6 +434,16 @@ enum ETAxis;
 struct FSceneNode;
 struct FColor;
 struct dnFeedbackContext;
+
+__declspec(dllimport) class UPrimitive : public UObject {
+public:
+	virtual ~UPrimitive();
+};
+
+__declspec(dllimport) class UStaticMesh : public UPrimitive {
+public:
+	virtual ~UStaticMesh();
+};
 
 __declspec(dllimport) class UEditorEngine
 {
@@ -625,6 +637,11 @@ public:
 		return (dnArray<AActor*>*)(*((DWORD*)this + 33) + 44);
 	}
 
+	void SetCurrentStaticMesh(UStaticMesh* StaticMesh)
+	{
+		*((DWORD*)this + 37) = (DWORD)StaticMesh;
+	}
+
 	FExec exec;
 };
 
@@ -761,9 +778,9 @@ template< class T > UBOOL ParseObject(const TCHAR* Stream, const TCHAR* Match, T
 	return ParseObject(Stream, Match, T::StaticClass(), *(UObject**)&Obj, Outer);
 }
 
-__declspec(dllimport) class UPackage {
+__declspec(dllimport) class UPackage : public UObject {
 public:
-
+	virtual ~UPackage();
 };
 
 
@@ -1275,3 +1292,5 @@ public:
 };
 
 #define ANY_PACKAGE ((UObject*)-1)
+
+void InitStaticMesh(void* _this);

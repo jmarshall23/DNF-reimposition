@@ -16,6 +16,7 @@ namespace DukeEdSharp
         private string soundPackageName;
         private IntPtr textureViewportHandle;
         private string texturePackageName;
+        private string staticMeshPackageName;
 
         public BrowserFrm()
         {
@@ -96,20 +97,7 @@ namespace DukeEdSharp
             
         }
 
-        private void RefreshSoundList()
-        {
-            string groupSelected = (string)soundGroupComboBox.SelectedItem;
-
-            string temp = EditorInterface.Get("OBJ", "QUERY TYPE=Sound PACKAGE=\"" + soundPackageName + "\" GROUP=\"" + groupSelected + "\"");
-            string[] sounds = temp.Split(' ');
-
-            soundPackageListBox.Items.Clear();
-
-            foreach(string s in sounds)
-            {
-                soundPackageListBox.Items.Add(s);
-            }
-        }
+       
         private void openToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             var fileContent = string.Empty;
@@ -147,52 +135,7 @@ namespace DukeEdSharp
             RefreshSoundList();
         }
 
-        private void RefreshTextureGroupList()
-        {
-            string temp = EditorInterface.Get("OBJ", "GROUPS CLASS=Object PACKAGE=\"" + texturePackageName + "\"");
-            string[] groups = temp.Split(',');
-
-            textureGroupComboBox.Items.Clear();
-
-            foreach (string s in groups)
-            {
-                textureGroupComboBox.Items.Add(s);
-            }
-
-            textureGroupComboBox.SelectedIndex = 0;
-        }
-
-        private void RefreshSoundGroupList()
-        {
-            string temp = EditorInterface.Get("OBJ", "GROUPS CLASS=Sound PACKAGE=\"" + soundPackageName + "\"");
-            string[] groups = temp.Split(',');
-
-            soundGroupComboBox.Items.Clear();
-
-            foreach (string s in groups)
-            {
-                soundGroupComboBox.Items.Add(s);
-            }
-
-            soundGroupComboBox.SelectedIndex = 0;
-        }
-
-        private void RefreshTextureList()
-        {
-            string groupSelected = (string)textureGroupComboBox.SelectedItem;
-
-            string temp = EditorInterface.Get("OBJ", "QUERY TYPE=Object PACKAGE=\"" + texturePackageName + "\" GROUP=\"" + groupSelected + "\"");
-            string[] textures = temp.Split(' ');
-
-            Array.Sort(textures, (x, y) => String.Compare(x, y));
-
-            textureListBox.Items.Clear();
-
-            foreach (string s in textures)
-            {
-                textureListBox.Items.Add(s);
-            }
-        }
+        
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -479,6 +422,65 @@ namespace DukeEdSharp
         private void soundPackageListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BrowserFrm_Load(object sender, EventArgs e)
+        {
+            EditorInterface.CreateStaticMeshViewport(staticMeshViewerPanel.Handle);
+        }
+
+        private void openToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            Thread t = new Thread((ThreadStart)(() =>
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = "..\\StaticMeshes\\";
+                openFileDialog.Filter = "StaticMesh Packages (*.dsm)|*.dsm|All files (*.*)|*.*";
+                // openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+                }
+            }));
+
+            // Run your code from a thread that joins the STA Thread
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+
+            staticMeshPackageName = Path.GetFileName(filePath);
+            staticMeshPackageName = Path.GetFileNameWithoutExtension(staticMeshPackageName);
+
+            if (filePath != string.Empty)
+            {
+                string s = "OBJ LOAD FILE=\"" + filePath + "\"";
+                EditorInterface.DukeSharp_Exec(s);
+            }
+
+            RefreshStaticMeshGroupList();
+            RefreshStaticMeshList();
+        }
+
+        private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void staticMeshListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string groupSelected = (string)staticMeshGroupComboBox.SelectedItem;
+            EditorInterface.DukeSharp_SetPreviewStaticMesh(staticMeshPackageName, groupSelected, (string)staticMeshListBox.SelectedItem);
+        }
+
+        private void staticMeshGroupComboBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            RefreshStaticMeshList();
         }
     }
 }

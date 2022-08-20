@@ -46,9 +46,14 @@ namespace DukeEdSharp
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         private static extern IntPtr DukeSharp_Get([MarshalAs(UnmanagedType.LPWStr)] string topic, [MarshalAs(UnmanagedType.LPWStr)] string command);
 
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        public static extern void DukeSharp_SetPreviewStaticMesh([MarshalAs(UnmanagedType.LPWStr)] string package, [MarshalAs(UnmanagedType.LPWStr)] string group, [MarshalAs(UnmanagedType.LPWStr)] string mesh);
 
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         private static extern IntPtr DukeSharp_CreateTextureViewport(IntPtr hWnd);
+
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        private static extern IntPtr DukeSharp_CreateStaticMeshViewport(IntPtr hWnd);
 
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         private static extern int DukeSharp_GetClassFlags([MarshalAs(UnmanagedType.LPWStr)] string clsname);
@@ -69,6 +74,11 @@ namespace DukeEdSharp
         public static IntPtr CreateTextureViewport(IntPtr hWnd)
         {
             return DukeSharp_CreateTextureViewport(hWnd);
+        }
+
+        public static IntPtr CreateStaticMeshViewport(IntPtr hWnd)
+        {
+            return DukeSharp_CreateStaticMeshViewport(hWnd);
         }
 
         public static string Get(string topic, string command)

@@ -58,6 +58,9 @@
     <Compile Include="BrowserFrm.Designer.cs">
       <DependentUpon>BrowserFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BrowserUtility.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BrushProperties.cs">
       <SubType>Form</SubType>
     </Compile>
