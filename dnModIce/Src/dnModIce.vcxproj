@@ -137,6 +137,7 @@
     <None Include="..\Classes\IceGame.uc" />
     <None Include="..\Classes\IceHUD.uc" />
     <None Include="..\Classes\IceMainMenu.uc" />
+    <None Include="..\Classes\IceMiniBattleLord.uc" />
     <None Include="..\Classes\IcePlayer.uc" />
     <None Include="..\Classes\IceRootWindow.uc" />
     <None Include="..\Classes\IceSceneHelpOptions.uc" />
