@@ -50,7 +50,7 @@ void __fastcall AActor_InternalPlaySound(UObject* _this, void* edx, int param, F
 }
 
 
-void (*__fastcall UObject_DestroyActual)(void* _this, void *edx);
+void (__fastcall * UObject_DestroyActual)(void* _this, void *edx);
 void __fastcall UObject_Destroy(void* _this, void* edx)
 {
 	if (_this == IceSpawnManager && IceSpawnManager != nullptr)
@@ -61,7 +61,7 @@ void __fastcall UObject_Destroy(void* _this, void* edx)
 	UObject_DestroyActual(_this, edx);
 }
 
-void (*__fastcall AActor__eventSpawnedActual)(AActor* _this, void *edx);
+void (__fastcall * AActor__eventSpawnedActual)(AActor* _this, void *edx);
 void __fastcall AActor__eventSpawned(AActor* _this, void *edx)
 {
 	UObject* _object = (UObject*)_this;
