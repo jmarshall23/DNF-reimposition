@@ -341,7 +341,7 @@ void* InitEngineHooked(DWORD splashID) {
 
 	GEditor->exec.Exec(TEXT("MAP NEW"), (dnOutputDevice&)globalLog);
 
-	r_ShowPortals = 1;
+//	r_ShowPortals = 1;
 	//r_AllowAlwaysVisible = 1;
 	
 	//GEditor->exec.Exec(TEXT("CLASS SPEW ALL"), (dnOutputDevice&)globalLog);	

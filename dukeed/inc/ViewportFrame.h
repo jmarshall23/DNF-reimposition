@@ -556,6 +556,46 @@ class WViewportFrame : public WWindow
 				GEditor->exec.Exec(TEXT("TOGGLESHOWVOLUMES"), (dnOutputDevice&)globalLog);
 				break;
 
+			case VK_F7:
+				//GEditor->exec.Exec(TEXT("ACTOR SELECT OFCLASS CLASS=SM_InvisibleCollisionHull"), (dnOutputDevice&)globalLog);
+
+				//GEditor->edactUnHideAll(GEditor->GetLevel());
+				{
+					UClass* _cls = FindObject<UClass>(ANY_PACKAGE, TEXT("SM_InvisibleCollisionHull"));
+					UClass* _brushClass = FindObject<UClass>(ANY_PACKAGE, TEXT("Brush"));
+					ULevel* _level = GEditor->GetLevel();
+THIS_IS_DUMB:
+					dnArray<UObject*> *_actors = (dnArray<UObject*> *)GEditor->GetActorList();
+					for (int i = 0; i < _actors->Num(); i++)
+					{
+						if (_actors->Get(i)->IsA(_brushClass))
+						{
+							ABrush* brush = (ABrush*)_actors->Get(i);
+							int flags = brush->GetPolyFlags();
+							if (flags == 8)
+							{
+								AActor* _actor = (AActor*)brush;
+								float* xyz = _actor->GetLocation();
+								xyz[0] = 0;
+								xyz[1] = 0;
+								xyz[2] = 0;
+								//goto THIS_IS_DUMB;
+							}
+						}
+
+						// Destroy all collision volumes.
+						if (_actors->Get(i)->IsA(_cls))
+						{
+							GEditor->GetLevel()->DestroyActor((AActor*)_actors->Get(i), 0);
+							_actors->Remove(i, 1);
+							goto THIS_IS_DUMB;
+						}
+					}
+
+					//GEditor->edactSelectOfClass(_level, _cls);
+				}
+				break;
+
 #if 0
 			case VK_F5:
 				GSurfPropSheet->Show( TRUE );

@@ -635,6 +635,11 @@ public:
 		virtual UBOOL Exec(const TCHAR* cmd, dnOutputDevice& Ar = (dnOutputDevice&)globalLog);
 	};
 
+	ULevel* GetLevel()
+	{
+		return (ULevel*) *((DWORD*)this + 33);
+	}
+
 	dnArray<AActor*>* GetActorList()
 	{
 		return (dnArray<AActor*>*)(*((DWORD*)this + 33) + 44);
@@ -1303,3 +1308,19 @@ public:
 #define ANY_PACKAGE ((UObject*)-1)
 
 void InitStaticMesh(void* _this);
+
+class ABrush
+{
+public:
+	virtual ~ABrush();
+
+	int GetPolyFlags()
+	{
+		return *(((INT*)this) + 434);
+	}
+
+	void SetPolyFlags(int flag)
+	{
+		*(((INT*)this) + 434) = flag;
+	}
+};
