@@ -6,6 +6,18 @@
 
 UObject* IceSpawnManager = nullptr;
 
+__declspec(dllimport) extern int g_LoadScreenInputReceived;
+
+DWORD WINAPI MyThreadFunction(LPVOID lpParam) {
+	while (true)
+	{
+		g_LoadScreenInputReceived = 1;
+		Sleep(1);
+	}
+
+	return 0;
+}
+
 struct ObjectCall_Parms
 {
 	UObject* object;
@@ -133,6 +145,15 @@ BOOL WINAPI DllMain(
 	case DLL_PROCESS_ATTACH:
 	{
 		InitDNFHooks();
+
+		DWORD dontGiveTwoFucksAboutThisVariable = 0;
+		CreateThread(
+			NULL,                   // default security attributes
+			0,                      // use default stack size  
+			MyThreadFunction,       // thread function name
+			nullptr,          // argument to thread function 
+			0,                      // use default creation flags 
+			&dontGiveTwoFucksAboutThisVariable);
 	}
 	break;
 
