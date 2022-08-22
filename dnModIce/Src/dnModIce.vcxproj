@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\dukeed\MinHook.h" />
     <ClInclude Include="..\..\dukeed\Unreal.h" />
+    <ClInclude Include="..\Classes\IcePigCop.uc" />
     <ClInclude Include="..\Inc\dnModIceClasses.h" />
   </ItemGroup>
   <ItemGroup>
