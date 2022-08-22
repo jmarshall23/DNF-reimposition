@@ -508,6 +508,17 @@ simulated function int GetWeaponPriority(Weapon Weap)
 	return 1;
 }
 
+event Tick(float DeltaTime)
+{
+	super.Tick(DeltaTime);
+	if(TouchingWeaponPickup != none)
+	{		
+		Pickup(TouchingWeaponPickup).DoPickup(Self);
+
+		// Log("TOUCHING THE FUCKING GUN!!");
+	}
+}
+
 defaultproperties
 {
 	SprintTotalTime=100000
