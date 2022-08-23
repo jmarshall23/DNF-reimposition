@@ -4,6 +4,7 @@
 class IceMainMenu extends UDukeSceneMainMenuPAX;
 
 var UDukeMenuButton SinglePlayerButton;
+var UDukeMenuButton SinglePlayerOriginalGameButton;
 var UDukeMenuButton OptionsButton;
 var UDukeMenuButton ExitButton;
 
@@ -13,9 +14,14 @@ function Created()
 {
 	super(UWindowScene).Created();
 	SinglePlayerButton = UDukeMenuButton(CreateWindow(class'UDukeMenuButton',,,,, self));
-	SinglePlayerButton.SetText("Singleplayer(IceMod)");
-	SinglePlayerButton.SetHelpText("Singleplayer(IceMod)");
+	SinglePlayerButton.SetText("Play Ice Campaign");
+	SinglePlayerButton.SetHelpText("Play Ice Campaign");
 	SinglePlayerButton.Register(self);
+
+	SinglePlayerOriginalGameButton = UDukeMenuButton(CreateWindow(class'UDukeMenuButton',,,,, self));
+	SinglePlayerOriginalGameButton.SetText("Singleplayer(Original)");
+	SinglePlayerOriginalGameButton.SetHelpText("Singleplayer(Original)");
+	SinglePlayerOriginalGameButton.Register(self);
 
 	OptionsButton = UDukeMenuButton(CreateWindow(class'UDukeMenuButton',,,,, self));
 	OptionsButton.SetText("Options");
@@ -38,11 +44,17 @@ function Paint(Canvas C, float X, float Y)
 	SinglePlayerButton.WinLeft = float(ButtonLeft);
 	SinglePlayerButton.WinTop = float(ControlStart);
 
+	SinglePlayerOriginalGameButton.Alpha = FadeAlpha;
+	SinglePlayerOriginalGameButton.WinWidth = float(ButtonWidth);
+	SinglePlayerOriginalGameButton.WinHeight = float(ButtonHeight);
+	SinglePlayerOriginalGameButton.WinLeft = float(ButtonLeft);
+	SinglePlayerOriginalGameButton.WinTop = SinglePlayerButton.WinTop + SinglePlayerButton.WinHeight;
+
 	OptionsButton.Alpha = FadeAlpha;
 	OptionsButton.WinWidth = float(ButtonWidth);
 	OptionsButton.WinHeight = float(ButtonHeight);
 	OptionsButton.WinLeft = float(ButtonLeft);
-	OptionsButton.WinTop = SinglePlayerButton.WinTop + SinglePlayerButton.WinHeight;
+	OptionsButton.WinTop = SinglePlayerOriginalGameButton.WinTop + SinglePlayerOriginalGameButton.WinHeight;
 
 	ExitButton.Alpha = FadeAlpha;
 	ExitButton.WinWidth = float(ButtonWidth);
@@ -56,7 +68,12 @@ function NotifyFromControl(UWindowDialogControl C, byte E)
 {
 	if(C == SinglePlayerButton && E == 2)
 	{				
-		GetPlayerOwner().ClientTravel("map05_night?NewGame?Game=dnModIce.IceGame", TRAVEL_Relative, false);
+		GetPlayerOwner().ClientTravel("map05_night?Game=dnModIce.IceGame", TRAVEL_Relative, false);
+	}
+
+	if(c == SinglePlayerOriginalGameButton && E == 2)
+	{
+		GetPlayerOwner().ClientTravel("map00_ice?Game=dnModIce.IceGame", TRAVEL_Relative, false);	
 	}
 
 	if(C == ExitButton && E == 2)

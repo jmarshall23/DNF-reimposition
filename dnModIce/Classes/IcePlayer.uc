@@ -485,6 +485,18 @@ exec function InventoryActivate(optional ActivatableInventory ForceSelectItem)
 
 	super.InventoryActivate(ForceSelectItem);
 }
+
+event DestroyInventory()
+{
+	local int i;
+
+	super.DestroyInventory();
+
+	for(i = 0; i < 10; i++)
+	{
+		InvWeapons[i] = none;
+	}
+}
 // Three weapon limit end.
 
 simulated event PostBeginPlay()
