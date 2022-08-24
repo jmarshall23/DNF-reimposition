@@ -134,6 +134,7 @@
   <ItemGroup>
     <None Include="..\Classes\AssaultTrooper_New_Captian.uc" />
     <None Include="..\Classes\IceBloodChunks.uc" />
+    <None Include="..\Classes\IceBloodChunksBig.uc" />
     <None Include="..\Classes\IceConsole.uc" />
     <None Include="..\Classes\IceGame.uc" />
     <None Include="..\Classes\IceHUD.uc" />

@@ -12,18 +12,18 @@ event PostBeginPlay()
 
 event Tick(float DeltaSeconds)
 {
-	super(AIActor).Tick(DeltaSeconds);
-	PlaySound(NS_Standard, pigPainSound, SLOT_Pain, 4, 12000, 1, 2);
+	super(AIActor).Tick(DeltaSeconds);	
 }
 
 function TookDamage(Pawn Instigator, float Damage, Object.EPawnBodyPart Part, Vector DamageOrigin, Vector DamageDirection, class<DamageType> DamageType, optional name HitBoneName, optional Vector DamageStart)
 {
-	Damage = Damage * 0.5;
+	Damage = Damage * 0.75;
 
 	if(!IsDead())
 	{
 		PlaySound(NS_Standard, pigPainSound, SLOT_Pain);
 		SetHealth(Health - Damage);
+		spawn(class'IceBloodChunks', Owner, , DamageOrigin);
 	}
 
 	if(IsDead())
