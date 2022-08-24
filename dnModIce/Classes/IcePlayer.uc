@@ -537,4 +537,18 @@ defaultproperties
 	HealthCap=100;
 	EgoCap=100;
 	Ego=100;
+	TargetWalkSpeedEx=390
+	WalkSpeedEx=390	
+	TargetJumpSpeedEx=420
+	JumpSpeedEx=420
+	TargetSprintSpeedEx=370
+	SprintSpeedEx=370
+	TargetSwimSpeedEx=260
+	SwimSpeedEx=260
+	LightFallingDamageVelocity=925
+	MediumFallingDamageVelocity=1125
+	FatalFallingDamageVelocity=1300
+	DamageViewKickSoft=0
+	DamageViewKickHard=0
+	DamageViewKickHardThreshold=0
 }
