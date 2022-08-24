@@ -105,7 +105,7 @@ simulated event PostPostRender(Canvas C)
 
 	DrawNewCrosshair(C);	
 
-	C.SetPos(0, C.SizeY-ScaleHeight(C, 113));
+	C.SetPos(50, C.SizeY-ScaleHeight(C, 113));
 	C.DrawTile(dnHudBackground, C.SizeX, ScaleHeight(C, 190), 0, 0, 1920, 256);
 
 	DrawAmmoRoster(C);
@@ -158,5 +158,5 @@ function SaveComplete()
 defaultproperties
 {
 	dnCrosshair=hud_effects.crosshairs.crosshair11BC
-	dnHudBackground=dukeui.ui.hud
+	dnHudBackground=dukeui.ui.minimalhud2
 }
