@@ -27,6 +27,20 @@ simulated event float GetBaseDamage(Actor Victim, optional Pawn Instigator, opti
 	return 10;
 }
 
+function TookDamage(Pawn Instigator, float Damage, Object.EPawnBodyPart Part, Vector DamageOrigin, Vector DamageDirection, class<DamageType> DamageType, optional name HitBoneName, optional Vector DamageStart)
+{
+	if(!IsDead())
+	{
+		SetHealth(Health - Damage);
+		spawn(class'IceBloodChunksBig', Owner, , DamageOrigin);
+	}
+
+	if(IsDead())
+	{
+		Died(Instigator, int(Damage), DamageOrigin, DamageDirection, DamageType, HitBoneName);
+	}
+}
+
 defaultproperties
 {
 	Health_Stage1=600
