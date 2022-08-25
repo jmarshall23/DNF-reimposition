@@ -84,9 +84,9 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.importToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.entityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createEntityFromMeshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.soundsGroupComboBox.SuspendLayout();
             this.actorClassPage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -534,37 +534,33 @@
             // openToolStripMenuItem2
             // 
             this.openToolStripMenuItem2.Name = "openToolStripMenuItem2";
-            this.openToolStripMenuItem2.Size = new System.Drawing.Size(110, 22);
+            this.openToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem2.Text = "Open";
             this.openToolStripMenuItem2.Click += new System.EventHandler(this.openToolStripMenuItem2_Click);
             // 
             // saveToolStripMenuItem2
             // 
             this.saveToolStripMenuItem2.Name = "saveToolStripMenuItem2";
-            this.saveToolStripMenuItem2.Size = new System.Drawing.Size(110, 22);
+            this.saveToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem2.Text = "Save";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(107, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
             // importToolStripMenuItem2
             // 
             this.importToolStripMenuItem2.Name = "importToolStripMenuItem2";
-            this.importToolStripMenuItem2.Size = new System.Drawing.Size(110, 22);
+            this.importToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.importToolStripMenuItem2.Text = "Import";
+            this.importToolStripMenuItem2.Click += new System.EventHandler(this.importToolStripMenuItem2_Click);
             // 
             // exportToolStripMenuItem2
             // 
             this.exportToolStripMenuItem2.Name = "exportToolStripMenuItem2";
-            this.exportToolStripMenuItem2.Size = new System.Drawing.Size(110, 22);
+            this.exportToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.exportToolStripMenuItem2.Text = "Export";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // entityToolStripMenuItem
             // 
@@ -580,6 +576,11 @@
             this.createEntityFromMeshToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.createEntityFromMeshToolStripMenuItem.Text = "Create Entity from Mesh";
             this.createEntityFromMeshToolStripMenuItem.Click += new System.EventHandler(this.createEntityFromMeshToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // BrowserFrm
             // 

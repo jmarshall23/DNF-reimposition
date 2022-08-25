@@ -487,5 +487,43 @@ namespace DukeEdSharp
         {
             EditorInterface.DukeSharp_AddStaticModelToLevel();
         }
+
+        private void importToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            Thread t = new Thread((ThreadStart)(() =>
+            {
+                OpenFileDialog saveFileDialog = new OpenFileDialog();
+                saveFileDialog.InitialDirectory = "..\\staticmesh\\";
+                saveFileDialog.Filter = "LWO File (*.lwo)|*.lwo";
+                //    saveFileDialog.FilterIndex = 2;
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = saveFileDialog.FileName;
+                }
+            }));
+
+            // Run your code from a thread that joins the STA Thread
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+
+            string groupSelected = (string)staticMeshGroupComboBox.SelectedItem;
+
+            if (filePath != string.Empty)
+            {
+                StaticMeshImportFrm frm = new StaticMeshImportFrm();
+                frm.SetInfo(filePath, staticMeshPackageName, groupSelected);
+                frm.ShowDialog();
+                RefreshStaticMeshList();
+            }
+
+            
+        }
     }
 }
