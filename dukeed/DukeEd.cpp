@@ -10,13 +10,14 @@
 #include "Window.h"
 #include "windrv.h"
 #include "dockingframe.h"
+#include "DukeSharp.h"
 #include "midclient.h"
 #include "uncamera.h"
 #include "resource.h"
 #include "engine_resource.h"
 #include "inc/TopBar.h"
 #include "inc/ViewportFrame.h"
-#include "levelframe.h"
+//#include "levelframe.h"
 #include "inc/BottomBar.h"
 #include "inc/Browser.h"
 
@@ -27,14 +28,14 @@ WBrowserMaster* GBrowserMaster = NULL;
 
 #include "inc/SurfacePropSheet.h"
 
-#include "DukeSharp.h"
-
 HWND _mainParentHwnd;
 
 class WEditorFrame *GEditorFrame;
 WBrowserActor* GBrowserActor = NULL;
 dnOuputDeviceString GetPropResult;
 WSurfacePropSheet* GSurfPropSheet = NULL;
+
+std::wstring currentMapName;
 
 WButtonBar* GButtonBar;
 
@@ -71,9 +72,9 @@ VIEWPORTCONFIG GTemplateViewportConfigs[4][4] =
 
 std::vector< VIEWPORTCONFIG> GViewports;
 UViewport* globalInitViewport = nullptr;
-WLevelFrame* GLevelFrame = nullptr;
 WBottomBar* GBottomBar = nullptr;
 
+#if 0
 void WLevelFrame::FitViewportsToWindow()
 {
 	RECT R;
@@ -92,6 +93,7 @@ void WLevelFrame::FitViewportsToWindow()
 
 	}
 }
+#endif
 
 void FileOpen(HWND hWnd)
 {
@@ -152,7 +154,8 @@ void FileOpen(HWND hWnd)
 		//GEditorFrame->OpenLevelView();
 
 		// Convert the ANSI filename to UNICODE, and tell the editor to open it.
-		GLevelFrame->SetMapFilename(File);
+		//GLevelFrame->SetMapFilename(File);
+		currentMapName = File;
 		GEditor->exec.Exec(mapExecString, (dnOutputDevice &)globalLog);
 
 		//FString S = GLevelFrame->GetMapFilename();
@@ -176,13 +179,12 @@ void FileOpen(HWND hWnd)
 void FileSaveAs(HWND hWnd)
 {
 	// Make sure we have a level loaded...
-	if (!GLevelFrame) { return; }
 
 	OPENFILENAMEW ofn;
 	wchar_t File[8192], * pFilename;
 	TCHAR l_chCmd[255];
 
-	pFilename = GLevelFrame->GetMapFilename();
+	pFilename = (wchar_t *)currentMapName.c_str();
 	wcscpy(File, pFilename);
 
 	ZeroMemory(&ofn, sizeof(OPENFILENAMEA));
@@ -277,7 +279,7 @@ class WBackgroundHolder : public WWindow
 class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentManager
 {
 	DECLARE_WINDOWCLASS(WEditorFrame, WMdiFrame, DukeEd)
-
+public:
 	// Variables.
 	WBackgroundHolder BackgroundHolder;
 	//WConfigProperties* Preferences;
@@ -322,11 +324,11 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 		// This is making it so you can only open one level window - it will reuse it for each
 		// map you load ... which is not really MDI.  But the editor has problems with 2+ level windows open.  
 		// Fix if you can...
-		if (!GLevelFrame)
-		{
-			GLevelFrame = new WLevelFrame(TEXT("LevelFrame"), &BackgroundHolder);
-			GLevelFrame->OpenWindow(1, 1);
-		}
+		//if (!GLevelFrame)
+		//{
+		//	GLevelFrame = new WLevelFrame(TEXT("LevelFrame"), &BackgroundHolder);
+		//	GLevelFrame->OpenWindow(1, 1);
+		//}
 	}
 
 	virtual void OnCommand(INT Command) override
@@ -380,7 +382,7 @@ class WEditorFrame : public WMdiFrame //, public FNotifyHook, public FDocumentMa
 			case ID_BrowserActor:
 			{
 				//GBrowserMaster->ShowBrowser(eBROWSER_ACTOR);
-				dukeSharp.Init();
+				dukeSharp.Init(nullptr);
 			}
 			break;
 
@@ -582,7 +584,7 @@ void InitEditor(void)
 	IMPLEMENT_WINDOWCLASS(WMdiFrame, CS_DBLCLKS)
 	IMPLEMENT_WINDOWCLASS(WEditorFrame, CS_DBLCLKS);
 	IMPLEMENT_WINDOWCLASS(WViewportFrame, CS_DBLCLKS);
-	IMPLEMENT_WINDOWCLASS(WLevelFrame, CS_DBLCLKS);	
+	//IMPLEMENT_WINDOWCLASS(WLevelFrame, CS_DBLCLKS);	
 	IMPLEMENT_WINDOWCLASS(WTopBar, CS_DBLCLKS | CS_VREDRAW | CS_HREDRAW);
 	IMPLEMENT_WINDOWSUBCLASS(WToolTip, TEXT("tooltips_class32"));
 	IMPLEMENT_WINDOWSUBCLASS(WButton, TEXT("BUTTON"));
@@ -670,8 +672,7 @@ void InitEditor(void)
 	GMainMenu = LoadMenuA(*hinstWindowHack, MAKEINTRESOURCEA(IDMENU_MainMenu));
 	SetMenu(Frame.hWnd, GMainMenu);
 
-	_mainParentHwnd = GLevelFrame->hWnd;
-	dukeSharp.Init();
+	 _mainParentHwnd = dukeSharp.Init(Frame.BackgroundHolder.OwnerWindow->hWnd);
 
 	GSurfPropSheet = new WSurfacePropSheet(TEXT("Surface Properties"), GEditorFrame);
 	GSurfPropSheet->OpenWindow();

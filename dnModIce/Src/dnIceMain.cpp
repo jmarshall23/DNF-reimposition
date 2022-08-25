@@ -35,6 +35,11 @@ struct FPlaySoundArgs {
 	int unknonw[21];
 };
 
+UBOOL(*InitializeMeqonActorActual)(struct AKarmaActor* karmaActor);
+UBOOL InitializeMeqonActor(struct AKarmaActor* karmaActor) {
+	return InitializeMeqonActorActual(karmaActor);
+}
+
 void (__fastcall* AActor_InternalPlaySoundActual)(UObject *_this, void* edx, int param, FPlaySoundArgs & ptr);
 void __fastcall AActor_InternalPlaySound(UObject* _this, void* edx, int param, FPlaySoundArgs& ptr)
 {
@@ -127,6 +132,12 @@ void InitDNFHooks()
 	}
 
 	if (MH_CreateHookApi(TEXT("engine.dll"), MAKEINTRESOURCEA(8801), AActor_InternalPlaySound, (LPVOID*)&AActor_InternalPlaySoundActual) != MH_OK) {
+		_asm {
+			int 3
+		}
+	}
+
+	if (MH_CreateHookApi(TEXT("engine.dll"), MAKEINTRESOURCEA(8453), InitializeMeqonActor, (LPVOID*)&InitializeMeqonActorActual) != MH_OK) {
 		_asm {
 			int 3
 		}

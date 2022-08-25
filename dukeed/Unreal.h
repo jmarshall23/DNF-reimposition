@@ -691,7 +691,8 @@ typedef struct {
 	INT RendMap;
 	FLOAT PctLeft, PctTop, PctRight, PctBottom;	// Percentages of the parent window client size (VSTYLE_Fixed)
 	FLOAT Left, Top, Right, Bottom;				// Literal window positions (VSTYLE_Floatin)
-	WViewportFrame* m_pViewportFrame;
+	//WViewportFrame* m_pViewportFrame;
+	HWND formHwnd;
 } VIEWPORTCONFIG;
 
 extern std::vector< VIEWPORTCONFIG> GViewports;

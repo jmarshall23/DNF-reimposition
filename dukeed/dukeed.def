@@ -11,3 +11,5 @@ EXPORTS
 	DukeSharp_CreateStaticMeshViewport @9
 	DukeSharp_SetPreviewStaticMesh @10
 	DukeSharp_AddStaticModelToLevel @11
+	DukeSharp_CreateEditorViewport @12
+	DukeSharp__ResizeViewport @13

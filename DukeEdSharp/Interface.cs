@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using DllExporterNet4;
+using System.Diagnostics;
 
 namespace DukeEdSharp
 {
@@ -12,14 +13,15 @@ namespace DukeEdSharp
         static BrowserFrm browserFrm = new BrowserFrm();
         static BrushScale brushScaleForm = new BrushScale();
         static BrushProperties brushProperties = new BrushProperties();
+        static EditorMidiFrm midiFrm = new EditorMidiFrm();
 
         public static int GWL_STYLE = -16;
         public static int WS_CHILD = 0x40000000;
 
-        private static void SetFormParent(Form frm)
+        private static void SetFormParent(Form frm, IntPtr parentHandle)
         {
             SetWindowLong(frm.Handle, GWL_STYLE, GetWindowLong(frm.Handle, GWL_STYLE) | WS_CHILD);
-            SetParent(frm.Handle, DukeSharp_GetParentWindow());
+            SetParent(frm.Handle, parentHandle);
         }
 
         [DllImport("user32.dll")]
@@ -64,6 +66,12 @@ namespace DukeEdSharp
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         public static extern void DukeSharp_ToggleEditor(bool flag);
 
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        public static extern IntPtr DukeSharp_CreateEditorViewport(IntPtr hWnd, int RendMap);
+
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        public static extern void DukeSharp__ResizeViewport(IntPtr m_pViewport, int width, int height);
+
         public static int GetClassFlags(string clsname)
         {
             return DukeSharp_GetClassFlags(clsname);
@@ -98,14 +106,35 @@ namespace DukeEdSharp
         }
 
         [DllExport]
-        public static void PostInit()
+        public static void EditorResize(int width, int height)
         {
-            SetFormParent(browserFrm);
-            SetFormParent(brushScaleForm);
-            SetFormParent(brushProperties);
+            midiFrm.WindowState = FormWindowState.Normal;
+            midiFrm.Size = new System.Drawing.Size(width, height);
+            midiFrm.WindowState = FormWindowState.Maximized;
+        }
+
+        [DllExport]
+        public static IntPtr PostInit(IntPtr backgroundHolderHwnd)
+        {
+            if(backgroundHolderHwnd == IntPtr.Zero)
+            {
+                browserFrm.Show();
+                browserFrm.Focus();
+
+                return IntPtr.Zero;
+            }
+
+            SetFormParent(midiFrm, backgroundHolderHwnd);
+            midiFrm.Show();
+
+            SetFormParent(browserFrm, midiFrm.Handle);
+            SetFormParent(brushScaleForm, midiFrm.Handle);
+            SetFormParent(brushProperties, midiFrm.Handle);
 
             browserFrm.Show();
-            browserFrm.Focus();
+            browserFrm.Focus();                        
+
+            return midiFrm.Handle;
         }
 
         [DllExport]
@@ -120,5 +149,27 @@ namespace DukeEdSharp
         {
             brushProperties.ShowBrushProperties(x, y, z);
         }
+
+        public static bool ApplicationIsActivated()
+        {
+            var activatedHandle = GetForegroundWindow();
+            if (activatedHandle == IntPtr.Zero)
+            {
+                return false;       // No window is currently activated
+            }
+
+            var procId = Process.GetCurrentProcess().Id;
+            int activeProcId;
+            GetWindowThreadProcessId(activatedHandle, out activeProcId);
+
+            return activeProcId == procId;
+        }
+
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        private static extern IntPtr GetForegroundWindow();
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern int GetWindowThreadProcessId(IntPtr handle, out int processId);
     }
 }

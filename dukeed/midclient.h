@@ -65,6 +65,8 @@ class WMdiFrame : public WWindow
 
 		// Reposition MDI client window.
 		MdiClient.MoveWindow(FRect(LeftFrame.DockDepth, TopFrame.DockDepth, Client.Max.X, Client.Max.Y - BottomFrame.DockDepth), 1);
+
+		dukeSharp.EditorResize(Client.Max.X, Client.Max.Y);
 	}
 	void OnSize(DWORD Flags, INT NewX, INT NewY)
 	{
