@@ -3,16 +3,17 @@
 class DukeSharpInterface {
 public:
 	void					LoadDll(void);
-	void					Init(void);
+	HWND					Init(HWND backgroundHolderHwnd);
 
 	void					ShowBrushScaleDialog() { ShowBrushScale(); }
 
+	void					(__stdcall* EditorResize)(int width, int height);
 	void					(__stdcall *ShowBrushProperties)(float x, float y, float z);
 private:
-	void					(*InitBrowser)(void);
-	void					(*PostInit)(void);
+	void					(__stdcall *InitBrowser)(void);
+	HWND					(__stdcall *PostInit)(HWND);	
 
-	void					(*ShowBrushScale)(void);
+	void					(__stdcall*ShowBrushScale)(void);
 
 	HMODULE	handle;
 };

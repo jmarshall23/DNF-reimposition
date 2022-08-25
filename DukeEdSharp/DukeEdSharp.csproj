@@ -42,6 +42,7 @@
     <Reference Include="DllExporterNet4, Version=1.0.1.0, Culture=neutral, processorArchitecture=x86">
       <HintPath>..\dukeed\packages\DllExporterNet4.1.0.1\lib\net45\DllExporterNet4.exe</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -50,6 +51,7 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrowserFrm.cs">
@@ -73,6 +75,12 @@
     <Compile Include="BrushScale.Designer.cs">
       <DependentUpon>BrushScale.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditorMidiFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorMidiFrm.Designer.cs">
+      <DependentUpon>EditorMidiFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SoundImportFrm.cs">
@@ -87,6 +95,12 @@
     <Compile Include="TextureImportFrm.Designer.cs">
       <DependentUpon>TextureImportFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewportFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewportFrm.Designer.cs">
+      <DependentUpon>ViewportFrm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BrowserFrm.resx">
@@ -98,11 +112,17 @@
     <EmbeddedResource Include="BrushScale.resx">
       <DependentUpon>BrushScale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditorMidiFrm.resx">
+      <DependentUpon>EditorMidiFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SoundImportFrm.resx">
       <DependentUpon>SoundImportFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TextureImportFrm.resx">
       <DependentUpon>TextureImportFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewportFrm.resx">
+      <DependentUpon>ViewportFrm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

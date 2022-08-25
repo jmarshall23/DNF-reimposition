@@ -358,10 +358,10 @@ class WPageFlags : public WSurfacePropPage
 		TCHAR* SurfaceTag = (TCHAR*) appFromAnsi( SurfTagAnsi );
 
 		// Check to make sure that if multiple surfaces are selected, we don't lose any of the surfacetags.
-		if ((SurfsSelected == 1) || (SurfaceTag[0] != '\0'))
-			GEditor->exec.Exec( (VAPrintf(TEXT("POLY SET SETFLAGS=%d CLEARFLAGS=%d SURFACETAG=%s"), OnFlags, OffFlags, SurfaceTag)).c_str() );
-		else
-			GEditor->exec.Exec((VAPrintf(TEXT("POLY SET SETFLAGS=%d CLEARFLAGS=%d"), OnFlags, OffFlags)).c_str() );
+		//if ((SurfsSelected == 1) || (SurfaceTag[0] != '\0'))
+		//	GEditor->exec.Exec( (VAPrintf(TEXT("POLY SET SETFLAGS=%d CLEARFLAGS=%d SURFACETAG=%s"), OnFlags, OffFlags, SurfaceTag)).c_str() );
+		//else
+		GEditor->exec.Exec((VAPrintf(TEXT("POLY SET SETFLAGS=%d CLEARFLAGS=%d"), 1, 0)).c_str() );
 	}
 };
 

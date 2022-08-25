@@ -36,12 +36,13 @@ DukeSharpInterface::LoadDll
 void DukeSharpInterface::LoadDll(void) {
 	HMODULE module = LoadLibraryA("DukeEdSharp.Exports.dll");
 
-	InitBrowser = (void(__cdecl*)(void))GetProcAddress(module, "InitBrowser");	
+	InitBrowser = (void(__stdcall*)(void))GetProcAddress(module, "InitBrowser");
 	InitBrowser();
 
-	PostInit = (void(__cdecl*)(void))GetProcAddress(module, "PostInit");
+	PostInit = (HWND(__stdcall*)(HWND))GetProcAddress(module, "PostInit");
+	EditorResize = (void(__stdcall*)(int, int))GetProcAddress(module, "EditorResize");
 
-	ShowBrushScale = (void(__cdecl*)(void))GetProcAddress(module, "ShowBrushScale");
+	ShowBrushScale = (void(__stdcall*)(void))GetProcAddress(module, "ShowBrushScale");
 
 	ShowBrushProperties = (void(__stdcall*)(float, float, float))GetProcAddress(module, "ShowBrushProperties");
 }
@@ -51,8 +52,8 @@ void DukeSharpInterface::LoadDll(void) {
 DukeSharpInterface::Init
 =================
 */
-void DukeSharpInterface::Init(void) {
-	PostInit();
+HWND  DukeSharpInterface::Init(HWND backgroundHolderHwnd) {
+	return PostInit(backgroundHolderHwnd);
 }
 
 /*
@@ -122,6 +123,33 @@ void __stdcall DukeSharp_ToggleEditor(bool flag)
 	*GIsEditor = flag;
 }
 
+void* __stdcall DukeSharp_CreateEditorViewport(HWND hWnd, int RendMap)
+{
+	// Create the viewport inside of the frame.
+	UWindowsViewport* pViewport = GClient->NewViewport(TEXT(""));
+	ULevel* level = (ULevel*)((int*)GEditor)[33];
+	level->SpawnViewActor((UViewport*)pViewport);
+	unsigned int* Viewport_Actor_Showflags = (unsigned*)(*((unsigned*)pViewport + 12) + 5936);
+	int* Viewport_Actor_RendMap = (int*)(*((DWORD*)pViewport + 12) + 5940);
+
+	*(char*)(*((int*)pViewport + 12) + 5936) |= 1UL << 8;
+	*Viewport_Actor_Showflags |= (0x10 | 0x100 | 0x800 | 0x2000 | 0x20000 | 0x8000 | 0x800100 | SHOW_Backdrop | SHOW_Actors | SHOW_RealTime | SHOW_Brush | SHOW_MovingBrushes | SHOW_StandardView | SHOW_StaticMeshes); // showflags
+	*Viewport_Actor_RendMap = RendMap; // rendermap
+
+	UInput* input = (UInput*)*((DWORD*)pViewport + 23);
+	input->Init(pViewport);
+
+	RECT r;
+	GetWindowRect(hWnd, &r);
+
+	int width = r.right - r.left;
+	int height = r.bottom - r.top;
+
+	pViewport->OpenWindow(hWnd, 0, width, height, 0, 0);
+
+	return pViewport;
+}
+
 void* __stdcall DukeSharp_CreateStaticMeshViewport(HWND hWnd)
 {
 	UWindowsViewport* pViewport = GClient->NewViewport(TEXT("StaticMeshBrowser"));
@@ -152,6 +180,12 @@ void* __stdcall DukeSharp_CreateStaticMeshViewport(HWND hWnd)
 	pViewport->OpenWindow(hWnd, 0, width, height, 0, 0);
 
 	return pViewport;
+}
+
+void __stdcall DukeSharp__ResizeViewport(UWindowsViewport* m_pViewport, int width, int height)
+{
+	::MoveWindow((HWND)m_pViewport->GetWindow(), 0, 0, width, height, 1);
+
 }
 
 void __stdcall DukeSharp_SetPreviewStaticMesh(const wchar_t* package, const wchar_t* group, const wchar_t* mesh)

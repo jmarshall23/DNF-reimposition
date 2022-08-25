@@ -568,6 +568,9 @@ THIS_IS_DUMB:
 					dnArray<UObject*> *_actors = (dnArray<UObject*> *)GEditor->GetActorList();
 					for (int i = 0; i < _actors->Num(); i++)
 					{
+						if(_actors->Get(i) == nullptr)
+							continue;
+
 						if (_actors->Get(i)->IsA(_brushClass))
 						{
 							ABrush* brush = (ABrush*)_actors->Get(i);

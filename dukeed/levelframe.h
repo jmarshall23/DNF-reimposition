@@ -38,9 +38,8 @@ class WLevelFrame : public WWindow
 			SetWindowLong(hWnd, GWL_STYLE, WS_POPUP | WS_CLIPCHILDREN | WS_CLIPSIBLINGS);
 			OwnerWindow->Show(1);
 		}
-
+#if 0
 	//	GViewportStyle = 1;
-
 		VIEWPORTCONFIG* pVC = nullptr;
 
 		OpenFrameViewport(REN_OrthXY, 0, 0, 10, 10, 0);
@@ -73,20 +72,27 @@ class WLevelFrame : public WWindow
 		pVC->PctBottom = 0.500000;
 
 		FitViewportsToWindow();
+#endif
 	}
-
-	virtual void FitViewportsToWindow();
-
 
 	virtual void OnSize(DWORD Flags, INT NewX, INT NewY)
 	{
 		WWindow::OnSize(Flags, NewX, NewY);
 
-		FitViewportsToWindow();
+		RECT rect;
+		::GetClientRect(OwnerWindow->OwnerWindow->hWnd, &rect);
+
+		int width = rect.right - rect.left;
+		int height = rect.bottom - rect.top;
+		MoveWindow(0, 0, width, height, true);
+
+		dukeSharp.EditorResize(width, height);
+
+		//FitViewportsToWindow();
 	}
 
 	// Looks for an empty viewport slot, allocates a viewport and returns a pointer to it.
-	WViewportFrame* NewViewportFrame(const wchar_t* pName, UBOOL bNoSize)
+	VIEWPORTCONFIG* NewViewportFrame(const wchar_t* pName, UBOOL bNoSize)
 	{
 		// Create the viewport.
 		VIEWPORTCONFIG config;
@@ -98,13 +104,13 @@ class WLevelFrame : public WWindow
 		config.Top = 0;
 		config.Right = bNoSize ? 0 : 320;
 		config.Bottom = bNoSize ? 0 : 200;
-		config.m_pViewportFrame = new WViewportFrame(pName, this);
-		config.m_pViewportFrame->m_iIdx = GViewports.size();
+		//config.m_pViewportFrame = new WViewportFrame(pName, this);
+		//config.m_pViewportFrame->m_iIdx = GViewports.size();
 
 		GViewports.push_back(config);
-		return GViewports[GViewports.size() - 1].m_pViewportFrame;
+		return &GViewports[GViewports.size() - 1];
 	}	
-
+#if 0
 	// Opens a new viewport window.  It creates a viewportframe of the specified size, then creates
 	// a viewport that fits inside of it.
 	void OpenFrameViewport(INT RendMap, INT X, INT Y, INT W, INT H, DWORD ShowFlags)
@@ -165,7 +171,7 @@ class WLevelFrame : public WWindow
 			pViewportFrame->ComputePositionData();
 		}
 	}
-
+#endif
 	void SetMapFilename(TCHAR* _MapFilename)
 	{
 		wcscpy(MapFilename, _MapFilename);
