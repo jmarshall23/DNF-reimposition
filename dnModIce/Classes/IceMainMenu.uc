@@ -68,7 +68,7 @@ function NotifyFromControl(UWindowDialogControl C, byte E)
 {
 	if(C == SinglePlayerButton && E == 2)
 	{				
-		GetPlayerOwner().ClientTravel("map05_night?Game=dnModIce.IceGame", TRAVEL_Relative, false);
+		GetPlayerOwner().ClientTravel("ice_map00?Game=dnModIce.IceGame", TRAVEL_Relative, false);
 	}
 
 	if(c == SinglePlayerOriginalGameButton && E == 2)
