@@ -78,6 +78,9 @@ namespace DukeEdSharp
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         public static extern void DukeSharp__ResizeViewport(IntPtr m_pViewport, int width, int height);
 
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        public static extern void DukeSharp_SetViewportType(IntPtr m_pViewport, int type);
+
         public static int GetClassFlags(string clsname)
         {
             return DukeSharp_GetClassFlags(clsname);

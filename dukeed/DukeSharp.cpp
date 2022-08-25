@@ -184,6 +184,12 @@ void* __stdcall DukeSharp_CreateStaticMeshViewport(HWND hWnd)
 	return pViewport;
 }
 
+void __stdcall DukeSharp_SetViewportType(UWindowsViewport* viewport, int rendMode)
+{
+	int* Viewport_Actor_RendMap = (int*)(*((DWORD*)viewport + 12) + 5940);
+	*Viewport_Actor_RendMap = rendMode;
+}
+
 void __stdcall DukeSharp__ResizeViewport(UWindowsViewport* m_pViewport, int width, int height)
 {
 	::MoveWindow((HWND)m_pViewport->GetWindow(), 0, 0, width, height, 1);

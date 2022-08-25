@@ -40,11 +40,6 @@ namespace DukeEdSharp
             yzviewport = InitPanel(panel_yz, 15);
             panel_yz.Resize += Panel_yz_Resize;
 
-            menuStrip1.ForeColor = Color.White;
-            menuStrip2.ForeColor = Color.White;
-            menuStrip3.ForeColor = Color.White;
-            menuStrip4.ForeColor = Color.White;
-
             this.KeyPreview = true;
             this.KeyDown += EditorMidiFrm_KeyDown;
         }
@@ -119,6 +114,31 @@ namespace DukeEdSharp
         private void splitContainer3_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void dynamicLightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_SetViewportType(dynlightviewport, 5);
+        }
+
+        private void texturedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_SetViewportType(dynlightviewport, 6);
+        }
+
+        private void flatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_SetViewportType(dynlightviewport, 3);
+        }
+
+        private void wireframeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_SetViewportType(dynlightviewport, 1);
+        }
+
+        private void zonesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_SetViewportType(dynlightviewport, 2);
         }
     }
 }

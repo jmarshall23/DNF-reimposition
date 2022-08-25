@@ -14,3 +14,4 @@ EXPORTS
 	DukeSharp_CreateEditorViewport @12
 	DukeSharp__ResizeViewport @13
 	DukeSharp_RemoveCollisionAndPortalsBeta @14
+	DukeSharp_SetViewportType @15
