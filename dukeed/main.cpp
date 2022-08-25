@@ -34,12 +34,20 @@ UBOOL* GIsUCC = nullptr;
 UBOOL* GLazyLoad = nullptr;
 void* GWarn = nullptr;
 
+#include "DukeSharp.h"
+
 HINSTANCE* hinstHack = NULL;
 HINSTANCE* hinstWindowHack = NULL;
 
 extern UViewport* globalInitViewport;
 
 dnArray<UObject*>* UObject::GObjObjects;
+
+void(__fastcall* UEditorEngine__TickActual)(float DeltaSeconds);
+void __fastcall UEditorEngine__Tick(float DeltaSeconds) {
+	dukeSharp.Tick(DeltaSeconds);
+//	UEditorEngine__TickActual(DeltaSeconds);	
+}
 
 int(__fastcall* USoundExporterWAV__ExportBinaryActual)(void* _this, void* edx, struct UObject* a2, const wchar_t* a3, struct dnArchive* a4, struct dnFeedbackContext* a5);
 int __fastcall USoundExporterWAV__ExportBinary(void* _this, void* edx, struct UObject* a2, const wchar_t* a3, struct dnArchive* a4, struct dnFeedbackContext* a5) {
@@ -380,6 +388,10 @@ double DNFHackTimer(void)
 			assert(!"fuck");
 		if (MH_CreateHookApi(TEXT("engine.dll"), MAKEINTRESOURCEA(12585), FindPackage, (LPVOID*)&FindPackageActual) != MH_OK)
 			assert(!"fuck");
+	//	if (MH_CreateHookApi(TEXT("editor.dll"), MAKEINTRESOURCEA(898), UEditorEngine__Tick, (LPVOID*)&UEditorEngine__TickActual) != MH_OK)
+	//		assert(!"fuck");
+
+		
 		MH_EnableHook(MH_ALL_HOOKS);
 		
 		help = true;

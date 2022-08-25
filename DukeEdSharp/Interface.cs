@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using DllExporterNet4;
 using System.Diagnostics;
+using System.Windows.Input;
+using System.Threading.Tasks;
 
 namespace DukeEdSharp
 {
@@ -66,6 +68,10 @@ namespace DukeEdSharp
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         public static extern void DukeSharp_ToggleEditor(bool flag);
 
+
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        public static extern void DukeSharp_RemoveCollisionAndPortalsBeta();
+
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         public static extern IntPtr DukeSharp_CreateEditorViewport(IntPtr hWnd, int RendMap);
 
@@ -97,6 +103,17 @@ namespace DukeEdSharp
             IntPtr ptr = DukeSharp_Get(topic, command);
             string tmp = Marshal.PtrToStringAuto(ptr);
             return tmp;
+        }
+
+        [DllExport]
+        public static void Tick(float DeltaSeconds)
+        {
+#if false
+            if (EditorInterface.ApplicationIsActivated())
+            {
+                
+            }
+#endif
         }
 
         [DllExport]

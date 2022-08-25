@@ -13,3 +13,4 @@ EXPORTS
 	DukeSharp_AddStaticModelToLevel @11
 	DukeSharp_CreateEditorViewport @12
 	DukeSharp__ResizeViewport @13
+	DukeSharp_RemoveCollisionAndPortalsBeta @14

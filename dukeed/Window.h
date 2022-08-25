@@ -333,6 +333,9 @@ public:
 				for (INT i = 0; i < Controls.Num(); i++) {
 					WWindow* control = (WWindow*)Controls.Data[i];
 
+					if(control == nullptr)
+						continue;
+
 					if (control->hWnd == Info->hwndItem)
 					{
 						control->OnDrawItem(Info); break;

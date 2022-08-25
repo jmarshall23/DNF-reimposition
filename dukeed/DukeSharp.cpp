@@ -39,6 +39,8 @@ void DukeSharpInterface::LoadDll(void) {
 	InitBrowser = (void(__stdcall*)(void))GetProcAddress(module, "InitBrowser");
 	InitBrowser();
 
+	Tick = (void(__stdcall*)(float))GetProcAddress(module, "Tick");
+
 	PostInit = (HWND(__stdcall*)(HWND))GetProcAddress(module, "PostInit");
 	EditorResize = (void(__stdcall*)(int, int))GetProcAddress(module, "EditorResize");
 
@@ -186,6 +188,43 @@ void __stdcall DukeSharp__ResizeViewport(UWindowsViewport* m_pViewport, int widt
 {
 	::MoveWindow((HWND)m_pViewport->GetWindow(), 0, 0, width, height, 1);
 
+}
+
+void __stdcall DukeSharp_RemoveCollisionAndPortalsBeta(void)
+{
+	UClass* _cls = FindObject<UClass>(ANY_PACKAGE, TEXT("SM_InvisibleCollisionHull"));
+	UClass* _brushClass = FindObject<UClass>(ANY_PACKAGE, TEXT("Brush"));
+	ULevel* _level = GEditor->GetLevel();
+THIS_IS_DUMB:
+	dnArray<UObject*>* _actors = (dnArray<UObject*> *)GEditor->GetActorList();
+	for (int i = 0; i < _actors->Num(); i++)
+	{
+		if (_actors->Get(i) == nullptr)
+			continue;
+
+		if (_actors->Get(i)->IsA(_brushClass))
+		{
+			ABrush* brush = (ABrush*)_actors->Get(i);
+			int flags = brush->GetPolyFlags();
+			if (flags == 8)
+			{
+				AActor* _actor = (AActor*)brush;
+				float* xyz = _actor->GetLocation();
+				xyz[0] = 0;
+				xyz[1] = 0;
+				xyz[2] = 0;
+				//goto THIS_IS_DUMB;
+			}
+		}
+
+		// Destroy all collision volumes.
+		if (_actors->Get(i)->IsA(_cls))
+		{
+			GEditor->GetLevel()->DestroyActor((AActor*)_actors->Get(i), 0);
+			_actors->Remove(i, 1);
+			goto THIS_IS_DUMB;
+		}
+	}
 }
 
 void __stdcall DukeSharp_SetPreviewStaticMesh(const wchar_t* package, const wchar_t* group, const wchar_t* mesh)

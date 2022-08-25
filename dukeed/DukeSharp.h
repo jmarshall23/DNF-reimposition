@@ -9,11 +9,13 @@ public:
 
 	void					(__stdcall* EditorResize)(int width, int height);
 	void					(__stdcall *ShowBrushProperties)(float x, float y, float z);
+
+	void					(__stdcall* Tick)(float DeltaSeconds);
 private:
 	void					(__stdcall *InitBrowser)(void);
 	HWND					(__stdcall *PostInit)(HWND);	
 
-	void					(__stdcall*ShowBrushScale)(void);
+	void					(__stdcall*ShowBrushScale)(void);	
 
 	HMODULE	handle;
 };

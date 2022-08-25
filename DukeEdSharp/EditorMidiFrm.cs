@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-using System.Windows.Input;
 
 namespace DukeEdSharp
 {
@@ -19,30 +18,10 @@ namespace DukeEdSharp
         IntPtr dynlightviewport;
         IntPtr yzviewport;
 
-        void MidiJob()
-        {
-            while(true)
-            {
-                if (EditorInterface.ApplicationIsActivated())
-                {
-                    if (Keyboard.IsKeyDown(Key.Delete))
-                    {
-                        EditorInterface.DukeSharp_Exec("ACTOR DELETE");
-                    }
-                }
-                Thread.Sleep(1);
-            }
-        }
-
         public EditorMidiFrm()
         {
             InitializeComponent();
             splitContainer1.Dock = DockStyle.Fill;
-
-            Thread thr = new Thread(MidiJob);
-            thr.SetApartmentState(ApartmentState.STA);
-            thr.IsBackground = true;
-            thr.Start();
 
             WindowState = FormWindowState.Maximized;
 
@@ -50,6 +29,7 @@ namespace DukeEdSharp
 
             xyviewport = InitPanel(panel_xy, 13);
             panel_xy.Resize += Panel_xy_Resize;
+            panel_xy.Paint += Panel_xy_Paint;
 
             xzviewport = InitPanel(panel_xz, 14);
             panel_xz.Resize += Panel_xz_Resize;
@@ -64,6 +44,36 @@ namespace DukeEdSharp
             menuStrip2.ForeColor = Color.White;
             menuStrip3.ForeColor = Color.White;
             menuStrip4.ForeColor = Color.White;
+
+            this.KeyPreview = true;
+            this.KeyDown += EditorMidiFrm_KeyDown;
+        }
+
+        private void EditorMidiFrm_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch(e.KeyCode)
+            {
+                case Keys.F4:
+                    EditorInterface.DukeSharp_Exec("TOGGLEEVENTLINES");
+                    break;
+
+                case Keys.F5:
+                    EditorInterface.DukeSharp_Exec("TOGGLEWORKINGBRUSH");
+                    break;
+
+                case Keys.F7:
+                    EditorInterface.DukeSharp_RemoveCollisionAndPortalsBeta();
+                    break;
+
+                case Keys.Delete:
+                    EditorInterface.DukeSharp_Exec("ACTOR DELETE");
+                    break;
+            }           
+        }
+
+        private void Panel_xy_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
 
         private void EditorMidiFrm_Resize(object sender, EventArgs e)
