@@ -640,6 +640,11 @@ public:
 		return (ULevel*) *((DWORD*)this + 33);
 	}
 
+	UModel* GetLevelModel()
+	{
+		return (UModel*) *(DWORD*)(*((DWORD*)this + 33) + 144);
+	}
+
 	dnArray<AActor*>* GetActorList()
 	{
 		return (dnArray<AActor*>*)(*((DWORD*)this + 33) + 44);
@@ -1314,6 +1319,11 @@ class ABrush
 {
 public:
 	virtual ~ABrush();
+
+	int GetCSGFlags()
+	{
+		return *(((INT*)this) + 417);
+	}
 
 	int GetPolyFlags()
 	{

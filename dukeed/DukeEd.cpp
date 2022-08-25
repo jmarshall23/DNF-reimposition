@@ -143,6 +143,50 @@ void FileOpen(HWND hWnd)
 			skipLogging = true;
 			GEditor->exec.Exec(mapExecString, (dnOutputDevice&)globalLog);
 			skipLogging = false;
+
+			UClass* _cls = FindObject<UClass>(ANY_PACKAGE, TEXT("SM_InvisibleCollisionHull"));
+			UClass* _brushClass = FindObject<UClass>(ANY_PACKAGE, TEXT("Brush"));
+			ULevel* _level = GEditor->GetLevel();
+		
+			dnArray<UObject*>* _actors = (dnArray<UObject*> *)GEditor->GetActorList();
+		THIS_IS_DUMB:
+			for (int i = 2; i < _actors->Num(); i++)
+			{
+				if (_actors->Get(i) == nullptr)
+					continue;
+
+				if (_actors->Get(i)->IsA(_brushClass))
+				{
+					ABrush* brush = (ABrush*)_actors->Get(i);
+
+					if (brush->GetCSGFlags() != 2)
+					{
+						GEditor->GetLevel()->DestroyActor((AActor*)_actors->Get(i), 0);
+					}
+				}
+				else
+				{
+					GEditor->GetLevel()->DestroyActor((AActor*)_actors->Get(i), 0);
+				}
+			}
+
+			for (int i = 2; i < _actors->Num(); i++)
+			{
+				if (_actors->Get(i) == nullptr)
+					continue;
+
+				if (_actors->Get(i)->IsA(_brushClass))
+				{
+					ABrush* brush = (ABrush*)_actors->Get(i);
+
+					if (brush->GetCSGFlags() == 2)
+					{
+						GEditor->bspBrushCSG(brush, GEditor->GetLevelModel(), 0, (ECsgOper)2, 0, 0);
+					}
+				}
+			}
+
+			GEditor->bspRepartition(GEditor->GetLevelModel(), 0, 0);
 			return;
 		}
 
