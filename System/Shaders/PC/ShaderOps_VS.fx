@@ -445,14 +445,15 @@ FEMU_OP_PixelMotionBlur0(handle_tex TexIndex, handle_const ConstIndex, handle_sa
 		
 	Out.vTexCoords[TexIndex+0] = LocScreen;
 	Out.vTexCoords[TexIndex+1] = PrevLocScreen;
-
 #if 1
 	Out.vTexCoords[TexIndex+2] = Out.vPosition * float4(1,-1,0,1) + Out.vPosition.w;
 	Out.vTexCoords[TexIndex+2].xy += OneOverViewportSize.xy * Out.vTexCoords[TexIndex+2].w;
 
-	Out.vTexCoords[TexIndex+3].xyz = mul(float4(In.vPosition.xyz, 1), LocalToCamera).xyz;
-	Out.vTexCoords[TexIndex+3].w = Out.vPosition.w;
+// jmarshall - contrast adaptive sharpen
+	Out.vTexCoords[TexIndex+3].xy = OneOverViewportSize.xy;	
+// jmarshall end
 #endif
+
 }
 
 //================================================================================

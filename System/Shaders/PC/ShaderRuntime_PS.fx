@@ -1044,3 +1044,106 @@ float ComputeUberDepthOfField
 
 	return (1-pow(1-saturate(delta), BlurPower)) * BlurAmount;
 }
+
+// jmarshall - icecoldduke - cas
+float Min3(float x, float y, float z)
+{
+	return min(x, min(y, z));
+}
+
+float Max3(float x, float y, float z)
+{
+	return max(x, max(y, z));
+}
+
+
+float rcp(float v)
+{
+	return 1.0 / v;
+}
+
+float3 ContastAdaptiveSharpen(const int bufferId, float2 diffuseST, float2 OneOverViewportSize)
+{
+	float2 texcoord = diffuseST.xy;
+	float Sharpness = 1;
+
+
+	// fetch a 3x3 neighborhood around the pixel 'e',
+	//  a b c
+	//  d(e)f
+	//  g h i
+  //  int2 bufferSize = textureSize2D(diffuseImage);
+	float pixelX = OneOverViewportSize.x;
+	float pixelY = OneOverViewportSize.y;
+	
+	float3 a = tex2D(Sampler[bufferId], texcoord + float2(-pixelX, -pixelY)).rgb;
+	float3 b = tex2D(Sampler[bufferId], texcoord + float2(0.0, -pixelY)).rgb;
+	float3 c = tex2D(Sampler[bufferId], texcoord + float2(pixelX, -pixelY)).rgb;
+	float3 d = tex2D(Sampler[bufferId], texcoord + float2(-pixelX, 0.0)).rgb;
+	float3 e = tex2D(Sampler[bufferId], texcoord).rgb;
+	float3 f = tex2D(Sampler[bufferId], texcoord + float2(pixelX, 0.0)).rgb;
+	float3 g = tex2D(Sampler[bufferId], texcoord + float2(-pixelX, pixelY)).rgb;
+	float3 h = tex2D(Sampler[bufferId], texcoord + float2(0.0, pixelY)).rgb;
+	float3 i = tex2D(Sampler[bufferId], texcoord + float2(pixelX, pixelY)).rgb;
+
+	// Soft min and max.
+	//  a b c             b
+	//  d e f * 0.5  +  d e f * 0.5
+	//  g h i             h
+	// These are 2.0x bigger (factored out the extra multiply).
+	float mnR = Min3(Min3(d.r, e.r, f.r), b.r, h.r);
+	float mnG = Min3(Min3(d.g, e.g, f.g), b.g, h.g);
+	float mnB = Min3(Min3(d.b, e.b, f.b), b.b, h.b);
+
+	float mnR2 = Min3(Min3(mnR, a.r, c.r), g.r, i.r);
+	float mnG2 = Min3(Min3(mnG, a.g, c.g), g.g, i.g);
+	float mnB2 = Min3(Min3(mnB, a.b, c.b), g.b, i.b);
+	mnR = mnR + mnR2;
+	mnG = mnG + mnG2;
+	mnB = mnB + mnB2;
+
+	float mxR = Max3(Max3(d.r, e.r, f.r), b.r, h.r);
+	float mxG = Max3(Max3(d.g, e.g, f.g), b.g, h.g);
+	float mxB = Max3(Max3(d.b, e.b, f.b), b.b, h.b);
+
+	float mxR2 = Max3(Max3(mxR, a.r, c.r), g.r, i.r);
+	float mxG2 = Max3(Max3(mxG, a.g, c.g), g.g, i.g);
+	float mxB2 = Max3(Max3(mxB, a.b, c.b), g.b, i.b);
+	mxR = mxR + mxR2;
+	mxG = mxG + mxG2;
+	mxB = mxB + mxB2;
+
+	// Smooth minimum distance to signal limit divided by smooth max.
+	float rcpMR = rcp(mxR);
+	float rcpMG = rcp(mxG);
+	float rcpMB = rcp(mxB);
+
+	float ampR = saturate(min(mnR, 2.0 - mxR) * rcpMR);
+	float ampG = saturate(min(mnG, 2.0 - mxG) * rcpMG);
+	float ampB = saturate(min(mnB, 2.0 - mxB) * rcpMB);
+
+	// Shaping amount of sharpening.
+	ampR = sqrt(ampR);
+	ampG = sqrt(ampG);
+	ampB = sqrt(ampB);
+
+	// Filter shape.
+	//  0 w 0
+	//  w 1 w
+	//  0 w 0  
+	float peak = -rcp(lerp(8.0, 5.0, saturate(Sharpness)));
+
+	float wR = ampR * peak;
+	float wG = ampG * peak;
+	float wB = ampB * peak;
+
+	float rcpWeightR = rcp(1.0 + 4.0 * wR);
+	float rcpWeightG = rcp(1.0 + 4.0 * wG);
+	float rcpWeightB = rcp(1.0 + 4.0 * wB);
+
+	return float3(saturate((b.r * wR + d.r * wR + f.r * wR + h.r * wR + e.r) * rcpWeightR),
+		saturate((b.g * wG + d.g * wG + f.g * wG + h.g * wG + e.g) * rcpWeightG),
+		saturate((b.b * wB + d.b * wB + f.b * wB + h.b * wB + e.b) * rcpWeightB));
+}
+
+// jmarshall end

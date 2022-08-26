@@ -3,6 +3,8 @@
 
 #include <windows.h>
 #include "../../dukeed/Unreal.h"
+#include <d3d9.h>
+#include <D3DX9Shader.h>
 
 UObject* IceSpawnManager = nullptr;
 
@@ -35,7 +37,27 @@ struct FPlaySoundArgs {
 	int unknonw[21];
 };
 
+// ps_4_0_level_9_3 
+
 struct ID3DXBuffer;
+
+HRESULT (__stdcall *D3DXCompileShaderActual)(LPCSTR pSrcData, UINT srcDataLen, const D3DXMACRO* pDefines,LPD3DXINCLUDE pInclude, LPCSTR pFunctionName, LPCSTR pProfile, DWORD Flags, LPD3DXBUFFER* ppShader, LPD3DXBUFFER* ppErrorMsgs, LPD3DXCONSTANTTABLE* ppConstantTable );
+HRESULT __stdcall D3DXCompileShader2(LPCSTR pSrcData, UINT srcDataLen, const D3DXMACRO* pDefines, LPD3DXINCLUDE pInclude, LPCSTR pFunctionName, LPCSTR pProfile, DWORD Flags, LPD3DXBUFFER* ppShader, LPD3DXBUFFER* ppErrorMsgs, LPD3DXCONSTANTTABLE* ppConstantTable)
+{
+	//if (!strcmp(pProfile, "ps_3_0") || !strcmp(pProfile, "ps_2_0"))
+	//{
+	//	pProfile = "ps_4_0_level_9_3";
+	//}
+
+	HRESULT hr = D3DXCompileShaderActual(pSrcData, srcDataLen, pDefines, pInclude, pFunctionName, pProfile, Flags, ppShader, ppErrorMsgs, ppConstantTable);
+
+	return hr;
+}
+
+char * (__fastcall* dnShaderCompiler_GetPSTargetActual)(void* _this);
+const char* __fastcall dnShaderCompiler_GetPSTarget(void* _this) {
+	return "ps_4_0_level_9_3";
+}
 
 void(__fastcall* dnShader_CompilerVSActual)(void* _this, void* edx, void* dnShader);
 void __fastcall dnShader_CompilerVS(void* _this, void* edx, void* dnShader) {
@@ -167,13 +189,13 @@ void InitDNFHooks()
 		}
 	}
 
-	//HMODULE module = LoadLibraryA("d3ddrv9.dll");
+	HMODULE module = LoadLibraryA("D3DX9_37.dll");
 
-//	if (MH_CreateHookApi(TEXT("d3ddrv9.dll"), MAKEINTRESOURCEA(40), dnShader_CompilerPS, (LPVOID*)&dnShader_CompilerPSActual) != MH_OK) {
-//		_asm {
-//			int 3
-//		}
-//	}	
+	if (MH_CreateHookApi(TEXT("D3DX9_37.dll"), "D3DXCompileShader", D3DXCompileShader2, (LPVOID*)&D3DXCompileShaderActual) != MH_OK) {
+		_asm {
+			int 3
+		}
+	}	
 //
 //	if (MH_CreateHookApi(TEXT("d3ddrv9.dll"), MAKEINTRESOURCEA(41), dnShader_CompilerVS, (LPVOID*)&dnShader_CompilerVSActual) != MH_OK) {
 //		_asm {

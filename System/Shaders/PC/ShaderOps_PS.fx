@@ -1543,48 +1543,16 @@ FEMU_OP_DepthOfField1( result Color, result ColorBlurred )
 //========================================================================================================
 FEMU_OP_PixelMotionBlur0(handle_tex TexIndex, handle_const ConstIndex, handle_samp DepthIndex, handle_samp FBIndex, handle_samp InNvStereoTex)
 {
+// icecoldduke - jmarshall - change motion blur to cas
 	// If running with stereo, need to stereoize the position or we'll come up with the wrong location to read from
 	float2 Tex = NvFixTexCoord(In.Tex[TexIndex+2], InNvStereoTex).xy / In.Tex[TexIndex+2].w;
+	float4 SceneColor;
 
-	float	Depth			= UNPACK_CAMERA_Z(tex2D(Sampler[DepthIndex], Tex).r);
-	float2	ScreenSpace		= In.Tex[TexIndex+3].xy / In.Tex[TexIndex+3].w;
-	float3	CameraSpacePos  = float3(ScreenSpace * Depth, Depth);
-	float3	PrevCameraPos	= mul(float4(CameraSpacePos,0), CameraToPrevCamera);
-	float2	PrevScreenSpace	= PrevCameraPos.xy / PrevCameraPos.z;
-	
-	float2 Velocity = (ScreenSpace - PrevScreenSpace) / 2;
-	
-	Velocity = Velocity.xy*float2(-1.0,1.0) * Consts[ConstIndex].x;
+	SceneColor.xyz = ContastAdaptiveSharpen(FBIndex, Tex, In.Tex[TexIndex + 3].xy);
+	SceneColor.w = 1;
 
-	float SizeSq = dot(Velocity.xy, Velocity.xy);
-	
-	//float MaxSize = Consts[ConstIndex].z*((Depth/256)+1);
-	float MaxSize = lerp(Consts[ConstIndex].z, Consts[ConstIndex].w, saturate(Depth/Consts[ConstIndex].y));
-	
-	float MaxSizeSq = MaxSize*MaxSize;
-	
-	if (SizeSq > MaxSizeSq)
-	{
-		float OneOverSize = rsqrt(SizeSq);
-		Velocity = Velocity*OneOverSize*MaxSize;
-	}
-
-	const float NumSamples = 8;
-	const float	OneOver = 1/NumSamples;
-	const float	Step = 1/(NumSamples-1);
-	
-	float4 BaseColor = tex2D(Sampler[FBIndex], Tex) * OneOver;
-
-	float4 Color = BaseColor;
-
-	for (int i=1; i<NumSamples; i++)
-	{
-		float2 Tex2 = Tex.xy+Velocity*i*Step;
-		float Depth2 = UNPACK_CAMERA_Z(tex2D(Sampler[DepthIndex], Tex2).r);
-		Color += lerp(BaseColor, tex2D(Sampler[FBIndex], Tex2) * OneOver, saturate(Depth2/64));
-		//Color += tex2D(Sampler[FBIndex], Tex2) * OneOver;
-	}
-	return Color;
+	return SceneColor;
+// jmarshall end
 }
 
 
@@ -2997,7 +2965,7 @@ FEMU_OP_UberPostBlend
 {    
 
 // jmarshall - new post pass for Duke Nukem Forever
-    float4 SceneColor = SampleTexture(FrameBuffer, TexCoords);
+	float4 SceneColor = SampleTexture(FrameBuffer, TexCoords);
 	float  SceneDepth = UNPACK_CAMERA_Z((SampleTexture(ZBuffer, TexCoords)).r);
     
     //////////////////////
