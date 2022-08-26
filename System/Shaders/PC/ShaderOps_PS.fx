@@ -2880,27 +2880,7 @@ FEMU_OP_UberPostBlend
 {    
     float4 SceneColor = SampleTexture(FrameBuffer, TexCoords);
 	float  SceneDepth = UNPACK_CAMERA_Z((SampleTexture(ZBuffer, TexCoords)).r);
-
     
-    //////////////////////
-    // DOF
-    //////////////////////
-// jmarshall - icecoldduke - blur removal
-	float BlurAmount = 0; // Consts[PSParams].x;
-	float BlurPow = 0; // Consts[PSParams].y;
-// jmarshall - icecoldduke - blur removal
-    float4 FocalData	= tex2D(Sampler[FocalPlane], float2(0.5f, 0.5f));		
-	float FocusDistance	= UNPACK_CAMERA_Z(FocalData.r);	// Distance where focus is 100%.
-    float FocalDistMin	= FocalData.g;				    // If closer than PlaneDist, distance from plane where focus is 0%.
-	float FocalDistMax	= FocalData.b;				    // If further than PlaneDist, distance from plane where focus is 0%.
-  
-    float UnfocusedPercent = ComputeUberDepthOfField(SceneDepth, FocusDistance, FocalDistMin, FocalDistMax, BlurAmount, BlurPow );
-	UnfocusedPercent = clamp(UnfocusedPercent, 0.0f, 0.99999f);
-	float4 UnfocusedSceneColor = SampleTexture(UberBuffer, TexCoords);
-
-    SceneColor.rgb = lerp(SceneColor.rgb, UnfocusedSceneColor.rgb, UnfocusedPercent); 
-
-
     //////////////////////
     // Bloom
     //////////////////////
@@ -2910,24 +2890,5 @@ FEMU_OP_UberPostBlend
     float FogOpacity	= Consts[PSParams+1].z;
     SceneColor          += SampleTexture(BloomBuffer, TexCoords) * lerp(1, (1.0f - saturate((SceneDepth - FogBegin)/FogEnd)), FogOpacity);
 
-
-    //////////////////////
-    // Tone mapping
-    //////////////////////
-    
-    float4 SceneShadows     = Consts[PSParams+2];
-    float SceneDesaturation = SceneShadows.w;
-    float4 SceneMidTones    = Consts[PSParams+3];
-    float4 SceneHighLights  = Consts[PSParams+4];
-    
-	float3 Color0 = ((saturate(SceneColor.rgb - SceneShadows.rgb)) / SceneHighLights.rgb);
-	
-	Color0.rgb = pow(Color0.rgb, SceneMidTones.rgb);
-	
-	static float3 rgb2lum = float3(0.30f, 0.59f, 0.11f);
-	float3 Color1 = dot(Color0.rgb, rgb2lum);
-
-    SceneColor.rgb = saturate(lerp(Color0, Color1, SceneDesaturation));
-	
 	return SceneColor;
 }
