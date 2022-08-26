@@ -2976,6 +2976,25 @@ FEMU_OP_UberPostBlend
     float FogEnd		= Consts[PSParams+1].y;
     float FogOpacity	= Consts[PSParams+1].z;
 	SceneColor += SampleTexture(BloomBuffer, TexCoords) *lerp(1, (1.0f - saturate((SceneDepth - FogBegin) / FogEnd)), FogOpacity);
+
+	//////////////////////
+	// Tone mapping
+	//////////////////////
+
+	float4 SceneShadows = Consts[PSParams + 2];
+	float SceneDesaturation = SceneShadows.w;
+	float4 SceneMidTones = Consts[PSParams + 3];
+	float4 SceneHighLights = Consts[PSParams + 4];
+
+	float3 Color0 = SceneColor.rgb;
+	if (SceneShadows.z >= 0.0)
+	{
+		Color0 = ((saturate(SceneColor.rgb - SceneShadows.rgb)) / SceneHighLights.rgb);
+
+		Color0.rgb = pow(Color0.rgb, SceneMidTones.rgb);
+	}
+
+	SceneColor.rgb = Color0; // saturate(lerp(Color0, SceneColor, SceneDesaturation));
 // jmarshall end
 	return SceneColor;
 }
