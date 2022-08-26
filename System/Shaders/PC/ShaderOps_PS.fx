@@ -1888,19 +1888,136 @@ FEMU_OP_ShadowMapPass
 	return float4(Val, Val*Val, Val, Alpha);
 }
 
+
 //================================================================================
 //	FEMU_OP_1DConvolutionFilter
 //	Args:
 //		Width, bVertical, Const1, BaseCoords, Source, Weights
 //================================================================================
-
 FEMU_OP_1DConvolutionFilter(handle_int Arg1, handle_int Arg2, handle_const Arg3, handle_res Arg4, handle_samp Arg5, handle_const Arg6, handle_samp DepthMap)
 {
-// jmarshall - icecoldduke - blur removal
+#ifdef GAUSSIAN_OLD
+	int		Width = ARG(0);
+	float	TexWidth = Consts[ARG(2)].x;
+	float	TexHeight = Consts[ARG(2)].y;
+	float	DimSizeInv = (ARG(1) == 1) ? 1.0f / TexHeight : 1.0f / TexWidth;
+
+	int		NumSamples = 2 * Width + 1;
+
 	float4	Val = float4(0, 0, 0, 0);
-	Val = tex2D(Sampler[ARG(4)], Results[ARG(3)]);
+
+	float4  CenterColor;
+	float	CenterDepth;
+	float	Scale = 1;
+
+	if (DepthMap != NULL_HANDLE)
+	{
+		CenterDepth = UNPACK_CAMERA_Z(tex2D(Sampler[DepthMap], Results[ARG(3)]).r);
+		CenterColor = tex2D(Sampler[ARG(4)], Results[ARG(3)]);
+	}
+
+	for (int i = 0; i < NumSamples; i++)
+	{
+		float2 Offset = float2(0, 0);
+
+		Offset[ARG(1)] = (float)(i - Width) * DimSizeInv;
+#if 0
+		if (DepthMap != NULL_HANDLE)
+		{
+			float   TapDepth = UNPACK_CAMERA_Z(tex2D(Sampler[DepthMap], Results[ARG(3)] + Offset).r);
+			float4  TapColor = tex2D(Sampler[ARG(4)], Results[ARG(3)] + Offset);
+
+			//TapColor.a = TapDepth < CenterDepth ? TapColor.a : 0;//CenterColor.a;
+
+			//TapColor.a = lerp( CenterColor.a, TapColor.a, TapColor.a );
+
+			if (TapDepth > CenterDepth)
+				TapColor.a = CenterColor.a;
+			//TapColor.a = lerp( CenterColor.a, TapColor.a, TapColor.a );
+
+		//float DeltaDepth    = abs(Depth - OriginalDepth);
+
+		//Result += lerp( ColorLerped, ColorBlurred, saturate( DeltaDepth / Params1.x ) );
+
+			Val += TapColor * Consts[ARG(5) + i].x;
+#if 0		
+			float NewDepth = UNPACK_CAMERA_Z(tex2D(Sampler[DepthMap], Results[ARG(3)] + Offset).r);
+
+			float depthDif = NewDepth - Depth;
+			float depthDifSqr = depthDif * depthDif;
+
+			// Blur if samples are less than 10cm apart	and angle between their normals is less than about 10 deg
+			//if( ( dot( newnormal, norm) > 0.99 ) && ( depthDifSqr < 100.0 ) )
+			//if(( depthDifSqr < 10.0 ) )
+			{
+				Scale *= Consts[ARG(5) + i].x;
+				Val += tex2D(Sampler[ARG(4)], Results[ARG(3)] + Offset);// * Consts[ARG(5)+i].x;
+			}
+#endif
+		}
+		else
+#endif
+		{
+			Val += tex2D(Sampler[ARG(4)], Results[ARG(3)] + Offset) * Consts[ARG(5) + i].x;
+		}
+	}
+
 	return Val;
-// jmarshall - icecoldduke - blur removal
+#else
+	int		KernelSize = ARG(0);
+	float	TexWidth = Consts[ARG(2)].x;
+	float	TexHeight = Consts[ARG(2)].y;
+	float	DimSizeInv = (ARG(1) == 1) ? 1.0f / TexHeight : 1.0f / TexWidth;
+	float4	Output = tex2D(Sampler[ARG(4)], Results[ARG(3)]) * Consts[ARG(5)].x;
+	float4	depth = 0.0f;
+
+	if (DepthMap != NULL_HANDLE)
+		depth = UNPACK_CAMERA_Z(tex2D(Sampler[DepthMap], Results[ARG(3)]).r);
+
+	float Scale = 1;
+
+	// Loop over the kernel width
+	for (int i = 1; i <= KernelSize; ++i)
+	{
+		float2 Offset = float2(0, 0);
+
+		Offset[ARG(1)] = (float)i * DimSizeInv;
+
+		// Negative side
+		float4 Val = tex2D(Sampler[ARG(4)], Results[ARG(3)] - Offset);
+
+		// Positive side
+		Val += tex2D(Sampler[ARG(4)], Results[ARG(3)] + Offset);
+
+		if (DepthMap != NULL_HANDLE)
+		{
+			/*
+			float newdepth = UNPACK_CAMERA_Z(tex2D( Sampler[DepthMap], Results[ARG(3)] + Offset).r);
+
+			float depthDif = newdepth - depth;
+			float depthDifSqr = depthDif* depthDif;
+
+			// Blur if samples are less than 10cm apart	and angle between their normals is less than about 10 deg
+			//if( ( dot( newnormal, norm) > 0.99 ) && ( depthDifSqr < 100.0 ) )
+			if(( depthDifSqr < 1.0 ) )
+			{
+				Scale *= Consts[ARG(5)+i].x;
+				Output += Val;
+			}
+			*/
+		}
+		else
+		{
+			// Add weighted contribution
+			Output += Val * Consts[ARG(5) + i].x;
+		}
+	}
+
+	if (DepthMap != NULL_HANDLE)
+		Output *= Scale;
+
+	return Output;
+#endif
 }
 
 //================================================================================
@@ -2878,6 +2995,8 @@ FEMU_OP_UberPostBlend
     handle_samp     BloomBuffer
 )
 {    
+
+// jmarshall - new post pass for Duke Nukem Forever
     float4 SceneColor = SampleTexture(FrameBuffer, TexCoords);
 	float  SceneDepth = UNPACK_CAMERA_Z((SampleTexture(ZBuffer, TexCoords)).r);
     
@@ -2888,7 +3007,7 @@ FEMU_OP_UberPostBlend
     float FogBegin	    = Consts[PSParams+1].x;
     float FogEnd		= Consts[PSParams+1].y;
     float FogOpacity	= Consts[PSParams+1].z;
-	SceneColor += SampleTexture(BloomBuffer, TexCoords); // *lerp(1, (1.0f - saturate((SceneDepth - FogBegin) / FogEnd)), FogOpacity);
-
+	SceneColor += SampleTexture(BloomBuffer, TexCoords) *lerp(1, (1.0f - saturate((SceneDepth - FogBegin) / FogEnd)), FogOpacity);
+// jmarshall end
 	return SceneColor;
 }
