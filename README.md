@@ -16,7 +16,8 @@ Installation:
 1) Install VS 2022 runtimes.
 2) Install .NET 4.8.
 3) Run setup.bat
-4) Launch RunEditor.bat
+4) You may have to MANUALLY delete ALL of the .dat files in your shaders folder.
+5) Launch RunEditor.bat
 
 Discord:
 If you want to chat about the tools join us on discord!

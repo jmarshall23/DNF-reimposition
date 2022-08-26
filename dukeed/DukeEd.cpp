@@ -187,6 +187,15 @@ void FileOpen(HWND hWnd)
 			}
 
 			GEditor->bspRepartition(GEditor->GetLevelModel(), 0, 0);
+
+			FLOAT UU = 0;
+			FLOAT VV = 0;
+			FLOAT UV = 1;
+			FLOAT VU = -1;
+
+			GEditor->exec.Exec(TEXT("POLY SELECT ALL"));
+			GEditor->exec.Exec(VAPrintf(TEXT("POLY TEXMULT UU=%f VV=%f UV=%f VU=%f"), UU, VV, UV, VU).c_str());
+
 			return;
 		}
 

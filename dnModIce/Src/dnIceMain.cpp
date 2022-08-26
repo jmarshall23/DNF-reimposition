@@ -35,6 +35,30 @@ struct FPlaySoundArgs {
 	int unknonw[21];
 };
 
+struct ID3DXBuffer;
+
+void(__fastcall* dnShader_CompilerVSActual)(void* _this, void* edx, void* dnShader);
+void __fastcall dnShader_CompilerVS(void* _this, void* edx, void* dnShader) {
+	ID3DXBuffer** d3dbuffer = (struct ID3DXBuffer**)_this;
+
+	//dnString shaderBuffer = *(dnString*)(d3dbuffer + 213);
+
+	//OutputDebugStringW(*shaderBuffer);
+
+	dnShader_CompilerVSActual(_this, edx, dnShader);
+}
+
+void(__fastcall* dnShader_CompilerPSActual)(void* _this, void* edx, void* dnShader);
+void __fastcall dnShader_CompilerPS(void* _this, void* edx, void* dnShader) {
+	ID3DXBuffer** d3dbuffer = (struct ID3DXBuffer**)_this;
+
+	//dnString shaderBuffer = *(dnString*)(d3dbuffer + 213);
+
+	//OutputDebugStringW(*shaderBuffer);
+
+	dnShader_CompilerPSActual(_this, edx, dnShader);
+}
+
 UBOOL(*InitializeMeqonActorActual)(struct AKarmaActor* karmaActor);
 UBOOL InitializeMeqonActor(struct AKarmaActor* karmaActor) {
 	return InitializeMeqonActorActual(karmaActor);
@@ -142,6 +166,21 @@ void InitDNFHooks()
 			int 3
 		}
 	}
+
+	//HMODULE module = LoadLibraryA("d3ddrv9.dll");
+
+//	if (MH_CreateHookApi(TEXT("d3ddrv9.dll"), MAKEINTRESOURCEA(40), dnShader_CompilerPS, (LPVOID*)&dnShader_CompilerPSActual) != MH_OK) {
+//		_asm {
+//			int 3
+//		}
+//	}	
+//
+//	if (MH_CreateHookApi(TEXT("d3ddrv9.dll"), MAKEINTRESOURCEA(41), dnShader_CompilerVS, (LPVOID*)&dnShader_CompilerVSActual) != MH_OK) {
+//		_asm {
+//			int 3
+//		}
+//	}
+
 	MH_EnableHook(MH_ALL_HOOKS);
 }
 

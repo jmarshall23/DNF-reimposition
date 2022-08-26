@@ -71,7 +71,7 @@ event PlayerPawn Login(string Portal, string Options, out string Error, class<Pl
 		SinglePlayerDuke.StartedNewGame();
 	}	
 
-	Level.ConsoleCommand("r_dofpow 0");
+	// Level.ConsoleCommand("r_dofpow 0");
 	return NewPlayer;
 }
 
