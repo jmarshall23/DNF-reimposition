@@ -4,6 +4,15 @@ class IcePlayerMulti extends DukeMultiPlayer;
 var Weapon InvWeapons[10];
 var int CurrentWeaponId;
 
+simulated event PlayCountdownSound(int Num)
+{
+    if(num > 3)
+		return;
+   
+    PlaySoundInfo(0, default.CountdownSoundInfo[Num]);
+    return;
+}
+
 simulated event HandlePickup(Inventory Inv, Pickup PickupRef, float Count)
 {
 	Log("Picking up");

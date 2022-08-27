@@ -3,6 +3,25 @@
 
 class IceBot extends DukeBot;
 
+function bool ImmuneToDamage()
+{
+    return false;
+}
+
+event TakeDamage(Pawn Instigator, float Damage, Vector DamageOrigin, Vector DamageDirection, class<DamageType> DamageType, optional name HitBoneName, optional Vector DamageStart)
+{	
+	super.TakeDamage(Instigator, Damage, DamageOrigin, DamageDirection, DamageType, HitBoneName, DamageStart);
+
+    if(DukePlayer(Instigator) != none)
+    {
+        if(Target == none || !FastTrace(Target.Location))
+        {
+            Target = Instigator;
+        }
+    }
+}
+
+
 function Restart()
 {
 local bool bOnlyAmmo;
