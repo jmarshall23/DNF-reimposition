@@ -63,6 +63,12 @@
     <None Include="..\Classes\IceBloodChunksBig.uc">
       <Filter>Classes</Filter>
     </None>
+    <None Include="..\Classes\IceGameDeathmatch.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\Classes\IcePlayerMulti.uc">
+      <Filter>Classes</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Inc\dnModIceClasses.h">
