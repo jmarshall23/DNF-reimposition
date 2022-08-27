@@ -39,13 +39,14 @@ function Created()
 	ExitButton.SetHelpText("Exit");
 	ExitButton.Register(self);
 
-	FirstControlToFocus = SinglePlayerButton;
 	SinglePlayerButton.NavUp = ExitButton;
-   	SinglePlayerOriginalGameButton.NavUp = SinglePlayerButton;
-    	OptionsButton.NavUp = SinglePlayerOriginalGameButton;
+    	SinglePlayerOriginalGameButton.NavUp = SinglePlayerButton;
+	LocalMultiplayerGameButton.NavUp = SinglePlayerOriginalGameButton;
+    	OptionsButton.NavUp = LocalMultiplayerGameButton;
     	ExitButton.NavUp = OptionsButton;
     	SinglePlayerButton.NavDown = SinglePlayerOriginalGameButton;
-    	SinglePlayerOriginalGameButton.NavDown = OptionsButton;
+    	SinglePlayerOriginalGameButton.NavDown = LocalMultiplayerGameButton;
+	LocalMultiplayerGameButton.NavDown = OptionsButton;
     	OptionsButton.NavDown = ExitButton;
 	ExitButton.NavDown = SinglePlayerButton;
 
