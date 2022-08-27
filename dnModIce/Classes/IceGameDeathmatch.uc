@@ -6,7 +6,7 @@ event PlayerPawn Login(string Portal, string Options, out string Error, class<Pl
 {
 	if(SpawningBot)
 	{
-		return super.Login(Portal, Options, Error, SpawnClass);
+		return super.Login(Portal, Options, Error, class'IceBot');
 	}
 
 	return super.Login(Portal, Options, Error, class'IcePlayerMulti');

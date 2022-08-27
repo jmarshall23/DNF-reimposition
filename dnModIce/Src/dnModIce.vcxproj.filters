@@ -69,6 +69,9 @@
     <None Include="..\Classes\IcePlayerMulti.uc">
       <Filter>Classes</Filter>
     </None>
+    <None Include="..\Classes\IceBot.uc">
+      <Filter>Classes</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Inc\dnModIceClasses.h">
