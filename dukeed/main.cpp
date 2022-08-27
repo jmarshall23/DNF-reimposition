@@ -43,6 +43,17 @@ extern UViewport* globalInitViewport;
 
 dnArray<UObject*>* UObject::GObjObjects;
 
+bool collectGarbage = true;
+
+void(*UObject__CollectGarbageActual)(unsigned int val);
+void UObject_CollectGarbage(unsigned int val)
+{
+	if (!collectGarbage)
+		return;
+
+	UObject__CollectGarbageActual(val);
+}
+
 void(__fastcall* UEditorEngine__TickActual)(float DeltaSeconds);
 void __fastcall UEditorEngine__Tick(float DeltaSeconds) {
 	dukeSharp.Tick(DeltaSeconds);
@@ -388,10 +399,12 @@ double DNFHackTimer(void)
 			assert(!"fuck");
 		if (MH_CreateHookApi(TEXT("engine.dll"), MAKEINTRESOURCEA(12585), FindPackage, (LPVOID*)&FindPackageActual) != MH_OK)
 			assert(!"fuck");
+
+		if (MH_CreateHookApi(TEXT("engine.dll"), MAKEINTRESOURCEA(5498), UObject_CollectGarbage, (LPVOID*)&UObject__CollectGarbageActual) != MH_OK)
+			assert(!"fuck");
 	//	if (MH_CreateHookApi(TEXT("editor.dll"), MAKEINTRESOURCEA(898), UEditorEngine__Tick, (LPVOID*)&UEditorEngine__TickActual) != MH_OK)
 	//		assert(!"fuck");
 
-		
 		MH_EnableHook(MH_ALL_HOOKS);
 		
 		help = true;
@@ -732,15 +745,15 @@ void InitDNFHooks()
 		MH_EnableHook(dnOutputArgList5);
 	}
 #endif	
-	{
-		MH_CreateHook(&CreateWindowExW, CreateWindowExWHooked, (LPVOID*)&CreateWindowExWActual);
-		MH_EnableHook(&CreateWindowExW);
-	}
-	////
-	{
-		MH_CreateHook(&RegisterClassExW, RegisterClassExWHooked, (LPVOID*)&RegisterClassExWActual);
-		MH_EnableHook(&RegisterClassExW);
-	}
+	//{
+	//	MH_CreateHook(&CreateWindowExW, CreateWindowExWHooked, (LPVOID*)&CreateWindowExWActual);
+	//	MH_EnableHook(&CreateWindowExW);
+	//}
+	//////
+	//{
+	//	MH_CreateHook(&RegisterClassExW, RegisterClassExWHooked, (LPVOID*)&RegisterClassExWActual);
+	//	MH_EnableHook(&RegisterClassExW);
+	//}
 	
 	//void* dnInitAssertMtrPtr = GetProcAddress(hinst, MAKEINTRESOURCEA(1509));
 	//{

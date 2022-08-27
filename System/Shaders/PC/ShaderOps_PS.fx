@@ -482,7 +482,7 @@ FEMU_OP_DeferredLight
 	if (InHackFilter != NULL_HANDLE)
 		FinalColor.rgba *= tex2Dproj(Sampler[InHackFilter], In.Tex[Index]).r;
 		
-	return float4(Diffuse.rgb * FinalColor.rgb*NDotL + FinalColor.rgb*CubeSpec*NDotH*CameraNormal.w, 0);
+	return float4(Diffuse.rgb * FinalColor.rgb*NDotL, 0);
 }
 
 //================================================================================

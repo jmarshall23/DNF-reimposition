@@ -206,10 +206,14 @@ void FileOpen(HWND hWnd)
 		// Make sure there's a level frame open.
 		//GEditorFrame->OpenLevelView();
 
+		collectGarbage = false;
+
 		// Convert the ANSI filename to UNICODE, and tell the editor to open it.
 		//GLevelFrame->SetMapFilename(File);
 		currentMapName = File;
 		GEditor->exec.Exec(mapExecString, (dnOutputDevice &)globalLog);
+
+		collectGarbage = true;
 
 		//FString S = GLevelFrame->GetMapFilename();
 		//GMRUList->AddItem(GLevelFrame->GetMapFilename());
@@ -266,8 +270,12 @@ void FileSaveAs(HWND hWnd)
 		// Convert the ANSI filename to UNICODE, and tell the editor to open it.
 		//GEditor->Exec(TEXT("BRUSHCLIP DELETE"));
 		//GEditor->Exec(TEXT("POLYGON DELETE"));
+		collectGarbage = false;
+
 		wsprintf(l_chCmd, TEXT("MAP SAVE FILE=\"%s\""), File);
 		GEditor->exec.Exec(l_chCmd, (dnOutputDevice &)globalLog);
+
+		collectGarbage = true;
 
 		// Save the filename.
 		//GLevelFrame->SetMapFilename(ANSI_TO_TCHAR(File));
@@ -526,7 +534,9 @@ public:
 				{
 					TCHAR l_chCmd[512];
 					wsprintf(l_chCmd, TEXT("MAP IMPORT FILE=\"%s\""), File);
+					collectGarbage = false;
 					GEditor->exec.Exec(l_chCmd, (dnOutputDevice&)globalLog);
+					collectGarbage = true;
 				}
 			}
 			break;

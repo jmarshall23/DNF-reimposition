@@ -1335,3 +1335,5 @@ public:
 		*(((INT*)this) + 434) = flag;
 	}
 };
+
+extern bool collectGarbage;
