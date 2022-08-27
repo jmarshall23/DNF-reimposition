@@ -137,12 +137,15 @@
     <None Include="..\Classes\AssaultTrooper_New_Captian.uc" />
     <None Include="..\Classes\IceBloodChunks.uc" />
     <None Include="..\Classes\IceBloodChunksBig.uc" />
+    <None Include="..\Classes\IceBot.uc" />
     <None Include="..\Classes\IceConsole.uc" />
     <None Include="..\Classes\IceGame.uc" />
+    <None Include="..\Classes\IceGameDeathmatch.uc" />
     <None Include="..\Classes\IceHUD.uc" />
     <None Include="..\Classes\IceMainMenu.uc" />
     <None Include="..\Classes\IceMiniBattleLord.uc" />
     <None Include="..\Classes\IcePlayer.uc" />
+    <None Include="..\Classes\IcePlayerMulti.uc" />
     <None Include="..\Classes\IceRootWindow.uc" />
     <None Include="..\Classes\IceSceneHelpOptions.uc" />
     <None Include="..\Classes\IceSceneVideoOptions.uc" />

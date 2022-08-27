@@ -5,6 +5,7 @@ class IceMainMenu extends UDukeSceneMainMenuPAX;
 
 var UDukeMenuButton SinglePlayerButton;
 var UDukeMenuButton SinglePlayerOriginalGameButton;
+var UDukeMenuButton LocalMultiplayerGameButton;
 var UDukeMenuButton OptionsButton;
 var UDukeMenuButton ExitButton;
 
@@ -19,9 +20,14 @@ function Created()
 	SinglePlayerButton.Register(self);
 
 	SinglePlayerOriginalGameButton = UDukeMenuButton(CreateWindow(class'UDukeMenuButton',,,,, self));
-	SinglePlayerOriginalGameButton.SetText("Singleplayer(Original)");
-	SinglePlayerOriginalGameButton.SetHelpText("Singleplayer(Original)");
+	SinglePlayerOriginalGameButton.SetText("Play Retail Campaign");
+	SinglePlayerOriginalGameButton.SetHelpText("Play Retail Campaign");
 	SinglePlayerOriginalGameButton.Register(self);
+
+	LocalMultiplayerGameButton = UDukeMenuButton(CreateWindow(class'UDukeMenuButton',,,,, self));
+	LocalMultiplayerGameButton.SetText("Local Multiplayer");
+	LocalMultiplayerGameButton.SetHelpText("Local Multiplayer");
+	LocalMultiplayerGameButton.Register(self);
 
 	OptionsButton = UDukeMenuButton(CreateWindow(class'UDukeMenuButton',,,,, self));
 	OptionsButton.SetText("Options");
@@ -59,11 +65,17 @@ function Paint(Canvas C, float X, float Y)
 	SinglePlayerOriginalGameButton.WinLeft = float(ButtonLeft);
 	SinglePlayerOriginalGameButton.WinTop = SinglePlayerButton.WinTop + SinglePlayerButton.WinHeight;
 
+	LocalMultiplayerGameButton.Alpha = FadeAlpha;
+	LocalMultiplayerGameButton.WinWidth = float(ButtonWidth);
+	LocalMultiplayerGameButton.WinHeight = float(ButtonHeight);
+	LocalMultiplayerGameButton.WinLeft = float(ButtonLeft);
+	LocalMultiplayerGameButton.WinTop = SinglePlayerOriginalGameButton.WinTop + SinglePlayerOriginalGameButton.WinHeight;
+
 	OptionsButton.Alpha = FadeAlpha;
 	OptionsButton.WinWidth = float(ButtonWidth);
 	OptionsButton.WinHeight = float(ButtonHeight);
 	OptionsButton.WinLeft = float(ButtonLeft);
-	OptionsButton.WinTop = SinglePlayerOriginalGameButton.WinTop + SinglePlayerOriginalGameButton.WinHeight;
+	OptionsButton.WinTop = LocalMultiplayerGameButton.WinTop + LocalMultiplayerGameButton.WinHeight;
 
 	ExitButton.Alpha = FadeAlpha;
 	ExitButton.WinWidth = float(ButtonWidth);
@@ -83,6 +95,11 @@ function NotifyFromControl(UWindowDialogControl C, byte E)
 	if(c == SinglePlayerOriginalGameButton && E == 2)
 	{
 		GetPlayerOwner().ClientTravel("map00_ice?Game=dnModIce.IceGame", TRAVEL_Relative, false);	
+	}
+
+	if(c == LocalMultiplayerGameButton && E == 2)
+	{
+		GetPlayerOwner().ClientTravel("dm-hollywood?Listen?Game=dnModIce.IceGameDeathmatch", TRAVEL_Relative, false);	
 	}
 
 	if(C == ExitButton && E == 2)
