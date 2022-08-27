@@ -442,6 +442,7 @@ FEMU_OP_DeferredLight
 	half	NDotH = saturate(dot(CameraNormal.xyz, Half));
 	
 	// Get specular power
+	SpecularPower = 10;
 	NDotH = pow(NDotH, SpecularPower);
 	half4	FinalColor		= Lights[0].Color.rgba * Atten;
 	half3 CubeSpec = float3(1,1,1);
@@ -482,7 +483,12 @@ FEMU_OP_DeferredLight
 	if (InHackFilter != NULL_HANDLE)
 		FinalColor.rgba *= tex2Dproj(Sampler[InHackFilter], In.Tex[Index]).r;
 		
-	return float4(Diffuse.rgb * FinalColor.rgb*NDotL, 0);
+// jmarshall
+	// Make this closer to Doom 3.
+	float3 finalColor = ((Diffuse.rgb) + (CubeSpec *  NDotH * CameraNormal.w)) * NDotL * FinalColor.rgb;
+
+	return float4(finalColor.xyz, 0);
+// jmarshall end
 }
 
 //================================================================================
