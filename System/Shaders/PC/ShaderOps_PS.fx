@@ -425,8 +425,22 @@ FEMU_OP_DeferredLight
 	//MFM spotlight near plane hack
 	float	spotLightNearPlane = Consts[InSpecConst].w;
 
+	// float2 GetParralaxOffset(int bumptex, float2 texCoords, float3 viewDir, float height_scale)
+
+// jmarshall - parallax mapping
 	CameraNormal = DeferredLight_GetLightData(In.Tex[Index], In.Tex[Index+1], InCoords, InPos,  InNormal, InDiffuse, InNvStereoTex,
 											  CameraSpacePos, Diffuse, SpecularPower, ScreenSpace, VertToLight, VertToCamera, Half);
+
+
+	float4 newTexCoords;
+	
+	newTexCoords.xy = GetParralaxOffset(InDiffuse, In.Tex[Index].xy, VertToCamera, 1.0);
+	newTexCoords.wz = In.Tex[Index].wz;
+
+	CameraNormal = DeferredLight_GetLightData(newTexCoords, In.Tex[Index + 1], InCoords, InPos, InNormal, InDiffuse, InNvStereoTex,
+					CameraSpacePos, Diffuse, SpecularPower, ScreenSpace, VertToLight, VertToCamera, Half);
+
+// jmarshall end
 	
 	half	NDotL			= 0; half	Atten			= 1; 
 
@@ -481,7 +495,7 @@ FEMU_OP_DeferredLight
 	}
 	
 	if (InHackFilter != NULL_HANDLE)
-		FinalColor.rgba *= tex2Dproj(Sampler[InHackFilter], In.Tex[Index]).r;
+		FinalColor.rgba *= tex2Dproj(Sampler[InHackFilter], newTexCoords).r;
 		
 // jmarshall
 	// Make this closer to Doom 3.

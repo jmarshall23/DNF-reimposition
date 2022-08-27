@@ -1147,3 +1147,50 @@ float3 ContastAdaptiveSharpen(const int bufferId, float2 diffuseST, float2 OneOv
 }
 
 // jmarshall end
+
+// jmarshall - parallax mapping
+// https://learnopengl.com/Advanced-Lighting/Parallax-Mapping
+float2 GetParralaxOffset(int bumptex, float2 texCoords, float3 viewDir, float height_scale)
+{
+#if 0
+	float height = tex2D(Sampler[bumptex], texCoords).g;
+	float2 p = viewDir.xy / viewDir.z * (height * height_scale);
+	return texCoords - p;
+
+#else
+	// number of depth layers
+	const float numLayers = 10;
+
+	// calculate the size of each layer
+	float layerDepth = 1.0 / numLayers;
+
+	// depth of current layer
+	float currentLayerDepth = 0.0;
+
+	float2 P = viewDir.xy * height_scale;
+	float2 deltaTexCoords = P / numLayers;
+
+	float2  currentTexCoords = texCoords;
+	float currentDepthMapValue = tex2D(Sampler[bumptex], currentTexCoords).r;
+
+	for(int i = 0; i < 30; i++)
+	{
+		if (currentLayerDepth >= currentDepthMapValue)
+		{
+			return currentTexCoords;
+		}
+
+		// shift texture coordinates along direction of P
+		currentTexCoords -= deltaTexCoords;
+
+		// get depthmap value at current texture coordinates
+		currentDepthMapValue = tex2D(Sampler[bumptex], currentTexCoords).r;
+
+		// get depth of next layer
+		currentLayerDepth += layerDepth;
+	}
+
+	return currentTexCoords;
+#endif
+}
+// jmarshall end
