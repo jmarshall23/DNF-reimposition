@@ -34,6 +34,15 @@ function Created()
 	ExitButton.Register(self);
 
 	FirstControlToFocus = SinglePlayerButton;
+	SinglePlayerButton.NavUp = ExitButton;
+   	SinglePlayerOriginalGameButton.NavUp = SinglePlayerButton;
+    	OptionsButton.NavUp = SinglePlayerOriginalGameButton;
+    	ExitButton.NavUp = OptionsButton;
+    	SinglePlayerButton.NavDown = SinglePlayerOriginalGameButton;
+    	SinglePlayerOriginalGameButton.NavDown = OptionsButton;
+    	OptionsButton.NavDown = ExitButton;
+	ExitButton.NavDown = SinglePlayerButton;
+
 }
 
 function Paint(Canvas C, float X, float Y)
