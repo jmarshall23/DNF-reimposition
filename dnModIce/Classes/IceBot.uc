@@ -3,6 +3,25 @@
 
 class IceBot extends DukeBot;
 
+function bool ImmuneToDamage()
+{
+    return false;
+}
+
+event TakeDamage(Pawn Instigator, float Damage, Vector DamageOrigin, Vector DamageDirection, class<DamageType> DamageType, optional name HitBoneName, optional Vector DamageStart)
+{	
+	super.TakeDamage(Instigator, Damage, DamageOrigin, DamageDirection, DamageType, HitBoneName, DamageStart);
+
+    if(DukePlayer(Instigator) != none)
+    {
+        if(Target == none || !FastTrace(Target.Location))
+        {
+            Target = Instigator;
+        }
+    }
+}
+
+
 function Restart()
 {
 local bool bOnlyAmmo;
@@ -22,7 +41,7 @@ local bool bOnlyAmmo;
             break;
         // End:0x8D
         case 1:
-            GiveWeaponCheat("dnGame.MP_RailGun", bOnlyAmmo);
+            GiveWeaponCheat("dnGame.MP_Devastator", bOnlyAmmo); // They are stupidly accurate with the rail gun, its not fun.
             // End:0x200
             break;
         // End:0xB0
@@ -73,6 +92,59 @@ local bool bOnlyAmmo;
         // End:0xFFFF
         default:
             break;
+    }
+}
+
+simulated event Tick(float DeltaTime)
+{
+    local Pawn P;
+    local DukeMultiPlayer otherPlayer;
+    local float targetDistance;
+    local float otherDistance;
+
+    super.Tick(DeltaTime);
+
+    if(Target == none)
+    {
+        targetDistance = 666666;
+    }
+    else
+    {
+        targetDistance = vsize(Target.Location - Location);
+    }
+
+    // Lets actively find a better target.
+    for (P = Level.PawnList; P != None; P = P.NextPawn)
+    {
+        otherPlayer = DukeMultiPlayer(P);
+
+        if(otherPlayer == none)
+            continue;
+
+        if(otherPlayer == self)
+            continue;
+
+        if(otherPlayer.IsDead())
+            continue;
+
+        if(FastTrace(otherPlayer.Location))
+        {
+            otherDistance = vsize(otherPlayer.Location - Location);
+
+            if(Target == none || DukeMultiPlayer(Target).IsDead())
+            {
+                Target = otherPlayer;
+                targetDistance = vsize(Target.Location - Location);
+            }
+            else if(otherDistance < targetDistance)
+            {
+                // If this guy is being a dick and moved right behind us
+                if(otherDistance < 100)
+                {
+                    Target = otherPlayer;
+                }
+            }
+        }
     }
 }
 

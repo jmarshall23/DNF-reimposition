@@ -100,7 +100,7 @@ function NotifyFromControl(UWindowDialogControl C, byte E)
 
 	if(c == LocalMultiplayerGameButton && E == 2)
 	{
-		GetPlayerOwner().ClientTravel("dm-hollywood?Listen?Game=dnModIce.IceGameDeathmatch", TRAVEL_Relative, false);	
+		GetPlayerOwner().ClientTravel("DM-Casino?Listen?Game=dnModIce.IceGameDeathmatch", TRAVEL_Relative, false);	
 	}
 
 	if(C == ExitButton && E == 2)
