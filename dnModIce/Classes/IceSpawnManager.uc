@@ -10,9 +10,9 @@ function PreGameInitHook(Object obj)
 {
 	if(Actor(obj) != none)
 	{
-		Actor(obj).bUseShadowTag = false;
+		// Actor(obj).bUseShadowTag = false;
 		Actor(obj).bCastStencilShadows = true;
-		Actor(obj).bForceDirectionalShadows = true;
+		// Actor(obj).bForceDirectionalShadows = true;
 		return;
 	}
 }
