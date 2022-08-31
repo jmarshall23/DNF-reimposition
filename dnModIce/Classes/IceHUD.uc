@@ -95,7 +95,7 @@ simulated event PostPostRender(Canvas C)
 		egoPerct = ego / PlayerOwner.EgoCap;
 	}
 
-	if(PlayerOwner.Weapon == none)
+	if(PlayerOwner.Weapon == none || PlayerOwner.Weapon.GetMaximumAmmo() == 0)
 	{
 		loadedAmmo = 0;
 		currentAmmo = 0;
@@ -108,7 +108,7 @@ simulated event PostPostRender(Canvas C)
 	
 		if(PlayerOwner.Weapon.WeaponConfig.default.ReloadCount == 0)
 		{
-			ammoPerct = float(loadedAmmo) / float(currentAmmo);
+			ammoPerct = float(loadedAmmo) / float(PlayerOwner.Weapon.GetMaximumAmmo());
 		}
 		else
 		{
@@ -133,7 +133,7 @@ simulated event PostPostRender(Canvas C)
 	C.SetPos(ScaleWidth(C, 310), C.SizeY-ScaleHeight(C, 113));
 	C.DrawText("" $ ego,,,,majorHudTextSize,majorHudTextSize);
 	
-	if(PlayerOwner.Weapon != none)
+	if(PlayerOwner.Weapon != none && PlayerOwner.Weapon.GetMaximumAmmo() > 0)
 	{
 		C.SetPos(0, C.SizeY-ScaleHeight(C, 82));
 		C.DrawText("CLIP:",,,,minorHudTextSize,minorHudTextSize);
