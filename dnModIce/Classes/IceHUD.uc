@@ -69,14 +69,18 @@ simulated event PostPostRender(Canvas C)
 	local int loadedAmmo;
 	local float egoPerct;
 	local float ammoPerct;
+	local float minorHudTextSize;
+	local float majorHudTextSize;
+	local float backScaleX;
+	local float backScaleY;
 
 	bHideHUD = false;
 	bHideCrosshair = false;
 
 	DrawNewCrosshair(C);
 
-	HUDScaleX = 2;
-	HUDScaleY = 2;
+	backScaleX = ScaleWidth(C, 1.41);
+	backScaleY = ScaleHeight(C, 1.41);
 
 	C.Font = font'BlockFont';
 
@@ -114,30 +118,33 @@ simulated event PostPostRender(Canvas C)
 		// Log("ammoPerct = " $ ammoPerct $ " " $ loadedAmmo $ " " $ PlayerOwner.Weapon.WeaponConfig.default.ReloadClipAmmo);
 	}	
 
+	minorHudTextSize = ScaleWidth(C, 0.85 - (0.85 * 0.375));
+	majorHudTextSize = ScaleWidth(C, 1.1 - (1.1 * 0.375));
+
 	// Draw the index background bar.
 	C.DrawColor = YellowBar;
 	C.SetPos(0, C.SizeY-ScaleHeight(C, 143));	
-	C.DrawScaledIcon(IndexBarLeftTexture, HUDScaleX, HUDScaleY);
+	C.DrawScaledIcon(IndexBarLeftTexture, backScaleX, backScaleY);
 
 	C.DrawColor = WhiteColor;
-	C.SetPos(0, C.SizeY-ScaleHeight(C, 113));
-	C.DrawText("EGO:",,,,0.85,0.85);
-	DrawStatusBar(C, ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 113), 350, 40, egoPerct);
+	C.SetPos(0, C.SizeY-ScaleHeight(C, 109));
+	C.DrawText("EGO:",,,,minorHudTextSize,minorHudTextSize);
+	DrawStatusBar(C, ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 117), ScaleWidth(C, 233), ScaleHeight(C, 36), egoPerct);
 	C.SetPos(ScaleWidth(C, 310), C.SizeY-ScaleHeight(C, 113));
-	C.DrawText("" $ ego,,,,1.1,1.1);
+	C.DrawText("" $ ego,,,,majorHudTextSize,majorHudTextSize);
 	
 	if(PlayerOwner.Weapon != none)
 	{
-		C.SetPos(0, C.SizeY-ScaleHeight(C, 86));
-		C.DrawText("CLIP:",,,,0.85,0.85);
-		DrawStatusBar(C, ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 86), 250, 40, ammoPerct);
+		C.SetPos(0, C.SizeY-ScaleHeight(C, 82));
+		C.DrawText("CLIP:",,,,minorHudTextSize,minorHudTextSize);
+		DrawStatusBar(C, ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 90), ScaleWidth(C, 166), ScaleHeight(C, 36), ammoPerct);
 		C.SetPos(ScaleWidth(C, 250), C.SizeY-ScaleHeight(C, 86));
-		C.DrawText("" $ loadedAmmo,,,,1.1,1.1);
+		C.DrawText("" $ loadedAmmo,,,,majorHudTextSize,majorHudTextSize);
 
-		C.SetPos(0, C.SizeY-ScaleHeight(C, 59));
-		C.DrawText("AMMO:",,,,0.85,0.85);
-		C.SetPos(ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 59));
-		C.DrawText("" $ currentAmmo,,,,0.85,0.85);
+		C.SetPos(0, C.SizeY-ScaleHeight(C, 55));
+		C.DrawText("AMMO:",,,,minorHudTextSize,minorHudTextSize);
+		C.SetPos(ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 55));
+		C.DrawText("" $ currentAmmo,,,,minorHudTextSize,minorHudTextSize);
 	}
 }
 
