@@ -126,16 +126,19 @@ simulated event PostPostRender(Canvas C)
 	C.SetPos(ScaleWidth(C, 310), C.SizeY-ScaleHeight(C, 113));
 	C.DrawText("" $ ego,,,,1.1,1.1);
 	
-	C.SetPos(0, C.SizeY-ScaleHeight(C, 86));
-	C.DrawText("CLIP:",,,,0.85,0.85);
-	DrawStatusBar(C, ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 86), 250, 40, ammoPerct);
-	C.SetPos(ScaleWidth(C, 250), C.SizeY-ScaleHeight(C, 86));
-	C.DrawText("" $ loadedAmmo,,,,1.1,1.1);
+	if(PlayerOwner.Weapon != none)
+	{
+		C.SetPos(0, C.SizeY-ScaleHeight(C, 86));
+		C.DrawText("CLIP:",,,,0.85,0.85);
+		DrawStatusBar(C, ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 86), 250, 40, ammoPerct);
+		C.SetPos(ScaleWidth(C, 250), C.SizeY-ScaleHeight(C, 86));
+		C.DrawText("" $ loadedAmmo,,,,1.1,1.1);
 
-	C.SetPos(0, C.SizeY-ScaleHeight(C, 59));
-	C.DrawText("AMMO:",,,,0.85,0.85);
-	C.SetPos(ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 58));
-	C.DrawText("" $ currentAmmo,,,,0.85,0.85);
+		C.SetPos(0, C.SizeY-ScaleHeight(C, 59));
+		C.DrawText("AMMO:",,,,0.85,0.85);
+		C.SetPos(ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 59));
+		C.DrawText("" $ currentAmmo,,,,0.85,0.85);
+	}
 }
 
 defaultproperties
