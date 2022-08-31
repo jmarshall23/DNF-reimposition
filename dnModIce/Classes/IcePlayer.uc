@@ -501,7 +501,7 @@ event DestroyInventory()
 
 simulated event PostBeginPlay()
 {
-	super.PostBeginPlay();	
+	super.PostBeginPlay();		
 }
 
 simulated function bool IsDead()

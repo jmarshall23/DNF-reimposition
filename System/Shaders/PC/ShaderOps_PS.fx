@@ -2414,181 +2414,7 @@ FEMU_OP_MergeShadows(handle_res Arg1, handle_samp Arg2, handle_samp Arg3)
 //================================================================================
 FEMU_OP_AmbientOcclusion(handle_samp InCameraPos, handle_samp InNormal, handle_tex TexCoords, handle_const VectStart, handle_samp InRandNormals, handle_int NumSamples, handle_samp PrevFrame)
 {
-#define AO_MODE	(3)
-
-	float4 SSAO_Normals[16] =
-	{
-		float4(0.355512, 	-0.709318, 	-0.102371,	0.0 ),
-		float4(0.534186, 	0.71511, 	-0.115167,	0.0 ),
-		float4(-0.87866, 	0.157139, 	-0.115167,	0.0 ),
-		float4(0.140679, 	-0.475516, 	-0.0639818,	0.0 ),
-		float4(-0.0796121, 	0.158842, 	-0.677075,	0.0 ),
-		float4(-0.0759516, 	-0.101676, 	-0.483625,	0.0 ),
-		float4(0.12493, 	-0.0223423,	-0.483625,	0.0 ),
-		float4(-0.0720074, 	0.243395, 	-0.967251,	0.0 ),
-		float4(-0.207641, 	0.414286, 	0.187755,	0.0 ),
-		float4(-0.277332, 	-0.371262, 	0.187755,	0.0 ),
-		float4(0.63864, 	-0.114214, 	0.262857,	0.0 ),
-		float4(-0.184051, 	0.622119, 	0.262857,	0.0 ),
-		float4(0.110007, 	-0.219486, 	0.435574,	0.0 ),
-		float4(0.235085, 	0.314707, 	0.696918,	0.0 ),
-		float4(-0.290012, 	0.0518654, 	0.522688,	0.0 ),
-		float4(0.0975089, 	-0.329594, 	0.609803,	0.0 )
-	};
-
-#if (AO_MODE == 0)
-#elif (AO_MODE == 1)
-#elif (AO_MODE == 2)
-    float2 SSTex = In.Tex[TexCoords].xy / In.Tex[TexCoords].w;
-
-    // Get camera distance
-    //float CameraDist = UNPACK_CAMERA_Z(tex2Dproj(Sampler[InCameraPos], In.Tex[TexCoords]).r);
-    float CameraDist = UNPACK_CAMERA_Z(tex2D(Sampler[InCameraPos], SSTex).r);
-    
-    float3 Normal = tex2Dproj(Sampler[InNormal], In.Tex[TexCoords])*2-1;
-    
-	float3 CameraPos = float3((In.Tex[TexCoords+1].xy / In.Tex[TexCoords+1].w) * CameraDist, CameraDist);
-
-    // Get random reflection plane
-    float3 Plane = tex2D(Sampler[InRandNormals], In.Tex[TexCoords]*100.0f )*2-1;
-    Plane = normalize(Plane);
-    
-    float Radius = Consts[VectStart+4].w;
-    
-	Radius *= saturate((CameraDist-100) / 64.0f) * (1.0f + CameraDist / 20000.0f ); 
-
-    float Total = 0;
-    
-	float Bias = Consts[VectStart+5].w;
-	
-	for( int i=0; i<NumSamples; i++ )
-	{
-		float3 SampleDir = Radius*SSAO_Normals[i].xyz;
-		//float3 SampleDir = Radius*reflect(SSAO_Normals[i].xyz, Plane);
-		
-		//if (dot(SampleDir, Normal.xyz) < 0)
-		//	SampleDir += Normal * Radius;
-		
-		/*
-		if( dot(SampleDir, Normal.xyz) < 0.0 )
-		{
-			// Reflect it and put it in the upper hemisphere for the surface normal
-			SampleDir = reflect(SampleDir, Normal);
-		}
-		*/
-
-        float3 SphereCameraPos = CameraPos + SampleDir;
-
-        float2 SphereScreenPos = (SphereCameraPos.xy/SphereCameraPos.z)*float2(Consts[VectStart+0].w,-Consts[VectStart+1].w);
-        SphereScreenPos = SphereScreenPos*0.5 + 0.5;
-        SphereScreenPos.xy += float2(1.0f/1024.0f, 1.0f/768.0f);
-        float SphereSampleDepth = UNPACK_CAMERA_Z(tex2D(Sampler[InCameraPos],SphereScreenPos).r);
-        //SampleDir.y *= -1;
-        //float SphereSampleDepth = UNPACK_CAMERA_Z(tex2D(Sampler[InCameraPos],SSTex+SampleDir.xy/CameraDist).r);// + SampleDir.z*0.001f;
-
-		// If the point on the sphere is behind the surface, and it's not too far behind it, assume it is in shadow
-		float SphereCenterSampledDepth = CameraDist;
-				
-		float Delta = (SphereCenterSampledDepth - SphereSampleDepth);//-Bias;
-		
-		//float Radius2d = length(SSAO_Normals[i].xy);
-		
-		if (delta < 90)
-			Total += delta/Consts[VectStart+2].w;
-	}
-   
-	float Shadow = (Total/(float)NumSamples);// * Consts[VectStart+2].w;
-	//Shadow = pow(Shadow, Consts[VectStart+6].w);
-	
-	if (Shadow < Consts[VectStart+6].w)
-		return 1;
-	
-	float Strength = Consts[VectStart+3].w;
-	return Strength;
-	
-	//Shadow = 1-saturate(Shadow);
-	//Shadow = Shadow*0.7f + 0.3f;
-	//return Shadow;
-#elif (AO_MODE == 3)
-    // Get camera distance
-    float CameraDist = UNPACK_CAMERA_Z(tex2Dproj(Sampler[InCameraPos], In.Tex[TexCoords]).r);
-
-    float3 Normal = tex2Dproj(Sampler[InNormal], In.Tex[TexCoords])*2-1;
-    
-	float3 CameraPos = float3((In.Tex[TexCoords+1].xy / In.Tex[TexCoords+1].w) * CameraDist, CameraDist);
-
-    // Get random reflection plane
-    //float3 Plane = tex2D(Sampler[InRandNormals], In.Tex[TexCoords]*100.0f )*2-1;
-    //Plane = normalize(Plane);
-    
-    float Radius = Consts[VectStart+4].w;
-
-    float Total = 0.0;
-    			
-	for( int i=0; i<NumSamples; i++ )
-	{
-		//float3 SampleDir = Radius*Consts[VectStart+i].xyz;
-		//float3 SampleDir = Radius*reflect(SSAO_Normals[i].xyz, Plane);
-		float3 SampleDir = Radius*SSAO_Normals[i].xyz;
-		
-		if (dot(SampleDir, Normal.xyz) < 0)
-			SampleDir += Normal * Radius * Consts[VectStart+6].w;
-		/*
-		if( dot(SampleDir, Normal.xyz) < 0.0 )
-		{
-			// Reflect it and put it in the upper hemisphere for the surface normal
-			SampleDir = reflect(SampleDir, Normal);
-		}
-		*/
-
-        float3 SampleCameraPos = CameraPos + SampleDir;
-
-        float2 ScreenPos = (SampleCameraPos.xy/SampleCameraPos.z)*float2(Consts[VectStart+0].w,-Consts[VectStart+1].w);
-        ScreenPos = ScreenPos*0.5 + 0.5;
-        ScreenPos.xy += float2(Consts[VectStart+7].w,Consts[VectStart+8].w);
-		//ScreenPos.xy += float2(Consts[VectStart+10].w,Consts[VectStart+11].w);
-        float SampleDepth = UNPACK_CAMERA_Z(tex2D(Sampler[InCameraPos],ScreenPos).r);
-
-		// If the point on the sphere is behind the surface, and it's not too far behind it, assume it is in shadow
-		if (SampleCameraPos.z > SampleDepth+Consts[VectStart+5].w)
-		{
-			float ZDelta = (SampleCameraPos.z-SampleDepth);//-Consts[VectStart+5].w;
-			
-			//Total += ZDelta / Consts[VectStart+2].w;
-			
-			// 1/d^2 falloff
-			Total += 1.0 / ( 1.0 + ( ZDelta * ZDelta  )*Consts[VectStart+2].w );
-		}
-	}
-   
-	Total = lerp(0, Total, saturate(CameraDist / 200.0f));
-	Total = lerp(Total, 0, saturate((CameraDist-1000.0f) / 500.0f));
-	
-	float Strength = Consts[VectStart+3].w;
-	Total *= 2.0*Strength/(float)NumSamples;
-	
-	Total = 1-saturate(Total);
-
-#if 1
-	// Merge in with prev ambient occlusion solution
-	float3	PrevCameraPos	= mul(float4(CameraPos,1), CameraToPrevCamera);
-	float2	PrevScreenSpace	= PrevCameraPos.xy / PrevCameraPos.z;
-
-	float2 PrevScreenPos = PrevScreenSpace*float2(Consts[VectStart+0].w,-Consts[VectStart+1].w);
-	PrevScreenPos = PrevScreenPos*0.5 + 0.5f;
-	//PrevScreenPos.xy += float2(Consts[VectStart+10].w,Consts[VectStart+11].w);
-	PrevScreenPos.xy += float2(Consts[VectStart+7].w,Consts[VectStart+8].w);
-
-	float PrevValue = tex2D(Sampler[PrevFrame], PrevScreenPos).r;
-		
-	if (Total > PrevValue)
-		return Total;
-		
-	Total = lerp(PrevValue, Total, Consts[VectStart+9].w);
-#endif
-	
-	return Total;
-#endif
+	return 1;
 }
 
 //================================================================================
@@ -2597,28 +2423,28 @@ FEMU_OP_AmbientOcclusion(handle_samp InCameraPos, handle_samp InNormal, handle_t
 FEMU_OP_FinalizeAmbientOcclusion(handle_tex TexCoords, handle_const InConst, handle_samp InCameraPos, handle_samp CurrentFrameFrame, handle_samp PrevFrame)
 {
     // Get camera distance
-    float CameraDist = UNPACK_CAMERA_Z(tex2Dproj(Sampler[InCameraPos], In.Tex[TexCoords]).r);
-
-	float3 CameraPos = float3((In.Tex[TexCoords+1].xy / In.Tex[TexCoords+1].w) * CameraDist, CameraDist);
-
-    float2 ScreenPos = (CameraPos.xy/CameraPos.z)*float2(Consts[InConst].x,-Consts[InConst].y);
-    ScreenPos = ScreenPos*0.5 + 0.5;
-    ScreenPos.xy += float2(Consts[InConst].z,Consts[InConst].w);
-
-	float3	PrevCameraPos	= mul(float4(CameraPos,1), CameraToPrevCamera);
-	float2	PrevScreenSpace	= PrevCameraPos.xy / PrevCameraPos.z;
-
-	float2 PrevScreenPos = PrevScreenSpace*float2(Consts[InConst].x,-Consts[InConst].y);
-	PrevScreenPos = PrevScreenPos*0.5 + 0.5;
-	PrevScreenPos.xy += float2(Consts[InConst].z,Consts[InConst].w);
-
-	float4 PrevValue = tex2D(Sampler[PrevFrame], PrevScreenPos).r;
-	float4 CurValue = tex2D(Sampler[CurrentFrameFrame], ScreenPos).r;
-
-	if (CurValue.r > PrevValue.r)
-		return CurValue;
-	
-	return lerp(PrevValue, CurValue, 0.05f);
+    //float CameraDist = UNPACK_CAMERA_Z(tex2Dproj(Sampler[InCameraPos], In.Tex[TexCoords]).r);
+	//
+	//float3 CameraPos = float3((In.Tex[TexCoords+1].xy / In.Tex[TexCoords+1].w) * CameraDist, CameraDist);
+	//
+    //float2 ScreenPos = (CameraPos.xy/CameraPos.z)*float2(Consts[InConst].x,-Consts[InConst].y);
+    //ScreenPos = ScreenPos*0.5 + 0.5;
+    //ScreenPos.xy += float2(Consts[InConst].z,Consts[InConst].w);
+	//
+	//float3	PrevCameraPos	= mul(float4(CameraPos,1), CameraToPrevCamera);
+	//float2	PrevScreenSpace	= PrevCameraPos.xy / PrevCameraPos.z;
+	//
+	//float2 PrevScreenPos = PrevScreenSpace*float2(Consts[InConst].x,-Consts[InConst].y);
+	//PrevScreenPos = PrevScreenPos*0.5 + 0.5;
+	//PrevScreenPos.xy += float2(Consts[InConst].z,Consts[InConst].w);
+	//
+	//float4 PrevValue = tex2D(Sampler[PrevFrame], PrevScreenPos).r;
+	//float4 CurValue = tex2D(Sampler[CurrentFrameFrame], ScreenPos).r;
+	//
+	//if (CurValue.r > PrevValue.r)
+	//	return CurValue;
+	//
+	//return lerp(PrevValue, CurValue, 0.05f);
 }
 
 //================================================================================
@@ -2985,9 +2811,9 @@ FEMU_OP_UberPostBlend
 {    
 
 // jmarshall - new post pass for Duke Nukem Forever
-	float4 SceneColor = SampleTexture(FrameBuffer, TexCoords);
+	float4 SceneColor = SampleTexture(FrameBuffer, TexCoords);	
 	float  SceneDepth = UNPACK_CAMERA_Z((SampleTexture(ZBuffer, TexCoords)).r);
-    
+
     //////////////////////
     // Bloom
     //////////////////////
@@ -2995,7 +2821,8 @@ FEMU_OP_UberPostBlend
     float FogBegin	    = Consts[PSParams+1].x;
     float FogEnd		= Consts[PSParams+1].y;
     float FogOpacity	= Consts[PSParams+1].z;
-	SceneColor += SampleTexture(BloomBuffer, TexCoords) *lerp(1, (1.0f - saturate((SceneDepth - FogBegin) / FogEnd)), FogOpacity);
+
+	float4 bloomBuffer = SampleTexture(BloomBuffer, TexCoords);
 
 	//////////////////////
 	// Tone mapping
@@ -3015,6 +2842,7 @@ FEMU_OP_UberPostBlend
 	}
 
 	SceneColor.rgb = Color0; // saturate(lerp(Color0, SceneColor, SceneDesaturation));
+	SceneColor += bloomBuffer; // *lerp(1, (1.0f - saturate((SceneDepth - FogBegin) / FogEnd)), FogOpacity);
 // jmarshall end
 	return SceneColor;
 }
