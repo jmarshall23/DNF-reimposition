@@ -122,12 +122,12 @@ HRESULT __stdcall D3DXCompileShader2(LPCSTR pSrcData, UINT srcDataLen, const D3D
 		fclose(f);
 	}
 
-	FILE* f = fopen(path, "wb");
-
-	ID3DXBuffer* newShader = *ppShader;
-
-	fwrite(newShader->GetBufferPointer(), 1, newShader->GetBufferSize(), f);
-	fclose(f);
+	//FILE* f = fopen(path, "wb");
+	//
+	//ID3DXBuffer* newShader = *ppShader;
+	//
+	//fwrite(newShader->GetBufferPointer(), 1, newShader->GetBufferSize(), f);
+	//fclose(f);
 #endif
 	return hr;
 }
