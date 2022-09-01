@@ -525,5 +525,37 @@ namespace DukeEdSharp
 
             
         }
+
+        private void saveToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            Thread t = new Thread((ThreadStart)(() =>
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.InitialDirectory = "..\\staticmeshes\\";
+                saveFileDialog.Filter = "StaticMesh Packages (*.dsm)|*.dsm|All files (*.*)|*.*";
+                //    saveFileDialog.FilterIndex = 2;
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = saveFileDialog.FileName;
+                }
+            }));
+
+            // Run your code from a thread that joins the STA Thread
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+            t.Join();
+
+            if (filePath != string.Empty)
+            {
+                string s = "OBJ SavePackage FILE=\"" + filePath + "\" Package=\"" + staticMeshPackageName + "\"";
+                EditorInterface.DukeSharp_Exec(s);
+            }
+        }
     }
 }
