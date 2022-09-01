@@ -160,6 +160,7 @@
     <ClInclude Include="..\Inc\dnModIceClasses.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\D3D9Drv\Src\dnDirect3DDriver.cpp" />
     <ClCompile Include="dnIceMain.cpp" />
   </ItemGroup>
   <ItemGroup>

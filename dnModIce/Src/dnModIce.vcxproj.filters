@@ -91,6 +91,9 @@
     <ClCompile Include="dnIceMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\D3D9Drv\Src\dnDirect3DDriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\..\dukeed\MinHook.x86.lib">
