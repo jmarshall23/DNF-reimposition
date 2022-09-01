@@ -6,9 +6,20 @@ event Spawned()
 	super.Spawned();
 }
 
+function PreGameInitHook(Object obj)
+{
+	if(Actor(obj) != none)
+	{
+		// Actor(obj).bUseShadowTag = false;
+		Actor(obj).bCastStencilShadows = true;
+		// Actor(obj).bForceDirectionalShadows = true;
+		return;
+	}
+}
+
 function PostEntitySpawn(Object obj)
 {
-	local int i;
+	local int i;	
 
 	if(Weapon(obj) != none)
 	{

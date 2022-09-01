@@ -2,6 +2,21 @@ class IceConsole extends DukeConsole
 	transient
 	config;
 
+var bool inGameConsoleState;
+
+function HideConsole(optional bool bNoCloseAnim)
+{
+	if(!inGameConsoleState)
+	{
+		super.HideConsole(bNoCloseAnim);
+		return;
+	}
+
+	CloseUWindow();
+	inGameConsoleState = false;
+	bShowConsole = false;
+}
+
 event bool KeyEvent(EInputKey Key, EInputAction Action, float Delta)
 {
 	if(Action == 1 && Key == 192)
@@ -9,8 +24,9 @@ event bool KeyEvent(EInputKey Key, EInputAction Action, float Delta)
 		Log("!!Showing console!!");
 		TypedStr="";
 		bLocked=false;	
-		super.LaunchUWindow();
+		inGameConsoleState=true;				
 		super.ShowConsole();
+		super.LaunchUWindow();	
 
 		return true;
 	}
@@ -126,5 +142,6 @@ exec function DebugHUD()
 defaultproperties
 {
 	bLocked=false
+	inGameConsoleState=false
 	RootWindow="dnModIce.IceRootWindow"
 }

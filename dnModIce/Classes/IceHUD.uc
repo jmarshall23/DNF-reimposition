@@ -1,7 +1,23 @@
 class IceHUD extends DukeHUD;
 
-var MaterialEx dnHudBackground;
+var Color YellowBar;
 var MaterialEx dnCrosshair;
+var float BarOffset;
+var texture GradientTexture;
+var texture IndexBarLeftTexture;
+var texture IndexBarBottomTexture;
+var texture InventoryBarTopTexture;
+var texture InventoryBarBotTexture;
+var texture InventoryCatHLTexture;
+var texture InventoryCatHLTexture2;
+var texture MiscBarTabTexture;
+var texture MiscBarHLTexture;
+var texture HUDTemplateTexture;
+var texture ItemSlantTexture;
+var texture ItemSlantHLTexture;
+var texture MiscBarTexture;
+var texture MiscBarTexture2;
+var texture NumberCircleTexture;
 
 function float ScaleHeight(Canvas C, float value)
 {
@@ -16,18 +32,6 @@ function float ScaleWidth(Canvas C, float value)
 simulated event PreRender(Canvas Canvas)
 {
 
-}
-
-simulated function Tick(float Delta)
-{
-	super(Actor).Tick(Delta);
-	TickScreenFlashes(Delta);
-	TickEgoChanges(Delta);
-	TickPickupEvents(Delta);
-	TickStatusIndex(Delta);
-	TickHUDEffects(Delta);
-	TickQuestItemInfo(Delta);
-	TickInventory(Delta);
 }
 
 simulated function DrawNewCrosshair(Canvas C)
@@ -58,105 +62,107 @@ simulated function DrawNewCrosshair(Canvas C)
 	C.DrawColor = WhiteColor;
 }
 
-event DrawRosterText(Canvas C, int x, int y, string ammoCommand, string weaponId)
-{
-	y = y - 5;
-
-	C.SetPos(ScaleWidth(C, x), C.SizeY-ScaleHeight(C,y));
-
-	if(PlayerOwner.ConsoleCommand("CurrentWeapon") == weaponId)
-	{
-		C.DrawColor = WhiteColor;
-	}
-	else
-	{
-		C.DrawColor = GrayColor;
-	}
-
-	C.DrawText(PlayerOwner.ConsoleCommand(ammoCommand), false, false, false, 0.9, 0.9);
-}
-
-event DrawAmmoRoster(Canvas C)
-{
-	DrawRosterText(C, 430, 77, "GetWeapon1Ammo", "1");
-	DrawRosterText(C, 430, 60, "GetWeapon2Ammo", "2");
-	DrawRosterText(C, 430, 43, "GetWeapon3Ammo", "3");
-
-	DrawRosterText(C, 510, 77, "GetWeapon4Ammo", "4");
-	DrawRosterText(C, 510, 60, "GetWeapon5Ammo", "5");
-	DrawRosterText(C, 510, 43, "GetWeapon6Ammo", "6");
-
-	DrawRosterText(C, 590, 77, "GetWeapon7Ammo", "7");
-	DrawRosterText(C, 590, 60, "GetWeapon8Ammo", "8");
-	DrawRosterText(C, 590, 43, "GetWeapon9Ammo", "9");
-
-	DrawRosterText(C, 650, 43, "GetWeapon0Ammo", "0");
-
-	C.DrawColor = WhiteColor;
-}
-
 simulated event PostPostRender(Canvas C)
 {
 	local int ego;
 	local int currentAmmo;
+	local int loadedAmmo;
+	local float egoPerct;
+	local float ammoPerct;
+	local float minorHudTextSize;
+	local float majorHudTextSize;
+	local float backScaleX;
+	local float backScaleY;
 
 	bHideHUD = false;
 	bHideCrosshair = false;
 
-	DrawNewCrosshair(C);	
+	DrawNewCrosshair(C);
 
-	C.SetPos(0, C.SizeY-ScaleHeight(C, 113));
-	C.DrawTile(dnHudBackground, C.SizeX, ScaleHeight(C, 190), 0, 0, 1920, 256);
+	backScaleX = ScaleWidth(C, 1.41);
+	backScaleY = ScaleHeight(C, 1.41);
 
-	DrawAmmoRoster(C);
+	C.Font = font'BlockFont';
 
 	ego = PlayerOwner.Ego;
 
-	if(ego >= 100)
+	if(PlayerOwner == none || PlayerOwner.EgoCap == 0)
 	{
-		C.SetPos(ScaleWidth(C, 225), C.SizeY-ScaleHeight(C,63));
-	}
-	else if(ego >= 10)
-	{
-		C.SetPos(ScaleWidth(C, 238), C.SizeY-ScaleHeight(C,63));
+		egoPerct = 0;
 	}
 	else
 	{
-		C.SetPos(ScaleWidth(C, 251), C.SizeY-ScaleHeight(C,63));
+		egoPerct = ego / PlayerOwner.EgoCap;
 	}
-	C.DrawText(ego, false, false, false, 2.0, 2.0);
 
-	if(PlayerOwner.Weapon != none)
+	if(PlayerOwner.Weapon == none || PlayerOwner.Weapon.GetMaximumAmmo() == 0)
 	{
-		if(PlayerOwner.Weapon.GetMaximumAmmo() > 0)
-		{
-			currentAmmo = PlayerOwner.Weapon.GetTotalAmmo();
-
-			if(currentAmmo >= 100)
-			{
-				C.SetPos(ScaleWidth(C, 752), C.SizeY-ScaleHeight(C,63));
-			}
-			else if(currentAmmo >= 10)
-			{
-				C.SetPos(ScaleWidth(C, 765), C.SizeY-ScaleHeight(C,63));
-			}
-			else
-			{
-				C.SetPos(ScaleWidth(C, 778), C.SizeY-ScaleHeight(C,63));
-			}
-
-			C.DrawText(PlayerOwner.Weapon.GetTotalAmmo(), false, false, false, 2.0, 2.0);			
-		}
+		loadedAmmo = 0;
+		currentAmmo = 0;
+		ammoPerct = 0;
 	}
-}
+	else
+	{
+		loadedAmmo = PlayerOwner.Weapon.GetLoadedAmmo();
+		currentAmmo = PlayerOwner.Weapon.GetTotalAmmo();
+	
+		if(PlayerOwner.Weapon.WeaponConfig.default.ReloadCount == 0)
+		{
+			ammoPerct = float(loadedAmmo) / float(PlayerOwner.Weapon.GetMaximumAmmo());
+		}
+		else
+		{
+			ammoPerct = float(loadedAmmo) / float(PlayerOwner.Weapon.WeaponConfig.default.ReloadCount);
+		}
 
-function SaveComplete()
-{
-	super.SaveComplete();
+		// Log("ammoPerct = " $ ammoPerct $ " " $ loadedAmmo $ " " $ PlayerOwner.Weapon.WeaponConfig.default.ReloadClipAmmo);
+	}	
+
+	minorHudTextSize = ScaleWidth(C, 0.85 - (0.85 * 0.375));
+	majorHudTextSize = ScaleWidth(C, 1.1 - (1.1 * 0.375));
+
+	// Draw the index background bar.
+	C.DrawColor = YellowBar;
+	C.SetPos(0, C.SizeY-ScaleHeight(C, 143));	
+	C.DrawScaledIcon(IndexBarLeftTexture, backScaleX, backScaleY);
+
+	C.DrawColor = WhiteColor;
+	C.SetPos(0, C.SizeY-ScaleHeight(C, 109));
+	C.DrawText("EGO:",,,,minorHudTextSize,minorHudTextSize);
+	DrawStatusBar(C, ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 117), ScaleWidth(C, 233), ScaleHeight(C, 36), egoPerct);
+	C.SetPos(ScaleWidth(C, 310), C.SizeY-ScaleHeight(C, 113));
+	C.DrawText("" $ ego,,,,majorHudTextSize,majorHudTextSize);
+	
+	if(PlayerOwner.Weapon != none && PlayerOwner.Weapon.GetMaximumAmmo() > 0)
+	{
+		C.SetPos(0, C.SizeY-ScaleHeight(C, 82));
+		C.DrawText("CLIP:",,,,minorHudTextSize,minorHudTextSize);
+		DrawStatusBar(C, ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 90), ScaleWidth(C, 166), ScaleHeight(C, 36), ammoPerct);
+		C.SetPos(ScaleWidth(C, 250), C.SizeY-ScaleHeight(C, 86));
+		C.DrawText("" $ loadedAmmo,,,,majorHudTextSize,majorHudTextSize);
+
+		C.SetPos(0, C.SizeY-ScaleHeight(C, 55));
+		C.DrawText("AMMO:",,,,minorHudTextSize,minorHudTextSize);
+		C.SetPos(ScaleWidth(C, 65), C.SizeY-ScaleHeight(C, 55));
+		C.DrawText("" $ currentAmmo,,,,minorHudTextSize,minorHudTextSize);
+	}
 }
 
 defaultproperties
 {
+	YellowBar=(R=220,G=220,B=46,A=0)
 	dnCrosshair=hud_effects.crosshairs.crosshair11BC
-	dnHudBackground=dukeui.ui.hud
+    GradientTexture=hud_effects.ingame_hud.ing_gradient1BC
+	IndexBarLeftTexture=hud_effects.ingame_hud.ingame_main
+	IndexBarBottomTexture=hud_effects.ingame_hud.ingame_main_repeat1bc
+	InventoryBarTopTexture=hud_effects.ingame_hud.ingame_wepbar1BC
+	InventoryBarBotTexture=hud_effects.ingame_hud.ingame_wepbar2BC
+	InventoryCatHLTexture=hud_effects.ingame_hud.ingame_wepbar_highlight1bc
+	InventoryCatHLTexture2=hud_effects.ingame_hud.ingame_wepbar_highlight2bc
+	ItemSlantTexture=hud_effects.ingame_hud.ingame_itemslant1bc
+	ItemSlantHLTexture=hud_effects.ingame_hud.ingame_itemslant_highlightbc
+	MiscBarTexture=hud_effects.ingame_hud.ingame_miscbar1bc
+	MiscBarTexture2=hud_effects.ingame_hud.ingame_miscbar2bc
+	NumberCircleTexture=hud_effects.ingame_hud.ingame_numbercircleBC
+	BarOffset=0.0
 }
