@@ -38,7 +38,8 @@ function Created()
 	ExitButton.SetText("Exit");
 	ExitButton.SetHelpText("Exit");
 	ExitButton.Register(self);
-
+	
+	FirstControlToFocus = SinglePlayerButton;
 	SinglePlayerButton.NavUp = ExitButton;
     	SinglePlayerOriginalGameButton.NavUp = SinglePlayerButton;
 	LocalMultiplayerGameButton.NavUp = SinglePlayerOriginalGameButton;
