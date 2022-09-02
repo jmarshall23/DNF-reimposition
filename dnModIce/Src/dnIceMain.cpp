@@ -11,6 +11,8 @@
 
 UObject* IceSpawnManager = nullptr;
 
+void InitDirect3D(void);
+
 __declspec(dllimport) extern int g_LoadScreenInputReceived;
 
 DWORD WINAPI MyThreadFunction(LPVOID lpParam) {
@@ -120,12 +122,12 @@ HRESULT __stdcall D3DXCompileShader2(LPCSTR pSrcData, UINT srcDataLen, const D3D
 		fclose(f);
 	}
 
-	FILE* f = fopen(path, "wb");
-
-	ID3DXBuffer* newShader = *ppShader;
-
-	fwrite(newShader->GetBufferPointer(), 1, newShader->GetBufferSize(), f);
-	fclose(f);
+	//FILE* f = fopen(path, "wb");
+	//
+	//ID3DXBuffer* newShader = *ppShader;
+	//
+	//fwrite(newShader->GetBufferPointer(), 1, newShader->GetBufferSize(), f);
+	//fclose(f);
 #endif
 	return hr;
 }
@@ -259,6 +261,8 @@ void __fastcall AActor__eventSpawned(AActor* _this, void *edx)
 void InitDNFHooks()
 {
 	MH_Initialize();
+
+	InitDirect3D();
 
 	if (MH_CreateHookApi(TEXT("engine.dll"), MAKEINTRESOURCEA(6736), UObject__FindFunctionChecked, (LPVOID*)&UObject__FindFunctionCheckedActual) != MH_OK) {
 		_asm {

@@ -438,20 +438,20 @@ FEMU_OP_DeferredBasePass_ThermalBS
 FEMU_OP_PixelMotionBlur0(handle_tex TexIndex, handle_const ConstIndex, handle_samp Depth, handle_samp FB, handle_samp InNvStereoTex)
 {
 	// Get current and prev clip space coords
-	float4 LocScreen		= mul(float4(In.vPosition.xyz, 1), LocalToScreen);
-	float4 PrevLocScreen	= mul(float4(In.vPosition.xyz, 1), PrevLocalToScreen);
-		
-	Out.vPosition = LocScreen;
-		
-	Out.vTexCoords[TexIndex+0] = LocScreen;
-	Out.vTexCoords[TexIndex+1] = PrevLocScreen;
-#if 1
-	Out.vTexCoords[TexIndex+2] = Out.vPosition * float4(1,-1,0,1) + Out.vPosition.w;
-	Out.vTexCoords[TexIndex+2].xy += OneOverViewportSize.xy * Out.vTexCoords[TexIndex+2].w;
+	float4 LocScreen = mul(float4(In.vPosition.xyz, 1), LocalToScreen);
+	float4 PrevLocScreen = mul(float4(In.vPosition.xyz, 1), PrevLocalToScreen);
 
-// jmarshall - contrast adaptive sharpen
-	Out.vTexCoords[TexIndex+3].xy = OneOverViewportSize.xy;	
-// jmarshall end
+	Out.vPosition = LocScreen;
+
+	Out.vTexCoords[TexIndex + 0] = LocScreen;
+	Out.vTexCoords[TexIndex + 1] = PrevLocScreen;
+
+#if 1
+	Out.vTexCoords[TexIndex + 2] = Out.vPosition * float4(1, -1, 0, 1) + Out.vPosition.w;
+	Out.vTexCoords[TexIndex + 2].xy += OneOverViewportSize.xy * Out.vTexCoords[TexIndex + 2].w;
+
+	Out.vTexCoords[TexIndex + 3].xyz = mul(float4(In.vPosition.xyz, 1), LocalToCamera).xyz;
+	Out.vTexCoords[TexIndex + 3].w = Out.vPosition.w;
 #endif
 
 }
