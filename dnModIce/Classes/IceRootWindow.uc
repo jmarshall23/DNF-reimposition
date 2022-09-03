@@ -16,6 +16,12 @@ function ShowUWindowSystem(UWindowRootWindow.EUWindowMode NewWindowMode)
 		LoadFirstScene(class'IceMainMenu');
 		return;	
 	}
+	else
+	{
+		LoadFirstScene(class'IcePauseMenu');
+		BackgroundMovieMaterial=none;
+		return;	
+	}
 
 	if(DukeConsole(Console).bShowConsole)
 	{
