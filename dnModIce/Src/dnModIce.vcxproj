@@ -165,10 +165,10 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\..\dukeed\MinHook.x86.lib" />
+    <Library Include="..\..\dukeed\uehook\D3DDrv9.lib" />
     <Library Include="..\..\dukeed\uehook\dnCommon.lib" />
     <Library Include="..\..\dukeed\uehook\Editor.lib" />
     <Library Include="..\..\dukeed\uehook\engine.lib" />
-    <Library Include="D:\Projects\dukeed\dukeed\uehook\D3DDrv9.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

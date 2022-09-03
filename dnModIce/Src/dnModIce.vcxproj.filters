@@ -108,7 +108,7 @@
     <Library Include="..\..\dukeed\uehook\engine.lib">
       <Filter>Resource Files</Filter>
     </Library>
-    <Library Include="D:\Projects\dukeed\dukeed\uehook\D3DDrv9.lib">
+    <Library Include="..\..\dukeed\uehook\D3DDrv9.lib">
       <Filter>Resource Files</Filter>
     </Library>
   </ItemGroup>
