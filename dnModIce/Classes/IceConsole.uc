@@ -98,6 +98,16 @@ event bool KeyEvent(EInputKey Key, EInputAction Action, float Delta)
 }
 
 // ZOMBIE BEGIN
+exec function Summon(string ClassName)
+{
+    Root.GetPlayerOwner().Summon(ClassName);
+}
+
+exec function GiveItem(string ItemName, optional int Charge)
+{
+    DukePlayer(Root.GetPlayerOwner()).GiveItem(ItemName, Charge);
+}
+
 exec function God()
 {
     Root.GetPlayerOwner().God();
