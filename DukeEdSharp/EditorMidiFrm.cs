@@ -140,5 +140,50 @@ namespace DukeEdSharp
         {
             EditorInterface.DukeSharp_SetViewportType(dynlightviewport, 2);
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=1 Y=1 Z=1");
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=2 Y=2 Z=2");
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=4 Y=4 Z=4");
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=8 Y=8 Z=8");
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=16 Y=16 Z=16");
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=32 Y=32 Z=32");
+        }
+
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=64 Y=64 Z=64");
+        }
+
+        private void toolStripMenuItem9_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=128 Y=128 Z=128");
+        }
+
+        private void toolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=256 Y=256 Z=256");
+        }
     }
 }
