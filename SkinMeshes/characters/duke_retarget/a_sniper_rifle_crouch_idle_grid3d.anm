@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_expr name="a_sniper_rifle_crouch_idle_grid3d">
+		<anim anim_name="u_sniper_rifle_crouch_grid" op="replace" control_grid="true"></anim>
+		<anim anim_name="u_sniper_rifle_crouch_grid_mid" op="subtract" no_remove="true"></anim>
+		<anim anim_name="a_sniper_rifle_crouch_idle" op="add" time="true"></anim>
+	</anim_expr>
+</derived_file>

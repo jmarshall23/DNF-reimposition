@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_grid name="a_sign_idle_grid3d" axis_x="1" axis_y="1">
+    <point x="-1.0" y="1.0">
+      <anim anim_name="a_sign_aimgrid_ul"></anim>
+    </point>
+    <point x="1.0" y="1.0">
+      <anim anim_name="a_sign_aimgrid_ur"></anim>
+    </point>
+		<point x="0.0" y="0.0">
+			<anim anim_name="a_sign_aimgrid_center"></anim>
+		</point>
+		<point x="-1.0" y="-1.0">
+			<anim anim_name="a_sign_aimgrid_ll"></anim>
+		</point>
+    <point x="1.0" y="-1.0">
+      <anim anim_name="a_sign_aimgrid_lr"></anim>
+    </point>
+	</anim_grid>
+</derived_file>
+

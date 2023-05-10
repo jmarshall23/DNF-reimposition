@@ -263,7 +263,29 @@ public:
 
 __declspec(dllimport) class dnArchive {
 public:
+// from zombie start
+	int ArVer;
+	int ArLVer;
+	int ArNetVer;
+	int ArMergeVer;
+	UBOOL ArIsLoading : 1;
+	UBOOL ArIsSaving : 1;
+	UBOOL ArIsTaggingUsed : 1;
+	UBOOL ArIsTrans : 1;
+	UBOOL ArIsPersistent : 1;
+	UBOOL ArIsForEdit : 1;
+	UBOOL ArIsForClient : 1;
+	UBOOL ArIsForServer : 1;
+	UBOOL ArIsError : 1;
+	UBOOL ArIsCriticalError : 1;
+	UBOOL ArIsUncompressor : 1;
+	UBOOL ArIsCompressor : 1;
 
+	UBOOL IsNet()
+	{
+		return (ArNetVer & 0x80000000) != 0;
+	}
+// from zombie end
 };
 
 __declspec(dllimport) class UPackageMap {
@@ -1310,6 +1332,33 @@ __declspec(dllimport) class USound {
 public:
 	void EnsureData(class dnCompiledSound *dnCompiledSoundPtr); // Just set dnCompiledSoundPtr to nullptr.
 };
+
+__declspec(dllimport) class dnDefinition {
+public:
+	dnDefinition();
+	UBOOL Serialize(dnArchive &);
+private:
+
+};
+
+__declspec(dllimport) class dnSkeleton {
+public:
+	dnSkeleton(const char *name);
+	UBOOL Serialize(dnArchive&);
+protected:
+
+};
+
+__declspec(dllimport) class dnArchiveFileReader : public dnArchive {
+public:
+	dnArchiveFileReader(void* InFile, dnOutputDevice* InError, INT InSize);
+
+private:
+	INT				unknown[7];
+	BYTE			Buffer[0x3000u];
+	BYTE			Buffer2[0x24u];
+};
+
 
 #define ANY_PACKAGE ((UObject*)-1)
 

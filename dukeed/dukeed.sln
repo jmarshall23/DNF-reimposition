@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dukeed", "dukeed.vcxproj", "{4DFD6ECD-B8D4-4D25-B276-BBFFBD22EE9A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4F503960-AE73-4987-B45E-06FD860B0A4B} = {4F503960-AE73-4987-B45E-06FD860B0A4B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DukeEdSharp", "..\DukeEdSharp\DukeEdSharp.csproj", "{80ED10B2-2E57-4080-8261-3A77709F8E33}"
 EndProject

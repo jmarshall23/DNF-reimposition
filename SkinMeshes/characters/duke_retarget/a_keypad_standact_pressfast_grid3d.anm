@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_grid name="a_keypad_standact_pressfast_grid3d" axis_x="1" axis_y="1">
+		<point x="0.0" y="-1.0">
+			<anim anim_name="a_keypad_standact_pressfast_centerdown"></anim>
+		</point>
+		<point x="0.0" y="0.0">
+			<anim anim_name="a_keypad_standact_pressfast_center"></anim>
+		</point>
+		<point x="0.0" y="1.0">
+			<anim anim_name="a_keypad_standact_pressfast_centerup"></anim>
+		</point>
+		<point x="-1.0" y="0.0">
+			<anim anim_name="a_keypad_standact_pressfast_centerright"></anim>
+		</point>
+		<point x="1.0" y="0.0">
+			<anim anim_name="a_keypad_standact_pressfast_centerleft"></anim>
+		</point>
+		<point x="-1.0" y="1.0">
+			<anim anim_name="a_keypad_standact_pressfast_rightup"></anim>
+		</point>
+		<point x="-1.0" y="-1.0">
+			<anim anim_name="a_keypad_standact_pressfast_rightdown"></anim>
+		</point>
+		<point x="1.0" y="1.0">
+			<anim anim_name="a_keypad_standact_pressfast_leftup"></anim>
+		</point>
+		<point x="1.0" y="-1.0">
+			<anim anim_name="a_keypad_standact_pressfast_leftdown"></anim>
+		</point>
+	</anim_grid>
+</derived_file>

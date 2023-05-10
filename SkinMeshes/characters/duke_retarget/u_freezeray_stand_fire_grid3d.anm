@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_expr name="u_freezeray_stand_fire_grid3d">
+		<anim anim_name="u_freezeray_stand_grid" op="replace" control_grid="true"></anim>
+		<anim anim_name="u_freezeray_stand_fire" op="replace" time="true"></anim>
+	</anim_expr>
+</derived_file>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_expr name="mp_a_freezeray_stand_movefwd">
+		<anim anim_name="mp_b_stand_movefwd" op="replace" time="true"></anim>
+		<anim anim_name="mp_u_freezeray_stand_movefwd" op="replace"></anim>
+	</anim_expr>
+</derived_file>

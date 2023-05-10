@@ -12,6 +12,7 @@
 UObject* IceSpawnManager = nullptr;
 
 void InitDirect3D(void);
+void InitAnimation(void);
 
 __declspec(dllimport) extern int g_LoadScreenInputReceived;
 
@@ -202,6 +203,13 @@ void __fastcall UObject_Destroy(void* _this, void* edx)
 	UObject_DestroyActual(_this, edx);
 }
 
+void (__fastcall* UMesh__PreloadMeshesActual)(void *__this);
+void __fastcall UMesh__PreloadMeshes(void* __this)
+{
+	
+}
+
+
 void* (__fastcall* UObject__FindFunctionCheckedActual)(UObject* _this, const dnName& functionName, int unknown);
 void *__fastcall UObject__FindFunctionChecked(UObject* _this, const dnName& functionName, int unknown)
 {
@@ -263,6 +271,14 @@ void InitDNFHooks()
 	MH_Initialize();
 
 	InitDirect3D();
+
+	InitAnimation();
+
+	//if (MH_CreateHookApi(TEXT("engine.dll"), MAKEINTRESOURCEA(9874), UMesh__PreloadMeshes, (LPVOID*)&UMesh__PreloadMeshesActual) != MH_OK) {
+	//	_asm {
+	//		int 3
+	//	}
+	//}
 
 	if (MH_CreateHookApi(TEXT("engine.dll"), MAKEINTRESOURCEA(6736), UObject__FindFunctionChecked, (LPVOID*)&UObject__FindFunctionCheckedActual) != MH_OK) {
 		_asm {

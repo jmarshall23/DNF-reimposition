@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_expr name="a_act_attack_straight_02_grid3d">
+		<anim anim_name="a_act_aimgrid" op="replace" control_grid="true"></anim>
+		<anim anim_name="a_act_aimgrid" op="subtract" no_remove="true"></anim>
+		<anim anim_name="a_act_attack_straight_02" op="add" time="true"></anim>
+	</anim_expr>
+</derived_file>

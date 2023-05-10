@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+  <anim_expr name="a_sign_pen_color_grid3d">
+    <anim anim_name="a_sign_idle_grid3d" op="replace" control_grid="true"></anim>
+    <anim anim_name="a_sign_aimgrid_center" op="subtract" no_remove="true"></anim>
+    <anim anim_name="a_sign_pen_color_change" op="add" time="true"></anim>
+  </anim_expr>
+</derived_file>
+

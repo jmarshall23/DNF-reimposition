@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_grid name="a_energyleech_strengthtap_grid3d" axis_x="1" axis_y="0">
+		<point x="-1.0" y="0.0">
+			<anim anim_name="a_energyleech_strengthtap_start"></anim>
+		</point>
+		<point x="0.0" y="0.0">
+			<anim anim_name="a_energyleech_strengthtap_mid"></anim>
+		</point>
+		<point x="1.0" y="0.0">
+			<anim anim_name="a_energyleech_strengthtap_end"></anim>
+		</point>
+	</anim_grid>
+</derived_file>
+

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_grid name="mp_u_machinegun_crouch_reload_grid3d" axis_x="0" axis_y="1">
+		<point x="0.0" y="1.0">
+			<anim anim_name="mp_u_machinegun_crouch_reload_high_01"></anim>
+		</point>
+		<point x="0.0" y="0.0">
+			<anim anim_name="mp_u_machinegun_crouch_reload_01"></anim>
+		</point>
+		<point x="0.0" y="-1.0">
+			<anim anim_name="mp_u_machinegun_crouch_reload_low_01"></anim>
+		</point>
+	</anim_grid>
+</derived_file>
+

@@ -76,13 +76,17 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>DNMODICE_API=__declspec(dllexport);WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalIncludeDirectories>../../dxsdk/include</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>../../System/dnModIce.dll</OutputFile>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -161,11 +165,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\D3D9Drv\Src\dnDirect3DDriver.cpp" />
+    <ClCompile Include="..\..\dnAnimation\Src\dnAnimation.cpp" />
     <ClCompile Include="dnIceMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\..\dukeed\MinHook.x86.lib" />
     <Library Include="..\..\dukeed\uehook\D3DDrv9.lib" />
+    <Library Include="..\..\dukeed\uehook\dnAnimation.lib" />
     <Library Include="..\..\dukeed\uehook\dnCommon.lib" />
     <Library Include="..\..\dukeed\uehook\Editor.lib" />
     <Library Include="..\..\dukeed\uehook\engine.lib" />

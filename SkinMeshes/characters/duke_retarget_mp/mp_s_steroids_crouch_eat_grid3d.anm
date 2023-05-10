@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_grid name="mp_s_steroids_crouch_eat_grid3d" axis_x="0" axis_y="1">
+		<point x="0.0" y="1.0">
+			<anim anim_name="mp_s_steroids_crouch_eat_high"></anim>
+		</point>
+		<point x="0.0" y="0.0">
+			<anim anim_name="mp_s_steroids_crouch_eat"></anim>
+		</point>
+		<point x="0.0" y="-1.0">
+			<anim anim_name="mp_s_steroids_crouch_eat_low"></anim>
+		</point>
+	</anim_grid>
+</derived_file>

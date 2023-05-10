@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_grid name="gp_a_explode_grid3d" axis_y="1">
+		<point x="0.0" y="-1.0">
+			<anim anim_name="gp_a_idle_explode"></anim>
+		</point>
+		<point x="0.0" y="1.0">
+			<anim anim_name="gp_a_bulge_explode"></anim>
+		</point>
+	</anim_grid>
+</derived_file>

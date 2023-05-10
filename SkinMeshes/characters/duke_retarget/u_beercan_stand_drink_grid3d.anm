@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_expr name="u_beercan_stand_drink_grid3d">
+		<anim anim_name="u_noweapon_stand_grid" op="replace" control_grid="true"></anim>
+		<anim anim_name="u_beercan_stand_drink" op="replace" time="true"></anim>
+	</anim_expr>
+</derived_file>

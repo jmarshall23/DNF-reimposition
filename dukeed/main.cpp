@@ -650,6 +650,23 @@ void ReroutedOutput6(void* log, int type, char* str, ...)
 	printf("%s\n", buffer);
 }
 
+int *(__fastcall* dnfDnCommon__DnFileReader__Init)(void *_this, void *edx, const wchar_t*path , struct dnFileMgr *mgr, unsigned int val);
+int *__fastcall DnCommon__DnFileReader__Init(void* _this, void* edx, const wchar_t* path, struct dnFileMgr *mgr, unsigned int val) {
+	
+	int *_archive = dnfDnCommon__DnFileReader__Init(_this, edx, path, mgr, val);
+
+	if (_archive == nullptr)
+	{
+		OutputDebugStringW(TEXT("Failed to open: "));
+		OutputDebugStringW(path);
+		OutputDebugStringW(TEXT("\n"));
+		wprintf(TEXT("Failed to open %s\n"), path);
+	}
+
+	return _archive;
+}
+
+
 void CatchGearboxFunkyCode()
 {
 	MessageBoxA(nullptr, "fucked up exit", "fuck up exit", 0);
@@ -693,6 +710,12 @@ void InitDNFHooks()
 
 
 	HINSTANCE hinst = LoadLibraryA("dncommon.dll");
+
+	void* dnarchive_init = GetProcAddress(hinst, MAKEINTRESOURCEA(870));
+	{
+		MH_CreateHook(dnarchive_init, DnCommon__DnFileReader__Init, (LPVOID*)&dnfDnCommon__DnFileReader__Init);
+		MH_EnableHook(dnarchive_init);
+	}
 
 
 	void* dnOutputArgList = GetProcAddress(hinst, MAKEINTRESOURCEA(971));

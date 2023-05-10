@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_expr name="a_fists_jetpack_moveup">
+		<anim anim_name="b_jetpack_moveup" op="replace" time="true"></anim>
+		<anim anim_name="u_fists_stand_idle" op="replace"></anim>
+	</anim_expr>
+</derived_file>

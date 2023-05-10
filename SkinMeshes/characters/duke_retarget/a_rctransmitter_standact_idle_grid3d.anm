@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_expr name="a_rctransmitter_standact_idle_grid3d">
+    <anim anim_name="a_rctransmitter_standact_lookcenter" op="replace" time="true"></anim>
+    <anim anim_name="u_rctransmitter_standact_lookgrid" op="replace" control_grid="true"></anim>		
+	</anim_expr>
+</derived_file>

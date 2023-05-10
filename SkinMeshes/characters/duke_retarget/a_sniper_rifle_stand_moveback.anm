@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_expr name="a_sniper_rifle_stand_moveback">
+		<anim anim_name="b_stand_moveback" op="replace" time="true"></anim>
+		<anim anim_name="u_sniper_rifle_stand_moveback" op="replace"></anim>
+	</anim_expr>
+</derived_file>

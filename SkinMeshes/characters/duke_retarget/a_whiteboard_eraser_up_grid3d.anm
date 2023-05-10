@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_expr name="a_whiteboard_eraser_up_grid3d">
+		<anim anim_name="a_whiteboard_eraser_aim_grid3d" op="replace" control_grid="true"></anim>
+		<anim anim_name="a_whiteboard_eraser_posegrid_01" op="subtract" no_remove="true"></anim>
+		<anim anim_name="a_whiteboard_eraser_up" op="add" time="true"></anim>
+	</anim_expr>
+</derived_file>

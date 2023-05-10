@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_expr name="a_fists_swim_idle">
+		<anim anim_name="b_swim_idle" op="replace" time="true"></anim>
+		<anim anim_name="u_fists_stand_idle" op="replace"></anim>
+	</anim_expr>
+</derived_file>

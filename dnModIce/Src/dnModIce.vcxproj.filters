@@ -94,6 +94,9 @@
     <ClCompile Include="..\..\D3D9Drv\Src\dnDirect3DDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\dnAnimation\Src\dnAnimation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\..\dukeed\MinHook.x86.lib">
@@ -109,6 +112,9 @@
       <Filter>Resource Files</Filter>
     </Library>
     <Library Include="..\..\dukeed\uehook\D3DDrv9.lib">
+      <Filter>Resource Files</Filter>
+    </Library>
+    <Library Include="..\..\dukeed\uehook\dnAnimation.lib">
       <Filter>Resource Files</Filter>
     </Library>
   </ItemGroup>

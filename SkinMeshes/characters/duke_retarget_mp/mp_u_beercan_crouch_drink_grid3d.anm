@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_expr name="mp_u_beercan_crouch_drink_grid3d">
+		<anim anim_name="mp_u_noweapon_crouch_grid" op="replace" control_grid="true"></anim>
+		<anim anim_name="mp_u_noweapon_crouch_grid_mid" op="subtract" no_remove="true"></anim>
+		<anim anim_name="mp_u_beercan_crouch_drink" op="add" time="true"></anim>
+	</anim_expr>
+</derived_file>

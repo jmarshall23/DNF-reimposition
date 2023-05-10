@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_grid name="hit_grid3d" axis_x="1" axis_y="1">
+		<point x="-1.0" y="1.0">
+			<anim anim_name="hit_01"></anim>
+		</point>
+		<point x="-1.0" y="0.0">
+			<anim anim_name="hit_02"></anim>
+		</point>
+		<point x="-1.0" y="-1.0">
+			<anim anim_name="hit_03"></anim>
+		</point>
+		<point x="0.0" y="-1.0">
+			<anim anim_name="hit_04"></anim>
+		</point>
+		<point x="1.0" y="-1.0">
+			<anim anim_name="hit_05"></anim>
+		</point>
+		<point x="1.0" y="0.0">
+			<anim anim_name="hit_06"></anim>
+		</point>
+		<point x="1.0" y="1.0">
+			<anim anim_name="hit_07"></anim>
+		</point>
+		<point x="0.0" y="1.0">
+			<anim anim_name="hit_08"></anim>
+		</point>
+    <point x="0.0" y="0.0">
+      <anim anim_name="hit_09"></anim>
+    </point>
+	</anim_grid>
+</derived_file>

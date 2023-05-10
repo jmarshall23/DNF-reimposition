@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+	<anim_expr name="mp_a_machinegun_jump_moveback">
+		<anim anim_name="mp_b_jump_moveback" op="replace" time="true"></anim>
+		<anim anim_name="mp_u_machinegun_stand_moveback" op="replace"></anim>
+	</anim_expr>
+</derived_file>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+
+  <anim_grid name="scr_duke_opendoor_idle_grid3d" axis_x="1" axis_y="0">
+
+    <point x="-1.0" y="0.0">
+      <anim anim_name="scr_duke_opendoor_idle_start"></anim>
+    </point>
+
+    <point x="0.0" y="0.0">
+      <anim anim_name="scr_duke_opendoor_idle_mid"></anim>
+    </point>    
+
+    <point x="1.0" y="0.0">
+      <anim anim_name="scr_duke_opendoor_idle_end"></anim>
+    </point>
+
+  </anim_grid>
+</derived_file>

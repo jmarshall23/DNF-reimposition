@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<derived_file version="0.0.0.1">
+
+  <anim_grid name="scr_astr_flight_tap_stage1_idle_grid3d" axis_x="1" axis_y="0">
+
+    <point x="-1.0" y="0.0">
+      <anim anim_name="scr_astr_flight_tap_stage1_idle"></anim>
+    </point>
+
+    <point x="1.0" y="0.0">
+      <anim anim_name="scr_astr_flight_tap_stage1_strengthtap_end"></anim>
+    </point>
+
+  </anim_grid>
+</derived_file>
