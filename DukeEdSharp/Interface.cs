@@ -12,13 +12,17 @@ namespace DukeEdSharp
 {
     public class EditorInterface
     {
-        static BrowserFrm browserFrm = new BrowserFrm();
-        static BrushScale brushScaleForm = new BrushScale();
-        static BrushProperties brushProperties = new BrushProperties();
-        static EditorMidiFrm midiFrm = new EditorMidiFrm();
+        static public EditorFrame mainFrm = new EditorFrame();
+        static public BrowserFrm browserFrm = new BrowserFrm();
+        static public BrushScale brushScaleForm = new BrushScale();
+        static public BrushProperties brushProperties = new BrushProperties();
+        static public EditorMidiFrm midiFrm = new EditorMidiFrm();
 
         public static int GWL_STYLE = -16;
         public static int WS_CHILD = 0x40000000;
+
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        public static extern void DukeSharp_RunLocalCommand(int Command, IntPtr hWnd);
 
         private static void SetFormParent(Form frm, IntPtr parentHandle)
         {
@@ -136,15 +140,9 @@ namespace DukeEdSharp
         [DllExport]
         public static IntPtr PostInit(IntPtr backgroundHolderHwnd)
         {
-            if(backgroundHolderHwnd == IntPtr.Zero)
-            {
-                browserFrm.Show();
-                browserFrm.Focus();
-
-                return IntPtr.Zero;
-            }
-
-            SetFormParent(midiFrm, backgroundHolderHwnd);
+            mainFrm.Show();
+            //SetFormParent(midiFrm, mainFrm.GetMainPanelHwnd());
+            mainFrm.DockMidiFrm(midiFrm);
             midiFrm.Show();
 
             SetFormParent(browserFrm, midiFrm.Handle);

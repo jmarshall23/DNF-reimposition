@@ -35,7 +35,6 @@ WBrowserActor* GBrowserActor = NULL;
 dnOuputDeviceString GetPropResult;
 WSurfacePropSheet* GSurfPropSheet = NULL;
 
-std::wstring currentMapName;
 
 WButtonBar* GButtonBar;
 
@@ -74,6 +73,12 @@ std::vector< VIEWPORTCONFIG> GViewports;
 UViewport* globalInitViewport = nullptr;
 WBottomBar* GBottomBar = nullptr;
 
+void ShowPropertySheet()
+{
+	//GSurfPropSheet->Show(TRUE);
+	//GSurfPropSheet->PropSheet->RefreshPages();
+}
+
 #if 0
 void WLevelFrame::FitViewportsToWindow()
 {
@@ -95,199 +100,8 @@ void WLevelFrame::FitViewportsToWindow()
 }
 #endif
 
-void FileOpen(HWND hWnd)
-{
-	//FileSaveChanges(hWnd);
 
-	OPENFILENAMEW ofn;
-	wchar_t File[255] = TEXT("\0");
 
-	ZeroMemory(&ofn, sizeof(OPENFILENAMEA));
-	ofn.lStructSize = sizeof(OPENFILENAMEA);
-	ofn.hwndOwner = hWnd;
-	ofn.lpstrFile = File;
-	ofn.nMaxFile = sizeof(File);
-	wchar_t Filter[255];
-	::wsprintf(Filter,
-		TEXT("DNF Map Files (*.%s)%c*.%s%cBuild Map Files (*.map)%c*.map%c%c"),
-		TEXT("dnf"),
-		'\0',
-		TEXT("dnf"),
-		'\0',
-		'\0',
-		'\0',
-		'\0',
-		'\0');
-	ofn.lpstrFilter = Filter;
-	//ofn.lpstrInitialDir = appToAnsi(*(GLastDir[eLASTDIR_DNF]));
-	ofn.lpstrDefExt = TEXT("dnf");
-	ofn.Flags = OFN_HIDEREADONLY | OFN_NOCHANGEDIR;
-
-	// NJS: Ensure the file actually exists:
-	ofn.Flags |= OFN_FILEMUSTEXIST | OFN_PATHMUSTEXIST;
-
-	// Display the Open dialog box. 
-	if (GetOpenFileNameW(&ofn))
-	{
-		if (wcsstr(File, TEXT(".MAP")) || wcsstr(File, TEXT(".map")))
-		{
-			std::wstring fullPath = File;
-			std::wstring base_filename = fullPath.substr(fullPath.find_last_of(TEXT("/\\")) + 1);
-
-			size_t lastindex = base_filename.find_last_of(TEXT("."));
-			std::wstring rawname = base_filename.substr(0, lastindex);
-
-			wchar_t mapExecString[512];
-			wsprintf(mapExecString, TEXT("OPENBUILD %s"), rawname.c_str());
-
-			skipLogging = true;
-			GEditor->exec.Exec(mapExecString, (dnOutputDevice&)globalLog);
-			skipLogging = false;
-
-			UClass* _cls = FindObject<UClass>(ANY_PACKAGE, TEXT("SM_InvisibleCollisionHull"));
-			UClass* _brushClass = FindObject<UClass>(ANY_PACKAGE, TEXT("Brush"));
-			ULevel* _level = GEditor->GetLevel();
-		
-			dnArray<UObject*>* _actors = (dnArray<UObject*> *)GEditor->GetActorList();
-		THIS_IS_DUMB:
-			for (int i = 2; i < _actors->Num(); i++)
-			{
-				if (_actors->Get(i) == nullptr)
-					continue;
-
-				if (_actors->Get(i)->IsA(_brushClass))
-				{
-					ABrush* brush = (ABrush*)_actors->Get(i);
-
-					if (brush->GetCSGFlags() != 2)
-					{
-						GEditor->GetLevel()->DestroyActor((AActor*)_actors->Get(i), 0);
-					}
-				}
-				else
-				{
-					GEditor->GetLevel()->DestroyActor((AActor*)_actors->Get(i), 0);
-				}
-			}
-
-			for (int i = 2; i < _actors->Num(); i++)
-			{
-				if (_actors->Get(i) == nullptr)
-					continue;
-
-				if (_actors->Get(i)->IsA(_brushClass))
-				{
-					ABrush* brush = (ABrush*)_actors->Get(i);
-
-					if (brush->GetCSGFlags() == 2)
-					{
-						GEditor->bspBrushCSG(brush, GEditor->GetLevelModel(), 0, (ECsgOper)2, 0, 0);
-					}
-				}
-			}
-
-			GEditor->bspRepartition(GEditor->GetLevelModel(), 0, 0);
-
-			FLOAT UU = 0;
-			FLOAT VV = 0;
-			FLOAT UV = 1;
-			FLOAT VU = -1;
-
-			GEditor->exec.Exec(TEXT("POLY SELECT ALL"));
-			GEditor->exec.Exec(VAPrintf(TEXT("POLY TEXMULT UU=%f VV=%f UV=%f VU=%f"), UU, VV, UV, VU).c_str());
-
-			return;
-		}
-
-		wchar_t mapExecString[512];
-
-		wsprintf(mapExecString, TEXT("MAP LOAD FILE=\"%s\""), File);
-
-		// Make sure there's a level frame open.
-		//GEditorFrame->OpenLevelView();
-
-		collectGarbage = false;
-
-		// Convert the ANSI filename to UNICODE, and tell the editor to open it.
-		//GLevelFrame->SetMapFilename(File);
-		currentMapName = File;
-		GEditor->exec.Exec(mapExecString, (dnOutputDevice &)globalLog);
-
-		collectGarbage = true;
-
-		//FString S = GLevelFrame->GetMapFilename();
-		//GMRUList->AddItem(GLevelFrame->GetMapFilename());
-		//GMRUList->AddToMenu(hWnd, GMainMenu, 1);
-		//
-		//GLastDir[eLASTDIR_DNF] = S.Left(S.InStr(TEXT("\\"), 1));
-		//
-		//GMRUList->AddItem(GLevelFrame->GetMapFilename());
-		//GMRUList->AddToMenu(hWnd, GMainMenu, 1);
-	}
-
-	// Make sure that the browsers reflect any new data the map brought with it.
-	//RefreshEditor();
-	GButtonBar->RefreshBuilders();
-	//RefreshOptionProxies();
-
-	//GFileManager->SetDefaultDirectory(appBaseDir());
-}
-
-void FileSaveAs(HWND hWnd)
-{
-	// Make sure we have a level loaded...
-
-	OPENFILENAMEW ofn;
-	wchar_t File[8192], * pFilename;
-	TCHAR l_chCmd[255];
-
-	pFilename = (wchar_t *)currentMapName.c_str();
-	wcscpy(File, pFilename);
-
-	ZeroMemory(&ofn, sizeof(OPENFILENAMEA));
-	ofn.lStructSize = sizeof(OPENFILENAMEA);
-	ofn.hwndOwner = hWnd;
-	ofn.lpstrFile = File;
-	ofn.nMaxFile = sizeof(wchar_t) * 8192;
-	wchar_t Filter[255];
-	::wsprintf(Filter,
-		TEXT("Map Files (*.%s)%c*.%s%cAll Files%c*.*%c%c"),
-		TEXT("dnf"),
-		'\0',
-		TEXT("dnf"),
-		'\0',
-		'\0',
-		'\0',
-		'\0');
-	ofn.lpstrFilter = Filter;
-	//ofn.lpstrInitialDir = appToAnsi(*(GLastDir[eLASTDIR_DNF]));
-	ofn.lpstrDefExt = TEXT("dnf");
-	ofn.Flags = OFN_HIDEREADONLY | OFN_NOCHANGEDIR | OFN_OVERWRITEPROMPT;
-
-	// Display the Open dialog box. 
-	if (GetSaveFileNameW(&ofn))
-	{
-		// Convert the ANSI filename to UNICODE, and tell the editor to open it.
-		//GEditor->Exec(TEXT("BRUSHCLIP DELETE"));
-		//GEditor->Exec(TEXT("POLYGON DELETE"));
-		collectGarbage = false;
-
-		wsprintf(l_chCmd, TEXT("MAP SAVE FILE=\"%s\""), File);
-		GEditor->exec.Exec(l_chCmd, (dnOutputDevice &)globalLog);
-
-		collectGarbage = true;
-
-		// Save the filename.
-		//GLevelFrame->SetMapFilename(ANSI_TO_TCHAR(File));
-		//GMRUList->AddItem(GLevelFrame->GetMapFilename());
-		//GMRUList->AddToMenu(hWnd, GMainMenu, 1);
-		//
-		//FString S = ANSI_TO_TCHAR(File);
-		//GLastDir[eLASTDIR_DNF] = S.Left(S.InStr(TEXT("\\"), 1));
-	}
-
-	//GFileManager->SetDefaultDirectory(appBaseDir());
-}
 
 WTopBar* GTopBar;
 
@@ -396,229 +210,24 @@ public:
 	{
 		switch (Command)
 		{
-			case ID_FileNew:
-			{
-				//	FileSaveChanges(hWnd);
-					//WNewObject Dialog( NULL, this );
-					//UObject* Result = Dialog.DoModal();
-					//if( Cast<ULevel>(Result) )
-					//{
-				GEditor->exec.Exec(TEXT("MAP NEW"), (dnOutputDevice &)globalLog);
-				GButtonBar->RefreshBuilders();
-				//GLevelFrame->SetMapFilename(TEXT(""));
-				//OpenLevelView();
-				//GButtonBar->RefreshBuilders();
-				//RefreshOptionProxies();
-				//if (GBrowserGroup)
-				//	GBrowserGroup->RefreshGroupList();
-				////}
-			}
-			break;
+		case ID_ViewSurfaceProp:
+		{
+			GSurfPropSheet->Show(TRUE);
+			GSurfPropSheet->PropSheet->RefreshPages();
+		}
+		break;
 
-			case ID_FileOpen:
-				FileOpen(hWnd);
-				break;
-
-			case ID_BuildAll:
-			{
-				GEditor->exec.Exec(TEXT("MAP REBUILD VISIBLEONLY=0"), (dnOutputDevice&)globalLog);
-				GEditor->exec.Exec(TEXT("PATCH BUILD"), (dnOutputDevice&)globalLog);
-				GEditor->exec.Exec(TEXT("PATHS BUILD"), (dnOutputDevice&)globalLog);
-
-				
-			}
-			break;
-
-			case ID_BuildPlay:
-			{
-				GEditor->exec.Exec(TEXT("HOOK PLAYMAP"), (dnOutputDevice&)globalLog);
-			}
-			break;
-			case ID_FileSaveAs:
-			{
-				FileSaveAs(hWnd);
-			}
-			break;
-
-			case ID_BrowserActor:
-			{
-				//GBrowserMaster->ShowBrowser(eBROWSER_ACTOR);
-				dukeSharp.Init(nullptr);
-			}
-			break;
-
-			case ID_ViewSurfaceProp:
-			{
-				GSurfPropSheet->Show(TRUE);
-				GSurfPropSheet->PropSheet->RefreshPages();
-			}
-			break;
-
-			case 1973:
-			case WM_EDC_SELPOLYCHANGE:
-			case WM_EDC_SELCHANGE:
-			{
-				GSurfPropSheet->PropSheet->RefreshPages();
-			}
-			break;
-
-			case ID_EditDelete:
-			{
-				GEditor->exec.Exec(TEXT("ACTOR DELETE"), (dnOutputDevice&)globalLog);
-			}
-			break;
-
-			case WM_BROWSER_DOCK:
-			{
-				INT Browsr = LastlParam;
-				switch (Browsr)
-				{
-				case eBROWSER_ACTOR:
-					GBrowserActor = new WBrowserActor(TEXT("Actor Browser"), GBrowserMaster, GEditorFrame->hWnd);
-					GBrowserActor->OpenWindow(1);
-					GBrowserMaster->ShowBrowser(eBROWSER_ACTOR);
-					break;
-				}
-
-			}
-			break;
-
-			case WM_BROWSER_UNDOCK:
-			{
-				INT Browsr = LastlParam;
-				switch (Browsr)
-				{
-				case eBROWSER_ACTOR:
-					GBrowserActor = new WBrowserActor(TEXT("Actor Browser"), GEditorFrame, GEditorFrame->hWnd);
-					GBrowserActor->OpenWindow(0);
-					GBrowserMaster->ShowBrowser(eBROWSER_ACTOR);
-					break;
-				}
-
-
-				GBrowserMaster->RefreshBrowserTabs(-1);
-			}
-			break;
-
-			case ID_ViewLevelProp:
-			{
-				GEditor->exec.Exec(TEXT("LEVELPROPERTIES"), (dnOutputDevice &)globalLog);
-			}
-			break;
-
-			case ID_BrushScale:
-			{
-				dukeSharp.ShowBrushScaleDialog();
-			}
-			break;
-
-			case ID_FILE_IMPORT:
-			{
-				OPENFILENAMEW ofn;
-				wchar_t File[8192] = TEXT("\0");
-
-				ZeroMemory(&ofn, sizeof(OPENFILENAMEA));
-				ofn.lStructSize = sizeof(OPENFILENAMEA);
-				ofn.hwndOwner = hWnd;
-				ofn.lpstrFile = File;
-				ofn.nMaxFile = sizeof(char) * 8192;
-				ofn.lpstrFilter = TEXT("Unreal Engine Text (*.t3d)\0*.t3d\0All Files\0*.*\0\0");
-				//ofn.lpstrInitialDir = appToAnsi(*(GLastDir[eLASTDIR_DNF]));
-				ofn.lpstrDefExt = TEXT("t3d");
-				ofn.lpstrTitle = TEXT("Import Map");
-				ofn.Flags = OFN_HIDEREADONLY | OFN_NOCHANGEDIR;
-
-				// Display the Open dialog box.
-				//GEditor->LockMeshView = 1;
-				if (GetOpenFileNameW(&ofn))
-				{
-					TCHAR l_chCmd[512];
-					wsprintf(l_chCmd, TEXT("MAP IMPORT FILE=\"%s\""), File);
-					collectGarbage = false;
-					GEditor->exec.Exec(l_chCmd, (dnOutputDevice&)globalLog);
-					collectGarbage = true;
-				}
-			}
-			break;
-
-			case ID_FILE_EXPORT:
-			{
-				OPENFILENAMEW ofn;
-				wchar_t File[8192] = TEXT("\0");
-
-				ZeroMemory(&ofn, sizeof(OPENFILENAMEA));
-				ofn.lStructSize = sizeof(OPENFILENAMEA);
-				ofn.hwndOwner = hWnd;
-				ofn.lpstrFile = File;
-				ofn.nMaxFile = sizeof(char) * 8192;
-				ofn.lpstrFilter = TEXT("Unreal Engine Text (*.t3d)\0*.t3d\0Maya Ascii (*.ma)\0*.ma\0All Files\0*.*\0\0");
-				//ofn.lpstrInitialDir = appToAnsi(*(GLastDir[eLASTDIR_DNF]));
-				ofn.lpstrDefExt = TEXT("t3d");
-				ofn.lpstrTitle = TEXT("Export Map");
-				ofn.Flags = OFN_HIDEREADONLY | OFN_NOCHANGEDIR | OFN_OVERWRITEPROMPT;
-
-				if (GetSaveFileNameW(&ofn))
-				{
-					//GEditor->exec.Exec(TEXT("BRUSHCLIP DELETE"));
-					//GEditor->exec.Exec(TEXT("POLYGON DELETE"));
-
-					TCHAR l_chCmd[512];
-					wsprintf(l_chCmd, TEXT("MAP EXPORT FILE=\"%s\""), File);
-					GEditor->exec.Exec(l_chCmd, (dnOutputDevice&)globalLog);
-				}
-			}
-			break;
-
-			case ID_EditDuplicate:
-			{
-				GEditor->exec.Exec(TEXT("EDIT DUPLICATE"), (dnOutputDevice&)globalLog);
-			}
-			break;
-
-			case ID_EditSelectAllActors:
-			{
-				GEditor->exec.Exec(TEXT("ACTOR SELECT ALL"), (dnOutputDevice&)globalLog);
-			}
-			break;
-
-			case ID_EditSelectAllSurfs:
-			{
-				GEditor->exec.Exec(TEXT("POLY SELECT ALL"), (dnOutputDevice&)globalLog);
-			}
-			break;
-
-			//case ID_EditUndo:
-			//{
-			//	GEditor->exec.Exec(TEXT("TRANSACTION UNDO"), (dnOutputDevice&)globalLog);
-			//}
-			//break;
-			//
-			//case ID_EditRedo:
-			//{
-			//	GEditor->exec.Exec(TEXT("TRANSACTION REDO"), (dnOutputDevice&)globalLog);
-			//}
-			//break;
-			//
-			//case ID_EditCut:
-			//{
-			//	GEditor->exec.Exec(TEXT("EDIT CUT"), (dnOutputDevice&)globalLog);
-			//}
-			//break;
-			//
-			//case ID_EditCopy:
-			//{
-			//	GEditor->exec.Exec(TEXT("EDIT COPY"), (dnOutputDevice&)globalLog);
-			//}
-			//break;
-			//
-			//case ID_EditPaste:
-			//{
-			//	GEditor->exec.Exec(TEXT("EDIT PASTE"), (dnOutputDevice&)globalLog);
-			//}
-			//break;
+		case 1973:
+		case WM_EDC_SELPOLYCHANGE:
+		case WM_EDC_SELCHANGE:
+		{
+			GSurfPropSheet->PropSheet->RefreshPages();
+		}
+		break;
 		}
  	}
 };
+
 
 WNDPROC WMdiClient::SuperProc = nullptr;
 WNDPROC WLabel::SuperProc = nullptr;
@@ -679,28 +288,28 @@ void InitEditor(void)
 	IMPLEMENT_WINDOWCLASS(WPageFlags, CS_DBLCLKS);
 	//IMPLEMENT_WINDOWCLASS(WPageAlignment, CS_DBLCLKS);
 
-	static WEditorFrame Frame(TEXT("EditorFrame"));
-	GEditorFrame = &Frame;
-
-	Frame.OpenWindow();
-	InvalidateRect(Frame.hWnd, NULL, 1);
-	UpdateWindow(Frame.hWnd);	
+	//static WEditorFrame Frame(TEXT("EditorFrame"));
+	//GEditorFrame = &Frame;
+	//Frame.OpenWindow();
+	//Frame.Show(FALSE);
+	//InvalidateRect(Frame.hWnd, NULL, 1);
+	//UpdateWindow(Frame.hWnd);	
 
 	//GBottomBar = new WBottomBar(TEXT("BottomBar"), &Frame.BottomFrame);
 	//GBottomBar->OpenWindow();
 	//Frame.BottomFrame.Dock(GBottomBar);
 	//Frame.BottomFrame.OnSize(SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE, 0, 0);
 
-	GTopBar = new WTopBar(TEXT("TopBar"), &Frame.TopFrame);
-	GTopBar->OpenWindow();
-	Frame.TopFrame.Dock(GTopBar);
-	Frame.TopFrame.OnSize(SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE, 0, 0);	
+	//GTopBar = new WTopBar(TEXT("TopBar"), &Frame.TopFrame);
+	//GTopBar->OpenWindow();
+	//Frame.TopFrame.Dock(GTopBar);
+	//Frame.TopFrame.OnSize(SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE, 0, 0);	
 
 	// Toolbar.
-	GButtonBar = new WButtonBar(TEXT("EditorToolbar"), &Frame.LeftFrame);
-	GButtonBar->OpenWindow();
-	Frame.LeftFrame.Dock(GButtonBar);
-	Frame.LeftFrame.OnSize(SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE, 0, 0);
+	//GButtonBar = new WButtonBar(TEXT("EditorToolbar"), &Frame.LeftFrame);
+	//GButtonBar->OpenWindow();
+	//Frame.LeftFrame.Dock(GButtonBar);
+	//Frame.LeftFrame.OnSize(SWP_FRAMECHANGED | SWP_NOMOVE | SWP_NOSIZE, 0, 0);
 
 	// Load initial data from templates
 	for (int x = 0; x < GViewports.size(); x++)
@@ -712,7 +321,7 @@ void InitEditor(void)
 			GViewports[x].PctBottom = GTemplateViewportConfigs[GViewportConfig][x].PctBottom;
 		}
 
-	Frame.OpenLevelView();
+	//Frame.OpenLevelView();
 
 	//GBrowserMaster = new WBrowserMaster(TEXT("Master Browser"), GEditorFrame);
 	//GBrowserMaster->OpenWindow(0);
@@ -732,14 +341,17 @@ void InitEditor(void)
 	//SendMessageW(GEditorFrame->hWnd, WM_COMMAND, WM_BROWSER_UNDOCK, eBROWSER_ACTOR);
 	//GBrowserActor->Show(eBROWSER_ACTOR);
 
-	GMainMenu = LoadMenuA(*hinstWindowHack, MAKEINTRESOURCEA(IDMENU_MainMenu));
-	SetMenu(Frame.hWnd, GMainMenu);
+	//GMainMenu = LoadMenuA(*hinstWindowHack, MAKEINTRESOURCEA(IDMENU_MainMenu));
+	//SetMenu(Frame.hWnd, GMainMenu);
 
-	 _mainParentHwnd = dukeSharp.Init(Frame.BackgroundHolder.OwnerWindow->hWnd);
+	 _mainParentHwnd = dukeSharp.Init(nullptr);
 
-	GSurfPropSheet = new WSurfacePropSheet(TEXT("Surface Properties"), GEditorFrame);
-	GSurfPropSheet->OpenWindow();
-	GSurfPropSheet->Show(FALSE);
+	//GSurfPropSheet = new WSurfacePropSheet(TEXT("Surface Properties"), nullptr);
+	//GSurfPropSheet->OpenWindow();
+	//GSurfPropSheet->Show(FALSE);
+	//SetParent(GSurfPropSheet->hWnd, _mainParentHwnd);
+
+	
 
 //	GDnExec->Exec(TEXT("r_AllowAlwaysVisible 1"), (dnOutputDevice&)globalLog);
 

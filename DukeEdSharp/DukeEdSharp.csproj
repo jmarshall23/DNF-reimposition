@@ -75,6 +75,12 @@
     <Compile Include="BrushScale.Designer.cs">
       <DependentUpon>BrushScale.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditorFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditorFrame.Designer.cs">
+      <DependentUpon>EditorFrame.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditorMidiFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,11 @@
     </Compile>
     <Compile Include="Interface.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="StaticMeshImportFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,8 +129,15 @@
     <EmbeddedResource Include="BrushScale.resx">
       <DependentUpon>BrushScale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditorFrame.resx">
+      <DependentUpon>EditorFrame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditorMidiFrm.resx">
       <DependentUpon>EditorMidiFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="StaticMeshImportFrm.resx">
       <DependentUpon>StaticMeshImportFrm.cs</DependentUpon>
@@ -138,6 +156,55 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\AddAntiPortal.bmp" />
+    <None Include="Resources\AddMover.bmp" />
+    <None Include="Resources\AddSpecial.bmp" />
+    <None Include="Resources\BBCone.bmp" />
+    <None Include="Resources\BBCube.bmp" />
+    <None Include="Resources\BBCurvedStair.bmp" />
+    <None Include="Resources\BBCylinder.bmp" />
+    <None Include="Resources\BBGeneric.bmp" />
+    <None Include="Resources\BBLinearStair.bmp" />
+    <None Include="Resources\BBSheet.bmp" />
+    <None Include="Resources\BBSphere.bmp" />
+    <None Include="Resources\BBSpiralStair.bmp" />
+    <None Include="Resources\BBTerrain.bmp" />
+    <None Include="Resources\BBVolumetric.bmp" />
+    <None Include="Resources\BrushClip.bmp" />
+    <None Include="Resources\BrushClipDelete.bmp" />
+    <None Include="Resources\BrushClipFlip.bmp" />
+    <None Include="Resources\BrushClipSplit.bmp" />
+    <None Include="Resources\HideSelected.bmp" />
+    <None Include="Resources\InvertSelections.bmp" />
+    <None Include="Resources\ModeAdd.bmp" />
+    <None Include="Resources\ModeAddHardware.bmp" />
+    <None Include="Resources\ModeAddStaticMesh.bmp" />
+    <None Include="Resources\ModeAddVolume.bmp" />
+    <None Include="Resources\ModeBrushClip.bmp" />
+    <None Include="Resources\ModeCamera.bmp" />
+    <None Include="Resources\ModeDeintersect.bmp" />
+    <None Include="Resources\ModeFaceDrag.bmp" />
+    <None Include="Resources\ModeGeometry.bmp" />
+    <None Include="Resources\ModeIntersect.bmp" />
+    <None Include="Resources\ModeMatinee.bmp" />
+    <None Include="Resources\ModePolygon.bmp" />
+    <None Include="Resources\ModeRotate.bmp" />
+    <None Include="Resources\ModeScale.bmp" />
+    <None Include="Resources\ModeSubtract.bmp" />
+    <None Include="Resources\ModeTerrainEdit.bmp" />
+    <None Include="Resources\ModeVertex.bmp" />
+    <None Include="Resources\ShowAll.bmp" />
+    <None Include="Resources\ShowSelected.bmp" />
+    <None Include="Resources\TexturePan.bmp" />
+    <None Include="Resources\TextureRotate.bmp" />
+    <None Include="Res\Bitmap414.bmp" />
+    <None Include="Res\Bitmap415.bmp" />
+    <None Include="Res\Bitmap416.bmp" />
+    <None Include="Res\Bitmap121.bmp" />
+    <None Include="Res\Bitmap418.bmp" />
+    <None Include="Res\Bitmap419.bmp" />
+    <None Include="Res\Bitmap417.bmp" />
+    <None Include="Res\Bitmap420.bmp" />
     <Content Include="Steps to publish package to NuGet.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

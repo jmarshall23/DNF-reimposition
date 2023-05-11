@@ -15,3 +15,4 @@ EXPORTS
 	DukeSharp__ResizeViewport @13
 	DukeSharp_RemoveCollisionAndPortalsBeta @14
 	DukeSharp_SetViewportType @15
+	DukeSharp_RunLocalCommand @16
