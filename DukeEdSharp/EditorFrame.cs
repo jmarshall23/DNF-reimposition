@@ -31,6 +31,31 @@ namespace DukeEdSharp
             menuStrip1.ForeColor = Color.White;
 
             wireframeViews = new WireframeViews();
+
+            this.KeyDown += EditorFrame_KeyDown;
+            this.KeyPreview = true;
+        }
+
+        private void EditorFrame_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.F4:
+                    EditorInterface.DukeSharp_Exec("TOGGLEEVENTLINES");
+                    break;
+
+                case Keys.F5:
+                    EditorInterface.DukeSharp_Exec("TOGGLEWORKINGBRUSH");
+                    break;
+
+                case Keys.F7:
+                    EditorInterface.DukeSharp_RemoveCollisionAndPortalsBeta();
+                    break;
+
+                case Keys.Delete:
+                    EditorInterface.DukeSharp_Exec("ACTOR DELETE");
+                    break;
+            }
         }
 
         public void Init()

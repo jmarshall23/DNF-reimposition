@@ -46,7 +46,7 @@ namespace DukeEdSharp
 
         private void EditorMidiFrm_KeyDown(object sender, KeyEventArgs e)
         {
-            switch(e.KeyCode)
+            switch (e.KeyCode)
             {
                 case Keys.F4:
                     EditorInterface.DukeSharp_Exec("TOGGLEEVENTLINES");
@@ -63,7 +63,7 @@ namespace DukeEdSharp
                 case Keys.Delete:
                     EditorInterface.DukeSharp_Exec("ACTOR DELETE");
                     break;
-            }           
+            }
         }
 
         private void Panel_xy_Paint(object sender, PaintEventArgs e)
