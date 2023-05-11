@@ -16,7 +16,8 @@ namespace DukeEdSharp
         static public BrowserFrm browserFrm = new BrowserFrm();
         static public BrushScale brushScaleForm = new BrushScale();
         static public BrushProperties brushProperties = new BrushProperties();
-        static public EditorMidiFrm midiFrm = new EditorMidiFrm();
+        //static public EditorMidiFrm midiFrm = new EditorMidiFrm();
+        static public ViewportFrm mainViewportFrm = new ViewportFrm();
 
         public static int GWL_STYLE = -16;
         public static int WS_CHILD = 0x40000000;
@@ -178,27 +179,34 @@ namespace DukeEdSharp
         [DllExport]
         public static void EditorResize(int width, int height)
         {
-            midiFrm.WindowState = FormWindowState.Normal;
-            midiFrm.Size = new System.Drawing.Size(width, height);
-            midiFrm.WindowState = FormWindowState.Maximized;
+            mainViewportFrm.WindowState = FormWindowState.Normal;
+            mainViewportFrm.Size = new System.Drawing.Size(width, height);
+            mainViewportFrm.WindowState = FormWindowState.Maximized;
         }
 
         [DllExport]
         public static IntPtr PostInit(IntPtr backgroundHolderHwnd)
         {
             mainFrm.Show();
-            //SetFormParent(midiFrm, mainFrm.GetMainPanelHwnd());
-            mainFrm.DockMidiFrm(midiFrm);
-            midiFrm.Show();
+            //
+            mainFrm.DockMidiFrm(mainViewportFrm);
+            mainViewportFrm.Show();
 
-            SetFormParent(browserFrm, midiFrm.Handle);
-            SetFormParent(brushScaleForm, midiFrm.Handle);
-            SetFormParent(brushProperties, midiFrm.Handle);
+            mainViewportFrm.SetRendMap(5);
+
+            //SetFormParent(browserFrm, mainFrm.GetMainPanelHwnd());
+
+            mainFrm.Init();
+            mainFrm.AttachBrowserFrm(browserFrm);
+
+            //SetFormParent(browserFrm, mainViewportFrm.Handle);
+            //SetFormParent(brushScaleForm, mainViewportFrm.Handle);
+            //SetFormParent(brushProperties, mainViewportFrm.Handle);
 
             browserFrm.Show();
             browserFrm.Focus();                        
 
-            return midiFrm.Handle;
+            return mainViewportFrm.Handle;
         }
 
         [DllExport]

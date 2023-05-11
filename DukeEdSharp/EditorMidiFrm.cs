@@ -185,5 +185,10 @@ namespace DukeEdSharp
         {
             EditorInterface.DukeSharp_Exec("MAP GRID X=256 Y=256 Z=256");
         }
+
+        private void panel_xy_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

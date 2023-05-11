@@ -12,6 +12,8 @@ namespace DukeEdSharp
 {
     public partial class EditorFrame : Form
     {
+        WireframeViews wireframeViews;
+
         public EditorFrame()
         {
             InitializeComponent();
@@ -27,6 +29,21 @@ namespace DukeEdSharp
                                   ref pvAttribute, sizeof(uint));
 
             menuStrip1.ForeColor = Color.White;
+
+            wireframeViews = new WireframeViews();
+        }
+
+        public void Init()
+        {
+            wireframeViews.Init();
+            wireframeViews.Show();            
+        }
+
+        public void AttachBrowserFrm(BrowserFrm frm)
+        {
+            frm.TopLevel = false;
+            splitContainer2.Panel2.Controls.Add(frm);
+            frm.Dock = DockStyle.Fill;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -41,7 +58,7 @@ namespace DukeEdSharp
             EditorInterface.EditorResize(BackPanel.Width, BackPanel.Height);
         }
 
-        public void DockMidiFrm(EditorMidiFrm frm)
+        public void DockMidiFrm(Form frm)
         {
             frm.TopLevel = false;
             BackPanel.Controls.Add(frm);
@@ -258,6 +275,86 @@ namespace DukeEdSharp
         private void toolStripButton25_Click(object sender, EventArgs e)
         {
             EditorInterface.DukeSharp_Exec("MODE FACEDRAG");            
+        }
+
+        private void EditorFrame_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dynamicLightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditorInterface.mainViewportFrm.SetRenderDynamicLight();
+        }
+
+        private void texturedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditorInterface.mainViewportFrm.SetRenderTexture();
+        }
+
+        private void flatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditorInterface.mainViewportFrm.SetFlatRender();
+        }
+
+        private void wireframeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditorInterface.mainViewportFrm.SetWireframe();
+        }
+
+        private void zonesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditorInterface.mainViewportFrm.SetZonesOnly();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=1 Y=1 Z=1");
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=2 Y=2 Z=2");
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=4 Y=4 Z=4");
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=8 Y=8 Z=8");
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=16 Y=16 Z=16");
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=32 Y=32 Z=32");
+        }
+
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=64 Y=64 Z=64");
+        }
+
+        private void toolStripMenuItem9_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=128 Y=128 Z=128");
+        }
+
+        private void toolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MAP GRID X=256 Y=256 Z=256");
+        }
+
+        private void wireframeViewsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            wireframeViews.Show();
         }
     }
 }

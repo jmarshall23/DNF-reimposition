@@ -118,6 +118,12 @@
     <Compile Include="ViewportFrm.Designer.cs">
       <DependentUpon>ViewportFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WireframeViews.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WireframeViews.Designer.cs">
+      <DependentUpon>WireframeViews.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BrowserFrm.resx">
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewportFrm.resx">
       <DependentUpon>ViewportFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WireframeViews.resx">
+      <DependentUpon>WireframeViews.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

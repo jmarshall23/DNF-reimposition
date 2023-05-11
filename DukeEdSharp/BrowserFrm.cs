@@ -26,7 +26,7 @@ namespace DukeEdSharp
             textureListBox.DoubleClick += TextureListBox_DoubleClick;
             soundPackageListBox.DoubleClick += SoundPackageListBox_DoubleClick;
 
-          //  textureViewportHandle = EditorInterface.CreateTextureViewport(textureViewportPanel.Handle);
+            //  textureViewportHandle = EditorInterface.CreateTextureViewport(textureViewportPanel.Handle);
         }
 
         private void SoundPackageListBox_DoubleClick(object sender, EventArgs e)
