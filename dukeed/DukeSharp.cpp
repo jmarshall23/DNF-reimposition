@@ -500,6 +500,12 @@ void __stdcall DukeSharp_RunLocalCommand(int Command, HWND hWnd)
 	}
 	break;
 
+	case 19:
+	{
+		
+	}
+	break;
+
 	//case ID_EditUndo:
 	//{
 	//	GEditor->exec.Exec(TEXT("TRANSACTION UNDO"), (dnOutputDevice&)globalLog);

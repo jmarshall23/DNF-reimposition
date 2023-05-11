@@ -58,6 +58,7 @@ namespace DukeEdSharp
             this.selectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectAllActorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectAllSurfacesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectAllPolysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
@@ -70,6 +71,7 @@ namespace DukeEdSharp
             this.soundBrowserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.levelPropertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.surfacePropertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.brushToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buildToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,29 +98,29 @@ namespace DukeEdSharp
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.CreateSpiralStairsButton = new System.Windows.Forms.Button();
-            this.CreatePlaneButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.CreateStraightStairsButton = new System.Windows.Forms.Button();
-            this.CreateStairsButton = new System.Windows.Forms.Button();
-            this.ConeCreateButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton20 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton21 = new System.Windows.Forms.ToolStripButton();
             this.mi = new System.Windows.Forms.MenuItem();
-            this.selectAllPolysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.surfacePropertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton22 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton23 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton24 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton25 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -135,7 +137,7 @@ namespace DukeEdSharp
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1542, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1542, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -153,7 +155,7 @@ namespace DukeEdSharp
             this.toolStripSeparator3,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 32);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newMapToolStripMenuItem
@@ -231,89 +233,89 @@ namespace DukeEdSharp
             this.selectAllActorsToolStripMenuItem,
             this.selectAllSurfacesToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 29);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 32);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
             this.undoToolStripMenuItem.Text = "&Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // redueToolStripMenuItem
             // 
             this.redueToolStripMenuItem.Name = "redueToolStripMenuItem";
-            this.redueToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.redueToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
             this.redueToolStripMenuItem.Text = "&Redue";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(267, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(253, 6);
             // 
             // searchForActorsToolStripMenuItem
             // 
             this.searchForActorsToolStripMenuItem.Name = "searchForActorsToolStripMenuItem";
-            this.searchForActorsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.searchForActorsToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
             this.searchForActorsToolStripMenuItem.Text = "Search For Actors";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(267, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(253, 6);
             // 
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
             this.cutToolStripMenuItem.Text = "Cut";
             // 
             // copyToolStripMenuItem
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
             this.copyToolStripMenuItem.Text = "Copy";
             // 
             // pasteToolStripMenuItem
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
             this.pasteToolStripMenuItem.Text = "Paste";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(267, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(253, 6);
             // 
             // duplicateToolStripMenuItem
             // 
             this.duplicateToolStripMenuItem.Name = "duplicateToolStripMenuItem";
-            this.duplicateToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.duplicateToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
             this.duplicateToolStripMenuItem.Text = "Duplicate";
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(267, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(253, 6);
             // 
             // selectToolStripMenuItem
             // 
             this.selectToolStripMenuItem.Name = "selectToolStripMenuItem";
-            this.selectToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.selectToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
             this.selectToolStripMenuItem.Text = "Select None";
             // 
             // selectAllActorsToolStripMenuItem
             // 
             this.selectAllActorsToolStripMenuItem.Name = "selectAllActorsToolStripMenuItem";
-            this.selectAllActorsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.selectAllActorsToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
             this.selectAllActorsToolStripMenuItem.Text = "Select All Actors";
             this.selectAllActorsToolStripMenuItem.Click += new System.EventHandler(this.selectAllActorsToolStripMenuItem_Click);
             // 
@@ -322,8 +324,15 @@ namespace DukeEdSharp
             this.selectAllSurfacesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectAllPolysToolStripMenuItem});
             this.selectAllSurfacesToolStripMenuItem.Name = "selectAllSurfacesToolStripMenuItem";
-            this.selectAllSurfacesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.selectAllSurfacesToolStripMenuItem.Size = new System.Drawing.Size(256, 34);
             this.selectAllSurfacesToolStripMenuItem.Text = "Select All Surfaces";
+            // 
+            // selectAllPolysToolStripMenuItem
+            // 
+            this.selectAllPolysToolStripMenuItem.Name = "selectAllPolysToolStripMenuItem";
+            this.selectAllPolysToolStripMenuItem.Size = new System.Drawing.Size(231, 34);
+            this.selectAllPolysToolStripMenuItem.Text = "Select All Polys";
+            this.selectAllPolysToolStripMenuItem.Click += new System.EventHandler(this.selectAllPolysToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -341,7 +350,7 @@ namespace DukeEdSharp
             this.levelPropertiesToolStripMenuItem,
             this.surfacePropertiesToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(65, 32);
             this.viewToolStripMenuItem.Text = "&View";
             // 
             // logToolStripMenuItem
@@ -410,10 +419,17 @@ namespace DukeEdSharp
             this.levelPropertiesToolStripMenuItem.Text = "&Level Properties";
             this.levelPropertiesToolStripMenuItem.Click += new System.EventHandler(this.levelPropertiesToolStripMenuItem_Click);
             // 
+            // surfacePropertiesToolStripMenuItem
+            // 
+            this.surfacePropertiesToolStripMenuItem.Name = "surfacePropertiesToolStripMenuItem";
+            this.surfacePropertiesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.surfacePropertiesToolStripMenuItem.Text = "Surface Properties";
+            this.surfacePropertiesToolStripMenuItem.Click += new System.EventHandler(this.surfacePropertiesToolStripMenuItem_Click);
+            // 
             // brushToolStripMenuItem
             // 
             this.brushToolStripMenuItem.Name = "brushToolStripMenuItem";
-            this.brushToolStripMenuItem.Size = new System.Drawing.Size(72, 29);
+            this.brushToolStripMenuItem.Size = new System.Drawing.Size(72, 32);
             this.brushToolStripMenuItem.Text = "&Brush";
             // 
             // buildToolStripMenuItem
@@ -428,7 +444,7 @@ namespace DukeEdSharp
             this.toolStripSeparator10,
             this.buildOptionsToolStripMenuItem});
             this.buildToolStripMenuItem.Name = "buildToolStripMenuItem";
-            this.buildToolStripMenuItem.Size = new System.Drawing.Size(67, 29);
+            this.buildToolStripMenuItem.Size = new System.Drawing.Size(67, 32);
             this.buildToolStripMenuItem.Text = "&Build";
             // 
             // playLevelToolStripMenuItem
@@ -482,7 +498,7 @@ namespace DukeEdSharp
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(69, 32);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
             // helpToolStripMenuItem
@@ -490,7 +506,7 @@ namespace DukeEdSharp
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutDukeEdToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 32);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutDukeEdToolStripMenuItem
@@ -521,9 +537,9 @@ namespace DukeEdSharp
             // 
             this.BackPanel.BackColor = System.Drawing.Color.IndianRed;
             this.BackPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackPanel.Location = new System.Drawing.Point(0, 0);
+            this.BackPanel.Location = new System.Drawing.Point(0, 74);
             this.BackPanel.Name = "BackPanel";
-            this.BackPanel.Size = new System.Drawing.Size(1458, 1034);
+            this.BackPanel.Size = new System.Drawing.Size(1542, 1023);
             this.BackPanel.TabIndex = 3;
             this.BackPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BackPanel_Paint);
             // 
@@ -540,10 +556,30 @@ namespace DukeEdSharp
             this.toolStripButton5,
             this.toolStripButton6,
             this.toolStripButton7,
-            this.toolStripButton8});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 33);
+            this.toolStripButton8,
+            this.toolStripSeparator12,
+            this.toolStripButton9,
+            this.toolStripButton22,
+            this.toolStripButton10,
+            this.toolStripButton11,
+            this.toolStripButton12,
+            this.toolStripButton13,
+            this.toolStripButton14,
+            this.toolStripButton15,
+            this.toolStripButton16,
+            this.toolStripButton17,
+            this.toolStripSeparator13,
+            this.toolStripButton18,
+            this.toolStripButton19,
+            this.toolStripButton20,
+            this.toolStripButton21,
+            this.toolStripSeparator14,
+            this.toolStripButton23,
+            this.toolStripButton24,
+            this.toolStripButton25});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 36);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1542, 30);
+            this.toolStrip1.Size = new System.Drawing.Size(1542, 38);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -552,8 +588,8 @@ namespace DukeEdSharp
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(90, 25);
-            this.toolStripLabel1.Text = "IceED 1.0";
+            this.toolStripLabel1.Size = new System.Drawing.Size(100, 33);
+            this.toolStripLabel1.Text = "IceED 1.01";
             // 
             // toolStripButton4
             // 
@@ -561,7 +597,7 @@ namespace DukeEdSharp
             this.toolStripButton4.Image = global::DukeEdSharp.Properties.Resources.Bitmap121;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(34, 25);
+            this.toolStripButton4.Size = new System.Drawing.Size(34, 33);
             this.toolStripButton4.Text = "toolStripButton4";
             // 
             // toolStripButton1
@@ -570,7 +606,7 @@ namespace DukeEdSharp
             this.toolStripButton1.Image = global::DukeEdSharp.Properties.Resources.Bitmap414;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(34, 25);
+            this.toolStripButton1.Size = new System.Drawing.Size(34, 33);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -580,7 +616,7 @@ namespace DukeEdSharp
             this.toolStripButton2.Image = global::DukeEdSharp.Properties.Resources.Bitmap415;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(34, 25);
+            this.toolStripButton2.Size = new System.Drawing.Size(34, 33);
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -590,7 +626,7 @@ namespace DukeEdSharp
             this.toolStripButton3.Image = global::DukeEdSharp.Properties.Resources.Bitmap416;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(34, 25);
+            this.toolStripButton3.Size = new System.Drawing.Size(34, 33);
             this.toolStripButton3.Text = "toolStripButton3";
             // 
             // toolStripButton5
@@ -599,7 +635,7 @@ namespace DukeEdSharp
             this.toolStripButton5.Image = global::DukeEdSharp.Properties.Resources.Bitmap418;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(34, 25);
+            this.toolStripButton5.Size = new System.Drawing.Size(34, 33);
             this.toolStripButton5.Text = "toolStripButton5";
             // 
             // toolStripButton6
@@ -608,7 +644,7 @@ namespace DukeEdSharp
             this.toolStripButton6.Image = global::DukeEdSharp.Properties.Resources.Bitmap419;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(34, 25);
+            this.toolStripButton6.Size = new System.Drawing.Size(34, 33);
             this.toolStripButton6.Text = "toolStripButton6";
             // 
             // toolStripButton7
@@ -617,7 +653,7 @@ namespace DukeEdSharp
             this.toolStripButton7.Image = global::DukeEdSharp.Properties.Resources.Bitmap417;
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(34, 25);
+            this.toolStripButton7.Size = new System.Drawing.Size(34, 33);
             this.toolStripButton7.Text = "toolStripButton7";
             // 
             // toolStripButton8
@@ -626,195 +662,147 @@ namespace DukeEdSharp
             this.toolStripButton8.Image = global::DukeEdSharp.Properties.Resources.Bitmap420;
             this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(34, 25);
+            this.toolStripButton8.Size = new System.Drawing.Size(34, 33);
             this.toolStripButton8.Text = "toolStripButton8";
             // 
-            // splitContainer1
+            // toolStripSeparator12
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 63);
-            this.splitContainer1.Name = "splitContainer1";
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 38);
             // 
-            // splitContainer1.Panel1
+            // toolStripButton9
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button13);
-            this.splitContainer1.Panel1.Controls.Add(this.button12);
-            this.splitContainer1.Panel1.Controls.Add(this.button11);
-            this.splitContainer1.Panel1.Controls.Add(this.button10);
-            this.splitContainer1.Panel1.Controls.Add(this.button9);
-            this.splitContainer1.Panel1.Controls.Add(this.button8);
-            this.splitContainer1.Panel1.Controls.Add(this.CreateSpiralStairsButton);
-            this.splitContainer1.Panel1.Controls.Add(this.CreatePlaneButton);
-            this.splitContainer1.Panel1.Controls.Add(this.button4);
-            this.splitContainer1.Panel1.Controls.Add(this.CreateStraightStairsButton);
-            this.splitContainer1.Panel1.Controls.Add(this.CreateStairsButton);
-            this.splitContainer1.Panel1.Controls.Add(this.ConeCreateButton);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton9.Image = global::DukeEdSharp.Properties.Resources.BBCube;
+            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton9.Text = "toolStripButton9";
+            this.toolStripButton9.Click += new System.EventHandler(this.button1_Click);
             // 
-            // splitContainer1.Panel2
+            // toolStripButton10
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.BackPanel);
-            this.splitContainer1.Size = new System.Drawing.Size(1542, 1034);
-            this.splitContainer1.SplitterDistance = 80;
-            this.splitContainer1.TabIndex = 5;
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton10.Image = global::DukeEdSharp.Properties.Resources.BBCurvedStair;
+            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton10.Name = "toolStripButton10";
+            this.toolStripButton10.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton10.Text = "toolStripButton10";
+            this.toolStripButton10.Click += new System.EventHandler(this.CreateStairsButton_Click);
             // 
-            // button13
+            // toolStripButton11
             // 
-            this.button13.BackColor = System.Drawing.Color.Transparent;
-            this.button13.BackgroundImage = global::DukeEdSharp.Properties.Resources.ModeDeintersect;
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button13.Location = new System.Drawing.Point(61, 454);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(55, 58);
-            this.button13.TabIndex = 12;
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton11.Image = global::DukeEdSharp.Properties.Resources.BBLinearStair;
+            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton11.Name = "toolStripButton11";
+            this.toolStripButton11.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton11.Text = "toolStripButton11";
+            this.toolStripButton11.Click += new System.EventHandler(this.CreateStraightStairsButton_Click);
             // 
-            // button12
+            // toolStripButton12
             // 
-            this.button12.BackColor = System.Drawing.Color.Transparent;
-            this.button12.BackgroundImage = global::DukeEdSharp.Properties.Resources.ModeIntersect;
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button12.Location = new System.Drawing.Point(4, 454);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(55, 58);
-            this.button12.TabIndex = 11;
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton12.Image = global::DukeEdSharp.Properties.Resources.BBSpiralStair;
+            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton12.Name = "toolStripButton12";
+            this.toolStripButton12.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton12.Text = "toolStripButton12";
+            this.toolStripButton12.Click += new System.EventHandler(this.CreateSpiralStairsButton_Click);
             // 
-            // button11
+            // toolStripButton13
             // 
-            this.button11.BackColor = System.Drawing.Color.Transparent;
-            this.button11.BackgroundImage = global::DukeEdSharp.Properties.Resources.ModeSubtract;
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button11.Location = new System.Drawing.Point(64, 381);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(55, 58);
-            this.button11.TabIndex = 10;
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton13.Image = global::DukeEdSharp.Properties.Resources.BBVolumetric;
+            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton13.Name = "toolStripButton13";
+            this.toolStripButton13.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton13.Text = "toolStripButton13";
             // 
-            // button10
+            // toolStripButton14
             // 
-            this.button10.BackColor = System.Drawing.Color.Transparent;
-            this.button10.BackgroundImage = global::DukeEdSharp.Properties.Resources.ModeAdd;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button10.Location = new System.Drawing.Point(3, 381);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(55, 58);
-            this.button10.TabIndex = 9;
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton14.Image = global::DukeEdSharp.Properties.Resources.BBCone;
+            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton14.Name = "toolStripButton14";
+            this.toolStripButton14.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton14.Text = "toolStripButton14";
+            this.toolStripButton14.Click += new System.EventHandler(this.ConeCreateButton_Click);
             // 
-            // button9
+            // toolStripButton15
             // 
-            this.button9.BackColor = System.Drawing.Color.Transparent;
-            this.button9.BackgroundImage = global::DukeEdSharp.Properties.Resources.BBVolumetric;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button9.Location = new System.Drawing.Point(4, 296);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(55, 58);
-            this.button9.TabIndex = 8;
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton15.Image = global::DukeEdSharp.Properties.Resources.BBCylinder;
+            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton15.Name = "toolStripButton15";
+            this.toolStripButton15.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton15.Text = "toolStripButton15";
+            this.toolStripButton15.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button8
+            // toolStripButton16
             // 
-            this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.BackgroundImage = global::DukeEdSharp.Properties.Resources.BBSphere;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.Location = new System.Drawing.Point(61, 223);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(55, 58);
-            this.button8.TabIndex = 7;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton16.Image = global::DukeEdSharp.Properties.Resources.BBSheet;
+            this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton16.Name = "toolStripButton16";
+            this.toolStripButton16.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton16.Text = "toolStripButton16";
+            this.toolStripButton16.Click += new System.EventHandler(this.CreatePlaneButton_Click);
             // 
-            // CreateSpiralStairsButton
+            // toolStripButton17
             // 
-            this.CreateSpiralStairsButton.BackColor = System.Drawing.Color.Transparent;
-            this.CreateSpiralStairsButton.BackgroundImage = global::DukeEdSharp.Properties.Resources.BBSpiralStair;
-            this.CreateSpiralStairsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.CreateSpiralStairsButton.Location = new System.Drawing.Point(3, 223);
-            this.CreateSpiralStairsButton.Name = "CreateSpiralStairsButton";
-            this.CreateSpiralStairsButton.Size = new System.Drawing.Size(55, 58);
-            this.CreateSpiralStairsButton.TabIndex = 6;
-            this.CreateSpiralStairsButton.UseVisualStyleBackColor = false;
-            this.CreateSpiralStairsButton.Click += new System.EventHandler(this.CreateSpiralStairsButton_Click);
+            this.toolStripButton17.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton17.Image = global::DukeEdSharp.Properties.Resources.BBSphere;
+            this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton17.Name = "toolStripButton17";
+            this.toolStripButton17.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton17.Text = "toolStripButton17";
+            this.toolStripButton17.Click += new System.EventHandler(this.button8_Click);
             // 
-            // CreatePlaneButton
+            // toolStripSeparator13
             // 
-            this.CreatePlaneButton.BackColor = System.Drawing.Color.Transparent;
-            this.CreatePlaneButton.BackgroundImage = global::DukeEdSharp.Properties.Resources.BBSheet;
-            this.CreatePlaneButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.CreatePlaneButton.Location = new System.Drawing.Point(62, 150);
-            this.CreatePlaneButton.Name = "CreatePlaneButton";
-            this.CreatePlaneButton.Size = new System.Drawing.Size(55, 58);
-            this.CreatePlaneButton.TabIndex = 5;
-            this.CreatePlaneButton.UseVisualStyleBackColor = false;
-            this.CreatePlaneButton.Click += new System.EventHandler(this.CreatePlaneButton_Click);
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 38);
             // 
-            // button4
+            // toolStripButton18
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = global::DukeEdSharp.Properties.Resources.BBCylinder;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Location = new System.Drawing.Point(62, 77);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(55, 58);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.toolStripButton18.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton18.Image = global::DukeEdSharp.Properties.Resources.ModeAdd;
+            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton18.Name = "toolStripButton18";
+            this.toolStripButton18.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton18.Text = "toolStripButton18";
+            this.toolStripButton18.Click += new System.EventHandler(this.button10_Click);
             // 
-            // CreateStraightStairsButton
+            // toolStripButton19
             // 
-            this.CreateStraightStairsButton.BackColor = System.Drawing.Color.Transparent;
-            this.CreateStraightStairsButton.BackgroundImage = global::DukeEdSharp.Properties.Resources.BBLinearStair;
-            this.CreateStraightStairsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.CreateStraightStairsButton.Location = new System.Drawing.Point(4, 150);
-            this.CreateStraightStairsButton.Name = "CreateStraightStairsButton";
-            this.CreateStraightStairsButton.Size = new System.Drawing.Size(55, 58);
-            this.CreateStraightStairsButton.TabIndex = 4;
-            this.CreateStraightStairsButton.UseVisualStyleBackColor = false;
-            this.CreateStraightStairsButton.Click += new System.EventHandler(this.CreateStraightStairsButton_Click);
+            this.toolStripButton19.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton19.Image = global::DukeEdSharp.Properties.Resources.ModeSubtract;
+            this.toolStripButton19.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton19.Name = "toolStripButton19";
+            this.toolStripButton19.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton19.Text = "toolStripButton19";
+            this.toolStripButton19.Click += new System.EventHandler(this.button11_Click);
             // 
-            // CreateStairsButton
+            // toolStripButton20
             // 
-            this.CreateStairsButton.BackColor = System.Drawing.Color.Transparent;
-            this.CreateStairsButton.BackgroundImage = global::DukeEdSharp.Properties.Resources.BBCurvedStair;
-            this.CreateStairsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.CreateStairsButton.Location = new System.Drawing.Point(4, 77);
-            this.CreateStairsButton.Name = "CreateStairsButton";
-            this.CreateStairsButton.Size = new System.Drawing.Size(55, 58);
-            this.CreateStairsButton.TabIndex = 2;
-            this.CreateStairsButton.UseVisualStyleBackColor = false;
-            this.CreateStairsButton.Click += new System.EventHandler(this.CreateStairsButton_Click);
+            this.toolStripButton20.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton20.Image = global::DukeEdSharp.Properties.Resources.ModeIntersect;
+            this.toolStripButton20.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton20.Name = "toolStripButton20";
+            this.toolStripButton20.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton20.Text = "toolStripButton20";
+            this.toolStripButton20.Click += new System.EventHandler(this.button12_Click);
             // 
-            // ConeCreateButton
+            // toolStripButton21
             // 
-            this.ConeCreateButton.BackColor = System.Drawing.Color.Transparent;
-            this.ConeCreateButton.BackgroundImage = global::DukeEdSharp.Properties.Resources.BBCone;
-            this.ConeCreateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ConeCreateButton.Location = new System.Drawing.Point(61, 4);
-            this.ConeCreateButton.Name = "ConeCreateButton";
-            this.ConeCreateButton.Size = new System.Drawing.Size(55, 58);
-            this.ConeCreateButton.TabIndex = 1;
-            this.ConeCreateButton.UseVisualStyleBackColor = false;
-            this.ConeCreateButton.Click += new System.EventHandler(this.ConeCreateButton_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::DukeEdSharp.Properties.Resources.BBCube;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 58);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.toolStripButton21.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton21.Image = global::DukeEdSharp.Properties.Resources.ModeDeintersect;
+            this.toolStripButton21.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton21.Name = "toolStripButton21";
+            this.toolStripButton21.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton21.Text = "toolStripButton21";
+            this.toolStripButton21.Click += new System.EventHandler(this.button13_Click);
             // 
             // mi
             // 
@@ -822,19 +810,50 @@ namespace DukeEdSharp
             this.mi.Text = "Edit Box Brush Properties";
             this.mi.Click += new System.EventHandler(this.button1_properties_Click);
             // 
-            // selectAllPolysToolStripMenuItem
+            // toolStripButton22
             // 
-            this.selectAllPolysToolStripMenuItem.Name = "selectAllPolysToolStripMenuItem";
-            this.selectAllPolysToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.selectAllPolysToolStripMenuItem.Text = "Select All Polys";
-            this.selectAllPolysToolStripMenuItem.Click += new System.EventHandler(this.selectAllPolysToolStripMenuItem_Click);
+            this.toolStripButton22.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton22.Image = global::DukeEdSharp.Properties.Resources.BBCube;
+            this.toolStripButton22.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton22.Name = "toolStripButton22";
+            this.toolStripButton22.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton22.Text = "toolStripButton22";
+            this.toolStripButton22.Click += new System.EventHandler(this.toolStripButton22_Click);
             // 
-            // surfacePropertiesToolStripMenuItem
+            // toolStripSeparator14
             // 
-            this.surfacePropertiesToolStripMenuItem.Name = "surfacePropertiesToolStripMenuItem";
-            this.surfacePropertiesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.surfacePropertiesToolStripMenuItem.Text = "Surface Properties";
-            this.surfacePropertiesToolStripMenuItem.Click += new System.EventHandler(this.surfacePropertiesToolStripMenuItem_Click);
+            this.toolStripSeparator14.Name = "toolStripSeparator14";
+            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 38);
+            // 
+            // toolStripButton23
+            // 
+            this.toolStripButton23.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton23.Image = global::DukeEdSharp.Properties.Resources.ModeVertex;
+            this.toolStripButton23.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton23.Name = "toolStripButton23";
+            this.toolStripButton23.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton23.Text = "toolStripButton23";
+            this.toolStripButton23.Click += new System.EventHandler(this.toolStripButton23_Click);
+            // 
+            // toolStripButton24
+            // 
+            this.toolStripButton24.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton24.Image = global::DukeEdSharp.Properties.Resources.ModeCamera;
+            this.toolStripButton24.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton24.Name = "toolStripButton24";
+            this.toolStripButton24.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton24.Text = "toolStripButton24";
+            this.toolStripButton24.Click += new System.EventHandler(this.toolStripButton24_Click);
+            // 
+            // toolStripButton25
+            // 
+            this.toolStripButton25.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton25.Image = global::DukeEdSharp.Properties.Resources.ModeFaceDrag;
+            this.toolStripButton25.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton25.Name = "toolStripButton25";
+            this.toolStripButton25.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton25.Text = "toolStripButton25";
+            this.toolStripButton25.Click += new System.EventHandler(this.toolStripButton25_Click);
             // 
             // EditorFrame
             // 
@@ -842,7 +861,7 @@ namespace DukeEdSharp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(1542, 1119);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.BackPanel);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -854,10 +873,6 @@ namespace DukeEdSharp
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -927,20 +942,6 @@ namespace DukeEdSharp
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button CreateStraightStairsButton;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button CreateStairsButton;
-        private System.Windows.Forms.Button ConeCreateButton;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button CreateSpiralStairsButton;
-        private System.Windows.Forms.Button CreatePlaneButton;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
@@ -952,5 +953,25 @@ namespace DukeEdSharp
         private MenuItem mi;
         private ToolStripMenuItem selectAllPolysToolStripMenuItem;
         private ToolStripMenuItem surfacePropertiesToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator12;
+        private ToolStripButton toolStripButton9;
+        private ToolStripButton toolStripButton10;
+        private ToolStripButton toolStripButton11;
+        private ToolStripButton toolStripButton12;
+        private ToolStripButton toolStripButton13;
+        private ToolStripButton toolStripButton14;
+        private ToolStripButton toolStripButton15;
+        private ToolStripButton toolStripButton16;
+        private ToolStripButton toolStripButton17;
+        private ToolStripSeparator toolStripSeparator13;
+        private ToolStripButton toolStripButton18;
+        private ToolStripButton toolStripButton19;
+        private ToolStripButton toolStripButton20;
+        private ToolStripButton toolStripButton21;
+        private ToolStripButton toolStripButton22;
+        private ToolStripSeparator toolStripSeparator14;
+        private ToolStripButton toolStripButton23;
+        private ToolStripButton toolStripButton24;
+        private ToolStripButton toolStripButton25;
     }
 }

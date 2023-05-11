@@ -17,9 +17,9 @@ namespace DukeEdSharp
             InitializeComponent();
             BackPanel.Resize += BackPanel_Resize;
 
-            MenuItem mi = new MenuItem("Edit Box Brush Properties");
-            mi.Click += new System.EventHandler(this.button1_properties_Click);
-            this.button1.ContextMenu = new ContextMenu(new MenuItem[] { mi });
+           // MenuItem mi = new MenuItem("Edit Box Brush Properties");
+           // mi.Click += new System.EventHandler(this.button1_properties_Click);
+           // this.toolStripButton9.ContextMenu = new ContextMenu(new MenuItem[] { mi });
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -231,6 +231,26 @@ namespace DukeEdSharp
         private void surfacePropertiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditorInterface.DukeSharp_RunLocalCommand(18, Handle);
+        }
+
+        private void toolStripButton22_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_RunLocalCommand(17, (IntPtr)0);
+        }
+
+        private void toolStripButton23_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MODE VERTEXEDIT");
+        }
+
+        private void toolStripButton24_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MODE NEWCAMERAMOVE");
+        }
+
+        private void toolStripButton25_Click(object sender, EventArgs e)
+        {
+            EditorInterface.DukeSharp_Exec("MODE FACEDRAG");            
         }
     }
 }
