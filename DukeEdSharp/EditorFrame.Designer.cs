@@ -849,7 +849,7 @@ namespace DukeEdSharp
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "EditorFrame";
-            this.Text = "Editor: New Map";
+            this.Text = "Dukes Enormous Tool: New Map";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

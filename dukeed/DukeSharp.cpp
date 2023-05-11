@@ -211,7 +211,7 @@ void FileOpen(HWND hWnd)
 		GEditor->exec.Exec(mapExecString, (dnOutputDevice&)globalLog);
 
 		wchar_t windowText[512];
-		wsprintf(windowText, TEXT("Editor: %s"), currentMapName.c_str());
+		wsprintf(windowText, TEXT("Dukes Enormous Tool: %s"), currentMapName.c_str());
 		SetWindowTextW(hWnd, windowText);
 
 		collectGarbage = true;
@@ -300,7 +300,7 @@ void __stdcall DukeSharp_RunLocalCommand(int Command, HWND hWnd)
 		GEditor->exec.Exec(TEXT("MAP NEW"), (dnOutputDevice&)globalLog);
 
 		wchar_t windowText[512];
-		wsprintf(windowText, TEXT("Editor: New Map"));
+		wsprintf(windowText, TEXT("Dukes Enormous Tool: New Map"));
 		SetWindowTextW(hWnd, windowText);
 	}
 	break;
