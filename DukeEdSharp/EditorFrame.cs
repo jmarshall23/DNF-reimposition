@@ -22,6 +22,13 @@ namespace DukeEdSharp
             this.button1.ContextMenu = new ContextMenu(new MenuItem[] { mi });
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            Environment.Exit(0);
+        }
+
         private void BackPanel_Resize(object sender, EventArgs e)
         {
             EditorInterface.EditorResize(BackPanel.Width, BackPanel.Height);
