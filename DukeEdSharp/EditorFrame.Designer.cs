@@ -89,7 +89,6 @@ namespace DukeEdSharp
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.BackPanel = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -100,6 +99,7 @@ namespace DukeEdSharp
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton22 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
@@ -113,18 +113,20 @@ namespace DukeEdSharp
             this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton20 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton21 = new System.Windows.Forms.ToolStripButton();
-            this.mi = new System.Windows.Forms.MenuItem();
-            this.toolStripButton22 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton23 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton24 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton25 = new System.Windows.Forms.ToolStripButton();
+            this.mi = new System.Windows.Forms.MenuItem();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Gray;
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -137,7 +139,7 @@ namespace DukeEdSharp
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1542, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1542, 33);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -155,7 +157,7 @@ namespace DukeEdSharp
             this.toolStripSeparator3,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 32);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // newMapToolStripMenuItem
@@ -233,7 +235,7 @@ namespace DukeEdSharp
             this.selectAllActorsToolStripMenuItem,
             this.selectAllSurfacesToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 32);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 29);
             this.editToolStripMenuItem.Text = "&Edit";
             // 
             // undoToolStripMenuItem
@@ -350,7 +352,7 @@ namespace DukeEdSharp
             this.levelPropertiesToolStripMenuItem,
             this.surfacePropertiesToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(65, 32);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
             this.viewToolStripMenuItem.Text = "&View";
             // 
             // logToolStripMenuItem
@@ -429,7 +431,7 @@ namespace DukeEdSharp
             // brushToolStripMenuItem
             // 
             this.brushToolStripMenuItem.Name = "brushToolStripMenuItem";
-            this.brushToolStripMenuItem.Size = new System.Drawing.Size(72, 32);
+            this.brushToolStripMenuItem.Size = new System.Drawing.Size(72, 29);
             this.brushToolStripMenuItem.Text = "&Brush";
             // 
             // buildToolStripMenuItem
@@ -444,7 +446,7 @@ namespace DukeEdSharp
             this.toolStripSeparator10,
             this.buildOptionsToolStripMenuItem});
             this.buildToolStripMenuItem.Name = "buildToolStripMenuItem";
-            this.buildToolStripMenuItem.Size = new System.Drawing.Size(67, 32);
+            this.buildToolStripMenuItem.Size = new System.Drawing.Size(67, 29);
             this.buildToolStripMenuItem.Text = "&Build";
             // 
             // playLevelToolStripMenuItem
@@ -498,7 +500,7 @@ namespace DukeEdSharp
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(69, 32);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
             // helpToolStripMenuItem
@@ -506,7 +508,7 @@ namespace DukeEdSharp
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutDukeEdToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 32);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutDukeEdToolStripMenuItem
@@ -526,10 +528,14 @@ namespace DukeEdSharp
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.Transparent;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1097);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1087);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1542, 22);
+            this.statusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.statusStrip1.Size = new System.Drawing.Size(1542, 32);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -537,9 +543,10 @@ namespace DukeEdSharp
             // 
             this.BackPanel.BackColor = System.Drawing.Color.IndianRed;
             this.BackPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BackPanel.Location = new System.Drawing.Point(0, 74);
+            this.BackPanel.Location = new System.Drawing.Point(0, 62);
             this.BackPanel.Name = "BackPanel";
-            this.BackPanel.Size = new System.Drawing.Size(1542, 1023);
+            this.BackPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.BackPanel.Size = new System.Drawing.Size(1542, 1025);
             this.BackPanel.TabIndex = 3;
             this.BackPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.BackPanel_Paint);
             // 
@@ -548,7 +555,6 @@ namespace DukeEdSharp
             this.toolStrip1.BackColor = System.Drawing.Color.Transparent;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
             this.toolStripButton4,
             this.toolStripButton1,
             this.toolStripButton2,
@@ -577,19 +583,11 @@ namespace DukeEdSharp
             this.toolStripButton23,
             this.toolStripButton24,
             this.toolStripButton25});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 36);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 33);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1542, 38);
+            this.toolStrip1.Size = new System.Drawing.Size(1542, 29);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.toolStripLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(100, 33);
-            this.toolStripLabel1.Text = "IceED 1.01";
             // 
             // toolStripButton4
             // 
@@ -597,7 +595,7 @@ namespace DukeEdSharp
             this.toolStripButton4.Image = global::DukeEdSharp.Properties.Resources.Bitmap121;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton4.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton4.Text = "toolStripButton4";
             // 
             // toolStripButton1
@@ -606,7 +604,7 @@ namespace DukeEdSharp
             this.toolStripButton1.Image = global::DukeEdSharp.Properties.Resources.Bitmap414;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton1.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -616,7 +614,7 @@ namespace DukeEdSharp
             this.toolStripButton2.Image = global::DukeEdSharp.Properties.Resources.Bitmap415;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton2.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -626,7 +624,7 @@ namespace DukeEdSharp
             this.toolStripButton3.Image = global::DukeEdSharp.Properties.Resources.Bitmap416;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton3.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton3.Text = "toolStripButton3";
             // 
             // toolStripButton5
@@ -635,7 +633,7 @@ namespace DukeEdSharp
             this.toolStripButton5.Image = global::DukeEdSharp.Properties.Resources.Bitmap418;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton5.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton5.Text = "toolStripButton5";
             // 
             // toolStripButton6
@@ -644,7 +642,7 @@ namespace DukeEdSharp
             this.toolStripButton6.Image = global::DukeEdSharp.Properties.Resources.Bitmap419;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton6.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton6.Text = "toolStripButton6";
             // 
             // toolStripButton7
@@ -653,7 +651,7 @@ namespace DukeEdSharp
             this.toolStripButton7.Image = global::DukeEdSharp.Properties.Resources.Bitmap417;
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton7.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton7.Text = "toolStripButton7";
             // 
             // toolStripButton8
@@ -662,13 +660,13 @@ namespace DukeEdSharp
             this.toolStripButton8.Image = global::DukeEdSharp.Properties.Resources.Bitmap420;
             this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton8.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton8.Text = "toolStripButton8";
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 29);
             // 
             // toolStripButton9
             // 
@@ -676,9 +674,19 @@ namespace DukeEdSharp
             this.toolStripButton9.Image = global::DukeEdSharp.Properties.Resources.BBCube;
             this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton9.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton9.Text = "toolStripButton9";
             this.toolStripButton9.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // toolStripButton22
+            // 
+            this.toolStripButton22.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton22.Image = global::DukeEdSharp.Properties.Resources.BBCube;
+            this.toolStripButton22.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton22.Name = "toolStripButton22";
+            this.toolStripButton22.Size = new System.Drawing.Size(34, 24);
+            this.toolStripButton22.Text = "toolStripButton22";
+            this.toolStripButton22.Click += new System.EventHandler(this.toolStripButton22_Click);
             // 
             // toolStripButton10
             // 
@@ -686,7 +694,7 @@ namespace DukeEdSharp
             this.toolStripButton10.Image = global::DukeEdSharp.Properties.Resources.BBCurvedStair;
             this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton10.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton10.Text = "toolStripButton10";
             this.toolStripButton10.Click += new System.EventHandler(this.CreateStairsButton_Click);
             // 
@@ -696,7 +704,7 @@ namespace DukeEdSharp
             this.toolStripButton11.Image = global::DukeEdSharp.Properties.Resources.BBLinearStair;
             this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton11.Name = "toolStripButton11";
-            this.toolStripButton11.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton11.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton11.Text = "toolStripButton11";
             this.toolStripButton11.Click += new System.EventHandler(this.CreateStraightStairsButton_Click);
             // 
@@ -706,7 +714,7 @@ namespace DukeEdSharp
             this.toolStripButton12.Image = global::DukeEdSharp.Properties.Resources.BBSpiralStair;
             this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton12.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton12.Text = "toolStripButton12";
             this.toolStripButton12.Click += new System.EventHandler(this.CreateSpiralStairsButton_Click);
             // 
@@ -716,7 +724,7 @@ namespace DukeEdSharp
             this.toolStripButton13.Image = global::DukeEdSharp.Properties.Resources.BBVolumetric;
             this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton13.Name = "toolStripButton13";
-            this.toolStripButton13.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton13.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton13.Text = "toolStripButton13";
             // 
             // toolStripButton14
@@ -725,7 +733,7 @@ namespace DukeEdSharp
             this.toolStripButton14.Image = global::DukeEdSharp.Properties.Resources.BBCone;
             this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton14.Name = "toolStripButton14";
-            this.toolStripButton14.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton14.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton14.Text = "toolStripButton14";
             this.toolStripButton14.Click += new System.EventHandler(this.ConeCreateButton_Click);
             // 
@@ -735,7 +743,7 @@ namespace DukeEdSharp
             this.toolStripButton15.Image = global::DukeEdSharp.Properties.Resources.BBCylinder;
             this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton15.Name = "toolStripButton15";
-            this.toolStripButton15.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton15.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton15.Text = "toolStripButton15";
             this.toolStripButton15.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -745,7 +753,7 @@ namespace DukeEdSharp
             this.toolStripButton16.Image = global::DukeEdSharp.Properties.Resources.BBSheet;
             this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton16.Name = "toolStripButton16";
-            this.toolStripButton16.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton16.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton16.Text = "toolStripButton16";
             this.toolStripButton16.Click += new System.EventHandler(this.CreatePlaneButton_Click);
             // 
@@ -755,14 +763,14 @@ namespace DukeEdSharp
             this.toolStripButton17.Image = global::DukeEdSharp.Properties.Resources.BBSphere;
             this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton17.Name = "toolStripButton17";
-            this.toolStripButton17.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton17.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton17.Text = "toolStripButton17";
             this.toolStripButton17.Click += new System.EventHandler(this.button8_Click);
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 29);
             // 
             // toolStripButton18
             // 
@@ -770,7 +778,7 @@ namespace DukeEdSharp
             this.toolStripButton18.Image = global::DukeEdSharp.Properties.Resources.ModeAdd;
             this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton18.Name = "toolStripButton18";
-            this.toolStripButton18.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton18.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton18.Text = "toolStripButton18";
             this.toolStripButton18.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -780,7 +788,7 @@ namespace DukeEdSharp
             this.toolStripButton19.Image = global::DukeEdSharp.Properties.Resources.ModeSubtract;
             this.toolStripButton19.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton19.Name = "toolStripButton19";
-            this.toolStripButton19.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton19.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton19.Text = "toolStripButton19";
             this.toolStripButton19.Click += new System.EventHandler(this.button11_Click);
             // 
@@ -790,7 +798,7 @@ namespace DukeEdSharp
             this.toolStripButton20.Image = global::DukeEdSharp.Properties.Resources.ModeIntersect;
             this.toolStripButton20.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton20.Name = "toolStripButton20";
-            this.toolStripButton20.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton20.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton20.Text = "toolStripButton20";
             this.toolStripButton20.Click += new System.EventHandler(this.button12_Click);
             // 
@@ -800,30 +808,14 @@ namespace DukeEdSharp
             this.toolStripButton21.Image = global::DukeEdSharp.Properties.Resources.ModeDeintersect;
             this.toolStripButton21.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton21.Name = "toolStripButton21";
-            this.toolStripButton21.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton21.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton21.Text = "toolStripButton21";
             this.toolStripButton21.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // mi
-            // 
-            this.mi.Index = -1;
-            this.mi.Text = "Edit Box Brush Properties";
-            this.mi.Click += new System.EventHandler(this.button1_properties_Click);
-            // 
-            // toolStripButton22
-            // 
-            this.toolStripButton22.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton22.Image = global::DukeEdSharp.Properties.Resources.BBCube;
-            this.toolStripButton22.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton22.Name = "toolStripButton22";
-            this.toolStripButton22.Size = new System.Drawing.Size(34, 33);
-            this.toolStripButton22.Text = "toolStripButton22";
-            this.toolStripButton22.Click += new System.EventHandler(this.toolStripButton22_Click);
             // 
             // toolStripSeparator14
             // 
             this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 38);
+            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 29);
             // 
             // toolStripButton23
             // 
@@ -831,7 +823,7 @@ namespace DukeEdSharp
             this.toolStripButton23.Image = global::DukeEdSharp.Properties.Resources.ModeVertex;
             this.toolStripButton23.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton23.Name = "toolStripButton23";
-            this.toolStripButton23.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton23.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton23.Text = "toolStripButton23";
             this.toolStripButton23.Click += new System.EventHandler(this.toolStripButton23_Click);
             // 
@@ -841,7 +833,7 @@ namespace DukeEdSharp
             this.toolStripButton24.Image = global::DukeEdSharp.Properties.Resources.ModeCamera;
             this.toolStripButton24.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton24.Name = "toolStripButton24";
-            this.toolStripButton24.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton24.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton24.Text = "toolStripButton24";
             this.toolStripButton24.Click += new System.EventHandler(this.toolStripButton24_Click);
             // 
@@ -851,9 +843,24 @@ namespace DukeEdSharp
             this.toolStripButton25.Image = global::DukeEdSharp.Properties.Resources.ModeFaceDrag;
             this.toolStripButton25.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton25.Name = "toolStripButton25";
-            this.toolStripButton25.Size = new System.Drawing.Size(34, 33);
+            this.toolStripButton25.Size = new System.Drawing.Size(34, 24);
             this.toolStripButton25.Text = "toolStripButton25";
             this.toolStripButton25.Click += new System.EventHandler(this.toolStripButton25_Click);
+            // 
+            // mi
+            // 
+            this.mi.Index = -1;
+            this.mi.Text = "Edit Box Brush Properties";
+            this.mi.Click += new System.EventHandler(this.button1_properties_Click);
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.toolStripStatusLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(249, 25);
+            this.toolStripStatusLabel1.Text = "IceED v1.01 by Justin Marshall";
             // 
             // EditorFrame
             // 
@@ -871,6 +878,8 @@ namespace DukeEdSharp
             this.Text = "Dukes Enormous Tool: New Map";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -939,7 +948,6 @@ namespace DukeEdSharp
         private System.Windows.Forms.ToolStripMenuItem buildOptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutDukeEdToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
@@ -973,5 +981,6 @@ namespace DukeEdSharp
         private ToolStripButton toolStripButton23;
         private ToolStripButton toolStripButton24;
         private ToolStripButton toolStripButton25;
+        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

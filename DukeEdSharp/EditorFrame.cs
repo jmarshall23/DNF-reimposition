@@ -17,9 +17,16 @@ namespace DukeEdSharp
             InitializeComponent();
             BackPanel.Resize += BackPanel_Resize;
 
-           // MenuItem mi = new MenuItem("Edit Box Brush Properties");
-           // mi.Click += new System.EventHandler(this.button1_properties_Click);
-           // this.toolStripButton9.ContextMenu = new ContextMenu(new MenuItem[] { mi });
+            // MenuItem mi = new MenuItem("Edit Box Brush Properties");
+            // mi.Click += new System.EventHandler(this.button1_properties_Click);
+            // this.toolStripButton9.ContextMenu = new ContextMenu(new MenuItem[] { mi });
+
+            var pvAttribute = EditorInterface.DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUNDSMALL;
+            EditorInterface.DwmSetWindowAttribute(this.Handle,
+                                  EditorInterface.DWMWINDOWATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE,
+                                  ref pvAttribute, sizeof(uint));
+
+            menuStrip1.ForeColor = Color.White;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
