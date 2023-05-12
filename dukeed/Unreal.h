@@ -366,11 +366,20 @@ __declspec(dllimport) enum ERenderType
 	REN_MAX = 20
 };
 
-__declspec(dllimport)  class AActor {
+__declspec(dllimport)  class AActor : public UObject {
 public:
 	float* GetLocation()
 	{
 		return &((float*)this)[123];
+	}
+
+
+	void ToggleSelect(bool enabled)
+	{
+		if(enabled)
+			*((DWORD*)this + 25) |= 1u;
+		else
+			*((DWORD*)this + 25)  = 0;
 	}
 };
 __declspec(dllimport)  struct FVector;
@@ -383,7 +392,19 @@ __declspec(dllimport)  struct FURL;
 __declspec(dllimport)  struct FCheckResult;
 __declspec(dllimport)  class dnMemStack;
 
-__declspec(dllimport) class ULevel {
+__declspec(dllimport) class ULevelBase
+{
+public:
+	UEditorEngineVTable* vtable;
+
+	dnArray<AActor *> *GetActorList()
+	{
+		return (dnArray<AActor*> *)((char*)this + 44);
+	}
+
+};
+
+__declspec(dllimport) class ULevel : public UObject {
 public:
 	//UEditorEngineVTable* vtable;
 	static UClass* StaticClass();

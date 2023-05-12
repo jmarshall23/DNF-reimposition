@@ -132,6 +132,25 @@ namespace DukeEdSharp
         [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
         public static extern void DukeSharp_SetViewportType(IntPtr m_pViewport, int type);
 
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        public static extern int DukeSharp_GetNumLevelActors();
+
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        public static extern string DukeSharp_GetLevelActorList();
+
+        [DllImport("dnfedit.dll", CharSet = CharSet.Unicode)]
+        public static extern void DukeSharp_SelectEntity([MarshalAs(UnmanagedType.LPWStr)] string name);
+
+        public static string[] GetLevelActorList()
+        {
+            string s = DukeSharp_GetLevelActorList();
+            string[] names = s.Split('|');
+
+            Array.Sort(names, (x, y) => String.Compare(x, y));
+
+            return names;
+        }
+
         public static int GetClassFlags(string clsname)
         {
             return DukeSharp_GetClassFlags(clsname);

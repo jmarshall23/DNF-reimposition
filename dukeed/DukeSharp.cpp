@@ -291,6 +291,91 @@ void FileSaveAs(HWND hWnd)
 	//GFileManager->SetDefaultDirectory(appBaseDir());
 }
 
+int __stdcall DukeSharp_GetNumLevelActors()
+{
+	ULevelBase* level = (ULevelBase*)GEditor->GetLevel();
+	dnArray<AActor*>* actors = level->GetActorList();
+	return actors->Num();
+}
+
+void __stdcall DukeSharp_SelectEntity(const wchar_t* name)
+{
+	ULevelBase* level = (ULevelBase*)GEditor->GetLevel();
+	dnArray<AActor*>* actors = level->GetActorList();
+
+	for (int i = 0; i < actors->Num(); i++)
+	{
+		UObject* actor = (UObject*)actors->Get(i);
+		AActor* _actor = (AActor*)actor; // This is stupid, no this is patrick!!
+
+		if (actor == NULL)
+		{
+			continue;
+		}
+
+		const wchar_t* temp = actor->GetName();
+
+		if (temp[0] == '0')
+			continue;
+
+		if (!wcscmp(temp, name))
+		{
+			_actor->ToggleSelect(true);
+		}
+		else
+		{
+			_actor->ToggleSelect(false);
+		}
+	}
+}
+
+const wchar_t* DukeSharp_GetLevelActorList()
+{
+	static wchar_t *tempMoreStupidUnrealShit = nullptr;
+	std::wstring ActorListTempString;
+
+	if(tempMoreStupidUnrealShit)
+		free(tempMoreStupidUnrealShit);
+	
+	ActorListTempString.clear();
+
+	ULevelBase* level = (ULevelBase*)GEditor->GetLevel();
+
+	dnArray<AActor*>* actors = level->GetActorList();
+
+	for (int i = 0; i < actors->Num(); i++)
+	{				
+		UObject *actor = (UObject *)actors->Get(i);		
+
+		if (actor != NULL)
+		{
+			const wchar_t* temp = actor->GetName();
+
+			if (temp[0] == '0')
+			{
+			//	ActorListTempString += TEXT("NO__NAME");
+			}
+			else
+			{
+				ActorListTempString += temp;
+			}
+		}
+		else
+		{
+		//	ActorListTempString += TEXT("NULL_ENTITY");
+		}
+
+		if (i < actors->Num() - 1)
+			ActorListTempString += TEXT("|");
+	}
+
+	tempMoreStupidUnrealShit = (wchar_t *)malloc(ActorListTempString.size() * sizeof(wchar_t));
+	memcpy(tempMoreStupidUnrealShit, ActorListTempString.c_str(), ActorListTempString.size() * sizeof(wchar_t));
+
+	return tempMoreStupidUnrealShit;
+
+}
+
 void __stdcall DukeSharp_RunLocalCommand(int Command, HWND hWnd)
 {
 	switch (Command)

@@ -80,6 +80,7 @@ namespace DukeEdSharp
 
         private void BackPanel_Resize(object sender, EventArgs e)
         {
+            LevelActorList.Items.Clear();
             EditorInterface.EditorResize(BackPanel.Width, BackPanel.Height);
         }
 
@@ -103,6 +104,17 @@ namespace DukeEdSharp
         private void loadMapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditorInterface.DukeSharp_RunLocalCommand(1, Handle);
+
+            LevelActorList.Items.Clear();
+
+            string[] levelActorList = EditorInterface.GetLevelActorList();
+            foreach(string s in levelActorList)
+            {
+                if (s == "")
+                    continue;
+
+                LevelActorList.Items.Add(s);
+            }
         }
 
         private void saveMapToolStripMenuItem_Click(object sender, EventArgs e)
@@ -380,6 +392,28 @@ namespace DukeEdSharp
         private void wireframeViewsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             wireframeViews.Show();
+        }
+
+        private void LevelActorList_SelectedIndexChanged(object sender, EventArgs e)
+        {            
+            // Get the currently selected item in the ListBox.
+            string curItem = LevelActorList.SelectedItem.ToString();
+
+            EditorInterface.DukeSharp_SelectEntity(curItem);
+        }
+
+        private void forceReloadActorListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LevelActorList.Items.Clear();
+
+            string[] levelActorList = EditorInterface.GetLevelActorList();
+            foreach (string s in levelActorList)
+            {
+                if (s == "")
+                    continue;
+
+                LevelActorList.Items.Add(s);
+            }
         }
     }
 }

@@ -16,3 +16,6 @@ EXPORTS
 	DukeSharp_RemoveCollisionAndPortalsBeta @14
 	DukeSharp_SetViewportType @15
 	DukeSharp_RunLocalCommand @16
+	DukeSharp_GetNumLevelActors @17
+	DukeSharp_GetLevelActorList @18
+	DukeSharp_SelectEntity @19
