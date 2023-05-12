@@ -997,7 +997,7 @@ namespace DukeEdSharp
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.LevelActorList);
-            this.splitContainer2.Panel2MinSize = 600;
+            this.splitContainer2.Panel2MinSize = 400;
             this.splitContainer2.Size = new System.Drawing.Size(442, 1025);
             this.splitContainer2.SplitterDistance = 421;
             this.splitContainer2.TabIndex = 0;
