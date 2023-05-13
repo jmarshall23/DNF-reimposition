@@ -133,6 +133,8 @@ namespace DukeEdSharp
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.LevelActorList = new System.Windows.Forms.ListBox();
             this.forceReloadActorListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.levelPropertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -152,6 +154,7 @@ namespace DukeEdSharp
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.editToolStripMenuItem1,
             this.brushToolStripMenuItem,
             this.editToolStripMenuItem,
             this.buildToolStripMenuItem,
@@ -1022,6 +1025,21 @@ namespace DukeEdSharp
             this.forceReloadActorListToolStripMenuItem.Text = "Force Reload Actor List";
             this.forceReloadActorListToolStripMenuItem.Click += new System.EventHandler(this.forceReloadActorListToolStripMenuItem_Click);
             // 
+            // editToolStripMenuItem1
+            // 
+            this.editToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.levelPropertiesToolStripMenuItem});
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(58, 29);
+            this.editToolStripMenuItem1.Text = "Edit";
+            // 
+            // levelPropertiesToolStripMenuItem
+            // 
+            this.levelPropertiesToolStripMenuItem.Name = "levelPropertiesToolStripMenuItem";
+            this.levelPropertiesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.levelPropertiesToolStripMenuItem.Text = "Level Properties";
+            this.levelPropertiesToolStripMenuItem.Click += new System.EventHandler(this.levelPropertiesToolStripMenuItem_Click);
+            // 
             // EditorFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1164,5 +1182,7 @@ namespace DukeEdSharp
         private ToolStripMenuItem toolStripMenuItem9;
         private ToolStripMenuItem toolStripMenuItem10;
         private ToolStripMenuItem forceReloadActorListToolStripMenuItem;
+        private ToolStripMenuItem editToolStripMenuItem1;
+        private ToolStripMenuItem levelPropertiesToolStripMenuItem;
     }
 }
